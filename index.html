@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Robot Character</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="stage" aria-label="Animated robot character demo">
+      <div class="robot-ground-shadow" aria-hidden="true"></div>
+      <div class="robot-wrapper" data-part="robotWrapper">
+        <section class="robot" data-part="robot" aria-label="Robot character assembled from SVG parts">
+          <img class="robot-part" data-part="leftLeg" src="assets/leftleg.svg" alt="" aria-hidden="true" />
+          <img class="robot-part" data-part="rightLeg" src="assets/rightleg.svg" alt="" aria-hidden="true" />
+          <img class="robot-part" data-part="body" src="assets/body.svg" alt="" aria-hidden="true" />
+          <img class="robot-part" data-part="leftHand" src="assets/lhand.svg" alt="" aria-hidden="true" />
+          <img class="robot-part" data-part="rightHand" src="assets/rhand.svg" alt="" aria-hidden="true" />
+          <img class="robot-part" data-part="head" src="assets/head.svg" alt="Friendly robot character" />
+        </section>
+      </div>
+
+      <div class="controls" aria-label="Animation controls">
+        <button type="button" data-action="idle">Idle</button>
+        <button type="button" data-action="inspired">Inspired</button>
+        <button type="button" data-action="wave">Wave</button>
+        <button type="button" data-action="floatWaveAndSway">Wave & Sway</button>
+        <button type="button" data-action="lookAround">Look Around</button>
+        <button type="button" data-action="nod">Nod</button>
+        <button type="button" data-action="bounce">Bounce</button>
+        <button type="button" data-action="ponder">Ponder</button>
+        <button type="button" data-action="dance">Dance</button>
+        <button type="button" data-action="roamAndDisappear">Roam &amp; Disappear</button>
+        <button type="button" data-action="talk">Talk</button>
+        <button type="button" data-action="stop">Stop</button>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

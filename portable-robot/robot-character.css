@@ -1,0 +1,71 @@
+.portable-robot {
+  --portable-robot-width: 390px;
+  --portable-robot-height: 500px;
+
+  position: relative;
+  display: block;
+  width: var(--portable-robot-width);
+  height: var(--portable-robot-height);
+  overflow: visible;
+  contain: layout style;
+}
+
+.portable-robot,
+.portable-robot * {
+  box-sizing: border-box;
+}
+
+.portable-robot__scale {
+  position: relative;
+  width: var(--portable-robot-width);
+  height: var(--portable-robot-height);
+  overflow: visible;
+  transform-origin: top left;
+}
+
+.portable-robot .robot-wrapper,
+.portable-robot .robot {
+  position: relative;
+  width: var(--portable-robot-width);
+  height: var(--portable-robot-height);
+  aspect-ratio: 390 / 500;
+  overflow: visible;
+  transform-origin: 50% 56%;
+  will-change: transform;
+}
+
+.portable-robot .robot {
+  filter: drop-shadow(0 2rem 1.75rem rgba(26, 18, 4, 0.18));
+}
+
+.portable-robot .robot-part {
+  position: absolute;
+  display: block;
+  max-width: none;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.portable-robot__shadow {
+  position: absolute;
+  left: 105px;
+  top: 410px;
+  width: 180px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(26, 35, 58, 0.18);
+  filter: blur(10px);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portable-robot .robot-wrapper,
+  .portable-robot .robot,
+  .portable-robot .robot-part,
+  .portable-robot__shadow {
+    will-change: auto;
+  }
+}
