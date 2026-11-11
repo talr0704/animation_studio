@@ -1,4 +1,4 @@
-const DEBUG_ROBOT = false;
+const DEBUG_ROBOT = true;
 const ANIMATION_EDITOR_ENABLED = true;
 
 
