@@ -1,0 +1,364 @@
+{
+  "coordinates": "Pixels, origin at top left; +y down. Centers refer to full padded PNGs.",
+  "canvas": {
+    "width": 440,
+    "height": 475
+  },
+  "transparentPadding": 12,
+  "layersBackToFront": [
+    {
+      "file": "Body/tail.png",
+      "centerX": 94.5,
+      "centerY": 355.5,
+      "clockwiseDegrees": 2,
+      "flipX": true
+    },
+    {
+      "file": "Limbs/leg_right.png",
+      "centerX": 175.5,
+      "centerY": 400.5,
+      "clockwiseDegrees": 0
+    },
+    {
+      "file": "Limbs/leg_left.png",
+      "centerX": 258.5,
+      "centerY": 395.5,
+      "clockwiseDegrees": 0
+    },
+    {
+      "file": "Limbs/foot_right.png",
+      "centerX": 183.5,
+      "centerY": 425,
+      "clockwiseDegrees": 0
+    },
+    {
+      "file": "Limbs/foot_left.png",
+      "centerX": 265.5,
+      "centerY": 420,
+      "clockwiseDegrees": 0
+    },
+    {
+      "file": "Body/torso.png",
+      "centerX": 228,
+      "centerY": 334,
+      "clockwiseDegrees": 0
+    },
+    {
+      "file": "Limbs/hand_left.png",
+      "centerX": 321.5,
+      "centerY": 306.5,
+      "clockwiseDegrees": 7
+    },
+    {
+      "file": "Outfit/shirt.png",
+      "centerX": 225.5,
+      "centerY": 322,
+      "clockwiseDegrees": -12
+    },
+    {
+      "file": "Limbs/hand_right.png",
+      "centerX": 146.5,
+      "centerY": 337.5,
+      "clockwiseDegrees": 8
+    },
+    {
+      "file": "Outfit/pinafore.png",
+      "centerX": 235,
+      "centerY": 359,
+      "clockwiseDegrees": -4
+    },
+    {
+      "file": "Head/ear_right.png",
+      "centerX": 115.74609691402786,
+      "centerY": 120.1542117881574,
+      "clockwiseDegrees": -22
+    },
+    {
+      "file": "Head/ear_left.png",
+      "centerX": 265.6083207134852,
+      "centerY": 82.2818752101044,
+      "clockwiseDegrees": -12
+    },
+    {
+      "file": "Head/head.png",
+      "centerX": 210.86621716766933,
+      "centerY": 197.63590461254512,
+      "clockwiseDegrees": -6
+    },
+    {
+      "file": "Face/whiskers_right.png",
+      "centerX": 60.349939725626285,
+      "centerY": 234.06872257917956,
+      "clockwiseDegrees": -12
+    },
+    {
+      "file": "Face/whiskers_left.png",
+      "centerX": 357.03405292382587,
+      "centerY": 186.79783327299114,
+      "clockwiseDegrees": -11
+    },
+    {
+      "file": "Face/eye_happy_right.png",
+      "centerX": 173.75532164924024,
+      "centerY": 198.5198920673435,
+      "clockwiseDegrees": -8
+    },
+    {
+      "file": "Face/eye_happy_left.png",
+      "centerX": 293.6743571357307,
+      "centerY": 181.89386043048438,
+      "clockwiseDegrees": -8
+    },
+    {
+      "file": "Face/mouth_happy.png",
+      "centerX": 241.14386775611672,
+      "centerY": 213.0554984737301,
+      "clockwiseDegrees": -8
+    },
+    {
+      "file": "Face/nose.png",
+      "centerX": 238.712830237981,
+      "centerY": 194.70910764105082,
+      "clockwiseDegrees": -8
+    },
+    {
+      "file": "Accessories/flower.png",
+      "centerX": 306.22392274003187,
+      "centerY": 95.6093983116107,
+      "clockwiseDegrees": -3
+    }
+  ],
+  "sprites": [
+    {
+      "file": "Head/head.png",
+      "artworkSize": [
+        320,
+        228
+      ]
+    },
+    {
+      "file": "Head/ear_right.png",
+      "artworkSize": [
+        101,
+        104
+      ]
+    },
+    {
+      "file": "Head/ear_left.png",
+      "artworkSize": [
+        83,
+        88
+      ]
+    },
+    {
+      "file": "Face/nose.png",
+      "artworkSize": [
+        14,
+        10
+      ]
+    },
+    {
+      "file": "Body/torso.png",
+      "artworkSize": [
+        148,
+        150
+      ]
+    },
+    {
+      "file": "Outfit/shirt.png",
+      "artworkSize": [
+        207,
+        96
+      ]
+    },
+    {
+      "file": "Outfit/pinafore.png",
+      "artworkSize": [
+        200,
+        124
+      ]
+    },
+    {
+      "file": "Accessories/flower.png",
+      "artworkSize": [
+        91,
+        91
+      ]
+    },
+    {
+      "file": "Body/tail.png",
+      "artworkSize": [
+        135,
+        139
+      ]
+    },
+    {
+      "file": "Limbs/arm_right.png",
+      "artworkSize": [
+        45,
+        55
+      ]
+    },
+    {
+      "file": "Limbs/arm_left.png",
+      "artworkSize": [
+        44,
+        53
+      ]
+    },
+    {
+      "file": "Limbs/hand_right.png",
+      "artworkSize": [
+        57,
+        65
+      ]
+    },
+    {
+      "file": "Limbs/hand_left.png",
+      "artworkSize": [
+        41,
+        51
+      ]
+    },
+    {
+      "file": "Limbs/leg_right.png",
+      "artworkSize": [
+        51,
+        57
+      ]
+    },
+    {
+      "file": "Limbs/leg_left.png",
+      "artworkSize": [
+        51,
+        57
+      ]
+    },
+    {
+      "file": "Limbs/foot_right.png",
+      "artworkSize": [
+        67,
+        46
+      ]
+    },
+    {
+      "file": "Limbs/foot_left.png",
+      "artworkSize": [
+        65,
+        46
+      ]
+    },
+    {
+      "file": "Face/eye_open_right.png",
+      "artworkSize": [
+        42,
+        42
+      ]
+    },
+    {
+      "file": "Face/eye_open_left.png",
+      "artworkSize": [
+        42,
+        42
+      ]
+    },
+    {
+      "file": "Face/eye_happy_right.png",
+      "artworkSize": [
+        44,
+        24
+      ]
+    },
+    {
+      "file": "Face/eye_happy_left.png",
+      "artworkSize": [
+        44,
+        24
+      ]
+    },
+    {
+      "file": "Face/eye_sleep_right.png",
+      "artworkSize": [
+        44,
+        23
+      ]
+    },
+    {
+      "file": "Face/eye_sleep_left.png",
+      "artworkSize": [
+        44,
+        23
+      ]
+    },
+    {
+      "file": "Face/brow_right.png",
+      "artworkSize": [
+        32,
+        14
+      ]
+    },
+    {
+      "file": "Face/brow_left.png",
+      "artworkSize": [
+        32,
+        14
+      ]
+    },
+    {
+      "file": "Face/mouth_happy.png",
+      "artworkSize": [
+        39,
+        33
+      ]
+    },
+    {
+      "file": "Face/mouth_closed.png",
+      "artworkSize": [
+        39,
+        16
+      ]
+    },
+    {
+      "file": "Face/mouth_surprised.png",
+      "artworkSize": [
+        23,
+        29
+      ]
+    },
+    {
+      "file": "Face/mouth_tongue.png",
+      "artworkSize": [
+        39,
+        33
+      ]
+    },
+    {
+      "file": "Face/whiskers_right.png",
+      "artworkSize": [
+        61,
+        47
+      ]
+    },
+    {
+      "file": "Face/whiskers_left.png",
+      "artworkSize": [
+        61,
+        47
+      ]
+    },
+    {
+      "file": "Face/blush_right.png",
+      "artworkSize": [
+        53,
+        28
+      ]
+    },
+    {
+      "file": "Face/blush_left.png",
+      "artworkSize": [
+        53,
+        28
+      ]
+    }
+  ]
+}
