@@ -1,3 +1,4 @@
+import { mountCatEditor } from './cat-editor.js';
 const character = document.querySelector('.cat-character');
 const wrapper = document.querySelector('.cat-wrapper');
 const status = document.querySelector('.character-status');
@@ -5,6 +6,7 @@ const controls = document.querySelector('.controls');
 let animations = [];
 let actionVersion = 0;
 const groups = new Map();
+let editor;
 
 function stop() {
   actionVersion++;
@@ -21,6 +23,8 @@ function animate(target, frames, options) {
 }
 
 function play(name) {
+  editor?.pause();
+  editor?.reset();
   stop();
   character.dataset.action = name;
   controls.querySelector(`[data-action="${name}"]`)?.classList.add('is-active');
@@ -91,7 +95,7 @@ async function initialize() {
     image.draggable = false;
     image.dataset.sprite = name;
     Object.assign(image.style, { left: `${layer.centerX - width / 2}px`, top: `${layer.centerY - height / 2}px`, width: `${width}px`, height: `${height}px`, transform: `rotate(${layer.clockwiseDegrees}deg) scaleX(${layer.flipX ? -1 : 1})` });
-    image.src = new URL(`./images/${file}`, import.meta.url).href;
+    image.src = new URL(`${name.startsWith('hand_') ? './assets/popa/' : './images/'}${file}`, import.meta.url).href;
     loads.push(image.decode());
     group.append(image);
     (index >= 10 ? headGroup : character).append(group);
@@ -104,7 +108,7 @@ async function initialize() {
     const button = event.target.closest('button[data-action]');
     if (button) play(button.dataset.action);
   });
-  play('idle');
+  editor = mountCatEditor({ character, groups, stop });
 }
 
 initialize().catch(error => {

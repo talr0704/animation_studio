@@ -111,6 +111,14 @@ body {
   user-select: none;
 }
 
+@media (min-width: 981px) {
+  body.animation-editor-enabled .stage {
+    width: calc(100vw - clamp(420px, var(--animation-editor-width), 720px) - 2rem);
+    justify-self: start;
+    padding-inline: .5rem;
+  }
+}
+
 .stage:has(.cat-frame) {
   padding-top: 2rem;
 }
@@ -791,4 +799,11 @@ textarea:focus-visible {
   .animation-editor__resize {
     display: none;
   }
+}
+
+/* Keep the character visible while editing on narrow screens. */
+@media (max-width: 980px) {
+  body.animation-editor-enabled { display: block; }
+  body.animation-editor-enabled .stage { min-height: auto; padding-bottom: 2rem; }
+  .animation-editor { position: relative; inset: auto; width: calc(100% - 1rem); min-width: 0; max-width: none; max-height: none; margin: .5rem; border-radius: 1rem; }
 }
