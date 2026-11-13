@@ -20,7 +20,7 @@ with sync_playwright() as p:
 
     def geometry():
         return page.evaluate('''() => [...document.querySelectorAll('.cat-part')].map(e =>
-          [e.dataset.sprite, e.style.cssText, e.parentElement.style.transformOrigin,
+          [e.dataset.sprite, [...e.style].filter(key => key !== 'scale').map(key => [key, e.style.getPropertyValue(key)]), e.parentElement.style.transformOrigin,
            e.closest('.cat-layer').style.zIndex])''')
 
     def assert_expression(name):
@@ -30,6 +30,14 @@ with sync_playwright() as p:
         for side in ['left', 'right']:
             image = page.locator(f'[data-sprite="eye_happy_{side}"]')
             assert image.get_attribute('src').endswith(f'eye_{eyes}_{side}.png')
+            if eyes == 'open':
+                size = image.evaluate('''e => {
+                  const [x,y] = e.style.scale.split(' ').map(Number);
+                  return [parseFloat(e.style.width)*x, parseFloat(e.style.height)*y];
+                }''')
+                assert abs(size[0]-100) < .001 and abs(size[1]-70.59) < .001
+            else:
+                assert image.evaluate('e=>e.style.scale') == ''
         assert page.locator('[data-sprite="mouth_happy"]').get_attribute('src').endswith(f'mouth_{mouth}.png')
         assert page.evaluate('[...document.querySelectorAll(".cat-part")].every(e=>e.complete&&e.naturalWidth>0)')
 

@@ -6,6 +6,7 @@ const EXPRESSIONS = {
   playful: { label: 'שובבה', eyes: 'happy', mouth: 'tongue' },
 };
 const STORAGE_KEY = 'popaExpressionV1';
+const OPEN_EYE_SIZE = { width: 100, height: 70.59 };
 const imageUrl = file => new URL(`./images/${file}`, import.meta.url).href;
 
 export async function createCatExpressions({ character, controls }) {
@@ -52,8 +53,14 @@ export async function createCatExpressions({ character, controls }) {
 
   function render() {
     const expression = EXPRESSIONS[selected];
-    // Reuse the calibrated eye/mouth slots, preserving placement, size and pivots.
-    eyes.forEach((image, index) => { image.src = imageUrl(`eye_${expression.eyes}_${index === 0 ? 'left' : 'right'}.png`); });
+    // Scale only the open-eye artwork around its calibrated center. The assembly
+    // slots retain their original dimensions, so closed eyes and exports stay intact.
+    eyes.forEach((image, index) => {
+      image.src = imageUrl(`eye_${expression.eyes}_${index === 0 ? 'left' : 'right'}.png`);
+      image.style.scale = expression.eyes === 'open'
+        ? `${OPEN_EYE_SIZE.width / parseFloat(image.style.width)} ${OPEN_EYE_SIZE.height / parseFloat(image.style.height)}`
+        : '';
+    });
     mouth.src = imageUrl(`mouth_${speechMouth ?? expression.mouth}.png`);
     character.dataset.expression = selected;
     panel.querySelectorAll('button').forEach(button => {
