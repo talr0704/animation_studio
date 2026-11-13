@@ -102,8 +102,10 @@ body {
   height: 475px;
   transform-origin: 220px 420px;
 }
+.cat-group { pointer-events: none; }
 
 .cat-part {
+  object-fit: contain;
   position: absolute;
   display: block;
   max-width: none;
@@ -127,6 +129,7 @@ body {
 .layout-editing { cursor: move; touch-action: none; }
 .cat-part.layout-selected { outline: 2px dashed #0063cf; outline-offset: 3px; }
 .cat-pivot {
+  pointer-events: auto;
   position: absolute;
   z-index: 100000;
   width: 20px;
