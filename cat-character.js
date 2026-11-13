@@ -1,3 +1,4 @@
+import { createCatExpressions } from './cat-expressions.js';
 import { createCatAnimations } from './cat-animations.js';
 import { mountLayoutEditor } from './cat-layout-editor.js';
 import { mountCatEditor } from './cat-editor.js';
@@ -54,20 +55,15 @@ async function initialize() {
     group.append(image);
     groups.set(name, group);
   });
-  // Preload speech poses so talking never flashes an unloaded mouth.
-  for (const file of ['mouth_closed.png', 'mouth_tongue.png']) {
-    const image = new Image();
-    image.src = new URL(`./images/${file}`, import.meta.url).href;
-    loads.push(image.decode());
-  }
   await Promise.all(loads);
+  const expressions = await createCatExpressions({ character, controls });
   character.dataset.ready = 'true';
   controls.querySelectorAll('button').forEach(button => { button.disabled = false; });
   controls.addEventListener('click', event => {
     const button = event.target.closest('button[data-action]');
     if (button) play(button.dataset.action);
   });
-  motion = createCatAnimations({ character, wrapper, groups, headFollowers, bodyMotions, controls, editor: () => editor });
+  motion = createCatAnimations({ character, wrapper, groups, headFollowers, bodyMotions, controls, expressions, editor: () => editor });
   editor = mountCatEditor({ character, groups, stop, headFollowers });
   mountLayoutEditor({ layout, character, setPivot: (name, x, y) => editor.setPivot(name, x, y), pause: () => { editor.pause(); editor.reset(); stop(); } });
 }

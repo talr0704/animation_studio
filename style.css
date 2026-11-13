@@ -103,6 +103,16 @@ body {
   transform-origin: 220px 420px;
 }
 .cat-group { pointer-events: none; }
+.expression-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  width: min(100%, 440px);
+}
+.expression-controls h2 { width: 100%; margin: 0 0 .25rem; text-align: center; font-size: 1rem; }
+.expression-controls button { padding: .5rem .8rem; }
+.expression-controls button[aria-pressed="true"] { background: #ffcf72; outline: 2px solid var(--ink); outline-offset: 2px; }
 
 .cat-part {
   object-fit: contain;

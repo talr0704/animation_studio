@@ -1,5 +1,5 @@
 // Animate rig wrappers only: the accepted artwork geometry remains untouched.
-export function createCatAnimations({ character, wrapper, groups, headFollowers, bodyMotions, controls, editor }) {
+export function createCatAnimations({ character, wrapper, groups, headFollowers, bodyMotions, controls, expressions, editor }) {
   let running = [];
   let cleanup = [];
   let generation = 0;
@@ -7,7 +7,6 @@ export function createCatAnimations({ character, wrapper, groups, headFollowers,
   const left = groups.get('left_arm');
   const right = groups.get('right_arm');
   const tail = groups.get('tail');
-  const mouth = character.querySelector('[data-sprite="mouth_happy"]');
 
   function stop() {
     generation++;
@@ -39,11 +38,7 @@ export function createCatAnimations({ character, wrapper, groups, headFollowers,
     cleanup.push(() => { layer.style.zIndex = original; });
   }
   function speaking() {
-    const original = mouth.src;
-    const sources = ['mouth_happy.png', 'mouth_closed.png', 'mouth_happy.png', 'mouth_tongue.png', 'mouth_closed.png'];
-    let index = 0;
-    const timer = setInterval(() => { mouth.src = new URL(`./images/${sources[index++ % sources.length]}`, import.meta.url).href; }, 170);
-    cleanup.push(() => { clearInterval(timer); mouth.src = original; });
+    cleanup.push(expressions.startTalking());
   }
   function play(name) {
     editor()?.pause();
