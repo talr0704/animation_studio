@@ -18,18 +18,18 @@ export function createCatAnimations({ character, wrapper, groups, headFollowers,
     controls.querySelectorAll('button').forEach(button => button.classList.remove('is-active'));
     character.dataset.action = 'stop';
   }
-  function track(targets, frames, duration, loop = false) {
+  function track(targets, frames, duration, loop = false, phaseLocked = false) {
     const list = Array.isArray(targets) ? targets : [targets];
     for (const target of list) {
-      const animation = target.animate(frames, { duration, iterations: loop ? Infinity : 1, easing: 'ease-in-out', fill: 'both' });
+      const animation = target.animate(phaseLocked ? frames.map(frame => ({ ...frame, easing: 'ease-in-out' })) : frames, { duration, iterations: loop ? Infinity : 1, easing: phaseLocked ? 'linear' : 'ease-in-out', fill: 'both' });
       running.push(animation);
     }
   }
-  function rotate(targets, angles, duration, loop = false) {
-    track(targets, angles.map(angle => ({ transform: `rotate(${angle}deg)` })), duration, loop);
+  function rotate(targets, angles, duration, loop = false, phaseLocked = false) {
+    track(targets, angles.map(angle => ({ transform: `rotate(${angle}deg)` })), duration, loop, phaseLocked);
   }
-  function pose(targets, points, duration, loop = false) {
-    track(targets, points.map(([x, y, angle = 0, offset]) => ({ transform: `translate(${x}px, ${y}px) rotate(${angle}deg)`, ...(offset !== undefined ? { offset } : {}) })), duration, loop);
+  function pose(targets, points, duration, loop = false, phaseLocked = false) {
+    track(targets, points.map(([x, y, angle = 0, offset]) => ({ transform: `translate(${x}px, ${y}px) rotate(${angle}deg)`, ...(offset !== undefined ? { offset } : {}) })), duration, loop, phaseLocked);
   }
   function foreground(group) {
     const layer = group.closest('.cat-layer');
@@ -110,6 +110,25 @@ export function createCatAnimations({ character, wrapper, groups, headFollowers,
         rotate(right, [0, -28, -4, -15, -4, -28, -8, 0], 3600);
         rotate(tail, [0, 7, -5, 7, -5, 7, -4, 0], 3600);
         break;
+      case 'walk': {
+        // In-place chibi gait: each foot supports the body while the other swings.
+        // Small steps keep the feet tucked beneath the dress with no stretching.
+        const cycle = 1100;
+        pose(groups.get('foot_left'), [
+          [0, 0, 0, 0], [3, -3, 3, .12], [4, -5, 5, .25],
+          [1, -1, 1, .42], [0, 0, 0, .5], [-4, 0, -3, .75], [0, 0, 0, 1],
+        ], cycle, true, true);
+        pose(groups.get('foot_right'), [
+          [0, 0, 0, 0], [-4, 0, -3, .25], [0, 0, 0, .5],
+          [3, -3, 3, .62], [4, -5, 5, .75], [1, -1, 1, .92], [0, 0, 0, 1],
+        ], cycle, true, true);
+        pose(bodyMotions, [[0, 0, 0], [-1.5, -1.5, -.6], [0, 0, 0], [1.5, -1.5, .6], [0, 0, 0]], cycle, true, true);
+        rotate(left, [0, -10, 0, 10, 0], cycle, true, true);
+        rotate(right, [0, 10, 0, -10, 0], cycle, true, true);
+        rotate(head, [0, .4, 0, -.4, 0], cycle, true, true);
+        rotate(tail, [0, 3, 0, -3, 0], cycle, true, true);
+        break;
+      }
       case 'talk':
         pose(bodyMotions, [[0, 0], [0, -1], [0, 0]], 2000, true);
         rotate(head, [0, -.7, .8, 0], 1600, true);
@@ -133,7 +152,7 @@ export function createCatAnimations({ character, wrapper, groups, headFollowers,
         rotate(tail, [0, -5, 5, -5, 0], 3600);
         break;
     }
-    if (!['idle', 'inspired', 'talk'].includes(name)) {
+    if (!['idle', 'inspired', 'talk', 'walk'].includes(name)) {
       Promise.all(running.map(animation => animation.finished)).then(() => {
         if (version === generation) stop();
       }).catch(() => {});
