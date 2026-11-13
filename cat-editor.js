@@ -1,5 +1,5 @@
 // Existing timeline editor, adapted to the assembled cat's part groups.
-export function mountCatEditor({ character: robot, groups, stop: pauseAnimations }) {
+export function mountCatEditor({ character: robot, groups, stop: pauseAnimations, headFollowers = [] }) {
 const ANIMATION_EDITOR_ENABLED = true;
 const gsap = window.gsap;
 const partElements = Object.fromEntries(groups);
@@ -97,7 +97,7 @@ function setPartValues(partName, values) {
 
 function applyEditorValues(partName, values) {
   const element = partElements[partName];
-  gsap.set(element, {
+  gsap.set(partName === 'head' ? [element, ...headFollowers] : element, {
     x: values.x,
     y: values.y,
     rotate: values.rotate,

@@ -1,15 +1,17 @@
 const STORAGE_KEY = 'popaAssemblyPositionsV1';
-const labels = { shirt: 'חולצה', tail: 'זנב', pinafore: 'סרפן', torso: 'גוף', left_arm: 'יד בצד שמאל', right_arm: 'יד בצד ימין', head: 'ראש', ear_left: 'אוזן שמאל', ear_right: 'אוזן ימין', foot_left: 'כף רגל שמאל', foot_right: 'כף רגל ימין', flower: 'פרח' };
+const labels = { shirt: 'חולצה', tail: 'זנב', pinafore: 'סרפן', torso: 'גוף', left_arm: 'יד בצד שמאל', right_arm: 'יד בצד ימין', head: 'ראש', ear_left: 'אוזן שמאל', ear_right: 'אוזן ימין', foot_left: 'כף רגל שמאל', foot_right: 'כף רגל ימין', flower: 'פרח', eye_happy_left: 'עין שמאל', eye_happy_right: 'עין ימין', mouth_happy: 'פה', nose: 'אף', whiskers_left: 'שפם שמאל', whiskers_right: 'שפם ימין' };
 
 export function mountLayoutEditor({ layout, character, pause }) {
   const frame = character.closest('.cat-frame');
   const images = new Map([...character.querySelectorAll('.cat-part')].map(image => [image.dataset.sprite, image]));
   const originals = new Map(layout.layersBackToFront.map(layer => [layer.file.split('/').pop().replace('.png', ''), layer]));
+  const dimensions = new Map([...images].map(([name, image]) => [name, { width: parseFloat(image.style.width), height: parseFloat(image.style.height) }]));
+  const order = new Map([...originals.keys()].map((name, index) => [name, originals.get(name).zIndex ?? index]));
   let positions = {};
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
     for (const [name, value] of Object.entries(saved)) {
-      if (originals.has(name) && ['x', 'y', 'rotate'].every(key => Number.isFinite(value[key]))) positions[name] = value;
+      if (originals.has(name) && ['x', 'y', 'rotate'].every(key => Number.isFinite(value[key]))) positions[name] = { x: value.x, y: value.y, rotate: value.rotate, ...(Number.isFinite(value.width) && value.width > 0 ? { width: value.width } : {}), ...(Number.isFinite(value.height) && value.height > 0 ? { height: value.height } : {}), ...(Number.isInteger(value.zIndex) ? { zIndex: value.zIndex } : {}) };
     }
   } catch { /* A fresh layout remains usable when browser storage is unavailable. */ }
   let selected = 'shirt';
@@ -21,14 +23,22 @@ export function mountLayoutEditor({ layout, character, pause }) {
   panel.innerHTML = `
     <button type="button" data-layout="toggle" aria-expanded="false">סידור מיקום החלקים</button>
     <div data-layout="body" hidden>
-      <p>בחר חלק וגרור על הדמות, או הזן מיקום מדויק. המיקומים נשמרים בדפדפן הזה בלחיצה על שמירה.</p>
+      <p>בחר חלק וגרור על הדמות, או הזן מיקום, גודל ושכבה. מספר שכבה גבוה מוצג מלפנים. המיקומים נשמרים בדפדפן הזה בלחיצה על שמירה.</p>
       <label>חלק <select data-layout="part"></select></label>
       <div class="layout-editor__fields">
         <label>מיקום X <input type="number" step="1" data-layout="x"></label>
         <label>מיקום Y <input type="number" step="1" data-layout="y"></label>
         <label>סיבוב ° <input type="number" step="1" data-layout="rotate"></label>
+        <label>רוחב <input type="number" step="1" min="1" data-layout="width"></label>
+        <label>גובה <input type="number" step="1" min="1" data-layout="height"></label>
+        <label>שכבה <input type="number" step="1" data-layout="zIndex"></label>
       </div>
+      <label><input type="checkbox" data-layout="lockRatio" checked> שמירת יחס גובה־רוחב</label>
       <div class="layout-editor__buttons">
+        <button type="button" data-layout="forward">העבר קדימה</button>
+        <button type="button" data-layout="backward">העבר אחורה</button>
+        <button type="button" data-layout="front">הבא לחזית</button>
+        <button type="button" data-layout="back">שלח לרקע</button>
         <button type="button" data-layout="save">שמירת מיקומים</button>
         <button type="button" data-layout="download">הורדת קובץ הרכבה</button>
         <button type="button" data-layout="reset">איפוס החלק הנבחר</button>
@@ -47,12 +57,15 @@ export function mountLayoutEditor({ layout, character, pause }) {
   select.value = selected;
   function value(name) {
     const original = originals.get(name);
-    return positions[name] ?? { x: original.centerX, y: original.centerY, rotate: original.clockwiseDegrees };
+    return { x: original.centerX, y: original.centerY, rotate: original.clockwiseDegrees, ...dimensions.get(name), zIndex: order.get(name), ...positions[name] };
   }
   function apply(name) {
     const image = images.get(name);
     const original = originals.get(name);
     const current = value(name);
+    image.style.width = `${current.width}px`;
+    image.style.height = `${current.height}px`;
+    image.closest('.cat-layer').style.zIndex = current.zIndex;
     image.style.left = `${current.x - parseFloat(image.style.width) / 2}px`;
     image.style.top = `${current.y - parseFloat(image.style.height) / 2}px`;
     image.style.transform = `rotate(${current.rotate}deg) scaleX(${original.flipX ? -1 : 1})`;
@@ -64,7 +77,7 @@ export function mountLayoutEditor({ layout, character, pause }) {
   }
   function refresh() {
     const current = value(selected);
-    for (const field of ['x', 'y', 'rotate']) find(field).value = Math.round(current[field] * 100) / 100;
+    for (const field of ['x', 'y', 'rotate', 'width', 'height', 'zIndex']) find(field).value = Math.round(current[field] * 100) / 100;
     images.forEach((image, name) => image.classList.toggle('layout-selected', enabled && name === selected));
   }
   function change(next) {
@@ -75,7 +88,15 @@ export function mountLayoutEditor({ layout, character, pause }) {
   }
   panel.addEventListener('input', event => {
     const field = event.target.dataset.layout;
-    if (['x', 'y', 'rotate'].includes(field) && event.target.value !== '' && Number.isFinite(event.target.valueAsNumber)) change({ [field]: event.target.valueAsNumber });
+    if (!['x', 'y', 'rotate', 'width', 'height', 'zIndex'].includes(field) || event.target.value === '' || !Number.isFinite(event.target.valueAsNumber)) return;
+    const number = event.target.valueAsNumber;
+    if (['width', 'height'].includes(field) && number < 1) return;
+    const next = { [field]: field === 'zIndex' ? Math.round(number) : number };
+    if (['width', 'height'].includes(field) && find('lockRatio').checked) {
+      const other = field === 'width' ? 'height' : 'width';
+      next[other] = value(selected)[other] * number / value(selected)[field];
+    }
+    change(next);
   });
   select.addEventListener('change', () => { selected = select.value; refresh(); });
   find('toggle').addEventListener('click', () => {
@@ -86,6 +107,18 @@ export function mountLayoutEditor({ layout, character, pause }) {
     find('toggle').setAttribute('aria-expanded', String(enabled));
     refresh();
   });
+  for (const [action, direction] of [['forward', 1], ['backward', -1], ['front', Infinity], ['back', -Infinity]]) {
+    find(action).addEventListener('click', () => {
+      const names = [...originals.keys()].sort((a, b) => value(a).zIndex - value(b).zIndex);
+      const index = names.indexOf(selected);
+      names.splice(index, 1);
+      const target = Number.isFinite(direction) ? Math.max(0, Math.min(names.length, index + direction)) : direction > 0 ? names.length : 0;
+      names.splice(target, 0, selected);
+      names.forEach((name, zIndex) => { positions[name] = { ...value(name), zIndex }; apply(name); });
+      refresh();
+      find('status').textContent = 'יש שינויים שטרם נשמרו';
+    });
+  }
   find('save').addEventListener('click', () => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(positions));
@@ -103,8 +136,10 @@ export function mountLayoutEditor({ layout, character, pause }) {
       const current = value(name);
       if (layer.pivotX !== undefined) layer.pivotX += current.x - layer.centerX;
       if (layer.pivotY !== undefined) layer.pivotY += current.y - layer.centerY;
-      Object.assign(layer, { centerX: current.x, centerY: current.y, clockwiseDegrees: current.rotate });
+      Object.assign(layer, { centerX: current.x, centerY: current.y, clockwiseDegrees: current.rotate, zIndex: current.zIndex });
+      output.sprites.find(sprite => sprite.file === layer.file).displaySize = [current.width, current.height];
     });
+    output.layersBackToFront.sort((a, b) => a.zIndex - b.zIndex);
     const url = URL.createObjectURL(new Blob([JSON.stringify(output, null, 2)], { type: 'application/json' }));
     const anchor = document.createElement('a');
     anchor.href = url; anchor.download = 'assembly_layout.json'; anchor.click();

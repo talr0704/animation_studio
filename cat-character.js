@@ -8,6 +8,7 @@ let animations = [];
 let actionVersion = 0;
 const groups = new Map();
 let editor;
+const headFollowers = [];
 
 function stop() {
   actionVersion++;
@@ -18,6 +19,7 @@ function stop() {
 }
 
 function animate(target, frames, options) {
+  if (Array.isArray(target)) return target.map(element => animate(element, frames, options))[0];
   const animation = target.animate(frames, { easing: 'ease-in-out', ...options });
   animations.push(animation);
   return animation;
@@ -31,7 +33,7 @@ function play(name) {
   controls.querySelector(`[data-action="${name}"]`)?.classList.add('is-active');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (name === 'stop' || reduced) return;
-  const head = groups.get('head');
+  const head = [groups.get('head'), ...headFollowers];
   const hand = groups.get('left_arm');
   const version = actionVersion;
   let main;
@@ -75,12 +77,6 @@ async function initialize() {
   if (!response.ok) throw new Error('Assembly layout could not be loaded');
   const layout = await response.json();
   const sprites = new Map(layout.sprites.map(sprite => [sprite.file, sprite]));
-  const headGroup = document.createElement('div');
-  headGroup.className = 'cat-group';
-  headGroup.style.transformOrigin = '211px 285px';
-  headGroup.style.zIndex = 10;
-  groups.set('head', headGroup);
-  character.append(headGroup);
   const loads = [];
   layout.layersBackToFront.forEach((layer, index) => {
     const file = layer.file.split('/').pop();
@@ -91,6 +87,14 @@ async function initialize() {
     group.className = 'cat-group';
     group.style.zIndex = index;
     group.style.transformOrigin = `${layer.pivotX ?? layer.centerX}px ${layer.pivotY ?? layer.centerY - height * .3}px`;
+    const layerElement = document.createElement('div');
+    layerElement.className = 'cat-group cat-layer';
+    layerElement.style.zIndex = layer.zIndex ?? index;
+    layerElement.style.transformOrigin = '211px 285px';
+    layerElement.append(group);
+    character.append(layerElement);
+    if (/^(Head|Face|Accessories)\//.test(layer.file) && name !== 'head') headFollowers.push(layerElement);
+    if (name === 'head') group.style.transformOrigin = '211px 285px';
     const image = document.createElement('img');
     image.className = 'cat-part';
     image.alt = '';
@@ -101,8 +105,7 @@ async function initialize() {
     image.src = new URL(`./images/${file}`, import.meta.url).href;
     loads.push(image.decode());
     group.append(image);
-    (/^(Head|Face|Accessories)\//.test(layer.file) ? headGroup : character).append(group);
-    if (name !== 'head') groups.set(name, group);
+    groups.set(name, group);
   });
   await Promise.all(loads);
   character.dataset.ready = 'true';
@@ -111,7 +114,7 @@ async function initialize() {
     const button = event.target.closest('button[data-action]');
     if (button) play(button.dataset.action);
   });
-  editor = mountCatEditor({ character, groups, stop });
+  editor = mountCatEditor({ character, groups, stop, headFollowers });
   mountLayoutEditor({ layout, character, pause: () => { editor.pause(); editor.reset(); stop(); } });
 }
 
