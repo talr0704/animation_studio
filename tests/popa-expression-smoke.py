@@ -20,7 +20,7 @@ with sync_playwright() as p:
 
     def geometry():
         return page.evaluate('''() => [...document.querySelectorAll('.cat-part')].map(e =>
-          [e.dataset.sprite, [...e.style].filter(key => key !== 'scale').map(key => [key, e.style.getPropertyValue(key)]), e.parentElement.style.transformOrigin,
+          [e.dataset.sprite, [...e.style].filter(key => !['scale', 'object-fit'].includes(key)).map(key => [key, e.style.getPropertyValue(key)]), e.parentElement.style.transformOrigin,
            e.closest('.cat-layer').style.zIndex])''')
 
     def assert_expression(name):
@@ -36,8 +36,10 @@ with sync_playwright() as p:
                   return [parseFloat(e.style.width)*x, parseFloat(e.style.height)*y];
                 }''')
                 assert abs(size[0]-100) < .001 and abs(size[1]-70.59) < .001
+                assert image.evaluate('e=>e.style.objectFit') == 'cover'
             else:
                 assert image.evaluate('e=>e.style.scale') == ''
+                assert image.evaluate('e=>e.style.objectFit') == 'contain'
         assert page.locator('[data-sprite="mouth_happy"]').get_attribute('src').endswith(f'mouth_{mouth}.png')
         assert page.evaluate('[...document.querySelectorAll(".cat-part")].every(e=>e.complete&&e.naturalWidth>0)')
 

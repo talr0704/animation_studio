@@ -7,6 +7,7 @@ const EXPRESSIONS = {
 };
 const STORAGE_KEY = 'popaExpressionV1';
 const OPEN_EYE_SIZE = { width: 100, height: 70.59 };
+const CLOSED_EYE_SIZE = { width: 68, height: 48 };
 const imageUrl = file => new URL(`./images/${file}`, import.meta.url).href;
 
 export async function createCatExpressions({ character, controls }) {
@@ -57,9 +58,13 @@ export async function createCatExpressions({ character, controls }) {
     // slots retain their original dimensions, so closed eyes and exports stay intact.
     eyes.forEach((image, index) => {
       image.src = imageUrl(`eye_${expression.eyes}_${index === 0 ? 'left' : 'right'}.png`);
-      image.style.scale = expression.eyes === 'open'
-        ? `${OPEN_EYE_SIZE.width / parseFloat(image.style.width)} ${OPEN_EYE_SIZE.height / parseFloat(image.style.height)}`
-        : '';
+      const size = expression.eyes === 'open' ? OPEN_EYE_SIZE : CLOSED_EYE_SIZE;
+      const x = size.width / parseFloat(image.style.width);
+      const y = size.height / parseFloat(image.style.height);
+      image.style.scale = x === 1 && y === 1 ? '' : `${x} ${y}`;
+      // Open-eye PNGs are square with transparent margins. Contain shrank their
+      // visible artwork; cover trims only padding and keeps the eye round.
+      image.style.objectFit = expression.eyes === 'open' ? 'cover' : 'contain';
     });
     mouth.src = imageUrl(`mouth_${speechMouth ?? expression.mouth}.png`);
     character.dataset.expression = selected;
