@@ -1,3 +1,4 @@
+import { mountLayoutEditor } from './cat-layout-editor.js';
 import { mountCatEditor } from './cat-editor.js';
 const character = document.querySelector('.cat-character');
 const wrapper = document.querySelector('.cat-wrapper');
@@ -111,6 +112,7 @@ async function initialize() {
     if (button) play(button.dataset.action);
   });
   editor = mountCatEditor({ character, groups, stop });
+  mountLayoutEditor({ layout, character, pause: () => { editor.pause(); editor.reset(); stop(); } });
 }
 
 initialize().catch(error => {

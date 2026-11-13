@@ -111,6 +111,22 @@ body {
   user-select: none;
 }
 
+.layout-editor {
+  width: min(100%, 440px);
+  padding: .75rem;
+  border: 1px solid var(--ink);
+  border-radius: .75rem;
+  background: #fff8eb;
+}
+.layout-editor p { margin: .5rem 0; font-size: .85rem; }
+.layout-editor label { display: grid; gap: .25rem; }
+.layout-editor input, .layout-editor select { width: 100%; min-width: 0; padding: .4rem; font: inherit; }
+.layout-editor__fields { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-block: .5rem; }
+.layout-editor__buttons { display: flex; flex-wrap: wrap; gap: .5rem; margin-block: .75rem; }
+.layout-editor button { padding: .5rem .7rem; }
+.layout-editing { cursor: move; touch-action: none; }
+.cat-part.layout-selected { outline: 2px dashed #0063cf; outline-offset: 3px; }
+
 @media (min-width: 981px) {
   body.animation-editor-enabled .stage {
     width: calc(100vw - clamp(420px, var(--animation-editor-width), 720px) - 2rem);
