@@ -13,7 +13,7 @@ const ROBOT_CONFIG = Object.fromEntries(PART_NAMES.map(name => {
 }));
 function splitTransformOrigin(value) { const [x,y] = value.split(' ').map(parseFloat); return {x,y}; }
 function joinTransformOrigin(x,y) { return `${x}% ${y}%`; }
-const ANIMATION_STORAGE_KEY = 'popaAnimationEditorData';
+const ANIMATION_STORAGE_KEY = 'popaAnimationEditorDataV2';
 const EDITOR_FIELDS = ['x', 'y', 'rotate', 'scale', 'scaleX', 'scaleY', 'opacity', 'transformOriginX', 'transformOriginY'];
 const EASE_OPTIONS = [
   'none',

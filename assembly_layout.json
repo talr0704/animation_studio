@@ -14,18 +14,6 @@
       "flipX": true
     },
     {
-      "file": "Limbs/leg_right.png",
-      "centerX": 175.5,
-      "centerY": 400.5,
-      "clockwiseDegrees": 0
-    },
-    {
-      "file": "Limbs/leg_left.png",
-      "centerX": 258.5,
-      "centerY": 395.5,
-      "clockwiseDegrees": 0
-    },
-    {
       "file": "Limbs/foot_right.png",
       "centerX": 183.5,
       "centerY": 425,
@@ -44,22 +32,27 @@
       "clockwiseDegrees": 0
     },
     {
-      "file": "Limbs/hand_left.png",
-      "centerX": 321.5,
-      "centerY": 306.5,
-      "clockwiseDegrees": 7
+      "file": "Limbs/right_arm.png",
+      "centerX": 313,
+      "centerY": 303,
+      "clockwiseDegrees": -8,
+      "pivotX": 290,
+      "pivotY": 277
     },
     {
       "file": "Outfit/shirt.png",
       "centerX": 225.5,
       "centerY": 322,
-      "clockwiseDegrees": -12
+      "clockwiseDegrees": -12,
+      "clipPath": "inset(0 28% 0 28%)"
     },
     {
-      "file": "Limbs/hand_right.png",
-      "centerX": 146.5,
-      "centerY": 337.5,
-      "clockwiseDegrees": 8
+      "file": "Limbs/left_arm.png",
+      "centerX": 148,
+      "centerY": 324,
+      "clockwiseDegrees": 4,
+      "pivotX": 174,
+      "pivotY": 294
     },
     {
       "file": "Outfit/pinafore.png",
@@ -193,48 +186,6 @@
       ]
     },
     {
-      "file": "Limbs/arm_right.png",
-      "artworkSize": [
-        45,
-        55
-      ]
-    },
-    {
-      "file": "Limbs/arm_left.png",
-      "artworkSize": [
-        44,
-        53
-      ]
-    },
-    {
-      "file": "Limbs/hand_right.png",
-      "artworkSize": [
-        57,
-        65
-      ]
-    },
-    {
-      "file": "Limbs/hand_left.png",
-      "artworkSize": [
-        41,
-        51
-      ]
-    },
-    {
-      "file": "Limbs/leg_right.png",
-      "artworkSize": [
-        51,
-        57
-      ]
-    },
-    {
-      "file": "Limbs/leg_left.png",
-      "artworkSize": [
-        51,
-        57
-      ]
-    },
-    {
       "file": "Limbs/foot_right.png",
       "artworkSize": [
         67,
@@ -358,6 +309,20 @@
       "artworkSize": [
         53,
         28
+      ]
+    },
+    {
+      "file": "Limbs/right_arm.png",
+      "displaySize": [
+        94,
+        88.4
+      ]
+    },
+    {
+      "file": "Limbs/left_arm.png",
+      "displaySize": [
+        102,
+        95.9
       ]
     }
   ]

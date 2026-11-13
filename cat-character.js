@@ -31,7 +31,7 @@ function play(name) {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (name === 'stop' || reduced) return;
   const head = groups.get('head');
-  const hand = groups.get('hand_right');
+  const hand = groups.get('left_arm');
   const version = actionVersion;
   let main;
   switch (name) {
@@ -84,21 +84,23 @@ async function initialize() {
   layout.layersBackToFront.forEach((layer, index) => {
     const file = layer.file.split('/').pop();
     const name = file.replace('.png', '');
-    const [width, height] = sprites.get(layer.file).artworkSize.map(value => value + layout.transparentPadding * 2);
+    const sprite = sprites.get(layer.file);
+    const [width, height] = sprite.displaySize ?? sprite.artworkSize.map(value => value + layout.transparentPadding * 2);
     const group = document.createElement('div');
     group.className = 'cat-group';
     group.style.zIndex = index;
-    group.style.transformOrigin = `${layer.centerX}px ${layer.centerY - height * .3}px`;
+    group.style.transformOrigin = `${layer.pivotX ?? layer.centerX}px ${layer.pivotY ?? layer.centerY - height * .3}px`;
     const image = document.createElement('img');
     image.className = 'cat-part';
     image.alt = '';
     image.draggable = false;
     image.dataset.sprite = name;
     Object.assign(image.style, { left: `${layer.centerX - width / 2}px`, top: `${layer.centerY - height / 2}px`, width: `${width}px`, height: `${height}px`, transform: `rotate(${layer.clockwiseDegrees}deg) scaleX(${layer.flipX ? -1 : 1})` });
-    image.src = new URL(`${name.startsWith('hand_') ? './assets/popa/' : './images/'}${file}`, import.meta.url).href;
+    if (layer.clipPath) image.style.clipPath = layer.clipPath;
+    image.src = new URL(`./images/${file}`, import.meta.url).href;
     loads.push(image.decode());
     group.append(image);
-    (index >= 10 ? headGroup : character).append(group);
+    (/^(Head|Face|Accessories)\//.test(layer.file) ? headGroup : character).append(group);
     if (name !== 'head') groups.set(name, group);
   });
   await Promise.all(loads);
