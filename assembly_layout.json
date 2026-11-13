@@ -8,118 +8,136 @@
   "layersBackToFront": [
     {
       "file": "Body/tail.png",
-      "centerX": 110,
-      "centerY": 352,
-      "clockwiseDegrees": 0,
-      "flipX": true
+      "centerX": 100.9000244140625,
+      "centerY": 353.1000061035156,
+      "clockwiseDegrees": -33,
+      "flipX": true,
+      "zIndex": 0
     },
     {
-      "file": "Limbs/foot_right.png",
-      "centerX": 183.5,
-      "centerY": 425,
-      "clockwiseDegrees": 0
+      "file": "Body/torso.png",
+      "centerX": 224.79989624023438,
+      "centerY": 346.0000305175781,
+      "clockwiseDegrees": 0,
+      "clipPath": "inset(0 20% 0 20%)",
+      "zIndex": 3
     },
     {
       "file": "Limbs/foot_left.png",
       "centerX": 265.5,
-      "centerY": 420,
-      "clockwiseDegrees": 0
-    },
-    {
-      "file": "Body/torso.png",
-      "centerX": 228,
-      "centerY": 334,
+      "centerY": 421.6000061035156,
       "clockwiseDegrees": 0,
-      "clipPath": "inset(0 20% 0 20%)"
+      "zIndex": 4
     },
     {
       "file": "Limbs/right_arm.png",
-      "centerX": 313,
-      "centerY": 303,
+      "centerX": 308.20001220703125,
+      "centerY": 329.3999938964844,
       "clockwiseDegrees": -8,
-      "pivotX": 290,
-      "pivotY": 277
+      "pivotX": 285.20001220703125,
+      "pivotY": 303.3999938964844,
+      "zIndex": 4
     },
     {
       "file": "Outfit/shirt.png",
-      "centerX": 234,
-      "centerY": 319,
-      "clockwiseDegrees": -4,
-      "clipPath": "inset(0 28% 0 28%)"
+      "centerX": 231.9000244140625,
+      "centerY": 329.2001037597656,
+      "clockwiseDegrees": 0,
+      "clipPath": "inset(0 28% 0 28%)",
+      "zIndex": 5
     },
     {
       "file": "Limbs/left_arm.png",
-      "centerX": 148,
-      "centerY": 324,
-      "clockwiseDegrees": 4,
-      "pivotX": 174,
-      "pivotY": 294
+      "centerX": 143.99996948242188,
+      "centerY": 344.7999725341797,
+      "clockwiseDegrees": -2,
+      "pivotX": 169.99996948242188,
+      "pivotY": 314.7999725341797,
+      "zIndex": 6
+    },
+    {
+      "file": "Limbs/foot_right.png",
+      "centerX": 191.5,
+      "centerY": 425,
+      "clockwiseDegrees": 0,
+      "zIndex": 7
     },
     {
       "file": "Outfit/pinafore.png",
-      "centerX": 235,
-      "centerY": 359,
-      "clockwiseDegrees": -4
+      "centerX": 227.80001831054688,
+      "centerY": 353.3999938964844,
+      "clockwiseDegrees": -4,
+      "zIndex": 7
     },
     {
       "file": "Head/ear_right.png",
       "centerX": 115.74609691402786,
       "centerY": 120.1542117881574,
-      "clockwiseDegrees": -22
+      "clockwiseDegrees": -22,
+      "zIndex": 8
     },
     {
       "file": "Head/ear_left.png",
       "centerX": 265.6083207134852,
       "centerY": 82.2818752101044,
-      "clockwiseDegrees": -12
+      "clockwiseDegrees": -12,
+      "zIndex": 9
     },
     {
       "file": "Head/head.png",
       "centerX": 210.86621716766933,
       "centerY": 197.63590461254512,
-      "clockwiseDegrees": -6
+      "clockwiseDegrees": -6,
+      "zIndex": 10
     },
     {
       "file": "Face/whiskers_right.png",
       "centerX": 60.349939725626285,
       "centerY": 234.06872257917956,
-      "clockwiseDegrees": -12
+      "clockwiseDegrees": -12,
+      "zIndex": 11
     },
     {
       "file": "Face/whiskers_left.png",
       "centerX": 357.03405292382587,
       "centerY": 186.79783327299114,
-      "clockwiseDegrees": -11
+      "clockwiseDegrees": -11,
+      "zIndex": 12
     },
     {
       "file": "Face/eye_happy_right.png",
       "centerX": 173.75532164924024,
       "centerY": 198.5198920673435,
-      "clockwiseDegrees": -8
+      "clockwiseDegrees": -8,
+      "zIndex": 13
     },
     {
       "file": "Face/eye_happy_left.png",
       "centerX": 293.6743571357307,
       "centerY": 181.89386043048438,
-      "clockwiseDegrees": -8
+      "clockwiseDegrees": -8,
+      "zIndex": 14
     },
     {
       "file": "Face/mouth_happy.png",
       "centerX": 241.14386775611672,
       "centerY": 213.0554984737301,
-      "clockwiseDegrees": -8
+      "clockwiseDegrees": -8,
+      "zIndex": 15
     },
     {
       "file": "Face/nose.png",
       "centerX": 238.712830237981,
       "centerY": 194.70910764105082,
-      "clockwiseDegrees": -8
+      "clockwiseDegrees": -8,
+      "zIndex": 16
     },
     {
       "file": "Accessories/flower.png",
       "centerX": 306.22392274003187,
       "centerY": 95.6093983116107,
-      "clockwiseDegrees": -3
+      "clockwiseDegrees": -3,
+      "zIndex": 17
     }
   ],
   "sprites": [
@@ -128,6 +146,10 @@
       "artworkSize": [
         320,
         228
+      ],
+      "displaySize": [
+        344,
+        252
       ]
     },
     {
@@ -135,6 +157,10 @@
       "artworkSize": [
         101,
         104
+      ],
+      "displaySize": [
+        125,
+        128
       ]
     },
     {
@@ -142,6 +168,10 @@
       "artworkSize": [
         83,
         88
+      ],
+      "displaySize": [
+        107,
+        112
       ]
     },
     {
@@ -149,6 +179,10 @@
       "artworkSize": [
         14,
         10
+      ],
+      "displaySize": [
+        38,
+        34
       ]
     },
     {
@@ -156,6 +190,10 @@
       "artworkSize": [
         148,
         150
+      ],
+      "displaySize": [
+        172,
+        174
       ]
     },
     {
@@ -163,6 +201,10 @@
       "artworkSize": [
         207,
         96
+      ],
+      "displaySize": [
+        231,
+        120
       ]
     },
     {
@@ -170,6 +212,10 @@
       "artworkSize": [
         200,
         124
+      ],
+      "displaySize": [
+        224,
+        148
       ]
     },
     {
@@ -177,6 +223,10 @@
       "artworkSize": [
         91,
         91
+      ],
+      "displaySize": [
+        115,
+        115
       ]
     },
     {
@@ -184,6 +234,10 @@
       "artworkSize": [
         135,
         139
+      ],
+      "displaySize": [
+        159,
+        163
       ]
     },
     {
@@ -191,6 +245,10 @@
       "artworkSize": [
         67,
         46
+      ],
+      "displaySize": [
+        91,
+        70
       ]
     },
     {
@@ -198,6 +256,10 @@
       "artworkSize": [
         65,
         46
+      ],
+      "displaySize": [
+        89,
+        70
       ]
     },
     {
@@ -219,6 +281,10 @@
       "artworkSize": [
         44,
         24
+      ],
+      "displaySize": [
+        68,
+        48
       ]
     },
     {
@@ -226,6 +292,10 @@
       "artworkSize": [
         44,
         24
+      ],
+      "displaySize": [
+        68,
+        48
       ]
     },
     {
@@ -261,6 +331,10 @@
       "artworkSize": [
         39,
         33
+      ],
+      "displaySize": [
+        63,
+        57
       ]
     },
     {
@@ -289,6 +363,10 @@
       "artworkSize": [
         61,
         47
+      ],
+      "displaySize": [
+        85,
+        71
       ]
     },
     {
@@ -296,6 +374,10 @@
       "artworkSize": [
         61,
         47
+      ],
+      "displaySize": [
+        85,
+        71
       ]
     },
     {
