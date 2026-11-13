@@ -36,15 +36,6 @@
       "pivotY": 401.3999938964844
     },
     {
-      "file": "Limbs/right_arm.png",
-      "centerX": 303.40008544921875,
-      "centerY": 327.79998779296875,
-      "clockwiseDegrees": -8,
-      "pivotX": 274.00006103515625,
-      "pivotY": 306.5999755859375,
-      "zIndex": 4
-    },
-    {
       "file": "Outfit/shirt.png",
       "centerX": 231.10003662109375,
       "centerY": 330.0000915527344,
@@ -53,15 +44,6 @@
       "zIndex": 5,
       "pivotX": 223.90005493164062,
       "pivotY": 306.8001251220703
-    },
-    {
-      "file": "Limbs/left_arm.png",
-      "centerX": 143.99996948242188,
-      "centerY": 344.7999725341797,
-      "clockwiseDegrees": -2,
-      "pivotX": 165.19998168945312,
-      "pivotY": 315.59996032714844,
-      "zIndex": 6
     },
     {
       "file": "Limbs/foot_right.png",
@@ -89,6 +71,24 @@
       "zIndex": 8,
       "pivotX": 117.34610301754348,
       "pivotY": 124.15420568464177
+    },
+    {
+      "file": "Limbs/right_arm.png",
+      "centerX": 309.800048828125,
+      "centerY": 326.9999694824219,
+      "clockwiseDegrees": -8,
+      "pivotX": 280.4000244140625,
+      "pivotY": 305.7999572753906,
+      "zIndex": 9
+    },
+    {
+      "file": "Limbs/left_arm.png",
+      "centerX": 140.79998779296875,
+      "centerY": 343.1999969482422,
+      "clockwiseDegrees": -2,
+      "pivotX": 162,
+      "pivotY": 313.99998474121094,
+      "zIndex": 9
     },
     {
       "file": "Head/ear_left.png",

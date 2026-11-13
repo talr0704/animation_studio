@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'popaAssemblyPositionsV4';
+const STORAGE_KEY = 'popaAssemblyPositionsV5';
 const labels = { shirt: 'חולצה', tail: 'זנב', pinafore: 'סרפן', torso: 'גוף', left_arm: 'יד בצד שמאל', right_arm: 'יד בצד ימין', head: 'ראש', ear_left: 'אוזן שמאל', ear_right: 'אוזן ימין', foot_left: 'כף רגל שמאל', foot_right: 'כף רגל ימין', flower: 'פרח', eye_happy_left: 'עין שמאל', eye_happy_right: 'עין ימין', mouth_happy: 'פה', nose: 'אף', whiskers_left: 'שפם שמאל', whiskers_right: 'שפם ימין' };
 
 export function mountLayoutEditor({ layout, character, pause, setPivot }) {
