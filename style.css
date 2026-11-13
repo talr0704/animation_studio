@@ -126,6 +126,25 @@ body {
 .layout-editor button { padding: .5rem .7rem; }
 .layout-editing { cursor: move; touch-action: none; }
 .cat-part.layout-selected { outline: 2px dashed #0063cf; outline-offset: 3px; }
+.cat-pivot {
+  position: absolute;
+  z-index: 100000;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: #d52828;
+  box-shadow: 0 0 0 2px #8b0000;
+  transform: translate(-50%, -50%);
+  cursor: crosshair;
+  touch-action: none;
+}
+.cat-pivot[hidden] { display: none; }
+.cat-pivot:hover, .cat-pivot:active, .cat-pivot:focus-visible {
+  transform: translate(-50%, -50%);
+  background: #d52828;
+}
 
 @media (min-width: 981px) {
   body.animation-editor-enabled .stage {

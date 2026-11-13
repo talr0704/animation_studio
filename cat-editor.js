@@ -1461,5 +1461,15 @@ if (ANIMATION_EDITOR_ENABLED) {
   previewAtTime(0);
 }
 
-return { pause: pauseEditorAnimation, reset: resetEntireFrameToBase };
+return {
+  pause: pauseEditorAnimation,
+  reset: resetEntireFrameToBase,
+  setPivot(name, x, y) {
+    const origin = { transformOriginX: x / 440 * 100, transformOriginY: y / 475 * 100 };
+    ROBOT_CONFIG[name].transformOrigin = joinTransformOrigin(origin.transformOriginX, origin.transformOriginY);
+    Object.assign(currentEditorValues[name], origin);
+    gsap.set(name === 'head' ? [partElements[name], ...headFollowers] : partElements[name], { transformOrigin: `${x}px ${y}px` });
+    if (editorSelectedPart === name) refreshEditorTransformInputs();
+  },
+};
 }

@@ -115,7 +115,7 @@ async function initialize() {
     if (button) play(button.dataset.action);
   });
   editor = mountCatEditor({ character, groups, stop, headFollowers });
-  mountLayoutEditor({ layout, character, pause: () => { editor.pause(); editor.reset(); stop(); } });
+  mountLayoutEditor({ layout, character, setPivot: (name, x, y) => editor.setPivot(name, x, y), pause: () => { editor.pause(); editor.reset(); stop(); } });
 }
 
 initialize().catch(error => {
