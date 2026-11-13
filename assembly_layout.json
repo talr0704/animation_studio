@@ -8,9 +8,9 @@
   "layersBackToFront": [
     {
       "file": "Body/tail.png",
-      "centerX": 94.5,
-      "centerY": 355.5,
-      "clockwiseDegrees": 2,
+      "centerX": 110,
+      "centerY": 352,
+      "clockwiseDegrees": 0,
       "flipX": true
     },
     {
@@ -29,7 +29,8 @@
       "file": "Body/torso.png",
       "centerX": 228,
       "centerY": 334,
-      "clockwiseDegrees": 0
+      "clockwiseDegrees": 0,
+      "clipPath": "inset(0 20% 0 20%)"
     },
     {
       "file": "Limbs/right_arm.png",
@@ -41,9 +42,9 @@
     },
     {
       "file": "Outfit/shirt.png",
-      "centerX": 225.5,
-      "centerY": 322,
-      "clockwiseDegrees": -12,
+      "centerX": 234,
+      "centerY": 319,
+      "clockwiseDegrees": -4,
       "clipPath": "inset(0 28% 0 28%)"
     },
     {
