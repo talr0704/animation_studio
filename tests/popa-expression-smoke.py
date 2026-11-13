@@ -55,8 +55,8 @@ with sync_playwright() as p:
     assert page.locator('.cat-character').get_attribute('data-action') == 'walk'
     page.locator('[data-action="stop"]').click()
     assert_expression('surprised')
-    page.locator('[data-action="talk"]').click()
-    page.wait_for_function('document.querySelector("[data-sprite=mouth_happy]").src.endsWith("mouth_closed.png")')
+    page.locator('[data-action="rest"]').click()
+    page.wait_for_function('document.querySelector("[data-sprite=eye_happy_left]").src.endsWith("eye_sleep_left.png")')
     page.locator('button[data-expression="sleepy"]').click()
     page.locator('[data-action="stop"]').click()
     assert_expression('sleepy')

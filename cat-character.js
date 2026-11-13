@@ -11,7 +11,7 @@ let editor;
 let motion;
 const headFollowers = [];
 const bodyMotions = [];
-function stop() { motion?.stop(); }
+function stop() { motion?.stop({ immediate: true }); }
 function play(name) { motion?.play(name); }
 
 async function initialize() {
@@ -37,11 +37,15 @@ async function initialize() {
     const bodyMotion = document.createElement('div');
     bodyMotion.className = 'cat-group cat-body-motion';
     bodyMotion.style.transformOrigin = '230px 415px';
-    bodyMotion.append(group);
+    const headMotion = document.createElement('div');
+    headMotion.className = 'cat-group cat-head-motion';
+    headMotion.style.transformOrigin = '211px 285px';
+    headMotion.append(group);
+    bodyMotion.append(headMotion);
     layerElement.append(bodyMotion);
     if (!name.startsWith('foot_')) bodyMotions.push(bodyMotion);
     character.append(layerElement);
-    if (/^(Head|Face|Accessories)\//.test(layer.file) && name !== 'head') headFollowers.push(layerElement);
+    if (/^(Head|Face|Accessories)\//.test(layer.file) && name !== 'head') headFollowers.push(headMotion);
     if (name === 'head') group.style.transformOrigin = '211px 285px';
     const image = document.createElement('img');
     image.className = 'cat-part';
@@ -57,15 +61,35 @@ async function initialize() {
   });
   await Promise.all(loads);
   const expressions = await createCatExpressions({ character, controls });
-  character.dataset.ready = 'true';
   controls.querySelectorAll('button').forEach(button => { button.disabled = false; });
   controls.addEventListener('click', event => {
     const button = event.target.closest('button[data-action]');
     if (button) play(button.dataset.action);
   });
-  motion = createCatAnimations({ character, wrapper, groups, headFollowers, bodyMotions, controls, expressions, editor: () => editor });
+  const shadow = document.createElement('div');
+  shadow.className = 'cat-floor-shadow';
+  shadow.setAttribute('aria-hidden', 'true');
+  character.closest('.cat-frame').prepend(shadow);
+  const itemAnchor = document.createElement('div');
+  itemAnchor.className = 'cat-item-anchor';
+  itemAnchor.setAttribute('aria-label', 'Held item');
+  character.append(itemAnchor);
+  bodyMotions.push(itemAnchor);
+  motion = createCatAnimations({ character, wrapper, groups, headFollowers, bodyMotions, controls, expressions, shadow, itemAnchor, editor: () => editor });
   editor = mountCatEditor({ character, groups, stop, headFollowers });
+  window.popa = {
+    play: name => motion.play(name), stop: () => motion.stop(),
+    setExpression: name => expressions.setExpression(name),
+    element: character, itemAnchor, clips: motion.clips,
+    attachItem(element) {
+      if (!(element instanceof Element)) throw new TypeError('attachItem requires a DOM element');
+      itemAnchor.replaceChildren(element);
+    },
+    clearItem() { itemAnchor.replaceChildren(); },
+  };
   mountLayoutEditor({ layout, character, setPivot: (name, x, y) => editor.setPivot(name, x, y), pause: () => { editor.pause(); editor.reset(); stop(); } });
+  character.dataset.ready = 'true';
+  character.dispatchEvent(new CustomEvent('popa:ready', { bubbles: true }));
 }
 
 initialize().catch(error => {

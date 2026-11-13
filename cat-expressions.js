@@ -29,6 +29,7 @@ export async function createCatExpressions({ character, controls }) {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (Object.hasOwn(EXPRESSIONS, saved)) selected = saved;
   } catch { /* Expression controls also work without local storage. */ }
+  let eyeOverride = null;
   let speechTimer;
   let speechMouth = null;
   const panel = document.createElement('section');
@@ -57,14 +58,14 @@ export async function createCatExpressions({ character, controls }) {
     // Scale only the open-eye artwork around its calibrated center. The assembly
     // slots retain their original dimensions, so closed eyes and exports stay intact.
     eyes.forEach((image, index) => {
-      image.src = imageUrl(`eye_${expression.eyes}_${index === 0 ? 'left' : 'right'}.png`);
-      const size = expression.eyes === 'open' ? OPEN_EYE_SIZE : CLOSED_EYE_SIZE;
+      image.src = imageUrl(`eye_${eyeOverride ?? expression.eyes}_${index === 0 ? 'left' : 'right'}.png`);
+      const size = (eyeOverride ?? expression.eyes) === 'open' ? OPEN_EYE_SIZE : CLOSED_EYE_SIZE;
       const x = size.width / parseFloat(image.style.width);
       const y = size.height / parseFloat(image.style.height);
       image.style.scale = x === 1 && y === 1 ? '' : `${x} ${y}`;
       // Open-eye PNGs are square with transparent margins. Contain shrank their
       // visible artwork; cover trims only padding and keeps the eye round.
-      image.style.objectFit = expression.eyes === 'open' ? 'cover' : 'contain';
+      image.style.objectFit = (eyeOverride ?? expression.eyes) === 'open' ? 'cover' : 'contain';
     });
     mouth.src = imageUrl(`mouth_${speechMouth ?? expression.mouth}.png`);
     character.dataset.expression = selected;
@@ -89,5 +90,12 @@ export async function createCatExpressions({ character, controls }) {
     return stopTalking;
   }
   render();
-  return { startTalking, stopTalking };
+  return {
+    startTalking, stopTalking,
+    overrideEyes(value) { eyeOverride = value; render(); },
+    setExpression(name) {
+      if (!Object.hasOwn(EXPRESSIONS, name)) throw new Error(`Unknown expression: ${name}`);
+      selected = name; render();
+    },
+  };
 }

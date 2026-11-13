@@ -68,3 +68,9 @@ If the repository is owned by an organization, replace `<your-github-username>` 
 4. Under **Build and deployment**, choose **GitHub Actions** as the source.
 5. Open the **Actions** tab and wait for **Deploy static site to GitHub Pages** to complete.
 6. Copy the live link from **Settings → Pages** or from the workflow summary.
+
+## Popa 2D game clips
+
+The current cat demo includes the nine requested game clips, a fixed floor shadow,
+an interaction event and a held-item anchor. See [Popa game animation integration](docs/popa-game-animations.md)
+for clip names, timings, the `window.popa` API and validation commands.

@@ -855,3 +855,21 @@ textarea:focus-visible {
   body.animation-editor-enabled .stage { min-height: auto; padding-bottom: 2rem; }
   .animation-editor { position: relative; inset: auto; width: calc(100% - 1rem); min-width: 0; max-width: none; max-height: none; margin: .5rem; border-radius: 1rem; }
 }
+
+/* A separate floor shadow never follows the jumping character. */
+.cat-frame::before { display: none; }
+.cat-floor-shadow {
+ position: absolute; left: 110px; top: 435px; width: 225px; height: 25px;
+ border-radius: 50%; background: #f6b6c8; filter: blur(2px);
+ transform-origin: center; pointer-events: none;
+}
+.cat-item-anchor {
+ position: absolute; inset: 0; width: 440px; height: 475px;
+ transform-origin: 230px 415px; z-index: 8; pointer-events: none;
+ display: grid; grid-template-columns: 1fr; align-content: start;
+ padding-top: 312px; justify-items: center;
+}
+.cat-item-anchor > * { max-width: 44px; max-height: 44px; object-fit: contain; line-height: 1; }
+@media (max-width: 500px) {
+ .cat-floor-shadow { left: 77px; top: 305px; width: 158px; height: 18px; }
+}
