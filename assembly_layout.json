@@ -12,7 +12,9 @@
       "centerY": 353.1000061035156,
       "clockwiseDegrees": -33,
       "flipX": true,
-      "zIndex": 0
+      "zIndex": 0,
+      "pivotX": 155.30001831054688,
+      "pivotY": 376.19996032714846
     },
     {
       "file": "Body/torso.png",
@@ -20,22 +22,26 @@
       "centerY": 346.0000305175781,
       "clockwiseDegrees": 0,
       "clipPath": "inset(0 20% 0 20%)",
-      "zIndex": 3
+      "zIndex": 3,
+      "pivotX": 224.79989624023438,
+      "pivotY": 293.8000305175781
     },
     {
       "file": "Limbs/foot_left.png",
       "centerX": 265.5,
       "centerY": 421.6000061035156,
       "clockwiseDegrees": 0,
-      "zIndex": 4
+      "zIndex": 4,
+      "pivotX": 265.5,
+      "pivotY": 405.3999938964844
     },
     {
       "file": "Limbs/right_arm.png",
-      "centerX": 308.20001220703125,
-      "centerY": 329.3999938964844,
+      "centerX": 303.40008544921875,
+      "centerY": 327.79998779296875,
       "clockwiseDegrees": -8,
-      "pivotX": 285.20001220703125,
-      "pivotY": 303.3999938964844,
+      "pivotX": 274.00006103515625,
+      "pivotY": 306.5999755859375,
       "zIndex": 4
     },
     {
@@ -44,15 +50,17 @@
       "centerY": 329.2001037597656,
       "clockwiseDegrees": 0,
       "clipPath": "inset(0 28% 0 28%)",
-      "zIndex": 5
+      "zIndex": 5,
+      "pivotX": 224.70004272460938,
+      "pivotY": 306.00013732910156
     },
     {
       "file": "Limbs/left_arm.png",
       "centerX": 143.99996948242188,
       "centerY": 344.7999725341797,
       "clockwiseDegrees": -2,
-      "pivotX": 169.99996948242188,
-      "pivotY": 314.7999725341797,
+      "pivotX": 165.19998168945312,
+      "pivotY": 315.59996032714844,
       "zIndex": 6
     },
     {
@@ -60,84 +68,108 @@
       "centerX": 191.5,
       "centerY": 425,
       "clockwiseDegrees": 0,
-      "zIndex": 7
+      "zIndex": 7,
+      "pivotX": 192.30001831054688,
+      "pivotY": 411.1999816894531
     },
     {
       "file": "Outfit/pinafore.png",
       "centerX": 227.80001831054688,
-      "centerY": 353.3999938964844,
+      "centerY": 355,
       "clockwiseDegrees": -4,
-      "zIndex": 7
+      "zIndex": 7,
+      "pivotX": 227.00006103515625,
+      "pivotY": 309.80002746582034
     },
     {
       "file": "Head/ear_right.png",
       "centerX": 115.74609691402786,
       "centerY": 120.1542117881574,
       "clockwiseDegrees": -22,
-      "zIndex": 8
+      "zIndex": 8,
+      "pivotX": 117.34610301754348,
+      "pivotY": 124.15420568464177
     },
     {
       "file": "Head/ear_left.png",
       "centerX": 265.6083207134852,
       "centerY": 82.2818752101044,
       "clockwiseDegrees": -12,
-      "zIndex": 9
+      "zIndex": 9,
+      "pivotX": 273.6083207134852,
+      "pivotY": 87.08186910658878
     },
     {
       "file": "Head/head.png",
       "centerX": 210.86621716766933,
       "centerY": 197.63590461254512,
       "clockwiseDegrees": -6,
-      "zIndex": 10
+      "zIndex": 10,
+      "pivotX": 230.20001220703125,
+      "pivotY": 295.40000915527344
     },
     {
       "file": "Face/whiskers_right.png",
       "centerX": 60.349939725626285,
       "centerY": 234.06872257917956,
       "clockwiseDegrees": -12,
-      "zIndex": 11
+      "zIndex": 11,
+      "pivotX": 87.54995193265754,
+      "pivotY": 225.5687103721483
     },
     {
       "file": "Face/whiskers_left.png",
       "centerX": 357.03405292382587,
       "centerY": 186.79783327299114,
       "clockwiseDegrees": -11,
-      "zIndex": 12
+      "zIndex": 12,
+      "pivotX": 331.43407733788837,
+      "pivotY": 188.69783785062785
     },
     {
       "file": "Face/eye_happy_right.png",
       "centerX": 173.75532164924024,
       "centerY": 198.5198920673435,
       "clockwiseDegrees": -8,
-      "zIndex": 13
+      "zIndex": 13,
+      "pivotX": 176.15531554572462,
+      "pivotY": 191.3198584980076
     },
     {
       "file": "Face/eye_happy_left.png",
       "centerX": 293.6743571357307,
       "centerY": 181.89386043048438,
       "clockwiseDegrees": -8,
-      "zIndex": 14
+      "zIndex": 14,
+      "pivotX": 293.6743571357307,
+      "pivotY": 173.09386653400003
     },
     {
       "file": "Face/mouth_happy.png",
       "centerX": 241.14386775611672,
       "centerY": 213.0554984737301,
       "clockwiseDegrees": -8,
-      "zIndex": 15
+      "zIndex": 15,
+      "pivotX": 241.14386775611672,
+      "pivotY": 202.35552288779257
     },
     {
       "file": "Face/nose.png",
       "centerX": 238.712830237981,
       "centerY": 194.70910764105082,
       "clockwiseDegrees": -8,
-      "zIndex": 16
+      "zIndex": 16,
+      "pivotX": 238.712830237981,
+      "pivotY": 184.50910764105083
     },
     {
       "file": "Accessories/flower.png",
       "centerX": 306.22392274003187,
       "centerY": 95.6093983116107,
       "clockwiseDegrees": -3,
-      "zIndex": 17
+      "zIndex": 17,
+      "pivotX": 305.4239349470631,
+      "pivotY": 121.90940136336852
     }
   ],
   "sprites": [
