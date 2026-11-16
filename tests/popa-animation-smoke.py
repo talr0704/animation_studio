@@ -21,7 +21,7 @@ with sync_playwright() as p:
           const b=e.getBoundingClientRect();
           return [e.dataset.sprite, ...[b.x,b.y,b.width,b.height].map(v=>Math.round(v*100)/100),e.src,e.closest('.cat-layer').style.zIndex];
         })''')
-    page.evaluate("popa.setExpression('playful')")
+    page.evaluate("popa.setExpression('happy')")
     base = geometry()
     shadow_center = page.locator('.cat-floor-shadow').evaluate('e=>{const r=e.getBoundingClientRect();return r.y+r.height/2}')
     for name, duration in DURATIONS.items():
@@ -44,9 +44,10 @@ with sync_playwright() as p:
                   getComputedStyle(e.closest('.cat-body-motion')).transform===getComputedStyle(head.closest('.cat-body-motion')).transform;
               });
             }'''), name
-            assert page.locator('[data-sprite="mouth_happy"]').get_attribute('src').endswith('mouth_tongue.png')
-            if name != 'rest':
-                assert page.locator('[data-sprite="eye_happy_left"]').get_attribute('src').endswith('eye_happy_left.png')
+            mouth = 'closed' if name in ['idle','walk','interact','rest'] else 'surprised' if name=='curious' else 'happy'
+            assert page.locator('[data-sprite="mouth_happy"]').get_attribute('src').endswith(f'mouth_{mouth}.png')
+            eye = 'open' if name in ['idle','walk','interact','curious'] else 'sleep' if name in ['rest','pet'] else 'happy'
+            assert page.locator('[data-sprite="eye_happy_left"]').get_attribute('src').endswith(f'eye_{eye}_left.png')
             if name == 'happy':
                 center = page.locator('.cat-floor-shadow').evaluate('e=>{const r=e.getBoundingClientRect();return r.y+r.height/2}')
                 assert abs(center-shadow_center) < .01

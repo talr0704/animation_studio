@@ -60,7 +60,7 @@ async function initialize() {
     groups.set(name, group);
   });
   await Promise.all(loads);
-  const expressions = await createCatExpressions({ character, controls });
+  const expressions = await createCatExpressions({ character });
   controls.querySelectorAll('button').forEach(button => { button.disabled = false; });
   controls.addEventListener('click', event => {
     const button = event.target.closest('button[data-action]');

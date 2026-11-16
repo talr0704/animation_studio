@@ -28,6 +28,7 @@ export function createCatAnimations({ character, wrapper, groups, headFollowers,
     running.forEach(animation => animation.cancel()); running = [];
     timers.forEach(clearTimeout); timers = [];
     cleanups.forEach(cleanup => cleanup()); cleanups = [];
+    expressions.setExpression('happy');
   }
   function snapshot() { return new Map(allTargets.map(element => [element, getComputedStyle(element).transform])); }
   function animate(element, frames, options) {
@@ -80,6 +81,7 @@ export function createCatAnimations({ character, wrapper, groups, headFollowers,
     mark(name);
     const token = generation;
     const clip = POPA_CLIPS[name];
+    expressions.setExpression(clip.expression);
     if (reduced()) return;
     try {
       const first = new Map();

@@ -20,16 +20,19 @@ The calibrated assembly and pivots are in `assembly_layout.json`; track data is 
 await popa.play('wave'); // Resolves on completion, or cancellation.
 await popa.play('walk'); // Resolves once the loop has started.
 popa.stop();            // Smooth 220 ms return to the base pose.
-popa.setExpression('happy'); // happy, neutral, sleepy, surprised, playful
+popa.setExpression('happy'); // Optional game API; playing a clip sets its own face.
 ```
 
 Switching clips blends the previous rig pose to the new clip's initial pose over
 220 ms. Intro/outro blends are separate from each clip's stated duration. Hold and
 rest enter and leave their dedicated poses smoothly. One-shot clips start and end
 in the base pose; every repeating track has matching endpoints and uses the same
-cycle duration. The selected mouth remains unchanged. Rest temporarily uses the
-existing sleep-eye assets; leaving rest restores the selected expression. Idle
-uses the same sleep-eye assets for a short blink without changing the selection.
+cycle duration. Every clip selects its own facial expression using the existing assets. Idle,
+walk and interact use open eyes with a closed mouth; happy, wave and hold smile;
+curious looks surprised; pet closes its eyes with a smile; rest uses sleepy eyes
+and a closed mouth. Idle adds a short blink. Stopping or finishing a clip restores
+the default happy face. A canceled blink cannot overwrite the next clip's face.
+There are no separate expression buttons or saved browser expression preferences.
 
 Listen for the game interaction marker on the character or document. It fires once
 per completed contact, after any entrance blend, and is canceled if the action is
@@ -63,8 +66,7 @@ item remain available when changing clips; the game decides when to clear them.
 The tail's layer is never raised. The floor shadow is a separate element and
 stays on the ground while its size responds gently to jump height.
 
-Reduced-motion preferences skip clip playback and transition effects. Explicit
-expression selection remains available.
+Reduced-motion preferences skip clip playback and transition effects. The facial expression still updates to match the requested clip.
 
 Validation from the repository root, with a local HTTP server running:
 
