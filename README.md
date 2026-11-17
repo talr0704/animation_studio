@@ -93,3 +93,7 @@ Open [`salon.html`](salon.html) for the care-and-haircut minigame using the uplo
 PNG artwork. Hair length changes preserve aligned roots, scissors rotate around
 a shared bolt, and completed requests reward the same local world wallet.
 See [the salon guide](docs/popa-salon.md).
+
+The salon now includes area-based care, a visual hairstyle request, creative
+scoring, before/after reveals and a persistent hairstyle album with unlocks.
+Haircut sections continue to be chosen using the section buttons.

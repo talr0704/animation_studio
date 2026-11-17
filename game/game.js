@@ -1,3 +1,4 @@
+import { readAlbum } from './salon-progress.js';
 import { createIllustratedProp } from './illustrated-prop.js';
 import { createPopa } from '../popa-browser.js';
 import { GardenRound } from './garden-round.js';
@@ -120,6 +121,7 @@ document.addEventListener('keydown',e=>{if(view!=='garden')return;if(e.key==='Es
 document.addEventListener('keyup',e=>keys.delete(e.key));window.addEventListener('blur',()=>{keys.clear();pause();});document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
 $('overlay').addEventListener('keydown',e=>{if(e.key==='Tab'){const buttons=[$('dialog-main'),$('dialog-secondary')];if(e.shiftKey&&document.activeElement===buttons[0]){e.preventDefault();buttons[1].focus();}else if(!e.shiftKey&&document.activeElement===buttons[1]){e.preventDefault();buttons[0].focus();}}});
 $('sound').onclick=()=>{sound=!sound;if(sound){try{audio??=new (window.AudioContext||window.webkitAudioContext)();audio.resume();}catch{sound=false;toast('הדפדפן הזה אינו תומך בצליל');}}$('sound').textContent=sound?'צליל פעיל ♫':'צליל כבוי ♫';$('sound').setAttribute('aria-pressed',String(sound));};
+$('salon-mirror').hidden=readAlbum().total<3;
 refreshProfile();new ResizeObserver(resize).observe(document.querySelector('.world'));resize();
 try{
   const response=await fetch(new URL('../assets/world/assemblies.json',import.meta.url));
