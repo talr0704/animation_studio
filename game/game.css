@@ -13,3 +13,5 @@
 .rug{position:absolute;width:46%;height:auto;aspect-ratio:500/90;left:27%;bottom:10px;pointer-events:none}
 .basket{position:absolute;z-index:6;width:65px;height:51px;transform:translateX(-50%);pointer-events:none}
 @media(max-width:700px){.prop-window{left:9%;top:12%;transform:scale(.65);transform-origin:top left}.prop-shelf{right:3%;top:35%;transform:scale(.65);transform-origin:top right}.prop-plant{right:0;transform:scale(.65);transform-origin:bottom right}.wall-art{left:53%;width:88px;height:106px}.rug{width:70%;left:15%}}
+
+.salon-link{display:inline-flex;align-items:center;text-decoration:none;padding:11px 18px;border-radius:10px;color:#a2687b;background:#f2e3e6;font-size:14px}@media(max-width:700px){.tabs{flex-wrap:wrap}.salon-link{font-size:12px;padding:10px 14px}}

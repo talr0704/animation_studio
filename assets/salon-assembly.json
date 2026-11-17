@@ -1,0 +1,29 @@
+{
+ "canvas":[800,560],
+ "headPivot":[400,305],
+ "station":[
+  {"selector":".chair","file":"Station/chair.png","position":[240,240],"size":[320,326],"layer":1},
+  {"selector":".cape","file":"Station/cape.png","position":[240,285],"size":[320,224],"layer":4},
+  {"selector":".head","file":"Station/popa_head.png","position":[245,63],"size":[310,260],"layer":5},
+  {"selector":".mirror","file":"Station/mirror.png","position":[28,154],"size":[170,200],"layer":0},
+  {"selector":".counter","file":"Station/counter.png","position":[602,315],"size":[180,179],"layer":0}
+ ],
+ "hair":{
+  "sourceCanvas":[400,400],"displaySize":[300,300],"anchor":[200,24],
+  "parts":[
+   {"id":"bangs","joint":[400,82],"layer":7},
+   {"id":"side_left","joint":[280,125],"layer":6},
+   {"id":"side_right","joint":[520,125],"layer":6},
+   {"id":"back_left","joint":[300,105],"layer":2},
+   {"id":"back_right","joint":[500,105],"layer":2}
+  ]
+ },
+ "scissors":{
+  "joint":[65,90],"scale":0.25,
+  "parts":[
+   {"selector":".blade.a","file":"Scissors/scissors_half_a.png","sourceSize":[281,814],"anchor":[173,423]},
+   {"selector":".blade.b","file":"Scissors/scissors_half_b.png","sourceSize":[280,814],"anchor":[108,423]}
+  ],
+  "bolt":{"file":"Scissors/pivot_bolt.png","size":[24,24]}
+ }
+}

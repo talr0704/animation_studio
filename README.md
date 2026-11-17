@@ -86,3 +86,10 @@ for clip names, timings, the `window.popa` API and validation commands.
 Open [`game.html`](game.html) for the furnished room and fruit-catching garden game.
 The prototype includes keyboard/touch controls, combos, hazards, a timed round,
 local rewards and a room decoration purchase. See [the world guide](docs/popa-world.md).
+
+## Popa salon
+
+Open [`salon.html`](salon.html) for the care-and-haircut minigame using the uploaded
+PNG artwork. Hair length changes preserve aligned roots, scissors rotate around
+a shared bolt, and completed requests reward the same local world wallet.
+See [the salon guide](docs/popa-salon.md).
