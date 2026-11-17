@@ -80,3 +80,9 @@ all assets, a scoped stylesheet, an instance-based `createPopa()` API and a work
 The current cat demo includes the nine requested game clips, a fixed floor shadow,
 an interaction event and a held-item anchor. See [Popa game animation integration](docs/popa-game-animations.md)
 for clip names, timings, the `window.popa` API and validation commands.
+
+## Popa's World prototype
+
+Open [`game.html`](game.html) for the furnished room and fruit-catching garden game.
+The prototype includes keyboard/touch controls, combos, hazards, a timed round,
+local rewards and a room decoration purchase. See [the world guide](docs/popa-world.md).

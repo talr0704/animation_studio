@@ -1,0 +1,192 @@
+{
+  "plant": {
+    "width": 120,
+    "height": 180,
+    "parts": [
+      {
+        "id": "stem",
+        "image": "plant-stem.svg",
+        "joint": [
+          60,
+          140
+        ],
+        "anchor": [
+          6,
+          98
+        ],
+        "size": [
+          12,
+          100
+        ],
+        "layer": 1
+      },
+      {
+        "id": "leftLeaf",
+        "parent": "stem",
+        "image": "leaf-left.svg",
+        "joint": [
+          0,
+          -35
+        ],
+        "anchor": [
+          60,
+          72
+        ],
+        "size": [
+          70,
+          80
+        ],
+        "layer": 2
+      },
+      {
+        "id": "rightLeaf",
+        "parent": "stem",
+        "image": "leaf-right.svg",
+        "joint": [
+          0,
+          -65
+        ],
+        "anchor": [
+          9,
+          81
+        ],
+        "size": [
+          70,
+          90
+        ],
+        "layer": 3
+      },
+      {
+        "id": "pot",
+        "image": "plant-pot.svg",
+        "joint": [
+          60,
+          125
+        ],
+        "anchor": [
+          40,
+          10
+        ],
+        "size": [
+          80,
+          64
+        ],
+        "layer": 10
+      }
+    ]
+  },
+  "window": {
+    "width": 185,
+    "height": 210,
+    "parts": [
+      {
+        "id": "frame",
+        "image": "window-frame.svg",
+        "joint": [
+          0,
+          0
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "size": [
+          185,
+          210
+        ],
+        "layer": 0
+      },
+      {
+        "id": "curtainLeft",
+        "image": "curtain.svg",
+        "joint": [
+          12,
+          20
+        ],
+        "anchor": [
+          8,
+          4
+        ],
+        "size": [
+          38,
+          158
+        ],
+        "layer": 1
+      },
+      {
+        "id": "curtainRight",
+        "image": "curtain.svg",
+        "joint": [
+          173,
+          20
+        ],
+        "anchor": [
+          32,
+          4
+        ],
+        "size": [
+          38,
+          158
+        ],
+        "layer": 1
+      }
+    ]
+  },
+  "shelf": {
+    "width": 155,
+    "height": 110,
+    "parts": [
+      {
+        "id": "shelf",
+        "image": "shelf.svg",
+        "joint": [
+          0,
+          95
+        ],
+        "anchor": [
+          0,
+          0
+        ],
+        "size": [
+          155,
+          16
+        ],
+        "layer": 3
+      },
+      {
+        "id": "books",
+        "image": "books.svg",
+        "joint": [
+          16,
+          95
+        ],
+        "anchor": [
+          0,
+          65
+        ],
+        "size": [
+          65,
+          65
+        ],
+        "layer": 1
+      },
+      {
+        "id": "vase",
+        "image": "vase.svg",
+        "joint": [
+          102,
+          95
+        ],
+        "anchor": [
+          0,
+          75
+        ],
+        "size": [
+          44,
+          75
+        ],
+        "layer": 1
+      }
+    ]
+  }
+}
