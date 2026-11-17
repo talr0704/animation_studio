@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>פופה — דוגמת שילוב במשחק דפדפן</title>
+  <link rel="stylesheet" href="./popa-browser.css">
+  <style>
+    body { margin: 0; padding: 1rem; font: 16px system-ui; color: #302719; background: #fff2d7; text-align: center; }
+    h1 { font-size: 1.3rem; }
+    #animations { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
+    button { padding: .6rem 1rem; border: 1px solid #302719; border-radius: 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>פופה במשחק הדפדפן שלך</h1>
+  <div id="popa"></div>
+  <p id="status" role="status">טוענת את פופה…</p>
+  <div id="animations"></div>
+  <script type="module">
+    import { createPopa } from './popa-browser.js';
+    const status = document.querySelector('#status');
+    try {
+      const popa = await createPopa(document.querySelector('#popa'), { scale: .65 });
+      window.demoPopa = popa;
+      status.textContent = 'בחרי אנימציה';
+      for (const name of [...popa.clips, 'stop']) {
+        const button = document.createElement('button');
+        button.textContent = name;
+        button.addEventListener('click', () => {
+          if (name === 'stop') popa.stop();
+          else popa.play(name);
+        });
+        document.querySelector('#animations').append(button);
+      }
+    } catch (error) {
+      status.textContent = `טעינת פופה נכשלה: ${error.message}`;
+    }
+  </script>
+</body>
+</html>

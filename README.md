@@ -71,6 +71,12 @@ If the repository is owned by an organization, replace `<your-github-username>` 
 
 ## Popa 2D game clips
 
+For a standalone browser-game integration, download
+[`downloads/popa-browser.zip`](downloads/popa-browser.zip). The package includes
+all assets, a scoped stylesheet, an instance-based `createPopa()` API and a working
+`example.html`, without the editors or GSAP. See the
+[browser package guide](docs/popa-browser-package.md) for setup and usage.
+
 The current cat demo includes the nine requested game clips, a fixed floor shadow,
 an interaction event and a held-item anchor. See [Popa game animation integration](docs/popa-game-animations.md)
 for clip names, timings, the `window.popa` API and validation commands.

@@ -1,0 +1,10 @@
+.popa-browser { position: relative; display: inline-block; vertical-align: top; isolation: isolate; direction: ltr; overflow: clip; }
+.popa-browser .cat-frame { position: absolute; top: 0; left: 0; width: 440px; height: 475px; transform-origin: top left; }
+.popa-browser .cat-wrapper, .popa-browser .cat-character, .popa-browser .cat-group {
+  position: absolute; inset: 0; width: 440px; height: 475px; transform-origin: 220px 420px;
+}
+.popa-browser .cat-group { pointer-events: none; }
+.popa-browser .cat-part { position: absolute; display: block; max-width: none; object-fit: contain; pointer-events: none; user-select: none; }
+.popa-browser .cat-floor-shadow { position: absolute; left: 110px; top: 435px; width: 225px; height: 25px; border-radius: 50%; background: #f6b6c8; filter: blur(2px); transform-origin: center; pointer-events: none; }
+.popa-browser .cat-item-anchor { position: absolute; inset: 0; width: 440px; height: 475px; box-sizing: border-box; transform-origin: 230px 415px; z-index: 8; pointer-events: none; display: grid; grid-template-columns: 1fr; align-content: start; padding-top: 312px; justify-items: center; }
+.popa-browser .cat-item-anchor > * { max-width: 44px; max-height: 44px; object-fit: contain; line-height: 1; }
