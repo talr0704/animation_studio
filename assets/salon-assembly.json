@@ -72,6 +72,19 @@
         179
       ],
       "layer": 0
+    },
+    {
+      "selector": ".neck",
+      "file": "images/torso.png",
+      "position": [
+        352,
+        282
+      ],
+      "size": [
+        96,
+        104
+      ],
+      "layer": 3
     }
   ],
   "hair": {
