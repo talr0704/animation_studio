@@ -161,7 +161,7 @@ function mountAssembly(definition){
  const bolt=$('scissors').querySelector('.bolt');Object.assign(bolt.style,{left:`${scissors.joint[0]-scissors.bolt.size[0]/2}px`,top:`${scissors.joint[1]-scissors.bolt.size[1]/2}px`});
 }
 function closePanel(id){$(id).hidden=true;const button=id==='request-panel'?$('show-request'):$('show-album');button.focus({preventScroll:true});}
-$('show-request').onclick=()=>{putBack();$('request-panel').hidden=false;$('request-panel').querySelector('button').focus();};
+$('show-request').onclick=()=>{putBack();$('request-panel').hidden=false;requestPortraitUpdate();$('request-panel').querySelector('button').focus();};
 $('show-album').onclick=()=>{putBack();$('album-panel').hidden=false;updatePortraits.forEach(update=>update());$('album-panel').querySelector('button').focus();};
 for(const button of document.querySelectorAll('[data-close]'))button.onclick=()=>closePanel(button.dataset.close);
 for(const panel of document.querySelectorAll('.world-panel'))panel.addEventListener('keydown',event=>{
@@ -260,8 +260,7 @@ function layoutWorkspace(){
  place(document.querySelector('.mirror'),layout.mirror);place(document.querySelector('.counter'),layout.counter);
  place(document.querySelector('.tool-shelf'),layout.shelf);place(document.querySelector('.clip-tray'),layout.tray);place($('show-album'),layout.album);
  for(const [name,rect]of Object.entries(layout.tools))place(document.querySelector(`[data-tool="${name}"]`),rect);
- const mirror=document.querySelector('.mirror-request');place(mirror,[layout.mirror[0]+10,layout.mirror[1],layout.mirror[2],layout.mirror[3]+18]);
- Object.assign($('request-preview').style,{left:`${layout.mirror[2]*.19}px`,top:`${layout.mirror[3]*.14}px`,width:`${layout.mirror[2]*.62}px`});
+ place($('show-request'),layout.magazine);
  const portrait=mode==='portrait';
  Object.assign(document.querySelector('.scene-status').style,{left:portrait?'120px':'210px',top:portrait?'15px':'12px',width:portrait?'420px':'380px'});
  Object.assign(document.querySelector('.scene-actions').style,{left:portrait?'170px':'264px',top:portrait?'423px':'459px'});
