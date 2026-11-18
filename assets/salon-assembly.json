@@ -351,5 +351,20 @@
         ]
       }
     }
+  },
+  "outfit": {
+    "source": "assembly_layout.json",
+    "scale": 0.8,
+    "offset": [
+      217.7599853515625,
+      82
+    ],
+    "parts": [
+      "torso",
+      "shirt",
+      "pinafore",
+      "foot_left",
+      "foot_right"
+    ]
   }
 }

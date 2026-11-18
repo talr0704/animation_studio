@@ -200,7 +200,13 @@ $('finish').onclick=async()=>{
  const visit=recordVisit(album,round,reward);album=visit.album;stored&&=visit.saved;
  refresh();renderAlbum();$('tool').hidden=true;
  message(stored?'המראה נוסף לאלבום והמטבעות לארנק.':'השמירה אינה זמינה כרגע. אפשר לראות את התוצאה בביקור הזה.');
- await play(document.querySelector('.cape'),[{transform:'translateY(0)',opacity:1},{transform:'translateY(65px)',opacity:0}],{duration:650,easing:'ease-in-out',fill:'forwards'}).finished.catch(()=>{});
+ const cape=document.querySelector('.cape');
+ $('reveal-outfit').hidden=false;
+ const removal=play(cape,[{transform:'translateY(0)',opacity:1},{transform:'translateY(65px)',opacity:0}],{duration:650,easing:'ease-in-out',fill:'forwards'});
+ await removal.finished.catch(()=>{});
+ // Store the final visual state, then discard the filled animation. Otherwise
+ // an old completed effect keeps hiding the cape in the following visit.
+ cape.style.opacity='0';cape.style.transform='translateY(65px)';removal.cancel();
  $('result').hidden=false;
  const before=Object.fromEntries(HAIR_PARTS.map(name=>[name,2]));
  updatePortraits.push(portrait($('before-preview'),before,null),portrait($('after-preview'),round.lengths,round.accessory));
@@ -211,6 +217,24 @@ $('finish').onclick=async()=>{
  $('unlock-message').textContent=visit.newUnlocks.map(item=>`נפתח: ${item.label}!`).join(' ');
  $('next').focus({preventScroll:true});
 };
+function resetCape(){
+ const cape=document.querySelector('.cape');
+ cape.getAnimations().forEach(animation=>animation.cancel());
+ cape.style.opacity='1';cape.style.transform='none';
+ $('reveal-outfit').hidden=true;
+}
+function mountOutfit(layout){
+ const def=assembly.outfit,container=$('reveal-outfit');
+ Object.assign(container.style,{width:`${layout.canvas.width}px`,height:`${layout.canvas.height}px`,transformOrigin:'0 0',transform:`translate(${def.offset[0]}px,${def.offset[1]}px) scale(${def.scale})`});
+ const sprites=new Map(layout.sprites.map(sprite=>[sprite.file,sprite]));
+ for(const layer of layout.layersBackToFront){
+  const name=layer.file.split('/').pop().replace('.png','');if(!def.parts.includes(name))continue;
+  const image=container.querySelector(`[data-outfit="${name}"]`),sprite=sprites.get(layer.file);
+  const [w,h]=sprite.displaySize??sprite.artworkSize.map(value=>value+layout.transparentPadding*2);
+  Object.assign(image.style,{left:`${layer.centerX-w/2}px`,top:`${layer.centerY-h/2}px`,width:`${w}px`,height:`${h}px`,transform:`rotate(${layer.clockwiseDegrees}deg)`,zIndex:layer.zIndex});
+  if(layer.clipPath)image.style.clipPath=layer.clipPath;
+ }
+}
 function setupRequest(){
  const target=Object.fromEntries(HAIR_PARTS.map((name,i)=>[name,round.order.lengths[i]]));
  requestPortraitUpdate=portrait($('request-preview'),target,round.order.accessory);
@@ -218,7 +242,7 @@ function setupRequest(){
 $('next').onclick=()=>{
  animations.forEach(a=>a.cancel());clearEffects();round=new SalonRound(++order);selectedTool=null;selectedZone='bangs';
  $('accessory').hidden=true;$('result').hidden=true;
- document.querySelector('.cape').style.opacity='';
+ resetCape();
  renderAlbum();setupRequest();layoutWorkspace();refresh();message('בקשה חדשה! מתחילים בהרטבה של כל אזורי השיער.');
 };
 $('salon-sound').onclick=()=>{
@@ -249,6 +273,8 @@ new ResizeObserver(layoutWorkspace).observe($('stage'));
 try{
  const response=await fetch(new URL('../assets/salon-assembly.json',import.meta.url));if(!response.ok)throw new Error('Cannot load salon assembly');
  assembly=await response.json();mountAssembly(assembly);
+ const outfitResponse=await fetch(imageUrl(assembly.outfit.source));if(!outfitResponse.ok)throw new Error('Cannot load the calibrated outfit');
+ mountOutfit(await outfitResponse.json());resetCape();
  const inventoryScissors=$('scissors').cloneNode(true);inventoryScissors.removeAttribute('id');inventoryScissors.hidden=false;inventoryScissors.className='inventory-scissors';
  const scissorsButton=document.querySelector('[data-tool="scissors"]');scissorsButton.querySelector('img').remove();scissorsButton.prepend(inventoryScissors);
  layoutWorkspace();

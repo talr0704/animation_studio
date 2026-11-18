@@ -9,6 +9,13 @@ with sync_playwright() as p:
  page.goto(URL+'salon.html',wait_until='networkidle');page.wait_for_selector('#loading',state='hidden')
  assert page.locator('#request-preview img').count()==7
  assert page.locator('[data-tool="bow"]').is_disabled();assert page.locator('[data-tool="brush"]').is_disabled()
+ def assert_cape(visible):
+  state=page.locator('.cape').evaluate('(e)=>({opacity:getComputedStyle(e).opacity,animations:e.getAnimations().length})')
+  assert state=={'opacity':'1' if visible else '0','animations':0},state
+  assert page.locator('#reveal-outfit').is_hidden()==visible
+ assert_cape(True)
+ assert page.locator('.room-fill').count()==1 and page.locator('.backdrop').count()==0
+ assert 'inset' in page.locator('[data-outfit="shirt"]').evaluate('(e)=>e.style.clipPath')
  def choose(name):
   button=page.locator(f'[data-tool="{name}"]')
   if button.get_attribute('aria-pressed')!='true':button.click()
@@ -45,7 +52,7 @@ with sync_playwright() as p:
   page.locator(f'[data-zone="{zone}"]').click();choose('scissors');page.keyboard.press('Space')
  assert 'תספורת' in page.locator('#steps li.current').inner_text()
  page.locator('#finish-cut').click();treat('comb','סירוק');choose('flower');page.keyboard.press('Space')
- assert page.locator('#finish').is_enabled();page.locator('#finish').click();page.wait_for_selector('#result',state='visible')
+ assert page.locator('#finish').is_enabled();page.locator('#finish').click();page.wait_for_selector('#result',state='visible');assert_cape(False)
  assert page.locator('#before-preview img').count()==6 and page.locator('#after-preview img').count()==7
  assert page.locator('#score-breakdown>div').count()==3
  assert page.locator('.album-card').count()==1
@@ -56,10 +63,10 @@ with sync_playwright() as p:
  page.screenshot(path='/tmp/popa-salon-result-v2.png',full_page=True)
  # Two creative variants also finish and unlock a tool and a furniture reward.
  for visit in [2,3]:
-  page.locator('#next').click()
+  page.locator('#next').click();assert_cape(True)
   for name,label in [('water','הרטבה'),('shampoo','סיבון'),('water','שטיפה'),('dryer','ייבוש')]:treat(name,label)
   page.locator('#finish-cut').click();treat('comb','סירוק');choose('bow');page.keyboard.press('Space')
-  page.locator('#finish').click();page.wait_for_selector('#result',state='visible')
+  page.locator('#finish').click();page.wait_for_selector('#result',state='visible');assert_cape(False)
   assert page.locator('.album-card').count()==visit
  assert page.locator('[data-tool="brush"]').is_enabled()
  coins=page.locator('#coins').inner_text();page.reload(wait_until='networkidle');page.wait_for_selector('#loading',state='hidden')
