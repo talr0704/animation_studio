@@ -35,7 +35,7 @@ export async function createPopa(mount, { scale = 1, autoplay = 'idle', label = 
   function requireAlive() { if (destroyed) throw new Error('This Popa instance was destroyed'); }
   try {
     setScale(scale);
-    const response = await fetch(new URL('./assembly_layout.json', import.meta.url));
+    const response = await fetch(new URL('./assets/characters/popa/assembly.json', import.meta.url));
     if (!response.ok) throw new Error(`Cannot load Popa assembly: HTTP ${response.status}`);
     const layout = await response.json();
     const sprites = new Map(layout.sprites.map(sprite => [sprite.file, sprite]));
@@ -57,7 +57,7 @@ export async function createPopa(mount, { scale = 1, autoplay = 'idle', label = 
       Object.assign(image.style, { left: `${layer.centerX - width / 2}px`, top: `${layer.centerY - height / 2}px`,
         width: `${width}px`, height: `${height}px`, transform: `rotate(${layer.clockwiseDegrees}deg) scaleX(${layer.flipX ? -1 : 1})` });
       if (layer.clipPath) image.style.clipPath = layer.clipPath;
-      image.src = new URL(`./images/${file}`, import.meta.url).href;
+      image.src = new URL(`./assets/characters/popa/parts/${file}`, import.meta.url).href;
       loads.push(image.decode());
       group.append(image); head.append(group); body.append(head); outer.append(body); character.append(outer);
       groups.set(name, group);

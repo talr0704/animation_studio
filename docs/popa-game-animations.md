@@ -1,7 +1,7 @@
 # Popa game animation clips
 
 The demo exposes nine clips through `window.popa` after the `popa:ready` DOM event.
-The calibrated assembly and pivots are in `assembly_layout.json`; track data is in
+The calibrated assembly and pivots are in `assets/characters/popa/assembly.json`; track data is in
 `popa-clips.js`. The camera and display scale stay fixed.
 
 | Name | Duration | Playback |

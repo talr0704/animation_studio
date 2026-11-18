@@ -4,7 +4,7 @@ const { readFileSync, existsSync } = require('node:fs');
 const { join } = require('node:path');
 
 const root = join(__dirname, '..');
-const layout = JSON.parse(readFileSync(join(root, 'assembly_layout.json'), 'utf8'));
+const layout = JSON.parse(readFileSync(join(root, 'assets/characters/popa/assembly.json'), 'utf8'));
 const filenames = layout.layersBackToFront.map(layer => layer.file.split('/').pop());
 
 test('Popa has exactly two complete arms without legacy hand or leg overlays', () => {
@@ -16,7 +16,7 @@ test('Popa has exactly two complete arms without legacy hand or leg overlays', (
 
 test('every assembled layer has an existing asset and usable dimensions', () => {
   for (const layer of layout.layersBackToFront) {
-    assert.ok(existsSync(join(root, 'images', layer.file.split('/').pop())), layer.file);
+    assert.ok(existsSync(join(root, 'assets/characters/popa/parts', layer.file.split('/').pop())), layer.file);
     const sprite = layout.sprites.find(sprite => sprite.file === layer.file);
     assert.ok(sprite, layer.file);
     const size = sprite.displaySize ?? sprite.artworkSize;

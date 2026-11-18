@@ -20,7 +20,7 @@ const save = () => { try { localStorage.setItem(STORAGE, JSON.stringify(profile)
 function refreshProfile() {
   $('coins').textContent = profile.coins;
   $('rug').classList.toggle('upgraded', profile.rug);
-  $('rug').src = `assets/world/${profile.rug ? 'rug-floral' : 'rug'}.svg`;
+  $('rug').src = `assets/scenes/home/${profile.rug ? 'rug-floral' : 'rug'}.svg`;
   $('buy-rug').disabled = profile.rug;
   $('rug-price').textContent = profile.rug ? 'השטיח שלך ✓' : 'שטיח חדש · 12 ✦';
   $('record').textContent = profile.rounds ? `שיא הגינה שלך: ${profile.best} נקודות · ${profile.rounds} הרפתקאות` : 'כל הרפתקה מתחילה בצעד קטן.';
@@ -124,13 +124,13 @@ $('sound').onclick=()=>{sound=!sound;if(sound){try{audio??=new (window.AudioCont
 $('salon-mirror').hidden=readAlbum().total<3;
 refreshProfile();new ResizeObserver(resize).observe(document.querySelector('.world'));resize();
 try{
-  const response=await fetch(new URL('../assets/world/assemblies.json',import.meta.url));
+  const response=await fetch(new URL('../assets/scenes/home/assembly.json',import.meta.url));
   if(!response.ok)throw new Error('World assemblies could not be loaded');
   const rigs=await response.json();
   for(const [name,mount] of [['window','window-prop'],['plant','plant-prop'],['shelf','shelf-prop']]){
     const rig=await createIllustratedProp($(mount),rigs[name]);illustratedProps.push(rig);
     if(name!=='shelf')$(mount).addEventListener('click',()=>{rig.sway();cue('curious');toast(name==='plant'?'קצת רוח בין העלים…':'הווילונות רוקדים ברוח');});
   }
-  await Promise.all(['apple','orange','berries','gold','rain'].map(async name=>{const image=new Image();image.src=new URL(`../assets/world/${name}.svg`,import.meta.url).href;await image.decode();fruitImages.set(name,image);}));
+  await Promise.all(['apple','orange','berries','gold','rain'].map(async name=>{const image=new Image();image.src=new URL(`../assets/scenes/garden/${name}.svg`,import.meta.url).href;await image.decode();fruitImages.set(name,image);}));
   popa=await createPopa($('player'),{scale:.46,autoplay:'idle'});$('loading').hidden=true;home();requestAnimationFrame(tick);}catch(error){$('loading').textContent='לא הצלחנו לטעון את פופה. נסי לרענן את העמוד.';console.error(error);}
 window.addEventListener('pagehide',event=>{if(event.persisted){pause();return;}popa?.destroy();illustratedProps.forEach(prop=>prop.destroy());});

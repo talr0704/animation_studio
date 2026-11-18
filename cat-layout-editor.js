@@ -170,7 +170,7 @@ export function mountLayoutEditor({ layout, character, pause, setPivot }) {
     output.layersBackToFront.sort((a, b) => a.zIndex - b.zIndex);
     const url = URL.createObjectURL(new Blob([JSON.stringify(output, null, 2)], { type: 'application/json' }));
     const anchor = document.createElement('a');
-    anchor.href = url; anchor.download = 'assembly_layout.json'; anchor.click();
+    anchor.href = url; anchor.download = 'assets/characters/popa/assembly.json'; anchor.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
   frame.addEventListener('pointerdown', event => {

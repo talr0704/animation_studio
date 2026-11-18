@@ -5,14 +5,16 @@ import shutil
 import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / 'portable-popa'
-DEST.mkdir(exist_ok=True)
+if DEST.exists():
+    shutil.rmtree(DEST)
+DEST.mkdir()
 files = ['popa-browser.js', 'popa-browser.css', 'cat-animations.js', 'cat-expressions.js',
-         'popa-clips.js', 'assembly_layout.json']
-layout = json.loads((ROOT / 'assembly_layout.json').read_text())
+         'popa-clips.js', 'assets/characters/popa/assembly.json']
+layout = json.loads((ROOT / 'assets/characters/popa/assembly.json').read_text())
 assets = {layer['file'].split('/')[-1] for layer in layout['layersBackToFront']}
 assets.update(f'eye_{pose}_{side}.png' for pose in ['happy','open','sleep'] for side in ['left','right'])
 assets.update(f'mouth_{pose}.png' for pose in ['happy','closed','surprised','tongue'])
-files += [f'images/{name}' for name in sorted(assets)]
+files += [f'assets/characters/popa/parts/{name}' for name in sorted(assets)]
 for file in files:
     target = DEST / file
     target.parent.mkdir(parents=True, exist_ok=True)

@@ -3,7 +3,7 @@ import { readAlbum,recordVisit,unlocked,UNLOCKS } from './salon-progress.js';
 const $=id=>document.getElementById(id);
 const LABELS={bangs:'פוני',side_left:'צד שמאל',side_right:'צד ימין',back_left:'עורף שמאל',back_right:'עורף ימין'};
 const LENGTH_LABELS=['קצר','בינוני','ארוך'];
-const TOOLS={water:['מים','Wash_And_Accessories/shower_head.png'],shampoo:['שמפו','Wash_And_Accessories/shampoo_body.png'],dryer:['ייבוש','Tools/hairdryer.png'],scissors:['מספריים','Scissors/scissors_half_a.png'],comb:['סירוק','Tools/comb.png'],brush:['מברשת','Tools/brush.png'],flower:['פרח','Tools/flower_clip.png'],bow:['סרט','Wash_And_Accessories/bow_clip.png']};
+const TOOLS={water:['מים','assets/scenes/salon/props/shower-head/images/shower-head.png'],shampoo:['שמפו','assets/scenes/salon/props/shampoo/images/shampoo-body.png'],dryer:['ייבוש','assets/scenes/salon/props/hairdryer/images/hairdryer.png'],scissors:['מספריים','assets/scenes/salon/props/scissors/images/blade-left.png'],comb:['סירוק','assets/scenes/salon/props/comb/images/comb.png'],brush:['מברשת','assets/scenes/salon/props/brush/images/brush.png'],flower:['פרח','assets/scenes/salon/props/flower-clip/images/flower-clip.png'],bow:['סרט','assets/scenes/salon/props/bow-clip/images/bow-clip.png']};
 const PHASES=['הרטבה','סיבון','שטיפה','ייבוש','תספורת','סירוק','סיכה'];
 let album=readAlbum(),order=album.total,round=new SalonRound(order),selectedTool=null,selectedZone='bangs';
 let scale=1,ready=false,lastStroke=0,lastPoint=null,assembly,headReaction,sound=false,audio;
@@ -24,7 +24,7 @@ function portrait(container,lengths,accessory){
  const head=assembly.station.find(part=>part.selector==='.head');
  make(head.file,...head.position,...head.size,head.layer);
  const hair=assembly.hair,ax=hair.anchor[0]*hair.displaySize[0]/hair.sourceCanvas[0],ay=hair.anchor[1]*hair.displaySize[1]/hair.sourceCanvas[1];
- for(const part of hair.parts){make(`Hair_Aligned/${part.id}_${LENGTHS[lengths[part.id]]}.png`,part.joint[0]-ax,part.joint[1]-ay,...hair.displaySize,part.layer);}
+ for(const part of hair.parts){make(`assets/scenes/salon/hair/${part.id}_${LENGTHS[lengths[part.id]]}.png`,part.joint[0]-ax,part.joint[1]-ay,...hair.displaySize,part.layer);}
  if(accessory)make(TOOLS[accessory][1],453,118,90,55,9);
  container.append(art);
  const update=()=>{const s=container.clientWidth/400;art.style.transform=`scale(${s})`;container.style.height=`${340*s}px`;};
@@ -57,7 +57,7 @@ function refresh(){
   const progress=i===round.phase&&![4,6].includes(i)?` · ${Math.floor(round.coverage()*100)}%`:'';
   li.append(b,document.createTextNode(label+progress));$('steps').append(li);
  }
- for(const img of document.querySelectorAll('#head-rig [data-hair]')){img.src=imageUrl(`Hair_Aligned/${img.dataset.hair}_${LENGTHS[round.lengths[img.dataset.hair]]}.png`);img.classList.toggle('selected',selectedTool==='scissors'&&img.dataset.hair===selectedZone);}
+ for(const img of document.querySelectorAll('#head-rig [data-hair]')){img.src=imageUrl(`assets/scenes/salon/hair/${img.dataset.hair}_${LENGTHS[round.lengths[img.dataset.hair]]}.png`);img.classList.toggle('selected',selectedTool==='scissors'&&img.dataset.hair===selectedZone);}
  for(const button of $('tools').querySelectorAll('button')){button.setAttribute('aria-pressed',String(button.dataset.tool===selectedTool));button.disabled=['bow','brush'].includes(button.dataset.tool)&&!unlocked(album,button.dataset.tool);}
  for(const button of $('zones').querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.zone===selectedZone));
  if(selectedTool){$('tool-image').src=imageUrl(TOOLS[selectedTool][1]);$('tool-image').hidden=selectedTool==='scissors';$('scissors').hidden=selectedTool!=='scissors';$('pump').hidden=selectedTool!=='shampoo';}else $('tool').hidden=true;
@@ -82,7 +82,7 @@ function soundCue(){
 function react(x){
  const lean=Math.max(-2,Math.min(2,(x-400)/70));
  headReaction=play($('head-rig'),[{transform:'rotate(0)'},{transform:`rotate(${lean}deg) translateY(-1px)`},{transform:'rotate(0)'}],{duration:['comb','brush'].includes(selectedTool)?800:500,easing:'ease-in-out'});
- if(['comb','brush'].includes(selectedTool))effect('Wash_And_Accessories/heart.png',{x:510,y:70,w:45});
+ if(['comb','brush'].includes(selectedTool))effect('assets/scenes/salon/effects/heart.png',{x:510,y:70,w:45});
  if(selectedTool==='dryer'){
   const direction=x<400?-1:1;
   for(const hair of document.querySelectorAll('#head-rig [data-hair]'))play(hair,[0,5*direction,-2*direction,0].map(a=>({transform:`rotate(${a}deg)`})),{duration:650,easing:'ease-in-out'});
@@ -102,14 +102,14 @@ function apply(x,y){
  if(result.kind==='outside'){message('עברי גם על הפוני ועל התלתלים משני צדי הראש.');return;}
  if(result.kind==='ready'){message('זה האורך הקצר ביותר באזור שבחרת.');return;}
  animateTool();soundCue();react(x);
- if(selectedTool==='water')effect('Wash_And_Accessories/water_spray.png',{x,y,w:85});
- else if(selectedTool==='shampoo')effect('Wash_And_Accessories/bubbles.png',{x:x+25,y:y-25,w:50});
- else if(selectedTool==='dryer')effect('Tools/airflow.png',{x:x-55,y,w:100});
+ if(selectedTool==='water')effect('assets/scenes/salon/effects/water-spray.png',{x,y,w:85});
+ else if(selectedTool==='shampoo')effect('assets/scenes/salon/effects/bubbles.png',{x:x+25,y:y-25,w:50});
+ else if(selectedTool==='dryer')effect('assets/scenes/salon/effects/airflow.png',{x:x-55,y,w:100});
  else if(selectedTool==='scissors'){
-  effect('Tools/hair_clipping.png',{x,y:y+60,w:50});
+  effect('assets/scenes/salon/effects/hair-clipping.png',{x,y:y+60,w:50});
   play(document.querySelector(`#head-rig [data-hair="${selectedZone}"]`),[0,-2,2,0].map(a=>({transform:`rotate(${a}deg)`})),{duration:400});
- }else if(['comb','brush'].includes(selectedTool))effect('Wash_And_Accessories/sparkle.png',{x,y,w:45});
- else{$('accessory').hidden=false;$('accessory').src=imageUrl(TOOLS[selectedTool][1]);effect('Wash_And_Accessories/heart.png',{x:500,y:70,w:60});}
+ }else if(['comb','brush'].includes(selectedTool))effect('assets/scenes/salon/effects/sparkle.png',{x,y,w:45});
+ else{$('accessory').hidden=false;$('accessory').src=imageUrl(TOOLS[selectedTool][1]);effect('assets/scenes/salon/effects/heart.png',{x:500,y:70,w:60});}
  refresh();
  if(round.phase===7)message('המראה שלך מוכן. אפשר לשנות סיכה או לחשוף את התוצאה!');
  else if(round.phase!==before)message(`מרגיש נהדר! עכשיו ${PHASES[round.phase]}.`);
@@ -138,7 +138,7 @@ for(const [name,[label,src]]of Object.entries(TOOLS)){
  const button=document.createElement('button');button.type='button';button.className='tool-item';button.dataset.tool=name;button.setAttribute('aria-label',`לקחת ${label}`);button.title=label;
  const img=new Image();img.src=imageUrl(src);img.alt='';button.append(img);
  if(name==='shampoo'){
-  img.className='inventory-bottle';const pump=new Image();pump.src=imageUrl('Wash_And_Accessories/shampoo_pump.png');pump.className='inventory-pump';pump.alt='';button.prepend(pump);
+  img.className='inventory-bottle';const pump=new Image();pump.src=imageUrl('assets/scenes/salon/props/shampoo/images/shampoo-pump.png');pump.className='inventory-pump';pump.alt='';button.prepend(pump);
  }
  const labelNode=document.createElement('span');labelNode.className='tool-label';labelNode.textContent=label;button.append(labelNode);
  button.addEventListener('pointerdown',event=>{
@@ -270,7 +270,7 @@ function layoutWorkspace(){
 }
 new ResizeObserver(layoutWorkspace).observe($('stage'));
 try{
- const response=await fetch(new URL('../assets/salon-assembly.json',import.meta.url));if(!response.ok)throw new Error('Cannot load salon assembly');
+ const response=await fetch(new URL('../assets/scenes/salon/assembly.json',import.meta.url));if(!response.ok)throw new Error('Cannot load salon assembly');
  assembly=await response.json();mountAssembly(assembly);
  const outfitResponse=await fetch(imageUrl(assembly.outfit.source));if(!outfitResponse.ok)throw new Error('Cannot load the calibrated outfit');
  mountOutfit(await outfitResponse.json());resetCape();
@@ -278,17 +278,17 @@ try{
  const scissorsButton=document.querySelector('[data-tool="scissors"]');scissorsButton.querySelector('img').remove();scissorsButton.prepend(inventoryScissors);
  layoutWorkspace();
  CARE_CELLS.forEach((cell,index)=>{
-  for(const [collection,file,size]of [[foamNodes,'Wash_And_Accessories/foam.png',70],[wetNodes,'Tools/water_drops.png',45]]){
+  for(const [collection,file,size]of [[foamNodes,'assets/scenes/salon/effects/foam.png',70],[wetNodes,'assets/scenes/salon/effects/water-drops.png',45]]){
    const img=new Image();img.className='care-overlay';img.dataset.care=collection===foamNodes?'foam':'wet';img.dataset.cell=index;img.alt='';img.src=imageUrl(file);
    Object.assign(img.style,{left:`${cell.x-size/2}px`,top:`${cell.y-size/2}px`,width:`${size}px`,height:`${size}px`,opacity:0});
    $('care-overlays').append(img);collection.push(img);
   }
  });
  const files=new Set([...document.querySelectorAll('img[src]')].map(i=>i.src));
- for(const name of HAIR_PARTS)for(const length of LENGTHS)files.add(imageUrl(`Hair_Aligned/${name}_${length}.png`));
+ for(const name of HAIR_PARTS)for(const length of LENGTHS)files.add(imageUrl(`assets/scenes/salon/hair/${name}_${length}.png`));
  for(const tool of Object.values(TOOLS))files.add(imageUrl(tool[1]));
- for(const file of ['water_spray','foam','bubbles','sparkle','heart'])files.add(imageUrl(`Wash_And_Accessories/${file}.png`));
- files.add(imageUrl('Tools/hair_clipping.png'));files.add(imageUrl('Tools/airflow.png'));
+ for(const file of ['water-spray','foam','bubbles','sparkle','heart'])files.add(imageUrl(`assets/scenes/salon/effects/${file}.png`));
+ files.add(imageUrl('assets/scenes/salon/effects/hair-clipping.png'));files.add(imageUrl('assets/scenes/salon/effects/airflow.png'));
  await Promise.all([...files].map(async src=>{const i=new Image();i.src=src;await i.decode();}));
  renderAlbum();setupRequest();layoutWorkspace();ready=true;$('loading').hidden=true;refresh();message('קחי את ראש המים מהמדף והעבירי אותו על השיער.');
 }catch(error){$('loading').textContent='לא הצלחנו לטעון את חלקי הסלון. נסי לרענן.';console.error(error);}

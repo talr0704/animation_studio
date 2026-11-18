@@ -8,7 +8,7 @@ const EXPRESSIONS = {
 };
 const OPEN_EYE_SIZE = { width: 100, height: 70.59 };
 const CLOSED_EYE_SIZE = { width: 68, height: 48 };
-const imageUrl = file => new URL(`./images/${file}`, import.meta.url).href;
+const imageUrl = file => new URL(`./assets/characters/popa/parts/${file}`, import.meta.url).href;
 
 export async function createCatExpressions({ character }) {
   const eyes = ['left', 'right'].map(side => character.querySelector(`[data-sprite="eye_happy_${side}"]`));

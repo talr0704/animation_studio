@@ -1,5 +1,5 @@
 /** Each joint is in its parent's local coordinates; anchor is on the sprite. */
-export async function createIllustratedProp(mount, definition, { baseUrl = new URL('../assets/world/', import.meta.url) } = {}) {
+export async function createIllustratedProp(mount, definition, { baseUrl = new URL('../assets/scenes/home/', import.meta.url) } = {}) {
   const root=document.createElement('div');root.className='illustrated-prop';
   root.style.width=`${definition.width}px`;root.style.height=`${definition.height}px`;
   const nodes=new Map(),animations=[];const loads=[];

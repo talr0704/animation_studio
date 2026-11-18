@@ -97,3 +97,7 @@ See [the salon guide](docs/popa-salon.md).
 The salon now includes area-based care, a visual hairstyle request, creative
 scoring, before/after reveals and a persistent hairstyle album with unlocks.
 Haircut sections continue to be chosen using the section buttons.
+
+## איורים וקבצי הרכבה
+
+ראו [מפת התיקיות והוספת איורים](docs/asset-organization.md). קטלוג האביזרים נמצא ב־`assets/catalog.json`.
