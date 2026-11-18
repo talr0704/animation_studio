@@ -78,7 +78,7 @@
       "file": "images/torso.png",
       "position": [
         352,
-        282
+        270
       ],
       "size": [
         96,
@@ -370,7 +370,7 @@
     "scale": 0.8,
     "offset": [
       217.7599853515625,
-      82
+      68
     ],
     "parts": [
       "torso",
