@@ -9,11 +9,14 @@ with sync_playwright() as p:
  page.goto(URL+'salon.html',wait_until='networkidle');page.wait_for_selector('#loading',state='hidden')
  assert page.locator('#request-preview img').count()==7
  assert page.locator('[data-tool="bow"]').is_disabled();assert page.locator('[data-tool="brush"]').is_disabled()
- def choose(name):page.locator(f'[data-tool="{name}"]').click();page.locator('#stage').focus()
+ def choose(name):
+  button=page.locator(f'[data-tool="{name}"]')
+  if button.get_attribute('aria-pressed')!='true':button.click()
+  page.locator('#stage').focus()
  def treat(name,label):
   choose(name)
   for _ in range(100):
-   if label not in page.locator('.care li.current').inner_text():return
+   if label not in page.locator('#steps li.current').inner_text():return
    page.keyboard.press('Space')
   raise AssertionError('Care phase did not complete: '+label)
  def click_scene(x,y):
@@ -21,7 +24,7 @@ with sync_playwright() as p:
  # Same-position clicks saturate locally; they do not replace full-area care.
  choose('water')
  for _ in range(12):click_scene(400,100)
- assert 'הרטבה' in page.locator('.care li.current').inner_text()
+ assert 'הרטבה' in page.locator('#steps li.current').inner_text()
  treat('water','הרטבה');treat('shampoo','סיבון')
  before=page.locator('[data-care="foam"]').evaluate_all('(els)=>els.map(e=>Number(e.style.opacity))')
  assert max(before)>.8
@@ -40,7 +43,7 @@ with sync_playwright() as p:
  assert all(v<.01 for v in distances)
  for zone in ['side_left','side_right','back_left','back_right']:
   page.locator(f'[data-zone="{zone}"]').click();choose('scissors');page.keyboard.press('Space')
- assert 'תספורת' in page.locator('.care li.current').inner_text()
+ assert 'תספורת' in page.locator('#steps li.current').inner_text()
  page.locator('#finish-cut').click();treat('comb','סירוק');choose('flower');page.keyboard.press('Space')
  assert page.locator('#finish').is_enabled();page.locator('#finish').click();page.wait_for_selector('#result',state='visible')
  assert page.locator('#before-preview img').count()==6 and page.locator('#after-preview img').count()==7
@@ -68,5 +71,5 @@ with sync_playwright() as p:
  assert not errors and not bad,(errors,bad)
  mobile=b.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True);touch=mobile.new_page();touch.goto(URL+'salon.html',wait_until='networkidle');touch.wait_for_selector('#loading',state='hidden')
  touch.locator('[data-tool="water"]').tap();touch.locator('#stage').scroll_into_view_if_needed();rect=touch.locator('#scene').bounding_box();touch.touchscreen.tap(rect['x']+400*rect['width']/800,rect['y']+100*rect['width']/800)
- assert '%' in touch.locator('.care li.current').inner_text()
+ assert '%' in touch.locator('#steps li.current').inner_text()
  mobile.close();b.close();print('PASS: local foam/rinse, spatial progress, manual-only cuts, anchors/scissor pivot, creative scoring, reveal, persisted album, 3 unlocks, shared wallet, mobile/touch')
