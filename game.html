@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f9f5eb">
   <title>העולם של פופה — בית קטן, הרפתקאות גדולות</title>
-  <link rel="stylesheet" href="./popa-browser.css"><link rel="stylesheet" href="./game/game.css?v=world-1">
+  <link rel="stylesheet" href="./popa-browser.css"><link rel="stylesheet" href="./game/game.css?v=world-2">
 </head>
 <body>
   <header class="topbar"><a class="brand" href="game.html"><span class="brand-mark">✿</span><span>העולם של פופה<small>בית קטן, הרפתקאות גדולות</small></span></a>
@@ -12,14 +12,14 @@
   </header>
   <main>
     <div class="intro"><div><p class="eyebrow">נעים להיות כאן</p><h1 id="heading">ברוכה הבאה הביתה</h1><p id="subtitle">לחצי על הרצפה כדי לטייל עם פופה, או צאי להרפתקה בגינה.</p></div><span class="chapter">העולם הקטן שלך <span>✧</span></span></div>
-    <nav class="tabs" role="tablist" aria-label="בחירת אזור"><button id="home-tab" role="tab" aria-controls="room" aria-selected="true">⌂ הבית של פופה</button><button id="garden-tab" role="tab" aria-controls="orchard" aria-selected="false">❀ גינת ההפתעות</button><a class="salon-link" href="salon.html">✂ המספרה של פופה</a></nav>
-    <section class="world" aria-label="העולם של פופה">
+
+    <section class="world" aria-label="העולם של פופה"><nav class="world-paths" aria-label="לטייל בעולם"><button id="home-tab" aria-selected="true" aria-controls="room"><img src="assets/world/wall-art.svg" alt=""><span>הביתה</span></button><button id="garden-tab" aria-selected="false" aria-controls="orchard"><img src="assets/world/basket.svg" alt=""><span>לגינה</span></button><a class="salon-link" href="salon.html"><img src="Station/mirror.png" alt=""><span>למספרה</span></a></nav>
       <div id="room" class="room">
         <img class="scene-backdrop" src="assets/world/room.svg" alt="">
         <button id="window-prop" class="prop-window prop-button" aria-label="להניע בעדינות את הווילונות"></button>
         <img class="wall-art" src="assets/world/wall-art.svg" alt="תמונת פרח על הקיר">
         <div id="shelf-prop" class="prop-shelf"></div>
-        <img class="rug" id="rug" src="assets/world/rug.svg" alt="שטיח בחדר">
+        <button id="buy-rug" class="rug-object" aria-label="לקנות שטיח פרחוני ב־12 מטבעות"><img id="rug" src="assets/world/rug.svg" alt="שטיח בחדר"><span id="rug-price">שטיח חדש · 12 ✦</span></button>
         <button id="plant-prop" class="prop-plant prop-button" aria-label="ללטף את עלי הצמח"></button>
         <img id="salon-mirror" class="salon-reward-mirror" src="Station/mirror.png" alt="מראת הסלון שנפתחה כפרס" hidden><div class="room-hint">לחצי על הרצפה כדי ללכת</div>
       </div>
@@ -38,9 +38,9 @@
       <p id="loading" class="loading" role="status">פופה בדרך הביתה…</p>
     </section>
     <div class="below"><section class="activity-card"><div class="activity-icon">❀</div><div><p class="eyebrow">קצת כיף, קצת קסם</p><h2 id="activity-title">מה צומח בגינה?</h2><p id="activity-text">45 שניות של פירות, כוכבי זהב ורצפים. כמה תוכלי לתפוס?</p></div><button class="primary" id="activity-button">לגינה ←</button></section>
-    <section class="shop-card"><span class="shop-icon">▧</span><div><h2>נגיעה של צבע לבית</h2><p id="shop-text">שטיח פרחוני לפינה האהובה על פופה</p></div><button id="buy-rug">12 <span class="coin">✦</span></button></section></div>
+    <section class="shop-card"><span class="shop-icon">▧</span><div><h2>נגיעה של צבע לבית</h2><p id="shop-text">שטיח פרחוני לפינה האהובה על פופה</p></div></section></div>
     <footer><p id="record">כל הרפתקה מתחילה בצעד קטן.</p><a href="index.html">לסטודיו האנימציה ↗</a><button id="sound" aria-pressed="false">צליל כבוי ♫</button><span id="save-status">ההתקדמות נשמרת בדפדפן הזה</span></footer>
   </main>
-  <script type="module" src="./game/game.js?v=world-1"></script>
+  <script type="module" src="./game/game.js?v=world-2"></script>
 </body>
 </html>
