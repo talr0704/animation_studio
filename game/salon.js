@@ -271,12 +271,14 @@ new ResizeObserver(layoutWorkspace).observe($('stage'));
 try{
  const response=await fetch(new URL('../assets/scenes/salon/assembly.json',import.meta.url));if(!response.ok)throw new Error('Cannot load salon assembly');
  assembly=await response.json();mountAssembly(assembly);
- const loadJson=async path=>{const r=await fetch(imageUrl(path));if(!r.ok)throw Error('Cannot load prop data');return r.json();};
+ const loadJson=async path=>{const r=await fetch(imageUrl(path),{cache:'no-cache'});if(!r.ok)throw Error('Cannot load prop data');return r.json();};
  scissorsRig=validateProp(await loadJson(assembly.scissors.assembly));scissorsClip=validateClip(await loadJson(assembly.scissors.animation),scissorsRig);
  if(new URLSearchParams(location.search).get('propPreview')==='salon.scissors'){
   try{const draft=JSON.parse(sessionStorage.getItem('popaPropPreviewV1'));if(draft?.rig?.id!=='salon.scissors')throw Error('Wrong prop');validateProp(draft.rig);validateClip(draft.clip,draft.rig);scissorsRig=draft.rig;scissorsClip=draft.clip;propPreview=true;}catch{console.warn('Preview unavailable; using published prop');}
  }
  scissorsView=mountProp($('scissors'),scissorsRig);await scissorsView.ready;
+ // Use the edited starting pose both on the counter and while holding the tool.
+ scissorsView.render(scissorsClip,0);
  if(propPreview){const notice=document.createElement('a');notice.href='studio.html';notice.textContent='תצוגה מקדימה · חזרה לעורך האביזרים';Object.assign(notice.style,{position:'absolute',top:'0',left:'0',right:'0',textAlign:'center',zIndex:40,fontSize:'11px',background:'#fff4d7'});$('stage').append(notice);}
 
  const outfitResponse=await fetch(imageUrl(assembly.outfit.source));if(!outfitResponse.ok)throw new Error('Cannot load the calibrated outfit');
