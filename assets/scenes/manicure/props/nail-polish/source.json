@@ -1,0 +1,25 @@
+{
+  "source": "source-art/salon/sheets/manicure-and-soap.png",
+  "status": "reserved-for-future-game",
+  "operation": "lossless rectangular crop, original RGBA pixels",
+  "crops": {
+    "images/bottle.png": [
+      130,
+      65,
+      370,
+      400
+    ],
+    "images/neck-ring.png": [
+      680,
+      230,
+      190,
+      95
+    ],
+    "images/cap-and-brush.png": [
+      1100,
+      40,
+      230,
+      410
+    ]
+  }
+}
