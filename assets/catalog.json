@@ -99,7 +99,11 @@
         "assets/scenes/salon/props/shampoo/images/shampoo-body.png",
         "assets/scenes/salon/props/shampoo/images/shampoo-pump.png"
       ],
-      "sceneAssembly": "assets/scenes/salon/assembly.json"
+      "sceneAssembly": "assets/scenes/salon/assembly.json",
+      "label": "סבון עם משאבה",
+      "editable": true,
+      "assembly": "assets/scenes/salon/props/shampoo/assembly.json",
+      "animation": "assets/scenes/salon/props/shampoo/animations/pump.json"
     },
     {
       "id": "salon.shower-head",

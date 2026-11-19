@@ -113,6 +113,7 @@ function tick(now){const dt=Math.min((now-last)/1000,.05);last=now;
 }
 $('home-tab').onclick=()=>{if(view==='garden'&&phase==='playing')pause();else home();};$('garden-tab').onclick=()=>{if(popa)garden();};
 $('activity-button').onclick=()=>{if(!popa)return;if(view==='room')garden();else if(phase==='playing')pause();else home();};$('pause').onclick=pause;
+$('reading-books').onclick=()=>{cue('rest');toast('פופה בחרה סיפור לפינת הקריאה שלה');};
 $('buy-rug').onclick=()=>{if(profile.rug)return;if(profile.coins<12){toast('עוד קצת פירות — השטיח עולה 12 מטבעות');return;}profile.coins-=12;profile.rug=true;save();refreshProfile();toast('השטיח החדש כבר בבית!');if(view==='room')cue('happy');};
 $('room').addEventListener('pointerdown',e=>{if(!popa||e.target.closest('button,a'))return;const r=document.querySelector('.world').getBoundingClientRect();if(e.clientY-r.top<r.height*.6){cue('curious');toast('פופה אוהבת את הפינה הזאת');return;}target=Math.max(.17,Math.min(.83,(e.clientX-r.left)/r.width));});
 $('orchard').addEventListener('pointermove',e=>{if(phase!=='playing'||e.target.closest('.game-hud'))return;if(e.pointerType==='touch'&&!e.buttons)return;const r=canvas.getBoundingClientRect();target=(e.clientX-r.left)/r.width;});

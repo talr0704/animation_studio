@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "id": "salon.shampoo",
+  "canvas": [
+    110,
+    140
+  ],
+  "parts": [
+    {
+      "id": "pump",
+      "label": "משאבה",
+      "image": "assets/scenes/salon/props/shampoo/images/shampoo-pump.png",
+      "sourceSize": [
+        238,
+        299
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        5,
+        -52
+      ],
+      "scale": 0.42016806722689076,
+      "rotation": 0,
+      "layer": 1,
+      "parent": null
+    },
+    {
+      "id": "bottle",
+      "label": "בקבוק",
+      "image": "assets/scenes/salon/props/shampoo/images/shampoo-body.png",
+      "sourceSize": [
+        269,
+        334
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        0,
+        1.71
+      ],
+      "scale": 0.40892193308550184,
+      "rotation": 0,
+      "layer": 2,
+      "parent": null
+    }
+  ]
+}

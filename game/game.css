@@ -24,3 +24,6 @@ body{height:100svh;overflow:hidden}.topbar{height:58px;max-width:none;padding:8p
 .scene-backdrop{object-fit:cover}
 
 .intro,.below{display:none}
+
+.home-dresser{position:absolute;left:3%;bottom:13%;width:210px;height:290px;pointer-events:none}.dresser-cabinet{position:absolute;left:0;bottom:0;width:210px;height:209px;object-fit:contain;clip-path:inset(42% 0 0 0)}.dresser-mirror{position:absolute;left:24px;bottom:110px;width:140px;height:165px;pointer-events:auto}.dresser-mirror img{width:100%;height:100%;object-fit:contain}.reading-books{position:absolute;right:24%;bottom:10%;width:105px;height:92px;padding:0;border:0;background:none;z-index:3}.reading-books img{width:100%;height:100%;object-fit:contain;pointer-events:none}.salon-reward-mirror{left:4%;bottom:46%;width:70px;height:83px}@media(max-width:700px){.home-dresser{left:1%;bottom:16%;width:115px;height:160px}.dresser-cabinet{width:115px;height:114px}.dresser-mirror{width:76px;height:90px;left:13px;bottom:60px}.reading-books{right:22%;bottom:12%;width:65px;height:58px}.salon-reward-mirror{left:2%;bottom:41%;width:45px;height:53px}}
+@media(max-width:700px){.reading-books{left:85px;right:auto;bottom:calc(16% + 65px);width:34px;height:31px}.prop-plant{right:0}}

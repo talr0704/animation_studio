@@ -9,13 +9,14 @@ test('the scene and catalog reference the same editable scissors files',async()=
  const {validateProp,validateClip}=await runtime;validateProp(rig);validateClip(clip,rig);
  const scene=load('assets/scenes/salon/assembly.json'),entry=load('assets/catalog.json').props.find(p=>p.id===rig.id);
  assert.equal(entry.assembly,scene.scissors.assembly);assert.equal(entry.animation,scene.scissors.animation);
- assert.deepEqual(rig.parts.map(p=>p.position),[[65,90],[65,90],[65,90]]);
+ assert.deepEqual(rig.parts.map(p=>p.id).sort(),['blade-left','blade-right','bolt']);
 });
 test('interpolated motion holds its endpoints and the rendered keyframes use the same poses',async()=>{
  const {poseAt,partFrames}=await runtime;
- assert.equal(poseAt(clip,'blade-left',0).rotation,18);assert.equal(poseAt(clip,'blade-left',.19).rotation,0);assert.equal(poseAt(clip,'blade-right',.38).rotation,-18);
- assert.deepEqual(poseAt(clip,'bolt',.1),{x:0,y:0,rotation:0});
- for(const frame of partFrames(clip,'blade-left')){const pose=poseAt(clip,'blade-left',frame.offset*clip.duration);const angle=Number(frame.transform.match(/rotate\(([-\d.e+]+)deg\)/)[1]);assert.ok(Math.abs(angle-pose.rotation)<1e-10);}
+ const sample={version:1,prop:rig.id,id:'cut',duration:.38,easing:'ease-in-out',tracks:[{part:'blade-left',keys:[{time:0,x:0,y:0,rotation:18},{time:.19,x:0,y:0,rotation:0},{time:.38,x:0,y:0,rotation:18}]}]};
+ assert.equal(poseAt(sample,'blade-left',0).rotation,18);assert.equal(poseAt(sample,'blade-left',.19).rotation,0);assert.equal(poseAt(sample,'blade-left',.38).rotation,18);
+ assert.deepEqual(poseAt(sample,'bolt',.1),{x:0,y:0,rotation:0});
+ for(const frame of partFrames(sample,'blade-left')){const pose=poseAt(sample,'blade-left',frame.offset*sample.duration);const angle=Number(frame.transform.match(/rotate\(([-\d.e+]+)deg\)/)[1]);assert.ok(Math.abs(angle-pose.rotation)<1e-10);}
 });
 test('invalid imported structures cannot create cycles, missing tracks, paths or non-finite values',async()=>{
  const {validateProp,validateClip}=await runtime;

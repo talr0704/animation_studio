@@ -355,5 +355,9 @@
       "foot_left",
       "foot_right"
     ]
+  },
+  "shampoo": {
+    "assembly": "assets/scenes/salon/props/shampoo/assembly.json",
+    "animation": "assets/scenes/salon/props/shampoo/animations/pump.json"
   }
 }

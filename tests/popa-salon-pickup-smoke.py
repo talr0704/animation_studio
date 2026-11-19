@@ -19,9 +19,9 @@ with sync_playwright() as p:
  assert page.locator('[data-tool="water"]').get_attribute('aria-pressed')=='false'
  # Picking shampoo fixes both the inventory and held pump behind the bottle.
  page.locator('[data-tool="shampoo"]').click()
- assert page.locator('#pump').is_visible()
- assert page.locator('#pump').evaluate('(e)=>Number(getComputedStyle(e).zIndex)')<page.locator('#tool-image').evaluate('(e)=>Number(getComputedStyle(e).zIndex)')
- assert page.locator('.inventory-pump').evaluate('(e)=>Number(getComputedStyle(e).zIndex)')<page.locator('.inventory-bottle').evaluate('(e)=>Number(getComputedStyle(e).zIndex)')
+ assert page.locator('#shampoo [data-prop-image="pump"]').is_visible()
+ for prefix in ['#shampoo','.inventory-shampoo']:
+  assert page.locator(prefix+' [data-prop-part="pump"]').evaluate('(e)=>Number(getComputedStyle(e).zIndex)')<page.locator(prefix+' [data-prop-part="bottle"]').evaluate('(e)=>Number(getComputedStyle(e).zIndex)')
  # A tool can be carried back to its own place and released.
  page.mouse.move(*point(400,140));page.mouse.down();page.wait_for_timeout(100)
  shelf=page.locator('[data-tool="shampoo"]').bounding_box();page.mouse.move(shelf['x']+shelf['width']/2,shelf['y']+shelf['height']/2,steps=10);page.mouse.up()

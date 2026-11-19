@@ -12,7 +12,7 @@ with sync_playwright() as p:
  assert page.locator('#coins').inner_text()=='0'
  page.locator('#buy-rug').click();assert '12' in page.locator('#toast').inner_text()
  assert not page.locator('#buy-rug').is_disabled()
- room=page.locator('.world').bounding_box();page.mouse.click(room['x']+room['width']*.72,room['y']+room['height']*.85)
+ room=page.locator('.world').bounding_box();page.mouse.click(room['x']+room['width']*.65,room['y']+room['height']*.85)
  page.clock.run_for(1800)
  assert float(page.locator('#player').evaluate('(e)=>parseFloat(e.style.left)'))>60
  page.locator('#garden-tab').click();assert page.locator('#overlay').is_visible()

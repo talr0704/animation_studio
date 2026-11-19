@@ -8,7 +8,7 @@ const TOOLS={water:['מים','assets/scenes/salon/props/shower-head/images/showe
 const PHASES=['הרטבה','סיבון','שטיפה','ייבוש','תספורת','סירוק','סיכה'];
 let album=readAlbum(),order=album.total,round=new SalonRound(order),selectedTool=null,selectedZone='bangs';
 let scale=1,ready=false,lastStroke=0,lastPoint=null,assembly,headReaction,sound=false,audio;
-let pickupOrigin=null,pickupMoved=false,scissorsRig,scissorsClip,scissorsView,propPreview=false;
+let pickupOrigin=null,pickupMoved=false,scissorsRig,scissorsClip,scissorsView,shampooRig,shampooClip,shampooView,propPreview=false;
 const effects=new Set(),animations=new Set(),foamNodes=[],wetNodes=[];
 const imageUrl=path=>new URL(`../${path}`,import.meta.url).href;
 function play(target,frames,options){
@@ -61,7 +61,7 @@ function refresh(){
  for(const img of document.querySelectorAll('#head-rig [data-hair]')){img.src=imageUrl(`assets/scenes/salon/hair/${img.dataset.hair}_${LENGTHS[round.lengths[img.dataset.hair]]}.png`);img.classList.toggle('selected',selectedTool==='scissors'&&img.dataset.hair===selectedZone);}
  for(const button of $('tools').querySelectorAll('button')){button.setAttribute('aria-pressed',String(button.dataset.tool===selectedTool));button.disabled=['bow','brush'].includes(button.dataset.tool)&&!unlocked(album,button.dataset.tool);}
  for(const button of $('zones').querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.zone===selectedZone));
- if(selectedTool){$('tool-image').src=imageUrl(TOOLS[selectedTool][1]);$('tool-image').hidden=selectedTool==='scissors';$('scissors').hidden=selectedTool!=='scissors';$('pump').hidden=selectedTool!=='shampoo';}else $('tool').hidden=true;
+ if(selectedTool){$('tool-image').src=imageUrl(TOOLS[selectedTool][1]);$('tool-image').hidden=['scissors','shampoo'].includes(selectedTool);$('scissors').hidden=selectedTool!=='scissors';$('shampoo').hidden=selectedTool!=='shampoo';}else $('tool').hidden=true;
  $('finish-cut').hidden=round.phase!==4;$('finish').disabled=round.phase!==7||round.claimed;$('finish').hidden=round.phase!==7;
  document.querySelector('.hair-controls').hidden=selectedTool!=='scissors'&&round.phase!==4;
  $('current-step').textContent=round.phase<7?`✿ ${PHASES[round.phase]}${![4,6].includes(round.phase)?` · ${Math.floor(round.coverage()*100)}%`:''}`:'המראה שלך מוכן!';
@@ -91,7 +91,7 @@ function react(x){
 }
 function animateTool(){
  if(selectedTool==='scissors')for(const p of scissorsRig.parts)play(scissorsView.nodes.get(p.id).motion,partFrames(scissorsClip,p.id),{duration:scissorsClip.duration*1000,easing:'linear'});
- else if(selectedTool==='shampoo')play($('pump'),[{transform:'translateY(0)'},{transform:'translateY(8px)'},{transform:'translateY(0)'}],{duration:350,easing:'ease-in-out'});
+ else if(selectedTool==='shampoo')for(const p of shampooRig.parts)play(shampooView.nodes.get(p.id).motion,partFrames(shampooClip,p.id),{duration:shampooClip.duration*1000,easing:'linear'});
  else play($('tool-image'),[{transform:'rotate(-5deg)'},{transform:'rotate(5deg)'},{transform:'rotate(0)'}],{duration:380,easing:'ease-in-out'});
 }
 function apply(x,y){
@@ -138,9 +138,7 @@ function pickTool(name){
 for(const [name,[label,src]]of Object.entries(TOOLS)){
  const button=document.createElement('button');button.type='button';button.className='tool-item';button.dataset.tool=name;button.setAttribute('aria-label',`לקחת ${label}`);button.title=label;
  const img=new Image();img.src=imageUrl(src);img.alt='';button.append(img);
- if(name==='shampoo'){
-  img.className='inventory-bottle';const pump=new Image();pump.src=imageUrl('assets/scenes/salon/props/shampoo/images/shampoo-pump.png');pump.className='inventory-pump';pump.alt='';button.prepend(pump);
- }
+
  const labelNode=document.createElement('span');labelNode.className='tool-label';labelNode.textContent=label;button.append(labelNode);
  button.addEventListener('pointerdown',event=>{
   event.preventDefault();event.stopPropagation();if(button.disabled)return;
@@ -259,6 +257,7 @@ function layoutWorkspace(){
  place(document.querySelector('.mirror'),layout.mirror);place(document.querySelector('.counter'),layout.counter);
  place(document.querySelector('.tool-shelf'),layout.shelf);place(document.querySelector('.clip-tray'),layout.tray);place($('show-album'),layout.album);
  for(const [name,rect]of Object.entries(layout.tools))place(document.querySelector(`[data-tool="${name}"]`),rect);
+ const bottle=document.querySelector('.inventory-shampoo');if(bottle)bottle.style.transform=`scale(${layout.tools.shampoo[2]/110})`;
  place($('show-request'),layout.magazine);
  const portrait=mode==='portrait';
  Object.assign(document.querySelector('.scene-status').style,{left:portrait?'120px':'200px',top:portrait?'15px':'0px',width:portrait?'420px':'400px'});
@@ -273,18 +272,23 @@ try{
  assembly=await response.json();mountAssembly(assembly);
  const loadJson=async path=>{const r=await fetch(imageUrl(path),{cache:'no-cache'});if(!r.ok)throw Error('Cannot load prop data');return r.json();};
  scissorsRig=validateProp(await loadJson(assembly.scissors.assembly));scissorsClip=validateClip(await loadJson(assembly.scissors.animation),scissorsRig);
- if(new URLSearchParams(location.search).get('propPreview')==='salon.scissors'){
-  try{const draft=JSON.parse(sessionStorage.getItem('popaPropPreviewV1'));if(draft?.rig?.id!=='salon.scissors')throw Error('Wrong prop');validateProp(draft.rig);validateClip(draft.clip,draft.rig);scissorsRig=draft.rig;scissorsClip=draft.clip;propPreview=true;}catch{console.warn('Preview unavailable; using published prop');}
+ shampooRig=validateProp(await loadJson(assembly.shampoo.assembly));shampooClip=validateClip(await loadJson(assembly.shampoo.animation),shampooRig);
+ const previewId=new URLSearchParams(location.search).get('propPreview');
+ if(['salon.scissors','salon.shampoo'].includes(previewId)){
+  try{const draft=JSON.parse(sessionStorage.getItem('popaPropPreviewV1'));if(draft?.rig?.id!==previewId)throw Error('Wrong prop');validateProp(draft.rig);validateClip(draft.clip,draft.rig);if(previewId==='salon.scissors'){scissorsRig=draft.rig;scissorsClip=draft.clip;}else{shampooRig=draft.rig;shampooClip=draft.clip;}propPreview=true;}catch{console.warn('Preview unavailable; using published prop');}
  }
  scissorsView=mountProp($('scissors'),scissorsRig);await scissorsView.ready;
  // Use the edited starting pose both on the counter and while holding the tool.
  scissorsView.render(scissorsClip,0);
+ shampooView=mountProp($('shampoo'),shampooRig);await shampooView.ready;shampooView.render(shampooClip,0);
  if(propPreview){const notice=document.createElement('a');notice.href='studio.html';notice.textContent='תצוגה מקדימה · חזרה לעורך האביזרים';Object.assign(notice.style,{position:'absolute',top:'0',left:'0',right:'0',textAlign:'center',zIndex:40,fontSize:'11px',background:'#fff4d7'});$('stage').append(notice);}
 
  const outfitResponse=await fetch(imageUrl(assembly.outfit.source));if(!outfitResponse.ok)throw new Error('Cannot load the calibrated outfit');
  mountOutfit(await outfitResponse.json());resetCape();
  const inventoryScissors=$('scissors').cloneNode(true);inventoryScissors.removeAttribute('id');inventoryScissors.hidden=false;inventoryScissors.className='inventory-scissors';
  const scissorsButton=document.querySelector('[data-tool="scissors"]');scissorsButton.querySelector('img').remove();scissorsButton.prepend(inventoryScissors);
+ const inventoryShampoo=$('shampoo').cloneNode(true);inventoryShampoo.removeAttribute('id');inventoryShampoo.hidden=false;inventoryShampoo.className='inventory-shampoo';
+ const shampooButton=document.querySelector('[data-tool="shampoo"]');shampooButton.querySelector('img').remove();shampooButton.prepend(inventoryShampoo);
  layoutWorkspace();
  CARE_CELLS.forEach((cell,index)=>{
   for(const [collection,file,size]of [[foamNodes,'assets/scenes/salon/effects/foam.png',70],[wetNodes,'assets/scenes/salon/effects/water-drops.png',45]]){
