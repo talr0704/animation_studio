@@ -144,44 +144,8 @@
     ]
   },
   "scissors": {
-    "joint": [
-      65,
-      90
-    ],
-    "scale": 0.25,
-    "parts": [
-      {
-        "selector": ".blade.a",
-        "file": "assets/scenes/salon/props/scissors/images/blade-left.png",
-        "sourceSize": [
-          281,
-          814
-        ],
-        "anchor": [
-          173,
-          423
-        ]
-      },
-      {
-        "selector": ".blade.b",
-        "file": "assets/scenes/salon/props/scissors/images/blade-right.png",
-        "sourceSize": [
-          280,
-          814
-        ],
-        "anchor": [
-          108,
-          423
-        ]
-      }
-    ],
-    "bolt": {
-      "file": "assets/scenes/salon/props/scissors/images/bolt.png",
-      "size": [
-        24,
-        24
-      ]
-    }
+    "assembly": "assets/scenes/salon/props/scissors/assembly.json",
+    "animation": "assets/scenes/salon/props/scissors/animations/cut.json"
   },
   "workspaces": {
     "wide": {

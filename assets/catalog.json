@@ -88,7 +88,10 @@
         "assets/scenes/salon/props/scissors/images/bolt.png"
       ],
       "sceneAssembly": "assets/scenes/salon/assembly.json",
-      "assemblyKey": "scissors"
+      "label": "מספריים",
+      "assembly": "assets/scenes/salon/props/scissors/assembly.json",
+      "animation": "assets/scenes/salon/props/scissors/animations/cut.json",
+      "editable": true
     },
     {
       "id": "salon.shampoo",

@@ -1,3 +1,4 @@
+import {mountProp,validateProp,validateClip,partFrames} from '../shared/prop-rig.js';
 import { SalonRound,HAIR_PARTS,LENGTHS,CARE_CELLS } from './salon-round.js';
 import { readAlbum,recordVisit,unlocked,UNLOCKS } from './salon-progress.js';
 const $=id=>document.getElementById(id);
@@ -7,7 +8,7 @@ const TOOLS={water:['מים','assets/scenes/salon/props/shower-head/images/showe
 const PHASES=['הרטבה','סיבון','שטיפה','ייבוש','תספורת','סירוק','סיכה'];
 let album=readAlbum(),order=album.total,round=new SalonRound(order),selectedTool=null,selectedZone='bangs';
 let scale=1,ready=false,lastStroke=0,lastPoint=null,assembly,headReaction,sound=false,audio;
-let pickupOrigin=null,pickupMoved=false;
+let pickupOrigin=null,pickupMoved=false,scissorsRig,scissorsClip,scissorsView,propPreview=false;
 const effects=new Set(),animations=new Set(),foamNodes=[],wetNodes=[];
 const imageUrl=path=>new URL(`../${path}`,import.meta.url).href;
 function play(target,frames,options){
@@ -89,7 +90,7 @@ function react(x){
  }
 }
 function animateTool(){
- if(selectedTool==='scissors')for(const [selector,angle]of [['.blade.a',18],['.blade.b',-18]])play($('scissors').querySelector(selector),[angle,0,angle].map(a=>({transform:`rotate(${a}deg)`})),{duration:380,easing:'ease-in-out'});
+ if(selectedTool==='scissors')for(const p of scissorsRig.parts)play(scissorsView.nodes.get(p.id).motion,partFrames(scissorsClip,p.id),{duration:scissorsClip.duration*1000,easing:'linear'});
  else if(selectedTool==='shampoo')play($('pump'),[{transform:'translateY(0)'},{transform:'translateY(8px)'},{transform:'translateY(0)'}],{duration:350,easing:'ease-in-out'});
  else play($('tool-image'),[{transform:'rotate(-5deg)'},{transform:'rotate(5deg)'},{transform:'rotate(0)'}],{duration:380,easing:'ease-in-out'});
 }
@@ -156,9 +157,7 @@ function mountAssembly(definition){
  $('head-rig').style.transformOrigin=definition.headPivot.map(v=>`${v}px`).join(' ');
  const hair=definition.hair,sx=hair.displaySize[0]/hair.sourceCanvas[0],sy=hair.displaySize[1]/hair.sourceCanvas[1];
  for(const part of hair.parts){const img=document.querySelector(`[data-hair="${part.id}"]`);Object.assign(img.style,{left:`${part.joint[0]-hair.anchor[0]*sx}px`,top:`${part.joint[1]-hair.anchor[1]*sy}px`,width:`${hair.displaySize[0]}px`,height:`${hair.displaySize[1]}px`,transformOrigin:`${hair.anchor[0]*sx}px ${hair.anchor[1]*sy}px`,zIndex:part.layer});}
- const scissors=definition.scissors;
- for(const part of scissors.parts){const node=$('scissors').querySelector(part.selector),img=node.querySelector('img');Object.assign(node.style,{left:`${scissors.joint[0]}px`,top:`${scissors.joint[1]}px`});Object.assign(img.style,{width:`${part.sourceSize[0]*scissors.scale}px`,height:`${part.sourceSize[1]*scissors.scale}px`,left:`${-part.anchor[0]*scissors.scale}px`,top:`${-part.anchor[1]*scissors.scale}px`});}
- const bolt=$('scissors').querySelector('.bolt');Object.assign(bolt.style,{left:`${scissors.joint[0]-scissors.bolt.size[0]/2}px`,top:`${scissors.joint[1]-scissors.bolt.size[1]/2}px`});
+
 }
 function closePanel(id){$(id).hidden=true;const button=id==='request-panel'?$('show-request'):$('show-album');button.focus({preventScroll:true});}
 $('show-request').onclick=()=>{putBack();$('request-panel').hidden=false;requestPortraitUpdate();$('request-panel').querySelector('button').focus();};
@@ -272,6 +271,14 @@ new ResizeObserver(layoutWorkspace).observe($('stage'));
 try{
  const response=await fetch(new URL('../assets/scenes/salon/assembly.json',import.meta.url));if(!response.ok)throw new Error('Cannot load salon assembly');
  assembly=await response.json();mountAssembly(assembly);
+ const loadJson=async path=>{const r=await fetch(imageUrl(path));if(!r.ok)throw Error('Cannot load prop data');return r.json();};
+ scissorsRig=validateProp(await loadJson(assembly.scissors.assembly));scissorsClip=validateClip(await loadJson(assembly.scissors.animation),scissorsRig);
+ if(new URLSearchParams(location.search).get('propPreview')==='salon.scissors'){
+  try{const draft=JSON.parse(sessionStorage.getItem('popaPropPreviewV1'));if(draft?.rig?.id!=='salon.scissors')throw Error('Wrong prop');validateProp(draft.rig);validateClip(draft.clip,draft.rig);scissorsRig=draft.rig;scissorsClip=draft.clip;propPreview=true;}catch{console.warn('Preview unavailable; using published prop');}
+ }
+ scissorsView=mountProp($('scissors'),scissorsRig);await scissorsView.ready;
+ if(propPreview){const notice=document.createElement('a');notice.href='studio.html';notice.textContent='תצוגה מקדימה · חזרה לעורך האביזרים';Object.assign(notice.style,{position:'absolute',top:'0',left:'0',right:'0',textAlign:'center',zIndex:40,fontSize:'11px',background:'#fff4d7'});$('stage').append(notice);}
+
  const outfitResponse=await fetch(imageUrl(assembly.outfit.source));if(!outfitResponse.ok)throw new Error('Cannot load the calibrated outfit');
  mountOutfit(await outfitResponse.json());resetCape();
  const inventoryScissors=$('scissors').cloneNode(true);inventoryScissors.removeAttribute('id');inventoryScissors.hidden=false;inventoryScissors.className='inventory-scissors';

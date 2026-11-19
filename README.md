@@ -101,3 +101,7 @@ Haircut sections continue to be chosen using the section buttons.
 ## איורים וקבצי הרכבה
 
 ראו [מפת התיקיות והוספת איורים](docs/asset-organization.md). קטלוג האביזרים נמצא ב־`assets/catalog.json`.
+
+## עורך אביזרים
+
+פתחו `studio.html` לעריכת הרכבת המספריים ותנועת הגזירה. [מדריך עריכה, ייצוא והעלאה](docs/prop-studio.md).

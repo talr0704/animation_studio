@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "id": "salon.scissors",
+  "canvas": [
+    130,
+    210
+  ],
+  "parts": [
+    {
+      "id": "blade-left",
+      "label": "להב שמאל",
+      "image": "assets/scenes/salon/props/scissors/images/blade-left.png",
+      "sourceSize": [
+        281,
+        814
+      ],
+      "anchor": [
+        173,
+        423
+      ],
+      "position": [
+        65,
+        90
+      ],
+      "scale": 0.25,
+      "rotation": 0,
+      "layer": 1,
+      "parent": null
+    },
+    {
+      "id": "blade-right",
+      "label": "להב ימין",
+      "image": "assets/scenes/salon/props/scissors/images/blade-right.png",
+      "sourceSize": [
+        280,
+        814
+      ],
+      "anchor": [
+        108,
+        423
+      ],
+      "position": [
+        65,
+        90
+      ],
+      "scale": 0.25,
+      "rotation": 0,
+      "layer": 2,
+      "parent": null
+    },
+    {
+      "id": "bolt",
+      "label": "בורג",
+      "image": "assets/scenes/salon/props/scissors/images/bolt.png",
+      "sourceSize": [
+        140,
+        141
+      ],
+      "anchor": [
+        70,
+        70.5
+      ],
+      "position": [
+        65,
+        90
+      ],
+      "scale": 0.17142857142857143,
+      "rotation": 0,
+      "layer": 3,
+      "parent": null
+    }
+  ]
+}
