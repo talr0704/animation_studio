@@ -35,3 +35,5 @@ assets/scenes/salon/props/scissors/animations/cut.json
 פורמט ההרכבה (גרסה 1) כולל `id`, `canvas` ו־`parts`. לכל חלק תמונה, גודל מקור, עוגן, מיקום, קנה מידה, סיבוב, שכבה והורה אופציונלי. פורמט התנועה כולל `prop`, `id`, `duration`, `easing` וערוצים עם `keys` של `time`, `x`, `y`, `rotation`.
 
 כדי לחבר אביזר נוסף נדרשים קובצי נתונים בפורמט הזה, רישום `editable`, `assembly`, `animation` ו־`images` בקטלוג, וחיבור המנגנון המשותף במקום שבו אותו אביזר מוצג במשחק. אין לסמן אביזר כעריך לפני שהחיבור למשחק הושלם.
+
+הסבון מורכב משלושה חלקים: בקבוק, בסיס משאבה וראש משאבה. בתנועת הלחיצה רק הראש נע. האיורים נחתכו מגיליון `source-art/salon/sheets/manicure-and-soap.png`; גבולות החיתוך מתועדים ב־`assets/scenes/salon/props/shampoo/source.json`. יתר חלקי הלק נשארו בגיליון המקור.

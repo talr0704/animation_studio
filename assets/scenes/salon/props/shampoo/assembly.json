@@ -8,44 +8,65 @@
   "parts": [
     {
       "id": "pump",
-      "label": "משאבה",
-      "image": "assets/scenes/salon/props/shampoo/images/shampoo-pump.png",
+      "label": "ראש המשאבה",
+      "image": "assets/scenes/salon/props/shampoo/images/pump-head.png",
       "sourceSize": [
-        238,
-        299
+        340,
+        225
+      ],
+      "position": [
+        33,
+        -21
       ],
       "anchor": [
         0,
         0
       ],
-      "position": [
-        5,
-        -52
-      ],
-      "scale": 0.42016806722689076,
+      "scale": 0.2,
       "rotation": 0,
       "layer": 1,
       "parent": null
     },
     {
       "id": "bottle",
-      "label": "בקבוק",
+      "label": "בקבוק הסבון",
       "image": "assets/scenes/salon/props/shampoo/images/shampoo-body.png",
       "sourceSize": [
-        269,
-        334
+        440,
+        455
+      ],
+      "position": [
+        0,
+        25
       ],
       "anchor": [
         0,
         0
       ],
-      "position": [
-        0,
-        1.71
-      ],
-      "scale": 0.40892193308550184,
+      "scale": 0.25,
       "rotation": 0,
       "layer": 2,
+      "parent": null
+    },
+    {
+      "id": "pump-base",
+      "label": "בסיס המשאבה",
+      "image": "assets/scenes/salon/props/shampoo/images/pump-base.png",
+      "sourceSize": [
+        285,
+        235
+      ],
+      "position": [
+        28,
+        13
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "scale": 0.2,
+      "rotation": 0,
+      "layer": 3,
       "parent": null
     }
   ]

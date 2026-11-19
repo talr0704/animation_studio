@@ -96,8 +96,9 @@
     {
       "id": "salon.shampoo",
       "images": [
+        "assets/scenes/salon/props/shampoo/images/pump-head.png",
         "assets/scenes/salon/props/shampoo/images/shampoo-body.png",
-        "assets/scenes/salon/props/shampoo/images/shampoo-pump.png"
+        "assets/scenes/salon/props/shampoo/images/pump-base.png"
       ],
       "sceneAssembly": "assets/scenes/salon/assembly.json",
       "label": "סבון עם משאבה",

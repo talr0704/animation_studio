@@ -1,0 +1,24 @@
+{
+  "source": "source-art/salon/sheets/manicure-and-soap.png",
+  "operation": "lossless rectangular crop, original RGBA pixels",
+  "crops": {
+    "images/shampoo-body.png": [
+      100,
+      535,
+      440,
+      455
+    ],
+    "images/pump-base.png": [
+      650,
+      625,
+      285,
+      235
+    ],
+    "images/pump-head.png": [
+      1100,
+      600,
+      340,
+      225
+    ]
+  }
+}
