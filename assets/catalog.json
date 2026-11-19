@@ -217,6 +217,33 @@
         "assets/scenes/manicure/nails/states/old-polish.png",
         "assets/scenes/manicure/nails/states/partly-repaired.png"
       ]
+    },
+    {
+      "id": "home.sofa",
+      "label": "ספה ורודה",
+      "status": "ready",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/sofa.png"
+      ]
+    },
+    {
+      "id": "home.bed",
+      "label": "מיטת מנטה",
+      "status": "ready",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/bed.png"
+      ]
+    },
+    {
+      "id": "home.side-table",
+      "label": "שולחן צד",
+      "status": "ready",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/side-table.png"
+      ]
     }
   ]
 }

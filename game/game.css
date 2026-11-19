@@ -29,3 +29,5 @@ body{height:100svh;overflow:hidden}.topbar{height:58px;max-width:none;padding:8p
 @media(max-width:700px){.reading-books{left:85px;right:auto;bottom:calc(16% + 65px);width:34px;height:31px}.prop-plant{right:0}}
 
 .world[data-view=garden] .manicure-link{display:none}.world-paths .manicure-link img{height:65px;width:44px}.world-paths{gap:12px}@media(max-width:700px){.world-paths{top:28%;gap:10px}.world-paths .manicure-link img{height:48px;width:30px}.world-paths .manicure-link span{font-size:9px}}
+
+.player>.popa-browser{transform:scaleX(var(--facing,1));transform-origin:center bottom}

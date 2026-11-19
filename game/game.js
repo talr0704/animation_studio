@@ -13,6 +13,7 @@ try {
 const illustratedProps = [];
 const fruitImages = new Map();
 let popa, view = 'room', phase = 'intro', round, roomX = .52, target = .52;
+let roomDepth=0,targetDepth=0,roomFacing=1;
 let width = 1, height = 1, last = performance.now(), particles = [], toastTimer, audio, sound = false;
 const keys = new Set();
 const canvas = $('canvas'), ctx = canvas.getContext('2d');
@@ -47,20 +48,23 @@ function dialog({label='משחקים עם פופה',title,text,main,action,secon
   if(results)for(const [number,label] of results){const span=document.createElement('span'),b=document.createElement('b');b.textContent=number;span.append(b,document.createTextNode(label));$('results').append(span);}
   $('dialog-main').focus({preventScroll:true});
 }
+function faceRoom(direction){roomFacing=direction<0?-1:1;$('player').dataset.facing=roomFacing<0?'left':'right';$('player').style.setProperty('--facing',roomFacing);}
+function roomBounds(){const half=($('player').firstElementChild?.offsetWidth??100)/width/2;return Math.min(.46,Math.max(.17,half+.02));}
+function roomScale(){return Math.min(height/650,width<600?.52:.76)*(1-roomDepth*.65);}
 function positionPlayer(x) {
   $('player').style.left = `${x*100}%`;
-  $('player').style.bottom = view==='room' ? '30px' : `${height*.16-40}px`;
+  $('player').style.bottom = view==='room' ? `${30+roomDepth*height}px` : `${height*.16-40}px`;
   $('basket').style.left=`${x*100}%`;
   $('basket').style.top=`${height*.84-21}px`;
 }
 function home() {
   if (view==='garden' && phase==='playing') { pause(); return; }
-  document.querySelector('.world').dataset.view='room';view='room';phase='intro';target=roomX;round=undefined;particles=[];keys.clear();closeDialog();
+  document.querySelector('.world').dataset.view='room';view='room';phase='intro';target=roomX;targetDepth=roomDepth;faceRoom(roomFacing);round=undefined;particles=[];keys.clear();closeDialog();
   $('room').hidden=false;$('orchard').hidden=true;$('basket').hidden=true;
   $('home-tab').setAttribute('aria-selected','true');$('garden-tab').setAttribute('aria-selected','false');
   $('heading').textContent='ברוכה הבאה הביתה';$('subtitle').textContent='לחצי על הרצפה כדי לטייל עם פופה, או צאי להרפתקה בגינה.';
   $('activity-title').textContent='מה צומח בגינה?';$('activity-text').textContent='45 שניות של פירות, כוכבי זהב ורצפים. כמה תוכלי לתפוס?';$('activity-button').textContent='לגינה ←';
-  popa.setScale(Math.min(height/650,width<600?.52:.76));cue('idle');positionPlayer(roomX);
+  popa.setScale(roomScale());cue('idle');positionPlayer(roomX);
 }
 function garden() {
   if(view==='garden'&&phase==='playing')return;
@@ -69,7 +73,7 @@ function garden() {
   $('home-tab').setAttribute('aria-selected','false');$('garden-tab').setAttribute('aria-selected','true');
   $('heading').textContent='גינת ההפתעות';$('subtitle').textContent='פירות קטנים, רצפים גדולים. הסל של פופה מחכה לך.';
   $('activity-title').textContent='עוד תפיסה אחת…';$('activity-text').textContent='כל 5 תפיסות ברצף מגדילות את הניקוד. כוכבי זהב שווים יותר!';$('activity-button').textContent='הביתה ←';
-  popa.setScale(.29);cue('curious');positionPlayer(.5);hud();
+  $('player').style.setProperty('--facing',1);$('player').dataset.facing='right';popa.setScale(.29);cue('curious');positionPlayer(.5);hud();
   dialog({title:'מה נופל מהעצים?',text:'הזיזי את פופה ותפסי פירות בסל.\nכוכב זהב = בונוס. טיפות כחולות = לא לסל!\nבמחשב: עכבר או חצים. בנייד: גרירה על הגינה.',main:'בואי נשחק!',action:start});
 }
 function start() {
@@ -92,7 +96,7 @@ function hud() {
   const lives=round?.lives??3;$('lives').textContent='♥ '.repeat(lives)+'♡ '.repeat(3-lives);$('lives').setAttribute('aria-label',`${lives} לבבות`);
   const combo=round?.combo??0;$('combo').textContent=combo>=5?`${combo} ברצף! ×${Math.min(3,1+Math.floor(combo/5))} נקודות`:'תופסים פירות. בונים רצפים.';
 }
-function resize(){const world=document.querySelector('.world');width=world.clientWidth;height=world.clientHeight;const ratio=Math.min(devicePixelRatio||1,2);canvas.width=width*ratio;canvas.height=height*ratio;ctx.setTransform(ratio,0,0,ratio,0,0);if(popa){if(view==='room')popa.setScale(Math.min(height/650,width<600?.52:.76));positionPlayer(view==='room'?roomX:round?.player??.5);}}
+function resize(){const world=document.querySelector('.world');width=world.clientWidth;height=world.clientHeight;const ratio=Math.min(devicePixelRatio||1,2);canvas.width=width*ratio;canvas.height=height*ratio;ctx.setTransform(ratio,0,0,ratio,0,0);if(popa){if(view==='room'){popa.setScale(roomScale());const min=roomBounds();roomX=Math.max(min,Math.min(1-min,roomX));target=Math.max(min,Math.min(1-min,target));}positionPlayer(view==='room'?roomX:round?.player??.5);}}
 function fruit(object){
   const image=fruitImages.get(object.type);if(!image)return;
   ctx.save();ctx.translate(object.x*width,object.y*height);
@@ -101,7 +105,14 @@ function fruit(object){
 }
 function draw(){ctx.clearRect(0,0,width,height);if(view!=='garden')return;for(const o of round?.objects??[])fruit(o);for(const p of particles){ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.hurt?'#a86878':'#587343';ctx.font='bold 22px system-ui';ctx.textAlign='center';ctx.fillText(p.text,p.x*width,height*.84-p.age*45-30);}ctx.globalAlpha=1;}
 function tick(now){const dt=Math.min((now-last)/1000,.05);last=now;
-  if(popa&&view==='room'&&$('overlay').hidden){const dx=target-roomX;if(Math.abs(dx)>.006){roomX+=Math.sign(dx)*Math.min(Math.abs(dx),140/width*dt);cue('walk');positionPlayer(roomX);}else if(['walk','stop'].includes(popa.action))cue('idle');}
+  if(popa&&view==='room'&&$('overlay').hidden){
+    const horizontal=Number(keys.has('ArrowRight')||keys.has('d'))-Number(keys.has('ArrowLeft')||keys.has('a'));
+    const vertical=Number(keys.has('ArrowUp')||keys.has('w'))-Number(keys.has('ArrowDown')||keys.has('s'));
+    if(horizontal||vertical){const length=Math.hypot(horizontal,vertical),min=roomBounds();target=Math.max(min,Math.min(1-min,roomX+horizontal/length*160/width*dt));targetDepth=Math.max(0,Math.min(.16,roomDepth+vertical/length*160/height*dt));}
+    const dx=(target-roomX)*width,dy=(targetDepth-roomDepth)*height,distance=Math.hypot(dx,dy);
+    if(distance>.01){const step=Math.min(distance,160*dt);roomX+=dx/distance*step/width;roomDepth+=dy/distance*step/height;if(Math.abs(dx)>.1)faceRoom(dx);popa.setScale(roomScale());cue('walk');positionPlayer(roomX);}
+    else if(['walk','stop'].includes(popa.action))cue('idle');
+  }
   if(view==='garden'&&phase==='playing'){
     if(keys.has('ArrowLeft')||keys.has('a'))target-=600/width*dt;
     if(keys.has('ArrowRight')||keys.has('d'))target+=600/width*dt;
@@ -115,11 +126,18 @@ $('home-tab').onclick=()=>{if(view==='garden'&&phase==='playing')pause();else ho
 $('activity-button').onclick=()=>{if(!popa)return;if(view==='room')garden();else if(phase==='playing')pause();else home();};$('pause').onclick=pause;
 $('reading-books').onclick=()=>{cue('rest');toast('פופה בחרה סיפור לפינת הקריאה שלה');};
 $('buy-rug').onclick=()=>{if(profile.rug)return;if(profile.coins<12){toast('עוד קצת פירות — השטיח עולה 12 מטבעות');return;}profile.coins-=12;profile.rug=true;save();refreshProfile();toast('השטיח החדש כבר בבית!');if(view==='room')cue('happy');};
-$('room').addEventListener('pointerdown',e=>{if(!popa||e.target.closest('button,a'))return;const r=document.querySelector('.world').getBoundingClientRect();if(e.clientY-r.top<r.height*.6){cue('curious');toast('פופה אוהבת את הפינה הזאת');return;}target=Math.max(.17,Math.min(.83,(e.clientX-r.left)/r.width));});
+$('room').addEventListener('pointerdown',e=>{if(!popa||e.target.closest('button,a'))return;const r=document.querySelector('.world').getBoundingClientRect();if(e.clientY-r.top<r.height*.6){cue('curious');toast('פופה אוהבת את הפינה הזאת');return;}const min=roomBounds();target=Math.max(min,Math.min(1-min,(e.clientX-r.left)/r.width));targetDepth=Math.max(0,Math.min(.16,1-(e.clientY-r.top)/r.height-.04));});
 $('orchard').addEventListener('pointermove',e=>{if(phase!=='playing'||e.target.closest('.game-hud'))return;if(e.pointerType==='touch'&&!e.buttons)return;const r=canvas.getBoundingClientRect();target=(e.clientX-r.left)/r.width;});
 $('orchard').addEventListener('pointerdown',e=>{if(phase!=='playing'||e.target.closest('button'))return;const r=canvas.getBoundingClientRect();target=(e.clientX-r.left)/r.width;$('orchard').setPointerCapture(e.pointerId);});
-document.addEventListener('keydown',e=>{if(view!=='garden')return;if(e.key==='Escape'||e.code==='Space'){if(phase==='playing'){e.preventDefault();pause();}return;}if(phase==='playing'&&['ArrowLeft','ArrowRight','a','d'].includes(e.key)){e.preventDefault();keys.add(e.key);}});
-document.addEventListener('keyup',e=>keys.delete(e.key));window.addEventListener('blur',()=>{keys.clear();pause();});document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
+const roomKeys=new Set(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','a','d','w','s']);
+function clearMovement(){keys.clear();if(view==='room'){target=roomX;targetDepth=roomDepth;}pause();}
+document.addEventListener('keydown',e=>{
+ if(e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
+ if(view==='room'&&popa&&$('overlay').hidden&&roomKeys.has(e.key)){e.preventDefault();if(!keys.size){target=roomX;targetDepth=roomDepth;}keys.add(e.key);return;}
+ if(view!=='garden')return;if(e.key==='Escape'||e.code==='Space'){if(phase==='playing'){e.preventDefault();pause();}return;}if(phase==='playing'&&['ArrowLeft','ArrowRight','a','d'].includes(e.key)){e.preventDefault();keys.add(e.key);}
+});
+document.addEventListener('keyup',e=>{keys.delete(e.key);if(view==='room'&&roomKeys.has(e.key)){target=roomX;targetDepth=roomDepth;}});
+window.addEventListener('blur',clearMovement);document.addEventListener('visibilitychange',()=>{if(document.hidden)clearMovement();});
 $('overlay').addEventListener('keydown',e=>{if(e.key==='Tab'){const buttons=[$('dialog-main'),$('dialog-secondary')];if(e.shiftKey&&document.activeElement===buttons[0]){e.preventDefault();buttons[1].focus();}else if(!e.shiftKey&&document.activeElement===buttons[1]){e.preventDefault();buttons[0].focus();}}});
 $('sound').onclick=()=>{sound=!sound;if(sound){try{audio??=new (window.AudioContext||window.webkitAudioContext)();audio.resume();}catch{sound=false;toast('הדפדפן הזה אינו תומך בצליל');}}$('sound').textContent=sound?'צליל פעיל ♫':'צליל כבוי ♫';$('sound').setAttribute('aria-pressed',String(sound));};
 $('salon-mirror').hidden=readAlbum().total<3;

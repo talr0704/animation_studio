@@ -1,0 +1,26 @@
+{
+  "source": "source-art/home/generated/furniture-sheet.png",
+  "reference": "assets/scenes/salon/furniture/chair.png",
+  "transparent": true,
+  "items": {
+    "sofa.png": {
+      "column": 0
+    },
+    "bed.png": {
+      "column": 1
+    },
+    "side-table.png": {
+      "column": 2
+    }
+  },
+  "sheetSize": [
+    2172,
+    724
+  ],
+  "cropSize": [
+    724,
+    724
+  ],
+  "trim": true,
+  "padding": 12
+}

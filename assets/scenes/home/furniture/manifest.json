@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "source": "source-art/home/generated/furniture-sheet.png",
+  "items": [
+    {
+      "id": "home.sofa",
+      "image": "assets/scenes/home/furniture/sofa.png",
+      "size": [
+        723,
+        700
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "id": "home.bed",
+      "image": "assets/scenes/home/furniture/bed.png",
+      "size": [
+        689,
+        679
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "id": "home.side-table",
+      "image": "assets/scenes/home/furniture/side-table.png",
+      "size": [
+        709,
+        729
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
+    }
+  ]
+}
