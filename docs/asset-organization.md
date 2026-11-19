@@ -6,6 +6,7 @@
 - `assets/characters/popa/assembly.json` — ההרכבה המאושרת של פופה. מזהי החלקים בתוכו נשמרים כדי לא לשנות אנימציות קיימות.
 - `assets/scenes/home/` — איורי הבית והרכבת האביזרים שלו.
 - `assets/scenes/garden/` — רקע הגינה, סל ופירות.
+- `assets/scenes/manicure/` — כפה, ציפורניים ומסכות, כלי טיפול, מנורה ובקבוקי לק בשלוש שכבות. [מדריך המשחק](popa-manicure.md).
 - `assets/scenes/salon/` — ריהוט, שיער מיושר, ספרים, אפקטים ואביזרי המספרה.
 - `assets/scenes/salon/props/<name>/images/` — כל חלקי האביזר יחד. לדוגמה, שני להבי המספריים והבורג נמצאים ב־`scissors`.
 - `assets/scenes/salon/assembly.json` — המקור הפעיל למיקומים, שכבות וצירים במספרה. מפתח `scissors` מפנה לקובצי ההרכבה והגזירה שבתיקיית האביזר.

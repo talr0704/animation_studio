@@ -105,3 +105,7 @@ Haircut sections continue to be chosen using the section buttons.
 ## עורך אביזרים
 
 פתחו `studio.html` לעריכת הרכבת המספריים ותנועת הגזירה. [מדריך עריכה, ייצוא והעלאה](docs/prop-studio.md).
+
+## פינת הציפורניים
+
+מיני־משחק משולב ב־`manicure.html`: ניקוי, תיקון, ציור חופשי, ייבוש וקישוט. [הפעלה, ארגון האיורים ובדיקות](docs/popa-manicure.md).

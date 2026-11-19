@@ -27,6 +27,10 @@
         "assets/scenes/garden/orange.svg",
         "assets/scenes/garden/rain.svg"
       ]
+    },
+    {
+      "id": "manicure",
+      "assembly": "assets/scenes/manicure/assembly.json"
     }
   ],
   "props": [
@@ -131,13 +135,87 @@
     },
     {
       "id": "manicure.nail-polish",
-      "label": "לק — שמור למשחק עתידי",
-      "status": "reserved",
+      "label": "לק בפינת הציפורניים",
+      "status": "active",
       "editable": false,
       "images": [
-        "assets/scenes/manicure/props/nail-polish/images/bottle.png",
-        "assets/scenes/manicure/props/nail-polish/images/neck-ring.png",
-        "assets/scenes/manicure/props/nail-polish/images/cap-and-brush.png"
+        "assets/scenes/manicure/props/nail-polish/colors/lavender/bottle-back.png",
+        "assets/scenes/manicure/props/nail-polish/colors/lavender/bottle-front.png",
+        "assets/scenes/manicure/props/nail-polish/colors/lavender/brush.png",
+        "assets/scenes/manicure/props/nail-polish/colors/mint/bottle-back.png",
+        "assets/scenes/manicure/props/nail-polish/colors/mint/bottle-front.png",
+        "assets/scenes/manicure/props/nail-polish/colors/mint/brush.png",
+        "assets/scenes/manicure/props/nail-polish/colors/peach/bottle-back.png",
+        "assets/scenes/manicure/props/nail-polish/colors/peach/bottle-front.png",
+        "assets/scenes/manicure/props/nail-polish/colors/peach/brush.png",
+        "assets/scenes/manicure/props/nail-polish/colors/pink/bottle-back.png",
+        "assets/scenes/manicure/props/nail-polish/colors/pink/bottle-front.png",
+        "assets/scenes/manicure/props/nail-polish/colors/pink/brush.png",
+        "assets/scenes/manicure/props/nail-polish/colors/topcoat/bottle-back.png",
+        "assets/scenes/manicure/props/nail-polish/colors/topcoat/bottle-front.png",
+        "assets/scenes/manicure/props/nail-polish/colors/topcoat/brush.png",
+        "assets/scenes/manicure/props/nail-polish/colors/yellow/bottle-back.png",
+        "assets/scenes/manicure/props/nail-polish/colors/yellow/bottle-front.png",
+        "assets/scenes/manicure/props/nail-polish/colors/yellow/brush.png"
+      ],
+      "rig": "assets/scenes/manicure/props/nail-polish/rig.json"
+    },
+    {
+      "id": "manicure.care",
+      "editable": false,
+      "images": [
+        "assets/scenes/manicure/props/care/images/cleaning-brush.png",
+        "assets/scenes/manicure/props/care/images/cotton-clean.png",
+        "assets/scenes/manicure/props/care/images/cotton-stained.png",
+        "assets/scenes/manicure/props/care/images/cream-jar.png",
+        "assets/scenes/manicure/props/care/images/cream-lid.png",
+        "assets/scenes/manicure/props/care/images/cuticle-stick.png",
+        "assets/scenes/manicure/props/care/images/foam.png",
+        "assets/scenes/manicure/props/care/images/nail-buffer.png",
+        "assets/scenes/manicure/props/care/images/nail-file.png",
+        "assets/scenes/manicure/props/care/images/remover.png",
+        "assets/scenes/manicure/props/care/images/towel.png",
+        "assets/scenes/manicure/props/care/images/water-drops.png"
+      ]
+    },
+    {
+      "id": "manicure.soap",
+      "editable": false,
+      "images": [
+        "assets/scenes/manicure/props/soap/images/soap-bottle.png",
+        "assets/scenes/manicure/props/soap/images/soap-collar.png",
+        "assets/scenes/manicure/props/soap/images/soap-pump.png"
+      ]
+    },
+    {
+      "id": "manicure.stickers",
+      "editable": false,
+      "images": [
+        "assets/scenes/manicure/props/stickers/images/sticker-bow.png",
+        "assets/scenes/manicure/props/stickers/images/sticker-flower.png",
+        "assets/scenes/manicure/props/stickers/images/sticker-heart.png",
+        "assets/scenes/manicure/props/stickers/images/sticker-star.png"
+      ]
+    },
+    {
+      "id": "manicure.nails",
+      "editable": false,
+      "images": [
+        "assets/scenes/manicure/nails/masks/broken.png",
+        "assets/scenes/manicure/nails/masks/clean.png",
+        "assets/scenes/manicure/nails/masks/dirty.png",
+        "assets/scenes/manicure/nails/masks/finished-pink.png",
+        "assets/scenes/manicure/nails/masks/old-polish.png",
+        "assets/scenes/manicure/nails/masks/partly-repaired.png",
+        "assets/scenes/manicure/nails/overlays/dirt.png",
+        "assets/scenes/manicure/nails/overlays/old-polish.png",
+        "assets/scenes/manicure/nails/overlays/shine.png",
+        "assets/scenes/manicure/nails/states/broken.png",
+        "assets/scenes/manicure/nails/states/clean.png",
+        "assets/scenes/manicure/nails/states/dirty.png",
+        "assets/scenes/manicure/nails/states/finished-pink.png",
+        "assets/scenes/manicure/nails/states/old-polish.png",
+        "assets/scenes/manicure/nails/states/partly-repaired.png"
       ]
     }
   ]

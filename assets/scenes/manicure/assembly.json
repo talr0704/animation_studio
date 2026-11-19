@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "frame": [
+    256,
+    384
+  ],
+  "paw": {
+    "image": "paw/paw.png",
+    "size": [
+      546,
+      1360
+    ],
+    "nails": [
+      {
+        "center": [
+          86,
+          130
+        ],
+        "size": [
+          76,
+          100
+        ],
+        "rotation": -12
+      },
+      {
+        "center": [
+          207,
+          58
+        ],
+        "size": [
+          76,
+          100
+        ],
+        "rotation": -4
+      },
+      {
+        "center": [
+          345,
+          58
+        ],
+        "size": [
+          76,
+          100
+        ],
+        "rotation": 4
+      },
+      {
+        "center": [
+          462,
+          130
+        ],
+        "size": [
+          76,
+          100
+        ],
+        "rotation": 12
+      }
+    ]
+  },
+  "repair": {
+    "edgeY": 112,
+    "partialDistance": 260,
+    "completeDistance": 800
+  },
+  "thresholds": {
+    "cleanRemaining": 0.08,
+    "paintForDry": 0.65
+  },
+  "dryer": {
+    "size": [
+      347,
+      300
+    ],
+    "back": "furniture/dryer-open.png",
+    "front": "furniture/dryer-front.png",
+    "light": "furniture/dryer-light.png",
+    "frontRect": [
+      0,
+      40,
+      347,
+      260
+    ],
+    "lightRect": [
+      24,
+      148,
+      301,
+      116
+    ],
+    "pawRect": [
+      58,
+      12,
+      170,
+      423
+    ],
+    "openingRect": [
+      30,
+      112,
+      287,
+      157
+    ]
+  },
+  "brushTip": [
+    57,
+    205
+  ],
+  "colors": {
+    "pink": "#f49fbc",
+    "lavender": "#bda1e6",
+    "mint": "#a1d6bd",
+    "peach": "#f7b29d",
+    "yellow": "#f4d776",
+    "topcoat": "#f9ebce"
+  },
+  "toolTips": {
+    "remove": [
+      0.5,
+      0.5
+    ],
+    "clean": [
+      0.5,
+      0.84
+    ],
+    "file": [
+      0.18,
+      0.82
+    ]
+  }
+}

@@ -8,7 +8,7 @@ test('catalog has unique stable IDs and every declared asset and assembly exists
  const catalog=read('assets/catalog.json'),ids=new Set();
  for(const entry of [...catalog.characters,...catalog.scenes,...catalog.props]){
   assert.ok(!ids.has(entry.id),entry.id);ids.add(entry.id);
-  for(const path of [entry.assembly,entry.animations,entry.animation,entry.sceneAssembly,...(entry.images??[])].filter(Boolean))assert.ok(existsSync(join(root,path)),path);
+  for(const path of [entry.assembly,entry.animations,entry.animation,entry.rig,entry.sceneAssembly,...(entry.images??[])].filter(Boolean))assert.ok(existsSync(join(root,path)),path);
   if(entry.assemblyKey)assert.ok(read(entry.sceneAssembly)[entry.assemblyKey],entry.id);
  }
 });
