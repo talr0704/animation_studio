@@ -23,7 +23,7 @@
         90
       ],
       "scale": 0.25,
-      "rotation": 0,
+      "rotation": 21,
       "layer": 1,
       "parent": null
     },
@@ -40,11 +40,11 @@
         423
       ],
       "position": [
-        65,
-        90
+        63.29564489112227,
+        91.02261306532664
       ],
       "scale": 0.25,
-      "rotation": 0,
+      "rotation": -13,
       "layer": 2,
       "parent": null
     },
