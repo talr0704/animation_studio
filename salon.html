@@ -1,4 +1,4 @@
-<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>המספרה של פופה</title><link rel="stylesheet" href="game/salon.css?v=9"></head><body>
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>המספרה של פופה</title><link rel="stylesheet" href="game/salon.css?v=scene-labels-1"></head><body>
 <header class="salon-top"><a href="game.html">← לעולם של פופה</a><h1>✿ המספרה של פופה</h1><button id="salon-sound" aria-pressed="false">צליל כבוי ♫</button><span class="wallet">✦ <b id="coins">0</b></span></header>
 <main><section id="stage" aria-label="עמדת טיפוח לפופה" tabindex="0"><img class="room-fill" src="assets/scenes/home/room.svg" alt=""><div id="scene">
 
@@ -8,15 +8,15 @@
 
 <img class="tool-shelf" src="assets/scenes/home/shelf.svg" alt="מדף הכלים"><img class="clip-tray" src="assets/scenes/salon/props/towels/images/towel-folded.png" alt="מגבת לסיכות">
 <div id="tools" class="scene-tools" role="group" aria-label="כלים בעמדת הטיפוח"></div>
-<button id="show-request" class="request-object inworld-ui" aria-label="לפתוח את מגזין התסרוקות"><img src="assets/scenes/salon/books/request-magazine.png" alt=""><span>התסרוקת שפופה מבקשת</span></button>
+<button id="show-request" class="request-object inworld-ui" aria-label="לפתוח את מגזין התסרוקות"><img src="assets/scenes/salon/books/request-magazine.png" alt=""><span><b class="book-label-wide">המראה<br>הבא שלי</b><b class="book-label-small">בקשה</b></span></button>
 <div class="scene-status inworld-ui"><span id="current-step">מסדרים את הכלים…</span><progress id="care-progress" max="100" value="0" aria-label="התקדמות הטיפול"></progress><p id="feedback" role="status">עוד רגע מתחילות.</p></div>
 <div class="scene-actions inworld-ui"><button id="finish-cut" hidden>נעבור לגימור ←</button><button id="finish" disabled hidden>סיימנו! ✨</button></div>
 <div class="hair-controls inworld-ui" hidden><span>איזה אזור נקצר?</span><div id="zones" role="group" aria-label="בחירת אזור תספורת ידנית"></div></div>
 <button id="show-album" class="album-object" aria-label="לפתוח את אלבום התסרוקות"><img src="assets/scenes/salon/books/album-stack.png" alt=""><span>האלבום שלי</span></button>
-<p class="pickup-hint inworld-ui" id="pickup-hint">קחי כלי מהמעמד והעבירי אותו לשיער</p>
+<p class="sr-only" id="pickup-hint">קחי כלי מהמעמד והעבירי אותו לשיער</p>
 </div><div id="loading" role="status">מסדרים את הכלים…</div>
 <section id="request-panel" class="world-panel" role="dialog" aria-modal="true" aria-labelledby="request-title" hidden><div class="request-book"><img class="book-art" src="assets/scenes/salon/books/request-magazine.png" alt="מגזין תסרוקות פתוח"><button class="close-panel" data-close="request-panel" aria-label="סגירת המגזין">×</button><div class="book-picture"><div id="request-preview" class="portrait" aria-label="התסרוקת המבוקשת"></div><p>המראה שפופה מבקשת</p></div><div class="book-notes"><h2 id="request-title"></h2><p id="request-text"></p><div id="targets"></div><p class="hint">אפשר להוסיף את הטאץ׳ שלך.</p></div><button class="continue" data-close="request-panel">חוזרות לסלון</button></div></section>
 <section id="album-panel" class="world-panel" role="dialog" aria-modal="true" aria-labelledby="album-title" hidden><div class="album-book"><button class="close-panel" data-close="album-panel" aria-label="סגירת האלבום">×</button><p class="tag">כל מראה מספר סיפור</p><h2 id="album-title">אלבום התסרוקות שלך</h2><p id="album-empty">המראה הראשון שלך יחכה כאן בסיום הביקור.</p><div id="album" class="album-grid"></div><h3>דברים חדשים לסלון</h3><div id="unlocks"></div><button class="continue" data-close="album-panel">חוזרות לסלון</button></div></section>
 <div id="result" class="world-panel" role="dialog" aria-modal="true" aria-labelledby="result-title" hidden><div class="result-card"><h2 id="result-title">המראה שלך, הרגע הגדול</h2><div class="comparison"><figure><div id="before-preview" class="portrait"></div><figcaption>לפני</figcaption></figure><figure><div id="after-preview" class="portrait"></div><figcaption>אחרי</figcaption></figure></div><div id="score-breakdown"></div><p id="result-text"></p><p id="unlock-message"></p><button id="next">בקשה חדשה</button><a href="game.html">חזרה הביתה</a></div></div>
 </section><ol id="steps" class="sr-only" aria-label="שלבי הטיפוח"></ol><p class="sr-only">למקלדת: בחרי כלי באמצעות Tab ו־Enter, ורווח בעמדה מטפל באזור הבא. Escape מחזיר את הכלי למקום. אזור התספורת נבחר בכפתורי האזורים בלבד.</p></main>
-<script type="module" src="game/salon.js?v=prop-rest-2"></script></body></html>
+<script type="module" src="game/salon.js?v=scene-labels-1"></script></body></html>

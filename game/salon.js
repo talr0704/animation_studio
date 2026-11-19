@@ -261,10 +261,10 @@ function layoutWorkspace(){
  for(const [name,rect]of Object.entries(layout.tools))place(document.querySelector(`[data-tool="${name}"]`),rect);
  place($('show-request'),layout.magazine);
  const portrait=mode==='portrait';
- Object.assign(document.querySelector('.scene-status').style,{left:portrait?'120px':'210px',top:portrait?'15px':'12px',width:portrait?'420px':'380px'});
+ Object.assign(document.querySelector('.scene-status').style,{left:portrait?'120px':'200px',top:portrait?'15px':'0px',width:portrait?'420px':'400px'});
  Object.assign(document.querySelector('.scene-actions').style,{left:portrait?'170px':'264px',top:portrait?'423px':'459px'});
  Object.assign(document.querySelector('.hair-controls').style,{left:portrait?'105px':'225px',top:portrait?'466px':'492px'});
- Object.assign($('pickup-hint').style,{left:portrait?'35px':'180px',top:portrait?'722px':'538px',width:portrait?'490px':'440px'});
+
  requestPortraitUpdate();updatePortraits.forEach(update=>update());
 }
 new ResizeObserver(layoutWorkspace).observe($('stage'));
