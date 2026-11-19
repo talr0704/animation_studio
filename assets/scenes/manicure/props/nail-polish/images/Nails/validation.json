@@ -1,0 +1,9 @@
+{
+  "realCanvasRuntime": true,
+  "paintMaskLeakPixels": 0,
+  "independentFourNails": true,
+  "dryingAndUndo": true,
+  "filingStages": true,
+  "dirtRemoval": true,
+  "oldPolishRemoval": true
+}

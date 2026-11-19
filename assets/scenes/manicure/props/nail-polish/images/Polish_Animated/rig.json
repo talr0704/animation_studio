@@ -1,0 +1,152 @@
+[
+  {
+    "color": "pink",
+    "bottle_position": [
+      32,
+      290
+    ],
+    "mouth_local": [
+      127.5,
+      38
+    ],
+    "brush_closed_position": [
+      102.5,
+      187.64
+    ],
+    "lift_pixels": 150,
+    "layer_order": [
+      "bottle_back",
+      "cap_stem_brush",
+      "bottle_front"
+    ],
+    "canvas": [
+      320,
+      640
+    ]
+  },
+  {
+    "color": "lavender",
+    "bottle_position": [
+      32,
+      290
+    ],
+    "mouth_local": [
+      128.0,
+      38
+    ],
+    "brush_closed_position": [
+      103.0,
+      187.64
+    ],
+    "lift_pixels": 150,
+    "layer_order": [
+      "bottle_back",
+      "cap_stem_brush",
+      "bottle_front"
+    ],
+    "canvas": [
+      320,
+      640
+    ]
+  },
+  {
+    "color": "mint",
+    "bottle_position": [
+      32,
+      290
+    ],
+    "mouth_local": [
+      128.0,
+      38
+    ],
+    "brush_closed_position": [
+      103.0,
+      187.64
+    ],
+    "lift_pixels": 150,
+    "layer_order": [
+      "bottle_back",
+      "cap_stem_brush",
+      "bottle_front"
+    ],
+    "canvas": [
+      320,
+      640
+    ]
+  },
+  {
+    "color": "peach",
+    "bottle_position": [
+      32,
+      290
+    ],
+    "mouth_local": [
+      128.0,
+      38
+    ],
+    "brush_closed_position": [
+      103.0,
+      187.64
+    ],
+    "lift_pixels": 150,
+    "layer_order": [
+      "bottle_back",
+      "cap_stem_brush",
+      "bottle_front"
+    ],
+    "canvas": [
+      320,
+      640
+    ]
+  },
+  {
+    "color": "yellow",
+    "bottle_position": [
+      32,
+      290
+    ],
+    "mouth_local": [
+      128.0,
+      38
+    ],
+    "brush_closed_position": [
+      103.0,
+      187.64
+    ],
+    "lift_pixels": 150,
+    "layer_order": [
+      "bottle_back",
+      "cap_stem_brush",
+      "bottle_front"
+    ],
+    "canvas": [
+      320,
+      640
+    ]
+  },
+  {
+    "color": "topcoat",
+    "bottle_position": [
+      32,
+      290
+    ],
+    "mouth_local": [
+      128.0,
+      38
+    ],
+    "brush_closed_position": [
+      103.0,
+      187.64
+    ],
+    "lift_pixels": 150,
+    "layer_order": [
+      "bottle_back",
+      "cap_stem_brush",
+      "bottle_front"
+    ],
+    "canvas": [
+      320,
+      640
+    ]
+  }
+]

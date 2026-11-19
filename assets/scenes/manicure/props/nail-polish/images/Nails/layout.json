@@ -1,0 +1,47 @@
+{
+  "frame": [
+    256,
+    384
+  ],
+  "anchor": [
+    128,
+    368
+  ],
+  "states": [
+    "dirty",
+    "broken",
+    "partly_repaired",
+    "clean",
+    "old_polish",
+    "finished_pink"
+  ],
+  "mask_inset_pixels": 12,
+  "render_order": [
+    "state_base",
+    "old_polish",
+    "dirt",
+    "paint_clipped_to_current_mask",
+    "shine",
+    "stickers_clipped_to_current_mask"
+  ],
+  "paw_nail_anchors": [
+    [
+      0.315,
+      0.162
+    ],
+    [
+      0.433,
+      0.117
+    ],
+    [
+      0.567,
+      0.117
+    ],
+    [
+      0.682,
+      0.162
+    ]
+  ],
+  "paw_anchors_are_normalized_to_original_master": true,
+  "note": "All frames normalized; broken and repaired silhouettes intentionally differ. File demo swaps stages; it does not simulate geometric abrasion."
+}
