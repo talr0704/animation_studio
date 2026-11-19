@@ -12,6 +12,9 @@ try {
 } catch { /* Play remains available without browser storage. */ }
 const illustratedProps = [];
 const fruitImages = new Map();
+let roomFurniture;
+function placeRoomFurniture(){if(!roomFurniture)return;const layout=roomFurniture[window.innerWidth<=700?'portrait':'wide'],[w,h]=layout.canvas;const place=(element,r)=>Object.assign(element.style,{position:'absolute',left:r[0]/w*100+'%',top:r[1]/h*100+'%',bottom:'auto',right:'auto',width:r[2]/w*100+'%',height:r[3]/h*100+'%'});for(const [id,rect]of Object.entries(layout.items))place(document.querySelector(`[data-furniture="${id}"]`),rect);for(const [key,selector]of Object.entries({dresser:'.home-dresser',books:'#reading-books',plant:'#plant-prop',reward:'#salon-mirror'}))place(document.querySelector(selector),layout.existing[key]);}
+
 let popa, view = 'room', phase = 'intro', round, roomX = .52, target = .52;
 let roomDepth=0,targetDepth=0,roomFacing=1;
 let width = 1, height = 1, last = performance.now(), particles = [], toastTimer, audio, sound = false;
@@ -96,7 +99,7 @@ function hud() {
   const lives=round?.lives??3;$('lives').textContent='♥ '.repeat(lives)+'♡ '.repeat(3-lives);$('lives').setAttribute('aria-label',`${lives} לבבות`);
   const combo=round?.combo??0;$('combo').textContent=combo>=5?`${combo} ברצף! ×${Math.min(3,1+Math.floor(combo/5))} נקודות`:'תופסים פירות. בונים רצפים.';
 }
-function resize(){const world=document.querySelector('.world');width=world.clientWidth;height=world.clientHeight;const ratio=Math.min(devicePixelRatio||1,2);canvas.width=width*ratio;canvas.height=height*ratio;ctx.setTransform(ratio,0,0,ratio,0,0);if(popa){if(view==='room'){popa.setScale(roomScale());const min=roomBounds();roomX=Math.max(min,Math.min(1-min,roomX));target=Math.max(min,Math.min(1-min,target));}positionPlayer(view==='room'?roomX:round?.player??.5);}}
+function resize(){placeRoomFurniture();const world=document.querySelector('.world');width=world.clientWidth;height=world.clientHeight;const ratio=Math.min(devicePixelRatio||1,2);canvas.width=width*ratio;canvas.height=height*ratio;ctx.setTransform(ratio,0,0,ratio,0,0);if(popa){if(view==='room'){popa.setScale(roomScale());const min=roomBounds();roomX=Math.max(min,Math.min(1-min,roomX));target=Math.max(min,Math.min(1-min,target));}positionPlayer(view==='room'?roomX:round?.player??.5);}}
 function fruit(object){
   const image=fruitImages.get(object.type);if(!image)return;
   ctx.save();ctx.translate(object.x*width,object.y*height);
@@ -146,6 +149,9 @@ try{
   const response=await fetch(new URL('../assets/scenes/home/assembly.json',import.meta.url));
   if(!response.ok)throw new Error('World assemblies could not be loaded');
   const rigs=await response.json();
+  const furnitureResponse=await fetch(new URL('../assets/scenes/home/furniture/layout.json',import.meta.url));if(!furnitureResponse.ok)throw Error('Cannot load furniture layout');roomFurniture=await furnitureResponse.json();
+  await Promise.all(roomFurniture.items.map(async item=>{const image=new Image();image.src=new URL('../'+item.image,import.meta.url).href;image.alt=item.label;image.dataset.furniture=item.id;image.className='home-furniture-item';$('home-furniture').append(image);await image.decode();}));placeRoomFurniture();
+
   for(const [name,mount] of [['window','window-prop'],['plant','plant-prop'],['shelf','shelf-prop']]){
     const rig=await createIllustratedProp($(mount),rigs[name]);illustratedProps.push(rig);
     if(name!=='shelf')$(mount).addEventListener('click',()=>{rig.sway();cue('curious');toast(name==='plant'?'קצת רוח בין העלים…':'הווילונות רוקדים ברוח');});

@@ -31,3 +31,8 @@ body{height:100svh;overflow:hidden}.topbar{height:58px;max-width:none;padding:8p
 .world[data-view=garden] .manicure-link{display:none}.world-paths .manicure-link img{height:65px;width:44px}.world-paths{gap:12px}@media(max-width:700px){.world-paths{top:28%;gap:10px}.world-paths .manicure-link img{height:48px;width:30px}.world-paths .manicure-link span{font-size:9px}}
 
 .player>.popa-browser{transform:scaleX(var(--facing,1));transform-origin:center bottom}
+
+#home-furniture{position:absolute;inset:0;pointer-events:none}.home-furniture-item{position:absolute;object-fit:contain;pointer-events:none}.home-dresser .dresser-cabinet{width:100%;height:72%;left:0;bottom:0}.home-dresser .dresser-mirror{width:64%;height:60%;left:15%;bottom:43%}.reading-books{z-index:2}.home-dresser{z-index:1}#plant-prop{z-index:3}#salon-mirror{object-fit:contain}
+.home-furniture-item{object-position:center bottom}
+
+.room-hint{left:50%;top:16px;bottom:auto;transform:translateX(-50%);width:max-content;max-width:85%;text-align:center;background:#fff7e8e8;border-radius:12px;padding:6px 12px;color:#826249;pointer-events:none}@media(max-width:700px){.room-hint{font-size:10px;top:10px}}

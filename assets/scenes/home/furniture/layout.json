@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "sofa",
+      "image": "assets/scenes/home/furniture/sofa.png",
+      "label": "ספה ורודה"
+    },
+    {
+      "id": "bed",
+      "image": "assets/scenes/home/furniture/bed.png",
+      "label": "מיטת מנטה"
+    },
+    {
+      "id": "side-table",
+      "image": "assets/scenes/home/furniture/side-table.png",
+      "label": "שולחן צד"
+    },
+    {
+      "id": "floor-lamp",
+      "image": "assets/scenes/home/furniture/floor-lamp.png",
+      "label": "מנורת רצפה"
+    },
+    {
+      "id": "wardrobe",
+      "image": "assets/scenes/home/furniture/wardrobe.png",
+      "label": "ארון קטן"
+    },
+    {
+      "id": "toy-chest",
+      "image": "assets/scenes/home/furniture/toy-chest.png",
+      "label": "תיבת צעצועים"
+    }
+  ],
+  "wide": {
+    "canvas": [
+      1280,
+      842
+    ],
+    "items": {
+      "wardrobe": [
+        4,
+        365,
+        180,
+        270
+      ],
+      "sofa": [
+        370,
+        480,
+        280,
+        202
+      ],
+      "bed": [
+        865,
+        408,
+        260,
+        245
+      ],
+      "side-table": [
+        717,
+        626,
+        100,
+        94
+      ],
+      "floor-lamp": [
+        308,
+        398,
+        110,
+        260
+      ],
+      "toy-chest": [
+        1050,
+        681,
+        150,
+        100
+      ]
+    },
+    "existing": {
+      "dresser": [
+        190,
+        466,
+        130,
+        180
+      ],
+      "books": [
+        733,
+        594,
+        60,
+        52
+      ],
+      "plant": [
+        24,
+        680,
+        95,
+        155
+      ],
+      "reward": [
+        750,
+        240,
+        65,
+        80
+      ]
+    }
+  },
+  "portrait": {
+    "canvas": [
+      390,
+      792
+    ],
+    "items": {
+      "wardrobe": [
+        4,
+        454,
+        72,
+        125
+      ],
+      "sofa": [
+        4,
+        598,
+        150,
+        112
+      ],
+      "bed": [
+        223,
+        503,
+        154,
+        140
+      ],
+      "side-table": [
+        326,
+        699,
+        62,
+        64
+      ],
+      "floor-lamp": [
+        150,
+        475,
+        48,
+        115
+      ],
+      "toy-chest": [
+        310,
+        635,
+        72,
+        58
+      ]
+    },
+    "existing": {
+      "dresser": [
+        83,
+        474,
+        73,
+        110
+      ],
+      "books": [
+        339,
+        679,
+        38,
+        37
+      ],
+      "plant": [
+        2,
+        680,
+        65,
+        108
+      ],
+      "reward": [
+        189,
+        273,
+        40,
+        50
+      ]
+    }
+  }
+}

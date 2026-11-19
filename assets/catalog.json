@@ -221,7 +221,7 @@
     {
       "id": "home.sofa",
       "label": "ספה ורודה",
-      "status": "ready",
+      "status": "active",
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/sofa.png"
@@ -230,7 +230,7 @@
     {
       "id": "home.bed",
       "label": "מיטת מנטה",
-      "status": "ready",
+      "status": "active",
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/bed.png"
@@ -239,10 +239,37 @@
     {
       "id": "home.side-table",
       "label": "שולחן צד",
-      "status": "ready",
+      "status": "active",
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/side-table.png"
+      ]
+    },
+    {
+      "id": "home.floor-lamp",
+      "label": "מנורת רצפה",
+      "status": "active",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/floor-lamp.png"
+      ]
+    },
+    {
+      "id": "home.wardrobe",
+      "label": "ארון קטן",
+      "status": "active",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/wardrobe.png"
+      ]
+    },
+    {
+      "id": "home.toy-chest",
+      "label": "תיבת צעצועים",
+      "status": "active",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/toy-chest.png"
       ]
     }
   ]
