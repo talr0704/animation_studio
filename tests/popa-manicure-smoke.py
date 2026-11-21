@@ -57,7 +57,7 @@ with sync_playwright() as p:
   for _ in range(12):stroke([(45,65),(210,65)])
   assert phase()=='paint',(index,page.evaluate('({phase:window.manicure.nails[window.manicure.selected].phase(),selected:window.manicure.selected,repair:window.manicure.nails[window.manicure.selected].repair,old:window.manicure.nails[window.manicure.selected].remaining("old"),dirt:window.manicure.nails[window.manicure.selected].remaining("dirt")})'));page.locator(f'[data-color="{color}"]').click()
   if index==2:
-   stroke([(90,120),(140,200)]);assert page.locator('#dryer').is_disabled();page.locator('#creative').check();assert page.locator('#dryer').is_enabled()
+   stroke([(90,120),(140,200)]);assert page.locator('#dryer').is_disabled();page.locator('#creative-toggle').click();assert page.locator('#dryer').is_enabled()
   else:grid()
   page.locator('#dryer').click();page.wait_for_selector('#drying',state='visible');page.wait_for_selector('#drying',state='hidden');assert page.evaluate(f'window.manicure.nails[{index}].dried')
  assert page.locator('#finish').is_enabled();page.locator('#finish').click();page.wait_for_selector('#result',state='visible');coins=page.evaluate('JSON.parse(localStorage.getItem("popaWorldV1")).coins');assert coins==8

@@ -10,9 +10,13 @@ with sync_playwright() as p:
  page.clock.install()
  page.goto(URL+'game.html',wait_until='networkidle');page.wait_for_selector('#loading',state='hidden')
  assert page.locator('#coins').inner_text()=='0'
- page.locator('#buy-rug').click();assert '12' in page.locator('#toast').inner_text()
+ page.locator('#buy-rug').click()
+ for _ in range(80):
+  page.clock.run_for(100)
+  if '12' in page.locator('#toast').inner_text():break
+ assert '12' in page.locator('#toast').inner_text()
  assert not page.locator('#buy-rug').is_disabled()
- room=page.locator('.world').bounding_box();page.mouse.click(room['x']+room['width']*.65,room['y']+room['height']*.85)
+ room=page.locator('.world').bounding_box();page.mouse.click(room['x']+room['width']*.78,room['y']+room['height']*.9)
  page.clock.run_for(1800)
  assert float(page.locator('#player').evaluate('(e)=>parseFloat(e.style.left)'))>60
  page.locator('#garden-tab').click();assert page.locator('#overlay').is_visible()
@@ -25,9 +29,12 @@ with sync_playwright() as p:
  coins=int(page.locator('#coins').inner_text());assert coins>=12
  page.clock.run_for(5000);assert int(page.locator('#coins').inner_text())==coins
  page.locator('#dialog-secondary').click();page.locator('#buy-rug').click()
+ for _ in range(80):
+  page.clock.run_for(100)
+  if page.locator('#rug').evaluate('(e)=>e.classList.contains("upgraded")'):break
  assert page.locator('#rug').evaluate('(e)=>e.classList.contains("upgraded")')
  assert int(page.locator('#coins').inner_text())==coins-12
- assert page.locator('#buy-rug').is_disabled()
+ assert not page.locator('#buy-rug').is_disabled()
  page.reload(wait_until='networkidle');page.wait_for_selector('#loading',state='hidden')
  assert int(page.locator('#coins').inner_text())==coins-12
  assert page.locator('#rug').evaluate('(e)=>e.classList.contains("upgraded")')

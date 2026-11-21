@@ -52,7 +52,10 @@ $('soap').onclick=()=>{if(drying)return;chooseTool('clean');pump();const r=work.
 $('undo').onclick=()=>{if(drying)return;endStroke();if(current().undoStroke()){selectedSticker=-1;render();refreshHint();scheduleSave();}};
 $('redo').onclick=()=>{if(drying)return;endStroke();if(current().redoStroke()){selectedSticker=-1;render();refreshHint();scheduleSave();}};
 $('clear-paint').onclick=()=>{if(drying)return;endStroke();const n=current();n.checkpoint();n.paint.getContext('2d').clearRect(0,0,W,H);n.dried=false;selectedSticker=-1;render();refreshHint();scheduleSave();};
-$('creative').onchange=()=>{render();scheduleSave();};
+$('creative').onchange=()=>{$('creative-toggle').setAttribute('aria-pressed',String($('creative').checked));render();scheduleSave();};
+$('creative-toggle').onclick=()=>{$('creative').checked=!$('creative').checked;$('creative').onchange();};
+for(const b of document.querySelectorAll('[data-width]'))b.onclick=()=>{$('brush-size').value=b.dataset.width;for(const other of document.querySelectorAll('[data-width]'))other.setAttribute('aria-pressed',String(other===b));};
+for(const b of document.querySelectorAll('[data-adjust]'))b.onclick=()=>{const input=$(b.dataset.adjust),[min,max]=b.dataset.adjust==='sticker-size'?[15,110]:[-180,180];input.value=Math.max(min,Math.min(max,Number(input.value)+Number(b.dataset.delta)));input.dispatchEvent(new Event('input'));input.dispatchEvent(new Event('change'));};
 function rotateView(){endStroke();work.style.transform=`rotate(${$('view-rotation').value}deg) scale(${$('view-zoom').value})`;}
 $('view-rotation').oninput=rotateView;$('view-zoom').oninput=rotateView;
 for(const id of ['sticker-size','sticker-rotation']){
@@ -68,7 +71,7 @@ function downloadPhoto(){if(!ready||drying)return;fullPaw().toBlob(blob=>{if(!bl
 $('photo').onclick=downloadPhoto;$('result-photo').onclick=downloadPhoto;
 $('finish').onclick=async()=>{if(!nails.every(n=>n.dried)||drying)return;const amount=claimed?0:rewardOnce(sessionId);claimed=true;await flush();$('reward').textContent=amount?`איזה טיפול מושקע! ${amount} מטבעות נוספו לארנק.`:'המראה שלך נשמר. אפשר לצלם או להתחיל עיצוב חדש.';$('result-image').src=fullPaw().toDataURL();$('result').hidden=false;$('result-close').focus();reaction();};
 $('result-close').onclick=()=>{$('result').hidden=true;$('finish').focus();};
-async function newSession(){if(drying)return;endStroke();sessionId=crypto.randomUUID?.()??String(Date.now());claimed=false;nails=Array.from({length:4},()=>new NailSurface(assets));selected=0;selectedSticker=-1;color='pink';tool='remove';$('creative').checked=false;$('result').hidden=true;detail=false;$('overview').hidden=false;$('detail').hidden=true;rack.activate(null,cursor);render();refreshHint();await flush();}
+async function newSession(){if(drying)return;endStroke();sessionId=crypto.randomUUID?.()??String(Date.now());claimed=false;nails=Array.from({length:4},()=>new NailSurface(assets));selected=0;selectedSticker=-1;color='pink';tool='remove';$('creative').checked=false;$('creative-toggle').setAttribute('aria-pressed','false');$('result').hidden=true;detail=false;$('overview').hidden=false;$('detail').hidden=true;rack.activate(null,cursor);render();refreshHint();await flush();}
 $('new-session').onclick=newSession;$('result-new').onclick=newSession;
 $('sound').onclick=()=>{sound=!sound;if(sound){try{audio??=new (window.AudioContext||window.webkitAudioContext)();audio.resume();}catch{sound=false;}}$('sound').setAttribute('aria-pressed',String(sound));$('sound').textContent=sound?'צליל פעיל ♫':'צליל כבוי ♫';};
 document.addEventListener('visibilitychange',()=>{if(document.hidden){endStroke();$('held-tool').hidden=true;flush();}});
@@ -84,7 +87,7 @@ try{
  for(const kind of ['flower','heart','star','bow']){const button=document.createElement('button');button.dataset.sticker=kind;button.setAttribute('aria-label','מדבקת '+({flower:'פרח',heart:'לב',star:'כוכב',bow:'פפיון'})[kind]);const image=new Image();image.src=url(`props/stickers/images/sticker-${kind}.png`);image.alt='';button.append(image);button.onclick=()=>{if(drying)return;if(!current().dried){note('קודם מסיימים לצבוע ולייבש את הציפורן.');return;}endStroke();stickerKind=kind;tool='decorate';selectedSticker=-1;if(!detail)selectNail(selected);render();note('לחצי להנחת מדבקה, ואז גררי להזזה. גודל וסיבוב מופיעים ליד הכפה.');};$('stickers').append(button);}
  nails=Array.from({length:4},()=>new NailSurface(assets));sessionId=crypto.randomUUID?.()??String(Date.now());
  try{const saved=await readSession();if(saved?.version===1&&Array.isArray(saved.nails)&&saved.nails.length===4){const restored=await Promise.all(saved.nails.map(s=>NailSurface.restore(assets,s)));nails=restored;sessionId=typeof saved.id==='string'?saved.id:sessionId;claimed=!!saved.claimed;selected=Number.isInteger(saved.selected)&&saved.selected>=0&&saved.selected<4?saved.selected:0;color=COLORS.includes(saved.color)?saved.color:'pink';$('creative').checked=!!saved.creative;$('save-status').textContent='הטיפול שוחזר ✓';}else $('save-status').textContent='מוכנים לטיפול';}catch{$('save-status').textContent='השמירה לא זמינה — אפשר לשמור תמונה';}
- ready=true;$('loading').hidden=true;render();refreshHint();
+ ready=true;$('creative-toggle').setAttribute('aria-pressed',String($('creative').checked));$('loading').hidden=true;render();refreshHint();
  // Readable state for end-to-end verification; no demo presets or automatic fills.
  window.manicure={get nails(){return nails;},get selected(){return selected;},get assets(){return assets;},get tool(){return tool;},flush,fullPaw,pointerCoords,selectNail};
  function blends(){if(ready&&nails.some(n=>n.previousShape&&performance.now()-n.shapeChanged<300))render();requestAnimationFrame(blends);}requestAnimationFrame(blends);

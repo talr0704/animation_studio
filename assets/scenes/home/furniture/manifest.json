@@ -73,6 +73,18 @@
         0.5,
         1
       ]
+    },
+    {
+      "id": "home.rug",
+      "image": "assets/scenes/home/furniture/rug.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
     }
   ],
   "layout": "assets/scenes/home/furniture/layout.json",

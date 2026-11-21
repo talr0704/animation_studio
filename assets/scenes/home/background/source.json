@@ -1,0 +1,10 @@
+{
+  "image": "assets/scenes/home/background/room.png",
+  "source": "source-art/home/generated/room-background.png",
+  "size": [
+    1672,
+    941
+  ],
+  "reference": "assets/scenes/home/furniture/sofa.png",
+  "opaque": true
+}

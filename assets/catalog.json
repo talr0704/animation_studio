@@ -10,7 +10,7 @@
   "scenes": [
     {
       "id": "home",
-      "assembly": "assets/scenes/home/assembly.json"
+      "assembly": "assets/scenes/home/furniture/layout.json"
     },
     {
       "id": "salon",
@@ -270,6 +270,22 @@
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/toy-chest.png"
+      ]
+    },
+    {
+      "id": "home.rug",
+      "label": "שטיח מאויר",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/rug.png"
+      ]
+    },
+    {
+      "id": "home.background",
+      "label": "רקע החדר המאויר",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/background/room.png"
       ]
     }
   ]

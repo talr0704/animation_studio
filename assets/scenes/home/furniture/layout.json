@@ -4,32 +4,59 @@
     {
       "id": "sofa",
       "image": "assets/scenes/home/furniture/sofa.png",
-      "label": "ספה ורודה"
+      "label": "ספה ורודה",
+      "action": "rest",
+      "message": "איזו פינה נעימה לנוח בה"
     },
     {
       "id": "bed",
       "image": "assets/scenes/home/furniture/bed.png",
-      "label": "מיטת מנטה"
+      "label": "מיטת מנטה",
+      "action": "rest",
+      "message": "זמן למנוחה קטנה"
     },
     {
       "id": "side-table",
       "image": "assets/scenes/home/furniture/side-table.png",
-      "label": "שולחן צד"
+      "label": "שולחן צד",
+      "action": "hold",
+      "message": "פופה בחרה סיפור לקריאה"
     },
     {
       "id": "floor-lamp",
       "image": "assets/scenes/home/furniture/floor-lamp.png",
-      "label": "מנורת רצפה"
+      "label": "מנורת רצפה",
+      "action": "interact",
+      "message": "אור נעים לפינת הקריאה"
     },
     {
       "id": "wardrobe",
       "image": "assets/scenes/home/furniture/wardrobe.png",
-      "label": "ארון קטן"
+      "label": "ארון קטן",
+      "action": "wave",
+      "message": "מה נלבש להרפתקה הבאה?"
     },
     {
       "id": "toy-chest",
       "image": "assets/scenes/home/furniture/toy-chest.png",
-      "label": "תיבת צעצועים"
+      "label": "תיבת צעצועים",
+      "action": "happy",
+      "message": "איזה כיף! זמן לשחק"
+    },
+    {
+      "id": "mirror",
+      "image": "assets/scenes/salon/furniture/mirror.png",
+      "label": "מראה · למספרה",
+      "action": "interact",
+      "message": "מתארגנות לביקור במספרה",
+      "page": "salon.html"
+    },
+    {
+      "id": "reading-books",
+      "image": "assets/scenes/salon/books/album-stack.png",
+      "label": "ספרי פופה",
+      "action": "hold",
+      "message": "פופה בחרה סיפור לקריאה"
     }
   ],
   "wide": {
@@ -39,68 +66,60 @@
     ],
     "items": {
       "wardrobe": [
-        4,
-        365,
-        180,
-        270
+        30,
+        290,
+        175,
+        250
       ],
       "sofa": [
-        370,
-        480,
+        310,
+        350,
         280,
-        202
+        210
       ],
       "bed": [
-        865,
-        408,
+        920,
+        300,
         260,
-        245
-      ],
-      "side-table": [
-        717,
-        626,
-        100,
-        94
+        250
       ],
       "floor-lamp": [
-        308,
-        398,
-        110,
-        260
+        228,
+        290,
+        100,
+        270
+      ],
+      "side-table": [
+        630,
+        430,
+        105,
+        100
       ],
       "toy-chest": [
-        1050,
-        681,
-        150,
+        1080,
+        620,
+        140,
         100
+      ],
+      "mirror": [
+        90,
+        600,
+        85,
+        110
+      ],
+      "reading-books": [
+        652,
+        400,
+        62,
+        48
       ]
     },
-    "existing": {
-      "dresser": [
-        190,
-        466,
-        130,
-        180
-      ],
-      "books": [
-        733,
-        594,
-        60,
-        52
-      ],
-      "plant": [
-        24,
-        680,
-        95,
-        155
-      ],
-      "reward": [
-        750,
-        240,
-        65,
-        80
-      ]
-    }
+    "rug": [
+      330,
+      650,
+      600,
+      150
+    ]
   },
   "portrait": {
     "canvas": [
@@ -109,67 +128,59 @@
     ],
     "items": {
       "wardrobe": [
-        4,
-        454,
-        72,
-        125
+        12,
+        310,
+        90,
+        145
       ],
       "sofa": [
-        4,
-        598,
-        150,
-        112
-      ],
-      "bed": [
-        223,
-        503,
-        154,
-        140
-      ],
-      "side-table": [
-        326,
-        699,
-        62,
-        64
-      ],
-      "floor-lamp": [
-        150,
-        475,
-        48,
-        115
-      ],
-      "toy-chest": [
-        310,
-        635,
-        72,
-        58
-      ]
-    },
-    "existing": {
-      "dresser": [
-        83,
-        474,
-        73,
+        20,
+        450,
+        145,
         110
       ],
-      "books": [
-        339,
-        679,
-        38,
-        37
+      "bed": [
+        232,
+        340,
+        148,
+        145
       ],
-      "plant": [
-        2,
-        680,
-        65,
-        108
+      "floor-lamp": [
+        115,
+        345,
+        48,
+        125
       ],
-      "reward": [
-        189,
-        273,
-        40,
-        50
+      "side-table": [
+        173,
+        410,
+        58,
+        58
+      ],
+      "toy-chest": [
+        305,
+        600,
+        72,
+        55
+      ],
+      "mirror": [
+        15,
+        610,
+        62,
+        80
+      ],
+      "reading-books": [
+        186,
+        392,
+        34,
+        29
       ]
-    }
+    },
+    "rug": [
+      85,
+      650,
+      235,
+      85
+    ]
   }
 }
