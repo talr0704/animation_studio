@@ -4,7 +4,8 @@
     {
       "id": "popa",
       "assembly": "assets/characters/popa/assembly.json",
-      "animations": "popa-clips.js"
+      "animations": "popa-clips.js",
+      "outfits": "assets/characters/popa/outfits/catalog.json"
     }
   ],
   "scenes": [

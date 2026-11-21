@@ -109,3 +109,7 @@ Haircut sections continue to be chosen using the section buttons.
 ## פינת הציפורניים
 
 מיני־משחק משולב ב־`manicure.html`: ניקוי, תיקון, ציור חופשי, ייבוש וקישוט. [הפעלה, ארגון האיורים ובדיקות](docs/popa-manicure.md).
+
+## Popa outfit fitting
+
+Open `index.html?outfits=1` in the character studio to position the six uploaded looks on Popa, preview walking/waving, and export or import placement JSON. Each look saves a separate local draft. Artwork lives in `assets/characters/popa/outfits/<look>/parts/`; source sheets and the original manifest live in `source-art/characters/popa/outfits/`. See `assets/characters/popa/outfits/README.md` for coordinates and the integration workflow. Fitting drafts are not applied automatically to the game.

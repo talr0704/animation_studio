@@ -1,0 +1,16 @@
+.outfit-studio-link{position:fixed;top:44px;right:18px;z-index:1100;color:#88664e;font-size:12px}
+body.outfit-studio{display:block;background:#f7eee3;overflow:hidden}
+body.outfit-studio .stage{position:fixed;left:0;top:0;width:calc(100vw - 360px);height:100svh;min-height:0;padding:75px 12px 100px;background:#f7eee3}
+.outfit-studio .cat-frame{scale:1;outline:1px dashed #ccb5a1;cursor:default}
+.outfit-studio .cat-wrapper{scale:1}
+.outfit-studio .cat-frame,.outfit-studio .cat-character{touch-action:none}
+.outfit-studio .character-download,.outfit-studio .outfit-studio-link,.outfit-studio .edit-studio-link{display:none}
+.outfit-studio .studio-controls{left:calc((100vw - 360px)/2);width:min(90vw,580px);bottom:18px}
+.outfit-image{position:absolute;max-width:none;object-fit:contain;pointer-events:auto;user-select:none;touch-action:none;transform-origin:center}
+.outfit-selected{outline:2px dashed #b76d98;outline-offset:3px}
+.outfit-panel{position:fixed;right:0;top:0;bottom:0;width:360px;overflow:auto;padding:20px;background:#fffbf5;border-left:1px solid #e1cebc;font-size:14px;color:#614b3d;z-index:1300}
+.outfit-panel h1{font-size:21px;margin:0 0 8px}.outfit-panel h2{font-size:16px;margin:16px 0 8px}.outfit-panel p{font-size:12px;line-height:1.6}.outfit-panel a{color:#976078;font-size:12px}
+.outfit-panel label{display:block;margin:8px 0}.outfit-panel input[type=number],.outfit-panel select{width:100%;padding:8px;border:1px solid #ddc6b3;border-radius:8px;background:white;font:inherit;color:inherit}.outfit-panel input[type=number]{direction:ltr}
+.outfit-fields{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.outfit-fields label{font-size:12px}
+.outfit-parts{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}.outfit-panel button{font:inherit;cursor:pointer;border:1px solid #d8bfa9;background:#fff4e4;border-radius:9px;padding:8px;color:inherit}.outfit-panel button:disabled{opacity:.45;cursor:default}.outfit-parts button{height:58px;padding:4px}.outfit-parts img{width:100%;height:100%;object-fit:contain}.outfit-parts button[aria-pressed=true]{background:#f2dce9;border:2px solid #b76d98}.outfit-row{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.outfit-panel details{margin:14px 0;padding:10px;background:#f6eee5;border-radius:8px}.outfit-panel summary{cursor:pointer}.outfit-check{font-size:13px}.outfit-import{padding:10px;border:1px dashed #d8bfa9;border-radius:8px}.outfit-import input{max-width:100%;margin-top:8px}#outfit-status{min-height:40px;color:#7c5071}
+@media(max-width:800px){body.outfit-studio .stage{width:100vw;height:49svh;padding:48px 0 15px}.outfit-panel{top:49svh;width:100%;border-left:0;border-top:1px solid #ddc6b3;padding:14px}.outfit-studio .cat-frame{width:264px;height:285px;scale:min(1,calc((49svh - 65px)/285px))}.outfit-studio .cat-wrapper{scale:.6;transform-origin:top left}.outfit-studio .studio-controls{display:none}.outfit-panel header h1{font-size:18px}.outfit-panel header{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.outfit-panel header h1{margin:0}.outfit-fields{grid-template-columns:repeat(3,1fr)}.outfit-parts{grid-template-columns:repeat(9,1fr)}.outfit-parts button{height:45px}.outfit-studio>a[href="game.html"]{padding:7px 10px!important;font-size:11px!important}}

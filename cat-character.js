@@ -1,6 +1,7 @@
 import { createCatExpressions } from './cat-expressions.js';
 import { createCatAnimations } from './cat-animations.js';
 import { mountLayoutEditor } from './cat-layout-editor.js';
+import { mountOutfitEditor } from './popa-outfit-editor.js';
 import { mountCatEditor } from './cat-editor.js';
 const character = document.querySelector('.cat-character');
 const wrapper = document.querySelector('.cat-wrapper');
@@ -76,7 +77,8 @@ async function initialize() {
   character.append(itemAnchor);
   bodyMotions.push(itemAnchor);
   motion = createCatAnimations({ character, wrapper, groups, headFollowers, bodyMotions, controls, expressions, shadow, itemAnchor, editor: () => editor });
-  editor = mountCatEditor({ character, groups, stop, headFollowers });
+  const outfitsMode = new URLSearchParams(location.search).get('outfits') === '1';
+  if (!outfitsMode) editor = mountCatEditor({ character, groups, stop, headFollowers });
   window.popa = {
     play: name => motion.play(name), stop: () => motion.stop(),
     setExpression: name => expressions.setExpression(name),
@@ -87,7 +89,8 @@ async function initialize() {
     },
     clearItem() { itemAnchor.replaceChildren(); },
   };
-  mountLayoutEditor({ layout, character, setPivot: (name, x, y) => editor.setPivot(name, x, y), pause: () => { editor.pause(); editor.reset(); stop(); } });
+  if (outfitsMode) await mountOutfitEditor({ character, groups, stop, play });
+  else mountLayoutEditor({ layout, character, setPivot: (name, x, y) => editor.setPivot(name, x, y), pause: () => { editor.pause(); editor.reset(); stop(); } });
   character.dataset.ready = 'true';
   character.dispatchEvent(new CustomEvent('popa:ready', { bubbles: true }));
 }
