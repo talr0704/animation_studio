@@ -221,7 +221,7 @@
     {
       "id": "home.sofa",
       "label": "ספה ורודה",
-      "status": "active",
+      "status": "archived",
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/sofa.png"
@@ -230,7 +230,7 @@
     {
       "id": "home.bed",
       "label": "מיטת מנטה",
-      "status": "active",
+      "status": "archived",
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/bed.png"
@@ -239,7 +239,7 @@
     {
       "id": "home.side-table",
       "label": "שולחן צד",
-      "status": "active",
+      "status": "archived",
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/side-table.png"
@@ -248,7 +248,7 @@
     {
       "id": "home.floor-lamp",
       "label": "מנורת רצפה",
-      "status": "active",
+      "status": "archived",
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/floor-lamp.png"
@@ -257,7 +257,7 @@
     {
       "id": "home.wardrobe",
       "label": "ארון קטן",
-      "status": "active",
+      "status": "archived",
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/wardrobe.png"
@@ -266,7 +266,7 @@
     {
       "id": "home.toy-chest",
       "label": "תיבת צעצועים",
-      "status": "active",
+      "status": "archived",
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/toy-chest.png"
@@ -278,7 +278,8 @@
       "editable": false,
       "images": [
         "assets/scenes/home/furniture/rug.png"
-      ]
+      ],
+      "status": "archived"
     },
     {
       "id": "home.background",
@@ -286,6 +287,91 @@
       "editable": false,
       "images": [
         "assets/scenes/home/background/room.png"
+      ],
+      "status": "archived"
+    },
+    {
+      "id": "home.coastal-sofa",
+      "label": "ספת פופה",
+      "status": "active",
+      "editable": false,
+      "assembly": "assets/scenes/home/furniture/coastal/sofa/assembly.json",
+      "images": [
+        "assets/scenes/home/furniture/coastal/sofa/images/frame.png",
+        "assets/scenes/home/furniture/coastal/sofa/images/back-cushion.png",
+        "assets/scenes/home/furniture/coastal/sofa/images/seat-cushion.png"
+      ]
+    },
+    {
+      "id": "home.coastal-cabinet",
+      "label": "ארונית צדפים",
+      "status": "active",
+      "editable": false,
+      "assembly": "assets/scenes/home/furniture/coastal/cabinet/assembly.json",
+      "images": [
+        "assets/scenes/home/furniture/coastal/cabinet/images/frame.png",
+        "assets/scenes/home/furniture/coastal/cabinet/images/door-left.png",
+        "assets/scenes/home/furniture/coastal/cabinet/images/door-right.png"
+      ]
+    },
+    {
+      "id": "home.coastal-lamp",
+      "label": "מנורת צדף",
+      "status": "active",
+      "editable": false,
+      "assembly": "assets/scenes/home/furniture/coastal/lamp/assembly.json",
+      "images": [
+        "assets/scenes/home/furniture/coastal/lamp/images/base.png",
+        "assets/scenes/home/furniture/coastal/lamp/images/shade.png"
+      ]
+    },
+    {
+      "id": "home.coastal-window",
+      "label": "חלון לים",
+      "status": "active",
+      "editable": false,
+      "assembly": "assets/scenes/home/furniture/coastal/window/assembly.json",
+      "images": [
+        "assets/scenes/home/furniture/coastal/window/images/frame.png",
+        "assets/scenes/home/furniture/coastal/window/images/rod.png",
+        "assets/scenes/home/furniture/coastal/window/images/curtain-left.png",
+        "assets/scenes/home/furniture/coastal/window/images/curtain-right.png"
+      ]
+    },
+    {
+      "id": "home.coastal-side-table",
+      "label": "שולחן הקריאה",
+      "status": "active",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/coastal/table/images/table.png"
+      ]
+    },
+    {
+      "id": "home.coastal-wall-shelf",
+      "label": "מדף עץ",
+      "status": "active",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/coastal/shelf/images/shelf.png"
+      ]
+    },
+    {
+      "id": "home.coastal-decor-shell",
+      "label": "צדף ורוד",
+      "status": "active",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/coastal/decor/images/shell.png"
+      ]
+    },
+    {
+      "id": "home.coastal-rug",
+      "label": "שטיח גלים",
+      "status": "active",
+      "editable": false,
+      "images": [
+        "assets/scenes/home/furniture/coastal/rug/images/rug.png"
       ]
     }
   ]

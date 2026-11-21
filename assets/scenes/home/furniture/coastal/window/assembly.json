@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "id": "home.coastal-window",
+  "canvas": [
+    800,
+    600
+  ],
+  "parts": [
+    {
+      "id": "frame",
+      "label": "frame",
+      "image": "assets/scenes/home/furniture/coastal/window/images/frame.png",
+      "sourceSize": [
+        482,
+        365
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        140,
+        80
+      ],
+      "scale": 1.0788381742738589,
+      "rotation": 0,
+      "layer": 1,
+      "parent": null
+    },
+    {
+      "id": "rod",
+      "label": "rod",
+      "image": "assets/scenes/home/furniture/coastal/window/images/rod.png",
+      "sourceSize": [
+        665,
+        90
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        20,
+        25
+      ],
+      "scale": 1.1428571428571428,
+      "rotation": 0,
+      "layer": 2,
+      "parent": null
+    },
+    {
+      "id": "curtain-left",
+      "label": "curtain-left",
+      "image": "assets/scenes/home/furniture/coastal/window/images/curtain-left.png",
+      "sourceSize": [
+        320,
+        495
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        15,
+        55
+      ],
+      "scale": 0.65625,
+      "rotation": 0,
+      "layer": 3,
+      "parent": null
+    },
+    {
+      "id": "curtain-right",
+      "label": "curtain-right",
+      "image": "assets/scenes/home/furniture/coastal/window/images/curtain-right.png",
+      "sourceSize": [
+        335,
+        495
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        575,
+        55
+      ],
+      "scale": 0.6268656716417911,
+      "rotation": 0,
+      "layer": 4,
+      "parent": null
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "id": "home.coastal-sofa",
+  "canvas": [
+    420,
+    320
+  ],
+  "parts": [
+    {
+      "id": "frame",
+      "label": "frame",
+      "image": "assets/scenes/home/furniture/coastal/sofa/images/frame.png",
+      "sourceSize": [
+        408,
+        310
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        6,
+        10
+      ],
+      "scale": 1.0,
+      "rotation": 0,
+      "layer": 1,
+      "parent": null
+    },
+    {
+      "id": "back-cushion",
+      "label": "back-cushion",
+      "image": "assets/scenes/home/furniture/coastal/sofa/images/back-cushion.png",
+      "sourceSize": [
+        388,
+        215
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        70,
+        80
+      ],
+      "scale": 0.7216494845360825,
+      "rotation": 0,
+      "layer": 2,
+      "parent": null
+    },
+    {
+      "id": "seat-cushion",
+      "label": "seat-cushion",
+      "image": "assets/scenes/home/furniture/coastal/sofa/images/seat-cushion.png",
+      "sourceSize": [
+        370,
+        180
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        70,
+        165
+      ],
+      "scale": 0.7567567567567568,
+      "rotation": 0,
+      "layer": 3,
+      "parent": null
+    }
+  ]
+}

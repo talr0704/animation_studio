@@ -1,3 +1,4 @@
+import {mountProp} from '../shared/prop-rig.js';
 import { createPopa } from '../popa-browser.js';
 import { POPA_CLIPS } from '../popa-clips.js';
 import { GardenRound } from './garden-round.js';
@@ -12,12 +13,12 @@ try {
 let pendingItem=null,interactionTimer=null,activeItem=null;
 const fruitImages = new Map();
 let roomFurniture;
-function placeRoomFurniture(){if(!roomFurniture)return;const layout=roomFurniture[window.innerWidth<=700?'portrait':'wide'],[w,h]=layout.canvas;const place=(el,r)=>Object.assign(el.style,{left:r[0]/w*100+'%',top:r[1]/h*100+'%',width:r[2]/w*100+'%',height:r[3]/h*100+'%'});for(const [id,rect]of Object.entries(layout.items))place(document.querySelector(`[data-furniture="${id}"]`),rect);place($('buy-rug'),layout.rug);}
+function placeRoomFurniture(){if(!roomFurniture)return;const layout=roomFurniture[window.innerWidth<=700?'portrait':'wide'],[w,h]=layout.canvas;const place=(el,r)=>Object.assign(el.style,{left:r[0]/w*100+'%',top:r[1]/h*100+'%',width:r[2]/w*100+'%',height:r[3]/h*100+'%'});for(const [id,rect]of Object.entries(layout.items)){const button=document.querySelector(`[data-furniture="${id}"]`);place(button,rect);const rig=button.querySelector('.item-rig');if(rig){const [rw,rh]=JSON.parse(rig.dataset.canvas),scale=Math.min(button.clientWidth/rw,button.clientHeight/rh);Object.assign(rig.style,{width:rw+'px',height:rh+'px',left:(button.clientWidth-rw*scale)/2+'px',top:(button.clientHeight-rh*scale)+'px',transform:`scale(${scale})`});}}place($('buy-rug'),layout.rug);}
 function cancelInteraction(){clearTimeout(interactionTimer);pendingItem=null;activeItem=null;$('player').removeAttribute('data-interaction');popa?.clearItem();for(const b of document.querySelectorAll('.room-item'))b.setAttribute('aria-pressed','false');}
 function approachItem(item,element){if(!popa||view!=='room')return;cancelInteraction();keys.clear();const world=document.querySelector('.world').getBoundingClientRect(),rect=element.getBoundingClientRect(),min=roomBounds();target=Math.max(min,Math.min(1-min,(rect.x+rect.width/2-world.x)/width));targetDepth=Math.max(0,Math.min(.28,1-(rect.bottom-world.y+50)/height));pendingItem=item;element.setAttribute('aria-pressed','true');toast(`פופה בדרך אל ${item.label}`);}
 function arrive(){const item=pendingItem;if(!item)return;pendingItem=null;activeItem=item.id;$('player').dataset.interaction=item.id;
  if(item.id==='rug'&&!profile.rug){if(profile.coins<12){toast('השטיח החדש עולה 12 מטבעות');cancelInteraction();cue('idle');return;}profile.coins-=12;profile.rug=true;save();refreshProfile();}
- if(['reading-books','side-table'].includes(item.id)){const book=new Image();book.src='assets/scenes/salon/books/album-stack.png';book.alt='ספר';popa.attachItem(book);}
+
  cue(item.action);toast(item.message);const element=document.querySelector(`[data-furniture="${item.id}"]`);if(element)element.animate([{transform:'translateY(0)'},{transform:'translateY(-3px)'},{transform:'translateY(0)'}],{duration:400});
  interactionTimer=setTimeout(()=>{if(activeItem!==item.id)return;cancelInteraction();if(item.page){location.href=item.page;return;}cue('idle');},POPA_CLIPS[item.action].duration);
 }
@@ -31,7 +32,7 @@ const save = () => { try { let previous={};try{previous=JSON.parse(localStorage.
 function refreshProfile() {
   $('coins').textContent = profile.coins;
   $('rug').classList.toggle('upgraded', profile.rug);
-  $('rug').src = 'assets/scenes/home/furniture/rug.png';
+  $('rug').src = roomFurniture?.rugImage??'assets/scenes/home/furniture/coastal/rug/images/rug.png';
   $('buy-rug').disabled = false;
   $('rug-price').textContent = profile.rug ? 'ריקוד על השטיח' : 'שטיח חדש · 12 ✦';
   $('record').textContent = profile.rounds ? `שיא הגינה שלך: ${profile.best} נקודות · ${profile.rounds} הרפתקאות` : 'כל הרפתקה מתחילה בצעד קטן.';
@@ -153,7 +154,7 @@ $('sound').onclick=()=>{sound=!sound;if(sound){try{audio??=new (window.AudioCont
 refreshProfile();new ResizeObserver(resize).observe(document.querySelector('.world'));resize();
 try{
   const furnitureResponse=await fetch(new URL('../assets/scenes/home/furniture/layout.json',import.meta.url));if(!furnitureResponse.ok)throw Error('Cannot load furniture layout');roomFurniture=await furnitureResponse.json();
-  await Promise.all(roomFurniture.items.map(async item=>{if(!POPA_CLIPS[item.action])throw Error('Unknown room action');const button=document.createElement('button');button.type='button';button.dataset.furniture=item.id;button.className='room-item';button.setAttribute('aria-label',item.label);button.setAttribute('aria-pressed','false');if(item.id==='reading-books')button.id='reading-books';const image=new Image();image.src=new URL('../'+item.image,import.meta.url).href;image.alt='';const label=document.createElement('span');label.textContent=item.label;button.append(image,label);button.onclick=()=>approachItem(item,button);$('home-furniture').append(button);await image.decode();}));placeRoomFurniture();
+  await Promise.all(roomFurniture.items.map(async item=>{if(!POPA_CLIPS[item.action])throw Error('Unknown room action');const button=document.createElement('button');button.type='button';button.dataset.furniture=item.id;button.className='room-item';button.style.zIndex=item.layer??1;button.setAttribute('aria-label',item.label);button.setAttribute('aria-pressed','false');if(item.id==='reading-books')button.id='reading-books';if(item.assembly){const response=await fetch(new URL('../'+item.assembly,import.meta.url));if(!response.ok)throw Error('Cannot load room prop');const data=await response.json(),rig=document.createElement('div');rig.className='item-rig';rig.dataset.canvas=JSON.stringify(data.canvas);button.append(rig);const mounted=mountProp(rig,data);await mounted.ready;}else{const image=new Image();image.src=new URL('../'+item.image,import.meta.url).href;image.alt='';button.append(image);await image.decode();}const label=document.createElement('span');label.textContent=item.label;button.append(label);button.onclick=()=>approachItem(item,button);$('home-furniture').append(button);}));placeRoomFurniture();
   await Promise.all(['apple','orange','berries','gold','rain'].map(async name=>{const image=new Image();image.src=new URL(`../assets/scenes/garden/${name}.svg`,import.meta.url).href;await image.decode();fruitImages.set(name,image);}));
   popa=await createPopa($('player'),{scale:.46,autoplay:'idle'});$('loading').hidden=true;home();requestAnimationFrame(tick);}catch(error){$('loading').textContent='לא הצלחנו לטעון את פופה. נסי לרענן את העמוד.';console.error(error);}
 window.addEventListener('pagehide',event=>{if(event.persisted){pause();return;}cancelInteraction();popa?.destroy();});

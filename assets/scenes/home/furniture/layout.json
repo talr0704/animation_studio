@@ -1,124 +1,118 @@
 {
-  "version": 1,
+  "version": 2,
   "items": [
     {
       "id": "sofa",
-      "image": "assets/scenes/home/furniture/sofa.png",
-      "label": "ספה ורודה",
+      "assembly": "assets/scenes/home/furniture/coastal/sofa/assembly.json",
+      "label": "ספת פופה",
       "action": "rest",
-      "message": "איזו פינה נעימה לנוח בה"
-    },
-    {
-      "id": "bed",
-      "image": "assets/scenes/home/furniture/bed.png",
-      "label": "מיטת מנטה",
-      "action": "rest",
-      "message": "זמן למנוחה קטנה"
-    },
-    {
-      "id": "side-table",
-      "image": "assets/scenes/home/furniture/side-table.png",
-      "label": "שולחן צד",
-      "action": "hold",
-      "message": "פופה בחרה סיפור לקריאה"
-    },
-    {
-      "id": "floor-lamp",
-      "image": "assets/scenes/home/furniture/floor-lamp.png",
-      "label": "מנורת רצפה",
-      "action": "interact",
-      "message": "אור נעים לפינת הקריאה"
+      "message": "פופה נחה על הספה שלה",
+      "layer": 1
     },
     {
       "id": "wardrobe",
-      "image": "assets/scenes/home/furniture/wardrobe.png",
-      "label": "ארון קטן",
+      "assembly": "assets/scenes/home/furniture/coastal/cabinet/assembly.json",
+      "label": "ארונית צדפים",
       "action": "wave",
-      "message": "מה נלבש להרפתקה הבאה?"
+      "message": "מה נמצא היום בארונית?",
+      "layer": 1
     },
     {
-      "id": "toy-chest",
-      "image": "assets/scenes/home/furniture/toy-chest.png",
-      "label": "תיבת צעצועים",
-      "action": "happy",
-      "message": "איזה כיף! זמן לשחק"
-    },
-    {
-      "id": "mirror",
-      "image": "assets/scenes/salon/furniture/mirror.png",
-      "label": "מראה · למספרה",
+      "id": "floor-lamp",
+      "assembly": "assets/scenes/home/furniture/coastal/lamp/assembly.json",
+      "label": "מנורת צדף",
       "action": "interact",
-      "message": "מתארגנות לביקור במספרה",
-      "page": "salon.html"
+      "message": "אור קטן ונעים ליד הארונית",
+      "layer": 3
     },
     {
-      "id": "reading-books",
-      "image": "assets/scenes/salon/books/album-stack.png",
-      "label": "ספרי פופה",
-      "action": "hold",
-      "message": "פופה בחרה סיפור לקריאה"
+      "id": "window",
+      "assembly": "assets/scenes/home/furniture/coastal/window/assembly.json",
+      "label": "חלון לים",
+      "action": "curious",
+      "message": "איזה יום יפה ליד הים",
+      "layer": 0
+    },
+    {
+      "id": "side-table",
+      "image": "assets/scenes/home/furniture/coastal/table/images/table.png",
+      "label": "שולחן הקריאה",
+      "action": "interact",
+      "message": "פופה מתיישבת ליד השולחן",
+      "layer": 2
+    },
+    {
+      "id": "wall-shelf",
+      "image": "assets/scenes/home/furniture/coastal/shelf/images/shelf.png",
+      "label": "מדף עץ",
+      "action": "curious",
+      "message": "פינה קטנה לדברים שפופה אוהבת",
+      "layer": 0
+    },
+    {
+      "id": "decor-shell",
+      "image": "assets/scenes/home/furniture/coastal/decor/images/shell.png",
+      "label": "צדף ורוד",
+      "action": "happy",
+      "message": "פופה מצאה צדף יפה!",
+      "layer": 2
     }
   ],
+  "rugImage": "assets/scenes/home/furniture/coastal/rug/images/rug.png",
   "wide": {
     "canvas": [
       1280,
-      842
+      820
     ],
     "items": {
-      "wardrobe": [
-        30,
-        290,
-        175,
-        250
-      ],
-      "sofa": [
-        310,
-        350,
-        280,
-        210
-      ],
-      "bed": [
-        920,
-        300,
-        260,
-        250
-      ],
-      "floor-lamp": [
-        228,
-        290,
+      "window": [
+        520,
         100,
+        330,
         270
       ],
-      "side-table": [
-        630,
+      "sofa": [
+        270,
         430,
-        105,
-        100
+        330,
+        250
       ],
-      "toy-chest": [
-        1080,
-        620,
-        140,
-        100
+      "wardrobe": [
+        945,
+        385,
+        230,
+        205
       ],
-      "mirror": [
+      "floor-lamp": [
+        965,
+        330,
         90,
-        600,
-        85,
-        110
+        120
       ],
-      "reading-books": [
-        652,
-        400,
-        62,
-        48
+      "side-table": [
+        655,
+        565,
+        200,
+        150
+      ],
+      "wall-shelf": [
+        180,
+        180,
+        230,
+        90
+      ],
+      "decor-shell": [
+        235,
+        117,
+        90,
+        90
       ]
     },
     "rug": [
-      330,
-      650,
-      600,
-      150
+      280,
+      690,
+      700,
+      110
     ]
   },
   "portrait": {
@@ -127,60 +121,54 @@
       792
     ],
     "items": {
-      "wardrobe": [
-        12,
-        310,
-        90,
-        145
+      "window": [
+        100,
+        120,
+        250,
+        200
       ],
       "sofa": [
-        20,
-        450,
-        145,
-        110
+        10,
+        470,
+        200,
+        155
       ],
-      "bed": [
-        232,
-        340,
-        148,
-        145
+      "wardrobe": [
+        268,
+        455,
+        115,
+        105
       ],
       "floor-lamp": [
-        115,
-        345,
-        48,
-        125
+        277,
+        424,
+        55,
+        70
       ],
       "side-table": [
-        173,
-        410,
-        58,
-        58
+        226,
+        619,
+        150,
+        110
       ],
-      "toy-chest": [
-        305,
-        600,
-        72,
+      "wall-shelf": [
+        10,
+        260,
+        130,
         55
       ],
-      "mirror": [
-        15,
-        610,
-        62,
-        80
-      ],
-      "reading-books": [
-        186,
-        392,
-        34,
-        29
+      "decor-shell": [
+        45,
+        228,
+        45,
+        50
       ]
     },
     "rug": [
-      85,
-      650,
-      235,
-      85
+      30,
+      700,
+      345,
+      65
     ]
   }
 }

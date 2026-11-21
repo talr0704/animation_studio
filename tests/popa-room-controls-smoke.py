@@ -4,7 +4,7 @@ from playwright.sync_api import sync_playwright
 URL=sys.argv[1] if len(sys.argv)>1 else 'http://127.0.0.1:4208/'
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox']);page=b.new_page(viewport={'width':1280,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)));page.clock.install();page.goto(URL+'game.html',wait_until='networkidle');page.wait_for_selector('#loading',state='hidden')
- assert page.locator('[data-furniture]').count()==8
+ assert page.locator('[data-furniture]').count()==7
  assert page.locator('[data-furniture] img').evaluate_all('(els)=>els.every(e=>e.complete&&e.naturalWidth>0)')
  def pos():return page.locator('#player').evaluate('(e)=>({x:parseFloat(e.style.left),bottom:parseFloat(e.style.bottom),facing:e.dataset.facing})')
  start=pos();page.keyboard.down('ArrowLeft');page.clock.run_for(700);left=pos();assert left['x']<start['x'] and left['facing']=='left';assert page.locator('.player>.popa-browser').evaluate('(e)=>new DOMMatrix(getComputedStyle(e).transform).a')==-1

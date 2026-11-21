@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "id": "home.coastal-cabinet",
+  "canvas": [
+    405,
+    350
+  ],
+  "parts": [
+    {
+      "id": "frame",
+      "label": "frame",
+      "image": "assets/scenes/home/furniture/coastal/cabinet/images/frame.png",
+      "sourceSize": [
+        405,
+        350
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        0,
+        0
+      ],
+      "scale": 1.0,
+      "rotation": 0,
+      "layer": 1,
+      "parent": null
+    },
+    {
+      "id": "door-left",
+      "label": "door-left",
+      "image": "assets/scenes/home/furniture/coastal/cabinet/images/door-left.png",
+      "sourceSize": [
+        255,
+        290
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        37,
+        105
+      ],
+      "scale": 0.611764705882353,
+      "rotation": 0,
+      "layer": 2,
+      "parent": null
+    },
+    {
+      "id": "door-right",
+      "label": "door-right",
+      "image": "assets/scenes/home/furniture/coastal/cabinet/images/door-right.png",
+      "sourceSize": [
+        260,
+        290
+      ],
+      "anchor": [
+        260,
+        0
+      ],
+      "position": [
+        374.0,
+        105
+      ],
+      "scale": 0.6,
+      "rotation": 0,
+      "layer": 3,
+      "parent": null
+    }
+  ]
+}

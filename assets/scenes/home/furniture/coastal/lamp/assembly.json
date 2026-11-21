@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "id": "home.coastal-lamp",
+  "canvas": [
+    240,
+    330
+  ],
+  "parts": [
+    {
+      "id": "base",
+      "label": "base",
+      "image": "assets/scenes/home/furniture/coastal/lamp/images/base.png",
+      "sourceSize": [
+        195,
+        288
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        64,
+        130
+      ],
+      "scale": 0.6,
+      "rotation": 0,
+      "layer": 1,
+      "parent": null
+    },
+    {
+      "id": "shade",
+      "label": "shade",
+      "image": "assets/scenes/home/furniture/coastal/lamp/images/shade.png",
+      "sourceSize": [
+        310,
+        250
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "position": [
+        20,
+        0
+      ],
+      "scale": 0.6709677419354839,
+      "rotation": 0,
+      "layer": 2,
+      "parent": null
+    }
+  ]
+}

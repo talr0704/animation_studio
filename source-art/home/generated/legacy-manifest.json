@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "source": "source-art/home/generated/furniture-sheet.png",
+  "items": [
+    {
+      "id": "home.sofa",
+      "image": "assets/scenes/home/furniture/sofa.png",
+      "size": [
+        687,
+        473
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "id": "home.bed",
+      "image": "assets/scenes/home/furniture/bed.png",
+      "size": [
+        623,
+        587
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "id": "home.side-table",
+      "image": "assets/scenes/home/furniture/side-table.png",
+      "size": [
+        504,
+        410
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "id": "home.floor-lamp",
+      "image": "assets/scenes/home/furniture/floor-lamp.png",
+      "size": [
+        358,
+        656
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "id": "home.wardrobe",
+      "image": "assets/scenes/home/furniture/wardrobe.png",
+      "size": [
+        531,
+        588
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "id": "home.toy-chest",
+      "image": "assets/scenes/home/furniture/toy-chest.png",
+      "size": [
+        544,
+        396
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "id": "home.rug",
+      "image": "assets/scenes/home/furniture/rug.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "anchor": [
+        0.5,
+        1
+      ]
+    }
+  ],
+  "layout": "assets/scenes/home/furniture/layout.json",
+  "sources": [
+    "source-art/home/generated/furniture-sheet.png",
+    "source-art/home/generated/decor-sheet.png"
+  ]
+}

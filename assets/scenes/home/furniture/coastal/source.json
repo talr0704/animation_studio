@@ -1,0 +1,185 @@
+{
+  "operation": "lossless crop of original RGBA pixels",
+  "parts": [
+    {
+      "image": "assets/scenes/home/furniture/coastal/sofa/images/frame.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        0,
+        45,
+        408,
+        310
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/sofa/images/back-cushion.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        408,
+        105,
+        388,
+        215
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/sofa/images/seat-cushion.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        792,
+        145,
+        370,
+        180
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/decor/images/shell.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        1170,
+        105,
+        260,
+        225
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/table/images/table.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        0,
+        430,
+        405,
+        290
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/cabinet/images/frame.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        407,
+        380,
+        405,
+        350
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/cabinet/images/door-left.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        838,
+        425,
+        255,
+        290
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/cabinet/images/door-right.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        1165,
+        425,
+        260,
+        290
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/lamp/images/base.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        70,
+        775,
+        195,
+        288
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/lamp/images/shade.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        330,
+        795,
+        310,
+        250
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/rug/images/rug.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        635,
+        797,
+        438,
+        265
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/shelf/images/shelf.png",
+      "source": "source-art/home/coastal/furniture-sheet.png",
+      "rect": [
+        1075,
+        840,
+        373,
+        170
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/window/images/frame.png",
+      "source": "source-art/home/coastal/windows-sheet.png",
+      "rect": [
+        12,
+        117,
+        482,
+        365
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/window/images/arch-variant.png",
+      "source": "source-art/home/coastal/windows-sheet.png",
+      "rect": [
+        500,
+        15,
+        405,
+        470
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/window/images/shutters-variant.png",
+      "source": "source-art/home/coastal/windows-sheet.png",
+      "rect": [
+        908,
+        108,
+        625,
+        370
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/window/images/curtain-left.png",
+      "source": "source-art/home/coastal/windows-sheet.png",
+      "rect": [
+        70,
+        525,
+        320,
+        495
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/window/images/curtain-right.png",
+      "source": "source-art/home/coastal/windows-sheet.png",
+      "rect": [
+        1135,
+        525,
+        335,
+        495
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/window/images/rod.png",
+      "source": "source-art/home/coastal/windows-sheet.png",
+      "rect": [
+        420,
+        700,
+        665,
+        90
+      ]
+    }
+  ]
+}
