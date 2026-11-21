@@ -1,0 +1,1244 @@
+[
+  {
+    "outfit": "jellyfish",
+    "part": "dress_front",
+    "file": "jellyfish/dress_front.png",
+    "size": [
+      404,
+      330
+    ],
+    "source_cell": [
+      0,
+      0,
+      512,
+      389
+    ],
+    "crop_bbox": [
+      93,
+      50,
+      465,
+      348
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "jellyfish",
+    "part": "underskirt",
+    "file": "jellyfish/underskirt.png",
+    "size": [
+      429,
+      208
+    ],
+    "source_cell": [
+      512,
+      0,
+      1024,
+      389
+    ],
+    "crop_bbox": [
+      56,
+      160,
+      453,
+      336
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "jellyfish",
+    "part": "dress_back",
+    "file": "jellyfish/dress_back.png",
+    "size": [
+      402,
+      257
+    ],
+    "source_cell": [
+      1024,
+      0,
+      1536,
+      389
+    ],
+    "crop_bbox": [
+      43,
+      116,
+      413,
+      341
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "jellyfish",
+    "part": "hat_dome",
+    "file": "jellyfish/hat_dome.png",
+    "size": [
+      365,
+      260
+    ],
+    "source_cell": [
+      0,
+      389,
+      512,
+      691
+    ],
+    "crop_bbox": [
+      111,
+      33,
+      444,
+      261
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "jellyfish",
+    "part": "tentacle_left",
+    "file": "jellyfish/tentacle_left.png",
+    "size": [
+      173,
+      241
+    ],
+    "source_cell": [
+      512,
+      389,
+      1024,
+      691
+    ],
+    "crop_bbox": [
+      172,
+      41,
+      313,
+      250
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "jellyfish",
+    "part": "tentacle_center",
+    "file": "jellyfish/tentacle_center.png",
+    "size": [
+      162,
+      238
+    ],
+    "source_cell": [
+      1024,
+      389,
+      1536,
+      691
+    ],
+    "crop_bbox": [
+      161,
+      44,
+      291,
+      250
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "jellyfish",
+    "part": "tentacle_right",
+    "file": "jellyfish/tentacle_right.png",
+    "size": [
+      174,
+      231
+    ],
+    "source_cell": [
+      0,
+      691,
+      512,
+      1024
+    ],
+    "crop_bbox": [
+      225,
+      45,
+      367,
+      244
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "jellyfish",
+    "part": "bag_body",
+    "file": "jellyfish/bag_body.png",
+    "size": [
+      337,
+      251
+    ],
+    "source_cell": [
+      512,
+      691,
+      1024,
+      1024
+    ],
+    "crop_bbox": [
+      101,
+      44,
+      406,
+      263
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "jellyfish",
+    "part": "bag_handle",
+    "file": "jellyfish/bag_handle.png",
+    "size": [
+      314,
+      260
+    ],
+    "source_cell": [
+      1024,
+      691,
+      1536,
+      1024
+    ],
+    "crop_bbox": [
+      82,
+      38,
+      364,
+      266
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "strawberry",
+    "part": "dress_front",
+    "file": "strawberry/dress_front.png",
+    "size": [
+      420,
+      361
+    ],
+    "source_cell": [
+      0,
+      0,
+      512,
+      389
+    ],
+    "crop_bbox": [
+      89,
+      34,
+      477,
+      363
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "strawberry",
+    "part": "chest_bow",
+    "file": "strawberry/chest_bow.png",
+    "size": [
+      325,
+      279
+    ],
+    "source_cell": [
+      512,
+      0,
+      1024,
+      389
+    ],
+    "crop_bbox": [
+      110,
+      79,
+      403,
+      326
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "strawberry",
+    "part": "dress_back",
+    "file": "strawberry/dress_back.png",
+    "size": [
+      443,
+      301
+    ],
+    "source_cell": [
+      1024,
+      0,
+      1536,
+      389
+    ],
+    "crop_bbox": [
+      35,
+      91,
+      446,
+      360
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "strawberry",
+    "part": "hat_body",
+    "file": "strawberry/hat_body.png",
+    "size": [
+      433,
+      246
+    ],
+    "source_cell": [
+      0,
+      389,
+      512,
+      691
+    ],
+    "crop_bbox": [
+      83,
+      37,
+      484,
+      251
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "strawberry",
+    "part": "hat_leaves",
+    "file": "strawberry/hat_leaves.png",
+    "size": [
+      331,
+      182
+    ],
+    "source_cell": [
+      512,
+      389,
+      1024,
+      691
+    ],
+    "crop_bbox": [
+      120,
+      53,
+      419,
+      203
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "strawberry",
+    "part": "hat_flower",
+    "file": "strawberry/hat_flower.png",
+    "size": [
+      214,
+      201
+    ],
+    "source_cell": [
+      1024,
+      389,
+      1536,
+      691
+    ],
+    "crop_bbox": [
+      151,
+      55,
+      333,
+      224
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "strawberry",
+    "part": "bag_body",
+    "file": "strawberry/bag_body.png",
+    "size": [
+      294,
+      299
+    ],
+    "source_cell": [
+      0,
+      691,
+      512,
+      1024
+    ],
+    "crop_bbox": [
+      147,
+      31,
+      409,
+      298
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "strawberry",
+    "part": "bag_handle",
+    "file": "strawberry/bag_handle.png",
+    "size": [
+      308,
+      283
+    ],
+    "source_cell": [
+      512,
+      691,
+      1024,
+      1024
+    ],
+    "crop_bbox": [
+      116,
+      24,
+      392,
+      275
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "strawberry",
+    "part": "bag_straw",
+    "file": "strawberry/bag_straw.png",
+    "size": [
+      147,
+      253
+    ],
+    "source_cell": [
+      1024,
+      691,
+      1536,
+      1024
+    ],
+    "crop_bbox": [
+      176,
+      53,
+      291,
+      274
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "duck",
+    "part": "coat_body",
+    "file": "duck/coat_body.png",
+    "size": [
+      434,
+      323
+    ],
+    "source_cell": [
+      0,
+      0,
+      512,
+      389
+    ],
+    "crop_bbox": [
+      79,
+      45,
+      481,
+      336
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "duck",
+    "part": "collar_left",
+    "file": "duck/collar_left.png",
+    "size": [
+      248,
+      179
+    ],
+    "source_cell": [
+      512,
+      0,
+      1024,
+      389
+    ],
+    "crop_bbox": [
+      154,
+      114,
+      370,
+      261
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "duck",
+    "part": "collar_right",
+    "file": "duck/collar_right.png",
+    "size": [
+      245,
+      179
+    ],
+    "source_cell": [
+      1024,
+      0,
+      1536,
+      389
+    ],
+    "crop_bbox": [
+      65,
+      114,
+      278,
+      261
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "duck",
+    "part": "sleeve_left",
+    "file": "duck/sleeve_left.png",
+    "size": [
+      186,
+      209
+    ],
+    "source_cell": [
+      0,
+      389,
+      512,
+      691
+    ],
+    "crop_bbox": [
+      195,
+      37,
+      349,
+      214
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "duck",
+    "part": "sleeve_right",
+    "file": "duck/sleeve_right.png",
+    "size": [
+      185,
+      210
+    ],
+    "source_cell": [
+      512,
+      389,
+      1024,
+      691
+    ],
+    "crop_bbox": [
+      153,
+      36,
+      306,
+      214
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "duck",
+    "part": "hood",
+    "file": "duck/hood.png",
+    "size": [
+      375,
+      305
+    ],
+    "source_cell": [
+      1024,
+      389,
+      1536,
+      691
+    ],
+    "crop_bbox": [
+      43,
+      0,
+      386,
+      273
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "duck",
+    "part": "hood_bow",
+    "file": "duck/hood_bow.png",
+    "size": [
+      260,
+      238
+    ],
+    "source_cell": [
+      0,
+      691,
+      512,
+      1024
+    ],
+    "crop_bbox": [
+      175,
+      50,
+      403,
+      256
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "duck",
+    "part": "boot_left",
+    "file": "duck/boot_left.png",
+    "size": [
+      245,
+      252
+    ],
+    "source_cell": [
+      512,
+      691,
+      1024,
+      1024
+    ],
+    "crop_bbox": [
+      129,
+      43,
+      342,
+      263
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "duck",
+    "part": "boot_right",
+    "file": "duck/boot_right.png",
+    "size": [
+      244,
+      252
+    ],
+    "source_cell": [
+      1024,
+      691,
+      1536,
+      1024
+    ],
+    "crop_bbox": [
+      110,
+      43,
+      322,
+      263
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mermaid",
+    "part": "dress_body",
+    "file": "mermaid/dress_body.png",
+    "size": [
+      464,
+      296
+    ],
+    "source_cell": [
+      0,
+      0,
+      512,
+      389
+    ],
+    "crop_bbox": [
+      71,
+      64,
+      503,
+      328
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mermaid",
+    "part": "collar_left",
+    "file": "mermaid/collar_left.png",
+    "size": [
+      306,
+      249
+    ],
+    "source_cell": [
+      512,
+      0,
+      1024,
+      389
+    ],
+    "crop_bbox": [
+      123,
+      75,
+      397,
+      292
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mermaid",
+    "part": "collar_right",
+    "file": "mermaid/collar_right.png",
+    "size": [
+      309,
+      249
+    ],
+    "source_cell": [
+      1024,
+      0,
+      1536,
+      389
+    ],
+    "crop_bbox": [
+      101,
+      77,
+      378,
+      294
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mermaid",
+    "part": "chest_bow",
+    "file": "mermaid/chest_bow.png",
+    "size": [
+      326,
+      237
+    ],
+    "source_cell": [
+      0,
+      389,
+      512,
+      691
+    ],
+    "crop_bbox": [
+      136,
+      35,
+      430,
+      240
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mermaid",
+    "part": "hair_bow_left",
+    "file": "mermaid/hair_bow_left.png",
+    "size": [
+      219,
+      228
+    ],
+    "source_cell": [
+      512,
+      389,
+      1024,
+      691
+    ],
+    "crop_bbox": [
+      159,
+      28,
+      346,
+      224
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mermaid",
+    "part": "hair_bow_right",
+    "file": "mermaid/hair_bow_right.png",
+    "size": [
+      220,
+      228
+    ],
+    "source_cell": [
+      1024,
+      389,
+      1536,
+      691
+    ],
+    "crop_bbox": [
+      141,
+      28,
+      329,
+      224
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mermaid",
+    "part": "hair_bow_center",
+    "file": "mermaid/hair_bow_center.png",
+    "size": [
+      202,
+      197
+    ],
+    "source_cell": [
+      0,
+      691,
+      512,
+      1024
+    ],
+    "crop_bbox": [
+      202,
+      53,
+      372,
+      218
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mermaid",
+    "part": "bag_body",
+    "file": "mermaid/bag_body.png",
+    "size": [
+      338,
+      260
+    ],
+    "source_cell": [
+      512,
+      691,
+      1024,
+      1024
+    ],
+    "crop_bbox": [
+      96,
+      21,
+      402,
+      249
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mermaid",
+    "part": "bag_handle",
+    "file": "mermaid/bag_handle.png",
+    "size": [
+      328,
+      206
+    ],
+    "source_cell": [
+      1024,
+      691,
+      1536,
+      1024
+    ],
+    "crop_bbox": [
+      86,
+      31,
+      382,
+      205
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "pajama_body",
+    "file": "cloud/pajama_body.png",
+    "size": [
+      424,
+      354
+    ],
+    "source_cell": [
+      0,
+      0,
+      433,
+      460
+    ],
+    "crop_bbox": [
+      41,
+      64,
+      433,
+      386
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "collar_left",
+    "file": "cloud/collar_left.png",
+    "size": [
+      302,
+      196
+    ],
+    "source_cell": [
+      433,
+      0,
+      866,
+      460
+    ],
+    "crop_bbox": [
+      95,
+      138,
+      365,
+      302
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "collar_right",
+    "file": "cloud/collar_right.png",
+    "size": [
+      301,
+      196
+    ],
+    "source_cell": [
+      866,
+      0,
+      1299,
+      460
+    ],
+    "crop_bbox": [
+      73,
+      138,
+      342,
+      302
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "sleeve_left",
+    "file": "cloud/sleeve_left.png",
+    "size": [
+      228,
+      234
+    ],
+    "source_cell": [
+      0,
+      460,
+      433,
+      817
+    ],
+    "crop_bbox": [
+      98,
+      62,
+      294,
+      264
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "sleeve_right",
+    "file": "cloud/sleeve_right.png",
+    "size": [
+      227,
+      234
+    ],
+    "source_cell": [
+      433,
+      460,
+      866,
+      817
+    ],
+    "crop_bbox": [
+      97,
+      62,
+      292,
+      264
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "hat_body",
+    "file": "cloud/hat_body.png",
+    "size": [
+      397,
+      311
+    ],
+    "source_cell": [
+      866,
+      460,
+      1299,
+      817
+    ],
+    "crop_bbox": [
+      0,
+      25,
+      365,
+      304
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "star_charm",
+    "file": "cloud/star_charm.png",
+    "size": [
+      169,
+      248
+    ],
+    "source_cell": [
+      0,
+      817,
+      433,
+      1211
+    ],
+    "crop_bbox": [
+      150,
+      75,
+      287,
+      291
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "slipper_left",
+    "file": "cloud/slipper_left.png",
+    "size": [
+      236,
+      233
+    ],
+    "source_cell": [
+      433,
+      817,
+      866,
+      1211
+    ],
+    "crop_bbox": [
+      89,
+      98,
+      293,
+      299
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "slipper_right",
+    "file": "cloud/slipper_right.png",
+    "size": [
+      237,
+      233
+    ],
+    "source_cell": [
+      866,
+      817,
+      1299,
+      1211
+    ],
+    "crop_bbox": [
+      80,
+      98,
+      285,
+      299
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "crab",
+    "part": "dress_front",
+    "file": "crab/dress_front.png",
+    "size": [
+      385,
+      329
+    ],
+    "source_cell": [
+      0,
+      0,
+      400,
+      499
+    ],
+    "crop_bbox": [
+      34,
+      99,
+      387,
+      396
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "crab",
+    "part": "shirt_body",
+    "file": "crab/shirt_body.png",
+    "size": [
+      272,
+      226
+    ],
+    "source_cell": [
+      400,
+      0,
+      799,
+      499
+    ],
+    "crop_bbox": [
+      105,
+      160,
+      345,
+      354
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "crab",
+    "part": "sleeve_left",
+    "file": "crab/sleeve_left.png",
+    "size": [
+      175,
+      161
+    ],
+    "source_cell": [
+      799,
+      0,
+      1199,
+      499
+    ],
+    "crop_bbox": [
+      135,
+      184,
+      278,
+      313
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "crab",
+    "part": "sleeve_right",
+    "file": "crab/sleeve_right.png",
+    "size": [
+      174,
+      161
+    ],
+    "source_cell": [
+      0,
+      499,
+      400,
+      886
+    ],
+    "crop_bbox": [
+      124,
+      84,
+      266,
+      213
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "crab",
+    "part": "hat_body",
+    "file": "crab/hat_body.png",
+    "size": [
+      384,
+      243
+    ],
+    "source_cell": [
+      400,
+      499,
+      799,
+      886
+    ],
+    "crop_bbox": [
+      25,
+      56,
+      377,
+      267
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "crab",
+    "part": "eye_left",
+    "file": "crab/eye_left.png",
+    "size": [
+      155,
+      205
+    ],
+    "source_cell": [
+      799,
+      499,
+      1199,
+      886
+    ],
+    "crop_bbox": [
+      136,
+      68,
+      259,
+      241
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "crab",
+    "part": "eye_right",
+    "file": "crab/eye_right.png",
+    "size": [
+      160,
+      210
+    ],
+    "source_cell": [
+      0,
+      886,
+      400,
+      1312
+    ],
+    "crop_bbox": [
+      144,
+      90,
+      272,
+      268
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "crab",
+    "part": "bag_body",
+    "file": "crab/bag_body.png",
+    "size": [
+      349,
+      225
+    ],
+    "source_cell": [
+      400,
+      886,
+      799,
+      1312
+    ],
+    "crop_bbox": [
+      36,
+      94,
+      353,
+      287
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "crab",
+    "part": "bag_handle",
+    "file": "crab/bag_handle.png",
+    "size": [
+      314,
+      242
+    ],
+    "source_cell": [
+      799,
+      886,
+      1199,
+      1312
+    ],
+    "crop_bbox": [
+      52,
+      74,
+      334,
+      284
+    ],
+    "padding": 16,
+    "fitting_status": "not_fitted"
+  }
+]
