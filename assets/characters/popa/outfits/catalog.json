@@ -15,21 +15,21 @@
           "id": "pajama_body",
           "asset": "assets/characters/popa/outfits/cloud/parts/pajama_body.png",
           "naturalSize": [
-            644,
-            479
+            967,
+            963
           ],
           "x": 230,
           "y": 349,
           "width": 180,
-          "height": 133.88,
+          "height": 179.26,
           "rotation": 0,
           "layer": 8,
           "attachment": "body",
           "visible": true,
           "locked": false,
           "artworkSize": [
-            650,
-            485
+            973,
+            969
           ],
           "artworkOffset": [
             -3,
@@ -1350,5 +1350,5 @@
       ]
     }
   ],
-  "artworkRevision": 3
+  "artworkRevision": 4
 }
