@@ -5,3 +5,5 @@ The room's **סידור החדר** button edits whole illustrated objects, inclu
 Positions use the design canvases in `assets/scenes/home/furniture/layout.json` (1280×820 wide, 390×792 portrait). Desktop and phone arrangements are independent. Drafts auto-save locally under `popa.home-layout.v1`; finishing returns to normal object interactions. Download `popa-room-layout.json` to share or back up both arrangements. Import validates the schema and restores positions only, without changing artwork paths. Reviewed shared arrangements can be integrated back into `layout.json`.
 
 The uploaded empty coastal background is stored at `assets/scenes/home/background/coastal-room.png`, referenced by `layout.json` and the asset catalogue. It stretches with the room so the floor boundary remains at the same relative height in both arrangements.
+
+The coastal window is four independent room objects: `window` (frame), `window-rod` (mounting rod), `window-curtain-left`, and `window-curtain-right`. Existing drafts with a single assembled window migrate on load; other saved furniture placements are preserved. The original window rig remains available as source assembly.

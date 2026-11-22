@@ -11,8 +11,18 @@ export function mountRoomEditor({room,layout,place,setEditing}) {
   function validate(data){
     if(data?.version!==1||data.scene!=='home')throw Error('נדרש קובץ סידור החדר של פופה');
     const result={};
-    for(const profile of profiles){const source=data[profile];
+    for(const profile of profiles){let source=data[profile];
       if(!source||JSON.stringify(source.canvas)!==JSON.stringify(defaults[profile].canvas))throw Error('מידות החדר אינן תואמות');
+      // Upgrade existing whole-window drafts without losing other furniture positions.
+      if(!source.items?.['window-rod'] && source.items?.window){
+        source=clone(source);
+        const r=source.items.window;
+        if(!Array.isArray(r)||r.length!==4||r.some(n=>typeof n!=='number'||!Number.isFinite(n)))throw Error('מיקום החלון אינו תקין');
+        const scale=Math.min(r[2]/800,r[3]/600),ox=r[0]+(r[2]-800*scale)/2,oy=r[1]+r[3]-600*scale;
+        const pieces={'window':[140,80,520,365*1.0788381742738589],'window-rod':[20,25,760,90*1.1428571428571428],'window-curtain-left':[15,55,210,495*.65625],'window-curtain-right':[575,55,210,495*.6268656716417911]};
+        source.layers??={};
+        for(const [id,[x,y,w,h]]of Object.entries(pieces)){source.items[id]=[ox+x*scale,oy+y*scale,w*scale,h*scale];source.layers[id]=source.layers.window??0;}
+      }
       const target=clone(defaults[profile]);
       for(const id of ids){const rect=id==='rug'?source.rug:source.items?.[id];
         if(!Array.isArray(rect)||rect.length!==4||rect.some(n=>typeof n!=='number'||!Number.isFinite(n))||rect[0]<0||rect[1]<0||rect[2]<5||rect[3]<5||rect[2]>target.canvas[0]*2||rect[3]>target.canvas[1]*2||rect[0]>target.canvas[0]||rect[1]>target.canvas[1])throw Error('מיקום או גודל אינם תקינים');
