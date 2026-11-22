@@ -7,7 +7,7 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
   const response = await fetch(CATALOG);
   if (!response.ok) throw new Error('Outfit catalogue unavailable');
   const catalog = await response.json();
-  const initial = look => ({id:look.id,hiddenBase:['shirt','pinafore'],parts:clone(look.parts),fittingStatus:'draft'});
+  const initial = look => ({id:look.id,hiddenBase:['shirt','pinafore','flower'],parts:clone(look.parts),fittingStatus:'draft'});
   const defaults = Object.fromEntries(catalog.looks.map(look => [look.id,initial(look)]));
   const drafts = clone(defaults), history = [];
   let lookId=catalog.looks[0].id, partId=drafts[lookId].parts[0].id, mounted=[], drag=null, storageAvailable=true;
@@ -25,6 +25,7 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
       }
 
       if(!reference || ids.has(look.id) || !Array.isArray(look.parts) || look.parts.length!==reference.parts.length || !Array.isArray(look.hiddenBase) || look.hiddenBase.some(id=>!['shirt','pinafore','flower'].includes(id))) throw Error('רשימת הלוקים אינה תקינה');
+      if(!look.hiddenBase.includes('flower'))look.hiddenBase.push('flower');
       ids.add(look.id);const parts=new Set();
       for(const part of look.parts){
         const original=reference.parts.find(p=>p.id===part.id);
@@ -45,7 +46,7 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
   <label class="outfit-check"><input id="outfit-ratio" type="checkbox" checked> שמירה על יחס גובה ורוחב</label>
   <label>תנועה יחד עם <select id="outfit-attachment">${Object.entries(attachmentLabels).map(([id,label])=>`<option value="${id}">${label}</option>`).join('')}</select></label>
   <div class="outfit-row"><label><input id="outfit-visible" type="checkbox"> הצגת החלק</label><label><input id="outfit-locked" type="checkbox"> נעילה</label></div>
-  <details><summary>הבגדים המקוריים של פופה</summary><p>הסתירי אותם כדי להתאים את הלוק החדש.</p>${[['shirt','חולצה'],['pinafore','סרפן'],['flower','פרח']].map(([id,label])=>`<label class="outfit-check"><input type="checkbox" data-base="${id}"> ${label}</label>`).join('')}</details>
+  <details><summary>הבגדים המקוריים של פופה</summary><p>הסתירי אותם כדי להתאים את הלוק החדש.</p>${[['shirt','חולצה'],['pinafore','סרפן']].map(([id,label])=>`<label class="outfit-check"><input type="checkbox" data-base="${id}"> ${label}</label>`).join('')}</details>
   <div class="outfit-row"><button id="outfit-stop">עמידה לעריכה</button><button data-preview="walk">הליכה</button><button data-preview="wave">נפנוף</button></div>
   <div class="outfit-row"><button id="outfit-undo">ביטול פעולה</button><button id="outfit-reset">איפוס החלק</button></div>
   <div class="outfit-row"><button id="outfit-export">הורדת הלוק</button><button id="outfit-export-all">הורדת כל הלוקים</button></div>

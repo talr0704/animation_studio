@@ -11,6 +11,7 @@ cloud['hiddenBase']=['shirt','pinafore'];cloud['parts'][0]['x']=245;cloud['parts
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox']);page=b.new_page(viewport={'width':1280,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto('http://localhost:4205/index.html?outfits=1',wait_until='networkidle');page.evaluate('(data)=>localStorage.setItem("popa.outfit-placements.v1",JSON.stringify(data))',{'version':1,'character':'popa','canvas':[440,475],'looks':[cloud]});page.reload(wait_until='networkidle')
+ assert page.locator('[data-sprite="flower"]').evaluate('(e)=>getComputedStyle(e).visibility')=='hidden'
  assert page.input_value('#outfit-x')=='245' and page.input_value('#outfit-rotation')=='14'
  assert page.locator('[data-piece]').count()==7
  for id in ['pajama_body','sleeve_left','sleeve_right','pants_left','pants_right']:
