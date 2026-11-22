@@ -17,8 +17,11 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
     {id:'behind-body',label:'מאחורי הגוף',value:bodyLayer-1},
     {id:'under-head',label:'מעל הגוף ומתחת לראש ולידיים',value:armLayer-1},
     {id:'over-arms',label:'מעל הידיים ומתחת לראש',value:headLayer-1},
+    {id:'over-sleeves',label:'מעל השרוולים ומתחת לראש',get value(){const sleeves=current().parts.filter(p=>p.id.startsWith('sleeve_'));return Math.round((Math.max(bodyLayer,...sleeves.map(p=>p.layer))+.1)*10)/10;}},
     {id:'over-head',label:'מעל הראש והפנים',value:frontLayer},
   ];
+  // CSS z-index accepts integers; reserve sublayers for clothing between rig parts.
+  for(const group of groups.values()){const layer=group.closest('.cat-layer');layer.style.zIndex=String(Number(layer.style.zIndex)*1000);}
   const drafts = clone(defaults), history = [];
   let lookId=catalog.looks[0].id, partId=drafts[lookId].parts[0].id, mounted=[], drag=null, storageAvailable=true;
   const storageKey='popa.outfit-placements.v1';
@@ -52,7 +55,7 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
   <p>בחרי חלק וגררי אותו על פופה. בזמן גרירה האנימציה נעצרת. אלה מיקומי טיוטה, לפני שילוב במשחק.</p>
   <label>לוק <select id="outfit-look">${catalog.looks.map(l=>`<option value="${l.id}">${l.label}</option>`).join('')}</select></label>
   <div class="outfit-parts" id="outfit-parts" role="group" aria-label="חלקי הלוק"></div>
-  <h2 id="outfit-part-title"></h2><div class="outfit-fields">${[['x','מיקום X'],['y','מיקום Y'],['width','רוחב'],['height','גובה'],['rotation','סיבוב °'],['layer','שכבה']].map(([id,label])=>`<label>${label}<input id="outfit-${id}" type="number" step="${id==='layer'?'1':'0.1'}" max="5000" min="${['width','height'].includes(id)?'1':'-5000'}" data-field="${id}"></label>`).join('')}</div>
+  <h2 id="outfit-part-title"></h2><div class="outfit-fields">${[['x','מיקום X'],['y','מיקום Y'],['width','רוחב'],['height','גובה'],['rotation','סיבוב °'],['layer','שכבה']].map(([id,label])=>`<label>${label}<input id="outfit-${id}" type="number" step="0.1" max="5000" min="${['width','height'].includes(id)?'1':'-5000'}" data-field="${id}"></label>`).join('')}</div>
   <label>שכבה ביחס לפופה <select id="outfit-layer-preset"><option value="custom">מיקום מותאם לפי מספר השכבה</option>${layerPresets.map(p=>`<option value="${p.id}">${p.label}</option>`).join('')}</select></label>
   <p class="outfit-layer-guide">סדר השכבות מאחור לפנים: גוף ← חולצה ← ידיים ← ראש ← כובע. בחרי את המיקום הרצוי לכל חלק; המספר מאפשר כיוון נוסף.</p>
   <label class="outfit-check"><input id="outfit-ratio" type="checkbox" checked> שמירה על יחס גובה ורוחב</label>
@@ -74,7 +77,7 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
     const p=entry.part,original=defaults[lookId].parts.find(item=>item.id===p.id);
     const [nw,nh]=original.naturalSize,[aw,ah]=original.artworkSize??original.naturalSize,[dx,dy]=original.artworkOffset??[0,0];
     const sx=p.width/nw,sy=p.height/nh;
-    Object.assign(entry.outer.style,{zIndex:String(p.layer),display:p.visible?'':'none'});
+    Object.assign(entry.outer.style,{zIndex:String(Math.round(p.layer*1000)),display:p.visible?'':'none'});
     // Rotate around the original logical centre so existing placements stay exact.
     Object.assign(entry.image.style,{left:`${p.x-p.width/2+dx*sx}px`,top:`${p.y-p.height/2+dy*sy}px`,width:`${aw*sx}px`,height:`${ah*sy}px`,transformOrigin:`${(nw/2-dx)*sx}px ${(nh/2-dy)*sy}px`,transform:`rotate(${p.rotation}deg)`});
     entry.image.classList.toggle('outfit-selected',p.id===partId);entry.image.style.cursor=p.locked?'not-allowed':'grab';
@@ -107,7 +110,7 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
     const key=input.dataset.field,value=Number(input.value);if(!Number.isFinite(value)||Math.abs(value)>5000||(['width','height'].includes(key)&&value<1)){syncFields();return;}
     stop();remember();const p=part();if($('ratio').checked&&['width','height'].includes(key)){const other=key==='width'?'height':'width';p[other]=p[other]*value/p[key];}p[key]=value;syncFields();persist();
   }));
-  $('layer-preset').addEventListener('change',()=>{const preset=layerPresets.find(preset=>preset.id===$('layer-preset').value);if(!preset)return;stop();remember();part().layer=preset.value;syncFields();persist();});
+  $('layer-preset').addEventListener('change',()=>{const preset=layerPresets.find(preset=>preset.id===$('layer-preset').value);if(!preset)return;if(preset.id==='over-sleeves'&&preset.value>=headLayer){message('השרוולים נמצאים מעל הראש. הורידי את שכבת השרוולים מתחת ל־'+headLayer+' ואז בחרי שוב.');syncFields();return;}stop();remember();part().layer=preset.value;syncFields();persist();});
   for(const key of ['attachment','visible','locked'])$(key).addEventListener('change',()=>{stop();remember();part()[key]=key==='attachment'?$(key).value:$(key).checked;syncFields();persist();});
   panel.querySelectorAll('[data-base]').forEach(input=>input.addEventListener('change',()=>{remember();const hidden=new Set(current().hiddenBase);input.checked?hidden.delete(input.dataset.base):hidden.add(input.dataset.base);current().hiddenBase=[...hidden];applyBase();persist();}));
   $('stop').onclick=stop;panel.querySelectorAll('[data-preview]').forEach(button=>button.onclick=()=>play(button.dataset.preview));

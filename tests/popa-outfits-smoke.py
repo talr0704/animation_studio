@@ -21,7 +21,7 @@ with sync_playwright() as p:
     set_number('width',198)
     set_number('rotation',12)
     set_number('layer',22)
-    assert page.locator('[data-outfit-part="pajama_body"]').evaluate('(e)=>e.parentElement.parentElement.parentElement.parentElement.style.zIndex')=='22'
+    assert page.locator('[data-outfit-part="pajama_body"]').evaluate('(e)=>e.parentElement.parentElement.parentElement.parentElement.style.zIndex')=='22000'
     with page.expect_download() as d: page.locator('#outfit-export').click()
     data=json.loads(Path(d.value.path()).read_text()); assert d.value.suggested_filename=='popa-look-cloud.json'
     first=data['looks'][0]['parts'][0];assert first['x']==242 and first['width']==198 and first['rotation']==12
