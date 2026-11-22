@@ -50,7 +50,15 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
   function message(text){$('status').textContent=text;}
   function persist(){try{localStorage.setItem(storageKey,JSON.stringify(envelope(Object.values(drafts))));message('המיקומים נשמרו בדפדפן. הורידי קובץ ושלחי לי אותו בסיום.');}catch{message('השמירה בדפדפן אינה זמינה. הורידי קובץ כדי לשמור את המיקומים.');}}
   function remember(){history.push(clone(drafts));if(history.length>60)history.shift();}
-  function updateImage(entry){const p=entry.part;Object.assign(entry.outer.style,{zIndex:String(p.layer),display:p.visible?'':'none'});Object.assign(entry.image.style,{left:`${p.x-p.width/2}px`,top:`${p.y-p.height/2}px`,width:`${p.width}px`,height:`${p.height}px`,transform:`rotate(${p.rotation}deg)`});entry.image.classList.toggle('outfit-selected',p.id===partId);entry.image.style.cursor=p.locked?'not-allowed':'grab';}
+  function updateImage(entry){
+    const p=entry.part,original=defaults[lookId].parts.find(item=>item.id===p.id);
+    const [nw,nh]=original.naturalSize,[aw,ah]=original.artworkSize??original.naturalSize,[dx,dy]=original.artworkOffset??[0,0];
+    const sx=p.width/nw,sy=p.height/nh;
+    Object.assign(entry.outer.style,{zIndex:String(p.layer),display:p.visible?'':'none'});
+    // Rotate around the original logical centre so existing placements stay exact.
+    Object.assign(entry.image.style,{left:`${p.x-p.width/2+dx*sx}px`,top:`${p.y-p.height/2+dy*sy}px`,width:`${aw*sx}px`,height:`${ah*sy}px`,transformOrigin:`${(nw/2-dx)*sx}px ${(nh/2-dy)*sy}px`,transform:`rotate(${p.rotation}deg)`});
+    entry.image.classList.toggle('outfit-selected',p.id===partId);entry.image.style.cursor=p.locked?'not-allowed':'grab';
+  }
   function syncFields(){const p=part();$('part-title').textContent=names[p.id]??p.id;panel.querySelectorAll('[data-field]').forEach(input=>input.value=String(Math.round(p[input.dataset.field]*100)/100));$('attachment').value=p.attachment;$('visible').checked=p.visible;$('locked').checked=p.locked;panel.querySelectorAll('[data-base]').forEach(input=>input.checked=!current().hiddenBase.includes(input.dataset.base));panel.querySelectorAll('[data-piece]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.piece===partId)));mounted.forEach(updateImage);$('undo').disabled=!history.length;}
   function applyBase(){for(const id of ['shirt','pinafore','flower'])groups.get(id).style.visibility=current().hiddenBase.includes(id)?'hidden':'';}
   function render(){
@@ -58,10 +66,10 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
     $('parts').replaceChildren();
     for(const p of current().parts){
       const button=document.createElement('button');button.dataset.piece=p.id;button.title=names[p.id]??p.id;button.setAttribute('aria-label',button.title);
-      const thumbnail=document.createElement('img');thumbnail.src=p.asset;thumbnail.alt='';button.append(thumbnail);button.addEventListener('click',()=>{partId=p.id;syncFields();});$('parts').append(button);
+      const thumbnail=document.createElement('img');thumbnail.src=p.asset+'?artwork=2';thumbnail.alt='';button.append(thumbnail);button.addEventListener('click',()=>{partId=p.id;syncFields();});$('parts').append(button);
       const outer=document.createElement('div');outer.className='cat-group outfit-layer';
       const body=document.createElement('div'),head=document.createElement('div'),limb=document.createElement('div');for(const el of [body,head,limb])el.className='cat-group';
-      const image=document.createElement('img');image.className='outfit-image';image.alt=names[p.id]??p.id;image.src=p.asset;image.draggable=false;image.dataset.outfitPart=p.id;
+      const image=document.createElement('img');image.className='outfit-image';image.alt=names[p.id]??p.id;image.src=p.asset+'?artwork=2';image.draggable=false;image.dataset.outfitPart=p.id;
       limb.append(image);head.append(limb);body.append(head);outer.append(body);character.append(outer);
       mounted.push({part:p,outer,body,head,limb,image});
       image.addEventListener('pointerdown',event=>{

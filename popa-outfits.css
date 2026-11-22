@@ -6,7 +6,7 @@ body.outfit-studio .stage{position:fixed;left:0;top:0;width:calc(100vw - 360px);
 .outfit-studio .cat-frame,.outfit-studio .cat-character{touch-action:none}
 .outfit-studio .character-download,.outfit-studio .outfit-studio-link,.outfit-studio .edit-studio-link{display:none}
 .outfit-studio .studio-controls{left:calc((100vw - 360px)/2);width:min(90vw,580px);bottom:18px}
-.outfit-image{position:absolute;max-width:none;object-fit:contain;pointer-events:auto;user-select:none;touch-action:none;transform-origin:center}
+.outfit-image{position:absolute;max-width:none;object-fit:fill;pointer-events:auto;user-select:none;touch-action:none;transform-origin:center}
 .outfit-selected{outline:2px dashed #b76d98;outline-offset:3px}
 .outfit-panel{position:fixed;right:0;top:0;bottom:0;width:360px;overflow:auto;padding:20px;background:#fffbf5;border-left:1px solid #e1cebc;font-size:14px;color:#614b3d;z-index:1300}
 .outfit-panel h1{font-size:21px;margin:0 0 8px}.outfit-panel h2{font-size:16px;margin:16px 0 8px}.outfit-panel p{font-size:12px;line-height:1.6}.outfit-panel a{color:#976078;font-size:12px}

@@ -26,7 +26,15 @@
           "layer": 8,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            435,
+            363
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "collar_left",
@@ -43,7 +51,15 @@
           "layer": 9,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            310,
+            205
+          ],
+          "artworkOffset": [
+            -4,
+            -5
+          ]
         },
         {
           "id": "collar_right",
@@ -60,7 +76,15 @@
           "layer": 9,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            309,
+            205
+          ],
+          "artworkOffset": [
+            -4,
+            -5
+          ]
         },
         {
           "id": "sleeve_left",
@@ -77,7 +101,15 @@
           "layer": 9,
           "attachment": "left_arm",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            236,
+            243
+          ],
+          "artworkOffset": [
+            -4,
+            -5
+          ]
         },
         {
           "id": "sleeve_right",
@@ -94,7 +126,15 @@
           "layer": 9,
           "attachment": "right_arm",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            236,
+            242
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "hat_body",
@@ -111,7 +151,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            433,
+            319
+          ],
+          "artworkOffset": [
+            -32,
+            -4
+          ]
         },
         {
           "id": "star_charm",
@@ -128,7 +176,15 @@
           "layer": 9,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            177,
+            257
+          ],
+          "artworkOffset": [
+            -4,
+            -5
+          ]
         },
         {
           "id": "slipper_left",
@@ -145,7 +201,15 @@
           "layer": 6,
           "attachment": "foot_left",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            245,
+            241
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "slipper_right",
@@ -162,7 +226,15 @@
           "layer": 8,
           "attachment": "foot_right",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            245,
+            241
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         }
       ]
     },
@@ -186,7 +258,15 @@
           "layer": 8,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            393,
+            337
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "shirt_body",
@@ -203,7 +283,15 @@
           "layer": 8,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            281,
+            235
+          ],
+          "artworkOffset": [
+            -5,
+            -4
+          ]
         },
         {
           "id": "sleeve_left",
@@ -220,7 +308,15 @@
           "layer": 9,
           "attachment": "left_arm",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            183,
+            169
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "sleeve_right",
@@ -237,7 +333,15 @@
           "layer": 9,
           "attachment": "right_arm",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            183,
+            169
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "hat_body",
@@ -254,7 +358,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            392,
+            252
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "eye_left",
@@ -271,7 +383,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            165,
+            213
+          ],
+          "artworkOffset": [
+            -5,
+            -4
+          ]
         },
         {
           "id": "eye_right",
@@ -288,7 +408,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            170,
+            218
+          ],
+          "artworkOffset": [
+            -5,
+            -4
+          ]
         },
         {
           "id": "bag_body",
@@ -305,7 +433,15 @@
           "layer": 19,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            359,
+            234
+          ],
+          "artworkOffset": [
+            -5,
+            -5
+          ]
         },
         {
           "id": "bag_handle",
@@ -322,7 +458,15 @@
           "layer": 18,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            323,
+            251
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         }
       ]
     },
@@ -346,7 +490,15 @@
           "layer": 8,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            442,
+            331
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "collar_left",
@@ -363,7 +515,15 @@
           "layer": 9,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            255,
+            186
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ]
         },
         {
           "id": "collar_right",
@@ -380,7 +540,15 @@
           "layer": 9,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            253,
+            187
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "sleeve_left",
@@ -397,7 +565,15 @@
           "layer": 9,
           "attachment": "left_arm",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            193,
+            217
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "sleeve_right",
@@ -414,7 +590,15 @@
           "layer": 9,
           "attachment": "right_arm",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            193,
+            218
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "hood",
@@ -431,7 +615,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            383,
+            355
+          ],
+          "artworkOffset": [
+            -4,
+            -46
+          ]
         },
         {
           "id": "hood_bow",
@@ -448,7 +640,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            268,
+            246
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "boot_left",
@@ -465,7 +665,15 @@
           "layer": 6,
           "attachment": "foot_left",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            253,
+            260
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "boot_right",
@@ -482,7 +690,15 @@
           "layer": 8,
           "attachment": "foot_right",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            252,
+            260
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         }
       ]
     },
@@ -506,7 +722,15 @@
           "layer": 8,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            412,
+            338
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "underskirt",
@@ -523,7 +747,15 @@
           "layer": 2,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            437,
+            216
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "dress_back",
@@ -540,7 +772,15 @@
           "layer": 2,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            410,
+            265
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "hat_dome",
@@ -557,7 +797,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            373,
+            268
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "tentacle_left",
@@ -574,7 +822,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            183,
+            250
+          ],
+          "artworkOffset": [
+            -5,
+            -5
+          ]
         },
         {
           "id": "tentacle_center",
@@ -591,7 +847,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            170,
+            246
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "tentacle_right",
@@ -608,7 +872,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            182,
+            239
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "bag_body",
@@ -625,7 +897,15 @@
           "layer": 19,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            345,
+            260
+          ],
+          "artworkOffset": [
+            -4,
+            -5
+          ]
         },
         {
           "id": "bag_handle",
@@ -642,7 +922,15 @@
           "layer": 18,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            323,
+            268
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         }
       ]
     },
@@ -666,7 +954,15 @@
           "layer": 8,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            473,
+            304
+          ],
+          "artworkOffset": [
+            -5,
+            -4
+          ]
         },
         {
           "id": "collar_left",
@@ -683,7 +979,15 @@
           "layer": 9,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            315,
+            257
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "collar_right",
@@ -700,7 +1004,15 @@
           "layer": 9,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            317,
+            259
+          ],
+          "artworkOffset": [
+            -4,
+            -5
+          ]
         },
         {
           "id": "chest_bow",
@@ -717,7 +1029,15 @@
           "layer": 9,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            335,
+            245
+          ],
+          "artworkOffset": [
+            -5,
+            -4
+          ]
         },
         {
           "id": "hair_bow_left",
@@ -734,7 +1054,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            227,
+            236
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "hair_bow_right",
@@ -751,7 +1079,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            228,
+            236
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "hair_bow_center",
@@ -768,7 +1104,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            210,
+            205
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "bag_body",
@@ -785,7 +1129,15 @@
           "layer": 19,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            346,
+            269
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "bag_handle",
@@ -802,7 +1154,15 @@
           "layer": 18,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            336,
+            215
+          ],
+          "artworkOffset": [
+            -4,
+            -5
+          ]
         }
       ]
     },
@@ -826,7 +1186,15 @@
           "layer": 8,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            427,
+            369
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "chest_bow",
@@ -843,7 +1211,15 @@
           "layer": 9,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            333,
+            287
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "dress_back",
@@ -860,7 +1236,15 @@
           "layer": 2,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            451,
+            309
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "hat_body",
@@ -877,7 +1261,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            441,
+            254
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "hat_leaves",
@@ -894,7 +1286,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            339,
+            190
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "hat_flower",
@@ -911,7 +1311,15 @@
           "layer": 20,
           "attachment": "head",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            222,
+            209
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "bag_body",
@@ -928,7 +1336,15 @@
           "layer": 19,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            302,
+            307
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "bag_handle",
@@ -945,7 +1361,15 @@
           "layer": 18,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            316,
+            291
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         },
         {
           "id": "bag_straw",
@@ -962,9 +1386,18 @@
           "layer": 19,
           "attachment": "body",
           "visible": true,
-          "locked": false
+          "locked": false,
+          "artworkSize": [
+            155,
+            261
+          ],
+          "artworkOffset": [
+            -4,
+            -4
+          ]
         }
       ]
     }
-  ]
+  ],
+  "artworkRevision": 2
 }
