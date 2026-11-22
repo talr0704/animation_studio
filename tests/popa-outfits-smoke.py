@@ -9,10 +9,10 @@ with sync_playwright() as p:
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.goto(URL+'index.html?outfits=1',wait_until='networkidle')
     assert page.locator('.cat-character').get_attribute('data-ready')=='true'
-    assert page.locator('#outfit-look option').count()==6
-    for look in ['cloud','crab','duck','jellyfish','mermaid','strawberry']:
+    assert page.locator('#outfit-look option').count()==7
+    for look in ['cloud','moon-post','peach','caramel','lotus','storybook','moon-sleep']:
         page.select_option('#outfit-look',look)
-        assert page.locator('.outfit-image').count()==(7 if look=='cloud' else 9)
+        assert page.locator('.outfit-image').count()=={'cloud':7,'moon-post':3,'peach':3,'caramel':3,'lotus':5,'storybook':3,'moon-sleep':4}[look]
         page.wait_for_function('[...document.querySelectorAll(".outfit-image")].every(i=>i.complete&&i.naturalWidth>0)')
     page.select_option('#outfit-look','cloud')
     def set_number(key,value):
@@ -26,7 +26,7 @@ with sync_playwright() as p:
     data=json.loads(Path(d.value.path()).read_text()); assert d.value.suggested_filename=='popa-look-cloud.json'
     first=data['looks'][0]['parts'][0];assert first['x']==242 and first['width']==198 and first['rotation']==12
     assert len(json.dumps(data))<20000 and 'base64' not in json.dumps(data)
-    page.select_option('#outfit-look','duck');set_number('x',222)
+    page.select_option('#outfit-look','lotus');set_number('x',222)
     page.select_option('#outfit-look','cloud');assert page.input_value('#outfit-x')=='242'
     page.reload(wait_until='networkidle');assert page.input_value('#outfit-x')=='242'
     # Import is exact and refuses undeclared external artwork.
@@ -54,4 +54,4 @@ with sync_playwright() as p:
     page.goto(URL+'index.html?edit=1',wait_until='networkidle');assert page.locator('.animation-editor').count()==1 and page.locator('.outfit-image').count()==0
     assert not errors,errors
     browser.close()
-print('Outfit fitting: six looks, rig preview, numeric edits, drag, lock, persistence and JSON import/export passed')
+print('Outfit fitting: seven looks, rig preview, numeric edits, drag, lock, persistence and JSON import/export passed')

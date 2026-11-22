@@ -1,0 +1,506 @@
+[
+  {
+    "outfit": "moon-post",
+    "part": "cape_body",
+    "file": "moon-post/cape_body.png",
+    "size": [
+      288,
+      268
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      25,
+      145,
+      313,
+      413
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      269,
+      249
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "moon-post",
+    "part": "hair_bow",
+    "file": "moon-post/hair_bow.png",
+    "size": [
+      155,
+      121
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      269,
+      69,
+      424,
+      190
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      136,
+      102
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "moon-post",
+    "part": "star_bag",
+    "file": "moon-post/star_bag.png",
+    "size": [
+      143,
+      220
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      314,
+      190,
+      457,
+      410
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      124,
+      201
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "peach",
+    "part": "dress_body",
+    "file": "peach/dress_body.png",
+    "size": [
+      298,
+      273
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      521,
+      139,
+      819,
+      412
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      279,
+      254
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "peach",
+    "part": "hair_clip",
+    "file": "peach/hair_clip.png",
+    "size": [
+      142,
+      112
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      799,
+      75,
+      941,
+      187
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      123,
+      93
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "peach",
+    "part": "basket_bag",
+    "file": "peach/basket_bag.png",
+    "size": [
+      172,
+      221
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      812,
+      191,
+      984,
+      412
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      153,
+      202
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "caramel",
+    "part": "shirt_body",
+    "file": "caramel/shirt_body.png",
+    "size": [
+      235,
+      177
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      1097,
+      98,
+      1332,
+      275
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      216,
+      158
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "caramel",
+    "part": "skirt_body",
+    "file": "caramel/skirt_body.png",
+    "size": [
+      290,
+      157
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      1082,
+      261,
+      1372,
+      418
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      271,
+      138
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "caramel",
+    "part": "chest_bow",
+    "file": "caramel/chest_bow.png",
+    "size": [
+      150,
+      118
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      1333,
+      89,
+      1483,
+      207
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      131,
+      99
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lotus",
+    "part": "shirt_body",
+    "file": "lotus/shirt_body.png",
+    "size": [
+      226,
+      165
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      80,
+      551,
+      306,
+      716
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      207,
+      146
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lotus",
+    "part": "sleeve_left",
+    "file": "lotus/sleeve_left.png",
+    "size": [
+      99,
+      111
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      37,
+      682,
+      136,
+      793
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      80,
+      92
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lotus",
+    "part": "sleeve_right",
+    "file": "lotus/sleeve_right.png",
+    "size": [
+      99,
+      110
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      256,
+      682,
+      355,
+      792
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      80,
+      91
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lotus",
+    "part": "skirt_body",
+    "file": "lotus/skirt_body.png",
+    "size": [
+      302,
+      187
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      50,
+      764,
+      352,
+      951
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      283,
+      168
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lotus",
+    "part": "hair_clip",
+    "file": "lotus/hair_clip.png",
+    "size": [
+      169,
+      116
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      283,
+      504,
+      452,
+      620
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      150,
+      97
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "storybook",
+    "part": "dress_body",
+    "file": "storybook/dress_body.png",
+    "size": [
+      315,
+      298
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      503,
+      580,
+      818,
+      878
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      296,
+      279
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "storybook",
+    "part": "hair_bow",
+    "file": "storybook/hair_bow.png",
+    "size": [
+      164,
+      121
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      785,
+      511,
+      949,
+      632
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      145,
+      102
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "storybook",
+    "part": "book_bag",
+    "file": "storybook/book_bag.png",
+    "size": [
+      160,
+      268
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      832,
+      655,
+      992,
+      923
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      141,
+      249
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "moon-sleep",
+    "part": "coat_body",
+    "file": "moon-sleep/coat_body.png",
+    "size": [
+      296,
+      222
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      1083,
+      553,
+      1379,
+      775
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      277,
+      203
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "moon-sleep",
+    "part": "shorts_left",
+    "file": "moon-sleep/shorts_left.png",
+    "size": [
+      151,
+      155
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      1101,
+      783,
+      1252,
+      938
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      132,
+      136
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "moon-sleep",
+    "part": "shorts_right",
+    "file": "moon-sleep/shorts_right.png",
+    "size": [
+      151,
+      155
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      1273,
+      786,
+      1424,
+      941
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      132,
+      136
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "moon-sleep",
+    "part": "hair_clip",
+    "file": "moon-sleep/hair_clip.png",
+    "size": [
+      145,
+      112
+    ],
+    "source": "Sources/pastel-collection-v2.png",
+    "source_cell": [
+      1355,
+      509,
+      1500,
+      621
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      126,
+      93
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  }
+]
