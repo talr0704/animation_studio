@@ -14,12 +14,12 @@ export function mountRoomEditor({room,layout,place,setEditing}) {
     for(const profile of profiles){let source=data[profile];
       if(!source||JSON.stringify(source.canvas)!==JSON.stringify(defaults[profile].canvas))throw Error('מידות החדר אינן תואמות');
       // Upgrade existing whole-window drafts without losing other furniture positions.
-      if(!source.items?.['window-rod'] && source.items?.window){
+      if(!source.items?.['window-curtain-left'] && source.items?.window){
         source=clone(source);
         const r=source.items.window;
         if(!Array.isArray(r)||r.length!==4||r.some(n=>typeof n!=='number'||!Number.isFinite(n)))throw Error('מיקום החלון אינו תקין');
         const scale=Math.min(r[2]/800,r[3]/600),ox=r[0]+(r[2]-800*scale)/2,oy=r[1]+r[3]-600*scale;
-        const pieces={'window':[140,80,520,365*1.0788381742738589],'window-rod':[20,25,760,90*1.1428571428571428],'window-curtain-left':[15,55,210,495*.65625],'window-curtain-right':[575,55,210,495*.6268656716417911]};
+        const pieces={'window':[140,80,520,365*1.0788381742738589],'window-curtain-left':[15,55,210,495*.65625],'window-curtain-right':[575,55,210,495*.6268656716417911]};
         source.layers??={};
         for(const [id,[x,y,w,h]]of Object.entries(pieces)){source.items[id]=[ox+x*scale,oy+y*scale,w*scale,h*scale];source.layers[id]=source.layers.window??0;}
       }
@@ -35,18 +35,32 @@ export function mountRoomEditor({room,layout,place,setEditing}) {
   let storageWarning='';try{const saved=localStorage.getItem(key);if(saved)Object.assign(layout,validate(JSON.parse(saved)));}catch{storageWarning='לא שוחזרה שמירה קודמת. אפשר לטעון קובץ מיקומים.';}
   const toggle=document.getElementById('edit-room'),panel=document.createElement('section');
   panel.className='room-editor';panel.dir='rtl';panel.hidden=true;panel.setAttribute('aria-label','עריכת מיקום החפצים');
-  panel.innerHTML=`<header><strong>סידור החדר</strong><button id="room-edit-done">סיום</button></header><p id="room-edit-profile"></p><label>חפץ<select id="room-edit-item">${ids.map(id=>`<option value="${id}">${labels[id]}</option>`).join('')}</select></label><div class="room-edit-fields">${[['x','מיקום X'],['y','מיקום Y'],['width','רוחב'],['height','גובה'],['layer','שכבה (0–6)']].map(([id,label])=>`<label>${label}<input id="room-edit-${id}" type="number" step="1" min="${['width','height'].includes(id)?5:0}" ${id==='layer'?'max="6"':''}></label>`).join('')}</div><label><input id="room-edit-ratio" type="checkbox" checked> שמירה על יחס גודל</label><div class="room-edit-actions"><button id="room-edit-undo">ביטול פעולה</button><button id="room-edit-reset">איפוס החפץ</button><button id="room-edit-save">שמירה וסיום</button><button id="room-edit-export">הורדת הסידור</button></div><label>טעינת סידור מקובץ<input id="room-edit-import" type="file" accept=".json,application/json"></label><p id="room-edit-status" role="status" aria-live="polite"></p>`;
+  panel.innerHTML=`<header><button id="room-edit-move" type="button" aria-label="הזזת תפריט העריכה בגרירה או בחיצים">⠿ סידור החדר</button><button id="room-edit-done">סיום</button></header><p id="room-edit-profile"></p><label>חפץ<select id="room-edit-item">${ids.map(id=>`<option value="${id}">${labels[id]}</option>`).join('')}</select></label><div class="room-edit-fields">${[['x','מיקום X'],['y','מיקום Y'],['width','רוחב'],['height','גובה'],['layer','שכבה (0–6)']].map(([id,label])=>`<label>${label}<input id="room-edit-${id}" type="number" step="1" min="${['width','height'].includes(id)?5:0}" ${id==='layer'?'max="6"':''}></label>`).join('')}</div><label><input id="room-edit-ratio" type="checkbox" checked> שמירה על יחס גודל</label><div class="room-edit-actions"><button id="room-edit-undo">ביטול פעולה</button><button id="room-edit-reset">איפוס החפץ</button><button id="room-edit-save">שמירה וסיום</button><button id="room-edit-export">הורדת גיבוי</button></div><label>טעינת סידור מקובץ<input id="room-edit-import" type="file" accept=".json,application/json"></label><p id="room-edit-status" role="status" aria-live="polite"></p>`;
   room.parentElement.append(panel);const $=id=>panel.querySelector('#room-edit-'+id);
   let active=false,selected=ids[0],drag=null,history=[],lastMode=mode();
   function rect(){return selected==='rug'?layout[mode()].rug:layout[mode()].items[selected];}
   function applyLayers(){for(const id of ids)element(id).style.zIndex=layout[mode()].layers[id];}
   function fields(){const r=rect();['x','y','width','height'].forEach((key,i)=>$(key).value=Math.round(r[i]*10)/10);$('layer').value=layout[mode()].layers[selected];$('item').value=selected;$('profile').textContent=mode()==='wide'?'פריסה למסך רחב · גררי חפץ או כווני מספרים':'פריסה לטלפון · גררי חפץ או כווני מספרים';for(const id of ids)element(id).classList.toggle('room-edit-selected',active&&id===selected);$('undo').disabled=!history.length;}
   function remember(){history.push({wide:clone(layout.wide),portrait:clone(layout.portrait)});if(history.length>50)history.shift();}
-  function save(){try{localStorage.setItem(key,JSON.stringify(data()));$('status').textContent='הסידור נשמר בדפדפן. אפשר להוריד קובץ ולשלוח לי.';}catch{$('status').textContent='השמירה בדפדפן אינה זמינה. הורידי קובץ כדי לשמור.';}}
+  function save(){try{localStorage.setItem(key,JSON.stringify(data()));$('status').textContent='נשמר אוטומטית בדפדפן הזה. אין צורך בהורדת קובץ.';}catch{$('status').textContent='השמירה בדפדפן אינה זמינה. הורידי קובץ כדי לשמור.';}}
   function redraw(){place();applyLayers();fields();}
   function close(){if(!active)return;active=false;drag=null;save();panel.hidden=true;room.classList.remove('editing-room');toggle.setAttribute('aria-pressed','false');toggle.textContent='סידור החדר';setEditing(false);fields();}
-  toggle.disabled=false;toggle.onclick=()=>{if(active){close();return;}active=true;panel.hidden=false;room.classList.add('editing-room');toggle.setAttribute('aria-pressed','true');toggle.textContent='סיום סידור';setEditing(true);fields();};
+  toggle.disabled=false;toggle.onclick=()=>{if(active){close();return;}active=true;panel.hidden=false;room.classList.add('editing-room');toggle.setAttribute('aria-pressed','true');toggle.textContent='סיום סידור';setEditing(true);fields();if(!storageWarning)$('status').textContent='השינויים נשמרים אוטומטית בדפדפן הזה. גררי את כותרת הלוח כדי להזיז אותו.';};
   $('done').onclick=close;$('save').onclick=close;
+  let panelDrag=null,panelMoved=false;
+  function movePanel(x,y){
+    const bounds=room.parentElement.getBoundingClientRect();
+    panel.style.height=Math.min(panel.offsetHeight,bounds.height-40)+'px';
+    panel.style.left=Math.max(0,Math.min(bounds.width-panel.offsetWidth,x))+'px';
+    panel.style.top=Math.max(0,Math.min(bounds.height-panel.offsetHeight,y))+'px';
+    panel.style.right='auto';panel.style.bottom='auto';panelMoved=true;
+  }
+  const handle=$('move');
+  handle.addEventListener('pointerdown',event=>{if(event.button!==0)return;event.preventDefault();const box=panel.getBoundingClientRect(),bounds=room.parentElement.getBoundingClientRect();panelDrag={pointer:event.pointerId,x:event.clientX,y:event.clientY,left:box.left-bounds.left,top:box.top-bounds.top};handle.setPointerCapture(event.pointerId);});
+  handle.addEventListener('pointermove',event=>{if(panelDrag?.pointer!==event.pointerId)return;movePanel(panelDrag.left+event.clientX-panelDrag.x,panelDrag.top+event.clientY-panelDrag.y);});
+  for(const name of ['pointerup','pointercancel','lostpointercapture'])handle.addEventListener(name,()=>{panelDrag=null;});
+  handle.addEventListener('keydown',event=>{const steps={ArrowLeft:[-20,0],ArrowRight:[20,0],ArrowUp:[0,-20],ArrowDown:[0,20]};if(!steps[event.key])return;event.preventDefault();const box=panel.getBoundingClientRect(),bounds=room.parentElement.getBoundingClientRect(),[dx,dy]=steps[event.key];movePanel(box.left-bounds.left+dx,box.top-bounds.top+dy);});
+
   $('item').onchange=()=>{selected=$('item').value;fields();};
   room.addEventListener('click',event=>{if(active){event.preventDefault();event.stopImmediatePropagation();}},true);
   room.addEventListener('pointerdown',event=>{if(!active)return;event.preventDefault();event.stopImmediatePropagation();const target=event.target.closest('.room-item,.rug-object');if(!target||event.button!==0)return;selected=target.dataset.furniture||'rug';fields();remember();const box=room.getBoundingClientRect(),r=rect(),canvas=layout[mode()].canvas;drag={pointer:event.pointerId,x:event.clientX,y:event.clientY,left:r[0],top:r[1],scaleX:canvas[0]/box.width,scaleY:canvas[1]/box.height,profile:mode()};room.setPointerCapture(event.pointerId);},true);
@@ -62,7 +76,7 @@ export function mountRoomEditor({room,layout,place,setEditing}) {
   $('reset').onclick=()=>{remember();if(selected==='rug')layout[mode()].rug=clone(defaults[mode()].rug);else layout[mode()].items[selected]=clone(defaults[mode()].items[selected]);layout[mode()].layers[selected]=defaults[mode()].layers[selected];redraw();save();};
   $('export').onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(data(),null,2)+'\n'],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='popa-room-layout.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('status').textContent='שלחי לי את קובץ הסידור כדי לשלב אותו בפרויקט.';};
   $('import').onchange=async()=>{try{const file=$('import').files[0];if(!file)return;if(file.size>100000)throw Error('קובץ גדול מדי');const result=validate(JSON.parse(await file.text()));remember();Object.assign(layout,result);redraw();save();}catch(error){$('status').textContent='לא נטען: '+error.message;}finally{$('import').value='';}};
-  addEventListener('resize',()=>{if(lastMode!==mode()){drag=null;lastMode=mode();}redraw();});
+  addEventListener('resize',()=>{if(panelMoved&&active){const bounds=room.parentElement.getBoundingClientRect(),box=panel.getBoundingClientRect();movePanel(box.left-bounds.left,box.top-bounds.top);}if(lastMode!==mode()){drag=null;lastMode=mode();}redraw();});
   redraw();if(storageWarning)$('status').textContent=storageWarning;
   return {close,applyLayers};
 }

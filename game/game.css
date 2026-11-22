@@ -9,3 +9,7 @@
 @media(max-width:700px){.room-editor{top:auto;bottom:62px;right:8px;width:235px;max-height:40%;padding:10px}.edit-room{bottom:12px;right:8px;padding:8px 10px;font-size:11px}.room-editor header button{padding:5px 8px}}
 /* Leave the persistent navigation footer clear. */
 .edit-room{bottom:45px}.room-editor{bottom:95px}@media(max-width:700px){.edit-room{bottom:42px}.room-editor{bottom:88px}}
+
+/* Object names remain in the editor selector and accessible button labels. */
+.room-item>span,.rug-object span{display:none!important}
+#room-edit-move{cursor:grab;touch-action:none;background:transparent;border:0;font-weight:700;padding:6px 0}#room-edit-move:active{cursor:grabbing}

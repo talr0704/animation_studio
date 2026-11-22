@@ -334,7 +334,6 @@
       "assembly": "assets/scenes/home/furniture/coastal/window/assembly.json",
       "images": [
         "assets/scenes/home/furniture/coastal/window/images/frame.png",
-        "assets/scenes/home/furniture/coastal/window/images/rod.png",
         "assets/scenes/home/furniture/coastal/window/images/curtain-left.png",
         "assets/scenes/home/furniture/coastal/window/images/curtain-right.png"
       ]

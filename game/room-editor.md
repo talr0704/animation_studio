@@ -6,4 +6,6 @@ Positions use the design canvases in `assets/scenes/home/furniture/layout.json` 
 
 The uploaded empty coastal background is stored at `assets/scenes/home/background/coastal-room.png`, referenced by `layout.json` and the asset catalogue. It stretches with the room so the floor boundary remains at the same relative height in both arrangements.
 
-The coastal window is four independent room objects: `window` (frame), `window-rod` (mounting rod), `window-curtain-left`, and `window-curtain-right`. Existing drafts with a single assembled window migrate on load; other saved furniture placements are preserved. The original window rig remains available as source assembly.
+The coastal window is three independent room objects: `window` (frame), `window-curtain-left`, and `window-curtain-right`. Existing drafts with a single assembled window migrate on load; other saved furniture placements are preserved. The original window rig remains available as source assembly.
+
+Drag the panel by its title handle to reach furniture behind it, or focus the handle and use arrow keys. The panel stays within room bounds. Object names appear only in the editor selector and accessible labels. The mounting rod is no longer referenced by the room, window assembly, or catalogue. Existing saved layouts with a rod ignore it while preserving frame and curtain coordinates. Downloads are optional backups; autosave persists in this browser, not on the shared site.

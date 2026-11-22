@@ -28,27 +28,6 @@
       "parent": null
     },
     {
-      "id": "rod",
-      "label": "rod",
-      "image": "assets/scenes/home/furniture/coastal/window/images/rod.png",
-      "sourceSize": [
-        665,
-        90
-      ],
-      "anchor": [
-        0,
-        0
-      ],
-      "position": [
-        20,
-        25
-      ],
-      "scale": 1.1428571428571428,
-      "rotation": 0,
-      "layer": 2,
-      "parent": null
-    },
-    {
       "id": "curtain-left",
       "label": "curtain-left",
       "image": "assets/scenes/home/furniture/coastal/window/images/curtain-left.png",

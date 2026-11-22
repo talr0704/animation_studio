@@ -170,16 +170,6 @@
         335,
         495
       ]
-    },
-    {
-      "image": "assets/scenes/home/furniture/coastal/window/images/rod.png",
-      "source": "source-art/home/coastal/windows-sheet.png",
-      "rect": [
-        420,
-        700,
-        665,
-        90
-      ]
     }
   ]
 }
