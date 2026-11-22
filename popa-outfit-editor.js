@@ -1,8 +1,8 @@
 // Placement drafts only. The game keeps its approved character until a look is integrated.
-const CATALOG = './assets/characters/popa/outfits/catalog.json';
+const CATALOG = './assets/characters/popa/outfits/catalog.json?v=cloud-3';
 const clone = value => structuredClone(value);
 const attachmentLabels = {body:'גוף',head:'ראש',left_arm:'יד שמאל',right_arm:'יד ימין',foot_left:'רגל שמאל',foot_right:'רגל ימין'};
-const names = {dress_front:'שמלה קדמית',dress_back:'שמלה אחורית',underskirt:'חצאית תחתונה',hat_body:'כובע',hat_dome:'כובע מדוזה',hat_flower:'פרח לכובע',hat_leaves:'עלי כובע',coat_body:'מעיל',pajama_body:'פיג׳מה',dress_body:'שמלה',shirt_body:'חולצה',sleeve_left:'שרוול שמאל',sleeve_right:'שרוול ימין',collar_left:'צווארון שמאל',collar_right:'צווארון ימין',boot_left:'מגף שמאל',boot_right:'מגף ימין',slipper_left:'נעל שמאל',slipper_right:'נעל ימין',bag_body:'תיק',bag_handle:'ידית תיק',bag_straw:'קשית',chest_bow:'פפיון לחזה',hair_bow_left:'סרט שמאל',hair_bow_right:'סרט ימין',hair_bow_center:'מרכז הסרט',hood:'ברדס',hood_bow:'סרט לברדס',star_charm:'כוכב',eye_left:'עין כובע שמאל',eye_right:'עין כובע ימין',tentacle_left:'זרוע שמאל',tentacle_center:'זרוע אמצע',tentacle_right:'זרוע ימין'};
+const names = {dress_front:'שמלה קדמית',dress_back:'שמלה אחורית',underskirt:'חצאית תחתונה',hat_body:'כובע',hat_dome:'כובע מדוזה',hat_flower:'פרח לכובע',hat_leaves:'עלי כובע',coat_body:'מעיל',pajama_body:'חולצת פיג׳מה',pants_left:'מכנס שמאל',pants_right:'מכנס ימין',dress_body:'שמלה',shirt_body:'חולצה',sleeve_left:'שרוול שמאל',sleeve_right:'שרוול ימין',collar_left:'צווארון שמאל',collar_right:'צווארון ימין',boot_left:'מגף שמאל',boot_right:'מגף ימין',slipper_left:'נעל שמאל',slipper_right:'נעל ימין',bag_body:'תיק',bag_handle:'ידית תיק',bag_straw:'קשית',chest_bow:'פפיון לחזה',hair_bow_left:'סרט שמאל',hair_bow_right:'סרט ימין',hair_bow_center:'מרכז הסרט',hood:'ברדס',hood_bow:'סרט לברדס',star_charm:'כוכב',eye_left:'עין כובע שמאל',eye_right:'עין כובע ימין',tentacle_left:'זרוע שמאל',tentacle_center:'זרוע אמצע',tentacle_right:'זרוע ימין'};
 export async function mountOutfitEditor({character,groups,stop,play}) {
   const response = await fetch(CATALOG);
   if (!response.ok) throw new Error('Outfit catalogue unavailable');
@@ -17,6 +17,13 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
     const ids=new Set();
     for(const look of data.looks){
       const reference=defaults[look.id];
+      // Keep existing fitted garments when upgrading the old cloud collection.
+      if(look.id==='cloud' && Array.isArray(look.parts) && look.parts.some(p=>['slipper_left','slipper_right','collar_left','collar_right'].includes(p.id))){
+        const legacyIds=['pajama_body','collar_left','collar_right','sleeve_left','sleeve_right','hat_body','star_charm','slipper_left','slipper_right'];
+        if(look.parts.length!==9 || new Set(look.parts.map(p=>p.id)).size!==9 || look.parts.some(p=>!legacyIds.includes(p.id)||p.asset!==`assets/characters/popa/outfits/cloud/parts/${p.id}.png`))throw Error('לוק ענן ישן אינו תקין');
+        look.parts=reference.parts.map(p=>clone(look.parts.find(old=>old.id===p.id)??p));
+      }
+
       if(!reference || ids.has(look.id) || !Array.isArray(look.parts) || look.parts.length!==reference.parts.length || !Array.isArray(look.hiddenBase) || look.hiddenBase.some(id=>!['shirt','pinafore','flower'].includes(id))) throw Error('רשימת הלוקים אינה תקינה');
       ids.add(look.id);const parts=new Set();
       for(const part of look.parts){
@@ -66,10 +73,10 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
     $('parts').replaceChildren();
     for(const p of current().parts){
       const button=document.createElement('button');button.dataset.piece=p.id;button.title=names[p.id]??p.id;button.setAttribute('aria-label',button.title);
-      const thumbnail=document.createElement('img');thumbnail.src=p.asset+'?artwork=2';thumbnail.alt='';button.append(thumbnail);button.addEventListener('click',()=>{partId=p.id;syncFields();});$('parts').append(button);
+      const thumbnail=document.createElement('img');thumbnail.src=p.asset+'?artwork=3';thumbnail.alt='';button.append(thumbnail);button.addEventListener('click',()=>{partId=p.id;syncFields();});$('parts').append(button);
       const outer=document.createElement('div');outer.className='cat-group outfit-layer';
       const body=document.createElement('div'),head=document.createElement('div'),limb=document.createElement('div');for(const el of [body,head,limb])el.className='cat-group';
-      const image=document.createElement('img');image.className='outfit-image';image.alt=names[p.id]??p.id;image.src=p.asset+'?artwork=2';image.draggable=false;image.dataset.outfitPart=p.id;
+      const image=document.createElement('img');image.className='outfit-image';image.alt=names[p.id]??p.id;image.src=p.asset+'?artwork=3';image.draggable=false;image.dataset.outfitPart=p.id;
       limb.append(image);head.append(limb);body.append(head);outer.append(body);character.append(outer);
       mounted.push({part:p,outer,body,head,limb,image});
       image.addEventListener('pointerdown',event=>{

@@ -1,0 +1,122 @@
+[
+  {
+    "outfit": "cloud",
+    "part": "pajama_body",
+    "file": "cloud/pajama_body.png",
+    "size": [
+      644,
+      479
+    ],
+    "source": "Sources/cloud-pajamas-v2.png",
+    "source_cell": [
+      333,
+      20,
+      977,
+      499
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      625,
+      460
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "sleeve_left",
+    "file": "cloud/sleeve_left.png",
+    "size": [
+      252,
+      251
+    ],
+    "source": "Sources/cloud-pajamas-v2.png",
+    "source_cell": [
+      227,
+      558,
+      479,
+      809
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      233,
+      232
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "sleeve_right",
+    "file": "cloud/sleeve_right.png",
+    "size": [
+      252,
+      251
+    ],
+    "source": "Sources/cloud-pajamas-v2.png",
+    "source_cell": [
+      831,
+      558,
+      1083,
+      809
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      233,
+      232
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "pants_left",
+    "file": "cloud/pants_left.png",
+    "size": [
+      397,
+      282
+    ],
+    "source": "Sources/cloud-pajamas-v2.png",
+    "source_cell": [
+      227,
+      900,
+      624,
+      1182
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      378,
+      263
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "cloud",
+    "part": "pants_right",
+    "file": "cloud/pants_right.png",
+    "size": [
+      398,
+      282
+    ],
+    "source": "Sources/cloud-pajamas-v2.png",
+    "source_cell": [
+      685,
+      900,
+      1083,
+      1182
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      379,
+      263
+    ],
+    "padding": 19,
+    "fitting_status": "not_fitted"
+  }
+]

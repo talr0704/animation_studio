@@ -8,132 +8,82 @@
   "looks": [
     {
       "id": "cloud",
-      "label": "ענן",
+      "label": "פיג׳מת ענן",
       "fittingStatus": "not_fitted",
       "parts": [
         {
           "id": "pajama_body",
           "asset": "assets/characters/popa/outfits/cloud/parts/pajama_body.png",
           "naturalSize": [
-            424,
-            354
+            644,
+            479
           ],
           "x": 230,
           "y": 349,
           "width": 180,
-          "height": 150.28,
+          "height": 133.88,
           "rotation": 0,
           "layer": 8,
           "attachment": "body",
           "visible": true,
           "locked": false,
           "artworkSize": [
-            435,
-            363
+            650,
+            485
           ],
           "artworkOffset": [
-            -4,
-            -4
-          ]
-        },
-        {
-          "id": "collar_left",
-          "asset": "assets/characters/popa/outfits/cloud/parts/collar_left.png",
-          "naturalSize": [
-            302,
-            196
-          ],
-          "x": 230,
-          "y": 308,
-          "width": 55,
-          "height": 35.7,
-          "rotation": 0,
-          "layer": 9,
-          "attachment": "body",
-          "visible": true,
-          "locked": false,
-          "artworkSize": [
-            310,
-            205
-          ],
-          "artworkOffset": [
-            -4,
-            -5
-          ]
-        },
-        {
-          "id": "collar_right",
-          "asset": "assets/characters/popa/outfits/cloud/parts/collar_right.png",
-          "naturalSize": [
-            301,
-            196
-          ],
-          "x": 230,
-          "y": 308,
-          "width": 55,
-          "height": 35.81,
-          "rotation": 0,
-          "layer": 9,
-          "attachment": "body",
-          "visible": true,
-          "locked": false,
-          "artworkSize": [
-            309,
-            205
-          ],
-          "artworkOffset": [
-            -4,
-            -5
+            -3,
+            -3
           ]
         },
         {
           "id": "sleeve_left",
           "asset": "assets/characters/popa/outfits/cloud/parts/sleeve_left.png",
           "naturalSize": [
-            228,
-            234
+            252,
+            251
           ],
           "x": 141,
           "y": 343,
           "width": 65,
-          "height": 66.71,
+          "height": 64.74,
           "rotation": 0,
           "layer": 9,
           "attachment": "left_arm",
           "visible": true,
           "locked": false,
           "artworkSize": [
-            236,
-            243
+            258,
+            257
           ],
           "artworkOffset": [
-            -4,
-            -5
+            -3,
+            -3
           ]
         },
         {
           "id": "sleeve_right",
           "asset": "assets/characters/popa/outfits/cloud/parts/sleeve_right.png",
           "naturalSize": [
-            227,
-            234
+            252,
+            251
           ],
           "x": 310,
           "y": 327,
           "width": 65,
-          "height": 67.0,
+          "height": 64.74,
           "rotation": 0,
           "layer": 9,
           "attachment": "right_arm",
           "visible": true,
           "locked": false,
           "artworkSize": [
-            236,
-            242
+            258,
+            257
           ],
           "artworkOffset": [
-            -4,
-            -4
+            -3,
+            -3
           ]
         },
         {
@@ -187,56 +137,57 @@
           ]
         },
         {
-          "id": "slipper_left",
-          "asset": "assets/characters/popa/outfits/cloud/parts/slipper_left.png",
-          "naturalSize": [
-            236,
-            233
-          ],
-          "x": 266,
-          "y": 418,
-          "width": 75,
-          "height": 74.05,
+          "id": "pants_left",
+          "asset": "assets/characters/popa/outfits/cloud/parts/pants_left.png",
+          "x": 190,
+          "y": 385,
+          "width": 85,
           "rotation": 0,
-          "layer": 6,
-          "attachment": "foot_left",
+          "layer": 7,
+          "attachment": "body",
           "visible": true,
           "locked": false,
+          "naturalSize": [
+            397,
+            282
+          ],
           "artworkSize": [
-            245,
-            241
+            403,
+            288
           ],
           "artworkOffset": [
-            -4,
-            -4
-          ]
+            -3,
+            -3
+          ],
+          "height": 60.38
         },
         {
-          "id": "slipper_right",
-          "asset": "assets/characters/popa/outfits/cloud/parts/slipper_right.png",
-          "naturalSize": [
-            237,
-            233
-          ],
-          "x": 191,
-          "y": 422,
-          "width": 75,
-          "height": 73.73,
+          "id": "pants_right",
+          "asset": "assets/characters/popa/outfits/cloud/parts/pants_right.png",
+          "x": 265,
+          "y": 385,
+          "width": 85,
           "rotation": 0,
-          "layer": 8,
-          "attachment": "foot_right",
+          "layer": 7,
+          "attachment": "body",
           "visible": true,
           "locked": false,
+          "naturalSize": [
+            398,
+            282
+          ],
           "artworkSize": [
-            245,
-            241
+            404,
+            288
           ],
           "artworkOffset": [
-            -4,
-            -4
-          ]
+            -3,
+            -3
+          ],
+          "height": 60.23
         }
-      ]
+      ],
+      "sourceRevision": 2
     },
     {
       "id": "crab",
@@ -1399,5 +1350,5 @@
       ]
     }
   ],
-  "artworkRevision": 2
+  "artworkRevision": 3
 }

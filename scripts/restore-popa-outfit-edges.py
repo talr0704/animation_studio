@@ -14,14 +14,19 @@ SOURCE=ROOT/'source-art/characters/popa/outfits'
 DEST=ROOT/'assets/characters/popa/outfits'
 manifest=json.loads((SOURCE/'manifest.json').read_text())
 catalog=json.loads((DEST/'catalog.json').read_text())
+active={(look['id'],part['id']) for look in catalog['looks'] for part in look['parts']}
+replaced=json.loads((SOURCE/'cloud-pajamas-v2-manifest.json').read_text())
+replacement_ids={(r['outfit'],r['part']) for r in replaced}
+manifest=[r for r in manifest if (r['outfit'],r['part']) in active and (r['outfit'],r['part']) not in replacement_ids]+replaced
 cache={};audit=[]
 for record in manifest:
     look,name=record['outfit'],record['part']
-    if look not in cache:
-        source=Image.open(SOURCE/'Sources'/f'{look}.png').convert('RGBA')
+    source_file=record.get('source',f'Sources/{look}.png')
+    if source_file not in cache:
+        source=Image.open(SOURCE/source_file).convert('RGBA')
         labels,_=ndimage.label(np.asarray(source.getchannel('A'))>16)
-        cache[look]=(source,labels,ndimage.find_objects(labels))
-    source,labels,objects=cache[look]
+        cache[source_file]=(source,labels,ndimage.find_objects(labels))
+    source,labels,objects=cache[source_file]
     sx,sy,_,_=record['source_cell'];x,y,right,bottom=record['crop_bbox'];padding=record['padding']
     old=(sx+x,sy+y,sx+right,sy+bottom)
     hits=np.bincount(labels[old[1]:old[3],old[0]:old[2]].ravel());hits[0]=0
@@ -35,8 +40,8 @@ for record in manifest:
     part=next(p for l in catalog['looks'] if l['id']==look for p in l['parts'] if p['id']==name)
     part['artworkSize']=list(restored.size)
     part['artworkOffset']=[bounds[0]-origin[0],bounds[1]-origin[1]]
-    audit.append({'look':look,'part':name,'sourceBounds':list(bounds),'originalLogicalSize':record['size'],'artworkSize':list(restored.size),'artworkOffset':part['artworkOffset'],'completeOutlineBounds':[xs.start,ys.start,xs.stop,ys.stop],'crossedSourceCell':xs.start<sx or ys.start<sy or xs.stop>record['source_cell'][2] or ys.stop>record['source_cell'][3]})
-catalog['artworkRevision']=2
+    audit.append({'look':look,'part':name,'source':source_file,'sourceBounds':list(bounds),'originalLogicalSize':record['size'],'artworkSize':list(restored.size),'artworkOffset':part['artworkOffset'],'completeOutlineBounds':[xs.start,ys.start,xs.stop,ys.stop],'crossedSourceCell':xs.start<sx or ys.start<sy or xs.stop>record['source_cell'][2] or ys.stop>record['source_cell'][3]})
+catalog['artworkRevision']=3
 (DEST/'catalog.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n')
 (DEST/'edge-audit.json').write_text(json.dumps({'version':1,'method':'lossless original source pixels; complete connected outline plus antialias margin','parts':audit},ensure_ascii=False,indent=2)+'\n')
 print(f'Restored and checked {len(audit)} parts; {sum(p["crossedSourceCell"] for p in audit)} crossed their original source cells.')

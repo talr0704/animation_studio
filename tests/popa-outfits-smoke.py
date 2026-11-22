@@ -12,7 +12,7 @@ with sync_playwright() as p:
     assert page.locator('#outfit-look option').count()==6
     for look in ['cloud','crab','duck','jellyfish','mermaid','strawberry']:
         page.select_option('#outfit-look',look)
-        assert page.locator('.outfit-image').count()==9
+        assert page.locator('.outfit-image').count()==(7 if look=='cloud' else 9)
         page.wait_for_function('[...document.querySelectorAll(".outfit-image")].every(i=>i.complete&&i.naturalWidth>0)')
     page.select_option('#outfit-look','cloud')
     def set_number(key,value):

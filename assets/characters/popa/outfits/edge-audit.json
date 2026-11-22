@@ -5,6 +5,7 @@
     {
       "look": "jellyfish",
       "part": "dress_front",
+      "source": "Sources/jellyfish.png",
       "sourceBounds": [
         73,
         30,
@@ -34,6 +35,7 @@
     {
       "look": "jellyfish",
       "part": "underskirt",
+      "source": "Sources/jellyfish.png",
       "sourceBounds": [
         548,
         140,
@@ -63,6 +65,7 @@
     {
       "look": "jellyfish",
       "part": "dress_back",
+      "source": "Sources/jellyfish.png",
       "sourceBounds": [
         1047,
         96,
@@ -92,6 +95,7 @@
     {
       "look": "jellyfish",
       "part": "hat_dome",
+      "source": "Sources/jellyfish.png",
       "sourceBounds": [
         91,
         402,
@@ -121,6 +125,7 @@
     {
       "look": "jellyfish",
       "part": "tentacle_left",
+      "source": "Sources/jellyfish.png",
       "sourceBounds": [
         663,
         409,
@@ -150,6 +155,7 @@
     {
       "look": "jellyfish",
       "part": "tentacle_center",
+      "source": "Sources/jellyfish.png",
       "sourceBounds": [
         1165,
         413,
@@ -179,6 +185,7 @@
     {
       "look": "jellyfish",
       "part": "tentacle_right",
+      "source": "Sources/jellyfish.png",
       "sourceBounds": [
         205,
         716,
@@ -208,6 +215,7 @@
     {
       "look": "jellyfish",
       "part": "bag_body",
+      "source": "Sources/jellyfish.png",
       "sourceBounds": [
         593,
         714,
@@ -237,6 +245,7 @@
     {
       "look": "jellyfish",
       "part": "bag_handle",
+      "source": "Sources/jellyfish.png",
       "sourceBounds": [
         1086,
         709,
@@ -266,6 +275,7 @@
     {
       "look": "strawberry",
       "part": "dress_front",
+      "source": "Sources/strawberry.png",
       "sourceBounds": [
         69,
         14,
@@ -295,6 +305,7 @@
     {
       "look": "strawberry",
       "part": "chest_bow",
+      "source": "Sources/strawberry.png",
       "sourceBounds": [
         602,
         59,
@@ -324,6 +335,7 @@
     {
       "look": "strawberry",
       "part": "dress_back",
+      "source": "Sources/strawberry.png",
       "sourceBounds": [
         1039,
         71,
@@ -353,6 +365,7 @@
     {
       "look": "strawberry",
       "part": "hat_body",
+      "source": "Sources/strawberry.png",
       "sourceBounds": [
         63,
         406,
@@ -382,6 +395,7 @@
     {
       "look": "strawberry",
       "part": "hat_leaves",
+      "source": "Sources/strawberry.png",
       "sourceBounds": [
         612,
         422,
@@ -411,6 +425,7 @@
     {
       "look": "strawberry",
       "part": "hat_flower",
+      "source": "Sources/strawberry.png",
       "sourceBounds": [
         1155,
         424,
@@ -440,6 +455,7 @@
     {
       "look": "strawberry",
       "part": "bag_body",
+      "source": "Sources/strawberry.png",
       "sourceBounds": [
         127,
         702,
@@ -469,6 +485,7 @@
     {
       "look": "strawberry",
       "part": "bag_handle",
+      "source": "Sources/strawberry.png",
       "sourceBounds": [
         608,
         695,
@@ -498,6 +515,7 @@
     {
       "look": "strawberry",
       "part": "bag_straw",
+      "source": "Sources/strawberry.png",
       "sourceBounds": [
         1180,
         724,
@@ -527,6 +545,7 @@
     {
       "look": "duck",
       "part": "coat_body",
+      "source": "Sources/duck.png",
       "sourceBounds": [
         59,
         25,
@@ -556,6 +575,7 @@
     {
       "look": "duck",
       "part": "collar_left",
+      "source": "Sources/duck.png",
       "sourceBounds": [
         647,
         95,
@@ -585,6 +605,7 @@
     {
       "look": "duck",
       "part": "collar_right",
+      "source": "Sources/duck.png",
       "sourceBounds": [
         1069,
         94,
@@ -614,6 +635,7 @@
     {
       "look": "duck",
       "part": "sleeve_left",
+      "source": "Sources/duck.png",
       "sourceBounds": [
         175,
         406,
@@ -643,6 +665,7 @@
     {
       "look": "duck",
       "part": "sleeve_right",
+      "source": "Sources/duck.png",
       "sourceBounds": [
         645,
         405,
@@ -672,6 +695,7 @@
     {
       "look": "duck",
       "part": "hood",
+      "source": "Sources/duck.png",
       "sourceBounds": [
         1047,
         327,
@@ -701,6 +725,7 @@
     {
       "look": "duck",
       "part": "hood_bow",
+      "source": "Sources/duck.png",
       "sourceBounds": [
         155,
         721,
@@ -730,6 +755,7 @@
     {
       "look": "duck",
       "part": "boot_left",
+      "source": "Sources/duck.png",
       "sourceBounds": [
         621,
         714,
@@ -759,6 +785,7 @@
     {
       "look": "duck",
       "part": "boot_right",
+      "source": "Sources/duck.png",
       "sourceBounds": [
         1114,
         714,
@@ -788,6 +815,7 @@
     {
       "look": "mermaid",
       "part": "dress_body",
+      "source": "Sources/mermaid.png",
       "sourceBounds": [
         50,
         44,
@@ -817,6 +845,7 @@
     {
       "look": "mermaid",
       "part": "collar_left",
+      "source": "Sources/mermaid.png",
       "sourceBounds": [
         615,
         55,
@@ -846,6 +875,7 @@
     {
       "look": "mermaid",
       "part": "collar_right",
+      "source": "Sources/mermaid.png",
       "sourceBounds": [
         1105,
         56,
@@ -875,6 +905,7 @@
     {
       "look": "mermaid",
       "part": "chest_bow",
+      "source": "Sources/mermaid.png",
       "sourceBounds": [
         115,
         404,
@@ -904,6 +935,7 @@
     {
       "look": "mermaid",
       "part": "hair_bow_left",
+      "source": "Sources/mermaid.png",
       "sourceBounds": [
         651,
         397,
@@ -933,6 +965,7 @@
     {
       "look": "mermaid",
       "part": "hair_bow_right",
+      "source": "Sources/mermaid.png",
       "sourceBounds": [
         1145,
         397,
@@ -962,6 +995,7 @@
     {
       "look": "mermaid",
       "part": "hair_bow_center",
+      "source": "Sources/mermaid.png",
       "sourceBounds": [
         182,
         724,
@@ -991,6 +1025,7 @@
     {
       "look": "mermaid",
       "part": "bag_body",
+      "source": "Sources/mermaid.png",
       "sourceBounds": [
         588,
         692,
@@ -1020,6 +1055,7 @@
     {
       "look": "mermaid",
       "part": "bag_handle",
+      "source": "Sources/mermaid.png",
       "sourceBounds": [
         1090,
         701,
@@ -1048,152 +1084,8 @@
     },
     {
       "look": "cloud",
-      "part": "pajama_body",
-      "sourceBounds": [
-        21,
-        44,
-        456,
-        407
-      ],
-      "originalLogicalSize": [
-        424,
-        354
-      ],
-      "artworkSize": [
-        435,
-        363
-      ],
-      "artworkOffset": [
-        -4,
-        -4
-      ],
-      "completeOutlineBounds": [
-        40,
-        63,
-        437,
-        388
-      ],
-      "crossedSourceCell": true
-    },
-    {
-      "look": "cloud",
-      "part": "collar_left",
-      "sourceBounds": [
-        508,
-        117,
-        818,
-        322
-      ],
-      "originalLogicalSize": [
-        302,
-        196
-      ],
-      "artworkSize": [
-        310,
-        205
-      ],
-      "artworkOffset": [
-        -4,
-        -5
-      ],
-      "completeOutlineBounds": [
-        527,
-        136,
-        799,
-        303
-      ],
-      "crossedSourceCell": false
-    },
-    {
-      "look": "cloud",
-      "part": "collar_right",
-      "sourceBounds": [
-        919,
-        117,
-        1228,
-        322
-      ],
-      "originalLogicalSize": [
-        301,
-        196
-      ],
-      "artworkSize": [
-        309,
-        205
-      ],
-      "artworkOffset": [
-        -4,
-        -5
-      ],
-      "completeOutlineBounds": [
-        938,
-        136,
-        1209,
-        303
-      ],
-      "crossedSourceCell": false
-    },
-    {
-      "look": "cloud",
-      "part": "sleeve_left",
-      "sourceBounds": [
-        78,
-        501,
-        314,
-        744
-      ],
-      "originalLogicalSize": [
-        228,
-        234
-      ],
-      "artworkSize": [
-        236,
-        243
-      ],
-      "artworkOffset": [
-        -4,
-        -5
-      ],
-      "completeOutlineBounds": [
-        97,
-        520,
-        295,
-        725
-      ],
-      "crossedSourceCell": false
-    },
-    {
-      "look": "cloud",
-      "part": "sleeve_right",
-      "sourceBounds": [
-        510,
-        502,
-        746,
-        744
-      ],
-      "originalLogicalSize": [
-        227,
-        234
-      ],
-      "artworkSize": [
-        236,
-        242
-      ],
-      "artworkOffset": [
-        -4,
-        -4
-      ],
-      "completeOutlineBounds": [
-        529,
-        521,
-        727,
-        725
-      ],
-      "crossedSourceCell": false
-    },
-    {
-      "look": "cloud",
       "part": "hat_body",
+      "source": "Sources/cloud.png",
       "sourceBounds": [
         818,
         465,
@@ -1223,6 +1115,7 @@
     {
       "look": "cloud",
       "part": "star_charm",
+      "source": "Sources/cloud.png",
       "sourceBounds": [
         130,
         871,
@@ -1250,66 +1143,9 @@
       "crossedSourceCell": false
     },
     {
-      "look": "cloud",
-      "part": "slipper_left",
-      "sourceBounds": [
-        502,
-        895,
-        747,
-        1136
-      ],
-      "originalLogicalSize": [
-        236,
-        233
-      ],
-      "artworkSize": [
-        245,
-        241
-      ],
-      "artworkOffset": [
-        -4,
-        -4
-      ],
-      "completeOutlineBounds": [
-        521,
-        914,
-        728,
-        1117
-      ],
-      "crossedSourceCell": false
-    },
-    {
-      "look": "cloud",
-      "part": "slipper_right",
-      "sourceBounds": [
-        926,
-        895,
-        1171,
-        1136
-      ],
-      "originalLogicalSize": [
-        237,
-        233
-      ],
-      "artworkSize": [
-        245,
-        241
-      ],
-      "artworkOffset": [
-        -4,
-        -4
-      ],
-      "completeOutlineBounds": [
-        945,
-        914,
-        1152,
-        1117
-      ],
-      "crossedSourceCell": false
-    },
-    {
       "look": "crab",
       "part": "dress_front",
+      "source": "Sources/crab.png",
       "sourceBounds": [
         14,
         79,
@@ -1339,6 +1175,7 @@
     {
       "look": "crab",
       "part": "shirt_body",
+      "source": "Sources/crab.png",
       "sourceBounds": [
         484,
         140,
@@ -1368,6 +1205,7 @@
     {
       "look": "crab",
       "part": "sleeve_left",
+      "source": "Sources/crab.png",
       "sourceBounds": [
         914,
         164,
@@ -1397,6 +1235,7 @@
     {
       "look": "crab",
       "part": "sleeve_right",
+      "source": "Sources/crab.png",
       "sourceBounds": [
         104,
         563,
@@ -1426,6 +1265,7 @@
     {
       "look": "crab",
       "part": "hat_body",
+      "source": "Sources/crab.png",
       "sourceBounds": [
         405,
         535,
@@ -1455,6 +1295,7 @@
     {
       "look": "crab",
       "part": "eye_left",
+      "source": "Sources/crab.png",
       "sourceBounds": [
         914,
         547,
@@ -1484,6 +1325,7 @@
     {
       "look": "crab",
       "part": "eye_right",
+      "source": "Sources/crab.png",
       "sourceBounds": [
         123,
         956,
@@ -1513,6 +1355,7 @@
     {
       "look": "crab",
       "part": "bag_body",
+      "source": "Sources/crab.png",
       "sourceBounds": [
         415,
         959,
@@ -1542,6 +1385,7 @@
     {
       "look": "crab",
       "part": "bag_handle",
+      "source": "Sources/crab.png",
       "sourceBounds": [
         831,
         940,
@@ -1565,6 +1409,156 @@
         959,
         1135,
         1172
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "cloud",
+      "part": "pajama_body",
+      "source": "Sources/cloud-pajamas-v2.png",
+      "sourceBounds": [
+        330,
+        17,
+        980,
+        502
+      ],
+      "originalLogicalSize": [
+        644,
+        479
+      ],
+      "artworkSize": [
+        650,
+        485
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        352,
+        39,
+        958,
+        480
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "cloud",
+      "part": "sleeve_left",
+      "source": "Sources/cloud-pajamas-v2.png",
+      "sourceBounds": [
+        224,
+        555,
+        482,
+        812
+      ],
+      "originalLogicalSize": [
+        252,
+        251
+      ],
+      "artworkSize": [
+        258,
+        257
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        246,
+        577,
+        460,
+        790
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "cloud",
+      "part": "sleeve_right",
+      "source": "Sources/cloud-pajamas-v2.png",
+      "sourceBounds": [
+        828,
+        555,
+        1086,
+        812
+      ],
+      "originalLogicalSize": [
+        252,
+        251
+      ],
+      "artworkSize": [
+        258,
+        257
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        850,
+        577,
+        1064,
+        790
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "cloud",
+      "part": "pants_left",
+      "source": "Sources/cloud-pajamas-v2.png",
+      "sourceBounds": [
+        224,
+        897,
+        627,
+        1185
+      ],
+      "originalLogicalSize": [
+        397,
+        282
+      ],
+      "artworkSize": [
+        403,
+        288
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        246,
+        919,
+        605,
+        1163
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "cloud",
+      "part": "pants_right",
+      "source": "Sources/cloud-pajamas-v2.png",
+      "sourceBounds": [
+        682,
+        897,
+        1086,
+        1185
+      ],
+      "originalLogicalSize": [
+        398,
+        282
+      ],
+      "artworkSize": [
+        404,
+        288
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        704,
+        919,
+        1064,
+        1163
       ],
       "crossedSourceCell": false
     }
