@@ -1,5 +1,5 @@
 // Placement drafts only. The game keeps its approved character until a look is integrated.
-const CATALOG = './assets/characters/popa/outfits/catalog.json?v=cloud-body-5';
+const CATALOG = './assets/characters/popa/outfits/catalog.json?v=cloud-fit-6';
 const clone = value => structuredClone(value);
 const attachmentLabels = {body:'גוף',head:'ראש',left_arm:'יד שמאל',right_arm:'יד ימין',foot_left:'רגל שמאל',foot_right:'רגל ימין'};
 const names = {dress_front:'שמלה קדמית',dress_back:'שמלה אחורית',underskirt:'חצאית תחתונה',hat_body:'כובע',hat_dome:'כובע מדוזה',hat_flower:'פרח לכובע',hat_leaves:'עלי כובע',coat_body:'מעיל',pajama_body:'חולצת פיג׳מה',pants_left:'מכנס שמאל',pants_right:'מכנס ימין',dress_body:'שמלה',shirt_body:'חולצה',sleeve_left:'שרוול שמאל',sleeve_right:'שרוול ימין',collar_left:'צווארון שמאל',collar_right:'צווארון ימין',boot_left:'מגף שמאל',boot_right:'מגף ימין',slipper_left:'נעל שמאל',slipper_right:'נעל ימין',bag_body:'תיק',bag_handle:'ידית תיק',bag_straw:'קשית',chest_bow:'פפיון לחזה',hair_bow_left:'סרט שמאל',hair_bow_right:'סרט ימין',hair_bow_center:'מרכז הסרט',hood:'ברדס',hood_bow:'סרט לברדס',star_charm:'כוכב',eye_left:'עין כובע שמאל',eye_right:'עין כובע ימין',tentacle_left:'זרוע שמאל',tentacle_center:'זרוע אמצע',tentacle_right:'זרוע ימין'};
@@ -48,6 +48,10 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
       }
     }
     return data;
+  }
+  for(const look of catalog.looks.filter(l=>l.placements)){
+    const response=await fetch(look.placements+'?v=1');if(!response.ok)throw Error('Cannot load published outfit placements');
+    for(const fitted of validate(await response.json()).looks)drafts[fitted.id]=clone(fitted);
   }
   try {const saved=localStorage.getItem(storageKey);if(saved) for(const look of validate(JSON.parse(saved)).looks) drafts[look.id]=look;}catch(error){storageAvailable=false;console.warn('Outfit draft not restored',error);}
   const panel=document.createElement('aside');panel.className='outfit-panel';panel.dir='rtl';panel.setAttribute('aria-label','מיקום הלוקים של פופה');

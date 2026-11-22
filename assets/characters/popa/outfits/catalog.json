@@ -9,7 +9,7 @@
     {
       "id": "cloud",
       "label": "פיג׳מת ענן",
-      "fittingStatus": "not_fitted",
+      "fittingStatus": "fitted",
       "parts": [
         {
           "id": "pajama_body",
@@ -187,7 +187,8 @@
           "height": 60.23
         }
       ],
-      "sourceRevision": 2
+      "sourceRevision": 2,
+      "placements": "assets/characters/popa/outfits/cloud/placements.json"
     },
     {
       "id": "crab",

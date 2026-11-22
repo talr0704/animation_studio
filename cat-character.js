@@ -1,7 +1,7 @@
 import { createCatExpressions } from './cat-expressions.js';
 import { createCatAnimations } from './cat-animations.js';
 import { mountLayoutEditor } from './cat-layout-editor.js';
-import { mountOutfitEditor } from './popa-outfit-editor.js?v=sleeve-layers-8';
+import { mountOutfitEditor } from './popa-outfit-editor.js?v=cloud-fit-9';
 import { mountCatEditor } from './cat-editor.js';
 const character = document.querySelector('.cat-character');
 const wrapper = document.querySelector('.cat-wrapper');

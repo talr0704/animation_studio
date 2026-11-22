@@ -13,3 +13,5 @@
 /* Object names remain in the editor selector and accessible button labels. */
 .room-item>span,.rug-object span{display:none!important}
 #room-edit-move{cursor:grab;touch-action:none;background:transparent;border:0;font-weight:700;padding:6px 0}#room-edit-move:active{cursor:grabbing}
+
+.wardrobe-choices{display:flex;justify-content:center;gap:14px;margin:20px 0}.wardrobe-choices button{width:135px;border:1px solid #dbc3ab;border-radius:14px;background:#fff4e3;padding:12px;color:var(--ink)}.wardrobe-choices img{display:block;width:100%;height:105px;object-fit:contain;margin-bottom:8px}.wardrobe-choices span{font-size:13px}.wardrobe-choices [aria-pressed=true]{border:2px solid #ac7095;background:#f6e3ed}#wardrobe-status{min-height:20px}

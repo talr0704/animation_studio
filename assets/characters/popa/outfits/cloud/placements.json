@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "cloud",
+      "hiddenBase": [
+        "pinafore",
+        "flower",
+        "shirt"
+      ],
+      "parts": [
+        {
+          "id": "pajama_body",
+          "asset": "assets/characters/popa/outfits/cloud/parts/pajama_body.png",
+          "naturalSize": [
+            424,
+            354
+          ],
+          "x": 223.9,
+          "y": 354.6,
+          "width": 170,
+          "height": 141.9311111111111,
+          "rotation": -3,
+          "layer": 9.1,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/characters/popa/outfits/cloud/parts/sleeve_left.png",
+          "naturalSize": [
+            228,
+            234
+          ],
+          "x": 154.2,
+          "y": 328.3,
+          "width": 63,
+          "height": 64.6573846153846,
+          "rotation": 7,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/characters/popa/outfits/cloud/parts/sleeve_right.png",
+          "naturalSize": [
+            227,
+            234
+          ],
+          "x": 293.4,
+          "y": 313.9,
+          "width": 63,
+          "height": 64.93846153846155,
+          "rotation": -20,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hat_body",
+          "asset": "assets/characters/popa/outfits/cloud/parts/hat_body.png",
+          "naturalSize": [
+            397,
+            311
+          ],
+          "x": 204.6,
+          "y": 55.2,
+          "width": 170,
+          "height": 133.17,
+          "rotation": -10,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "star_charm",
+          "asset": "assets/characters/popa/outfits/cloud/parts/star_charm.png",
+          "naturalSize": [
+            169,
+            248
+          ],
+          "x": 334.2,
+          "y": 348.2,
+          "width": 55,
+          "height": 80.71,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "pants_left",
+          "asset": "assets/characters/popa/outfits/cloud/parts/pants_left.png",
+          "x": 190,
+          "y": 409.8,
+          "width": 77,
+          "rotation": 0,
+          "layer": 7,
+          "attachment": "foot_right",
+          "visible": true,
+          "locked": false,
+          "naturalSize": [
+            397,
+            282
+          ],
+          "artworkSize": [
+            403,
+            288
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "height": 54.697176470588225
+        },
+        {
+          "id": "pants_right",
+          "asset": "assets/characters/popa/outfits/cloud/parts/pants_right.png",
+          "x": 266.6,
+          "y": 408.2,
+          "width": 75,
+          "rotation": -3,
+          "layer": 8,
+          "attachment": "foot_left",
+          "visible": true,
+          "locked": false,
+          "naturalSize": [
+            398,
+            282
+          ],
+          "artworkSize": [
+            404,
+            288
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "height": 53.14411764705881
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}
