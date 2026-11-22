@@ -9,6 +9,16 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
   const catalog = await response.json();
   const initial = look => ({id:look.id,hiddenBase:['shirt','pinafore','flower'],parts:clone(look.parts),fittingStatus:'draft'});
   const defaults = Object.fromEntries(catalog.looks.map(look => [look.id,initial(look)]));
+  const rigLayer=id=>Number(groups.get(id).closest('.cat-layer').style.zIndex);
+  const bodyLayer=rigLayer('torso'),headLayer=rigLayer('head');
+  const armLayer=Math.max(rigLayer('left_arm'),rigLayer('right_arm'));
+  const frontLayer=Math.max(...[...groups.values()].map(group=>Number(group.closest('.cat-layer').style.zIndex)))+1;
+  const layerPresets=[
+    {id:'behind-body',label:'מאחורי הגוף',value:bodyLayer-1},
+    {id:'under-head',label:'מעל הגוף ומתחת לראש ולידיים',value:armLayer-1},
+    {id:'over-arms',label:'מעל הידיים ומתחת לראש',value:headLayer-1},
+    {id:'over-head',label:'מעל הראש והפנים',value:frontLayer},
+  ];
   const drafts = clone(defaults), history = [];
   let lookId=catalog.looks[0].id, partId=drafts[lookId].parts[0].id, mounted=[], drag=null, storageAvailable=true;
   const storageKey='popa.outfit-placements.v1';
@@ -43,6 +53,8 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
   <label>לוק <select id="outfit-look">${catalog.looks.map(l=>`<option value="${l.id}">${l.label}</option>`).join('')}</select></label>
   <div class="outfit-parts" id="outfit-parts" role="group" aria-label="חלקי הלוק"></div>
   <h2 id="outfit-part-title"></h2><div class="outfit-fields">${[['x','מיקום X'],['y','מיקום Y'],['width','רוחב'],['height','גובה'],['rotation','סיבוב °'],['layer','שכבה']].map(([id,label])=>`<label>${label}<input id="outfit-${id}" type="number" step="${id==='layer'?'1':'0.1'}" max="5000" min="${['width','height'].includes(id)?'1':'-5000'}" data-field="${id}"></label>`).join('')}</div>
+  <label>שכבה ביחס לפופה <select id="outfit-layer-preset"><option value="custom">מיקום מותאם לפי מספר השכבה</option>${layerPresets.map(p=>`<option value="${p.id}">${p.label}</option>`).join('')}</select></label>
+  <p class="outfit-layer-guide">סדר השכבות מאחור לפנים: גוף ← חולצה ← ידיים ← ראש ← כובע. בחרי את המיקום הרצוי לכל חלק; המספר מאפשר כיוון נוסף.</p>
   <label class="outfit-check"><input id="outfit-ratio" type="checkbox" checked> שמירה על יחס גובה ורוחב</label>
   <label>תנועה יחד עם <select id="outfit-attachment">${Object.entries(attachmentLabels).map(([id,label])=>`<option value="${id}">${label}</option>`).join('')}</select></label>
   <div class="outfit-row"><label><input id="outfit-visible" type="checkbox"> הצגת החלק</label><label><input id="outfit-locked" type="checkbox"> נעילה</label></div>
@@ -67,7 +79,7 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
     Object.assign(entry.image.style,{left:`${p.x-p.width/2+dx*sx}px`,top:`${p.y-p.height/2+dy*sy}px`,width:`${aw*sx}px`,height:`${ah*sy}px`,transformOrigin:`${(nw/2-dx)*sx}px ${(nh/2-dy)*sy}px`,transform:`rotate(${p.rotation}deg)`});
     entry.image.classList.toggle('outfit-selected',p.id===partId);entry.image.style.cursor=p.locked?'not-allowed':'grab';
   }
-  function syncFields(){const p=part();$('part-title').textContent=names[p.id]??p.id;panel.querySelectorAll('[data-field]').forEach(input=>input.value=String(Math.round(p[input.dataset.field]*100)/100));$('attachment').value=p.attachment;$('visible').checked=p.visible;$('locked').checked=p.locked;panel.querySelectorAll('[data-base]').forEach(input=>input.checked=!current().hiddenBase.includes(input.dataset.base));panel.querySelectorAll('[data-piece]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.piece===partId)));mounted.forEach(updateImage);$('undo').disabled=!history.length;}
+  function syncFields(){const p=part();$('layer-preset').value=layerPresets.find(preset=>preset.value===p.layer)?.id??'custom';$('part-title').textContent=names[p.id]??p.id;panel.querySelectorAll('[data-field]').forEach(input=>input.value=String(Math.round(p[input.dataset.field]*100)/100));$('attachment').value=p.attachment;$('visible').checked=p.visible;$('locked').checked=p.locked;panel.querySelectorAll('[data-base]').forEach(input=>input.checked=!current().hiddenBase.includes(input.dataset.base));panel.querySelectorAll('[data-piece]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.piece===partId)));mounted.forEach(updateImage);$('undo').disabled=!history.length;}
   function applyBase(){for(const id of ['shirt','pinafore','flower'])groups.get(id).style.visibility=current().hiddenBase.includes(id)?'hidden':'';}
   function render(){
     stop();mounted.forEach(m=>m.outer.remove());mounted=[];
@@ -95,6 +107,7 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
     const key=input.dataset.field,value=Number(input.value);if(!Number.isFinite(value)||Math.abs(value)>5000||(['width','height'].includes(key)&&value<1)){syncFields();return;}
     stop();remember();const p=part();if($('ratio').checked&&['width','height'].includes(key)){const other=key==='width'?'height':'width';p[other]=p[other]*value/p[key];}p[key]=value;syncFields();persist();
   }));
+  $('layer-preset').addEventListener('change',()=>{const preset=layerPresets.find(preset=>preset.id===$('layer-preset').value);if(!preset)return;stop();remember();part().layer=preset.value;syncFields();persist();});
   for(const key of ['attachment','visible','locked'])$(key).addEventListener('change',()=>{stop();remember();part()[key]=key==='attachment'?$(key).value:$(key).checked;syncFields();persist();});
   panel.querySelectorAll('[data-base]').forEach(input=>input.addEventListener('change',()=>{remember();const hidden=new Set(current().hiddenBase);input.checked?hidden.delete(input.dataset.base):hidden.add(input.dataset.base);current().hiddenBase=[...hidden];applyBase();persist();}));
   $('stop').onclick=stop;panel.querySelectorAll('[data-preview]').forEach(button=>button.onclick=()=>play(button.dataset.preview));
