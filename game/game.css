@@ -2,3 +2,10 @@
 .rug-object img{object-fit:fill}
 
 #room{background:#f7f2e8}.item-rig{position:absolute;transform-origin:0 0;pointer-events:none}.item-rig img{pointer-events:none}.room-item:focus-visible{outline:2px dashed #a4768d;outline-offset:3px}.rug-object:focus-visible{outline:2px dashed #a4768d;outline-offset:3px}
+
+#room{background-size:100% 100%;background-position:center;background-repeat:no-repeat}
+.edit-room{position:absolute;bottom:12px;right:16px;z-index:10;border:1px solid #d6b896;border-radius:12px;padding:9px 15px;background:#fff7e9ed;font-size:12px;direction:rtl}.world[data-view=garden] .edit-room{display:none}
+.room-editor{position:absolute;right:12px;top:85px;bottom:65px;width:280px;z-index:11;background:#fffaf1f5;border:1px solid #d7bfa5;border-radius:16px;padding:14px;overflow:auto;box-shadow:0 5px 25px #66452822;font-size:12px}.room-editor header{display:flex;justify-content:space-between;align-items:center}.room-editor p{font-size:11px;line-height:1.6}.room-editor label{display:block;margin:10px 0}.room-editor select,.room-editor input[type=number]{display:block;width:100%;margin-top:4px;border:1px solid #d8c2a8;border-radius:7px;background:white;padding:6px;font:inherit}.room-editor input[type=number]{direction:ltr}.room-editor button{border:1px solid #d8c2a8;border-radius:8px;background:#ffedda;padding:7px 9px;font-size:12px}.room-edit-fields{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}.room-edit-actions{display:flex;gap:6px;flex-wrap:wrap}.room-editor input[type=file]{width:100%;margin-top:6px}.editing-room .room-item,.editing-room .rug-object{touch-action:none;cursor:grab;outline:1px dashed #ac927a}.editing-room .room-edit-selected{outline:3px solid #b97199}.editing-room .room-item>span{opacity:1}.editing-room{touch-action:none}
+@media(max-width:700px){.room-editor{top:auto;bottom:62px;right:8px;width:235px;max-height:40%;padding:10px}.edit-room{bottom:12px;right:8px;padding:8px 10px;font-size:11px}.room-editor header button{padding:5px 8px}}
+/* Leave the persistent navigation footer clear. */
+.edit-room{bottom:45px}.room-editor{bottom:95px}@media(max-width:700px){.edit-room{bottom:42px}.room-editor{bottom:88px}}

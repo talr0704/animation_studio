@@ -287,9 +287,9 @@
       "label": "רקע החדר המאויר",
       "editable": false,
       "images": [
-        "assets/scenes/home/background/room.png"
+        "assets/scenes/home/background/coastal-room.png"
       ],
-      "status": "archived"
+      "status": "active"
     },
     {
       "id": "home.coastal-sofa",

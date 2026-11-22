@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f9f5eb">
   <title>העולם של פופה — בית קטן, הרפתקאות גדולות</title>
-  <link rel="stylesheet" href="./popa-browser.css"><link rel="stylesheet" href="./game/game.css?v=coastal-home-9">
+  <link rel="stylesheet" href="./popa-browser.css"><link rel="stylesheet" href="./game/game.css?v=room-editor-10">
 </head>
 <body>
   <header class="topbar"><a class="brand" href="game.html"><span class="brand-mark">✿</span><span>העולם של פופה<small>בית קטן, הרפתקאות גדולות</small></span></a>
@@ -14,6 +14,7 @@
     <div class="intro"><div><p class="eyebrow">נעים להיות כאן</p><h1 id="heading">ברוכה הבאה הביתה</h1><p id="subtitle">לחצי על הרצפה כדי לטייל עם פופה, או צאי להרפתקה בגינה.</p></div><span class="chapter">העולם הקטן שלך <span>✧</span></span></div>
 
     <section class="world" aria-label="העולם של פופה"><nav class="world-paths" aria-label="לטייל בעולם"><button id="home-tab" aria-selected="true" aria-controls="room"><img src="assets/scenes/home/furniture/coastal/sofa/images/frame.png" alt=""><span>הביתה</span></button><button id="garden-tab" aria-selected="false" aria-controls="orchard"><img src="assets/scenes/manicure/props/stickers/images/sticker-flower.png" alt=""><span>לגינה</span></button><button class="salon-link" type="button" data-page="salon.html"><img src="assets/scenes/home/furniture/coastal/decor/images/shell.png" alt=""><span>למספרה</span></button><button class="manicure-link" type="button" data-page="manicure.html"><img src="assets/scenes/manicure/props/nail-polish/colors/pink/brush.png" alt=""><span>ציפורניים</span></button></nav>
+      <button id="edit-room" class="edit-room" type="button" aria-pressed="false" disabled>סידור החדר</button>
       <div id="room" class="room"><div id="home-furniture" aria-label="פריטי החדר של פופה"></div><button id="buy-rug" class="rug-object" aria-label="השטיח של פופה"><img id="rug" src="assets/scenes/home/furniture/coastal/rug/images/rug.png" alt="שטיח פרחוני"><span id="rug-price"></span></button><div class="room-hint" id="room-hint">בחרי פריט ופופה תיגש אליו · אפשר גם לטייל עם החיצים</div></div>
       <div id="orchard" class="orchard" hidden><img class="scene-backdrop" src="assets/scenes/garden/garden.svg" alt="">
         <canvas id="canvas" aria-label="פירות נופלים בגינה"></canvas>
@@ -33,6 +34,6 @@
     <section class="shop-card"><span class="shop-icon">▧</span><div><h2>נגיעה של צבע לבית</h2><p id="shop-text">שטיח פרחוני לפינה האהובה על פופה</p></div></section></div>
     <footer><p id="record">כל הרפתקה מתחילה בצעד קטן.</p><a href="index.html">לסטודיו האנימציה ↗</a><button id="sound" aria-pressed="false">צליל כבוי ♫</button><span id="save-status">ההתקדמות נשמרת בדפדפן הזה</span></footer>
   </main>
-  <script type="module" src="./game/game.js?v=coastal-home-9"></script>
+  <script type="module" src="./game/game.js?v=room-editor-10"></script>
 </body>
 </html>

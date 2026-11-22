@@ -1,3 +1,4 @@
+import { mountRoomEditor } from './room-editor.js';
 import {mountProp} from '../shared/prop-rig.js';
 import { createPopa } from '../popa-browser.js';
 import { POPA_CLIPS } from '../popa-clips.js';
@@ -12,10 +13,11 @@ try {
 } catch { /* Play remains available without browser storage. */ }
 let pendingItem=null,interactionTimer=null,activeItem=null;
 const fruitImages = new Map();
-let roomFurniture;
+let roomFurniture, roomEditor;
+let roomEditing=false;
 function placeRoomFurniture(){if(!roomFurniture)return;const layout=roomFurniture[window.innerWidth<=700?'portrait':'wide'],[w,h]=layout.canvas;const place=(el,r)=>Object.assign(el.style,{left:r[0]/w*100+'%',top:r[1]/h*100+'%',width:r[2]/w*100+'%',height:r[3]/h*100+'%'});for(const [id,rect]of Object.entries(layout.items)){const button=document.querySelector(`[data-furniture="${id}"]`);place(button,rect);const rig=button.querySelector('.item-rig');if(rig){const [rw,rh]=JSON.parse(rig.dataset.canvas),scale=Math.min(button.clientWidth/rw,button.clientHeight/rh);Object.assign(rig.style,{width:rw+'px',height:rh+'px',left:(button.clientWidth-rw*scale)/2+'px',top:(button.clientHeight-rh*scale)+'px',transform:`scale(${scale})`});}}place($('buy-rug'),layout.rug);}
 function cancelInteraction(){clearTimeout(interactionTimer);pendingItem=null;activeItem=null;$('player').removeAttribute('data-interaction');popa?.clearItem();for(const b of document.querySelectorAll('.room-item'))b.setAttribute('aria-pressed','false');}
-function approachItem(item,element){if(!popa||view!=='room')return;cancelInteraction();keys.clear();const world=document.querySelector('.world').getBoundingClientRect(),rect=element.getBoundingClientRect(),min=roomBounds();target=Math.max(min,Math.min(1-min,(rect.x+rect.width/2-world.x)/width));targetDepth=Math.max(0,Math.min(.28,1-(rect.bottom-world.y+50)/height));pendingItem=item;element.setAttribute('aria-pressed','true');toast(`פופה בדרך אל ${item.label}`);}
+function approachItem(item,element){if(!popa||view!=='room'||roomEditing)return;cancelInteraction();keys.clear();const world=document.querySelector('.world').getBoundingClientRect(),rect=element.getBoundingClientRect(),min=roomBounds();target=Math.max(min,Math.min(1-min,(rect.x+rect.width/2-world.x)/width));targetDepth=Math.max(0,Math.min(.28,1-(rect.bottom-world.y+50)/height));pendingItem=item;element.setAttribute('aria-pressed','true');toast(`פופה בדרך אל ${item.label}`);}
 function arrive(){const item=pendingItem;if(!item)return;pendingItem=null;activeItem=item.id;$('player').dataset.interaction=item.id;
  if(item.id==='rug'&&!profile.rug){if(profile.coins<12){toast('השטיח החדש עולה 12 מטבעות');cancelInteraction();cue('idle');return;}profile.coins-=12;profile.rug=true;save();refreshProfile();}
 
@@ -77,7 +79,7 @@ function home() {
   $('activity-title').textContent='מה צומח בגינה?';$('activity-text').textContent='45 שניות של פירות, כוכבי זהב ורצפים. כמה תוכלי לתפוס?';$('activity-button').textContent='לגינה ←';
   popa.setScale(roomScale());cue('idle');positionPlayer(roomX);
 }
-function garden() {
+function garden() {roomEditor?.close();
   if(view==='garden'&&phase==='playing')return;
   document.querySelector('.world').dataset.view='garden';view='garden';cancelInteraction();phase='intro';round=undefined;keys.clear();particles=[];
   $('room').hidden=true;$('orchard').hidden=false;$('basket').hidden=true;$('orchard').classList.remove('playing');
@@ -116,7 +118,7 @@ function fruit(object){
 }
 function draw(){ctx.clearRect(0,0,width,height);if(view!=='garden')return;for(const o of round?.objects??[])fruit(o);for(const p of particles){ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.hurt?'#a86878':'#587343';ctx.font='bold 22px system-ui';ctx.textAlign='center';ctx.fillText(p.text,p.x*width,height*.84-p.age*45-30);}ctx.globalAlpha=1;}
 function tick(now){const dt=Math.min((now-last)/1000,.05);last=now;
-  if(popa&&view==='room'&&$('overlay').hidden){
+  if(popa&&!roomEditing&&view==='room'&&$('overlay').hidden){
     const horizontal=Number(keys.has('ArrowRight')||keys.has('d'))-Number(keys.has('ArrowLeft')||keys.has('a'));
     const vertical=Number(keys.has('ArrowUp')||keys.has('w'))-Number(keys.has('ArrowDown')||keys.has('s'));
     if(horizontal||vertical){cancelInteraction();const length=Math.hypot(horizontal,vertical),min=roomBounds();target=Math.max(min,Math.min(1-min,roomX+horizontal/length*160/width*dt));targetDepth=Math.max(0,Math.min(.28,roomDepth+vertical/length*160/height*dt));}
@@ -137,13 +139,13 @@ $('home-tab').onclick=()=>{if(view==='garden'&&phase==='playing')pause();else ho
 $('activity-button').onclick=()=>{if(!popa)return;if(view==='room')garden();else if(phase==='playing')pause();else home();};$('pause').onclick=pause;
 for(const b of document.querySelectorAll('[data-page]'))b.onclick=()=>location.href=b.dataset.page;
 $('buy-rug').onclick=()=>approachItem({id:'rug',label:'השטיח',action:'happy',message:'פופה רוקדת על השטיח'},$('buy-rug'));
-$('room').addEventListener('pointerdown',e=>{if(!popa||e.target.closest('button,a'))return;cancelInteraction();const r=document.querySelector('.world').getBoundingClientRect();if(e.clientY-r.top<r.height*.6){cue('curious');toast('פופה אוהבת את הפינה הזאת');return;}const min=roomBounds();target=Math.max(min,Math.min(1-min,(e.clientX-r.left)/r.width));targetDepth=Math.max(0,Math.min(.28,1-(e.clientY-r.top)/r.height-.04));});
+$('room').addEventListener('pointerdown',e=>{if(!popa||roomEditing||e.target.closest('button,a'))return;cancelInteraction();const r=document.querySelector('.world').getBoundingClientRect();if(e.clientY-r.top<r.height*.6){cue('curious');toast('פופה אוהבת את הפינה הזאת');return;}const min=roomBounds();target=Math.max(min,Math.min(1-min,(e.clientX-r.left)/r.width));targetDepth=Math.max(0,Math.min(.28,1-(e.clientY-r.top)/r.height-.04));});
 $('orchard').addEventListener('pointermove',e=>{if(phase!=='playing'||e.target.closest('.game-hud'))return;if(e.pointerType==='touch'&&!e.buttons)return;const r=canvas.getBoundingClientRect();target=(e.clientX-r.left)/r.width;});
 $('orchard').addEventListener('pointerdown',e=>{if(phase!=='playing'||e.target.closest('button'))return;const r=canvas.getBoundingClientRect();target=(e.clientX-r.left)/r.width;$('orchard').setPointerCapture(e.pointerId);});
 const roomKeys=new Set(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','a','d','w','s']);
 function clearMovement(){keys.clear();if(view==='room'){cancelInteraction();target=roomX;targetDepth=roomDepth;}pause();}
 document.addEventListener('keydown',e=>{
- if(e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
+ if(roomEditing||e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
  if(view==='room'&&popa&&$('overlay').hidden&&roomKeys.has(e.key)){e.preventDefault();if(!keys.size){cancelInteraction();target=roomX;targetDepth=roomDepth;}keys.add(e.key);return;}
  if(view!=='garden')return;if(e.key==='Escape'||e.code==='Space'){if(phase==='playing'){e.preventDefault();pause();}return;}if(phase==='playing'&&['ArrowLeft','ArrowRight','a','d'].includes(e.key)){e.preventDefault();keys.add(e.key);}
 });
@@ -154,7 +156,9 @@ $('sound').onclick=()=>{sound=!sound;if(sound){try{audio??=new (window.AudioCont
 refreshProfile();new ResizeObserver(resize).observe(document.querySelector('.world'));resize();
 try{
   const furnitureResponse=await fetch(new URL('../assets/scenes/home/furniture/layout.json',import.meta.url));if(!furnitureResponse.ok)throw Error('Cannot load furniture layout');roomFurniture=await furnitureResponse.json();
+  const background=new Image();background.src=new URL('../'+roomFurniture.background,import.meta.url).href;await background.decode();$('room').style.backgroundImage=`url("${background.src}")`;
   await Promise.all(roomFurniture.items.map(async item=>{if(!POPA_CLIPS[item.action])throw Error('Unknown room action');const button=document.createElement('button');button.type='button';button.dataset.furniture=item.id;button.className='room-item';button.style.zIndex=item.layer??1;button.setAttribute('aria-label',item.label);button.setAttribute('aria-pressed','false');if(item.id==='reading-books')button.id='reading-books';if(item.assembly){const response=await fetch(new URL('../'+item.assembly,import.meta.url));if(!response.ok)throw Error('Cannot load room prop');const data=await response.json(),rig=document.createElement('div');rig.className='item-rig';rig.dataset.canvas=JSON.stringify(data.canvas);button.append(rig);const mounted=mountProp(rig,data);await mounted.ready;}else{const image=new Image();image.src=new URL('../'+item.image,import.meta.url).href;image.alt='';button.append(image);await image.decode();}const label=document.createElement('span');label.textContent=item.label;button.append(label);button.onclick=()=>approachItem(item,button);$('home-furniture').append(button);}));placeRoomFurniture();
+  roomEditor=mountRoomEditor({room:$('room'),layout:roomFurniture,place:placeRoomFurniture,setEditing(value){roomEditing=value;keys.clear();cancelInteraction();target=roomX;targetDepth=roomDepth;popa?.stop({immediate:true});$('room-hint').textContent=value?'בחרי חפץ וגררי אותו למקום הרצוי':'בחרי פריט ופופה תיגש אליו · אפשר גם לטייל עם החיצים';}});
   await Promise.all(['apple','orange','berries','gold','rain'].map(async name=>{const image=new Image();image.src=new URL(`../assets/scenes/garden/${name}.svg`,import.meta.url).href;await image.decode();fruitImages.set(name,image);}));
   popa=await createPopa($('player'),{scale:.46,autoplay:'idle'});$('loading').hidden=true;home();requestAnimationFrame(tick);}catch(error){$('loading').textContent='לא הצלחנו לטעון את פופה. נסי לרענן את העמוד.';console.error(error);}
 window.addEventListener('pagehide',event=>{if(event.persisted){pause();return;}cancelInteraction();popa?.destroy();});
