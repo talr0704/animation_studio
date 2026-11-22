@@ -4,21 +4,21 @@
     "part": "pajama_body",
     "file": "cloud/pajama_body.png",
     "size": [
-      967,
-      963
+      644,
+      479
     ],
-    "source": "Sources/cloud-shirt-v3.png",
+    "source": "Sources/cloud-pajamas-v2.png",
     "source_cell": [
-      277,
-      36,
-      1244,
-      999
+      333,
+      20,
+      977,
+      499
     ],
     "crop_bbox": [
       19,
       19,
-      948,
-      944
+      625,
+      460
     ],
     "padding": 19,
     "fitting_status": "not_fitted"

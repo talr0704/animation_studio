@@ -41,7 +41,7 @@ for record in manifest:
     part['artworkSize']=list(restored.size)
     part['artworkOffset']=[bounds[0]-origin[0],bounds[1]-origin[1]]
     audit.append({'look':look,'part':name,'source':source_file,'sourceBounds':list(bounds),'originalLogicalSize':record['size'],'artworkSize':list(restored.size),'artworkOffset':part['artworkOffset'],'completeOutlineBounds':[xs.start,ys.start,xs.stop,ys.stop],'crossedSourceCell':xs.start<sx or ys.start<sy or xs.stop>record['source_cell'][2] or ys.stop>record['source_cell'][3]})
-catalog['artworkRevision']=4
+catalog['artworkRevision']=5
 (DEST/'catalog.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n')
 (DEST/'edge-audit.json').write_text(json.dumps({'version':1,'method':'lossless original source pixels; complete connected outline plus antialias margin','parts':audit},ensure_ascii=False,indent=2)+'\n')
 print(f'Restored and checked {len(audit)} parts; {sum(p["crossedSourceCell"] for p in audit)} crossed their original source cells.')

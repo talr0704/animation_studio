@@ -1415,30 +1415,30 @@
     {
       "look": "cloud",
       "part": "pajama_body",
-      "source": "Sources/cloud-shirt-v3.png",
+      "source": "Sources/cloud-pajamas-v2.png",
       "sourceBounds": [
-        274,
-        33,
-        1247,
-        1002
+        333,
+        20,
+        977,
+        499
       ],
       "originalLogicalSize": [
-        967,
-        963
+        644,
+        479
       ],
       "artworkSize": [
-        973,
-        969
+        644,
+        479
       ],
       "artworkOffset": [
-        -3,
-        -3
+        0,
+        0
       ],
       "completeOutlineBounds": [
-        296,
-        55,
-        1225,
-        980
+        352,
+        39,
+        958,
+        480
       ],
       "crossedSourceCell": false
     },
