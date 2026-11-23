@@ -5,7 +5,10 @@
       "id": "popa",
       "assembly": "assets/characters/popa/assembly.json",
       "animations": "popa-clips.js",
-      "outfits": "assets/characters/popa/outfits/catalog.json"
+      "outfits": "assets/characters/popa/outfits/catalog.json",
+      "studioAnimations": [
+        "assets/characters/popa/animations/sitting-demo.json"
+      ]
     }
   ],
   "scenes": [

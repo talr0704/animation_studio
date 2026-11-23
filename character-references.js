@@ -5,7 +5,7 @@ const references={sofa:{label:'ספה',folder:'sofa',x:-130,y:43.33,scale:1/.6},
 const STORAGE='popa.character.reference.v1';
 export async function mountCharacterReferences({character,editor}){
  const panel=document.querySelector('.animation-editor'),body=panel.querySelector('.animation-editor__body');
- const controls=document.createElement('details');controls.className='character-references';controls.dir='rtl';controls.innerHTML=`<summary>רהיט לדוגמה — להתאמת תנועת פופה</summary><label>דוגמה בתצוגה<select id="cr-reference"><option value="">ללא רהיט</option>${Object.entries(references).map(([id,p])=>`<option value="${id}">${p.label}</option>`).join('')}</select></label><div class="cr-fields">${[['x','מיקום X'],['y','מיקום Y'],['scale','גודל הדוגמה']].map(([id,label])=>`<label>${label}<input id="cr-${id}" type="number" step="${id==='scale'?'.05':'1'}"></label>`).join('')}</div><label><input id="cr-drag" type="checkbox"> גרירת הרהיט לדוגמה</label><div class="cr-buttons"><button id="cr-sit">הוספת אנימציות ישיבה לפופה</button><button id="cr-old" hidden>ייבוא העבודה מהמסך הקודם</button><a href="studio.html?category=furniture">עריכת תנועה של הרהיטים עצמם</a></div><p id="cr-status" role="status">הרהיט הוא דוגמה בלבד. ציר הזמן שלמטה עורך את פופה.</p>`;
+ const controls=document.createElement('details');controls.className='character-references';controls.dir='rtl';controls.innerHTML=`<summary>רהיט לדוגמה — להתאמת תנועת פופה</summary><label>דוגמה בתצוגה<select id="cr-reference"><option value="">ללא רהיט</option>${Object.entries(references).map(([id,p])=>`<option value="${id}">${p.label}</option>`).join('')}</select></label><div class="cr-fields">${[['x','מיקום X'],['y','מיקום Y'],['scale','גודל הדוגמה']].map(([id,label])=>`<label>${label}<input id="cr-${id}" type="number" step="${id==='scale'?'.05':'1'}"></label>`).join('')}</div><label><input id="cr-drag" type="checkbox"> גרירת הרהיט לדוגמה</label><div class="cr-buttons"><button id="cr-demo">ניסיון ישיבה חדש</button><button id="cr-sit">הוספת אנימציות ישיבה לפופה</button><button id="cr-old" hidden>ייבוא העבודה מהמסך הקודם</button><a href="studio.html?category=furniture">עריכת תנועה של הרהיטים עצמם</a></div><p id="cr-status" role="status">הרהיט הוא דוגמה בלבד. ציר הזמן שלמטה עורך את פופה.</p>`;
  panel.insertBefore(controls,body);const $=id=>controls.querySelector('#cr-'+id);
  const holder=document.createElement('div');holder.className='character-reference-rig';character.parentElement.insertBefore(holder,character);character.style.zIndex='1';
  let settings={id:'',poses:{}},view=null,revision=0,drag=null;
@@ -33,7 +33,13 @@ export async function mountCharacterReferences({character,editor}){
   }
   if(!settings.poses.sofa||legacy)settings.poses.sofa={x:220-anchor.x/anchor.scale,y:440-anchor.y/anchor.scale,scale:1/anchor.scale};await show('sofa');controls.open=false;$('status').textContent='התיישבות, ישיבה וקימה נוספו לרשימת האנימציות של פופה. ערכי אותן בציר הזמן הרגיל.';
  }catch(error){$('status').textContent='לא נטען: '+error.message;}}
+ async function addDemo(){try{
+  const response=await fetch('assets/characters/popa/animations/sitting-demo.json?v=1');if(!response.ok)throw Error('האנימציה לא נטענה');const clips=await response.json();
+  for(const [id,animation]of Object.entries(clips))editor.addAnimation(id,animation,{select:id==='sit-demo',overwrite:false});
+  await show('sofa');controls.open=false;$('status').textContent='נוספו התיישבות, ישיבה רגועה וקימה חדשות. אפשר לנגן ולערוך בציר הזמן.';if(!matchMedia('(prefers-reduced-motion: reduce)').matches)editor.play();
+ }catch(error){$('status').textContent=error.message;}}
+ $('demo').onclick=addDemo;
  $('sit').onclick=()=>addSitting(false);try{$('old').hidden=!localStorage.getItem('popa.furniture.sofa.sit.v1');}catch{}$('old').onclick=()=>addSitting(true);
  const query=new URLSearchParams(location.search);if(query.get('reference')&&references[query.get('reference')]){settings.id=query.get('reference');controls.open=true;}
- await show(settings.id);if(query.get('motion')==='sit')await addSitting(false);
+ await show(settings.id);if(query.get('motion')==='sit')await addSitting(false);else if(query.get('motion')==='sit-demo')await addDemo();
 }

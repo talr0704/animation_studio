@@ -716,7 +716,8 @@ function handleAnimationEditorClick(event) {
       renderAnimationEditor();
     },
     play: playEditorAnimation,
-    pause: pauseEditorAnimation,
+    play: playEditorAnimation,
+  pause: pauseEditorAnimation,
     stop: stopEditorAnimation,
     addKeyframe: upsertKeyframe,
     updateKeyframe: updateSelectedKeyframe,
@@ -1349,7 +1350,8 @@ function handleAnimationEditorClick(event) {
       renderAnimationEditor();
     },
     play: playEditorAnimation,
-    pause: pauseEditorAnimation,
+    play: playEditorAnimation,
+  pause: pauseEditorAnimation,
     stop: stopEditorAnimation,
     zoomOut: () => zoomTimeline(-1),
     zoomIn: () => zoomTimeline(1),
@@ -1470,6 +1472,7 @@ return {
     renderAnimationEditor();previewAtTime(editorCurrentTime);
   },
   baseValues: name=>({...getBaseTransform(name)}),
+  play: playEditorAnimation,
   pause: pauseEditorAnimation,
   reset: resetEntireFrameToBase,
   setPivot(name, x, y) {
