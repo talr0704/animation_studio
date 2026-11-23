@@ -301,7 +301,11 @@
         "assets/scenes/home/furniture/coastal/sofa/images/frame.png",
         "assets/scenes/home/furniture/coastal/sofa/images/back-cushion.png",
         "assets/scenes/home/furniture/coastal/sofa/images/seat-cushion.png"
-      ]
+      ],
+      "characterInteractions": [
+        "assets/scenes/home/furniture/coastal/sofa/interactions/sit.json"
+      ],
+      "characterStudio": "index.html?furniture=sofa"
     },
     {
       "id": "home.coastal-cabinet",

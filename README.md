@@ -113,3 +113,7 @@ Haircut sections continue to be chosen using the section buttons.
 ## Popa outfit fitting
 
 Open `index.html?outfits=1` in the character studio to position the six uploaded looks on Popa, preview walking/waving, and export or import placement JSON. Each look saves a separate local draft. Artwork lives in `assets/characters/popa/outfits/<look>/parts/`; source sheets and the original manifest live in `source-art/characters/popa/outfits/`. See `assets/characters/popa/outfits/README.md` for coordinates and the integration workflow. Fitting drafts are not applied automatically to the game.
+
+## Furniture-specific character animation
+
+Open `index.html?furniture=sofa` for the sofa interaction editor in Popa’s character studio. Edit the approach/seat placement and body poses on a shared timeline for sitting down, a seated loop and getting up. Drafts save locally; export `sofa-sit.json` for integration. The game preview button uses the local draft, while ordinary room play uses `assets/scenes/home/furniture/coastal/sofa/interactions/sit.json`. See the README in that interaction folder for coordinates, foreground layers and playback details.

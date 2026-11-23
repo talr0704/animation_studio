@@ -9,6 +9,7 @@ test('floor contact and furniture footprints define reachable routes',async()=>{
  const path=roomPath(start,end,bounds,obstacles);assert.ok(path.length>1);let previous=start;
  for(const point of path){assert.ok(walkable(point,bounds,obstacles));assert.ok(clearSegment(previous,point,bounds,obstacles));previous=point;}
  assert.deepEqual(previous,end);
+ assert.ok(roomPath({x:300,y:bounds.bottom+1e-10},end,bounds,obstacles).length>0,'floating-point foot positions on the floor edge stay reachable');
  assert.ok(nearestFree({x:500,y:100},bounds,obstacles).y>=bounds.top);
  const slide=slideStep({x:449,y:650},{x:470,y:660},bounds,obstacles);assert.equal(slide.x,449);assert.equal(slide.y,660);
 });

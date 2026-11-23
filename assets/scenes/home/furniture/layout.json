@@ -7,7 +7,8 @@
       "label": "ספת פופה",
       "action": "rest",
       "message": "פופה נחה על הספה שלה",
-      "layer": 1
+      "layer": 1,
+      "interaction": "assets/scenes/home/furniture/coastal/sofa/interactions/sit.json"
     },
     {
       "id": "wardrobe",

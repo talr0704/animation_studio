@@ -4,7 +4,7 @@ export const FLOOR_ITEMS = new Set(['sofa','wardrobe','side-table']);
 export function floorBounds(width,height,radius=18){return {left:radius+8,right:width-radius-8,top:height*FLOOR_START+12,bottom:Math.max(height*FLOOR_START+13,height-48)};}
 const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
 const inside=(p,r)=>p.x>r.left&&p.x<r.right&&p.y>r.top&&p.y<r.bottom;
-export function walkable(p,bounds,obstacles){return p.x>=bounds.left&&p.x<=bounds.right&&p.y>=bounds.top&&p.y<=bounds.bottom&&!obstacles.some(r=>inside(p,r));}
+export function walkable(p,bounds,obstacles){return p.x>=bounds.left-.001&&p.x<=bounds.right+.001&&p.y>=bounds.top-.001&&p.y<=bounds.bottom+.001&&!obstacles.some(r=>inside(p,r));}
 export function nearestFree(point,bounds,obstacles){
  const base={x:clamp(point.x,bounds.left,bounds.right),y:clamp(point.y,bounds.top,bounds.bottom)};
  if(walkable(base,bounds,obstacles))return base;

@@ -59,7 +59,7 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
   }
   try {const saved=localStorage.getItem(storageKey);if(saved) for(const look of validate(JSON.parse(saved)).looks) drafts[look.id]=look;}catch(error){storageAvailable=false;console.warn('Outfit draft not restored',error);}
   const panel=document.createElement('aside');panel.className='outfit-panel';panel.dir='rtl';panel.setAttribute('aria-label','מיקום הלוקים של פופה');
-  panel.innerHTML=`<header><h1>הלוקים של פופה</h1><a href="index.html?edit=1">לאנימציה של פופה</a> · <a href="studio.html">לאביזרים</a></header>
+  panel.innerHTML=`<header><h1>הלוקים של פופה</h1><a href="index.html?edit=1">לאנימציה של פופה</a> · <a href="studio.html">לאביזרים</a> · <a href="index.html?furniture=sofa">פעולות עם רהיטים</a></header>
   <p>בחרי חלק וגררי אותו על פופה. בזמן גרירה האנימציה נעצרת. אלה מיקומי טיוטה, לפני שילוב במשחק.</p>
   <label>לוק <select id="outfit-look">${catalog.looks.map(l=>`<option value="${l.id}">${l.label}</option>`).join('')}</select></label>
   <div class="outfit-parts" id="outfit-parts" role="group" aria-label="חלקי הלוק"></div>
