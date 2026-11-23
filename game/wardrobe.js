@@ -1,12 +1,16 @@
 import { setOutfitBody } from '../shared/outfit-body.js';
 // Fitted clothes use the same design canvas, artwork offsets and attachment transforms as the studio.
 export async function createWardrobe(popa) {
-  const response=await fetch(new URL('../assets/characters/popa/outfits/catalog.json?v=cloud-fit-6',import.meta.url));
+  const response=await fetch(new URL('../assets/characters/popa/outfits/catalog.json?v=collections-8',import.meta.url));
   if(!response.ok)throw Error('Cannot load wardrobe catalogue');
   const catalog=await response.json(),looks=new Map();
-  for(const look of catalog.looks.filter(l=>l.placements)){
-    const response=await fetch(new URL('../'+look.placements,import.meta.url));if(!response.ok)throw Error('Cannot load fitted outfit');
-    const data=await response.json(),fit=data.looks?.find(l=>l.id===look.id);
+  let localDrafts=[];
+  try{const data=JSON.parse(localStorage.getItem('popa.outfit-placements.v1')||'null');if(data?.character==='popa'&&Array.isArray(data.looks))localDrafts=data.looks;}catch{}
+  for(const look of catalog.looks){
+    let data;
+    if(look.placements){const response=await fetch(new URL('../'+look.placements,import.meta.url));if(!response.ok)throw Error('Cannot load fitted outfit');data=await response.json();}
+    else {const saved=localDrafts.find(l=>l.id===look.id&&l.parts?.length===look.parts.length&&l.parts.every(p=>look.parts.some(ref=>ref.id===p.id&&ref.asset===p.asset)&&['x','y','width','height','rotation','layer'].every(key=>Number.isFinite(p[key]))&&p.width>0&&p.height>0));data={version:1,character:'popa',canvas:[440,475],looks:[saved??{id:look.id,parts:look.parts,hiddenBase:['shirt','pinafore','flower']}]};}
+    const fit=data.looks?.find(l=>l.id===look.id);
     if(data.version!==1||data.character!=='popa'||JSON.stringify(data.canvas)!=='[440,475]'||!fit||fit.parts.length!==look.parts.length)throw Error('Invalid fitted outfit');
     const ids=new Set();
     for(const p of fit.parts){const original=look.parts.find(item=>item.id===p.id);
@@ -44,5 +48,5 @@ export async function createWardrobe(popa) {
     for(const id of new Set([...(item.fit.hiddenBase??[]),'flower']))if(baseVisibility.has(id))baseGroups.get(id).style.visibility='hidden';
     setOutfitBody(character,true);mounted=prepared;for(const part of mounted)character.append(part.outer);popa.root.style.overflow='visible';selected=id;character.dataset.outfit=id;follow();
   }
-  return {wear,get selected(){return selected;},destroy(){request++;clear();},looks:[...looks.keys()]};
+  return {wear,get selected(){return selected;},destroy(){request++;clear();},looks:[...looks.keys()],entries:[...looks].map(([id,{look}])=>({id,label:look.label,fitted:!!look.placements,garments:look.parts.filter(p=>/^(pajama|dress|coat|shirt|sweater|jacket|vest|cape|skirt)_body$/.test(p.id))}))};
 }

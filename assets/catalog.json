@@ -373,6 +373,13 @@
       "images": [
         "assets/scenes/home/furniture/coastal/rug/images/rug.png"
       ]
+    },
+    {
+      "id": "home.wardrobe-hanger",
+      "label": "קולב בארון הבגדים",
+      "images": [
+        "assets/scenes/home/furniture/wardrobe/images/hanger.png"
+      ]
     }
   ]
 }

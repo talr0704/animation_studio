@@ -14,7 +14,7 @@ Cloud pajamas revision 2 uses five separate garments from `source-art/characters
 
 ## Published cloud look
 
-`cloud/placements.json` preserves the user-provided fitting file. The cloud catalogue entry references it via `placements`. Fresh studio drafts start from this published fit; existing local drafts still take priority. In the room, click the cabinet and choose the cloud pajamas or the original outfit. `game/wardrobe.js` uses the same artwork offsets, decimal layer ordering and rig attachments as the studio. Outfit selection persists in `popaWorldV1.outfit` and follows Popa into the garden. Returning to the original outfit restores the shirt, pinafore and flower. Only looks with a published placement file are available in the game.
+`cloud/placements.json` preserves the user-provided fitting file. The cloud catalogue entry references it via `placements`. Fresh studio drafts start from this published fit; existing local drafts still take priority. In the room, click the cabinet and choose the cloud pajamas or the original outfit. `game/wardrobe.js` uses the same artwork offsets, decimal layer ordering and rig attachments as the studio. Outfit selection persists in `popaWorldV1.outfit` and follows Popa into the garden. Returning to the original outfit restores the shirt, pinafore and flower. All catalogued looks are available in the illustrated wardrobe. Published placements take priority; otherwise a valid local studio draft is used, then the catalogue starting placement. Unpublished looks are marked as initial fittings.
 
 ## Replacement pastel collection
 
@@ -51,3 +51,7 @@ Two original RGBA sheets are stored under `source-art/characters/popa/outfits/So
 | `pixel-play` | jacket, two sleeves, skirt, console bag |
 
 All twelve additions are studio fitting drafts. Existing looks and published cloud placements remain unchanged. The manifest-driven extraction tool discovers each collection manifest so it can rebuild the complete active catalogue without relying on fixed grid boundaries.
+
+## Illustrated wardrobe
+
+Click the room cabinet to open animated illustrated doors. All 19 looks and the original outfit appear on illustrated hangers in a horizontal rack, usable with touch, scroll and keyboard focus. Selecting a look equips all of its parts and saves the choice. The frame and doors reuse the existing coastal cabinet PNGs; `assets/scenes/home/furniture/wardrobe/images/hanger.png` is the generated transparent hanger asset. Reduced-motion mode shows the doors open without playing the opening or sway animations.

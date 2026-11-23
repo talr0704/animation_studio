@@ -1,4 +1,4 @@
-import { createWardrobe } from './wardrobe.js?v=neckline-2';
+import { createWardrobe } from './wardrobe.js?v=all-looks-3';
 import { mountRoomEditor } from './room-editor.js';
 import {mountProp} from '../shared/prop-rig.js';
 import { createPopa } from '../popa-browser.js';
@@ -11,7 +11,7 @@ try {
   const saved = JSON.parse(localStorage.getItem(STORAGE) || '{}');
   for (const key of ['coins','best','rounds']) if (Number.isSafeInteger(saved[key]) && saved[key] >= 0 && saved[key] < 10000000) profile[key] = saved[key];
   profile.rug = saved.rug === true;
-  profile.outfit = saved.outfit === 'cloud' ? 'cloud' : 'default';
+  profile.outfit = typeof saved.outfit==='string'&&/^[a-z][a-z-]{0,50}$/.test(saved.outfit) ? saved.outfit : 'default';
 } catch { /* Play remains available without browser storage. */ }
 let pendingItem=null,interactionTimer=null,activeItem=null;
 const fruitImages = new Map();
@@ -156,6 +156,19 @@ document.addEventListener('keyup',e=>{keys.delete(e.key);if(view==='room'&&roomK
 window.addEventListener('blur',clearMovement);document.addEventListener('visibilitychange',()=>{if(document.hidden)clearMovement();});
 $('overlay').addEventListener('keydown',e=>{if(e.key==='Tab'){const buttons=[$('dialog-main'),$('dialog-secondary')];if(e.shiftKey&&document.activeElement===buttons[0]){e.preventDefault();buttons[1].focus();}else if(!e.shiftKey&&document.activeElement===buttons[1]){e.preventDefault();buttons[0].focus();}}});
 $('sound').onclick=()=>{sound=!sound;if(sound){try{audio??=new (window.AudioContext||window.webkitAudioContext)();audio.resume();}catch{sound=false;toast('הדפדפן הזה אינו תומך בצליל');}}$('sound').textContent=sound?'צליל פעיל ♫':'צליל כבוי ♫';$('sound').setAttribute('aria-pressed',String(sound));};
+function renderWardrobe(){
+  const rail=document.querySelector('.wardrobe-choices');rail.replaceChildren();
+  const entries=[{id:'default',label:'הבגד הרגיל',fitted:true,garments:[{asset:'assets/characters/popa/parts/pinafore.png'}]},...wardrobe.entries];
+  for(const entry of entries){
+    const button=document.createElement('button');button.type='button';button.dataset.wear=entry.id;button.dataset.fitted=String(entry.fitted);button.setAttribute('aria-pressed','false');button.setAttribute('aria-label',entry.label+(entry.fitted?'':' — מדידה ראשונית'));
+    const hanger=new Image();hanger.src='assets/scenes/home/furniture/wardrobe/images/hanger.png';hanger.className='wardrobe-hanger';hanger.alt='';button.append(hanger);
+    const clothes=document.createElement('span');clothes.className='hanging-outfit';
+    for(const part of entry.garments.slice(0,2)){const image=new Image();image.src=part.asset+'?artwork=7';image.alt='';image.loading='lazy';clothes.append(image);}
+    button.append(clothes);const label=document.createElement('span');label.className='hanging-label';label.textContent=entry.label;button.append(label);
+    if(!entry.fitted){const badge=document.createElement('small');badge.textContent='מדידה ראשונית';button.append(badge);}
+    rail.append(button);
+  }
+}
 let wardrobeReturnFocus;
 function openWardrobe(){
   if(!wardrobe||view!=='room')return;roomEditor?.close();cancelInteraction();keys.clear();target=roomX;targetDepth=roomDepth;cue('idle');
@@ -165,10 +178,11 @@ function openWardrobe(){
 }
 function closeWardrobe(){if($('wardrobe-panel').hidden)return;$('wardrobe-panel').hidden=true;wardrobeReturnFocus?.focus();}
 $('wardrobe-close').onclick=closeWardrobe;
-$('wardrobe-panel').addEventListener('keydown',event=>{if(event.key!=='Tab')return;const buttons=[...$('wardrobe-panel').querySelectorAll('button:not(:disabled)')],first=buttons[0],last=buttons.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}});
-document.querySelectorAll('[data-wear]').forEach(button=>button.onclick=async()=>{
+$('wardrobe-panel').addEventListener('keydown',event=>{if(event.key!=='Tab')return;const buttons=[...$('wardrobe-panel').querySelectorAll('button:not(:disabled),a[href]')],first=buttons[0],last=buttons.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}});
+document.querySelector('.wardrobe-choices').addEventListener('click',async event=>{
+  const button=event.target.closest('[data-wear]');if(!button||button.disabled)return;
   const choices=[...document.querySelectorAll('[data-wear]')];choices.forEach(b=>b.disabled=true);$('wardrobe-status').textContent='פופה מתלבשת…';
-  try{await wardrobe.wear(button.dataset.wear);profile.outfit=button.dataset.wear;save();closeWardrobe();cue('happy');toast(profile.outfit==='cloud'?'פופה לבשה את פיג׳מת הענן':'פופה חזרה לבגד הרגיל');}
+  try{await wardrobe.wear(button.dataset.wear);profile.outfit=button.dataset.wear;save();closeWardrobe();cue('happy');toast(profile.outfit==='default'?'פופה חזרה לבגד הרגיל':'פופה לבשה '+wardrobe.entries.find(entry=>entry.id===profile.outfit).label);}
   catch(error){$('wardrobe-status').textContent='לא הצלחנו לטעון את הבגד. נסי שוב.';console.error(error);}
   finally{choices.forEach(b=>b.disabled=false);}
 });
@@ -179,5 +193,5 @@ try{
   await Promise.all(roomFurniture.items.map(async item=>{if(!POPA_CLIPS[item.action])throw Error('Unknown room action');const button=document.createElement('button');button.type='button';button.dataset.furniture=item.id;button.className='room-item';button.style.zIndex=item.layer??1;button.setAttribute('aria-label',item.label);button.setAttribute('aria-pressed','false');if(item.id==='reading-books')button.id='reading-books';if(item.assembly){const response=await fetch(new URL('../'+item.assembly,import.meta.url));if(!response.ok)throw Error('Cannot load room prop');const data=await response.json(),rig=document.createElement('div');rig.className='item-rig';rig.dataset.canvas=JSON.stringify(data.canvas);button.append(rig);const mounted=mountProp(rig,data);await mounted.ready;}else{const image=new Image();image.src=new URL('../'+item.image,import.meta.url).href;image.alt='';button.append(image);await image.decode();}button.onclick=()=>approachItem(item,button);$('home-furniture').append(button);}));placeRoomFurniture();
   roomEditor=mountRoomEditor({room:$('room'),layout:roomFurniture,place:placeRoomFurniture,setEditing(value){roomEditing=value;keys.clear();cancelInteraction();target=roomX;targetDepth=roomDepth;popa?.stop({immediate:true});$('room-hint').textContent=value?'בחרי חפץ וגררי אותו למקום הרצוי':'בחרי פריט ופופה תיגש אליו · אפשר גם לטייל עם החיצים';}});
   await Promise.all(['apple','orange','berries','gold','rain'].map(async name=>{const image=new Image();image.src=new URL(`../assets/scenes/garden/${name}.svg`,import.meta.url).href;await image.decode();fruitImages.set(name,image);}));
-  popa=await createPopa($('player'),{scale:.46,autoplay:'idle'});wardrobe=await createWardrobe(popa);await wardrobe.wear(profile.outfit);$('loading').hidden=true;home();requestAnimationFrame(tick);}catch(error){$('loading').textContent='לא הצלחנו לטעון את פופה. נסי לרענן את העמוד.';console.error(error);}
+  popa=await createPopa($('player'),{scale:.46,autoplay:'idle'});wardrobe=await createWardrobe(popa);renderWardrobe();if(profile.outfit!=='default'&&!wardrobe.looks.includes(profile.outfit))profile.outfit='default';await wardrobe.wear(profile.outfit);$('loading').hidden=true;home();requestAnimationFrame(tick);}catch(error){$('loading').textContent='לא הצלחנו לטעון את פופה. נסי לרענן את העמוד.';console.error(error);}
 window.addEventListener('pagehide',event=>{if(event.persisted){pause();return;}cancelInteraction();wardrobe?.destroy();popa?.destroy();});
