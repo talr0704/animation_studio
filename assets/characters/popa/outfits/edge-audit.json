@@ -213,6 +213,1776 @@
       "crossedSourceCell": false
     },
     {
+      "look": "mosaic",
+      "part": "shirt_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        90,
+        92,
+        393,
+        359
+      ],
+      "originalLogicalSize": [
+        297,
+        261
+      ],
+      "artworkSize": [
+        303,
+        267
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        112,
+        114,
+        371,
+        337
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mosaic",
+      "part": "sleeve_left",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        -9,
+        137,
+        146,
+        314
+      ],
+      "originalLogicalSize": [
+        149,
+        171
+      ],
+      "artworkSize": [
+        155,
+        177
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        13,
+        159,
+        124,
+        292
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mosaic",
+      "part": "sleeve_right",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        339,
+        134,
+        494,
+        311
+      ],
+      "originalLogicalSize": [
+        149,
+        171
+      ],
+      "artworkSize": [
+        155,
+        177
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        361,
+        156,
+        472,
+        289
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mosaic",
+      "part": "skirt_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        8,
+        334,
+        340,
+        534
+      ],
+      "originalLogicalSize": [
+        326,
+        194
+      ],
+      "artworkSize": [
+        332,
+        200
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        30,
+        356,
+        318,
+        512
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mosaic",
+      "part": "handbag",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        306,
+        301,
+        484,
+        536
+      ],
+      "originalLogicalSize": [
+        172,
+        229
+      ],
+      "artworkSize": [
+        178,
+        235
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        328,
+        323,
+        462,
+        514
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "marigold",
+      "part": "shirt_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        579,
+        94,
+        871,
+        352
+      ],
+      "originalLogicalSize": [
+        286,
+        252
+      ],
+      "artworkSize": [
+        292,
+        258
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        601,
+        116,
+        849,
+        330
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "marigold",
+      "part": "sleeve_left",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        473,
+        140,
+        632,
+        312
+      ],
+      "originalLogicalSize": [
+        153,
+        166
+      ],
+      "artworkSize": [
+        159,
+        172
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        495,
+        162,
+        610,
+        290
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "marigold",
+      "part": "sleeve_right",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        818,
+        140,
+        978,
+        311
+      ],
+      "originalLogicalSize": [
+        154,
+        165
+      ],
+      "artworkSize": [
+        160,
+        171
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        840,
+        162,
+        956,
+        289
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "marigold",
+      "part": "skirt_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        496,
+        327,
+        846,
+        539
+      ],
+      "originalLogicalSize": [
+        344,
+        206
+      ],
+      "artworkSize": [
+        350,
+        212
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        518,
+        349,
+        824,
+        517
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "marigold",
+      "part": "hair_bow",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        744,
+        -12,
+        956,
+        165
+      ],
+      "originalLogicalSize": [
+        206,
+        171
+      ],
+      "artworkSize": [
+        212,
+        177
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        766,
+        10,
+        934,
+        143
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "marigold",
+      "part": "handbag",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        813,
+        298,
+        983,
+        533
+      ],
+      "originalLogicalSize": [
+        164,
+        229
+      ],
+      "artworkSize": [
+        170,
+        235
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        835,
+        320,
+        961,
+        511
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "winter-berry",
+      "part": "sweater_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        1078,
+        90,
+        1367,
+        352
+      ],
+      "originalLogicalSize": [
+        283,
+        256
+      ],
+      "artworkSize": [
+        289,
+        262
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1100,
+        112,
+        1345,
+        330
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "winter-berry",
+      "part": "sleeve_left",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        970,
+        147,
+        1126,
+        326
+      ],
+      "originalLogicalSize": [
+        150,
+        173
+      ],
+      "artworkSize": [
+        156,
+        179
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        992,
+        169,
+        1104,
+        304
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "winter-berry",
+      "part": "sleeve_right",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        1321,
+        146,
+        1479,
+        323
+      ],
+      "originalLogicalSize": [
+        152,
+        171
+      ],
+      "artworkSize": [
+        158,
+        177
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1343,
+        168,
+        1457,
+        301
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "winter-berry",
+      "part": "pants_left",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        1025,
+        335,
+        1216,
+        531
+      ],
+      "originalLogicalSize": [
+        185,
+        190
+      ],
+      "artworkSize": [
+        191,
+        196
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1047,
+        357,
+        1194,
+        509
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "winter-berry",
+      "part": "pants_right",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        1182,
+        335,
+        1369,
+        530
+      ],
+      "originalLogicalSize": [
+        181,
+        189
+      ],
+      "artworkSize": [
+        187,
+        195
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1204,
+        357,
+        1347,
+        508
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "winter-berry",
+      "part": "scarf",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        1268,
+        -12,
+        1527,
+        198
+      ],
+      "originalLogicalSize": [
+        253,
+        204
+      ],
+      "artworkSize": [
+        259,
+        210
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1290,
+        10,
+        1505,
+        176
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "winter-berry",
+      "part": "handbag",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        1360,
+        268,
+        1528,
+        534
+      ],
+      "originalLogicalSize": [
+        162,
+        260
+      ],
+      "artworkSize": [
+        168,
+        266
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1382,
+        290,
+        1506,
+        512
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mediterranean",
+      "part": "shirt_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        60,
+        596,
+        349,
+        849
+      ],
+      "originalLogicalSize": [
+        283,
+        247
+      ],
+      "artworkSize": [
+        289,
+        253
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        82,
+        618,
+        327,
+        827
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mediterranean",
+      "part": "skirt_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        -3,
+        821,
+        326,
+        1032
+      ],
+      "originalLogicalSize": [
+        323,
+        205
+      ],
+      "artworkSize": [
+        329,
+        211
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        19,
+        843,
+        304,
+        1010
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mediterranean",
+      "part": "hair_clip",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        271,
+        547,
+        460,
+        725
+      ],
+      "originalLogicalSize": [
+        183,
+        172
+      ],
+      "artworkSize": [
+        189,
+        178
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        293,
+        569,
+        438,
+        703
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mediterranean",
+      "part": "basket_bag",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        284,
+        788,
+        472,
+        1028
+      ],
+      "originalLogicalSize": [
+        182,
+        234
+      ],
+      "artworkSize": [
+        188,
+        240
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        306,
+        810,
+        450,
+        1006
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "celestial",
+      "part": "cape_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        521,
+        588,
+        862,
+        847
+      ],
+      "originalLogicalSize": [
+        335,
+        253
+      ],
+      "artworkSize": [
+        341,
+        259
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        543,
+        610,
+        840,
+        825
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "celestial",
+      "part": "dress_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        480,
+        778,
+        807,
+        1037
+      ],
+      "originalLogicalSize": [
+        321,
+        253
+      ],
+      "artworkSize": [
+        327,
+        259
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        502,
+        800,
+        785,
+        1015
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "celestial",
+      "part": "hair_clip",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        767,
+        549,
+        950,
+        657
+      ],
+      "originalLogicalSize": [
+        177,
+        102
+      ],
+      "artworkSize": [
+        183,
+        108
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        789,
+        571,
+        928,
+        635
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "celestial",
+      "part": "handbag",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        777,
+        772,
+        981,
+        1030
+      ],
+      "originalLogicalSize": [
+        198,
+        252
+      ],
+      "artworkSize": [
+        204,
+        258
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        799,
+        794,
+        959,
+        1008
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mint-messenger",
+      "part": "coat_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        1073,
+        600,
+        1365,
+        853
+      ],
+      "originalLogicalSize": [
+        286,
+        247
+      ],
+      "artworkSize": [
+        292,
+        253
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1095,
+        622,
+        1343,
+        831
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mint-messenger",
+      "part": "sleeve_left",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        975,
+        652,
+        1127,
+        822
+      ],
+      "originalLogicalSize": [
+        146,
+        164
+      ],
+      "artworkSize": [
+        152,
+        170
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        997,
+        674,
+        1105,
+        800
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mint-messenger",
+      "part": "sleeve_right",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        1316,
+        651,
+        1466,
+        817
+      ],
+      "originalLogicalSize": [
+        144,
+        160
+      ],
+      "artworkSize": [
+        150,
+        166
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1338,
+        673,
+        1444,
+        795
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mint-messenger",
+      "part": "skirt_body",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        998,
+        826,
+        1321,
+        1032
+      ],
+      "originalLogicalSize": [
+        317,
+        200
+      ],
+      "artworkSize": [
+        323,
+        206
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1020,
+        848,
+        1299,
+        1010
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mint-messenger",
+      "part": "hair_bow",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        1287,
+        537,
+        1511,
+        685
+      ],
+      "originalLogicalSize": [
+        218,
+        142
+      ],
+      "artworkSize": [
+        224,
+        148
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1309,
+        559,
+        1489,
+        663
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "mint-messenger",
+      "part": "wing_bag",
+      "source": "Sources/collectible-world-v3.png",
+      "sourceBounds": [
+        1286,
+        785,
+        1546,
+        1034
+      ],
+      "originalLogicalSize": [
+        254,
+        243
+      ],
+      "artworkSize": [
+        260,
+        249
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1308,
+        807,
+        1524,
+        1012
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "candy-pop",
+      "part": "jacket_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        46,
+        39,
+        343,
+        307
+      ],
+      "originalLogicalSize": [
+        291,
+        262
+      ],
+      "artworkSize": [
+        297,
+        268
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        68,
+        61,
+        321,
+        285
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "candy-pop",
+      "part": "skirt_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        7,
+        273,
+        342,
+        519
+      ],
+      "originalLogicalSize": [
+        329,
+        240
+      ],
+      "artworkSize": [
+        335,
+        246
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        29,
+        295,
+        320,
+        497
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "candy-pop",
+      "part": "hair_bow",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        274,
+        36,
+        467,
+        177
+      ],
+      "originalLogicalSize": [
+        187,
+        135
+      ],
+      "artworkSize": [
+        193,
+        141
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        296,
+        58,
+        445,
+        155
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "candy-pop",
+      "part": "candy_bag",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        301,
+        185,
+        485,
+        506
+      ],
+      "originalLogicalSize": [
+        178,
+        315
+      ],
+      "artworkSize": [
+        184,
+        321
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        323,
+        207,
+        463,
+        484
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "sakura",
+      "part": "coat_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        569,
+        42,
+        869,
+        328
+      ],
+      "originalLogicalSize": [
+        294,
+        280
+      ],
+      "artworkSize": [
+        300,
+        286
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        591,
+        64,
+        847,
+        306
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "sakura",
+      "part": "sleeve_left",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        466,
+        118,
+        619,
+        291
+      ],
+      "originalLogicalSize": [
+        147,
+        167
+      ],
+      "artworkSize": [
+        153,
+        173
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        488,
+        140,
+        597,
+        269
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "sakura",
+      "part": "sleeve_right",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        821,
+        118,
+        974,
+        291
+      ],
+      "originalLogicalSize": [
+        147,
+        167
+      ],
+      "artworkSize": [
+        153,
+        173
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        843,
+        140,
+        952,
+        269
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "sakura",
+      "part": "skirt_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        497,
+        288,
+        854,
+        516
+      ],
+      "originalLogicalSize": [
+        351,
+        222
+      ],
+      "artworkSize": [
+        357,
+        228
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        519,
+        310,
+        832,
+        494
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "sakura",
+      "part": "lantern_bag",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        815,
+        256,
+        992,
+        540
+      ],
+      "originalLogicalSize": [
+        171,
+        278
+      ],
+      "artworkSize": [
+        177,
+        284
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        837,
+        278,
+        970,
+        518
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "arcade-school",
+      "part": "vest_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        1051,
+        44,
+        1348,
+        310
+      ],
+      "originalLogicalSize": [
+        291,
+        260
+      ],
+      "artworkSize": [
+        297,
+        266
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1073,
+        66,
+        1326,
+        288
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "arcade-school",
+      "part": "skirt_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        1011,
+        277,
+        1365,
+        519
+      ],
+      "originalLogicalSize": [
+        348,
+        236
+      ],
+      "artworkSize": [
+        354,
+        242
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1033,
+        299,
+        1343,
+        497
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "arcade-school",
+      "part": "hair_clip",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        1331,
+        59,
+        1500,
+        206
+      ],
+      "originalLogicalSize": [
+        163,
+        141
+      ],
+      "artworkSize": [
+        169,
+        147
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1353,
+        81,
+        1478,
+        184
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "arcade-school",
+      "part": "heart_bag",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        1331,
+        198,
+        1533,
+        507
+      ],
+      "originalLogicalSize": [
+        196,
+        303
+      ],
+      "artworkSize": [
+        202,
+        309
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1353,
+        220,
+        1511,
+        485
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "lemon-picnic",
+      "part": "shirt_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        90,
+        543,
+        362,
+        813
+      ],
+      "originalLogicalSize": [
+        266,
+        264
+      ],
+      "artworkSize": [
+        272,
+        270
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        112,
+        565,
+        340,
+        791
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "lemon-picnic",
+      "part": "sleeve_left",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        -2,
+        612,
+        146,
+        765
+      ],
+      "originalLogicalSize": [
+        142,
+        147
+      ],
+      "artworkSize": [
+        148,
+        153
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        20,
+        634,
+        124,
+        743
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "lemon-picnic",
+      "part": "sleeve_right",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        308,
+        611,
+        455,
+        764
+      ],
+      "originalLogicalSize": [
+        141,
+        147
+      ],
+      "artworkSize": [
+        147,
+        153
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        330,
+        633,
+        433,
+        742
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "lemon-picnic",
+      "part": "skirt_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        0,
+        781,
+        341,
+        1011
+      ],
+      "originalLogicalSize": [
+        335,
+        224
+      ],
+      "artworkSize": [
+        341,
+        230
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        22,
+        803,
+        319,
+        989
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "lemon-picnic",
+      "part": "basket_bag",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        301,
+        737,
+        477,
+        1012
+      ],
+      "originalLogicalSize": [
+        170,
+        269
+      ],
+      "artworkSize": [
+        176,
+        275
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        323,
+        759,
+        455,
+        990
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "lotus-fairy",
+      "part": "dress_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        471,
+        568,
+        821,
+        972
+      ],
+      "originalLogicalSize": [
+        344,
+        398
+      ],
+      "artworkSize": [
+        350,
+        404
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        493,
+        590,
+        799,
+        950
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "lotus-fairy",
+      "part": "hair_clip",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        731,
+        515,
+        916,
+        678
+      ],
+      "originalLogicalSize": [
+        179,
+        157
+      ],
+      "artworkSize": [
+        185,
+        163
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        753,
+        537,
+        894,
+        656
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "lotus-fairy",
+      "part": "wings",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        728,
+        624,
+        996,
+        791
+      ],
+      "originalLogicalSize": [
+        262,
+        161
+      ],
+      "artworkSize": [
+        268,
+        167
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        750,
+        646,
+        974,
+        769
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "lotus-fairy",
+      "part": "lantern_bag",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        790,
+        743,
+        973,
+        1012
+      ],
+      "originalLogicalSize": [
+        177,
+        263
+      ],
+      "artworkSize": [
+        183,
+        269
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        812,
+        765,
+        951,
+        990
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "pixel-play",
+      "part": "jacket_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        1089,
+        547,
+        1377,
+        816
+      ],
+      "originalLogicalSize": [
+        282,
+        263
+      ],
+      "artworkSize": [
+        288,
+        269
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1111,
+        569,
+        1355,
+        794
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "pixel-play",
+      "part": "sleeve_left",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        1001,
+        613,
+        1149,
+        777
+      ],
+      "originalLogicalSize": [
+        142,
+        158
+      ],
+      "artworkSize": [
+        148,
+        164
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1023,
+        635,
+        1127,
+        755
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "pixel-play",
+      "part": "sleeve_right",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        1321,
+        613,
+        1472,
+        772
+      ],
+      "originalLogicalSize": [
+        145,
+        153
+      ],
+      "artworkSize": [
+        151,
+        159
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1343,
+        635,
+        1450,
+        750
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "pixel-play",
+      "part": "skirt_body",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        993,
+        782,
+        1365,
+        1013
+      ],
+      "originalLogicalSize": [
+        366,
+        225
+      ],
+      "artworkSize": [
+        372,
+        231
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1015,
+        804,
+        1343,
+        991
+      ],
+      "crossedSourceCell": false
+    },
+    {
+      "look": "pixel-play",
+      "part": "console_bag",
+      "source": "Sources/collectible-concepts-v3.png",
+      "sourceBounds": [
+        1324,
+        729,
+        1537,
+        1017
+      ],
+      "originalLogicalSize": [
+        207,
+        282
+      ],
+      "artworkSize": [
+        213,
+        288
+      ],
+      "artworkOffset": [
+        -3,
+        -3
+      ],
+      "completeOutlineBounds": [
+        1346,
+        751,
+        1515,
+        995
+      ],
+      "crossedSourceCell": false
+    },
+    {
       "look": "moon-post",
       "part": "cape_body",
       "source": "Sources/pastel-collection-v2.png",

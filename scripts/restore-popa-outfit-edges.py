@@ -15,7 +15,7 @@ DEST=ROOT/'assets/characters/popa/outfits'
 manifest=json.loads((SOURCE/'manifest.json').read_text())
 catalog=json.loads((DEST/'catalog.json').read_text())
 active={(look['id'],part['id']) for look in catalog['looks'] for part in look['parts']}
-replaced=json.loads((SOURCE/'cloud-pajamas-v2-manifest.json').read_text())+json.loads((SOURCE/'pastel-collection-v2-manifest.json').read_text())
+replaced=[record for path in sorted(SOURCE.glob('*-manifest.json')) for record in json.loads(path.read_text())]
 replacement_ids={(r['outfit'],r['part']) for r in replaced}
 manifest=[r for r in manifest if (r['outfit'],r['part']) in active and (r['outfit'],r['part']) not in replacement_ids]+replaced
 cache={};audit=[]
@@ -36,10 +36,10 @@ for record in manifest:
     origin=(old[0]-padding,old[1]-padding)
     bounds=(min(origin[0],full[0]-padding),min(origin[1],full[1]-padding),max(old[2]+padding,full[2]+padding),max(old[3]+padding,full[3]+padding))
     restored=source.crop(bounds)
-    if source_file=='Sources/pastel-collection-v2.png':
+    if record.get('isolateComponent') or source_file=='Sources/pastel-collection-v2.png':
         # Nearby garments overlap each other's padded rectangles; keep only this
         # connected garment plus its original antialiased outline, never neighbours.
-        mask=ndimage.binary_dilation(labels==component,iterations=3)
+        mask=ndimage.binary_dilation(labels==component,iterations=3)&((labels==0)|(labels==component))
         alpha=np.asarray(source.getchannel('A')).copy();alpha[~mask]=0
         isolated=source.copy();isolated.putalpha(Image.fromarray(alpha));restored=isolated.crop(bounds)
     restored.save(DEST/look/'parts'/f'{name}.png')
@@ -47,7 +47,7 @@ for record in manifest:
     part['artworkSize']=list(restored.size)
     part['artworkOffset']=[bounds[0]-origin[0],bounds[1]-origin[1]]
     audit.append({'look':look,'part':name,'source':source_file,'sourceBounds':list(bounds),'originalLogicalSize':record['size'],'artworkSize':list(restored.size),'artworkOffset':part['artworkOffset'],'completeOutlineBounds':[xs.start,ys.start,xs.stop,ys.stop],'crossedSourceCell':xs.start<sx or ys.start<sy or xs.stop>record['source_cell'][2] or ys.stop>record['source_cell'][3]})
-catalog['artworkRevision']=6
+catalog['artworkRevision']=7
 (DEST/'catalog.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n')
 (DEST/'edge-audit.json').write_text(json.dumps({'version':1,'method':'lossless original source pixels; complete connected outline plus antialias margin','parts':audit},ensure_ascii=False,indent=2)+'\n')
 print(f'Restored and checked {len(audit)} parts; {sum(p["crossedSourceCell"] for p in audit)} crossed their original source cells.')

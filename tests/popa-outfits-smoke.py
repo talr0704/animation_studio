@@ -3,16 +3,18 @@ import json, sys
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 URL=sys.argv[1] if len(sys.argv)>1 else 'http://localhost:4205/'
+catalog=json.loads((Path(__file__).resolve().parents[1]/'assets/characters/popa/outfits/catalog.json').read_text())
+expected={look['id']:len(look['parts']) for look in catalog['looks']}
 with sync_playwright() as p:
     browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
     page=browser.new_page(viewport={'width':1440,'height':1000}); errors=[]
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.goto(URL+'index.html?outfits=1',wait_until='networkidle')
     assert page.locator('.cat-character').get_attribute('data-ready')=='true'
-    assert page.locator('#outfit-look option').count()==7
-    for look in ['cloud','moon-post','peach','caramel','lotus','storybook','moon-sleep']:
+    assert page.locator('#outfit-look option').count()==len(expected)
+    for look in expected:
         page.select_option('#outfit-look',look)
-        assert page.locator('.outfit-image').count()=={'cloud':7,'moon-post':3,'peach':3,'caramel':3,'lotus':5,'storybook':3,'moon-sleep':4}[look]
+        assert page.locator('.outfit-image').count()==expected[look]
         page.wait_for_function('[...document.querySelectorAll(".outfit-image")].every(i=>i.complete&&i.naturalWidth>0)')
     page.select_option('#outfit-look','cloud')
     def set_number(key,value):
@@ -54,4 +56,4 @@ with sync_playwright() as p:
     page.goto(URL+'index.html?edit=1',wait_until='networkidle');assert page.locator('.animation-editor').count()==1 and page.locator('.outfit-image').count()==0
     assert not errors,errors
     browser.close()
-print('Outfit fitting: seven looks, rig preview, numeric edits, drag, lock, persistence and JSON import/export passed')
+print('Outfit fitting: all catalogued looks, rig preview, numeric edits, drag, lock, persistence and JSON import/export passed')

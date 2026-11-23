@@ -1,0 +1,1477 @@
+[
+  {
+    "outfit": "mosaic",
+    "part": "shirt_body",
+    "file": "mosaic/shirt_body.png",
+    "size": [
+      297,
+      261
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      93,
+      95,
+      390,
+      356
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      278,
+      242
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mosaic",
+    "part": "sleeve_left",
+    "file": "mosaic/sleeve_left.png",
+    "size": [
+      149,
+      171
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      -6,
+      140,
+      143,
+      311
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      130,
+      152
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mosaic",
+    "part": "sleeve_right",
+    "file": "mosaic/sleeve_right.png",
+    "size": [
+      149,
+      171
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      342,
+      137,
+      491,
+      308
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      130,
+      152
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mosaic",
+    "part": "skirt_body",
+    "file": "mosaic/skirt_body.png",
+    "size": [
+      326,
+      194
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      11,
+      337,
+      337,
+      531
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      307,
+      175
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mosaic",
+    "part": "handbag",
+    "file": "mosaic/handbag.png",
+    "size": [
+      172,
+      229
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      309,
+      304,
+      481,
+      533
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      153,
+      210
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "marigold",
+    "part": "shirt_body",
+    "file": "marigold/shirt_body.png",
+    "size": [
+      286,
+      252
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      582,
+      97,
+      868,
+      349
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      267,
+      233
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "marigold",
+    "part": "sleeve_left",
+    "file": "marigold/sleeve_left.png",
+    "size": [
+      153,
+      166
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      476,
+      143,
+      629,
+      309
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      134,
+      147
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "marigold",
+    "part": "sleeve_right",
+    "file": "marigold/sleeve_right.png",
+    "size": [
+      154,
+      165
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      821,
+      143,
+      975,
+      308
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      135,
+      146
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "marigold",
+    "part": "skirt_body",
+    "file": "marigold/skirt_body.png",
+    "size": [
+      344,
+      206
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      499,
+      330,
+      843,
+      536
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      325,
+      187
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "marigold",
+    "part": "hair_bow",
+    "file": "marigold/hair_bow.png",
+    "size": [
+      206,
+      171
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      747,
+      -9,
+      953,
+      162
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      187,
+      152
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "marigold",
+    "part": "handbag",
+    "file": "marigold/handbag.png",
+    "size": [
+      164,
+      229
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      816,
+      301,
+      980,
+      530
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      145,
+      210
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "winter-berry",
+    "part": "sweater_body",
+    "file": "winter-berry/sweater_body.png",
+    "size": [
+      283,
+      256
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1081,
+      93,
+      1364,
+      349
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      264,
+      237
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "winter-berry",
+    "part": "sleeve_left",
+    "file": "winter-berry/sleeve_left.png",
+    "size": [
+      150,
+      173
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      973,
+      150,
+      1123,
+      323
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      131,
+      154
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "winter-berry",
+    "part": "sleeve_right",
+    "file": "winter-berry/sleeve_right.png",
+    "size": [
+      152,
+      171
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1324,
+      149,
+      1476,
+      320
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      133,
+      152
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "winter-berry",
+    "part": "pants_left",
+    "file": "winter-berry/pants_left.png",
+    "size": [
+      185,
+      190
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1028,
+      338,
+      1213,
+      528
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      166,
+      171
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "winter-berry",
+    "part": "pants_right",
+    "file": "winter-berry/pants_right.png",
+    "size": [
+      181,
+      189
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1185,
+      338,
+      1366,
+      527
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      162,
+      170
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "winter-berry",
+    "part": "scarf",
+    "file": "winter-berry/scarf.png",
+    "size": [
+      253,
+      204
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1271,
+      -9,
+      1524,
+      195
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      234,
+      185
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "winter-berry",
+    "part": "handbag",
+    "file": "winter-berry/handbag.png",
+    "size": [
+      162,
+      260
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1363,
+      271,
+      1525,
+      531
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      143,
+      241
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mediterranean",
+    "part": "shirt_body",
+    "file": "mediterranean/shirt_body.png",
+    "size": [
+      283,
+      247
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      63,
+      599,
+      346,
+      846
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      264,
+      228
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mediterranean",
+    "part": "skirt_body",
+    "file": "mediterranean/skirt_body.png",
+    "size": [
+      323,
+      205
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      0,
+      824,
+      323,
+      1029
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      304,
+      186
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mediterranean",
+    "part": "hair_clip",
+    "file": "mediterranean/hair_clip.png",
+    "size": [
+      183,
+      172
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      274,
+      550,
+      457,
+      722
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      164,
+      153
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mediterranean",
+    "part": "basket_bag",
+    "file": "mediterranean/basket_bag.png",
+    "size": [
+      182,
+      234
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      287,
+      791,
+      469,
+      1025
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      163,
+      215
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "celestial",
+    "part": "cape_body",
+    "file": "celestial/cape_body.png",
+    "size": [
+      335,
+      253
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      524,
+      591,
+      859,
+      844
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      316,
+      234
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "celestial",
+    "part": "dress_body",
+    "file": "celestial/dress_body.png",
+    "size": [
+      321,
+      253
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      483,
+      781,
+      804,
+      1034
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      302,
+      234
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "celestial",
+    "part": "hair_clip",
+    "file": "celestial/hair_clip.png",
+    "size": [
+      177,
+      102
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      770,
+      552,
+      947,
+      654
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      158,
+      83
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "celestial",
+    "part": "handbag",
+    "file": "celestial/handbag.png",
+    "size": [
+      198,
+      252
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      780,
+      775,
+      978,
+      1027
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      179,
+      233
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mint-messenger",
+    "part": "coat_body",
+    "file": "mint-messenger/coat_body.png",
+    "size": [
+      286,
+      247
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1076,
+      603,
+      1362,
+      850
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      267,
+      228
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mint-messenger",
+    "part": "sleeve_left",
+    "file": "mint-messenger/sleeve_left.png",
+    "size": [
+      146,
+      164
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      978,
+      655,
+      1124,
+      819
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      127,
+      145
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mint-messenger",
+    "part": "sleeve_right",
+    "file": "mint-messenger/sleeve_right.png",
+    "size": [
+      144,
+      160
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1319,
+      654,
+      1463,
+      814
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      125,
+      141
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mint-messenger",
+    "part": "skirt_body",
+    "file": "mint-messenger/skirt_body.png",
+    "size": [
+      317,
+      200
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1001,
+      829,
+      1318,
+      1029
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      298,
+      181
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mint-messenger",
+    "part": "hair_bow",
+    "file": "mint-messenger/hair_bow.png",
+    "size": [
+      218,
+      142
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1290,
+      540,
+      1508,
+      682
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      199,
+      123
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "mint-messenger",
+    "part": "wing_bag",
+    "file": "mint-messenger/wing_bag.png",
+    "size": [
+      254,
+      243
+    ],
+    "source": "Sources/collectible-world-v3.png",
+    "source_cell": [
+      1289,
+      788,
+      1543,
+      1031
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      235,
+      224
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "candy-pop",
+    "part": "jacket_body",
+    "file": "candy-pop/jacket_body.png",
+    "size": [
+      291,
+      262
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      49,
+      42,
+      340,
+      304
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      272,
+      243
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "candy-pop",
+    "part": "skirt_body",
+    "file": "candy-pop/skirt_body.png",
+    "size": [
+      329,
+      240
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      10,
+      276,
+      339,
+      516
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      310,
+      221
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "candy-pop",
+    "part": "hair_bow",
+    "file": "candy-pop/hair_bow.png",
+    "size": [
+      187,
+      135
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      277,
+      39,
+      464,
+      174
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      168,
+      116
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "candy-pop",
+    "part": "candy_bag",
+    "file": "candy-pop/candy_bag.png",
+    "size": [
+      178,
+      315
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      304,
+      188,
+      482,
+      503
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      159,
+      296
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "sakura",
+    "part": "coat_body",
+    "file": "sakura/coat_body.png",
+    "size": [
+      294,
+      280
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      572,
+      45,
+      866,
+      325
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      275,
+      261
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "sakura",
+    "part": "sleeve_left",
+    "file": "sakura/sleeve_left.png",
+    "size": [
+      147,
+      167
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      469,
+      121,
+      616,
+      288
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      128,
+      148
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "sakura",
+    "part": "sleeve_right",
+    "file": "sakura/sleeve_right.png",
+    "size": [
+      147,
+      167
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      824,
+      121,
+      971,
+      288
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      128,
+      148
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "sakura",
+    "part": "skirt_body",
+    "file": "sakura/skirt_body.png",
+    "size": [
+      351,
+      222
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      500,
+      291,
+      851,
+      513
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      332,
+      203
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "sakura",
+    "part": "lantern_bag",
+    "file": "sakura/lantern_bag.png",
+    "size": [
+      171,
+      278
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      818,
+      259,
+      989,
+      537
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      152,
+      259
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "arcade-school",
+    "part": "vest_body",
+    "file": "arcade-school/vest_body.png",
+    "size": [
+      291,
+      260
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      1054,
+      47,
+      1345,
+      307
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      272,
+      241
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "arcade-school",
+    "part": "skirt_body",
+    "file": "arcade-school/skirt_body.png",
+    "size": [
+      348,
+      236
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      1014,
+      280,
+      1362,
+      516
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      329,
+      217
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "arcade-school",
+    "part": "hair_clip",
+    "file": "arcade-school/hair_clip.png",
+    "size": [
+      163,
+      141
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      1334,
+      62,
+      1497,
+      203
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      144,
+      122
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "arcade-school",
+    "part": "heart_bag",
+    "file": "arcade-school/heart_bag.png",
+    "size": [
+      196,
+      303
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      1334,
+      201,
+      1530,
+      504
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      177,
+      284
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lemon-picnic",
+    "part": "shirt_body",
+    "file": "lemon-picnic/shirt_body.png",
+    "size": [
+      266,
+      264
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      93,
+      546,
+      359,
+      810
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      247,
+      245
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lemon-picnic",
+    "part": "sleeve_left",
+    "file": "lemon-picnic/sleeve_left.png",
+    "size": [
+      142,
+      147
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      1,
+      615,
+      143,
+      762
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      123,
+      128
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lemon-picnic",
+    "part": "sleeve_right",
+    "file": "lemon-picnic/sleeve_right.png",
+    "size": [
+      141,
+      147
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      311,
+      614,
+      452,
+      761
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      122,
+      128
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lemon-picnic",
+    "part": "skirt_body",
+    "file": "lemon-picnic/skirt_body.png",
+    "size": [
+      335,
+      224
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      3,
+      784,
+      338,
+      1008
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      316,
+      205
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lemon-picnic",
+    "part": "basket_bag",
+    "file": "lemon-picnic/basket_bag.png",
+    "size": [
+      170,
+      269
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      304,
+      740,
+      474,
+      1009
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      151,
+      250
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lotus-fairy",
+    "part": "dress_body",
+    "file": "lotus-fairy/dress_body.png",
+    "size": [
+      344,
+      398
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      474,
+      571,
+      818,
+      969
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      325,
+      379
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lotus-fairy",
+    "part": "hair_clip",
+    "file": "lotus-fairy/hair_clip.png",
+    "size": [
+      179,
+      157
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      734,
+      518,
+      913,
+      675
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      160,
+      138
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lotus-fairy",
+    "part": "wings",
+    "file": "lotus-fairy/wings.png",
+    "size": [
+      262,
+      161
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      731,
+      627,
+      993,
+      788
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      243,
+      142
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "lotus-fairy",
+    "part": "lantern_bag",
+    "file": "lotus-fairy/lantern_bag.png",
+    "size": [
+      177,
+      263
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      793,
+      746,
+      970,
+      1009
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      158,
+      244
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "pixel-play",
+    "part": "jacket_body",
+    "file": "pixel-play/jacket_body.png",
+    "size": [
+      282,
+      263
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      1092,
+      550,
+      1374,
+      813
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      263,
+      244
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "pixel-play",
+    "part": "sleeve_left",
+    "file": "pixel-play/sleeve_left.png",
+    "size": [
+      142,
+      158
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      1004,
+      616,
+      1146,
+      774
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      123,
+      139
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "pixel-play",
+    "part": "sleeve_right",
+    "file": "pixel-play/sleeve_right.png",
+    "size": [
+      145,
+      153
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      1324,
+      616,
+      1469,
+      769
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      126,
+      134
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "pixel-play",
+    "part": "skirt_body",
+    "file": "pixel-play/skirt_body.png",
+    "size": [
+      366,
+      225
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      996,
+      785,
+      1362,
+      1010
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      347,
+      206
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  },
+  {
+    "outfit": "pixel-play",
+    "part": "console_bag",
+    "file": "pixel-play/console_bag.png",
+    "size": [
+      207,
+      282
+    ],
+    "source": "Sources/collectible-concepts-v3.png",
+    "source_cell": [
+      1327,
+      732,
+      1534,
+      1014
+    ],
+    "crop_bbox": [
+      19,
+      19,
+      188,
+      263
+    ],
+    "padding": 19,
+    "isolateComponent": true,
+    "fitting_status": "not_fitted"
+  }
+]

@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 manifest=json.loads((ROOT/'source-art/characters/popa/outfits/manifest.json').read_text())
 catalog=json.loads((ROOT/'assets/characters/popa/outfits/catalog.json').read_text())
 active={(look['id'],part['id']) for look in catalog['looks'] for part in look['parts']}
-replaced=json.loads((ROOT/'source-art/characters/popa/outfits/cloud-pajamas-v2-manifest.json').read_text())+json.loads((ROOT/'source-art/characters/popa/outfits/pastel-collection-v2-manifest.json').read_text())
+replaced=[record for path in sorted((ROOT/'source-art/characters/popa/outfits').glob('*-manifest.json')) for record in json.loads(path.read_text())]
 replacement_ids={(r['outfit'],r['part']) for r in replaced}
 manifest=[r for r in manifest if (r['outfit'],r['part']) in active and (r['outfit'],r['part']) not in replacement_ids]+replaced
 for r in manifest:
@@ -22,7 +22,7 @@ for r in manifest:
     # Compare every original outline pixel, not just transparent image margins.
     source=np.array(original.crop((xs.start,ys.start,xs.stop,ys.stop)))
     actual=np.array(image.crop((xs.start-ox,ys.start-oy,xs.stop-ox,ys.stop-oy)))
-    if r.get('source')=='Sources/pastel-collection-v2.png':
+    if r.get('isolateComponent') or r.get('source')=='Sources/pastel-collection-v2.png':
         component=overlap.argmax();area=labels[ys.start:ys.stop,xs.start:xs.stop];own=area==component
         assert np.array_equal(source[own],actual[own]),(r['outfit'],r['part'])
         assert not actual[:,:,3][(area>0)&~own].any(),(r['outfit'],r['part'],'neighbour fragment')

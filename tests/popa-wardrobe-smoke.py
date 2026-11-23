@@ -15,7 +15,8 @@ with sync_playwright() as p:
  assert shirt.evaluate('(e)=>Math.abs(parseFloat(e.style.left)+parseFloat(e.style.transformOrigin)-223.9)<.01')
  page.reload(wait_until='networkidle');page.wait_for_selector('#loading',state='hidden');assert page.locator('.cat-character').get_attribute('data-outfit')=='cloud'
  page.keyboard.down('ArrowLeft');page.clock.run_for(300);page.keyboard.up('ArrowLeft');page.clock.run_for(30)
- assert sleeve.evaluate('(e)=>e.parentElement.style.transform')==page.locator('[data-sprite="left_arm"]').evaluate('(e)=>getComputedStyle(e.parentElement).transform')
+ # Read both transforms together; a follower can be one display frame behind WAAPI.
+ assert page.evaluate('''()=>{const worn=new DOMMatrix(getComputedStyle(document.querySelector('[data-worn-part="sleeve_left"]').parentElement).transform),arm=new DOMMatrix(getComputedStyle(document.querySelector('[data-sprite="left_arm"]').parentElement).transform);return ['a','b','c','d'].every(k=>Math.abs(worn[k]-arm[k])<.02)&&['e','f'].every(k=>Math.abs(worn[k]-arm[k])<.5)}''')
  page.screenshot(path='/tmp/popa-cloud-in-room.png')
  page.locator('[data-furniture="wardrobe"]').click();page.clock.run_for(10000);page.locator('[data-wear="default"]').click();page.wait_for_function('document.querySelector(".cat-character").dataset.outfit==="default"');assert page.locator('[data-worn-part]').count()==0
  assert page.locator('[data-sprite="flower"]').evaluate('(e)=>getComputedStyle(e).visibility')=='visible'
