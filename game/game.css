@@ -35,3 +35,8 @@
 @media(prefers-reduced-motion:reduce){.wardrobe-door,.wardrobe-choices button:hover,.wardrobe-choices button:focus-visible{animation:none}[data-furniture=wardrobe] [data-prop-image^=door-]{transition:none}}
 .wardrobe-heading{top:23%}.wardrobe-card .wardrobe-choices{top:31%}.hanging-outfit{justify-content:flex-start}.wardrobe-choices .hanging-outfit img{flex:0 1 auto;object-position:center top}
 @media(max-width:700px){.wardrobe-card .wardrobe-choices{top:31%}}
+/* Depth-sorted furniture stays below all navigation and editor controls. */
+.world-paths,.edit-room{z-index:2000}.room-hint{z-index:1900}.room-editor{z-index:2100}.overlay{z-index:3000}.toast{z-index:3100}.loading{z-index:4000}
+footer a,footer button{font-size:13px;min-height:40px}.world-paths button{min-height:44px;border-color:#c5a384;box-shadow:0 2px 0 #a47e5533}.wardrobe-footer a,.wardrobe-footer button{min-height:38px}.wardrobe-choices .hanging-label{border:1px solid #c5a384;padding:6px 9px;box-shadow:0 2px 0 #a47e5533}
+@media(max-width:700px){footer{gap:6px;bottom:6px}footer a,footer button{font-size:11px;min-height:38px}.edit-room{bottom:54px}.room-editor{bottom:101px}.wardrobe-card .wardrobe-footer{bottom:auto}.world-paths button{min-height:40px}}
+@media(min-width:701px){.edit-room{bottom:60px}.room-editor{bottom:110px}}

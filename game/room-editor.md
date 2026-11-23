@@ -9,3 +9,11 @@ The uploaded empty coastal background is stored at `assets/scenes/home/backgroun
 The coastal window is three independent room objects: `window` (frame), `window-curtain-left`, and `window-curtain-right`. Existing drafts with a single assembled window migrate on load; other saved furniture placements are preserved. The original window rig remains available as source assembly.
 
 Drag the panel by its title handle to reach furniture behind it, or focus the handle and use arrow keys. The panel stays within room bounds. Object names appear only in the editor selector and accessible labels. The mounting rod is no longer referenced by the room, window assembly, or catalogue. Existing saved layouts with a rod ignore it while preserving frame and curtain coordinates. Downloads are optional backups; autosave persists in this browser, not on the shared site.
+
+## Floor navigation
+
+`game/room-navigation.js` defines the wooden floor boundary at 73.5% of the room image height. Navigation uses Popa's foot contact point rather than her head or the viewport centre. Click paths route around the lower footprints of the sofa, cabinet and table, expanded by the character's foot radius. Keyboard movement slides along these obstacles. Wall items, shelf decorations and tabletop lamps do not block the floor; the rug is walkable.
+
+Standing furniture is constrained so its base stays on the floor in each responsive layout, including local drafts and imported arrangements. The rug stays entirely on wood. If grounding shifts a supporting piece, the nearby tabletop lamp receives the same vertical correction. Depth sorting places Popa in front of or behind standing furniture by foot/base position. Editor controls and navigation remain above the scene.
+
+`shared/actions.css` gives text links, text buttons and disclosure controls clear borders, backgrounds and focus states across the room, salon, manicure and studios. Illustrated objects retain their existing artwork.

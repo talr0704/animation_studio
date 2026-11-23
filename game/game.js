@@ -1,3 +1,4 @@
+import { FLOOR_START, FLOOR_ITEMS, floorBounds, nearestFree, walkable, roomPath, slideStep, constrainFloorFurniture } from './room-navigation.js';
 import { createWardrobe } from './wardrobe.js?v=all-looks-3';
 import { mountRoomEditor } from './room-editor.js';
 import {mountProp} from '../shared/prop-rig.js';
@@ -16,10 +17,18 @@ try {
 let pendingItem=null,interactionTimer=null,activeItem=null;
 const fruitImages = new Map();
 let roomFurniture, roomEditor, wardrobe;
-let roomEditing=false;
-function placeRoomFurniture(){if(!roomFurniture)return;const layout=roomFurniture[window.innerWidth<=700?'portrait':'wide'],[w,h]=layout.canvas;const place=(el,r)=>Object.assign(el.style,{left:r[0]/w*100+'%',top:r[1]/h*100+'%',width:r[2]/w*100+'%',height:r[3]/h*100+'%'});for(const [id,rect]of Object.entries(layout.items)){const button=document.querySelector(`[data-furniture="${id}"]`);place(button,rect);const rig=button.querySelector('.item-rig');if(rig){const [rw,rh]=JSON.parse(rig.dataset.canvas),scale=Math.min(button.clientWidth/rw,button.clientHeight/rh);Object.assign(rig.style,{width:rw+'px',height:rh+'px',left:(button.clientWidth-rw*scale)/2+'px',top:(button.clientHeight-rh*scale)+'px',transform:`scale(${scale})`});}}place($('buy-rug'),layout.rug);}
-function cancelInteraction(){clearTimeout(interactionTimer);pendingItem=null;activeItem=null;$('player').removeAttribute('data-interaction');popa?.clearItem();for(const b of document.querySelectorAll('.room-item'))b.setAttribute('aria-pressed','false');}
-function approachItem(item,element){if(!popa||view!=='room'||roomEditing)return;cancelInteraction();keys.clear();const world=document.querySelector('.world').getBoundingClientRect(),rect=element.getBoundingClientRect(),min=roomBounds();target=Math.max(min,Math.min(1-min,(rect.x+rect.width/2-world.x)/width));targetDepth=Math.max(0,Math.min(.28,1-(rect.bottom-world.y+50)/height));pendingItem=item;element.setAttribute('aria-pressed','true');toast(`פופה בדרך אל ${item.label}`);}
+let roomEditing=false, roomRoute=[];
+function placeRoomFurniture(){if(!roomFurniture)return;const layout=roomFurniture[window.innerWidth<=700?'portrait':'wide'];constrainFloorFurniture(layout);const [w,h]=layout.canvas;const place=(el,r)=>Object.assign(el.style,{left:r[0]/w*100+'%',top:r[1]/h*100+'%',width:r[2]/w*100+'%',height:r[3]/h*100+'%'});for(const [id,rect]of Object.entries(layout.items)){const button=document.querySelector(`[data-furniture="${id}"]`);if(!button)continue;place(button,rect);const rig=button.querySelector('.item-rig');if(rig){const [rw,rh]=JSON.parse(rig.dataset.canvas),scale=Math.min(button.clientWidth/rw,button.clientHeight/rh);Object.assign(rig.style,{width:rw+'px',height:rh+'px',left:(button.clientWidth-rw*scale)/2+'px',top:(button.clientHeight-rh*scale)+'px',transform:`scale(${scale})`});}}place($('buy-rug'),layout.rug);}
+function cancelInteraction(){roomRoute=[];clearTimeout(interactionTimer);pendingItem=null;activeItem=null;$('player').removeAttribute('data-interaction');popa?.clearItem();for(const b of document.querySelectorAll('.room-item'))b.setAttribute('aria-pressed','false');}
+function approachItem(item,element){
+ if(!popa||view!=='room'||roomEditing)return;cancelInteraction();keys.clear();
+ const geometry=roomGeometry(),box=roomBox(element);
+ const footprint=geometry.obstacles.find(r=>r.id===item.id);
+ const destination={x:box.left+box.width/2,y:footprint?footprint.bottom+9:Math.max(geometry.bounds.top,box.bottom+12)};
+ pendingItem=item;element.setAttribute('aria-pressed','true');
+ if(!queueRoomPath(destination,geometry)){cancelInteraction();toast('הדרך לפריט חסומה. אפשר לפנות מקום בסידור החדר.');return;}
+ toast(`פופה בדרך אל ${item.label}`);
+}
 function arrive(){const item=pendingItem;if(!item)return;pendingItem=null;activeItem=item.id;$('player').dataset.interaction=item.id;
  if(item.id==='rug'&&!profile.rug){if(profile.coins<12){toast('השטיח החדש עולה 12 מטבעות');cancelInteraction();cue('idle');return;}profile.coins-=12;profile.rug=true;save();refreshProfile();}
 
@@ -64,11 +73,35 @@ function dialog({label='משחקים עם פופה',title,text,main,action,secon
   $('dialog-main').focus({preventScroll:true});
 }
 function faceRoom(direction){roomFacing=direction<0?-1:1;$('player').dataset.facing=roomFacing<0?'left':'right';$('player').style.setProperty('--facing',roomFacing);}
-function roomBounds(){const half=($('player').firstElementChild?.offsetWidth??100)/width/2;return Math.min(.46,Math.max(.17,half+.02));}
+function roomBounds(){const half=($('player').firstElementChild?.offsetWidth??100)/width/2;return Math.min(.46,half+8/width);}
 function roomScale(){return Math.min(height/900,width<600?.43:.60)*(1-roomDepth*.65);}
+function roomBox(element){return {left:element.offsetLeft,top:element.offsetTop,width:element.offsetWidth,height:element.offsetHeight,bottom:element.offsetTop+element.offsetHeight};}
+function roomGeometry(){
+ const bounds=floorBounds(width,height,Math.max(12,roomBounds()*width-8)),radius=32*roomScale();
+ const obstacles=[];
+ for(const id of FLOOR_ITEMS){const element=document.querySelector(`[data-furniture="${id}"]`);if(!element)continue;const b=roomBox(element);obstacles.push({id,left:b.left+b.width*.12-radius,right:b.left+b.width*.88+radius,top:b.top+b.height*.82-5,bottom:b.bottom-b.height*.02+5});}
+ return {bounds,obstacles};
+}
+function feetPosition(){return {x:roomX*width,y:height-30-roomDepth*height-24*roomScale()};}
+function setFeet(point){const base=Math.min(height/900,width<600?.43:.60);roomX=point.x/width;roomDepth=Math.max(0,(height-30-24*base-point.y)/(height-15.6*base));popa.setScale(roomScale());target=roomX;targetDepth=roomDepth;positionPlayer(roomX);}
+function repairRoomPosition(geometry=roomGeometry()){
+ const point=feetPosition();if(walkable(point,geometry.bounds,geometry.obstacles))return;
+ const safe=nearestFree(point,geometry.bounds,geometry.obstacles);if(safe){setFeet(safe);roomRoute=[];}
+}
+function queueRoomPath(destination,geometry=roomGeometry()){
+ repairRoomPosition(geometry);roomRoute=roomPath(feetPosition(),destination,geometry.bounds,geometry.obstacles);return roomRoute.length>0;
+}
+function orderRoomDepth(){
+ if(view!=='room'||roomEditing)return;
+ const depths=[];
+ for(const id of FLOOR_ITEMS){const element=document.querySelector(`[data-furniture="${id}"]`);if(!element)continue;const b=roomBox(element),z=100+Math.round(b.bottom/height*1000);element.style.zIndex=z;depths.push({b,z});}
+ const lamp=document.querySelector('[data-furniture="floor-lamp"]');if(lamp){const b=roomBox(lamp),support=depths.sort((a,c)=>(Math.abs(a.b.left+a.b.width/2-b.left-b.width/2)+Math.abs(a.b.top-b.bottom)*.2)-(Math.abs(c.b.left+c.b.width/2-b.left-b.width/2)+Math.abs(c.b.top-b.bottom)*.2))[0];lamp.style.zIndex=(support?.z??100)+1;}
+ $('player').style.zIndex=100+Math.round(feetPosition().y/height*1000);
+}
 function positionPlayer(x) {
   $('player').style.left = `${x*100}%`;
   $('player').style.bottom = view==='room' ? `${30+roomDepth*height}px` : `${height*.16-40}px`;
+  orderRoomDepth();
   $('basket').style.left=`${x*100}%`;
   $('basket').style.top=`${height*.84-21}px`;
 }
@@ -79,12 +112,12 @@ function home() {
   $('home-tab').setAttribute('aria-selected','true');$('garden-tab').setAttribute('aria-selected','false');
   $('heading').textContent='ברוכה הבאה הביתה';$('subtitle').textContent='לחצי על הרצפה כדי לטייל עם פופה, או צאי להרפתקה בגינה.';
   $('activity-title').textContent='מה צומח בגינה?';$('activity-text').textContent='45 שניות של פירות, כוכבי זהב ורצפים. כמה תוכלי לתפוס?';$('activity-button').textContent='לגינה ←';
-  popa.setScale(roomScale());cue('idle');positionPlayer(roomX);
+  popa.setScale(roomScale());repairRoomPosition();cue('idle');positionPlayer(roomX);
 }
 function garden() {closeWardrobe();roomEditor?.close();
   if(view==='garden'&&phase==='playing')return;
   document.querySelector('.world').dataset.view='garden';view='garden';cancelInteraction();phase='intro';round=undefined;keys.clear();particles=[];
-  $('room').hidden=true;$('orchard').hidden=false;$('basket').hidden=true;$('orchard').classList.remove('playing');
+  $('player').style.zIndex='4';$('room').hidden=true;$('orchard').hidden=false;$('basket').hidden=true;$('orchard').classList.remove('playing');
   $('home-tab').setAttribute('aria-selected','false');$('garden-tab').setAttribute('aria-selected','true');
   $('heading').textContent='גינת ההפתעות';$('subtitle').textContent='פירות קטנים, רצפים גדולים. הסל של פופה מחכה לך.';
   $('activity-title').textContent='עוד תפיסה אחת…';$('activity-text').textContent='כל 5 תפיסות ברצף מגדילות את הניקוד. כוכבי זהב שווים יותר!';$('activity-button').textContent='הביתה ←';
@@ -111,7 +144,7 @@ function hud() {
   const lives=round?.lives??3;$('lives').textContent='♥ '.repeat(lives)+'♡ '.repeat(3-lives);$('lives').setAttribute('aria-label',`${lives} לבבות`);
   const combo=round?.combo??0;$('combo').textContent=combo>=5?`${combo} ברצף! ×${Math.min(3,1+Math.floor(combo/5))} נקודות`:'תופסים פירות. בונים רצפים.';
 }
-function resize(){placeRoomFurniture();const world=document.querySelector('.world');width=world.clientWidth;height=world.clientHeight;const ratio=Math.min(devicePixelRatio||1,2);canvas.width=width*ratio;canvas.height=height*ratio;ctx.setTransform(ratio,0,0,ratio,0,0);if(popa){if(view==='room'){popa.setScale(roomScale());const min=roomBounds();roomX=Math.max(min,Math.min(1-min,roomX));target=Math.max(min,Math.min(1-min,target));}positionPlayer(view==='room'?roomX:round?.player??.5);}}
+function resize(){placeRoomFurniture();const world=document.querySelector('.world');width=world.clientWidth;height=world.clientHeight;const ratio=Math.min(devicePixelRatio||1,2);canvas.width=width*ratio;canvas.height=height*ratio;ctx.setTransform(ratio,0,0,ratio,0,0);if(popa){if(view==='room'){popa.setScale(roomScale());roomRoute=[];repairRoomPosition();}positionPlayer(view==='room'?roomX:round?.player??.5);}}
 function fruit(object){
   const image=fruitImages.get(object.type);if(!image)return;
   ctx.save();ctx.translate(object.x*width,object.y*height);
@@ -123,10 +156,18 @@ function tick(now){const dt=Math.min((now-last)/1000,.05);last=now;
   if(popa&&!roomEditing&&view==='room'&&$('overlay').hidden&&$('wardrobe-panel').hidden){
     const horizontal=Number(keys.has('ArrowRight')||keys.has('d'))-Number(keys.has('ArrowLeft')||keys.has('a'));
     const vertical=Number(keys.has('ArrowUp')||keys.has('w'))-Number(keys.has('ArrowDown')||keys.has('s'));
-    if(horizontal||vertical){cancelInteraction();const length=Math.hypot(horizontal,vertical),min=roomBounds();target=Math.max(min,Math.min(1-min,roomX+horizontal/length*160/width*dt));targetDepth=Math.max(0,Math.min(.28,roomDepth+vertical/length*160/height*dt));}
-    const dx=(target-roomX)*width,dy=(targetDepth-roomDepth)*height,distance=Math.hypot(dx,dy);
-    if(distance>.01){const step=Math.min(distance,160*dt);roomX+=dx/distance*step/width;roomDepth+=dy/distance*step/height;if(Math.abs(dx)>.1)faceRoom(dx);popa.setScale(roomScale());cue('walk');positionPlayer(roomX);}
-    else if(pendingItem)arrive();else if(!activeItem&&['walk','stop'].includes(popa.action))cue('idle');
+    const geometry=roomGeometry();repairRoomPosition(geometry);
+    const start=feetPosition();let next=start;
+    if(horizontal||vertical){cancelInteraction();const length=Math.hypot(horizontal,vertical);next=slideStep(start,{x:start.x+horizontal/length*160*dt,y:start.y-vertical/length*160*dt},geometry.bounds,geometry.obstacles);}
+    else if(roomRoute.length){
+      const waypoint=roomRoute[0],dx=waypoint.x-start.x,dy=waypoint.y-start.y,distance=Math.hypot(dx,dy),step=Math.min(distance,160*dt);
+      next=distance>.01?{x:start.x+dx/distance*step,y:start.y+dy/distance*step}:waypoint;
+      if(!walkable(next,geometry.bounds,geometry.obstacles)){roomRoute=roomPath(start,roomRoute.at(-1),geometry.bounds,geometry.obstacles);next=start;if(!roomRoute.length){cancelInteraction();toast('הדרך חסומה. אפשר לפנות מקום בסידור החדר.');}}
+      else if(distance<=160*dt+.1)roomRoute.shift();
+    }
+    if(Math.hypot(next.x-start.x,next.y-start.y)>.01){if(Math.abs(next.x-start.x)>.1)faceRoom(next.x-start.x);setFeet(next);cue('walk');}
+    else if(!roomRoute.length&&pendingItem)arrive();else if(!activeItem&&['walk','stop'].includes(popa.action))cue('idle');
+    orderRoomDepth();
   }
   if(view==='garden'&&phase==='playing'){
     if(keys.has('ArrowLeft')||keys.has('a'))target-=600/width*dt;
@@ -141,7 +182,7 @@ $('home-tab').onclick=()=>{if(view==='garden'&&phase==='playing')pause();else ho
 $('activity-button').onclick=()=>{if(!popa)return;if(view==='room')garden();else if(phase==='playing')pause();else home();};$('pause').onclick=pause;
 for(const b of document.querySelectorAll('[data-page]'))b.onclick=()=>location.href=b.dataset.page;
 $('buy-rug').onclick=()=>approachItem({id:'rug',label:'השטיח',action:'happy',message:'פופה רוקדת על השטיח'},$('buy-rug'));
-$('room').addEventListener('pointerdown',e=>{if(!popa||roomEditing||e.target.closest('button,a'))return;cancelInteraction();const r=document.querySelector('.world').getBoundingClientRect();if(e.clientY-r.top<r.height*.6){cue('curious');toast('פופה אוהבת את הפינה הזאת');return;}const min=roomBounds();target=Math.max(min,Math.min(1-min,(e.clientX-r.left)/r.width));targetDepth=Math.max(0,Math.min(.28,1-(e.clientY-r.top)/r.height-.04));});
+$('room').addEventListener('pointerdown',e=>{if(!popa||roomEditing||e.target.closest('button,a'))return;cancelInteraction();const r=document.querySelector('.world').getBoundingClientRect(),y=e.clientY-r.top;if(y<height*FLOOR_START){cue('curious');toast('כדי לטייל, בחרי מקום על רצפת העץ');return;}queueRoomPath({x:e.clientX-r.left,y});});
 $('orchard').addEventListener('pointermove',e=>{if(phase!=='playing'||e.target.closest('.game-hud'))return;if(e.pointerType==='touch'&&!e.buttons)return;const r=canvas.getBoundingClientRect();target=(e.clientX-r.left)/r.width;});
 $('orchard').addEventListener('pointerdown',e=>{if(phase!=='playing'||e.target.closest('button'))return;const r=canvas.getBoundingClientRect();target=(e.clientX-r.left)/r.width;$('orchard').setPointerCapture(e.pointerId);});
 const roomKeys=new Set(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','a','d','w','s']);
@@ -152,7 +193,7 @@ document.addEventListener('keydown',e=>{
  if(view==='room'&&popa&&$('overlay').hidden&&roomKeys.has(e.key)){e.preventDefault();if(!keys.size){cancelInteraction();target=roomX;targetDepth=roomDepth;}keys.add(e.key);return;}
  if(view!=='garden')return;if(e.key==='Escape'||e.code==='Space'){if(phase==='playing'){e.preventDefault();pause();}return;}if(phase==='playing'&&['ArrowLeft','ArrowRight','a','d'].includes(e.key)){e.preventDefault();keys.add(e.key);}
 });
-document.addEventListener('keyup',e=>{keys.delete(e.key);if(view==='room'&&roomKeys.has(e.key)){target=roomX;targetDepth=roomDepth;}});
+document.addEventListener('keyup',e=>{keys.delete(e.key);if(view==='room'&&roomKeys.has(e.key)){roomRoute=[];target=roomX;targetDepth=roomDepth;}});
 window.addEventListener('blur',clearMovement);document.addEventListener('visibilitychange',()=>{if(document.hidden)clearMovement();});
 $('overlay').addEventListener('keydown',e=>{if(e.key==='Tab'){const buttons=[$('dialog-main'),$('dialog-secondary')];if(e.shiftKey&&document.activeElement===buttons[0]){e.preventDefault();buttons[1].focus();}else if(!e.shiftKey&&document.activeElement===buttons[1]){e.preventDefault();buttons[0].focus();}}});
 $('sound').onclick=()=>{sound=!sound;if(sound){try{audio??=new (window.AudioContext||window.webkitAudioContext)();audio.resume();}catch{sound=false;toast('הדפדפן הזה אינו תומך בצליל');}}$('sound').textContent=sound?'צליל פעיל ♫':'צליל כבוי ♫';$('sound').setAttribute('aria-pressed',String(sound));};
@@ -191,7 +232,7 @@ try{
   const furnitureResponse=await fetch(new URL('../assets/scenes/home/furniture/layout.json',import.meta.url));if(!furnitureResponse.ok)throw Error('Cannot load furniture layout');roomFurniture=await furnitureResponse.json();
   const background=new Image();background.src=new URL('../'+roomFurniture.background,import.meta.url).href;await background.decode();$('room').style.backgroundImage=`url("${background.src}")`;
   await Promise.all(roomFurniture.items.map(async item=>{if(!POPA_CLIPS[item.action])throw Error('Unknown room action');const button=document.createElement('button');button.type='button';button.dataset.furniture=item.id;button.className='room-item';button.style.zIndex=item.layer??1;button.setAttribute('aria-label',item.label);button.setAttribute('aria-pressed','false');if(item.id==='reading-books')button.id='reading-books';if(item.assembly){const response=await fetch(new URL('../'+item.assembly,import.meta.url));if(!response.ok)throw Error('Cannot load room prop');const data=await response.json(),rig=document.createElement('div');rig.className='item-rig';rig.dataset.canvas=JSON.stringify(data.canvas);button.append(rig);const mounted=mountProp(rig,data);await mounted.ready;}else{const image=new Image();image.src=new URL('../'+item.image,import.meta.url).href;image.alt='';button.append(image);await image.decode();}button.onclick=()=>approachItem(item,button);$('home-furniture').append(button);}));placeRoomFurniture();
-  roomEditor=mountRoomEditor({room:$('room'),layout:roomFurniture,place:placeRoomFurniture,setEditing(value){roomEditing=value;keys.clear();cancelInteraction();target=roomX;targetDepth=roomDepth;popa?.stop({immediate:true});$('room-hint').textContent=value?'בחרי חפץ וגררי אותו למקום הרצוי':'בחרי פריט ופופה תיגש אליו · אפשר גם לטייל עם החיצים';}});
+  roomEditor=mountRoomEditor({room:$('room'),layout:roomFurniture,place:placeRoomFurniture,setEditing(value){roomEditing=value;if(value){$('player').style.zIndex='4';roomEditor?.applyLayers();}else repairRoomPosition();keys.clear();cancelInteraction();target=roomX;targetDepth=roomDepth;popa?.stop({immediate:true});$('room-hint').textContent=value?'בחרי חפץ וגררי אותו למקום הרצוי':'בחרי פריט ופופה תיגש אליו · אפשר גם לטייל עם החיצים';}});
   await Promise.all(['apple','orange','berries','gold','rain'].map(async name=>{const image=new Image();image.src=new URL(`../assets/scenes/garden/${name}.svg`,import.meta.url).href;await image.decode();fruitImages.set(name,image);}));
   popa=await createPopa($('player'),{scale:.46,autoplay:'idle'});wardrobe=await createWardrobe(popa);renderWardrobe();if(profile.outfit!=='default'&&!wardrobe.looks.includes(profile.outfit))profile.outfit='default';await wardrobe.wear(profile.outfit);$('loading').hidden=true;home();requestAnimationFrame(tick);}catch(error){$('loading').textContent='לא הצלחנו לטעון את פופה. נסי לרענן את העמוד.';console.error(error);}
 window.addEventListener('pagehide',event=>{if(event.persisted){pause();return;}cancelInteraction();wardrobe?.destroy();popa?.destroy();});

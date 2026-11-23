@@ -1,0 +1,11 @@
+/* Text navigation and actions must read as controls; illustrated game objects keep their art. */
+a[href]{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:8px 13px;border:1px solid #c5a384;border-radius:11px;background:#fff5e5;color:#69472f;font-size:13px;font-weight:600;line-height:1.35;text-align:center;text-decoration:none;box-shadow:0 2px 0 #a47e5533}
+:where(button:not(:has(img,canvas,svg)):not(.room-item,.rug-object,.tool-item)),summary{min-height:40px;border:1px solid #c5a384;border-radius:10px;padding:8px 12px;background:#fff5e5;color:#69472f;line-height:1.35;box-shadow:0 2px 0 #a47e5533;cursor:pointer}
+.text-button,#sound{min-height:40px;border:1px solid #c5a384;border-radius:10px;background:#fff5e5;color:#69472f;padding:8px 13px;font-size:13px;text-decoration:none;box-shadow:0 2px 0 #a47e5533}
+a[href]:hover,:where(button:not(:has(img,canvas,svg)):not(.room-item,.rug-object,.tool-item)):hover,summary:hover{filter:brightness(.97)}
+a[href]:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #9c6288;outline-offset:3px}
+button:disabled{cursor:default;box-shadow:none}.character-download{width:max-content;max-width:90vw;margin-inline:auto}.room-editor #room-edit-move{padding:7px;border:1px solid #d8c2a8;background:#fff3e3;border-radius:8px}
+@media(max-width:700px){a[href],.text-button,#sound{min-height:38px;padding:7px 10px;font-size:12px}}
+body:not(.outfit-studio) .edit-studio-link{top:12px;right:12px}body:not(.outfit-studio) .outfit-studio-link{top:60px;right:12px}.animation-editor-enabled .edit-studio-link{right:auto!important;left:12px;top:108px!important}.animation-editor-enabled .outfit-studio-link{right:auto!important;left:12px;top:60px}
+
+.topbar .brand{font-size:18px}.topbar .brand small{font-size:11px}@media(max-width:700px){.topbar .brand{font-size:15px}}
