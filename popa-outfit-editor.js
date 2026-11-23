@@ -1,3 +1,4 @@
+import { setOutfitBody } from './shared/outfit-body.js';
 // Placement drafts only. The game keeps its approved character until a look is integrated.
 const CATALOG = './assets/characters/popa/outfits/catalog.json?v=collections-8';
 const clone = value => structuredClone(value);
@@ -90,7 +91,7 @@ export async function mountOutfitEditor({character,groups,stop,play}) {
     entry.image.classList.toggle('outfit-selected',p.id===partId);entry.image.style.cursor=p.locked?'not-allowed':'grab';
   }
   function syncFields(){const p=part();$('layer-preset').value=layerPresets.find(preset=>preset.value===p.layer)?.id??'custom';$('part-title').textContent=names[p.id]??p.id;panel.querySelectorAll('[data-field]').forEach(input=>input.value=String(Math.round(p[input.dataset.field]*100)/100));$('attachment').value=p.attachment;$('visible').checked=p.visible;$('locked').checked=p.locked;panel.querySelectorAll('[data-base]').forEach(input=>input.checked=!current().hiddenBase.includes(input.dataset.base));panel.querySelectorAll('[data-piece]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.piece===partId)));mounted.forEach(updateImage);$('undo').disabled=!history.length;}
-  function applyBase(){for(const id of ['shirt','pinafore','flower'])groups.get(id).style.visibility=current().hiddenBase.includes(id)?'hidden':'';}
+  function applyBase(){setOutfitBody(character,true);for(const id of ['shirt','pinafore','flower'])groups.get(id).style.visibility=current().hiddenBase.includes(id)?'hidden':'';}
   function render(){
     stop();mounted.forEach(m=>m.outer.remove());mounted=[];
     $('parts').replaceChildren();

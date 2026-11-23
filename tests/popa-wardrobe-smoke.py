@@ -9,6 +9,7 @@ with sync_playwright() as p:
  page.locator('[data-furniture="wardrobe"]').click();page.clock.run_for(10000);assert page.locator('#wardrobe-panel').is_visible()
  page.locator('[data-wear="cloud"]').click();page.wait_for_function('document.querySelector(".cat-character").dataset.outfit==="cloud"')
  assert page.locator('[data-worn-part]').count()==7
+ assert page.locator('[data-sprite="torso"]').evaluate('(e)=>e.style.clipPath')=='inset(0px 20% 60%)'
  assert page.locator('[data-sprite="flower"]').evaluate('(e)=>getComputedStyle(e).visibility')=='hidden'
  shirt=page.locator('[data-worn-part="pajama_body"]');sleeve=page.locator('[data-worn-part="sleeve_left"]')
  assert shirt.evaluate('(e)=>+e.closest(".worn-layer").style.zIndex')>sleeve.evaluate('(e)=>+e.closest(".worn-layer").style.zIndex')
@@ -20,8 +21,10 @@ with sync_playwright() as p:
  page.screenshot(path='/tmp/popa-cloud-in-room.png')
  page.locator('[data-furniture="wardrobe"]').click();page.clock.run_for(10000);page.locator('[data-wear="default"]').click();page.wait_for_function('document.querySelector(".cat-character").dataset.outfit==="default"');assert page.locator('[data-worn-part]').count()==0
  assert page.locator('[data-sprite="flower"]').evaluate('(e)=>getComputedStyle(e).visibility')=='visible'
+ assert page.locator('[data-sprite="torso"]').evaluate('(e)=>e.style.clipPath')=='inset(0px 20%)'
  # New sessions in the character studio start from the shared fitted file.
  page.goto(URL+'index.html?outfits=1',wait_until='networkidle');assert page.input_value('#outfit-x')=='223.9';assert page.input_value('#outfit-layer')=='9.1'
+ assert page.locator('[data-sprite="torso"]').evaluate('(e)=>e.style.clipPath')=='inset(0px 20% 60%)'
  assert not errors,errors
  b.close()
 print('PASS fitted cloud outfit in room, body layering, animation following, saved selection, default restore and published studio positions')

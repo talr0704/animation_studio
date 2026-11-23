@@ -1,4 +1,4 @@
-import { createWardrobe } from './wardrobe.js';
+import { createWardrobe } from './wardrobe.js?v=neckline-2';
 import { mountRoomEditor } from './room-editor.js';
 import {mountProp} from '../shared/prop-rig.js';
 import { createPopa } from '../popa-browser.js';

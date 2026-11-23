@@ -1,3 +1,4 @@
+import { setOutfitBody } from '../shared/outfit-body.js';
 // Fitted clothes use the same design canvas, artwork offsets and attachment transforms as the studio.
 export async function createWardrobe(popa) {
   const response=await fetch(new URL('../assets/characters/popa/outfits/catalog.json?v=cloud-fit-6',import.meta.url));
@@ -17,7 +18,7 @@ export async function createWardrobe(popa) {
   const originals=new Map([...baseGroups.values()].map(group=>{const outer=group.closest('.cat-layer');return [outer,outer.style.zIndex];}));
   const baseVisibility=new Map(['shirt','pinafore','flower'].map(id=>[id,baseGroups.get(id).style.visibility]));
   let mounted=[],raf=0,request=0,selected='default';
-  function clear(){cancelAnimationFrame(raf);mounted.forEach(part=>part.outer.remove());mounted=[];for(const [outer,z]of originals)outer.style.zIndex=z;for(const [id,visibility]of baseVisibility)baseGroups.get(id).style.visibility=visibility;popa.root.style.overflow='';}
+  function clear(){setOutfitBody(character,false);cancelAnimationFrame(raf);mounted.forEach(part=>part.outer.remove());mounted=[];for(const [outer,z]of originals)outer.style.zIndex=z;for(const [id,visibility]of baseVisibility)baseGroups.get(id).style.visibility=visibility;popa.root.style.overflow='';}
   function follow(){
     const body=getComputedStyle(baseGroups.get('head').closest('.cat-body-motion')),head=getComputedStyle(baseGroups.get('flower').closest('.cat-head-motion'));
     for(const part of mounted){const attachment=part.data.attachment;
@@ -41,7 +42,7 @@ export async function createWardrobe(popa) {
     if(token!==request)return;
     clear();for(const [outer,z]of originals)outer.style.zIndex=String(Number(z)*1000);
     for(const id of new Set([...(item.fit.hiddenBase??[]),'flower']))if(baseVisibility.has(id))baseGroups.get(id).style.visibility='hidden';
-    mounted=prepared;for(const part of mounted)character.append(part.outer);popa.root.style.overflow='visible';selected=id;character.dataset.outfit=id;follow();
+    setOutfitBody(character,true);mounted=prepared;for(const part of mounted)character.append(part.outer);popa.root.style.overflow='visible';selected=id;character.dataset.outfit=id;follow();
   }
   return {wear,get selected(){return selected;},destroy(){request++;clear();},looks:[...looks.keys()]};
 }
