@@ -1,4 +1,4 @@
-import { mountFurnitureEditor } from './furniture-editor.js?v=1';
+import { mountFurnitureEditor } from './furniture-editor.js?v=2';
 import { createCatExpressions } from './cat-expressions.js';
 import { createCatAnimations } from './cat-animations.js';
 import { mountLayoutEditor } from './cat-layout-editor.js';

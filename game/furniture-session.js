@@ -1,4 +1,4 @@
-import { furniturePose, createFurnitureActor, mountFurnitureForeground } from '../shared/furniture-interaction.js';
+import { furniturePose, createFurnitureActor, mountFurnitureForeground } from '../shared/furniture-interaction.js?v=2';
 export function startFurnitureSession({popa,scene,rig,data,startPlacement,onFinish}){
  const animation=structuredClone(data);animation.phases.enter.keys[0].placement={...startPlacement};animation.phases.exit.keys.at(-1).placement={...startPlacement};
  const parent=popa.root.parentElement,previousScale=parseFloat(popa.root.style.width)/440;

@@ -11,7 +11,7 @@
     350
   ],
   "foregroundParts": [
-    "seat-cushion"
+    "armrests"
   ],
   "phases": {
     "enter": {
@@ -38,18 +38,18 @@
           },
           "pose": {
             "foot_left": {
-              "x": -9,
-              "y": -36,
-              "rotation": -18,
+              "x": -6,
+              "y": 6,
+              "rotation": -8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "foot_right": {
-              "x": 9,
-              "y": -36,
-              "rotation": 18,
+              "x": 6,
+              "y": 6,
+              "rotation": 8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "left_arm": {
               "x": 7,
@@ -84,18 +84,18 @@
           },
           "pose": {
             "foot_left": {
-              "x": -9,
-              "y": -36,
-              "rotation": -18,
+              "x": -6,
+              "y": 6,
+              "rotation": -8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "foot_right": {
-              "x": 9,
-              "y": -36,
-              "rotation": 18,
+              "x": 6,
+              "y": 6,
+              "rotation": 8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "left_arm": {
               "x": 7,
@@ -136,18 +136,18 @@
           },
           "pose": {
             "foot_left": {
-              "x": -9,
-              "y": -36,
-              "rotation": -18,
+              "x": -6,
+              "y": 6,
+              "rotation": -8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "foot_right": {
-              "x": 9,
-              "y": -36,
-              "rotation": 18,
+              "x": 6,
+              "y": 6,
+              "rotation": 8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "left_arm": {
               "x": 7,
@@ -182,18 +182,18 @@
           },
           "pose": {
             "foot_left": {
-              "x": -9,
-              "y": -36,
-              "rotation": -18,
+              "x": -6,
+              "y": 6,
+              "rotation": -8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "foot_right": {
-              "x": 9,
-              "y": -36,
-              "rotation": 18,
+              "x": 6,
+              "y": 6,
+              "rotation": 8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "left_arm": {
               "x": 7,
@@ -235,18 +235,18 @@
           },
           "pose": {
             "foot_left": {
-              "x": -9,
-              "y": -36,
-              "rotation": -18,
+              "x": -6,
+              "y": 6,
+              "rotation": -8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "foot_right": {
-              "x": 9,
-              "y": -36,
-              "rotation": 18,
+              "x": 6,
+              "y": 6,
+              "rotation": 8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "left_arm": {
               "x": 7,
@@ -287,18 +287,18 @@
           },
           "pose": {
             "foot_left": {
-              "x": -9,
-              "y": -36,
-              "rotation": -18,
+              "x": -6,
+              "y": 6,
+              "rotation": -8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "foot_right": {
-              "x": 9,
-              "y": -36,
-              "rotation": 18,
+              "x": 6,
+              "y": 6,
+              "rotation": 8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "left_arm": {
               "x": 7,
@@ -333,18 +333,18 @@
           },
           "pose": {
             "foot_left": {
-              "x": -9,
-              "y": -36,
-              "rotation": -18,
+              "x": -6,
+              "y": 6,
+              "rotation": -8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "foot_right": {
-              "x": 9,
-              "y": -36,
-              "rotation": 18,
+              "x": 6,
+              "y": 6,
+              "rotation": 8,
               "scaleX": 1,
-              "scaleY": 0.85
+              "scaleY": 1
             },
             "left_arm": {
               "x": 7,
@@ -381,5 +381,6 @@
         }
       ]
     }
-  }
+  },
+  "rigRevision": 2
 }

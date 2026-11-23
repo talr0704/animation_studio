@@ -6,7 +6,7 @@ export function validateProp(rig){
  if(!rig||rig.version!==1||!id(rig.id)||!pair(rig.canvas,1,2000)||!Array.isArray(rig.parts)||!rig.parts.length||rig.parts.length>40)throw Error('קובץ הרכבה לא תקין');
  const ids=new Set();
  for(const p of rig.parts){
-  if(!id(p.id)||ids.has(p.id)||typeof p.image!=='string'||!/^assets\/[a-zA-Z0-9/_ .-]+\.(png|svg|webp)$/.test(p.image)||p.image.includes('..')||!pair(p.sourceSize,1,10000)||!pair(p.anchor)||!pair(p.position)||!finite(p.scale,.001,20)||!finite(p.rotation,-3600,3600)||!Number.isInteger(p.layer)||!finite(p.layer,-100,100))throw Error('נתוני חלק לא תקינים');
+  if(!id(p.id)||ids.has(p.id)||typeof p.image!=='string'||!/^assets\/[a-zA-Z0-9/_ .-]+\.(png|svg|webp)$/.test(p.image)||p.image.includes('..')||!pair(p.sourceSize,1,10000)||!pair(p.anchor)||!pair(p.position)||!finite(p.scale,.001,20)||(p.scaleY!==undefined&&!finite(p.scaleY,.001,20))||!finite(p.rotation,-3600,3600)||!Number.isInteger(p.layer)||!finite(p.layer,-100,100))throw Error('נתוני חלק לא תקינים');
   ids.add(p.id);
  }
  for(const p of rig.parts){
@@ -50,7 +50,7 @@ export function mountProp(container,rig,{assetUrl=path=>new URL('../'+path,impor
   Object.assign(base.style,{position:'absolute',left:p.position[0]+'px',top:p.position[1]+'px',width:'0',height:'0',transform:`rotate(${p.rotation}deg)`,transformOrigin:'0 0',zIndex:p.layer});
   Object.assign(motion.style,{position:'absolute',left:'0',top:'0',width:'0',height:'0',transformOrigin:'0 0'});
   img.src=assetUrl(p.image);img.alt=p.label??p.id;img.draggable=false;img.dataset.propImage=p.id;if(p.id==='bolt')img.className='bolt';
-  Object.assign(img.style,{position:'absolute',maxWidth:'none',width:p.sourceSize[0]*p.scale+'px',height:p.sourceSize[1]*p.scale+'px',left:-p.anchor[0]*p.scale+'px',top:-p.anchor[1]*p.scale+'px',pointerEvents:'none'});
+  Object.assign(img.style,{position:'absolute',maxWidth:'none',width:p.sourceSize[0]*p.scale+'px',height:p.sourceSize[1]*(p.scaleY??p.scale)+'px',left:-p.anchor[0]*p.scale+'px',top:-p.anchor[1]*(p.scaleY??p.scale)+'px',pointerEvents:'none'});
   motion.append(img);base.append(motion);nodes.set(p.id,{base,motion,img});
  }
  for(const p of rig.parts)(p.parent?nodes.get(p.parent).motion:container).append(nodes.get(p.id).base);

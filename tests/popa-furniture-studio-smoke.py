@@ -6,6 +6,9 @@ URL='http://localhost:4205/'
 with sync_playwright() as p:
  browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox']);context=browser.new_context(viewport={'width':1440,'height':1000});page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(e.stack))
  page.goto(URL+'index.html?furniture=sofa',wait_until='networkidle');assert page.locator('.cat-character').get_attribute('data-ready')=='true';assert page.locator('.animation-editor').count()==0
+ assert page.locator('.furniture-prop [data-prop-image="seat-cushion"]').evaluate('(e)=>parseFloat(e.style.height)<75')
+ assert page.locator('.interaction-foreground[data-foreground="armrest"]').count()==2
+ assert page.locator('[data-sprite="foot_left"]').bounding_box()['y']+page.locator('[data-sprite="foot_left"]').bounding_box()['height']>page.locator('[data-sprite="pinafore"]').bounding_box()['y']+page.locator('[data-sprite="pinafore"]').bounding_box()['height']
  page.locator('#fi-x').fill('220');page.locator('#fi-x').press('Tab');boundary=page.evaluate('JSON.parse(localStorage.getItem("popa.furniture.sofa.sit.v1"))');assert boundary['phases']['enter']['keys'][-1]['placement']['x']==220 and boundary['phases']['exit']['keys'][0]['placement']['x']==220
  page.locator('#fi-undo').click()
  page.locator('#fi-time').evaluate('(e)=>{e.value=.5;e.dispatchEvent(new Event("input",{bubbles:true}))}');page.select_option('#fi-part','foot_left');page.locator('#fi-x').fill('-15');page.locator('#fi-x').press('Tab');assert page.locator('#fi-keys button').count()==4

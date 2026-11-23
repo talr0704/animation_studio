@@ -2,12 +2,20 @@ export const BONE_NAMES=['head','torso','shirt','pinafore','left_arm','right_arm
 const finite=(n,min,max)=>Number.isFinite(n)&&n>=min&&n<=max;
 const identity={x:0,y:0,rotation:0,scaleX:1,scaleY:1};
 export function validateFurnitureInteraction(data){
- if(data?.version!==1||data.furniture!=='home.coastal-sofa'||data.id!=='sit'||JSON.stringify(data.canvas)!=='[420,320]'||!Array.isArray(data.approach)||data.approach.length!==2||!data.approach.every(n=>finite(n,-1000,2000))||!Array.isArray(data.foregroundParts)||data.foregroundParts.some(id=>!['frame','back-cushion','seat-cushion'].includes(id)))throw Error('קובץ הפעולה אינו מתאים לספה');
+ if(data?.version!==1||data.furniture!=='home.coastal-sofa'||data.id!=='sit'||JSON.stringify(data.canvas)!=='[420,320]'||!Array.isArray(data.approach)||data.approach.length!==2||!data.approach.every(n=>finite(n,-1000,2000))||!Array.isArray(data.foregroundParts)||data.foregroundParts.some(id=>!['frame','back-cushion','seat-cushion','armrests'].includes(id)))throw Error('קובץ הפעולה אינו מתאים לספה');
  for(const name of ['enter','hold','exit']){const phase=data.phases?.[name];if(!phase||!finite(phase.duration,.1,20)||typeof phase.loop!=='boolean'||!Array.isArray(phase.keys)||phase.keys.length<2||phase.keys.length>100)throw Error('ציר הזמן אינו תקין');let last=-1;
   for(const key of phase.keys){const p=key.placement;if(!finite(key.time,0,phase.duration)||key.time<=last||!p||!finite(p.x,-1000,2000)||!finite(p.y,-1000,2000)||!finite(p.scale,.05,3)||![-1,1].includes(p.facing)||!key.pose||Object.keys(key.pose).some(name=>!BONE_NAMES.includes(name)))throw Error('פריים אינו תקין');last=key.time;
    for(const pose of Object.values(key.pose))for(const field of ['x','y','rotation','scaleX','scaleY'])if(!finite(pose[field],field.startsWith('scale')?.1:-1000,field.startsWith('scale')?3:1000))throw Error('תנוחת הגוף אינה תקינה');
   }
   if(phase.keys[0].time!==0||phase.keys.at(-1).time!==phase.duration)throw Error('נדרשים פריים התחלה ופריים סיום');
+ }
+ // Upgrade the original draft without changing manually edited placement keys.
+ if(data.rigRevision!==2){
+  data.foregroundParts=data.foregroundParts.length?['armrests']:[];
+  for(const phase of Object.values(data.phases))for(const key of phase.keys)for(const name of ['foot_left','foot_right']){
+   const pose=key.pose[name];if(pose?.y===-36&&pose.scaleY===.85)Object.assign(pose,{x:name==='foot_left'?-6:6,y:6,rotation:name==='foot_left'?-8:8,scaleY:1});
+  }
+  data.rigRevision=2;
  }
  return data;
 }
@@ -33,8 +41,13 @@ export function createFurnitureActor(actor,character){
 }
 export function mountFurnitureForeground(scene,rig,data){
  scene.querySelectorAll('.interaction-foreground').forEach(el=>el.remove());
- for(const id of data.foregroundParts){const part=rig.parts.find(p=>p.id===id);if(!part)continue;const img=new Image();img.className='interaction-foreground';img.src=new URL('../'+part.image,import.meta.url).href;img.alt='';Object.assign(img.style,{position:'absolute',left:(part.position[0]-part.anchor[0]*part.scale)+'px',top:(part.position[1]-part.anchor[1]*part.scale)+'px',width:part.sourceSize[0]*part.scale+'px',height:part.sourceSize[1]*part.scale+'px',zIndex:'30',pointerEvents:'none'});scene.append(img);}
- // The lower frame contains the existing front legs/arm edges, reused without changing artwork.
- const frame=rig.parts.find(p=>p.id==='frame');if(frame){const img=new Image();img.className='interaction-foreground';img.src=new URL('../'+frame.image,import.meta.url).href;img.alt='';Object.assign(img.style,{position:'absolute',left:frame.position[0]+'px',top:frame.position[1]+'px',width:frame.sourceSize[0]*frame.scale+'px',height:frame.sourceSize[1]*frame.scale+'px',clipPath:'inset(63% 0 0 0)',zIndex:'31',pointerEvents:'none'});scene.append(img);}
+ // Only the two side armrests overlap Popa. The seat and centre front stay behind
+ // the character, so neither bare feet nor trouser legs can disappear under them.
+ if(data.foregroundParts.length){const frame=rig.parts.find(p=>p.id==='frame');if(frame){
+  for(const clip of ['polygon(0 30%, 17% 30%, 17% 78%, 0 78%)','polygon(83% 30%, 100% 30%, 100% 78%, 83% 78%)']){
+   const img=new Image();img.className='interaction-foreground';img.dataset.foreground='armrest';img.src=new URL('../'+frame.image,import.meta.url).href;img.alt='';
+   Object.assign(img.style,{position:'absolute',left:frame.position[0]+'px',top:frame.position[1]+'px',width:frame.sourceSize[0]*frame.scale+'px',height:frame.sourceSize[1]*(frame.scaleY??frame.scale)+'px',clipPath:clip,zIndex:'30',pointerEvents:'none'});scene.append(img);
+  }
+ }}
  return ()=>scene.querySelectorAll('.interaction-foreground').forEach(el=>el.remove());
 }

@@ -62,12 +62,13 @@
       ],
       "position": [
         70,
-        165
+        185
       ],
       "scale": 0.7567567567567568,
       "rotation": 0,
       "layer": 3,
-      "parent": null
+      "parent": null,
+      "scaleY": 0.36
     }
   ]
 }

@@ -1,9 +1,9 @@
-import { startFurnitureSession } from './furniture-session.js';
-import { validateFurnitureInteraction } from '../shared/furniture-interaction.js';
+import { startFurnitureSession } from './furniture-session.js?v=2';
+import { validateFurnitureInteraction } from '../shared/furniture-interaction.js?v=2';
 import { FLOOR_START, FLOOR_ITEMS, floorBounds, nearestFree, walkable, roomPath, slideStep, constrainFloorFurniture } from './room-navigation.js';
 import { createWardrobe } from './wardrobe.js?v=all-looks-3';
 import { mountRoomEditor } from './room-editor.js';
-import {mountProp} from '../shared/prop-rig.js';
+import {mountProp} from '../shared/prop-rig.js?v=sofa2';
 import { createPopa } from '../popa-browser.js';
 import { POPA_CLIPS } from '../popa-clips.js';
 import { GardenRound } from './garden-round.js';
@@ -251,12 +251,12 @@ document.querySelector('.wardrobe-choices').addEventListener('click',async event
 });
 refreshProfile();new ResizeObserver(resize).observe(document.querySelector('.world'));resize();
 try{
-  const actionResponse=await fetch('assets/scenes/home/furniture/coastal/sofa/interactions/sit.json');if(!actionResponse.ok)throw Error('Cannot load sofa interaction');sofaAction=validateFurnitureInteraction(await actionResponse.json());
+  const actionResponse=await fetch('assets/scenes/home/furniture/coastal/sofa/interactions/sit.json?v=2');if(!actionResponse.ok)throw Error('Cannot load sofa interaction');sofaAction=validateFurnitureInteraction(await actionResponse.json());
   if(new URLSearchParams(location.search).get('interactionPreview')==='sofa'){try{const draft=localStorage.getItem('popa.furniture.sofa.sit.v1');if(draft)sofaAction=validateFurnitureInteraction(JSON.parse(draft));}catch{}}
-  sofaRig=await (await fetch('assets/scenes/home/furniture/coastal/sofa/assembly.json')).json();
+  sofaRig=await (await fetch('assets/scenes/home/furniture/coastal/sofa/assembly.json?v=2')).json();
   const furnitureResponse=await fetch(new URL('../assets/scenes/home/furniture/layout.json',import.meta.url));if(!furnitureResponse.ok)throw Error('Cannot load furniture layout');roomFurniture=await furnitureResponse.json();
   const background=new Image();background.src=new URL('../'+roomFurniture.background,import.meta.url).href;await background.decode();$('room').style.backgroundImage=`url("${background.src}")`;
-  await Promise.all(roomFurniture.items.map(async item=>{if(!POPA_CLIPS[item.action])throw Error('Unknown room action');const button=document.createElement('button');button.type='button';button.dataset.furniture=item.id;button.className='room-item';button.style.zIndex=item.layer??1;button.setAttribute('aria-label',item.label);button.setAttribute('aria-pressed','false');if(item.id==='reading-books')button.id='reading-books';if(item.assembly){const response=await fetch(new URL('../'+item.assembly,import.meta.url));if(!response.ok)throw Error('Cannot load room prop');const data=await response.json(),rig=document.createElement('div');rig.className='item-rig';rig.dataset.canvas=JSON.stringify(data.canvas);button.append(rig);const mounted=mountProp(rig,data);await mounted.ready;}else{const image=new Image();image.src=new URL('../'+item.image,import.meta.url).href;image.alt='';button.append(image);await image.decode();}button.onclick=()=>approachItem(item,button);$('home-furniture').append(button);}));placeRoomFurniture();
+  await Promise.all(roomFurniture.items.map(async item=>{if(!POPA_CLIPS[item.action])throw Error('Unknown room action');const button=document.createElement('button');button.type='button';button.dataset.furniture=item.id;button.className='room-item';button.style.zIndex=item.layer??1;button.setAttribute('aria-label',item.label);button.setAttribute('aria-pressed','false');if(item.id==='reading-books')button.id='reading-books';if(item.assembly){const response=await fetch(new URL('../'+item.assembly+(item.id==='sofa'?'?v=2':''),import.meta.url));if(!response.ok)throw Error('Cannot load room prop');const data=await response.json(),rig=document.createElement('div');rig.className='item-rig';rig.dataset.canvas=JSON.stringify(data.canvas);button.append(rig);const mounted=mountProp(rig,data);await mounted.ready;}else{const image=new Image();image.src=new URL('../'+item.image,import.meta.url).href;image.alt='';button.append(image);await image.decode();}button.onclick=()=>approachItem(item,button);$('home-furniture').append(button);}));placeRoomFurniture();
   roomEditor=mountRoomEditor({room:$('room'),layout:roomFurniture,place:placeRoomFurniture,setEditing(value){roomEditing=value;if(value){$('player').style.zIndex='4';roomEditor?.applyLayers();}else repairRoomPosition();keys.clear();cancelInteraction();target=roomX;targetDepth=roomDepth;popa?.stop({immediate:true});$('room-hint').textContent=value?'בחרי חפץ וגררי אותו למקום הרצוי':'בחרי פריט ופופה תיגש אליו · אפשר גם לטייל עם החיצים';}});
   await Promise.all(['apple','orange','berries','gold','rain'].map(async name=>{const image=new Image();image.src=new URL(`../assets/scenes/garden/${name}.svg`,import.meta.url).href;await image.decode();fruitImages.set(name,image);}));
   popa=await createPopa($('player'),{scale:.46,autoplay:'idle'});wardrobe=await createWardrobe(popa);renderWardrobe();if(profile.outfit!=='default'&&!wardrobe.looks.includes(profile.outfit))profile.outfit='default';await wardrobe.wear(profile.outfit);$('loading').hidden=true;home();requestAnimationFrame(tick);if(new URLSearchParams(location.search).get('interactionPreview')==='sofa')approachItem(roomFurniture.items.find(i=>i.id==='sofa'),document.querySelector('[data-furniture="sofa"]'));}catch(error){$('loading').textContent='לא הצלחנו לטעון את פופה. נסי לרענן את העמוד.';console.error(error);}
