@@ -1462,6 +1462,14 @@ if (ANIMATION_EDITOR_ENABLED) {
 }
 
 return {
+  hasAnimation(key){return Object.hasOwn(ANIMATION_DATA,key);},
+  addAnimation(key,animation,{select=true,overwrite=false}={}){
+    pauseEditorAnimation();
+    if(!ANIMATION_DATA[key]||overwrite){ANIMATION_DATA[key]=structuredClone(animation);saveAnimationData();}
+    if(select){selectedAnimationKey=key;editorCurrentTime=0;selectedKeyframeId=null;}
+    renderAnimationEditor();previewAtTime(editorCurrentTime);
+  },
+  baseValues: name=>({...getBaseTransform(name)}),
   pause: pauseEditorAnimation,
   reset: resetEntireFrameToBase,
   setPivot(name, x, y) {

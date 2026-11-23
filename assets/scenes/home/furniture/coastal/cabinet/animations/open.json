@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "prop": "home.coastal-cabinet",
+  "id": "open",
+  "label": "פתיחת דלתות",
+  "duration": 1.2,
+  "easing": "ease-in-out",
+  "tracks": [
+    {
+      "part": "door-left",
+      "keys": [
+        {
+          "time": 0.0,
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        {
+          "time": 0.84,
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scaleX": 0.08,
+          "scaleY": 1
+        },
+        {
+          "time": 1.2,
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scaleX": 0.08,
+          "scaleY": 1
+        }
+      ]
+    },
+    {
+      "part": "door-right",
+      "keys": [
+        {
+          "time": 0.0,
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        {
+          "time": 0.84,
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scaleX": 0.08,
+          "scaleY": 1
+        },
+        {
+          "time": 1.2,
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scaleX": 0.08,
+          "scaleY": 1
+        }
+      ]
+    }
+  ]
+}

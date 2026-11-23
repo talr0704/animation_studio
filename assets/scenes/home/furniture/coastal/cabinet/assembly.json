@@ -8,7 +8,7 @@
   "parts": [
     {
       "id": "frame",
-      "label": "frame",
+      "label": "מסגרת",
       "image": "assets/scenes/home/furniture/coastal/cabinet/images/frame.png",
       "sourceSize": [
         405,
@@ -29,7 +29,7 @@
     },
     {
       "id": "door-left",
-      "label": "door-left",
+      "label": "דלת שמאל",
       "image": "assets/scenes/home/furniture/coastal/cabinet/images/door-left.png",
       "sourceSize": [
         255,
@@ -50,7 +50,7 @@
     },
     {
       "id": "door-right",
-      "label": "door-right",
+      "label": "דלת ימין",
       "image": "assets/scenes/home/furniture/coastal/cabinet/images/door-right.png",
       "sourceSize": [
         260,

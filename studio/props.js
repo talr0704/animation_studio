@@ -1,4 +1,4 @@
-import {validateProp,validateClip,poseAt,mountProp} from '../shared/prop-rig.js';
+import {validateProp,validateClip,poseAt,mountProp} from '../shared/prop-rig.js?v=furniture3';
 const $=id=>document.getElementById(id),copy=value=>JSON.parse(JSON.stringify(value));
 let catalog,entry,rig,clip,published,view,selected,time=0,zoom=2,playing=false,last=0,history=[],drag=null,renderRevision=0,viewCenter=[65,105];
 const status=(text,error=false)=>{$('status').textContent=text;$('status').classList.toggle('error',error);};
@@ -13,7 +13,7 @@ function fit(){if(!rig||!view)return;const rect=$('viewport').getBoundingClientR
 function layout(){if(!rig)return;Object.assign($('board').style,{width:rig.canvas[0]+'px',height:rig.canvas[1]+'px',transformOrigin:'0 0',transform:`translate(${-viewCenter[0]*zoom}px,${-viewCenter[1]*zoom}px) scale(${zoom})`});}
 function fields(){
  const p=current();if(!p)return;
- for(const [name,value]of Object.entries({'base-x':p.position[0],'base-y':p.position[1],'anchor-x':p.anchor[0],'anchor-y':p.anchor[1],'part-scale':p.scale,'base-rotation':p.rotation,layer:p.layer}))$(name).value=Number(value.toFixed(4));
+ for(const [name,value]of Object.entries({'base-x':p.position[0],'base-y':p.position[1],'anchor-x':p.anchor[0],'anchor-y':p.anchor[1],'part-scale':p.scale,'part-scale-y':p.scaleY??p.scale,'base-rotation':p.rotation,layer:p.layer}))$(name).value=Number(value.toFixed(4));
  $('parent').replaceChildren();const option=new Option('ללא הורה','');$('parent').append(option);for(const part of rig.parts)if(part.id!==p.id)$('parent').append(new Option(part.label??part.id,part.id));$('parent').value=p.parent??'';
  $('part').value=selected;$('duration').value=clip.duration;$('easing').value=clip.easing??'linear';$('scrub').max=clip.duration;$('time').max=clip.duration;
  $('canvas-hint').textContent=$('pivot-mode').checked?'גרירה מזיזה את הציר לכל האנימציה, בלי להזיז את האיור.':'בחרי זמן וגררי חלק. התנועה נשמרת אוטומטית כפריים.';
@@ -26,28 +26,28 @@ function tracks(){
 }
 function frame(){
  if(!view)return;view.render(clip,time);$('time').value=Number(time.toFixed(3));$('scrub').value=time;
- const pose=poseAt(clip,selected,time),p=current();$('position-x').value=Number((p.position[0]+pose.x).toFixed(3));$('position-y').value=Number((p.position[1]+pose.y).toFixed(3));$('rotation').value=Number((p.rotation+pose.rotation).toFixed(3));
+ const pose=poseAt(clip,selected,time),p=current();$('position-x').value=Number((p.position[0]+pose.x).toFixed(3));$('position-y').value=Number((p.position[1]+pose.y).toFixed(3));$('rotation').value=Number((p.rotation+pose.rotation).toFixed(3));$('motion-scale-x').value=pose.scaleX??1;$('motion-scale-y').value=pose.scaleY??1;
  for(const [id,node]of view.nodes){node.img.style.outline=id===selected?'1px dashed #b63875':'';node.img.style.pointerEvents='auto';}
  const point=view.nodes.get(selected).motion.getBoundingClientRect(),board=$('board').getBoundingClientRect();Object.assign($('pivot').style,{left:(point.x-board.x)/zoom+'px',top:(point.y-board.y)/zoom+'px'});
  const hasKey=clip.tracks.find(t=>t.part===selected)?.keys.some(k=>Math.abs(k.time-time)<.0005);$('delete-key').disabled=!hasKey;$('key-status').textContent=`${time.toFixed(3)} שניות · ${hasKey?'יש פריים בזמן הזה':'שינוי מיקום ייצור פריים חדש'}`;$('undo').disabled=!history.length;
 }
 function rebuild(){if(!rig.parts.some(p=>p.id===selected))selected=rig.parts[0].id;$('part').replaceChildren(...rig.parts.map(p=>new Option(p.label??p.id,p.id)));const revision=++renderRevision;view=mountProp($('rig'),rig,{assetUrl:rootUrl});view.ready.catch(error=>{if(revision===renderRevision)status('לא ניתן לטעון את האיור: '+error.message,true);});layout();fields();tracks();frame();}
 function edit(change){stop();const before=copy({rig,clip});try{change();validatePair(rig,clip);history.push(JSON.stringify(before));if(history.length>60)history.shift();save();rebuild();status('עודכן בטיוטה');}catch(error){rig=before.rig;clip=before.clip;fields();frame();status(error.message,true);}}
-function setKey(values){const start=poseAt(clip,selected,0);let track=clip.tracks.find(t=>t.part===selected);if(!track){track={part:selected,keys:[]};clip.tracks.push(track);}if(time>.0005&&!track.keys.some(k=>k.time===0))track.keys.unshift({time:0,x:start.x,y:start.y,rotation:start.rotation});const k=track.keys.find(k=>Math.abs(k.time-time)<.0005),next={time:Number(time.toFixed(3)),...values};if(k)Object.assign(k,next);else track.keys.push(next);track.keys.sort((a,b)=>a.time-b.time);}
+function setKey(values){const start=poseAt(clip,selected,0);let track=clip.tracks.find(t=>t.part===selected);if(!track){track={part:selected,keys:[]};clip.tracks.push(track);}if(time>.0005&&!track.keys.some(k=>k.time===0))track.keys.unshift({time:0,x:start.x,y:start.y,rotation:start.rotation});const k=track.keys.find(k=>Math.abs(k.time-time)<.0005),next={...poseAt(clip,selected,time),time:Number(time.toFixed(3)),...values};if(k)Object.assign(k,next);else track.keys.push(next);track.keys.sort((a,b)=>a.time-b.time);}
 async function load(){
  stop();status('טוענים את האביזר…');entry=catalog.props.find(p=>p.id===$('prop-select').value);
  const get=async path=>{const response=await fetch(rootUrl(path));if(!response.ok)throw Error('לא ניתן לטעון '+path);return response.json();};
  const [r,c]=await Promise.all([get(entry.assembly),get(entry.animation)]);validatePair(r,c);published=copy({rig:r,clip:c});rig=r;clip=c;history=[];time=0;
  let restored=false;try{const draft=JSON.parse(localStorage.getItem(key()));if(draft){validatePair(draft.rig,draft.clip);rig=draft.rig;clip=draft.clip;restored=true;}}catch{status('הטיוטה המקומית אינה תקינה. נטענה הגרסה מהפרויקט.',true);}
- selected=rig.parts[0].id;$('part').replaceChildren(...rig.parts.map(p=>new Option(p.label??p.id,p.id)));$('assembly-path').textContent=entry.assembly;$('animation-path').textContent=entry.animation;$('export-clip').textContent='הורדת '+entry.animation.split('/').at(-1);
+ selected=rig.parts[0].id;$('part').replaceChildren(...rig.parts.map(p=>new Option(p.label??p.id,p.id)));$('assembly-path').textContent=entry.assembly;$('animation-path').textContent=entry.animation;$('export-clip').textContent='הורדת '+entry.animation.split('/').at(-1);$('game-preview').hidden=entry.category==='furniture';
  rebuild();fit();$('draft-status').textContent=restored?'שוחזרה הטיוטה מהדפדפן.':'נטענה הגרסה מהפרויקט.';status('מוכן לעריכה. ייצוא והעלאה זמינים ב״שמירה והעלאה לגיטהאב״.');
 }
 $('prop-select').onchange=()=>load().catch(error=>status(error.message,true));
 $('part').onchange=()=>{stop();selected=$('part').value;fields();tracks();frame();};$('pivot-mode').onchange=()=>{stop();fields();frame();};
-for(const [id,update]of Object.entries({'base-x':(p,n)=>p.position[0]=n,'base-y':(p,n)=>p.position[1]=n,'anchor-x':(p,n)=>p.anchor[0]=n,'anchor-y':(p,n)=>p.anchor[1]=n,'part-scale':(p,n)=>p.scale=n,'base-rotation':(p,n)=>p.rotation=n,layer:(p,n)=>p.layer=n}))$(id).onchange=()=>{const n=$(id).valueAsNumber;edit(()=>update(current(),n));};
+for(const [id,update]of Object.entries({'base-x':(p,n)=>p.position[0]=n,'base-y':(p,n)=>p.position[1]=n,'anchor-x':(p,n)=>p.anchor[0]=n,'anchor-y':(p,n)=>p.anchor[1]=n,'part-scale':(p,n)=>p.scale=n,'part-scale-y':(p,n)=>p.scaleY=n,'base-rotation':(p,n)=>p.rotation=n,layer:(p,n)=>p.layer=n}))$(id).onchange=()=>{const n=$(id).valueAsNumber;edit(()=>update(current(),n));};
 $('parent').onchange=()=>{const parent=$('parent').value;edit(()=>current().parent=parent||null);};
-function savePosition(){const p=current(),values={x:$('position-x').valueAsNumber-p.position[0],y:$('position-y').valueAsNumber-p.position[1],rotation:$('rotation').valueAsNumber-p.rotation};edit(()=>setKey(values));}
-for(const id of ['position-x','position-y','rotation'])$(id).onchange=savePosition;
+function savePosition(){const p=current(),values={x:$('position-x').valueAsNumber-p.position[0],y:$('position-y').valueAsNumber-p.position[1],rotation:$('rotation').valueAsNumber-p.rotation,scaleX:$('motion-scale-x').valueAsNumber,scaleY:$('motion-scale-y').valueAsNumber};edit(()=>setKey(values));}
+for(const id of ['position-x','position-y','rotation','motion-scale-x','motion-scale-y'])$(id).onchange=savePosition;
 $('save-key').onclick=savePosition;
 $('delete-key').onclick=()=>edit(()=>{const track=clip.tracks.find(t=>t.part===selected);track.keys=track.keys.filter(k=>Math.abs(k.time-time)>=.0005);clip.tracks=clip.tracks.filter(t=>t.keys.length);});
 $('duration').onchange=()=>{const duration=$('duration').valueAsNumber;edit(()=>{if(!Number.isFinite(duration)||duration<.05||duration>30)throw Error('משך התנועה חייב להיות בין 0.05 ל־30 שניות');const ratio=duration/clip.duration;for(const track of clip.tracks)for(const k of track.keys)k.time*=ratio;time*=ratio;clip.duration=duration;});};
@@ -73,11 +73,11 @@ $('viewport').addEventListener('pointermove',event=>{
  if(!drag)return;const dx=(event.clientX-drag.x)/zoom,dy=(event.clientY-drag.y)/zoom,p=current();
  const [x,y]=rotatedDelta(dx,dy,parentAngle(p));
  if(!drag.pivot){setKey({x:drag.pose.x+x,y:drag.pose.y+y,rotation:drag.pose.rotation});}
- else{p.position=[drag.part.position[0]+x,drag.part.position[1]+y];const [ax,ay]=rotatedDelta(dx,dy,parentAngle(p,true));p.anchor=[drag.part.anchor[0]+ax/p.scale,drag.part.anchor[1]+ay/p.scale];}
+ else{p.position=[drag.part.position[0]+x,drag.part.position[1]+y];const [ax,ay]=rotatedDelta(dx,dy,parentAngle(p,true));p.anchor=[drag.part.anchor[0]+ax/p.scale,drag.part.anchor[1]+ay/(p.scaleY??p.scale)];}
  rebuild();
 });
 function endDrag(){if(!drag)return;try{validatePair(rig,clip);history.push(JSON.stringify(drag.before));save();status('הגרירה נשמרה בטיוטה');}catch(error){rig=drag.before.rig;clip=drag.before.clip;status(error.message,true);}drag=null;rebuild();}
 $('viewport').addEventListener('pointerup',endDrag);$('viewport').addEventListener('pointercancel',()=>{if(drag){rig=drag.before.rig;clip=drag.before.clip;drag=null;rebuild();}});
 for(const input of document.querySelectorAll('input[type=number]'))input.addEventListener('focus',stop);
 for(const el of document.querySelectorAll('aside button,aside input,aside select,.view-controls button,.timeline input,.timeline select'))el.disabled=true;
-try{const response=await fetch(rootUrl('assets/catalog.json'));if(!response.ok)throw Error('לא ניתן לטעון את הקטלוג');catalog=await response.json();const editable=catalog.props.filter(p=>p.editable&&p.assembly&&p.animation);if(!editable.length)throw Error('אין אביזרים לעריכה');$('prop-select').replaceChildren(...editable.map(p=>new Option(p.label??p.id,p.id)));await load();for(const el of document.querySelectorAll('aside button,aside input,aside select,.view-controls button,.timeline input,.timeline select'))el.disabled=false;frame();}catch(error){status('הטעינה נכשלה: '+error.message,true);}
+try{const response=await fetch(rootUrl('assets/catalog.json')+'?v=furniture3');if(!response.ok)throw Error('לא ניתן לטעון את הקטלוג');catalog=await response.json();const furnitureMode=new URLSearchParams(location.search).get('category')==='furniture';document.title=furnitureMode?'סטודיו תנועת הרהיטים':'סטודיו האביזרים';$('studio-heading').textContent=document.title;$('asset-label').textContent=furnitureMode?'רהיט לעריכת תנועה':'אביזר מהמשחק';const editable=catalog.props.filter(p=>p.editable&&p.assembly&&p.animation&&(furnitureMode?p.category==='furniture':p.category!=='furniture'));if(!editable.length)throw Error('אין אביזרים לעריכה');$('prop-select').replaceChildren(...editable.map(p=>new Option(p.label??p.id,p.id)));await load();for(const el of document.querySelectorAll('aside button,aside input,aside select,.view-controls button,.timeline input,.timeline select'))el.disabled=false;frame();}catch(error){status('הטעינה נכשלה: '+error.message,true);}

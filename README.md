@@ -114,6 +114,8 @@ Haircut sections continue to be chosen using the section buttons.
 
 Open `index.html?outfits=1` in the character studio to position the six uploaded looks on Popa, preview walking/waving, and export or import placement JSON. Each look saves a separate local draft. Artwork lives in `assets/characters/popa/outfits/<look>/parts/`; source sheets and the original manifest live in `source-art/characters/popa/outfits/`. See `assets/characters/popa/outfits/README.md` for coordinates and the integration workflow. Fitting drafts are not applied automatically to the game.
 
-## Furniture-specific character animation
+## Character animation and furniture motion
 
-Open `index.html?furniture=sofa` for the sofa interaction editor in Popa’s character studio. Edit the approach/seat placement and body poses on a shared timeline for sitting down, a seated loop and getting up. Drafts save locally; export `sofa-sit.json` for integration. The game preview button uses the local draft, while ordinary room play uses `assets/scenes/home/furniture/coastal/sofa/interactions/sit.json`. See the README in that interaction folder for coordinates, foreground layers and playback details.
+Use `index.html?edit=1` for Popa's existing animation editor. The optional **רהיט לדוגמה** panel can show a sofa, cabinet, lamp or window behind her. Reference position/size saves separately and never enters character animation JSON. Add sitting-down, sitting and getting-up clips to the normal character timeline, or copy the old furniture-studio draft without deleting it. Old `?furniture=sofa` links redirect here.
+
+Use `studio.html?category=furniture` for independent layered furniture motion: cabinet doors, lamp shade, curtains and sofa cushions. Each furniture folder keeps its own `assembly.json` and `animations/` files; the artwork remains in `images/`. These motions do not contain Popa or her body poses. The original salon props editor remains available at `studio.html`.

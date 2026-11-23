@@ -295,7 +295,7 @@
       "id": "home.coastal-sofa",
       "label": "ספת פופה",
       "status": "active",
-      "editable": false,
+      "editable": true,
       "assembly": "assets/scenes/home/furniture/coastal/sofa/assembly.json",
       "images": [
         "assets/scenes/home/furniture/coastal/sofa/images/frame.png",
@@ -305,42 +305,49 @@
       "characterInteractions": [
         "assets/scenes/home/furniture/coastal/sofa/interactions/sit.json"
       ],
-      "characterStudio": "index.html?furniture=sofa"
+      "category": "furniture",
+      "animation": "assets/scenes/home/furniture/coastal/sofa/animations/cushion-bounce.json"
     },
     {
       "id": "home.coastal-cabinet",
       "label": "ארונית צדפים",
       "status": "active",
-      "editable": false,
+      "editable": true,
       "assembly": "assets/scenes/home/furniture/coastal/cabinet/assembly.json",
       "images": [
         "assets/scenes/home/furniture/coastal/cabinet/images/frame.png",
         "assets/scenes/home/furniture/coastal/cabinet/images/door-left.png",
         "assets/scenes/home/furniture/coastal/cabinet/images/door-right.png"
-      ]
+      ],
+      "category": "furniture",
+      "animation": "assets/scenes/home/furniture/coastal/cabinet/animations/open.json"
     },
     {
       "id": "home.coastal-lamp",
       "label": "מנורת צדף",
       "status": "active",
-      "editable": false,
+      "editable": true,
       "assembly": "assets/scenes/home/furniture/coastal/lamp/assembly.json",
       "images": [
         "assets/scenes/home/furniture/coastal/lamp/images/base.png",
         "assets/scenes/home/furniture/coastal/lamp/images/shade.png"
-      ]
+      ],
+      "category": "furniture",
+      "animation": "assets/scenes/home/furniture/coastal/lamp/animations/sway.json"
     },
     {
       "id": "home.coastal-window",
       "label": "חלון לים",
       "status": "active",
-      "editable": false,
+      "editable": true,
       "assembly": "assets/scenes/home/furniture/coastal/window/assembly.json",
       "images": [
         "assets/scenes/home/furniture/coastal/window/images/frame.png",
         "assets/scenes/home/furniture/coastal/window/images/curtain-left.png",
         "assets/scenes/home/furniture/coastal/window/images/curtain-right.png"
-      ]
+      ],
+      "category": "furniture",
+      "animation": "assets/scenes/home/furniture/coastal/window/animations/breeze.json"
     },
     {
       "id": "home.coastal-side-table",

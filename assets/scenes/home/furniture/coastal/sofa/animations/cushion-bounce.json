@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "prop": "home.coastal-sofa",
+  "id": "cushion-bounce",
+  "label": "תנועת כרית",
+  "duration": 2,
+  "easing": "ease-in-out",
+  "tracks": [
+    {
+      "part": "seat-cushion",
+      "keys": [
+        {
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "rotation": 0
+        },
+        {
+          "time": 1.0,
+          "x": 0,
+          "y": -3,
+          "rotation": 0
+        },
+        {
+          "time": 2,
+          "x": 0,
+          "y": 0,
+          "rotation": 0
+        }
+      ]
+    }
+  ]
+}

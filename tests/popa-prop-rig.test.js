@@ -27,3 +27,11 @@ test('invalid imported structures cannot create cycles, missing tracks, paths or
   const value=structuredClone(clip);mutate(value);assert.throws(()=>validateClip(value,rig));
  }
 });
+test('furniture width animation opens doors and keeps render/export interpolation identical',async()=>{
+ const {validateProp,validateClip,poseAt,partFrames}=await runtime;
+ const cabinet=load('assets/scenes/home/furniture/coastal/cabinet/assembly.json'),open=load('assets/scenes/home/furniture/coastal/cabinet/animations/open.json');validateProp(cabinet);validateClip(open,cabinet);
+ assert.equal(poseAt(open,'door-left',open.duration).scaleX,.08);
+ const mid=poseAt(open,'door-left',.42);assert.ok(mid.scaleX>.08&&mid.scaleX<1);
+ assert.ok(partFrames(open,'door-left').at(-1).transform.includes('scale(0.08, 1)'));
+ const invalid=structuredClone(open);invalid.tracks[0].keys[0].scaleX=-1;assert.throws(()=>validateClip(invalid,cabinet));
+});

@@ -8,7 +8,7 @@
   "parts": [
     {
       "id": "frame",
-      "label": "frame",
+      "label": "מסגרת",
       "image": "assets/scenes/home/furniture/coastal/window/images/frame.png",
       "sourceSize": [
         482,
@@ -29,19 +29,19 @@
     },
     {
       "id": "curtain-left",
-      "label": "curtain-left",
+      "label": "וילון שמאל",
       "image": "assets/scenes/home/furniture/coastal/window/images/curtain-left.png",
       "sourceSize": [
         320,
         495
       ],
       "anchor": [
-        0,
+        160.0,
         0
       ],
       "position": [
-        15,
-        55
+        120.0,
+        55.0
       ],
       "scale": 0.65625,
       "rotation": 0,
@@ -50,19 +50,19 @@
     },
     {
       "id": "curtain-right",
-      "label": "curtain-right",
+      "label": "וילון ימין",
       "image": "assets/scenes/home/furniture/coastal/window/images/curtain-right.png",
       "sourceSize": [
         335,
         495
       ],
       "anchor": [
-        0,
+        167.5,
         0
       ],
       "position": [
-        575,
-        55
+        680.0,
+        55.0
       ],
       "scale": 0.6268656716417911,
       "rotation": 0,

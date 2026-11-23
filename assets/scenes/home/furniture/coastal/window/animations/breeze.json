@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "prop": "home.coastal-window",
+  "id": "breeze",
+  "label": "רוח בווילונות",
+  "duration": 3,
+  "easing": "ease-in-out",
+  "tracks": [
+    {
+      "part": "curtain-left",
+      "keys": [
+        {
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "rotation": -2
+        },
+        {
+          "time": 1.5,
+          "x": 0,
+          "y": 0,
+          "rotation": 3
+        },
+        {
+          "time": 3,
+          "x": 0,
+          "y": 0,
+          "rotation": -2
+        }
+      ]
+    },
+    {
+      "part": "curtain-right",
+      "keys": [
+        {
+          "time": 0,
+          "x": 0,
+          "y": 0,
+          "rotation": 2
+        },
+        {
+          "time": 1.5,
+          "x": 0,
+          "y": 0,
+          "rotation": -3
+        },
+        {
+          "time": 3,
+          "x": 0,
+          "y": 0,
+          "rotation": 2
+        }
+      ]
+    }
+  ]
+}

@@ -21,7 +21,7 @@ export function validateClip(clip,rig){
  for(const t of clip.tracks){
   if(!rig.parts.some(p=>p.id===t.part)||tracks.has(t.part)||!Array.isArray(t.keys)||t.keys.length<1||t.keys.length>200)throw Error('ערוץ אנימציה לא תקין');tracks.add(t.part);
   let last=-1;
-  for(const k of t.keys){if(!finite(k.time,0,clip.duration)||k.time<=last||!finite(k.rotation,-3600,3600)||!finite(k.x)||!finite(k.y))throw Error('פריימים לא תקינים או לא מסודרים בזמן');last=k.time;}
+  for(const k of t.keys){if(!finite(k.time,0,clip.duration)||k.time<=last||!finite(k.rotation,-3600,3600)||!finite(k.x)||!finite(k.y)||(k.scaleX!==undefined&&!finite(k.scaleX,.02,3))||(k.scaleY!==undefined&&!finite(k.scaleY,.02,3)))throw Error('פריימים לא תקינים או לא מסודרים בזמן');last=k.time;}
  }
  return clip;
 }
@@ -32,13 +32,15 @@ export function poseAt(clip,part,time){
  if(time>=keys.at(-1).time)return {...keys.at(-1)};
  const b=keys.findIndex(k=>k.time>time),a=keys[b-1],z=keys[b];let t=(time-a.time)/(z.time-a.time);
  if(clip.easing==='ease-in-out')t=t*t*(3-2*t);
- return {x:a.x+(z.x-a.x)*t,y:a.y+(z.y-a.y)*t,rotation:a.rotation+(z.rotation-a.rotation)*t};
+ const pose={x:a.x+(z.x-a.x)*t,y:a.y+(z.y-a.y)*t,rotation:a.rotation+(z.rotation-a.rotation)*t};
+ for(const name of ['scaleX','scaleY'])if(keys.some(k=>k[name]!==undefined))pose[name]=(a[name]??1)+((z[name]??1)-(a[name]??1))*t;return pose;
 }
+const poseCss=p=>`translate(${p.x}px, ${p.y}px) rotate(${p.rotation}deg)`+((p.scaleX!==undefined||p.scaleY!==undefined)?` scale(${p.scaleX??1}, ${p.scaleY??1})`:'');
 export function partFrames(clip,part){
  const keys=clip.tracks.find(t=>t.part===part)?.keys??[{time:0,x:0,y:0,rotation:0}];
  const steps=Math.max(1,Math.ceil(clip.duration*60));
  const times=[...new Set([...Array.from({length:steps+1},(_,i)=>i*clip.duration/steps),...keys.map(k=>k.time)])].sort((a,b)=>a-b);
- return times.map(time=>{const p=poseAt(clip,part,time);return {offset:time/clip.duration,transform:`translate(${p.x}px,${p.y}px) rotate(${p.rotation}deg)`};});
+ return times.map(time=>{const p=poseAt(clip,part,time);return {offset:time/clip.duration,transform:poseCss(p)};});
 }
 export function mountProp(container,rig,{assetUrl=path=>new URL('../'+path,import.meta.url).href}={}){
  validateProp(rig);container.replaceChildren();const nodes=new Map();
@@ -54,5 +56,5 @@ export function mountProp(container,rig,{assetUrl=path=>new URL('../'+path,impor
   motion.append(img);base.append(motion);nodes.set(p.id,{base,motion,img});
  }
  for(const p of rig.parts)(p.parent?nodes.get(p.parent).motion:container).append(nodes.get(p.id).base);
- return {nodes,render(clip,time){for(const p of rig.parts){const pose=poseAt(clip,p.id,time);nodes.get(p.id).motion.style.transform=`translate(${pose.x}px,${pose.y}px) rotate(${pose.rotation}deg)`;}},ready:Promise.all([...nodes.values()].map(n=>n.img.decode()))};
+ return {nodes,render(clip,time){for(const p of rig.parts){const pose=poseAt(clip,p.id,time);nodes.get(p.id).motion.style.transform=poseCss(pose);}},ready:Promise.all([...nodes.values()].map(n=>n.img.decode()))};
 }

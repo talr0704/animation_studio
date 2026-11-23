@@ -8,7 +8,7 @@
   "parts": [
     {
       "id": "frame",
-      "label": "frame",
+      "label": "מסגרת",
       "image": "assets/scenes/home/furniture/coastal/sofa/images/frame.png",
       "sourceSize": [
         408,
@@ -29,7 +29,7 @@
     },
     {
       "id": "back-cushion",
-      "label": "back-cushion",
+      "label": "כרית משענת",
       "image": "assets/scenes/home/furniture/coastal/sofa/images/back-cushion.png",
       "sourceSize": [
         388,
@@ -50,7 +50,7 @@
     },
     {
       "id": "seat-cushion",
-      "label": "seat-cushion",
+      "label": "כרית מושב",
       "image": "assets/scenes/home/furniture/coastal/sofa/images/seat-cushion.png",
       "sourceSize": [
         370,
