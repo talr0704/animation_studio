@@ -1,0 +1,45 @@
+{
+  "operation": "lossless crop; bounds from alpha > 40 with 3px antialias padding",
+  "parts": [
+    {
+      "image": "assets/scenes/home/furniture/coastal/cabinet/images/door-left-half-open.png",
+      "source": "source-art/home/coastal/cabinet-door-angles.png",
+      "rect": [
+        194,
+        31,
+        318,
+        538
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/cabinet/images/door-left-open.png",
+      "source": "source-art/home/coastal/cabinet-door-angles.png",
+      "rect": [
+        194,
+        610,
+        203,
+        558
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/cabinet/images/door-right-half-open.png",
+      "source": "source-art/home/coastal/cabinet-door-angles.png",
+      "rect": [
+        800,
+        31,
+        316,
+        537
+      ]
+    },
+    {
+      "image": "assets/scenes/home/furniture/coastal/cabinet/images/door-right-open.png",
+      "source": "source-art/home/coastal/cabinet-door-angles.png",
+      "rect": [
+        915,
+        611,
+        203,
+        557
+      ]
+    }
+  ]
+}

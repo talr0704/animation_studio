@@ -2,11 +2,13 @@
 const finite=(n,min=-10000,max=10000)=>Number.isFinite(n)&&n>=min&&n<=max;
 const pair=(v,min=-10000,max=10000)=>Array.isArray(v)&&v.length===2&&v.every(n=>finite(n,min,max));
 const id=v=>typeof v==='string'&&/^[a-z][a-z0-9.-]{0,70}$/.test(v);
+const imagePath=v=>typeof v==='string'&&/^assets\/[a-zA-Z0-9/_ .-]+\.(png|svg|webp)$/.test(v)&&!v.includes('..');
 export function validateProp(rig){
  if(!rig||rig.version!==1||!id(rig.id)||!pair(rig.canvas,1,2000)||!Array.isArray(rig.parts)||!rig.parts.length||rig.parts.length>40)throw Error('קובץ הרכבה לא תקין');
  const ids=new Set();
  for(const p of rig.parts){
   if(!id(p.id)||ids.has(p.id)||typeof p.image!=='string'||!/^assets\/[a-zA-Z0-9/_ .-]+\.(png|svg|webp)$/.test(p.image)||p.image.includes('..')||!pair(p.sourceSize,1,10000)||!pair(p.anchor)||!pair(p.position)||!finite(p.scale,.001,20)||(p.scaleY!==undefined&&!finite(p.scaleY,.001,20))||!finite(p.rotation,-3600,3600)||!Number.isInteger(p.layer)||!finite(p.layer,-100,100))throw Error('נתוני חלק לא תקינים');
+  if(p.images&&(!Object.keys(p.images).length||Object.keys(p.images).length>12||Object.entries(p.images).some(([name,path])=>!id(name)||!imagePath(path))))throw Error('איורי פריימים לא תקינים');
   ids.add(p.id);
  }
  for(const p of rig.parts){
@@ -21,7 +23,7 @@ export function validateClip(clip,rig){
  for(const t of clip.tracks){
   if(!rig.parts.some(p=>p.id===t.part)||tracks.has(t.part)||!Array.isArray(t.keys)||t.keys.length<1||t.keys.length>200)throw Error('ערוץ אנימציה לא תקין');tracks.add(t.part);
   let last=-1;
-  for(const k of t.keys){if(!finite(k.time,0,clip.duration)||k.time<=last||!finite(k.rotation,-3600,3600)||!finite(k.x)||!finite(k.y)||(k.scaleX!==undefined&&!finite(k.scaleX,.02,3))||(k.scaleY!==undefined&&!finite(k.scaleY,.02,3)))throw Error('פריימים לא תקינים או לא מסודרים בזמן');last=k.time;}
+  for(const k of t.keys){if(!finite(k.time,0,clip.duration)||k.time<=last||!finite(k.rotation,-3600,3600)||!finite(k.x)||!finite(k.y)||(k.scaleX!==undefined&&!finite(k.scaleX,.02,3))||(k.scaleY!==undefined&&!finite(k.scaleY,.02,3)))throw Error('פריימים לא תקינים או לא מסודרים בזמן');if(k.imageFrame!==undefined&&!rig.parts.find(p=>p.id===t.part).images?.[k.imageFrame])throw Error('איור הפריים אינו שייך לחלק');last=k.time;}
  }
  return clip;
 }
@@ -33,6 +35,7 @@ export function poseAt(clip,part,time){
  const b=keys.findIndex(k=>k.time>time),a=keys[b-1],z=keys[b];let t=(time-a.time)/(z.time-a.time);
  if(clip.easing==='ease-in-out')t=t*t*(3-2*t);
  const pose={x:a.x+(z.x-a.x)*t,y:a.y+(z.y-a.y)*t,rotation:a.rotation+(z.rotation-a.rotation)*t};
+ if(keys.some(k=>k.imageFrame!==undefined))pose.imageFrame=keys.slice(0,b).reverse().find(k=>k.imageFrame!==undefined)?.imageFrame;
  for(const name of ['scaleX','scaleY'])if(keys.some(k=>k[name]!==undefined))pose[name]=(a[name]??1)+((z[name]??1)-(a[name]??1))*t;return pose;
 }
 const poseCss=p=>`translate(${p.x}px, ${p.y}px) rotate(${p.rotation}deg)`+((p.scaleX!==undefined||p.scaleY!==undefined)?` scale(${p.scaleX??1}, ${p.scaleY??1})`:'');
@@ -53,8 +56,10 @@ export function mountProp(container,rig,{assetUrl=path=>new URL('../'+path,impor
   Object.assign(motion.style,{position:'absolute',left:'0',top:'0',width:'0',height:'0',transformOrigin:'0 0'});
   img.src=assetUrl(p.image);img.alt=p.label??p.id;img.draggable=false;img.dataset.propImage=p.id;if(p.id==='bolt')img.className='bolt';
   Object.assign(img.style,{position:'absolute',maxWidth:'none',width:p.sourceSize[0]*p.scale+'px',height:p.sourceSize[1]*(p.scaleY??p.scale)+'px',left:-p.anchor[0]*p.scale+'px',top:-p.anchor[1]*(p.scaleY??p.scale)+'px',pointerEvents:'none'});
+  if(p.images){img.style.objectFit='contain';img.style.objectPosition=p.anchor[0]?'right center':'left center';}
   motion.append(img);base.append(motion);nodes.set(p.id,{base,motion,img});
  }
  for(const p of rig.parts)(p.parent?nodes.get(p.parent).motion:container).append(nodes.get(p.id).base);
- return {nodes,render(clip,time){for(const p of rig.parts){const pose=poseAt(clip,p.id,time);nodes.get(p.id).motion.style.transform=poseCss(pose);}},ready:Promise.all([...nodes.values()].map(n=>n.img.decode()))};
+ const sprites=new Map();for(const p of rig.parts)for(const path of Object.values(p.images??{})){const image=new Image();image.src=assetUrl(path);sprites.set(path,image);}
+ return {nodes,render(clip,time){for(const p of rig.parts){const pose=poseAt(clip,p.id,time),node=nodes.get(p.id);node.motion.style.transform=poseCss(pose);const path=p.images?.[pose.imageFrame]??p.image,url=assetUrl(path);if(node.img.src!==url)node.img.src=url;}},ready:Promise.all([...nodes.values()].map(n=>n.img.decode()).concat([...sprites.values()].map(image=>image.decode())))};
 }

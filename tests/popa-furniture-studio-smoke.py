@@ -16,10 +16,10 @@ with sync_playwright() as p:
  with page.expect_download() as d:page.locator('[data-editor-action="downloadJson"]').click()
  exported=json.loads(Path(d.value.path()).read_text());assert 'sit-hold' in exported and exported['sit-hold']['keyframes'];assert 'reference' not in exported
  page.goto('http://localhost:4205/studio.html?category=furniture',wait_until='networkidle');assert page.locator('#prop-select option').count()==4
- page.select_option('#prop-select','home.coastal-cabinet');page.wait_for_function('document.querySelector("#assembly-path").textContent.includes("cabinet")');page.select_option('#part','door-left');page.locator('#time').fill('.84');page.locator('#time').press('Tab');assert float(page.input_value('#motion-scale-x'))<.2
+ page.select_option('#prop-select','home.coastal-cabinet');page.wait_for_function('document.querySelector("#assembly-path").textContent.includes("cabinet")');page.select_option('#part','door-left');page.locator('#time').fill('.84');page.locator('#time').press('Tab');assert page.input_value('#image-frame')=='open';assert page.locator('[data-prop-image="door-left"]').get_attribute('src').endswith('door-left-open.png')
  page.locator('#motion-scale-x').fill('.3');page.locator('#motion-scale-x').press('Tab');assert '.3' in page.locator('[data-prop-motion="door-left"]').evaluate('(e)=>e.style.transform')
  with page.expect_download() as d:page.locator('#export-details summary').click();page.locator('#export-clip').click()
- clip=json.loads(Path(d.value.path()).read_text());assert clip['prop']=='home.coastal-cabinet' and clip['id']=='open'
+ clip=json.loads(Path(d.value.path()).read_text());assert clip['prop']=='home.coastal-cabinet' and clip['id']=='open';assert any(k.get('imageFrame')=='open' for t in clip['tracks'] for k in t['keys'])
  page.select_option('#prop-select','home.coastal-lamp');page.wait_for_function('document.querySelector("#assembly-path").textContent.includes("lamp")');assert page.locator('#part option').count()==2
  page.select_option('#prop-select','home.coastal-window');page.wait_for_function('document.querySelector("#assembly-path").textContent.includes("window")');assert page.locator('#part option').count()==3
  page.goto('http://localhost:4205/studio.html',wait_until='networkidle');assert page.locator('#prop-select option').count()==2

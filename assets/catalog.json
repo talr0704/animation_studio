@@ -321,7 +321,11 @@
       "images": [
         "assets/scenes/home/furniture/coastal/cabinet/images/frame.png",
         "assets/scenes/home/furniture/coastal/cabinet/images/door-left.png",
-        "assets/scenes/home/furniture/coastal/cabinet/images/door-right.png"
+        "assets/scenes/home/furniture/coastal/cabinet/images/door-right.png",
+        "assets/scenes/home/furniture/coastal/cabinet/images/door-left-half-open.png",
+        "assets/scenes/home/furniture/coastal/cabinet/images/door-left-open.png",
+        "assets/scenes/home/furniture/coastal/cabinet/images/door-right-half-open.png",
+        "assets/scenes/home/furniture/coastal/cabinet/images/door-right-open.png"
       ],
       "category": "furniture",
       "animation": "assets/scenes/home/furniture/coastal/cabinet/animations/open.json"

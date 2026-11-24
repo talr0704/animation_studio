@@ -27,11 +27,12 @@ test('invalid imported structures cannot create cycles, missing tracks, paths or
   const value=structuredClone(clip);mutate(value);assert.throws(()=>validateClip(value,rig));
  }
 });
-test('furniture width animation opens doors and keeps render/export interpolation identical',async()=>{
+test('cabinet swaps illustrated door frames without flattening artwork',async()=>{
  const {validateProp,validateClip,poseAt,partFrames}=await runtime;
  const cabinet=load('assets/scenes/home/furniture/coastal/cabinet/assembly.json'),open=load('assets/scenes/home/furniture/coastal/cabinet/animations/open.json');validateProp(cabinet);validateClip(open,cabinet);
- assert.equal(poseAt(open,'door-left',open.duration).scaleX,.08);
- const mid=poseAt(open,'door-left',.42);assert.ok(mid.scaleX>.08&&mid.scaleX<1);
- assert.ok(partFrames(open,'door-left').at(-1).transform.includes('scale(0.08, 1)'));
+ assert.equal(poseAt(open,'door-left',open.duration).scaleX,1);assert.equal(poseAt(open,'door-left',open.duration).imageFrame,'open');
+ const mid=poseAt(open,'door-left',.42);assert.equal(mid.imageFrame,'half-open');assert.equal(poseAt(open,'door-right',.699).imageFrame,'half-open');assert.equal(poseAt(open,'door-right',.7).imageFrame,'open');
+ assert.ok(partFrames(open,'door-left').at(-1).transform.includes('scale(1, 1)'));
+ const badImage=structuredClone(open);badImage.tracks[0].keys[0].imageFrame='missing';assert.throws(()=>validateClip(badImage,cabinet));
  const invalid=structuredClone(open);invalid.tracks[0].keys[0].scaleX=-1;assert.throws(()=>validateClip(invalid,cabinet));
 });
