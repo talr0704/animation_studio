@@ -7,7 +7,8 @@
       "animations": "popa-clips.js",
       "outfits": "assets/characters/popa/outfits/catalog.json",
       "studioAnimations": [
-        "assets/characters/popa/animations/sitting-demo.json"
+        "assets/characters/popa/animations/sitting-demo.json",
+        "assets/characters/popa/animations/open-wardrobe.json"
       ]
     }
   ],

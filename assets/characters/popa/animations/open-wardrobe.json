@@ -1,0 +1,1029 @@
+{
+  "open-wardrobe": {
+    "name": "פתיחת ארון — פופה בלבד",
+    "duration": 2.4,
+    "loop": false,
+    "keyframes": [
+      {
+        "id": "open-wardrobe-0-robot",
+        "time": 0,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "open-wardrobe-0-head",
+        "time": 0,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 47.95454545454545,
+          "transformOriginY": 60.0
+        }
+      },
+      {
+        "id": "open-wardrobe-0-torso",
+        "time": 0,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.09088550914418,
+          "transformOriginY": 61.85263800370065
+        }
+      },
+      {
+        "id": "open-wardrobe-0-shirt",
+        "time": 0,
+        "part": "shirt",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.886376120827414,
+          "transformOriginY": 64.58950002569901
+        }
+      },
+      {
+        "id": "open-wardrobe-0-pinafore",
+        "time": 0,
+        "part": "pinafore",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.590922962535515,
+          "transformOriginY": 65.72632028680098
+        }
+      },
+      {
+        "id": "open-wardrobe-0-left_arm",
+        "time": 0,
+        "part": "left_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 36.81818181818181,
+          "transformOriginY": 66.10525994551809
+        }
+      },
+      {
+        "id": "open-wardrobe-0-right_arm",
+        "time": 0,
+        "part": "right_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 63.7272782759233,
+          "transformOriginY": 64.37893837376645
+        }
+      },
+      {
+        "id": "open-wardrobe-0-foot_left",
+        "time": 0,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.52272449840199,
+          "transformOriginY": 84.50526187294408
+        }
+      },
+      {
+        "id": "open-wardrobe-0-foot_right",
+        "time": 0,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.522734208540484,
+          "transformOriginY": 85.89474326685855
+        }
+      },
+      {
+        "id": "open-wardrobe-0-tail",
+        "time": 0,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 35.295458706942476,
+          "transformOriginY": 79.19999164782074
+        }
+      },
+      {
+        "id": "open-wardrobe-1-robot",
+        "time": 0.6,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 8,
+          "y": 0,
+          "rotate": 2,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "open-wardrobe-1-head",
+        "time": 0.6,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 5,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 47.95454545454545,
+          "transformOriginY": 60.0
+        }
+      },
+      {
+        "id": "open-wardrobe-1-torso",
+        "time": 0.6,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.09088550914418,
+          "transformOriginY": 61.85263800370065
+        }
+      },
+      {
+        "id": "open-wardrobe-1-shirt",
+        "time": 0.6,
+        "part": "shirt",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.886376120827414,
+          "transformOriginY": 64.58950002569901
+        }
+      },
+      {
+        "id": "open-wardrobe-1-pinafore",
+        "time": 0.6,
+        "part": "pinafore",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.590922962535515,
+          "transformOriginY": 65.72632028680098
+        }
+      },
+      {
+        "id": "open-wardrobe-1-left_arm",
+        "time": 0.6,
+        "part": "left_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": -2,
+          "y": 3,
+          "rotate": -6,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 36.81818181818181,
+          "transformOriginY": 66.10525994551809
+        }
+      },
+      {
+        "id": "open-wardrobe-1-right_arm",
+        "time": 0.6,
+        "part": "right_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 38,
+          "y": -19,
+          "rotate": -62,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 63.7272782759233,
+          "transformOriginY": 64.37893837376645
+        }
+      },
+      {
+        "id": "open-wardrobe-1-foot_left",
+        "time": 0.6,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 4,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.52272449840199,
+          "transformOriginY": 84.50526187294408
+        }
+      },
+      {
+        "id": "open-wardrobe-1-foot_right",
+        "time": 0.6,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.522734208540484,
+          "transformOriginY": 85.89474326685855
+        }
+      },
+      {
+        "id": "open-wardrobe-1-tail",
+        "time": 0.6,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -5,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 35.295458706942476,
+          "transformOriginY": 79.19999164782074
+        }
+      },
+      {
+        "id": "open-wardrobe-2-robot",
+        "time": 0.9,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 8,
+          "y": 0,
+          "rotate": 2,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "open-wardrobe-2-head",
+        "time": 0.9,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 5,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 47.95454545454545,
+          "transformOriginY": 60.0
+        }
+      },
+      {
+        "id": "open-wardrobe-2-torso",
+        "time": 0.9,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.09088550914418,
+          "transformOriginY": 61.85263800370065
+        }
+      },
+      {
+        "id": "open-wardrobe-2-shirt",
+        "time": 0.9,
+        "part": "shirt",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.886376120827414,
+          "transformOriginY": 64.58950002569901
+        }
+      },
+      {
+        "id": "open-wardrobe-2-pinafore",
+        "time": 0.9,
+        "part": "pinafore",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.590922962535515,
+          "transformOriginY": 65.72632028680098
+        }
+      },
+      {
+        "id": "open-wardrobe-2-left_arm",
+        "time": 0.9,
+        "part": "left_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": -2,
+          "y": 3,
+          "rotate": -6,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 36.81818181818181,
+          "transformOriginY": 66.10525994551809
+        }
+      },
+      {
+        "id": "open-wardrobe-2-right_arm",
+        "time": 0.9,
+        "part": "right_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 38,
+          "y": -19,
+          "rotate": -62,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 63.7272782759233,
+          "transformOriginY": 64.37893837376645
+        }
+      },
+      {
+        "id": "open-wardrobe-2-foot_left",
+        "time": 0.9,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 4,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.52272449840199,
+          "transformOriginY": 84.50526187294408
+        }
+      },
+      {
+        "id": "open-wardrobe-2-foot_right",
+        "time": 0.9,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.522734208540484,
+          "transformOriginY": 85.89474326685855
+        }
+      },
+      {
+        "id": "open-wardrobe-2-tail",
+        "time": 0.9,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -5,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 35.295458706942476,
+          "transformOriginY": 79.19999164782074
+        }
+      },
+      {
+        "id": "open-wardrobe-3-robot",
+        "time": 1.45,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": -7,
+          "y": 0,
+          "rotate": -1,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "open-wardrobe-3-head",
+        "time": 1.45,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 2,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 47.95454545454545,
+          "transformOriginY": 60.0
+        }
+      },
+      {
+        "id": "open-wardrobe-3-torso",
+        "time": 1.45,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.09088550914418,
+          "transformOriginY": 61.85263800370065
+        }
+      },
+      {
+        "id": "open-wardrobe-3-shirt",
+        "time": 1.45,
+        "part": "shirt",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.886376120827414,
+          "transformOriginY": 64.58950002569901
+        }
+      },
+      {
+        "id": "open-wardrobe-3-pinafore",
+        "time": 1.45,
+        "part": "pinafore",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.590922962535515,
+          "transformOriginY": 65.72632028680098
+        }
+      },
+      {
+        "id": "open-wardrobe-3-left_arm",
+        "time": 1.45,
+        "part": "left_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": -2,
+          "y": 3,
+          "rotate": -4,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 36.81818181818181,
+          "transformOriginY": 66.10525994551809
+        }
+      },
+      {
+        "id": "open-wardrobe-3-right_arm",
+        "time": 1.45,
+        "part": "right_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 10,
+          "y": -13,
+          "rotate": -30,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 63.7272782759233,
+          "transformOriginY": 64.37893837376645
+        }
+      },
+      {
+        "id": "open-wardrobe-3-foot_left",
+        "time": 1.45,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 1,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.52272449840199,
+          "transformOriginY": 84.50526187294408
+        }
+      },
+      {
+        "id": "open-wardrobe-3-foot_right",
+        "time": 1.45,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.522734208540484,
+          "transformOriginY": 85.89474326685855
+        }
+      },
+      {
+        "id": "open-wardrobe-3-tail",
+        "time": 1.45,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 8,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 35.295458706942476,
+          "transformOriginY": 79.19999164782074
+        }
+      },
+      {
+        "id": "open-wardrobe-4-robot",
+        "time": 1.85,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": -2,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "open-wardrobe-4-head",
+        "time": 1.85,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -1,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 47.95454545454545,
+          "transformOriginY": 60.0
+        }
+      },
+      {
+        "id": "open-wardrobe-4-torso",
+        "time": 1.85,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.09088550914418,
+          "transformOriginY": 61.85263800370065
+        }
+      },
+      {
+        "id": "open-wardrobe-4-shirt",
+        "time": 1.85,
+        "part": "shirt",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.886376120827414,
+          "transformOriginY": 64.58950002569901
+        }
+      },
+      {
+        "id": "open-wardrobe-4-pinafore",
+        "time": 1.85,
+        "part": "pinafore",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.590922962535515,
+          "transformOriginY": 65.72632028680098
+        }
+      },
+      {
+        "id": "open-wardrobe-4-left_arm",
+        "time": 1.85,
+        "part": "left_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 36.81818181818181,
+          "transformOriginY": 66.10525994551809
+        }
+      },
+      {
+        "id": "open-wardrobe-4-right_arm",
+        "time": 1.85,
+        "part": "right_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 3,
+          "y": -3,
+          "rotate": -12,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 63.7272782759233,
+          "transformOriginY": 64.37893837376645
+        }
+      },
+      {
+        "id": "open-wardrobe-4-foot_left",
+        "time": 1.85,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.52272449840199,
+          "transformOriginY": 84.50526187294408
+        }
+      },
+      {
+        "id": "open-wardrobe-4-foot_right",
+        "time": 1.85,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.522734208540484,
+          "transformOriginY": 85.89474326685855
+        }
+      },
+      {
+        "id": "open-wardrobe-4-tail",
+        "time": 1.85,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 3,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 35.295458706942476,
+          "transformOriginY": 79.19999164782074
+        }
+      },
+      {
+        "id": "open-wardrobe-5-robot",
+        "time": 2.4,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "open-wardrobe-5-head",
+        "time": 2.4,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 47.95454545454545,
+          "transformOriginY": 60.0
+        }
+      },
+      {
+        "id": "open-wardrobe-5-torso",
+        "time": 2.4,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.09088550914418,
+          "transformOriginY": 61.85263800370065
+        }
+      },
+      {
+        "id": "open-wardrobe-5-shirt",
+        "time": 2.4,
+        "part": "shirt",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.886376120827414,
+          "transformOriginY": 64.58950002569901
+        }
+      },
+      {
+        "id": "open-wardrobe-5-pinafore",
+        "time": 2.4,
+        "part": "pinafore",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 51.590922962535515,
+          "transformOriginY": 65.72632028680098
+        }
+      },
+      {
+        "id": "open-wardrobe-5-left_arm",
+        "time": 2.4,
+        "part": "left_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 36.81818181818181,
+          "transformOriginY": 66.10525994551809
+        }
+      },
+      {
+        "id": "open-wardrobe-5-right_arm",
+        "time": 2.4,
+        "part": "right_arm",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 63.7272782759233,
+          "transformOriginY": 64.37893837376645
+        }
+      },
+      {
+        "id": "open-wardrobe-5-foot_left",
+        "time": 2.4,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.52272449840199,
+          "transformOriginY": 84.50526187294408
+        }
+      },
+      {
+        "id": "open-wardrobe-5-foot_right",
+        "time": 2.4,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.522734208540484,
+          "transformOriginY": 85.89474326685855
+        }
+      },
+      {
+        "id": "open-wardrobe-5-tail",
+        "time": 2.4,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 35.295458706942476,
+          "transformOriginY": 79.19999164782074
+        }
+      }
+    ]
+  }
+}
