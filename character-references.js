@@ -1,5 +1,5 @@
-import {loadPropAppearance} from './shared/prop-appearance.js?v=1';
-import { mountProp } from './shared/prop-rig.js?v=sofa2';
+import {loadPropAppearance} from './shared/prop-appearance.js?v=2';
+import { mountProp } from './shared/prop-rig.js?v=closed-fit5';
 import { validateFurnitureInteraction } from './shared/furniture-interaction.js?v=2';
 const ROOT='assets/scenes/home/furniture/coastal/';
 const references={sofa:{label:'ספה',folder:'sofa',x:-130,y:43.33,scale:1/.6},cabinet:{label:'ארונית',folder:'cabinet',x:240,y:70,scale:1.1},lamp:{label:'מנורה',folder:'lamp',x:290,y:85,scale:1.1},window:{label:'חלון',folder:'window',x:-150,y:-30,scale:.8}};
@@ -14,7 +14,7 @@ export async function mountCharacterReferences({character,editor}){
  function current(){const defaults=references[settings.id];if(!defaults)return null;const saved=settings.poses[settings.id];return saved&&['x','y','scale'].every(k=>Number.isFinite(saved[k]))&&saved.scale>.05&&saved.scale<5?saved:{x:defaults.x,y:defaults.y,scale:defaults.scale};}
  function save(){try{localStorage.setItem(STORAGE,JSON.stringify(settings));}catch{}}
  function position(){const p=current();holder.hidden=!p;document.body.classList.toggle('character-reference-active',!!p);for(const id of ['x','y','scale','drag'])$(id).disabled=!p;if(!p)return;Object.assign(holder.style,{left:p.x+'px',top:p.y+'px',transform:`scale(${p.scale})`});for(const id of ['x','y','scale'])$(id).value=Math.round(p[id]*100)/100;holder.classList.toggle('reference-draggable',$('drag').checked);}
- async function show(id){const token=++revision;settings.id=id;$('reference').value=id;position();save();if(!id){holder.replaceChildren();return;}try{const response=await fetch(ROOT+references[id].folder+'/assembly.json?v=2');if(!response.ok)throw Error('לא נטענה הדוגמה');const rig=loadPropAppearance(await response.json());if(token!==revision)return;Object.assign(holder.style,{width:rig.canvas[0]+'px',height:rig.canvas[1]+'px'});view=mountProp(holder,rig);await view.ready;}catch(error){$('status').textContent=error.message;}}
+ async function show(id){const token=++revision;settings.id=id;$('reference').value=id;position();save();if(!id){holder.replaceChildren();return;}try{const response=await fetch(ROOT+references[id].folder+'/assembly.json?v=2',{cache:'no-cache'});if(!response.ok)throw Error('לא נטענה הדוגמה');const rig=loadPropAppearance(await response.json());if(token!==revision)return;Object.assign(holder.style,{width:rig.canvas[0]+'px',height:rig.canvas[1]+'px'});view=mountProp(holder,rig);await view.ready;}catch(error){$('status').textContent=error.message;}}
  $('reference').onchange=()=>show($('reference').value);
  for(const id of ['x','y','scale'])$(id).onchange=()=>{const n=Number($(id).value);if(!current()||!Number.isFinite(n)||(id==='scale'&&(n<.05||n>4))||Math.abs(n)>2000){position();return;}settings.poses[settings.id]={...current(),[id]:n};position();save();};
  $('drag').onchange=position;

@@ -1,4 +1,4 @@
-import {loadPropAppearance} from '../shared/prop-appearance.js?v=1';
+import {loadPropAppearance} from '../shared/prop-appearance.js?v=2';
 import {mountProp,validateProp,validateClip,partFrames} from '../shared/prop-rig.js';
 import { SalonRound,HAIR_PARTS,LENGTHS,CARE_CELLS } from './salon-round.js';
 import { readAlbum,recordVisit,unlocked,UNLOCKS } from './salon-progress.js';

@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+rig=json.loads(Path('assets/scenes/home/furniture/coastal/cabinet/assembly.json').read_text());original_left=next(p for p in rig['parts'] if p['id']=='door-left')['position'][0]
 clip=json.loads(Path('assets/scenes/home/furniture/coastal/cabinet/animations/open.json').read_text())
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
@@ -12,10 +13,10 @@ with sync_playwright() as p:
  page.select_option('#edit-mode','appearance')
  assert page.locator('.timeline').is_hidden();assert page.locator('#play').is_disabled()
  assert page.locator('[data-prop-image="door-left"]').get_attribute('src').endswith('door-left.png')
- assert float(page.input_value('#position-x'))==37
+ assert abs(float(page.input_value('#position-x'))-original_left)<.001
  box=page.locator('[data-prop-image="door-left"]').bounding_box()
  page.mouse.move(box['x']+box['width']/2,box['y']+box['height']/2);page.mouse.down();page.mouse.move(box['x']+box['width']/2+20,box['y']+box['height']/2+12,steps=3);page.mouse.up()
- assert float(page.input_value('#position-x'))>37
+ assert float(page.input_value('#position-x'))>original_left
  page.locator('#position-x').fill('52');page.locator('#position-x').press('Tab')
  page.locator('#position-y').fill('113');page.locator('#position-y').press('Tab')
  draft=page.evaluate('JSON.parse(localStorage.getItem("popaPropDraftV1:home.coastal-cabinet"))')
@@ -28,11 +29,16 @@ with sync_playwright() as p:
  door=game.locator('[data-furniture="wardrobe"] [data-prop-part="door-left"]')
  assert door.evaluate('(e)=>e.style.left')=='52px';assert door.evaluate('(e)=>e.style.top')=='113px'
  game.reload(wait_until='networkidle');game.wait_for_selector('#loading',state='hidden');assert door.evaluate('(e)=>e.style.left')=='52px'
+ # A newly published layout takes precedence over local changes based on older data.
+ revised=json.loads(json.dumps(rig));next(p for p in revised['parts'] if p['id']=='door-left')['position'][0]=55
+ game.route('**/cabinet/assembly.json',lambda route:route.fulfill(json=revised))
+ game.reload(wait_until='networkidle');game.wait_for_selector('#loading',state='hidden');assert door.evaluate('(e)=>e.style.left')=='55px'
+ game.unroute('**/cabinet/assembly.json')
  # Invalid stored coordinates are ignored instead of breaking the game.
  game.evaluate('localStorage.setItem("popaPropAppearanceV1:home.coastal-cabinet",JSON.stringify({version:1,id:"home.coastal-cabinet",parts:[{id:"frame"},{id:"door-left",position:["bad",1]},{id:"door-right"}]}))')
- game.reload(wait_until='networkidle');game.wait_for_selector('#loading',state='hidden');assert door.evaluate('(e)=>e.style.left')=='37px'
+ game.reload(wait_until='networkidle');game.wait_for_selector('#loading',state='hidden');assert abs(door.evaluate('(e)=>parseFloat(e.style.left)')-original_left)<.001
  page.locator('#save-appearance').click();page.locator('#clear-appearance').click()
- game.reload(wait_until='networkidle');game.wait_for_selector('#loading',state='hidden');assert door.evaluate('(e)=>e.style.left')=='37px'
+ game.reload(wait_until='networkidle');game.wait_for_selector('#loading',state='hidden');assert abs(door.evaluate('(e)=>parseFloat(e.style.left)')-original_left)<.001
  assert not errors,errors
  b.close()
 print('PASS static neutral editing, unchanged animation, game persistence, invalid layout fallback and reset')

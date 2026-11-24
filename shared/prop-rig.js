@@ -56,10 +56,10 @@ export function mountProp(container,rig,{assetUrl=path=>new URL('../'+path,impor
   Object.assign(motion.style,{position:'absolute',left:'0',top:'0',width:'0',height:'0',transformOrigin:'0 0'});
   img.src=assetUrl(p.image);img.alt=p.label??p.id;img.draggable=false;img.dataset.propImage=p.id;if(p.id==='bolt')img.className='bolt';
   Object.assign(img.style,{position:'absolute',maxWidth:'none',width:p.sourceSize[0]*p.scale+'px',height:p.sourceSize[1]*(p.scaleY??p.scale)+'px',left:-p.anchor[0]*p.scale+'px',top:-p.anchor[1]*(p.scaleY??p.scale)+'px',pointerEvents:'none'});
-  if(p.images){img.style.objectFit='contain';img.style.objectPosition=p.anchor[0]?'right center':'left center';}
+  if(p.images){img.style.objectFit='fill';img.style.objectPosition=p.anchor[0]?'right center':'left center';}
   motion.append(img);base.append(motion);nodes.set(p.id,{base,motion,img});
  }
  for(const p of rig.parts)(p.parent?nodes.get(p.parent).motion:container).append(nodes.get(p.id).base);
  const sprites=new Map();for(const p of rig.parts)for(const path of Object.values(p.images??{})){const image=new Image();image.src=assetUrl(path);sprites.set(path,image);}
- return {nodes,render(clip,time){for(const p of rig.parts){const pose=poseAt(clip,p.id,time),node=nodes.get(p.id);node.motion.style.transform=poseCss(pose);const path=p.images?.[pose.imageFrame]??p.image,url=assetUrl(path);if(node.img.src!==url)node.img.src=url;}},ready:Promise.all([...nodes.values()].map(n=>n.img.decode()).concat([...sprites.values()].map(image=>image.decode())))};
+ return {nodes,render(clip,time){for(const p of rig.parts){const pose=poseAt(clip,p.id,time),node=nodes.get(p.id);node.motion.style.transform=poseCss(pose);const path=p.images?.[pose.imageFrame]??p.image,url=assetUrl(path);if(node.img.src!==url)node.img.src=url;if(p.images)node.img.style.objectFit=path===p.image?'fill':'contain';}},ready:Promise.all([...nodes.values()].map(n=>n.img.decode()).concat([...sprites.values()].map(image=>image.decode())))};
 }
