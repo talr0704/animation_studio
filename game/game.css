@@ -40,3 +40,30 @@
 footer a,footer button{font-size:13px;min-height:40px}.world-paths button{min-height:44px;border-color:#c5a384;box-shadow:0 2px 0 #a47e5533}.wardrobe-footer a,.wardrobe-footer button{min-height:38px}.wardrobe-choices .hanging-label{border:1px solid #c5a384;padding:6px 9px;box-shadow:0 2px 0 #a47e5533}
 @media(max-width:700px){footer{gap:6px;bottom:6px}footer a,footer button{font-size:11px;min-height:38px}.edit-room{bottom:54px}.room-editor{bottom:101px}.wardrobe-card .wardrobe-footer{bottom:auto}.world-paths button{min-height:40px}}
 @media(min-width:701px){.edit-room{bottom:60px}.room-editor{bottom:110px}}
+
+/* Readable closet controls; preserve the original 405 × 350 illustration ratio. */
+#wardrobe-panel .wardrobe-card{width:min(820px,96vw,calc(92svh * 1.15714));height:auto;aspect-ratio:405/350;flex-shrink:0}
+.wardrobe-heading{top:18%;left:22%;right:22%;padding:8px 12px;background:#fff8ec;border:2px solid #9d7252;border-radius:14px;box-shadow:0 3px 0 #70482e26;z-index:5}
+.wardrobe-heading h2{font-size:22px;color:#4b3023}.wardrobe-heading p{font-size:14px!important;color:#503a2b!important}
+.wardrobe-card .wardrobe-choices{left:12%;right:12%;top:32%;bottom:20%;gap:14px;scrollbar-width:none;padding:8px 3px 12px}
+.wardrobe-choices::-webkit-scrollbar{display:none}
+.wardrobe-choices button{flex-basis:154px;width:154px}
+.wardrobe-choices .hanging-label{display:grid;place-items:center;width:100%;min-height:46px;padding:8px 6px;font-size:15px;font-weight:700;line-height:1.3;color:#422b20;background:#fff8eb;border:2px solid #9a7051;box-shadow:0 3px 0 #80573d33;border-radius:12px}
+.wardrobe-choices small{font-size:12px;font-weight:600;color:#51382a;background:#fff8eb;border-radius:5px;padding:2px 6px;margin-top:5px}
+.wardrobe-choices [aria-pressed=true] .hanging-label{background:#f3ddea;border-color:#845374;outline:0;box-shadow:0 3px 0 #84537455}
+.wardrobe-choices button:focus-visible .hanging-label{outline:3px solid #583b78;outline-offset:3px}
+.wardrobe-arrow{position:absolute;top:52%;z-index:6;width:44px;height:54px;border:2px solid #805938;border-radius:14px;background:#fff9ed;color:#543721;font-size:28px;box-shadow:0 3px 0 #80593844;cursor:pointer}
+.wardrobe-arrow-right{right:5%}.wardrobe-arrow-left{left:5%}.wardrobe-arrow:disabled{opacity:.4;cursor:default}.wardrobe-arrow:focus-visible{outline:3px solid #845374;outline-offset:3px}
+.wardrobe-card .wardrobe-footer{top:84%;left:12%;right:12%;gap:10px}
+.wardrobe-footer button,.wardrobe-footer a{min-height:44px;padding:10px 15px;font-size:15px;font-weight:700;color:#422b20;background:#fff8eb;border:2px solid #9a7051;box-shadow:0 3px 0 #80573d33;border-radius:12px}
+.wardrobe-card #wardrobe-status{font-size:13px!important;background:#fff8eb;border-radius:8px;color:#422b20!important}
+.wardrobe-card #wardrobe-status:empty{display:none}
+@media(max-width:700px){
+ #wardrobe-panel .wardrobe-card{width:96vw;max-height:94svh;aspect-ratio:auto;height:min(720px,94svh);background:#f7eddd;border:2px solid #a27b5c;border-radius:22px;overflow:hidden}
+ .wardrobe-frame{display:none}.wardrobe-door{display:none}
+ .wardrobe-heading{top:18px;left:12px;right:12px}.wardrobe-heading h2{font-size:21px}.wardrobe-heading p{font-size:14px!important}
+ .wardrobe-card .wardrobe-choices{top:110px;bottom:150px;left:56px;right:56px;gap:14px}.wardrobe-choices button{flex-basis:160px;width:160px}
+ .wardrobe-choices .wardrobe-hanger{width:115px;height:58px;margin-bottom:-14px}.wardrobe-choices .hanging-label{font-size:15px}
+ .wardrobe-arrow{top:45%;width:40px;height:54px}.wardrobe-arrow-right{right:8px}.wardrobe-arrow-left{left:8px}
+ .wardrobe-card .wardrobe-footer{top:auto;bottom:18px;left:12px;right:12px}.wardrobe-footer button,.wardrobe-footer a{font-size:14px;padding:10px 12px}
+}

@@ -237,10 +237,24 @@ function openWardrobe(){
   if(!wardrobe||view!=='room')return;roomEditor?.close();cancelInteraction();keys.clear();target=roomX;targetDepth=roomDepth;cue('idle');
   wardrobeReturnFocus=document.querySelector('[data-furniture="wardrobe"]');$('wardrobe-panel').hidden=false;
   document.querySelectorAll('[data-wear]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.wear===profile.outfit)));
-  $('wardrobe-status').textContent='';document.querySelector(`[data-wear="${profile.outfit}"]`).focus();
+  $('wardrobe-status').textContent='';document.querySelector(`[data-wear="${profile.outfit}"]`).focus();requestAnimationFrame(updateWardrobeArrows);
 }
 function closeWardrobe(){if($('wardrobe-panel').hidden)return;$('wardrobe-panel').hidden=true;wardrobeReturnFocus?.focus();}
 $('wardrobe-close').onclick=closeWardrobe;
+const wardrobeRail=document.querySelector('.wardrobe-choices');
+function updateWardrobeArrows(){
+ const distance=Math.max(0,wardrobeRail.scrollWidth-wardrobeRail.clientWidth),offset=-wardrobeRail.scrollLeft;
+ $('wardrobe-right').disabled=offset<=2;$('wardrobe-left').disabled=offset>=distance-2;
+}
+function scrollWardrobe(direction){
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ wardrobeRail.scrollBy({left:direction*Math.max(160,wardrobeRail.clientWidth*.8),behavior:reduced?'instant':'smooth'});
+}
+$('wardrobe-right').onclick=()=>scrollWardrobe(1);
+$('wardrobe-left').onclick=()=>scrollWardrobe(-1);
+wardrobeRail.addEventListener('scroll',updateWardrobeArrows,{passive:true});
+new ResizeObserver(updateWardrobeArrows).observe(wardrobeRail);
+
 $('wardrobe-panel').addEventListener('keydown',event=>{if(event.key!=='Tab')return;const buttons=[...$('wardrobe-panel').querySelectorAll('button:not(:disabled),a[href]')],first=buttons[0],last=buttons.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}});
 document.querySelector('.wardrobe-choices').addEventListener('click',async event=>{
   const button=event.target.closest('[data-wear]');if(!button||button.disabled)return;
