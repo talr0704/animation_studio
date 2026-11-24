@@ -1,4 +1,4 @@
-import { setOutfitBody } from '../shared/outfit-body.js';
+import { setOutfitBody } from '../shared/outfit-body.js?v=bare-arms';
 // Fitted clothes use the same design canvas, artwork offsets and attachment transforms as the studio.
 export async function createWardrobe(popa) {
   const response=await fetch(new URL('../assets/characters/popa/outfits/catalog.json?v=published-fits-9',import.meta.url));
@@ -22,7 +22,7 @@ export async function createWardrobe(popa) {
   const originals=new Map([...baseGroups.values()].map(group=>{const outer=group.closest('.cat-layer');return [outer,outer.style.zIndex];}));
   const baseVisibility=new Map(['shirt','pinafore','flower'].map(id=>[id,baseGroups.get(id).style.visibility]));
   let mounted=[],raf=0,request=0,selected='default';
-  function clear(){setOutfitBody(character,false);cancelAnimationFrame(raf);mounted.forEach(part=>part.outer.remove());mounted=[];for(const [outer,z]of originals)outer.style.zIndex=z;for(const [id,visibility]of baseVisibility)baseGroups.get(id).style.visibility=visibility;popa.root.style.overflow='';}
+  function clear(){cancelAnimationFrame(raf);mounted.forEach(part=>part.outer.remove());mounted=[];for(const [outer,z]of originals)outer.style.zIndex=z;for(const [id,visibility]of baseVisibility)baseGroups.get(id).style.visibility=visibility;popa.root.style.overflow='';}
   function follow(){
     const body=getComputedStyle(baseGroups.get('head').closest('.cat-body-motion')),head=getComputedStyle(baseGroups.get('flower').closest('.cat-head-motion'));
     for(const part of mounted){const attachment=part.data.attachment;
@@ -34,7 +34,7 @@ export async function createWardrobe(popa) {
   }
   async function wear(id){
     const token=++request;
-    if(id==='default'){clear();selected=id;character.dataset.outfit=id;return;}
+    if(id==='default'){clear();setOutfitBody(character,false);selected=id;character.dataset.outfit=id;return;}
     const item=looks.get(id);if(!item)throw Error('Unknown fitted outfit');
     const prepared=await Promise.all(item.fit.parts.filter(p=>p.visible).map(async p=>{
       const original=item.look.parts.find(part=>part.id===p.id),image=new Image();image.src=new URL('../'+original.asset+'?artwork=5',import.meta.url).href;image.alt='';image.draggable=false;image.dataset.wornPart=p.id;image.className='worn-clothing';
@@ -48,5 +48,5 @@ export async function createWardrobe(popa) {
     for(const id of new Set([...(item.fit.hiddenBase??[]),'flower']))if(baseVisibility.has(id))baseGroups.get(id).style.visibility='hidden';
     setOutfitBody(character,true);mounted=prepared;for(const part of mounted)character.append(part.outer);popa.root.style.overflow='visible';selected=id;character.dataset.outfit=id;follow();
   }
-  return {wear,get selected(){return selected;},destroy(){request++;clear();},looks:[...looks.keys()],entries:[...looks].map(([id,{look}])=>({id,label:look.label,fitted:!!look.placements,garments:look.parts.filter(p=>/^(pajama|dress|coat|shirt|sweater|jacket|vest|cape|skirt)_body$/.test(p.id))}))};
+  return {wear,get selected(){return selected;},destroy(){request++;clear();setOutfitBody(character,false);},looks:[...looks.keys()],entries:[...looks].map(([id,{look}])=>({id,label:look.label,fitted:!!look.placements,garments:look.parts.filter(p=>/^(pajama|dress|coat|shirt|sweater|jacket|vest|cape|skirt)_body$/.test(p.id))}))};
 }

@@ -16,6 +16,22 @@ with sync_playwright() as p:
         page.select_option('#outfit-look',look)
         assert page.locator('.outfit-image').count()==expected[look]
         page.wait_for_function('[...document.querySelectorAll(".outfit-image")].every(i=>i.complete&&i.naturalWidth>0)')
+    page.select_option('#outfit-look','storybook')
+    page.get_by_text('הבגדים המקוריים של פופה', exact=True).click()
+    base_shirt=page.locator('[data-base="shirt"]')
+    def expect_arms(sleeved):
+        suffix='.png' if sleeved else '_bare.png'
+        for side in ['left','right']:
+            arm=page.locator(f'[data-sprite="{side}_arm"]')
+            assert arm.evaluate('(image)=>getComputedStyle(image).visibility')=='visible'
+            assert arm.get_attribute('src').split('?')[0].endswith(f'/{side}_arm{suffix}')
+            assert arm.evaluate('image=>image.decode().then(()=>image.naturalWidth>0)')
+    assert not base_shirt.is_checked()
+    expect_arms(False)
+    base_shirt.check()
+    expect_arms(True)
+    base_shirt.uncheck()
+    expect_arms(False)
     page.select_option('#outfit-look','cloud')
     def set_number(key,value):
         page.locator('#outfit-'+key).fill(str(value));page.locator('#outfit-'+key).press('Tab')
