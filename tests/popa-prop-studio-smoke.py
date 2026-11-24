@@ -26,7 +26,7 @@ with sync_playwright() as p:
  page.locator('#part').select_option('blade-left');change('base-rotation',7)
  change('time',.19);change('rotation',32)
  assert next(k for k in draft()['clip']['tracks'][0]['keys'] if k['time']==.19)['rotation']==25
- page.locator('#loop').uncheck();page.locator('#play').click();page.wait_for_timeout(500);assert 'ניגון' in page.locator('#play').inner_text()
+ page.locator('#loop').uncheck();page.locator('#play').click();page.wait_for_function('document.querySelector("#play").textContent.includes("ניגון")')
  page.reload(wait_until='networkidle');page.wait_for_function('!document.querySelector("#prop-select").disabled');assert page.locator('#base-rotation').input_value()=='7'
  page.locator('#export-details summary').click()
  with page.expect_download() as d:page.locator('#export-rig').click()
@@ -39,7 +39,7 @@ with sync_playwright() as p:
  game=popup.value;game.wait_for_selector('#loading',state='hidden');assert game.locator('#scissors [data-prop-part="blade-left"]').evaluate('(e)=>e.style.transform')=='rotate(11deg)'
  assert game.locator('a[href="studio.html"]').is_visible();game.close()
  # The normal game keeps the published data, regardless of the draft.
- game=b.new_page();game.goto(URL+'salon.html',wait_until='networkidle');game.wait_for_selector('#loading',state='hidden');assert game.locator('#scissors [data-prop-part="blade-left"]').evaluate('(e)=>e.style.transform')=='rotate(0deg)';game.close()
+ game=b.new_page();game.goto(URL+'salon.html',wait_until='networkidle');game.wait_for_selector('#loading',state='hidden');assert game.locator('#scissors [data-prop-part="blade-left"]').evaluate('(e)=>e.style.transform')==f"rotate({json.loads(Path('assets/scenes/salon/props/scissors/assembly.json').read_text())['parts'][0]['rotation']}deg)";game.close()
  page.locator('#export-details summary').click()
  for width,height in [(390,844),(844,390)]:
   page.set_viewport_size({'width':width,'height':height});page.locator('#fit').click();assert page.evaluate('document.documentElement.scrollWidth<=innerWidth && document.documentElement.scrollHeight<=innerHeight')

@@ -1,4 +1,4 @@
-import { mountCharacterReferences } from './character-references.js?v=wardrobe3';
+import { mountCharacterReferences } from './character-references.js?v=appearance4';
 import { createCatExpressions } from './cat-expressions.js';
 import { createCatAnimations } from './cat-animations.js';
 import { mountLayoutEditor } from './cat-layout-editor.js';

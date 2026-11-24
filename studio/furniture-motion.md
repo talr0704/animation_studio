@@ -12,3 +12,16 @@
 Furniture pivots are calibrated by moving anchor and position together, so all original illustration pixels stay in place in the game. Rig geometry lives in each furniture's `assembly.json`, motion lives under its `animations/`, and PNGs stay under `images/`. Drafts save per rig under `popaPropDraftV1:<rig ID>`. Export assembly and motion JSON for review/integration. Furniture motion drafts do not change gameplay automatically.
 
 `studio.html` continues to show salon props only. Its existing tools, storage and preview workflow are preserved. The new optional motion `scaleX`/`scaleY` fields default to 1, so older rotation/translation clips remain compatible.
+
+### סידור המראה הקבוע במשחק
+
+ב״מצב עריכה״ בחרי ״מראה קבוע במשחק — בלי אנימציה״. הגרירה והשדות
+משנים את ההרכבה בלבד; ציר הזמן מוסתר והתצוגה אינה מפעילה אף פריים.
+כפתור ״שמירת המראה במשחק״ שומר את מיקום החלקים, הצירים, הגדלים,
+השכבות וההורות תחת `popaPropAppearanceV1:<prop id>` בדפדפן.
+החדר, מסך הארון, כלי המספרה והרהיט לדוגמה בעורך פופה קוראים את
+הסידור בפתיחה או ברענון. טיוטת האנימציה נפרדת ואינה נשמרת במשחק.
+
+לשיתוף לכל השחקנים: ייצאי `assembly.json` והחליפי אותו בנתיב המוצג בעורך.
+זו שמירת נתונים בלבד; האיורים אינם משתנים. אפשר להסיר את הסידור המקומי
+ב״החזרת מראה המשחק לגרסת הפרויקט״. הפעולה אינה מוחקת את טיוטת הסטודיו.

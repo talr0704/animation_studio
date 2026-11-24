@@ -1,3 +1,4 @@
+import {loadPropAppearance} from '../shared/prop-appearance.js?v=1';
 import {mountProp,validateProp,validateClip,partFrames} from '../shared/prop-rig.js';
 import { SalonRound,HAIR_PARTS,LENGTHS,CARE_CELLS } from './salon-round.js';
 import { readAlbum,recordVisit,unlocked,UNLOCKS } from './salon-progress.js';
@@ -271,8 +272,8 @@ try{
  const response=await fetch(new URL('../assets/scenes/salon/assembly.json',import.meta.url));if(!response.ok)throw new Error('Cannot load salon assembly');
  assembly=await response.json();mountAssembly(assembly);
  const loadJson=async path=>{const r=await fetch(imageUrl(path),{cache:'no-cache'});if(!r.ok)throw Error('Cannot load prop data');return r.json();};
- scissorsRig=validateProp(await loadJson(assembly.scissors.assembly));scissorsClip=validateClip(await loadJson(assembly.scissors.animation),scissorsRig);
- shampooRig=validateProp(await loadJson(assembly.shampoo.assembly));shampooClip=validateClip(await loadJson(assembly.shampoo.animation),shampooRig);
+ scissorsRig=loadPropAppearance(validateProp(await loadJson(assembly.scissors.assembly)));scissorsClip=validateClip(await loadJson(assembly.scissors.animation),scissorsRig);
+ shampooRig=loadPropAppearance(validateProp(await loadJson(assembly.shampoo.assembly)));shampooClip=validateClip(await loadJson(assembly.shampoo.animation),shampooRig);
  const previewId=new URLSearchParams(location.search).get('propPreview');
  if(['salon.scissors','salon.shampoo'].includes(previewId)){
   try{const draft=JSON.parse(sessionStorage.getItem('popaPropPreviewV1'));if(draft?.rig?.id!==previewId)throw Error('Wrong prop');validateProp(draft.rig);validateClip(draft.clip,draft.rig);if(previewId==='salon.scissors'){scissorsRig=draft.rig;scissorsClip=draft.clip;}else{shampooRig=draft.rig;shampooClip=draft.clip;}propPreview=true;}catch{console.warn('Preview unavailable; using published prop');}
