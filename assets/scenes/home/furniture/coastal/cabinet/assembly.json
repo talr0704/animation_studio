@@ -22,7 +22,7 @@
         0,
         0
       ],
-      "scale": 1.0,
+      "scale": 1,
       "rotation": 0,
       "layer": 1,
       "parent": null
@@ -40,18 +40,14 @@
         0
       ],
       "position": [
-        37,
-        105
+        30.429286644436516,
+        105.87609511889862
       ],
-      "scale": 0.611764705882353,
+      "scale": 0.7,
       "rotation": 0,
       "layer": 2,
       "parent": null,
-      "images": {
-        "closed": "assets/scenes/home/furniture/coastal/cabinet/images/door-left.png",
-        "half-open": "assets/scenes/home/furniture/coastal/cabinet/images/door-left-half-open.png",
-        "open": "assets/scenes/home/furniture/coastal/cabinet/images/door-left-open.png"
-      }
+      "scaleY": 0.6
     },
     {
       "id": "door-right",
@@ -66,18 +62,14 @@
         0
       ],
       "position": [
-        374.0,
-        105
+        376.62828535669587,
+        105.43804755944932
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "rotation": 0,
       "layer": 3,
       "parent": null,
-      "images": {
-        "closed": "assets/scenes/home/furniture/coastal/cabinet/images/door-right.png",
-        "half-open": "assets/scenes/home/furniture/coastal/cabinet/images/door-right-half-open.png",
-        "open": "assets/scenes/home/furniture/coastal/cabinet/images/door-right-open.png"
-      }
+      "scaleY": 0.6
     }
   ]
 }
