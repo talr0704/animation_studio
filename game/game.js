@@ -1,3 +1,4 @@
+import {roomBaseScale} from './room-scale.js';
 import {loadPropAppearance} from '../shared/prop-appearance.js?v=2';
 import { startFurnitureSession } from './furniture-session.js?v=2';
 import { validateFurnitureInteraction } from '../shared/furniture-interaction.js?v=2';
@@ -80,13 +81,14 @@ function dialog({label='משחקים עם פופה',title,text,main,action,secon
 }
 function faceRoom(direction){roomFacing=direction<0?-1:1;$('player').dataset.facing=roomFacing<0?'left':'right';$('player').style.setProperty('--facing',roomFacing);}
 function roomBounds(){const half=($('player').firstElementChild?.offsetWidth??100)/width/2;return Math.min(.46,half+8/width);}
-function roomScale(){return Math.min(height/900,width<600?.43:.60)*(1-roomDepth*.65);}
+function roomBase(){return roomBaseScale(width,height,roomFurniture[innerWidth<=700?'portrait':'wide']);}
+function roomScale(){return roomBase()*(1-roomDepth*.65);}
 function sofaScene(){return document.querySelector('[data-furniture="sofa"] .item-rig');}
 function localSofaPoint(point){const rect=sofaScene().getBoundingClientRect(),world=document.querySelector('.world').getBoundingClientRect();return {x:(point.x+world.left-rect.left)/(rect.width/420),y:(point.y+world.top-rect.top)/(rect.height/320)};}
 function standingPlacement(){
  const scene=sofaScene(),rect=scene.getBoundingClientRect(),world=document.querySelector('.world').getBoundingClientRect(),geometry=roomGeometry();
  const desired={x:rect.left-world.left+sofaAction.approach[0]*rect.width/420,y:rect.top-world.top+sofaAction.approach[1]*rect.height/320};
- const free=nearestFree(desired,geometry.bounds,geometry.obstacles)??feetPosition(),local=localSofaPoint(free),base=Math.min(height/900,width<600?.43:.60),depth=Math.max(0,(height-30-24*base-free.y)/(height-15.6*base));
+ const free=nearestFree(desired,geometry.bounds,geometry.obstacles)??feetPosition(),local=localSofaPoint(free),base=roomBase(),depth=Math.max(0,(height-30-24*base-free.y)/(height-15.6*base));
  return {...local,scale:base*(1-depth*.65)/(rect.width/420),facing:sofaAction.phases.exit.keys.at(-1).placement.facing};
 }
 function sitOnSofa(){
@@ -104,7 +106,7 @@ function roomGeometry(){
  return {bounds,obstacles};
 }
 function feetPosition(){return {x:roomX*width,y:height-30-roomDepth*height-24*roomScale()};}
-function setFeet(point){const base=Math.min(height/900,width<600?.43:.60);roomX=point.x/width;roomDepth=Math.max(0,(height-30-24*base-point.y)/(height-15.6*base));popa.setScale(roomScale());target=roomX;targetDepth=roomDepth;positionPlayer(roomX);}
+function setFeet(point){const base=roomBase();roomX=point.x/width;roomDepth=Math.max(0,(height-30-24*base-point.y)/(height-15.6*base));popa.setScale(roomScale());target=roomX;targetDepth=roomDepth;positionPlayer(roomX);}
 function repairRoomPosition(geometry=roomGeometry()){
  const point=feetPosition();if(walkable(point,geometry.bounds,geometry.obstacles))return;
  const safe=nearestFree(point,geometry.bounds,geometry.obstacles);if(safe){setFeet(safe);roomRoute=[];}
