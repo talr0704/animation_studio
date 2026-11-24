@@ -15,17 +15,7 @@
           "y": 0,
           "rotation": 0,
           "scaleX": 1,
-          "scaleY": 1,
-          "label": "סגורה"
-        },
-        {
-          "time": 0.42,
-          "x": 0,
-          "y": 0,
-          "rotation": 0,
-          "scaleX": 0.54,
-          "scaleY": 1,
-          "label": "חצי פתוחה"
+          "scaleY": 1
         },
         {
           "time": 0.84,
@@ -33,8 +23,7 @@
           "y": 0,
           "rotation": 0,
           "scaleX": 0.08,
-          "scaleY": 1,
-          "label": "פתוחה"
+          "scaleY": 1
         },
         {
           "time": 1.2,
@@ -55,17 +44,7 @@
           "y": 0,
           "rotation": 0,
           "scaleX": 1,
-          "scaleY": 1,
-          "label": "סגורה"
-        },
-        {
-          "time": 0.42,
-          "x": 0,
-          "y": 0,
-          "rotation": 0,
-          "scaleX": 0.54,
-          "scaleY": 1,
-          "label": "חצי פתוחה"
+          "scaleY": 1
         },
         {
           "time": 0.84,
@@ -73,8 +52,7 @@
           "y": 0,
           "rotation": 0,
           "scaleX": 0.08,
-          "scaleY": 1,
-          "label": "פתוחה"
+          "scaleY": 1
         },
         {
           "time": 1.2,
