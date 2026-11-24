@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "arcade-school",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "vest_body",
+          "asset": "assets/characters/popa/outfits/arcade-school/parts/vest_body.png",
+          "naturalSize": [
+            291,
+            260
+          ],
+          "artworkSize": [
+            297,
+            266
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 226,
+          "y": 337,
+          "width": 180,
+          "height": 160.82,
+          "rotation": -3,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/arcade-school/parts/skirt_body.png",
+          "naturalSize": [
+            348,
+            236
+          ],
+          "artworkSize": [
+            354,
+            242
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 226.8,
+          "y": 394.6,
+          "width": 185,
+          "height": 125.46,
+          "rotation": 0,
+          "layer": 7,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_clip",
+          "asset": "assets/characters/popa/outfits/arcade-school/parts/hair_clip.png",
+          "naturalSize": [
+            163,
+            141
+          ],
+          "artworkSize": [
+            169,
+            147
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 295.6,
+          "y": 103.8,
+          "width": 90,
+          "height": 77.85,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "heart_bag",
+          "asset": "assets/characters/popa/outfits/arcade-school/parts/heart_bag.png",
+          "naturalSize": [
+            196,
+            303
+          ],
+          "artworkSize": [
+            202,
+            309
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 344.4,
+          "y": 374.4,
+          "width": 75,
+          "height": 115.94,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

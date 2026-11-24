@@ -271,7 +271,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/moon-post/placements.json"
     },
     {
       "id": "peach",
@@ -354,7 +355,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/peach/placements.json"
     },
     {
       "id": "caramel",
@@ -437,7 +439,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/caramel/placements.json"
     },
     {
       "id": "lotus",
@@ -570,7 +573,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/lotus/placements.json"
     },
     {
       "id": "storybook",
@@ -653,7 +657,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/storybook/placements.json"
     },
     {
       "id": "moon-sleep",
@@ -761,7 +766,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/moon-sleep/placements.json"
     },
     {
       "id": "mosaic",
@@ -894,7 +900,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/mosaic/placements.json"
     },
     {
       "id": "marigold",
@@ -1052,7 +1059,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/marigold/placements.json"
     },
     {
       "id": "winter-berry",
@@ -1235,7 +1243,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/winter-berry/placements.json"
     },
     {
       "id": "mediterranean",
@@ -1343,7 +1352,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/mediterranean/placements.json"
     },
     {
       "id": "celestial",
@@ -1451,7 +1461,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/celestial/placements.json"
     },
     {
       "id": "mint-messenger",
@@ -1609,7 +1620,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/mint-messenger/placements.json"
     },
     {
       "id": "candy-pop",
@@ -1717,7 +1729,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/candy-pop/placements.json"
     },
     {
       "id": "sakura",
@@ -1850,7 +1863,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/sakura/placements.json"
     },
     {
       "id": "arcade-school",
@@ -1958,7 +1972,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/arcade-school/placements.json"
     },
     {
       "id": "lemon-picnic",
@@ -2091,7 +2106,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/lemon-picnic/placements.json"
     },
     {
       "id": "lotus-fairy",
@@ -2199,7 +2215,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/lotus-fairy/placements.json"
     },
     {
       "id": "pixel-play",
@@ -2332,7 +2349,8 @@
           "visible": true,
           "locked": false
         }
-      ]
+      ],
+      "placements": "assets/characters/popa/outfits/pixel-play/placements.json"
     }
   ],
   "artworkRevision": 7

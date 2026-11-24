@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "lotus",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "shirt_body",
+          "asset": "assets/characters/popa/outfits/lotus/parts/shirt_body.png",
+          "naturalSize": [
+            226,
+            165
+          ],
+          "artworkSize": [
+            232,
+            171
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 228.4,
+          "y": 324.2,
+          "width": 190,
+          "height": 138.7211111111111,
+          "rotation": -2,
+          "layer": 9.1,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/characters/popa/outfits/lotus/parts/sleeve_left.png",
+          "naturalSize": [
+            99,
+            111
+          ],
+          "artworkSize": [
+            105,
+            117
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 154.6,
+          "y": 322.2,
+          "width": 80,
+          "height": 89.69846153846154,
+          "rotation": 25,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/characters/popa/outfits/lotus/parts/sleeve_right.png",
+          "naturalSize": [
+            99,
+            110
+          ],
+          "artworkSize": [
+            105,
+            116
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 294.8,
+          "y": 310.2,
+          "width": 78,
+          "height": 86.664,
+          "rotation": -35,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/lotus/parts/skirt_body.png",
+          "naturalSize": [
+            302,
+            187
+          ],
+          "artworkSize": [
+            308,
+            193
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 226,
+          "y": 385,
+          "width": 200,
+          "height": 123.83783783783784,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_clip",
+          "asset": "assets/characters/popa/outfits/lotus/parts/hair_clip.png",
+          "naturalSize": [
+            169,
+            116
+          ],
+          "artworkSize": [
+            175,
+            122
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 298,
+          "y": 102.2,
+          "width": 110,
+          "height": 75.50125,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

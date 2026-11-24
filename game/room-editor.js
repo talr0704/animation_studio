@@ -6,7 +6,7 @@ export function mountRoomEditor({room,layout,place,setEditing}) {
   const ids=[...layout.items.map(item=>item.id),'rug'];
   const labels=Object.fromEntries([...layout.items.map(item=>[item.id,item.label]),['rug','השטיח']]);
   const element=id=>id==='rug'?document.getElementById('buy-rug'):room.querySelector(`[data-furniture="${id}"]`);
-  for(const profile of profiles)layout[profile].layers=Object.fromEntries(ids.map(id=>[id,Number(element(id).style.zIndex)||0]));
+  for(const profile of profiles)layout[profile].layers=Object.fromEntries(ids.map(id=>[id,layout[profile].layers?.[id]??(Number(element(id).style.zIndex)||0)]));
   for(const profile of profiles)defaults[profile].layers=clone(layout[profile].layers);
   function validate(data){
     if(data?.version!==1||data.scene!=='home')throw Error('נדרש קובץ סידור החדר של פופה');
@@ -31,8 +31,8 @@ export function mountRoomEditor({room,layout,place,setEditing}) {
       }result[profile]=target;
     }return result;
   }
-  function data(){return {version:1,scene:'home',background:layout.background,wide:clone(layout.wide),portrait:clone(layout.portrait)};}
-  let storageWarning='';try{const saved=localStorage.getItem(key);if(saved)Object.assign(layout,validate(JSON.parse(saved)));}catch{storageWarning='לא שוחזרה שמירה קודמת. אפשר לטעון קובץ מיקומים.';}
+  function data(){return {version:1,scene:'home',publishedRevision:layout.revision??0,background:layout.background,wide:clone(layout.wide),portrait:clone(layout.portrait)};}
+  let storageWarning='';try{const saved=localStorage.getItem(key);if(saved){const data=JSON.parse(saved);if((data.publishedRevision??0)===(layout.revision??0))Object.assign(layout,validate(data));else storageWarning='נטען הסידור המעודכן מהפרויקט. הסידור המקומי הישן נשמר בדפדפן עד השינוי הבא.';}}catch{storageWarning='לא שוחזרה שמירה קודמת. אפשר לטעון קובץ מיקומים.';}
   const toggle=document.getElementById('edit-room'),panel=document.createElement('section');
   panel.className='room-editor';panel.dir='rtl';panel.hidden=true;panel.setAttribute('aria-label','עריכת מיקום החפצים');
   panel.innerHTML=`<header><button id="room-edit-move" type="button" aria-label="הזזת תפריט העריכה בגרירה או בחיצים">⠿ סידור החדר</button><button id="room-edit-done">סיום</button></header><p id="room-edit-profile"></p><label>חפץ<select id="room-edit-item">${ids.map(id=>`<option value="${id}">${labels[id]}</option>`).join('')}</select></label><div class="room-edit-fields">${[['x','מיקום X'],['y','מיקום Y'],['width','רוחב'],['height','גובה'],['layer','שכבה (0–6)']].map(([id,label])=>`<label>${label}<input id="room-edit-${id}" type="number" step="1" min="${['width','height'].includes(id)?5:0}" ${id==='layer'?'max="6"':''}></label>`).join('')}</div><label><input id="room-edit-ratio" type="checkbox" checked> שמירה על יחס גודל</label><div class="room-edit-actions"><button id="room-edit-undo">ביטול פעולה</button><button id="room-edit-reset">איפוס החפץ</button><button id="room-edit-save">שמירה וסיום</button><button id="room-edit-export">הורדת גיבוי</button></div><label>טעינת סידור מקובץ<input id="room-edit-import" type="file" accept=".json,application/json"></label><p id="room-edit-status" role="status" aria-live="polite"></p>`;

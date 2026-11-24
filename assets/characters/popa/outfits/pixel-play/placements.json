@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "pixel-play",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "jacket_body",
+          "asset": "assets/characters/popa/outfits/pixel-play/parts/jacket_body.png",
+          "naturalSize": [
+            282,
+            263
+          ],
+          "artworkSize": [
+            288,
+            269
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 230,
+          "y": 332.2,
+          "width": 180,
+          "height": 167.87,
+          "rotation": 0,
+          "layer": 9.1,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/characters/popa/outfits/pixel-play/parts/sleeve_left.png",
+          "naturalSize": [
+            142,
+            158
+          ],
+          "artworkSize": [
+            148,
+            164
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 157,
+          "y": 323.8,
+          "width": 75,
+          "height": 83.44615384615383,
+          "rotation": 20,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/characters/popa/outfits/pixel-play/parts/sleeve_right.png",
+          "naturalSize": [
+            145,
+            153
+          ],
+          "artworkSize": [
+            151,
+            159
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 292.4,
+          "y": 313.4,
+          "width": 75,
+          "height": 79.1423076923077,
+          "rotation": -25,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/pixel-play/parts/skirt_body.png",
+          "naturalSize": [
+            366,
+            225
+          ],
+          "artworkSize": [
+            372,
+            231
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 231.6,
+          "y": 392.2,
+          "width": 185,
+          "height": 113.73,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "console_bag",
+          "asset": "assets/characters/popa/outfits/pixel-play/parts/console_bag.png",
+          "naturalSize": [
+            207,
+            282
+          ],
+          "artworkSize": [
+            213,
+            288
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 341.2,
+          "y": 375.2,
+          "width": 85,
+          "height": 115.79266666666668,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

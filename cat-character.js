@@ -2,7 +2,7 @@ import { mountCharacterReferences } from './character-references.js?v=appearance
 import { createCatExpressions } from './cat-expressions.js';
 import { createCatAnimations } from './cat-animations.js';
 import { mountLayoutEditor } from './cat-layout-editor.js';
-import { mountOutfitEditor } from './popa-outfit-editor.js?v=neckline-12';
+import { mountOutfitEditor } from './popa-outfit-editor.js?v=published-fits1-neckline-12';
 import { mountCatEditor } from './cat-editor.js?v=sitting-demo2';
 const character = document.querySelector('.cat-character');
 const wrapper = document.querySelector('.cat-wrapper');

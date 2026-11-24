@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "lemon-picnic",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "shirt_body",
+          "asset": "assets/characters/popa/outfits/lemon-picnic/parts/shirt_body.png",
+          "naturalSize": [
+            266,
+            264
+          ],
+          "artworkSize": [
+            272,
+            270
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 226,
+          "y": 333.8,
+          "width": 180,
+          "height": 178.65,
+          "rotation": -2,
+          "layer": 9.1,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/characters/popa/outfits/lemon-picnic/parts/sleeve_left.png",
+          "naturalSize": [
+            142,
+            147
+          ],
+          "artworkSize": [
+            148,
+            153
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 156.2,
+          "y": 323,
+          "width": 75,
+          "height": 77.64230769230771,
+          "rotation": 25,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/characters/popa/outfits/lemon-picnic/parts/sleeve_right.png",
+          "naturalSize": [
+            141,
+            147
+          ],
+          "artworkSize": [
+            147,
+            153
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 295.6,
+          "y": 314.2,
+          "width": 75,
+          "height": 78.19615384615385,
+          "rotation": -35,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/lemon-picnic/parts/skirt_body.png",
+          "naturalSize": [
+            335,
+            224
+          ],
+          "artworkSize": [
+            341,
+            230
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 227.6,
+          "y": 388.2,
+          "width": 185,
+          "height": 123.7,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "basket_bag",
+          "asset": "assets/characters/popa/outfits/lemon-picnic/parts/basket_bag.png",
+          "naturalSize": [
+            170,
+            269
+          ],
+          "artworkSize": [
+            176,
+            275
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 342.8,
+          "y": 374.4,
+          "width": 75,
+          "height": 118.68,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

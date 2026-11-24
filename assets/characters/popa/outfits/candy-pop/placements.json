@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "candy-pop",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "jacket_body",
+          "asset": "assets/characters/popa/outfits/candy-pop/parts/jacket_body.png",
+          "naturalSize": [
+            291,
+            262
+          ],
+          "artworkSize": [
+            297,
+            268
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 226,
+          "y": 338.6,
+          "width": 190,
+          "height": 171.06333333333333,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/candy-pop/parts/skirt_body.png",
+          "naturalSize": [
+            329,
+            240
+          ],
+          "artworkSize": [
+            335,
+            246
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 230.8,
+          "y": 392.2,
+          "width": 185,
+          "height": 134.95,
+          "rotation": 0,
+          "layer": 7,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_bow",
+          "asset": "assets/characters/popa/outfits/candy-pop/parts/hair_bow.png",
+          "naturalSize": [
+            187,
+            135
+          ],
+          "artworkSize": [
+            193,
+            141
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 290,
+          "y": 95,
+          "width": 110,
+          "height": 79.40625,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "candy_bag",
+          "asset": "assets/characters/popa/outfits/candy-pop/parts/candy_bag.png",
+          "naturalSize": [
+            178,
+            315
+          ],
+          "artworkSize": [
+            184,
+            321
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 342.8,
+          "y": 379.2,
+          "width": 75,
+          "height": 132.72,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

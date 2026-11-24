@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "lotus-fairy",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "dress_body",
+          "asset": "assets/characters/popa/outfits/lotus-fairy/parts/dress_body.png",
+          "naturalSize": [
+            344,
+            398
+          ],
+          "artworkSize": [
+            350,
+            404
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 224.4,
+          "y": 329,
+          "width": 210,
+          "height": 242.97,
+          "rotation": -4,
+          "layer": 9,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_clip",
+          "asset": "assets/characters/popa/outfits/lotus-fairy/parts/hair_clip.png",
+          "naturalSize": [
+            179,
+            157
+          ],
+          "artworkSize": [
+            185,
+            163
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 310,
+          "y": 106.2,
+          "width": 110,
+          "height": 96.48375,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "wings",
+          "asset": "assets/characters/popa/outfits/lotus-fairy/parts/wings.png",
+          "naturalSize": [
+            262,
+            161
+          ],
+          "artworkSize": [
+            268,
+            167
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 226,
+          "y": 314.6,
+          "width": 350,
+          "height": 215.075,
+          "rotation": 0,
+          "layer": 2,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "lantern_bag",
+          "asset": "assets/characters/popa/outfits/lotus-fairy/parts/lantern_bag.png",
+          "naturalSize": [
+            177,
+            263
+          ],
+          "artworkSize": [
+            183,
+            269
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 343.6,
+          "y": 371.2,
+          "width": 75,
+          "height": 111.44,
+          "rotation": -5,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

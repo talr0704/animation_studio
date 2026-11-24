@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "storybook",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "dress_body",
+          "asset": "assets/characters/popa/outfits/storybook/parts/dress_body.png",
+          "naturalSize": [
+            315,
+            298
+          ],
+          "artworkSize": [
+            321,
+            304
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 227.6,
+          "y": 342.6,
+          "width": 210,
+          "height": 198.67166666666668,
+          "rotation": -2,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_bow",
+          "asset": "assets/characters/popa/outfits/storybook/parts/hair_bow.png",
+          "naturalSize": [
+            164,
+            121
+          ],
+          "artworkSize": [
+            170,
+            127
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 302.8,
+          "y": 108.6,
+          "width": 110,
+          "height": 81.1525,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "book_bag",
+          "asset": "assets/characters/popa/outfits/storybook/parts/book_bag.png",
+          "naturalSize": [
+            160,
+            268
+          ],
+          "artworkSize": [
+            166,
+            274
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 345.2,
+          "y": 376,
+          "width": 75,
+          "height": 125.62,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "sakura",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "coat_body",
+          "asset": "assets/characters/popa/outfits/sakura/parts/coat_body.png",
+          "naturalSize": [
+            294,
+            280
+          ],
+          "artworkSize": [
+            300,
+            286
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 228.4,
+          "y": 337.8,
+          "width": 190,
+          "height": 180.95388888888888,
+          "rotation": -2,
+          "layer": 9.1,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/characters/popa/outfits/sakura/parts/sleeve_left.png",
+          "naturalSize": [
+            147,
+            167
+          ],
+          "artworkSize": [
+            153,
+            173
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 160.2,
+          "y": 316.6,
+          "width": 75,
+          "height": 85.2,
+          "rotation": 25,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/characters/popa/outfits/sakura/parts/sleeve_right.png",
+          "naturalSize": [
+            147,
+            167
+          ],
+          "artworkSize": [
+            153,
+            173
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 288.4,
+          "y": 308.6,
+          "width": 75,
+          "height": 85.2,
+          "rotation": -35,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/sakura/parts/skirt_body.png",
+          "naturalSize": [
+            351,
+            222
+          ],
+          "artworkSize": [
+            357,
+            228
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 227.6,
+          "y": 393,
+          "width": 185,
+          "height": 117.01,
+          "rotation": 0,
+          "layer": 7,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "lantern_bag",
+          "asset": "assets/characters/popa/outfits/sakura/parts/lantern_bag.png",
+          "naturalSize": [
+            171,
+            278
+          ],
+          "artworkSize": [
+            177,
+            284
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 342.8,
+          "y": 381.6,
+          "width": 80,
+          "height": 130.05866666666668,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

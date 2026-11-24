@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "moon-sleep",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "coat_body",
+          "asset": "assets/characters/popa/outfits/moon-sleep/parts/coat_body.png",
+          "naturalSize": [
+            296,
+            222
+          ],
+          "artworkSize": [
+            302,
+            228
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 229.2,
+          "y": 339.4,
+          "width": 200,
+          "height": 150,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "shorts_left",
+          "asset": "assets/characters/popa/outfits/moon-sleep/parts/shorts_left.png",
+          "naturalSize": [
+            151,
+            155
+          ],
+          "artworkSize": [
+            157,
+            161
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 190,
+          "y": 399.6,
+          "width": 95,
+          "height": 97.52115384615384,
+          "rotation": 0,
+          "layer": 7,
+          "attachment": "foot_right",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "shorts_right",
+          "asset": "assets/characters/popa/outfits/moon-sleep/parts/shorts_right.png",
+          "naturalSize": [
+            151,
+            155
+          ],
+          "artworkSize": [
+            157,
+            161
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 266.8,
+          "y": 394.8,
+          "width": 95,
+          "height": 97.52115384615384,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "foot_left",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_clip",
+          "asset": "assets/characters/popa/outfits/moon-sleep/parts/hair_clip.png",
+          "naturalSize": [
+            145,
+            112
+          ],
+          "artworkSize": [
+            151,
+            118
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 302,
+          "y": 98.2,
+          "width": 100,
+          "height": 77.2375,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

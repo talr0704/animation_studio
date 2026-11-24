@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "marigold",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "shirt_body",
+          "asset": "assets/characters/popa/outfits/marigold/parts/shirt_body.png",
+          "naturalSize": [
+            286,
+            252
+          ],
+          "artworkSize": [
+            292,
+            258
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 228.4,
+          "y": 333,
+          "width": 180,
+          "height": 158.6,
+          "rotation": 0,
+          "layer": 9.1,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/characters/popa/outfits/marigold/parts/sleeve_left.png",
+          "naturalSize": [
+            153,
+            166
+          ],
+          "artworkSize": [
+            159,
+            172
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 153.8,
+          "y": 323.8,
+          "width": 75,
+          "height": 81.36923076923077,
+          "rotation": 20,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/characters/popa/outfits/marigold/parts/sleeve_right.png",
+          "naturalSize": [
+            154,
+            165
+          ],
+          "artworkSize": [
+            160,
+            171
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 298.8,
+          "y": 313.4,
+          "width": 75,
+          "height": 80.35384615384615,
+          "rotation": -30,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/marigold/parts/skirt_body.png",
+          "naturalSize": [
+            344,
+            206
+          ],
+          "artworkSize": [
+            350,
+            212
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 227.6,
+          "y": 385.8,
+          "width": 185,
+          "height": 110.78,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_bow",
+          "asset": "assets/characters/popa/outfits/marigold/parts/hair_bow.png",
+          "naturalSize": [
+            206,
+            171
+          ],
+          "artworkSize": [
+            212,
+            177
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 290,
+          "y": 95,
+          "width": 100,
+          "height": 83.01249999999999,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "handbag",
+          "asset": "assets/characters/popa/outfits/marigold/parts/handbag.png",
+          "naturalSize": [
+            164,
+            229
+          ],
+          "artworkSize": [
+            170,
+            235
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 340.4,
+          "y": 373.6,
+          "width": 80,
+          "height": 111.71199999999999,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

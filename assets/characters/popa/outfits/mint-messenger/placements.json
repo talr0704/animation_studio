@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "mint-messenger",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "coat_body",
+          "asset": "assets/characters/popa/outfits/mint-messenger/parts/coat_body.png",
+          "naturalSize": [
+            286,
+            247
+          ],
+          "artworkSize": [
+            292,
+            253
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 225.2,
+          "y": 341,
+          "width": 190,
+          "height": 164.08611111111108,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/characters/popa/outfits/mint-messenger/parts/sleeve_left.png",
+          "naturalSize": [
+            146,
+            164
+          ],
+          "artworkSize": [
+            152,
+            170
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 157.8,
+          "y": 323,
+          "width": 80,
+          "height": 89.85846153846154,
+          "rotation": 15,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/characters/popa/outfits/mint-messenger/parts/sleeve_right.png",
+          "naturalSize": [
+            144,
+            160
+          ],
+          "artworkSize": [
+            150,
+            166
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 292.4,
+          "y": 313.4,
+          "width": 75,
+          "height": 83.33076923076923,
+          "rotation": -25,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/mint-messenger/parts/skirt_body.png",
+          "naturalSize": [
+            317,
+            200
+          ],
+          "artworkSize": [
+            323,
+            206
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 226,
+          "y": 387.4,
+          "width": 185,
+          "height": 116.72,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_bow",
+          "asset": "assets/characters/popa/outfits/mint-messenger/parts/hair_bow.png",
+          "naturalSize": [
+            218,
+            142
+          ],
+          "artworkSize": [
+            224,
+            148
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 294,
+          "y": 102.2,
+          "width": 110,
+          "height": 71.65125,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "wing_bag",
+          "asset": "assets/characters/popa/outfits/mint-messenger/parts/wing_bag.png",
+          "naturalSize": [
+            254,
+            243
+          ],
+          "artworkSize": [
+            260,
+            249
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 338.8,
+          "y": 369.6,
+          "width": 100,
+          "height": 95.66666666666667,
+          "rotation": 0,
+          "layer": 9.1,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

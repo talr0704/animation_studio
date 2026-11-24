@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "peach",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "dress_body",
+          "asset": "assets/characters/popa/outfits/peach/parts/dress_body.png",
+          "naturalSize": [
+            298,
+            273
+          ],
+          "artworkSize": [
+            304,
+            279
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 226.8,
+          "y": 357,
+          "width": 210,
+          "height": 192.38333333333335,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_clip",
+          "asset": "assets/characters/popa/outfits/peach/parts/hair_clip.png",
+          "naturalSize": [
+            142,
+            112
+          ],
+          "artworkSize": [
+            148,
+            118
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 302.8,
+          "y": 98.2,
+          "width": 120,
+          "height": 94.65,
+          "rotation": 25,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "basket_bag",
+          "asset": "assets/characters/popa/outfits/peach/parts/basket_bag.png",
+          "naturalSize": [
+            172,
+            221
+          ],
+          "artworkSize": [
+            178,
+            227
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 334.8,
+          "y": 371.2,
+          "width": 95,
+          "height": 122.06866666666669,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

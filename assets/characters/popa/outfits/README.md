@@ -55,3 +55,8 @@ All twelve additions are studio fitting drafts. Existing looks and published clo
 ## Illustrated wardrobe
 
 Click the room cabinet to open animated illustrated doors. All 19 looks and the original outfit appear on illustrated hangers in a horizontal rack, usable with touch, scroll and keyboard focus. Selecting a look equips all of its parts and saves the choice. The frame and doors reuse the existing coastal cabinet PNGs; `assets/scenes/home/furniture/wardrobe/images/hanger.png` is the generated transparent hanger asset. Reduced-motion mode shows the doors open without playing the opening or sway animations.
+
+מיקומי הבגדים שאושרו נשמרים כ־`<look-id>/placements.json` ונרשמים
+ב־`catalog.json`. המשחק טוען את המיקום המפורסם לפני טיוטות מקומיות.
+בייבוא מ־24.11.2026 נוספו 18 סטים; עבור `storybook` ו־`moon-sleep`
+נבחרו קובצי הייצוא עם הסיומת `(1)`. מיקומי `cloud` הקיימים נשמרו.

@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "moon-post",
+      "hiddenBase": [
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "cape_body",
+          "asset": "assets/characters/popa/outfits/moon-post/parts/cape_body.png",
+          "naturalSize": [
+            288,
+            268
+          ],
+          "artworkSize": [
+            294,
+            274
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 227.6,
+          "y": 345.8,
+          "width": 220,
+          "height": 204.72222222222226,
+          "rotation": -2,
+          "layer": 9,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_bow",
+          "asset": "assets/characters/popa/outfits/moon-post/parts/hair_bow.png",
+          "naturalSize": [
+            155,
+            121
+          ],
+          "artworkSize": [
+            161,
+            127
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 302,
+          "y": 113.4,
+          "width": 120,
+          "height": 93.675,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "star_bag",
+          "asset": "assets/characters/popa/outfits/moon-post/parts/star_bag.png",
+          "naturalSize": [
+            143,
+            220
+          ],
+          "artworkSize": [
+            149,
+            226
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 346,
+          "y": 367.2,
+          "width": 75,
+          "height": 115.38,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

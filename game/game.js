@@ -2,8 +2,8 @@ import {loadPropAppearance} from '../shared/prop-appearance.js?v=2';
 import { startFurnitureSession } from './furniture-session.js?v=2';
 import { validateFurnitureInteraction } from '../shared/furniture-interaction.js?v=2';
 import { FLOOR_START, FLOOR_ITEMS, floorBounds, nearestFree, walkable, roomPath, slideStep, constrainFloorFurniture } from './room-navigation.js';
-import { createWardrobe } from './wardrobe.js?v=all-looks-3';
-import { mountRoomEditor } from './room-editor.js';
+import { createWardrobe } from './wardrobe.js?v=published-fits4';
+import { mountRoomEditor } from './room-editor.js?v=published-room2';
 import {mountProp} from '../shared/prop-rig.js?v=closed-fit5';
 import { createPopa } from '../popa-browser.js';
 import { POPA_CLIPS } from '../popa-clips.js';
@@ -277,7 +277,7 @@ try{
   const actionResponse=await fetch('assets/scenes/home/furniture/coastal/sofa/interactions/sit.json?v=2');if(!actionResponse.ok)throw Error('Cannot load sofa interaction');sofaAction=validateFurnitureInteraction(await actionResponse.json());
   if(new URLSearchParams(location.search).get('interactionPreview')==='sofa'){try{const draft=localStorage.getItem('popa.furniture.sofa.sit.v1');if(draft)sofaAction=validateFurnitureInteraction(JSON.parse(draft));}catch{}}
   sofaRig=loadPropAppearance(await (await fetch('assets/scenes/home/furniture/coastal/sofa/assembly.json?v=2',{cache:'no-cache'})).json());
-  const furnitureResponse=await fetch(new URL('../assets/scenes/home/furniture/layout.json',import.meta.url));if(!furnitureResponse.ok)throw Error('Cannot load furniture layout');roomFurniture=await furnitureResponse.json();
+  const furnitureResponse=await fetch(new URL('../assets/scenes/home/furniture/layout.json',import.meta.url),{cache:'no-cache'});if(!furnitureResponse.ok)throw Error('Cannot load furniture layout');roomFurniture=await furnitureResponse.json();
   const background=new Image();background.src=new URL('../'+roomFurniture.background,import.meta.url).href;await background.decode();$('room').style.backgroundImage=`url("${background.src}")`;
   await Promise.all(roomFurniture.items.map(async item=>{if(!POPA_CLIPS[item.action])throw Error('Unknown room action');const button=document.createElement('button');button.type='button';button.dataset.furniture=item.id;button.className='room-item';button.style.zIndex=item.layer??1;button.setAttribute('aria-label',item.label);button.setAttribute('aria-pressed','false');if(item.id==='reading-books')button.id='reading-books';if(item.assembly){const response=await fetch(new URL('../'+item.assembly,import.meta.url),{cache:'no-cache'});if(!response.ok)throw Error('Cannot load room prop');const data=loadPropAppearance(await response.json()),rig=document.createElement('div');if(item.id==='wardrobe')applyWardrobeAppearance(data);rig.className='item-rig';rig.dataset.canvas=JSON.stringify(data.canvas);button.append(rig);const mounted=mountProp(rig,data);await mounted.ready;}else{const image=new Image();image.src=new URL('../'+item.image,import.meta.url).href;image.alt='';button.append(image);await image.decode();}button.onclick=()=>approachItem(item,button);$('home-furniture').append(button);}));placeRoomFurniture();
   roomEditor=mountRoomEditor({room:$('room'),layout:roomFurniture,place:placeRoomFurniture,setEditing(value){roomEditing=value;if(value){$('player').style.zIndex='4';roomEditor?.applyLayers();}else repairRoomPosition();keys.clear();cancelInteraction();target=roomX;targetDepth=roomDepth;popa?.stop({immediate:true});$('room-hint').textContent=value?'בחרי חפץ וגררי אותו למקום הרצוי':'בחרי פריט ופופה תיגש אליו · אפשר גם לטייל עם החיצים';}});

@@ -83,66 +83,78 @@
     ],
     "items": {
       "window": [
-        577.75,
-        155.5,
-        214.5,
-        162.4326
+        418,
+        163,
+        400,
+        302.9045643153527
       ],
       "sofa": [
-        270,
-        430,
-        330,
-        250
+        127,
+        406,
+        350,
+        265.1515151515152
       ],
       "wardrobe": [
-        945,
-        385,
-        230,
-        205
+        855,
+        403,
+        270,
+        240.65217391304347
       ],
       "floor-lamp": [
-        965,
-        330,
-        90,
-        120
+        411,
+        485,
+        100,
+        133.33333333333334
       ],
       "side-table": [
-        655,
-        565,
-        200,
-        150
+        400,
+        571,
+        150,
+        112.5
       ],
       "wall-shelf": [
-        180,
-        180,
+        877,
+        293,
         230,
         90
       ],
       "decor-shell": [
-        235,
-        117,
+        932,
+        240,
         90,
         90
       ],
       "window-curtain-left": [
-        526.1875,
-        145.1875,
-        86.625,
-        133.998
+        463,
+        199,
+        153,
+        236.671875
       ],
       "window-curtain-right": [
-        757.1875,
-        145.1875,
-        86.625,
-        127.9981
+        624,
+        197,
+        160,
+        236.41791044776127
       ]
     },
     "rug": [
-      280,
-      690,
-      700,
-      110
-    ]
+      207,
+      618,
+      300,
+      98
+    ],
+    "layers": {
+      "sofa": 1,
+      "wardrobe": 1,
+      "floor-lamp": 3,
+      "window": 0,
+      "side-table": 2,
+      "wall-shelf": 0,
+      "decor-shell": 2,
+      "window-curtain-left": 1,
+      "window-curtain-right": 2,
+      "rug": 0
+    }
   },
   "portrait": {
     "canvas": [
@@ -154,7 +166,7 @@
         143.75,
         157.5,
         162.5,
-        123.055
+        123.05497925311202
       ],
       "sofa": [
         10,
@@ -196,13 +208,13 @@
         104.6875,
         149.6875,
         65.625,
-        101.5137
+        101.513671875
       ],
       "window-curtain-right": [
         279.6875,
         149.6875,
         65.625,
-        96.9683
+        96.96828358208955
       ]
     },
     "rug": [
@@ -210,7 +222,20 @@
       700,
       345,
       65
-    ]
+    ],
+    "layers": {
+      "sofa": 1,
+      "wardrobe": 1,
+      "floor-lamp": 3,
+      "window": 0,
+      "side-table": 2,
+      "wall-shelf": 0,
+      "decor-shell": 2,
+      "window-curtain-left": 0,
+      "window-curtain-right": 0,
+      "rug": 0
+    }
   },
-  "background": "assets/scenes/home/background/coastal-room.png"
+  "background": "assets/scenes/home/background/coastal-room.png",
+  "revision": 1
 }

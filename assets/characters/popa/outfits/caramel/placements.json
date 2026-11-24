@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "caramel",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "shirt_body",
+          "asset": "assets/characters/popa/outfits/caramel/parts/shirt_body.png",
+          "naturalSize": [
+            235,
+            177
+          ],
+          "artworkSize": [
+            241,
+            183
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 230,
+          "y": 335.4,
+          "width": 200,
+          "height": 150.63333333333333,
+          "rotation": -2,
+          "layer": 9,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/caramel/parts/skirt_body.png",
+          "naturalSize": [
+            290,
+            157
+          ],
+          "artworkSize": [
+            296,
+            163
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 230.8,
+          "y": 393,
+          "width": 200,
+          "height": 108.28108108108108,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "chest_bow",
+          "asset": "assets/characters/popa/outfits/caramel/parts/chest_bow.png",
+          "naturalSize": [
+            150,
+            118
+          ],
+          "artworkSize": [
+            156,
+            124
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 299.6,
+          "y": 109.8,
+          "width": 110,
+          "height": 86.5276923076923,
+          "rotation": 0,
+          "layer": 18,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

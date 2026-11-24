@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "mosaic",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "shirt_body",
+          "asset": "assets/characters/popa/outfits/mosaic/parts/shirt_body.png",
+          "naturalSize": [
+            297,
+            261
+          ],
+          "artworkSize": [
+            303,
+            267
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 229.2,
+          "y": 334.6,
+          "width": 180,
+          "height": 158.18,
+          "rotation": 0,
+          "layer": 9.1,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/characters/popa/outfits/mosaic/parts/sleeve_left.png",
+          "naturalSize": [
+            149,
+            171
+          ],
+          "artworkSize": [
+            155,
+            177
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 157,
+          "y": 322.2,
+          "width": 78,
+          "height": 89.51999999999998,
+          "rotation": 15,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/characters/popa/outfits/mosaic/parts/sleeve_right.png",
+          "naturalSize": [
+            149,
+            171
+          ],
+          "artworkSize": [
+            155,
+            177
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 290.8,
+          "y": 310.2,
+          "width": 73,
+          "height": 83.78153846153845,
+          "rotation": -27,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/mosaic/parts/skirt_body.png",
+          "naturalSize": [
+            326,
+            194
+          ],
+          "artworkSize": [
+            332,
+            200
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 230,
+          "y": 393.8,
+          "width": 185,
+          "height": 110.09,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "handbag",
+          "asset": "assets/characters/popa/outfits/mosaic/parts/handbag.png",
+          "naturalSize": [
+            172,
+            229
+          ],
+          "artworkSize": [
+            178,
+            235
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 338.8,
+          "y": 372,
+          "width": 85,
+          "height": 113.16333333333333,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

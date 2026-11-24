@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "mediterranean",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "shirt_body",
+          "asset": "assets/characters/popa/outfits/mediterranean/parts/shirt_body.png",
+          "naturalSize": [
+            283,
+            247
+          ],
+          "artworkSize": [
+            289,
+            253
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 227.6,
+          "y": 331.4,
+          "width": 200,
+          "height": 174.55555555555554,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/characters/popa/outfits/mediterranean/parts/skirt_body.png",
+          "naturalSize": [
+            323,
+            205
+          ],
+          "artworkSize": [
+            329,
+            211
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 229.2,
+          "y": 391.4,
+          "width": 185,
+          "height": 117.41,
+          "rotation": 0,
+          "layer": 7,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_clip",
+          "asset": "assets/characters/popa/outfits/mediterranean/parts/hair_clip.png",
+          "naturalSize": [
+            183,
+            172
+          ],
+          "artworkSize": [
+            189,
+            178
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 307.6,
+          "y": 95,
+          "width": 120,
+          "height": 112.785,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "basket_bag",
+          "asset": "assets/characters/popa/outfits/mediterranean/parts/basket_bag.png",
+          "naturalSize": [
+            182,
+            234
+          ],
+          "artworkSize": [
+            188,
+            240
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 340.4,
+          "y": 375.2,
+          "width": 90,
+          "height": 115.71599999999998,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}

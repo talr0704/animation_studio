@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "character": "popa",
+  "canvas": [
+    440,
+    475
+  ],
+  "assembly": "assets/characters/popa/assembly.json",
+  "looks": [
+    {
+      "id": "celestial",
+      "hiddenBase": [
+        "shirt",
+        "pinafore",
+        "flower"
+      ],
+      "parts": [
+        {
+          "id": "cape_body",
+          "asset": "assets/characters/popa/outfits/celestial/parts/cape_body.png",
+          "naturalSize": [
+            335,
+            253
+          ],
+          "artworkSize": [
+            341,
+            259
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 230.8,
+          "y": 336.2,
+          "width": 210,
+          "height": 158.5966666666667,
+          "rotation": -3,
+          "layer": 9,
+          "attachment": "body",
+          "visible": false,
+          "locked": false
+        },
+        {
+          "id": "dress_body",
+          "asset": "assets/characters/popa/outfits/celestial/parts/dress_body.png",
+          "naturalSize": [
+            321,
+            253
+          ],
+          "artworkSize": [
+            327,
+            259
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 226,
+          "y": 354.6,
+          "width": 200,
+          "height": 157.63333333333333,
+          "rotation": -3,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "hair_clip",
+          "asset": "assets/characters/popa/outfits/celestial/parts/hair_clip.png",
+          "naturalSize": [
+            177,
+            102
+          ],
+          "artworkSize": [
+            183,
+            108
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 302,
+          "y": 101.4,
+          "width": 110,
+          "height": 63.3875,
+          "rotation": 0,
+          "layer": 19,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "handbag",
+          "asset": "assets/characters/popa/outfits/celestial/parts/handbag.png",
+          "naturalSize": [
+            198,
+            252
+          ],
+          "artworkSize": [
+            204,
+            258
+          ],
+          "artworkOffset": [
+            -3,
+            -3
+          ],
+          "x": 342,
+          "y": 368,
+          "width": 80,
+          "height": 101.81333333333335,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ],
+      "fittingStatus": "draft"
+    }
+  ]
+}
