@@ -18,7 +18,7 @@ export function setOutfitBody(character, wearingOutfit) {
       return {
         image,
         sleeved: image.src,
-        bare: new URL(`../assets/characters/popa/parts/${name}_bare.png`, import.meta.url).href,
+        bare: new URL(`../assets/characters/popa/parts/${name}_bare.png?v=rounded-2`, import.meta.url).href,
       };
     }));
   }

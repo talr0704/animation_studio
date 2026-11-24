@@ -1,4 +1,4 @@
-import { setOutfitBody } from './shared/outfit-body.js?v=bare-arms';
+import { setOutfitBody } from './shared/outfit-body.js?v=rounded-arms';
 // Placement drafts only. The game keeps its approved character until a look is integrated.
 const CATALOG = './assets/characters/popa/outfits/catalog.json?v=published-fits-9';
 const clone = value => structuredClone(value);

@@ -1,4 +1,4 @@
-import { setOutfitBody } from '../shared/outfit-body.js?v=bare-arms';
+import { setOutfitBody } from '../shared/outfit-body.js?v=rounded-arms';
 // Fitted clothes use the same design canvas, artwork offsets and attachment transforms as the studio.
 export async function createWardrobe(popa) {
   const response=await fetch(new URL('../assets/characters/popa/outfits/catalog.json?v=published-fits-9',import.meta.url));

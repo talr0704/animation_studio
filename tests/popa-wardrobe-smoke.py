@@ -10,7 +10,7 @@ with sync_playwright() as p:
  page.locator('[data-wear="cloud"]').click();page.wait_for_function('document.querySelector(".cat-character").dataset.outfit==="cloud"')
  assert page.locator('[data-worn-part]').count()==7
  for side in ['left','right']:
-  assert page.locator(f'[data-sprite="{side}_arm"]').get_attribute('src').endswith(f'/{side}_arm_bare.png')
+  assert page.locator(f'[data-sprite="{side}_arm"]').get_attribute('src').split('?')[0].endswith(f'/{side}_arm_bare.png')
  assert page.locator('[data-sprite="torso"]').evaluate('(e)=>e.style.clipPath')=='inset(0px 20% 60%)'
  assert page.locator('[data-sprite="flower"]').evaluate('(e)=>getComputedStyle(e).visibility')=='hidden'
  shirt=page.locator('[data-worn-part="pajama_body"]');sleeve=page.locator('[data-worn-part="sleeve_left"]')

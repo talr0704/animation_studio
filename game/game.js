@@ -3,7 +3,7 @@ import {loadPropAppearance} from '../shared/prop-appearance.js?v=2';
 import { startFurnitureSession } from './furniture-session.js?v=2';
 import { validateFurnitureInteraction } from '../shared/furniture-interaction.js?v=2';
 import { FLOOR_START, FLOOR_ITEMS, floorBounds, nearestFree, walkable, roomPath, slideStep, constrainFloorFurniture } from './room-navigation.js';
-import { createWardrobe } from './wardrobe.js?v=bare-arms5';
+import { createWardrobe } from './wardrobe.js?v=rounded-arms6';
 import { mountRoomEditor } from './room-editor.js?v=published-room2';
 import {mountProp} from '../shared/prop-rig.js?v=closed-fit5';
 import { createPopa } from '../popa-browser.js';
