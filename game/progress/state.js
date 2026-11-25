@@ -104,7 +104,10 @@ export function applyCommand(state, command) {
  }
  if (command.quest) {
   const quest = state.story.firstCake;
-  if (command.quest.action === 'start') {
+  if (command.quest.action === 'accept-invitation') {
+   require((quest.status === 'not-started' || (quest.status === 'active' && quest.step === 'meet-milli')) && state.story.npcs.milli.met && state.story.npcs.milli.dialogues.includes('first-meeting'), 'First meeting is not complete');
+   quest.status = 'active'; quest.step = 'grow-strawberries';
+  } else if (command.quest.action === 'start') {
    require(quest.status === 'not-started', 'Quest already started'); quest.status = 'active';
   } else {
    require(command.quest.action === 'complete-step' && quest.status === 'active' && command.quest.expectedStep === quest.step, 'Quest step does not match');

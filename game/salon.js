@@ -1,4 +1,4 @@
-import {progressStore, readProfile, actionId} from './progress/store.js';
+import {progressStore, readProfile, actionId} from './progress/store.js?v=2';
 progressStore.initialize();
 let salonRewardId=actionId('salon');
 import {loadPropAppearance} from '../shared/prop-appearance.js?v=2';

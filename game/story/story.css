@@ -1,0 +1,17 @@
+.story-npc,.first-quest{position:absolute;z-index:1800;direction:rtl;color:#493326;background:#fff8e9;border:2px solid #a87855;border-radius:16px;box-shadow:0 4px 0 #79533230;padding:12px 18px;font-weight:700;min-height:48px}
+.story-npc{right:3%;bottom:100px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.story-npc img{width:140px;height:180px;object-fit:contain;pointer-events:none}
+.first-quest{left:18px;top:90px;width:230px;text-align:right;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.first-quest span{font-weight:500;font-size:14px;color:#6a4a35}
+.story-overlay{direction:rtl}
+.story-conversation{width:min(560px,96%);max-height:90%;overflow:auto;border:3px solid #997351;border-radius:24px;background:#fff8eb;box-shadow:0 10px 40px #442c2133;padding:24px;text-align:right;color:#493326}
+.story-conversation header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.story-conversation h2{font-size:26px;margin:0}
+.story-conversation p{font-size:19px;line-height:1.8}
+.story-conversation #story-choices{display:flex;flex-direction:column;gap:12px}
+.story-conversation button{min-height:46px;border:2px solid #a87855;border-radius:12px;background:#fff0d7;color:#493326;padding:10px 16px;font-size:16px;font-weight:600;box-shadow:0 3px 0 #79533220}
+.story-conversation #story-choices button:first-child{background:#e3f0dd;border-color:#72905e}
+.story-conversation #story-save{font-size:14px;line-height:1.5;margin-bottom:0;color:#4b6638}
+.story-conversation #story-save:empty{display:none}
+@media(max-width:700px){.first-quest{left:8px;top:105px;width:185px;padding:9px 12px}.first-quest,.first-quest span{font-size:12px}.story-npc{right:12px;bottom:110px;padding:10px 12px;font-size:14px}.story-npc img{width:100px;height:140px}.story-conversation{padding:18px}.story-conversation p{font-size:17px}.story-conversation h2{font-size:23px}}
+@media(max-height:520px){.first-quest{top:70px;width:180px;font-size:12px;padding:8px}.first-quest span{font-size:12px}.story-npc{bottom:110px}.story-conversation{padding:12px}.story-conversation p{font-size:15px;line-height:1.5;margin:12px 0}.story-conversation button{font-size:14px;min-height:40px;padding:7px 12px}.story-conversation #story-choices{gap:8px}}
