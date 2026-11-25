@@ -11,200 +11,200 @@
     {
       "file": "parts/tail.png",
       "label": "זנב",
-      "centerX": 300,
-      "centerY": 359,
+      "centerX": 311.11111111111114,
+      "centerY": 346.77777777777777,
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 0,
-      "pivotX": 300,
-      "pivotY": 344.555
+      "pivotX": 297.2222222222216,
+      "pivotY": 342.8883333333337
+    },
+    {
+      "file": "parts/tie.png",
+      "label": "עניבה",
+      "centerX": 341.44444444444446,
+      "centerY": 92.33333333333334,
+      "clockwiseDegrees": -45,
+      "flipX": false,
+      "zIndex": 0,
+      "pivotX": 339.77777777777777,
+      "pivotY": 71.5511695906433
     },
     {
       "file": "parts/foot_left.png",
       "label": "רגל שמאל",
-      "centerX": 184,
-      "centerY": 411,
+      "centerX": 178.44444444444443,
+      "centerY": 410.44444444444446,
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 1,
-      "pivotX": 184,
-      "pivotY": 397.48
+      "pivotX": 185.11111111111134,
+      "pivotY": 391.36888888889007
     },
     {
       "file": "parts/foot_right.png",
       "label": "רגל ימין",
-      "centerX": 255,
-      "centerY": 411,
+      "centerX": 264.99999999999994,
+      "centerY": 409.8888888888889,
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 2,
-      "pivotX": 255,
-      "pivotY": 397.50344827586207
+      "pivotX": 259.99999999999983,
+      "pivotY": 390.8367816091956
     },
     {
       "file": "parts/torso.png",
       "label": "גוף",
       "centerX": 220,
-      "centerY": 332,
+      "centerY": 333.66666666666663,
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 3,
-      "pivotX": 220,
-      "pivotY": 299.18461538461537
+      "pivotX": 221.66666666666652,
+      "pivotY": 286.9623931623932
     },
     {
       "file": "parts/sleeve_left.png",
       "label": "שרוול שמאל",
-      "centerX": 148,
-      "centerY": 311,
+      "centerX": 193.55555555555554,
+      "centerY": 333.22222222222223,
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 4,
-      "pivotX": 148,
-      "pivotY": 292.7682926829268
+      "pivotX": 193.55555555555543,
+      "pivotY": 314.9905149051494
     },
     {
       "file": "parts/sleeve_right.png",
       "label": "שרוול ימין",
-      "centerX": 292,
-      "centerY": 311,
+      "centerX": 244.7777777777778,
+      "centerY": 337.6666666666667,
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 5,
-      "pivotX": 292,
-      "pivotY": 292.6188524590164
+      "pivotX": 244.77777777777808,
+      "pivotY": 319.2855191256831
     },
     {
       "file": "parts/wing_left.png",
       "label": "כנף שמאל",
-      "centerX": 132,
-      "centerY": 339,
-      "clockwiseDegrees": 0,
+      "centerX": 133.66666666666663,
+      "centerY": 310.6666666666667,
+      "clockwiseDegrees": 5,
       "flipX": false,
       "zIndex": 6,
-      "pivotX": 132,
-      "pivotY": 316.9060773480663
+      "pivotX": 152.0000000000009,
+      "pivotY": 279.12829957028856
     },
     {
       "file": "parts/wing_right.png",
       "label": "כנף ימין",
-      "centerX": 308,
-      "centerY": 339,
-      "clockwiseDegrees": 0,
+      "centerX": 300.22222222222206,
+      "centerY": 307.33333333333326,
+      "clockwiseDegrees": -2,
       "flipX": false,
       "zIndex": 7,
-      "pivotX": 308,
-      "pivotY": 317.2914364640884
+      "pivotX": 285.7777777777792,
+      "pivotY": 274.5136586863123
     },
     {
       "file": "parts/collar.png",
       "label": "צווארון",
-      "centerX": 220,
-      "centerY": 297,
+      "centerX": 218.8888888888889,
+      "centerY": 283.11111111111114,
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 8,
-      "pivotX": 220,
-      "pivotY": 277.8153638814016
-    },
-    {
-      "file": "parts/tie.png",
-      "label": "עניבה",
-      "centerX": 220,
-      "centerY": 335,
-      "clockwiseDegrees": 0,
-      "flipX": false,
-      "zIndex": 9,
-      "pivotX": 220,
-      "pivotY": 318.6622807017544
+      "pivotX": 218.88888888888857,
+      "pivotY": 263.9264749925126
     },
     {
       "file": "parts/button.png",
       "label": "כפתור",
-      "centerX": 220,
-      "centerY": 302,
+      "centerX": 215.55555555555557,
+      "centerY": 306.4444444444444,
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 10,
-      "pivotX": 220,
-      "pivotY": 294.56880733944956
+      "pivotX": 215.5555555555554,
+      "pivotY": 299.01325178389305
     },
     {
       "file": "parts/head.png",
       "label": "ראש",
-      "centerX": 220,
-      "centerY": 178,
+      "centerX": 222.2222222222222,
+      "centerY": 169.66666666666666,
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 11,
-      "pivotX": 220,
-      "pivotY": 117.50375939849624
+      "pivotX": 214.44444444444454,
+      "pivotY": 279.1704260651642
     },
     {
       "file": "parts/eye_open_left.png",
       "label": "עין שמאל",
-      "centerX": 171,
-      "centerY": 179,
-      "clockwiseDegrees": 0,
+      "centerX": 172.11111111111111,
+      "centerY": 162.33333333333331,
+      "clockwiseDegrees": -5,
       "flipX": false,
       "zIndex": 12,
-      "pivotX": 171,
-      "pivotY": 167.44594594594594
+      "pivotX": 172.11111111111106,
+      "pivotY": 163.00150150150156
     },
     {
       "file": "parts/eye_open_right.png",
       "label": "עין ימין",
       "centerX": 264,
-      "centerY": 179,
-      "clockwiseDegrees": 0,
+      "centerY": 162.33333333333334,
+      "clockwiseDegrees": -4,
       "flipX": false,
       "zIndex": 13,
-      "pivotX": 264,
-      "pivotY": 167.2876712328767
+      "pivotX": 264.55555555555554,
+      "pivotY": 162.28767123287736
     },
     {
       "file": "parts/brow_left.png",
       "label": "גבה שמאל",
-      "centerX": 171,
-      "centerY": 148,
-      "clockwiseDegrees": 0,
+      "centerX": 166,
+      "centerY": 183.55555555555557,
+      "clockwiseDegrees": 5,
       "flipX": false,
       "zIndex": 14,
-      "pivotX": 171,
-      "pivotY": 143.375
+      "pivotX": 165.99999999999966,
+      "pivotY": 178.9305555555562
     },
     {
       "file": "parts/brow_right.png",
       "label": "גבה ימין",
-      "centerX": 264,
-      "centerY": 148,
-      "clockwiseDegrees": 0,
+      "centerX": 268.4444444444444,
+      "centerY": 183.55555555555557,
+      "clockwiseDegrees": -5,
       "flipX": false,
       "zIndex": 15,
-      "pivotX": 264,
-      "pivotY": 143.3448275862069
+      "pivotX": 268.44444444444485,
+      "pivotY": 178.90038314176397
     },
     {
       "file": "parts/beak_closed.png",
       "label": "מקור",
-      "centerX": 220,
-      "centerY": 234,
+      "centerX": 221.66666666666669,
+      "centerY": 231.7777777777778,
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 16,
-      "pivotX": 220,
-      "pivotY": 216.41197183098592
+      "pivotX": 220.5555555555559,
+      "pivotY": 252.5230829420966
     },
     {
       "file": "parts/hat.png",
       "label": "כובע מלח",
-      "centerX": 202,
-      "centerY": 71,
-      "clockwiseDegrees": 0,
+      "centerX": 255.88888888888889,
+      "centerY": 37.66666666666667,
+      "clockwiseDegrees": 4,
       "flipX": false,
-      "zIndex": 17,
-      "pivotX": 202,
-      "pivotY": 42.297587131367294
+      "zIndex": 19,
+      "pivotX": 254.77777777777763,
+      "pivotY": 51.18647602025618
     }
   ],
   "sprites": [
@@ -238,7 +238,7 @@
       ],
       "displaySize": [
         76,
-        53.98620689655172
+        53.9862
       ]
     },
     {
@@ -249,7 +249,7 @@
       ],
       "displaySize": [
         180,
-        131.26153846153846
+        131.262
       ]
     },
     {
@@ -260,7 +260,7 @@
       ],
       "displaySize": [
         65,
-        72.92682926829268
+        72.9268
       ]
     },
     {
@@ -271,7 +271,7 @@
       ],
       "displaySize": [
         65,
-        73.52459016393442
+        73.5246
       ]
     },
     {
@@ -282,7 +282,7 @@
       ],
       "displaySize": [
         93,
-        88.37569060773481
+        88.3757
       ]
     },
     {
@@ -293,7 +293,7 @@
       ],
       "displaySize": [
         93,
-        86.8342541436464
+        86.8343
       ]
     },
     {
@@ -304,7 +304,7 @@
       ],
       "displaySize": [
         195,
-        76.73854447439354
+        76.7385
       ]
     },
     {
@@ -315,7 +315,7 @@
       ],
       "displaySize": [
         50,
-        65.35087719298245
+        65.3509
       ]
     },
     {
@@ -326,7 +326,7 @@
       ],
       "displaySize": [
         30,
-        29.724770642201836
+        29.7248
       ]
     },
     {
@@ -337,7 +337,7 @@
       ],
       "displaySize": [
         288,
-        241.98496240601503
+        241.985
       ]
     },
     {
@@ -347,8 +347,8 @@
         95
       ],
       "displaySize": [
-        36,
-        46.21621621621622
+        38,
+        48.78376666666667
       ]
     },
     {
@@ -358,8 +358,8 @@
         95
       ],
       "displaySize": [
-        36,
-        46.84931506849315
+        38,
+        49.452038888888886
       ]
     },
     {
@@ -380,8 +380,8 @@
         36
       ],
       "displaySize": [
-        45,
-        18.620689655172413
+        43.49997583334676,
+        18
       ]
     },
     {
@@ -392,7 +392,7 @@
       ],
       "displaySize": [
         148,
-        70.35211267605634
+        70.3521
       ]
     },
     {
@@ -402,8 +402,8 @@
         212
       ],
       "displaySize": [
-        202,
-        114.80965147453082
+        222,
+        126.17732673267325
       ]
     }
   ]
