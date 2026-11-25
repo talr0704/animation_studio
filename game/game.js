@@ -1,4 +1,4 @@
-import {mountFirstMeeting} from './story/first-meeting.js';
+import {mountFirstMeeting} from './story/first-meeting.js?v=momo2';
 import {progressStore, readProfile, actionId} from './progress/store.js?v=2';
 import {roomBaseScale} from './room-scale.js';
 import {loadPropAppearance} from '../shared/prop-appearance.js?v=2';

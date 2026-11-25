@@ -1,0 +1,269 @@
+{
+  "operation": "Original RGBA crops with 4px padding; neighbouring parts isolated by nearest connected-component alpha ownership. Visible pixels retain original RGBA values.",
+  "parts": [
+    {
+      "part": "head",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        18,
+        2,
+        532,
+        447
+      ],
+      "destination": "assets/characters/momo/parts/head.png"
+    },
+    {
+      "part": "torso",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        567,
+        75,
+        325,
+        237
+      ],
+      "destination": "assets/characters/momo/parts/torso.png"
+    },
+    {
+      "part": "wing_left",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        912,
+        84,
+        181,
+        172
+      ],
+      "destination": "assets/characters/momo/parts/wing_left.png"
+    },
+    {
+      "part": "wing_right",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        1173,
+        84,
+        181,
+        169
+      ],
+      "destination": "assets/characters/momo/parts/wing_right.png"
+    },
+    {
+      "part": "foot_left",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        764,
+        305,
+        150,
+        104
+      ],
+      "destination": "assets/characters/momo/parts/foot_left.png"
+    },
+    {
+      "part": "foot_right",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        938,
+        305,
+        145,
+        103
+      ],
+      "destination": "assets/characters/momo/parts/foot_right.png"
+    },
+    {
+      "part": "tail",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        1111,
+        298,
+        100,
+        107
+      ],
+      "destination": "assets/characters/momo/parts/tail.png"
+    },
+    {
+      "part": "hat",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        36,
+        448,
+        373,
+        212
+      ],
+      "destination": "assets/characters/momo/parts/hat.png"
+    },
+    {
+      "part": "tie",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        433,
+        476,
+        114,
+        149
+      ],
+      "destination": "assets/characters/momo/parts/tie.png"
+    },
+    {
+      "part": "collar",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        560,
+        464,
+        371,
+        146
+      ],
+      "destination": "assets/characters/momo/parts/collar.png"
+    },
+    {
+      "part": "button",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        949,
+        486,
+        109,
+        108
+      ],
+      "destination": "assets/characters/momo/parts/button.png"
+    },
+    {
+      "part": "sleeve_left",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        1080,
+        473,
+        123,
+        138
+      ],
+      "destination": "assets/characters/momo/parts/sleeve_left.png"
+    },
+    {
+      "part": "sleeve_right",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        1220,
+        473,
+        122,
+        138
+      ],
+      "destination": "assets/characters/momo/parts/sleeve_right.png"
+    },
+    {
+      "part": "eye_open_left",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        83,
+        646,
+        74,
+        95
+      ],
+      "destination": "assets/characters/momo/parts/eye_open_left.png"
+    },
+    {
+      "part": "eye_open_right",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        219,
+        646,
+        73,
+        95
+      ],
+      "destination": "assets/characters/momo/parts/eye_open_right.png"
+    },
+    {
+      "part": "eye_closed_left",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        402,
+        674,
+        77,
+        56
+      ],
+      "destination": "assets/characters/momo/parts/eye_closed_left.png"
+    },
+    {
+      "part": "eye_closed_right",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        532,
+        673,
+        78,
+        57
+      ],
+      "destination": "assets/characters/momo/parts/eye_closed_right.png"
+    },
+    {
+      "part": "eye_happy_left",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        738,
+        664,
+        109,
+        53
+      ],
+      "destination": "assets/characters/momo/parts/eye_happy_left.png"
+    },
+    {
+      "part": "eye_happy_right",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        869,
+        663,
+        108,
+        54
+      ],
+      "destination": "assets/characters/momo/parts/eye_happy_right.png"
+    },
+    {
+      "part": "brow_left",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        1085,
+        668,
+        90,
+        37
+      ],
+      "destination": "assets/characters/momo/parts/brow_left.png"
+    },
+    {
+      "part": "brow_right",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        1228,
+        668,
+        87,
+        36
+      ],
+      "destination": "assets/characters/momo/parts/brow_right.png"
+    },
+    {
+      "part": "beak_closed",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        199,
+        754,
+        284,
+        135
+      ],
+      "destination": "assets/characters/momo/parts/beak_closed.png"
+    },
+    {
+      "part": "beak_smile",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        549,
+        750,
+        283,
+        150
+      ],
+      "destination": "assets/characters/momo/parts/beak_smile.png"
+    },
+    {
+      "part": "beak_open",
+      "source": "source-art/characters/momo/rig-sheet.png",
+      "rect": [
+        896,
+        743,
+        277,
+        177
+      ],
+      "destination": "assets/characters/momo/parts/beak_open.png"
+    }
+  ]
+}

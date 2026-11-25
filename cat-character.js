@@ -1,7 +1,7 @@
 import { mountCharacterReferences } from './character-references.js?v=appearance5';
 import { createCatExpressions } from './cat-expressions.js';
 import { createCatAnimations } from './cat-animations.js';
-import { mountLayoutEditor } from './cat-layout-editor.js';
+import { mountLayoutEditor } from './cat-layout-editor.js?v=momo1';
 import { mountOutfitEditor } from './popa-outfit-editor.js?v=rounded-arms14';
 import { mountCatEditor } from './cat-editor.js?v=sitting-demo2';
 const character = document.querySelector('.cat-character');

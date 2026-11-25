@@ -1,0 +1,410 @@
+{
+  "version": 1,
+  "id": "momo",
+  "coordinates": "Pixels, origin top left; centers and pivots are in the 440x475 design canvas.",
+  "canvas": {
+    "width": 440,
+    "height": 475
+  },
+  "transparentPadding": 0,
+  "layersBackToFront": [
+    {
+      "file": "parts/tail.png",
+      "label": "זנב",
+      "centerX": 300,
+      "centerY": 359,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 0,
+      "pivotX": 300,
+      "pivotY": 344.555
+    },
+    {
+      "file": "parts/foot_left.png",
+      "label": "רגל שמאל",
+      "centerX": 184,
+      "centerY": 411,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 1,
+      "pivotX": 184,
+      "pivotY": 397.48
+    },
+    {
+      "file": "parts/foot_right.png",
+      "label": "רגל ימין",
+      "centerX": 255,
+      "centerY": 411,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 2,
+      "pivotX": 255,
+      "pivotY": 397.50344827586207
+    },
+    {
+      "file": "parts/torso.png",
+      "label": "גוף",
+      "centerX": 220,
+      "centerY": 332,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 3,
+      "pivotX": 220,
+      "pivotY": 299.18461538461537
+    },
+    {
+      "file": "parts/sleeve_left.png",
+      "label": "שרוול שמאל",
+      "centerX": 148,
+      "centerY": 311,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 4,
+      "pivotX": 148,
+      "pivotY": 292.7682926829268
+    },
+    {
+      "file": "parts/sleeve_right.png",
+      "label": "שרוול ימין",
+      "centerX": 292,
+      "centerY": 311,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 5,
+      "pivotX": 292,
+      "pivotY": 292.6188524590164
+    },
+    {
+      "file": "parts/wing_left.png",
+      "label": "כנף שמאל",
+      "centerX": 132,
+      "centerY": 339,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 6,
+      "pivotX": 132,
+      "pivotY": 316.9060773480663
+    },
+    {
+      "file": "parts/wing_right.png",
+      "label": "כנף ימין",
+      "centerX": 308,
+      "centerY": 339,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 7,
+      "pivotX": 308,
+      "pivotY": 317.2914364640884
+    },
+    {
+      "file": "parts/collar.png",
+      "label": "צווארון",
+      "centerX": 220,
+      "centerY": 297,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 8,
+      "pivotX": 220,
+      "pivotY": 277.8153638814016
+    },
+    {
+      "file": "parts/tie.png",
+      "label": "עניבה",
+      "centerX": 220,
+      "centerY": 335,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 9,
+      "pivotX": 220,
+      "pivotY": 318.6622807017544
+    },
+    {
+      "file": "parts/button.png",
+      "label": "כפתור",
+      "centerX": 220,
+      "centerY": 302,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 10,
+      "pivotX": 220,
+      "pivotY": 294.56880733944956
+    },
+    {
+      "file": "parts/head.png",
+      "label": "ראש",
+      "centerX": 220,
+      "centerY": 178,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 11,
+      "pivotX": 220,
+      "pivotY": 117.50375939849624
+    },
+    {
+      "file": "parts/eye_open_left.png",
+      "label": "עין שמאל",
+      "centerX": 171,
+      "centerY": 179,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 12,
+      "pivotX": 171,
+      "pivotY": 167.44594594594594
+    },
+    {
+      "file": "parts/eye_open_right.png",
+      "label": "עין ימין",
+      "centerX": 264,
+      "centerY": 179,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 13,
+      "pivotX": 264,
+      "pivotY": 167.2876712328767
+    },
+    {
+      "file": "parts/brow_left.png",
+      "label": "גבה שמאל",
+      "centerX": 171,
+      "centerY": 148,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 14,
+      "pivotX": 171,
+      "pivotY": 143.375
+    },
+    {
+      "file": "parts/brow_right.png",
+      "label": "גבה ימין",
+      "centerX": 264,
+      "centerY": 148,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 15,
+      "pivotX": 264,
+      "pivotY": 143.3448275862069
+    },
+    {
+      "file": "parts/beak_closed.png",
+      "label": "מקור",
+      "centerX": 220,
+      "centerY": 234,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 16,
+      "pivotX": 220,
+      "pivotY": 216.41197183098592
+    },
+    {
+      "file": "parts/hat.png",
+      "label": "כובע מלח",
+      "centerX": 202,
+      "centerY": 71,
+      "clockwiseDegrees": 0,
+      "flipX": false,
+      "zIndex": 17,
+      "pivotX": 202,
+      "pivotY": 42.297587131367294
+    }
+  ],
+  "sprites": [
+    {
+      "file": "parts/tail.png",
+      "artworkSize": [
+        100,
+        107
+      ],
+      "displaySize": [
+        54,
+        57.78
+      ]
+    },
+    {
+      "file": "parts/foot_left.png",
+      "artworkSize": [
+        150,
+        104
+      ],
+      "displaySize": [
+        78,
+        54.08
+      ]
+    },
+    {
+      "file": "parts/foot_right.png",
+      "artworkSize": [
+        145,
+        103
+      ],
+      "displaySize": [
+        76,
+        53.98620689655172
+      ]
+    },
+    {
+      "file": "parts/torso.png",
+      "artworkSize": [
+        325,
+        237
+      ],
+      "displaySize": [
+        180,
+        131.26153846153846
+      ]
+    },
+    {
+      "file": "parts/sleeve_left.png",
+      "artworkSize": [
+        123,
+        138
+      ],
+      "displaySize": [
+        65,
+        72.92682926829268
+      ]
+    },
+    {
+      "file": "parts/sleeve_right.png",
+      "artworkSize": [
+        122,
+        138
+      ],
+      "displaySize": [
+        65,
+        73.52459016393442
+      ]
+    },
+    {
+      "file": "parts/wing_left.png",
+      "artworkSize": [
+        181,
+        172
+      ],
+      "displaySize": [
+        93,
+        88.37569060773481
+      ]
+    },
+    {
+      "file": "parts/wing_right.png",
+      "artworkSize": [
+        181,
+        169
+      ],
+      "displaySize": [
+        93,
+        86.8342541436464
+      ]
+    },
+    {
+      "file": "parts/collar.png",
+      "artworkSize": [
+        371,
+        146
+      ],
+      "displaySize": [
+        195,
+        76.73854447439354
+      ]
+    },
+    {
+      "file": "parts/tie.png",
+      "artworkSize": [
+        114,
+        149
+      ],
+      "displaySize": [
+        50,
+        65.35087719298245
+      ]
+    },
+    {
+      "file": "parts/button.png",
+      "artworkSize": [
+        109,
+        108
+      ],
+      "displaySize": [
+        30,
+        29.724770642201836
+      ]
+    },
+    {
+      "file": "parts/head.png",
+      "artworkSize": [
+        532,
+        447
+      ],
+      "displaySize": [
+        288,
+        241.98496240601503
+      ]
+    },
+    {
+      "file": "parts/eye_open_left.png",
+      "artworkSize": [
+        74,
+        95
+      ],
+      "displaySize": [
+        36,
+        46.21621621621622
+      ]
+    },
+    {
+      "file": "parts/eye_open_right.png",
+      "artworkSize": [
+        73,
+        95
+      ],
+      "displaySize": [
+        36,
+        46.84931506849315
+      ]
+    },
+    {
+      "file": "parts/brow_left.png",
+      "artworkSize": [
+        90,
+        37
+      ],
+      "displaySize": [
+        45,
+        18.5
+      ]
+    },
+    {
+      "file": "parts/brow_right.png",
+      "artworkSize": [
+        87,
+        36
+      ],
+      "displaySize": [
+        45,
+        18.620689655172413
+      ]
+    },
+    {
+      "file": "parts/beak_closed.png",
+      "artworkSize": [
+        284,
+        135
+      ],
+      "displaySize": [
+        148,
+        70.35211267605634
+      ]
+    },
+    {
+      "file": "parts/hat.png",
+      "artworkSize": [
+        373,
+        212
+      ],
+      "displaySize": [
+        202,
+        114.80965147453082
+      ]
+    }
+  ]
+}

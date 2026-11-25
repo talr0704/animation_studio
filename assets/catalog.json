@@ -10,6 +10,14 @@
         "assets/characters/popa/animations/sitting-demo.json",
         "assets/characters/popa/animations/open-wardrobe.json"
       ]
+    },
+    {
+      "id": "momo",
+      "label": "מומו",
+      "assembly": "assets/characters/momo/assembly.json",
+      "studio": "character-studio.html?character=momo",
+      "status": "calibration",
+      "expressions": "assets/characters/momo/expressions.json"
     }
   ],
   "scenes": [

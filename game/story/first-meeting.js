@@ -18,10 +18,10 @@ export function acceptInvitation(store = progressStore) {
 
 export async function mountFirstMeeting({world, onApproach, onStart, onClose, onProgress}) {
  const response = await fetch(new URL('../../assets/story/first-cake.json', import.meta.url), {cache: 'no-cache'});
- if (!response.ok) throw Error('לא ניתן לטעון את השיחה עם מילי');
+ if (!response.ok) throw Error('לא ניתן לטעון את השיחה עם מומו');
  const data = await response.json();
  const npc = document.createElement('button'); npc.type = 'button'; npc.id = 'milli-npc'; npc.className = 'story-npc'; npc.setAttribute('aria-pressed', 'false');
- const title = document.createElement('span'); title.textContent = 'לדבר עם מילי';
+ const title = document.createElement('span'); title.textContent = 'לדבר עם מומו';
  if (data.npc.portrait) { const image = new Image(); image.src = new URL('../../' + data.npc.portrait, import.meta.url).href; image.alt = ''; npc.append(image); }
  npc.append(title); world.append(npc);
  const questButton = document.createElement('button'); questButton.type = 'button'; questButton.id = 'first-quest'; questButton.className = 'first-quest'; world.append(questButton);
@@ -36,9 +36,9 @@ export async function mountFirstMeeting({world, onApproach, onStart, onClose, on
   questButton.replaceChildren();
   const heading = document.createElement('strong'), step = document.createElement('span');
   heading.textContent = quest.status === 'not-started' ? 'ההרפתקה הראשונה שלך' : data.title;
-  step.textContent = quest.status === 'not-started' ? 'הכירי את מילי' : data.steps[quest.step];
+  step.textContent = quest.status === 'not-started' ? 'הכירי את מומו' : data.steps[quest.step];
   questButton.append(heading, step);
-  questButton.setAttribute('aria-label', `${heading.textContent} · ${step.textContent} · לדבר עם מילי`);
+  questButton.setAttribute('aria-label', `${heading.textContent} · ${step.textContent} · לדבר עם מומו`);
  }
  function close() {
   if (panel.hidden) return;
@@ -75,7 +75,7 @@ export async function mountFirstMeeting({world, onApproach, onStart, onClose, on
   inertNodes.forEach(([node]) => { node.inert = true; });
   render(entry); refresh();
  }
- function approach() { returnFocus = document.activeElement; onApproach({id: 'milli', label: 'מילי', npc: 'milli'}, npc); }
+ function approach() { returnFocus = document.activeElement; onApproach({id: 'milli', label: 'מומו', npc: 'milli'}, npc); }
  npc.onclick = approach; questButton.onclick = approach; $('close').onclick = close;
  panel.addEventListener('keydown', event => {
   if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); close(); }

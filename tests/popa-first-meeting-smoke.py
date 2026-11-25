@@ -14,7 +14,7 @@ with sync_playwright() as p:
  feet=page.locator('#player').evaluate('(e)=>[e.style.left,e.style.bottom]');page.keyboard.press('ArrowLeft');page.clock.run_for(300);assert page.locator('#player').evaluate('(e)=>[e.style.left,e.style.bottom]')==feet
  page.get_by_role('button',name='נדבר אחר כך',exact=True).click();assert page.locator('#story-dialog').is_hidden();assert state()['story']['firstCake']['status']=='not-started'
  talk();assert page.locator('#story-dialog').get_attribute('data-node')=='returning'
- page.get_by_role('button',name='כן, ספרי לי',exact=True).click();page.get_by_role('button',name='מה נצטרך לעשות?',exact=True).click();assert page.locator('#story-dialog').get_attribute('data-node')=='plan'
+ page.get_by_role('button',name='כן, ספר לי',exact=True).click();page.get_by_role('button',name='מה נצטרך לעשות?',exact=True).click();assert page.locator('#story-dialog').get_attribute('data-node')=='plan'
  page.get_by_role('button',name='אני מצטרפת!',exact=True).click();assert state()['story']['firstCake']['step']=='grow-strawberries';assert state()['wallet']['coins']==0;assert state()['inventory']=={}
  assert 'לגדל תותים לעוגה' in page.locator('#first-quest').text_content();page.get_by_role('button',name='יוצאים לדרך',exact=True).click()
  receipts=state()['receipts'];page.reload(wait_until='networkidle');page.wait_for_selector('#loading',state='hidden');assert state()['story']['firstCake']['step']=='grow-strawberries'

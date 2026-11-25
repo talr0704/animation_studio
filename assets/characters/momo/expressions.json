@@ -1,0 +1,25 @@
+{
+  "default": {
+    "eyes": [
+      "eye_open_left",
+      "eye_open_right"
+    ],
+    "beak": "beak_closed"
+  },
+  "alternatives": {
+    "eyes": [
+      [
+        "eye_closed_left",
+        "eye_closed_right"
+      ],
+      [
+        "eye_happy_left",
+        "eye_happy_right"
+      ]
+    ],
+    "beaks": [
+      "beak_smile",
+      "beak_open"
+    ]
+  }
+}

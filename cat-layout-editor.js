@@ -1,7 +1,7 @@
 const STORAGE_KEY = 'popaAssemblyPositionsV5';
 const labels = { shirt: 'חולצה', tail: 'זנב', pinafore: 'סרפן', torso: 'גוף', left_arm: 'יד בצד שמאל', right_arm: 'יד בצד ימין', head: 'ראש', ear_left: 'אוזן שמאל', ear_right: 'אוזן ימין', foot_left: 'כף רגל שמאל', foot_right: 'כף רגל ימין', flower: 'פרח', eye_happy_left: 'עין שמאל', eye_happy_right: 'עין ימין', mouth_happy: 'פה', nose: 'אף', whiskers_left: 'שפם שמאל', whiskers_right: 'שפם ימין' };
 
-export function mountLayoutEditor({ layout, character, pause, setPivot }) {
+export function mountLayoutEditor({ layout, character, pause, setPivot, storageKey = STORAGE_KEY, partLabels = labels, initialPart = 'shirt', exportPath = 'assets/characters/popa/assembly.json', mountBefore = document.querySelector('.controls'), startEnabled = false, selectOnClick = false, allowImport = false }) {
   const frame = character.closest('.cat-frame');
   const images = new Map([...character.querySelectorAll('.cat-part')].map(image => [image.dataset.sprite, image]));
   const originals = new Map(layout.layersBackToFront.map(layer => [layer.file.split('/').pop().replace('.png', ''), layer]));
@@ -9,7 +9,7 @@ export function mountLayoutEditor({ layout, character, pause, setPivot }) {
   const order = new Map([...originals.keys()].map((name, index) => [name, originals.get(name).zIndex ?? index]));
   let positions = {};
   try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
     for (const [name, value] of Object.entries(saved)) {
       if (originals.has(name) && ['x', 'y', 'rotate'].every(key => Number.isFinite(value[key]))) positions[name] = { x: value.x, y: value.y, rotate: value.rotate, ...(Number.isFinite(value.width) && value.width > 0 ? { width: value.width } : {}), ...(Number.isFinite(value.height) && value.height > 0 ? { height: value.height } : {}), ...(Number.isFinite(value.pivotX) ? { pivotX: value.pivotX } : {}), ...(Number.isFinite(value.pivotY) ? { pivotY: value.pivotY } : {}), ...(Number.isInteger(value.zIndex) ? { zIndex: value.zIndex } : {}) };
     }
@@ -21,7 +21,7 @@ export function mountLayoutEditor({ layout, character, pause, setPivot }) {
   pivotMarker.setAttribute('aria-label', 'גרירת נקודת הציר של החלק הנבחר');
   pivotMarker.hidden = true;
   character.append(pivotMarker);
-  let selected = 'shirt';
+  let selected = originals.has(initialPart) ? initialPart : originals.keys().next().value;
   let enabled = false;
   const panel = document.createElement('section');
   panel.className = 'layout-editor';
@@ -59,13 +59,13 @@ export function mountLayoutEditor({ layout, character, pause, setPivot }) {
       </div>
       <span role="status" data-layout="status"></span>
     </div>`;
-  document.querySelector('.controls').before(panel);
+  mountBefore.before(panel);
   const find = name => panel.querySelector(`[data-layout="${name}"]`);
   const select = find('part');
   for (const [name] of originals) {
     const option = document.createElement('option');
     option.value = name;
-    option.textContent = labels[name] || name;
+    option.textContent = partLabels[name] || originals.get(name).label || name;
     select.append(option);
   }
   select.value = selected;
@@ -148,7 +148,7 @@ export function mountLayoutEditor({ layout, character, pause, setPivot }) {
   });
   find('save').addEventListener('click', () => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(positions));
+      localStorage.setItem(storageKey, JSON.stringify(positions));
       find('status').textContent = 'המיקומים נשמרו בדפדפן הזה';
     } catch { find('status').textContent = 'השמירה בדפדפן לא זמינה. אפשר להוריד קובץ הרכבה.'; }
   });
@@ -170,13 +170,15 @@ export function mountLayoutEditor({ layout, character, pause, setPivot }) {
     output.layersBackToFront.sort((a, b) => a.zIndex - b.zIndex);
     const url = URL.createObjectURL(new Blob([JSON.stringify(output, null, 2)], { type: 'application/json' }));
     const anchor = document.createElement('a');
-    anchor.href = url; anchor.download = 'assets/characters/popa/assembly.json'; anchor.click();
+    anchor.href = url; anchor.download = exportPath; anchor.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
   frame.addEventListener('pointerdown', event => {
     if (!enabled || event.button !== 0) return;
     event.preventDefault();
-    preview?.cancel(); pause(); apply(selected);
+    const hit = event.target.closest('.cat-part');
+    if (selectOnClick && hit && originals.has(hit.dataset.sprite)) selected = hit.dataset.sprite;
+    preview?.cancel(); pause(); apply(selected); refresh();
     const movingPivot = event.target === pivotMarker || find('pivotMode').checked;
     const start = { ...value(selected) };
     const startX = event.clientX, startY = event.clientY;
@@ -203,6 +205,29 @@ export function mountLayoutEditor({ layout, character, pause, setPivot }) {
     frame.addEventListener('pointerup', end);
     frame.addEventListener('pointercancel', end);
   });
+  if (allowImport) {
+    const label = document.createElement('label'); label.textContent = 'טעינת קובץ מיקומים';
+    const input = document.createElement('input'); input.type = 'file'; input.accept = '.json,application/json'; input.dataset.layout = 'import'; label.append(input); find('body').append(label);
+    input.onchange = async () => {
+      try {
+        const file = input.files[0]; if (!file || file.size > 200000) throw Error('קובץ גדול מדי');
+        const data = JSON.parse(await file.text());
+        if (data.id !== layout.id || JSON.stringify(data.canvas) !== JSON.stringify(layout.canvas) || data.layersBackToFront?.length !== originals.size || data.sprites?.length !== originals.size) throw Error('הקובץ אינו תואם לדמות');
+        const next = {}, seen = new Set();
+        for (const layer of data.layersBackToFront) {
+          const name = layer.file.split('/').pop().replace('.png', ''), original = originals.get(name), matches = data.sprites.filter(sprite => sprite.file === layer.file);
+          if (!original || original.file !== layer.file || seen.has(name) || matches.length !== 1) throw Error('חלק לא מוכר'); seen.add(name);
+          const [width,height] = matches[0].displaySize ?? [];
+          const value = {x:layer.centerX,y:layer.centerY,rotate:layer.clockwiseDegrees,width,height,zIndex:layer.zIndex,pivotX:layer.pivotX,pivotY:layer.pivotY};
+          if (!Object.values(value).every(Number.isFinite) || Math.abs(value.x)>10000 || Math.abs(value.y)>10000 || width<1 || height<1 || width>10000 || height>10000 || !Number.isInteger(value.zIndex)) throw Error('מיקום או גודל לא תקינים');
+          next[name] = value;
+        }
+        preview?.cancel(); pause(); positions = next; originals.forEach((_,name)=>apply(name)); refresh(); find('status').textContent = 'המיקומים נטענו. לחצי על שמירה כדי לשמור בדפדפן.';
+      } catch(error) { find('status').textContent = 'הייבוא לא בוצע: ' + error.message; }
+      finally { input.value = ''; }
+    };
+  }
   originals.forEach((_, name) => apply(name));
   refresh();
+  if (startEnabled) find('toggle').click();
 }
