@@ -16,19 +16,30 @@
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 0,
-      "pivotX": 297.2222222222216,
+      "pivotX": 297.22222222222166,
       "pivotY": 342.8883333333337
     },
     {
       "file": "parts/tie.png",
       "label": "עניבה",
-      "centerX": 341.44444444444446,
-      "centerY": 92.33333333333334,
+      "centerX": 344.77777777777777,
+      "centerY": 105.66666666666667,
       "clockwiseDegrees": -45,
       "flipX": false,
       "zIndex": 0,
-      "pivotX": 339.77777777777777,
-      "pivotY": 71.5511695906433
+      "pivotX": 343.11111111111114,
+      "pivotY": 84.88450292397678
+    },
+    {
+      "file": "parts/hat.png",
+      "label": "כובע מלח",
+      "centerX": 259.77777777777777,
+      "centerY": 42.111111111111114,
+      "clockwiseDegrees": 4,
+      "flipX": false,
+      "zIndex": 0,
+      "pivotX": 258.66666666666634,
+      "pivotY": 55.630920464700665
     },
     {
       "file": "parts/foot_left.png",
@@ -50,7 +61,7 @@
       "flipX": false,
       "zIndex": 2,
       "pivotX": 259.99999999999983,
-      "pivotY": 390.8367816091956
+      "pivotY": 390.83678160919567
     },
     {
       "file": "parts/torso.png",
@@ -61,7 +72,7 @@
       "flipX": false,
       "zIndex": 3,
       "pivotX": 221.66666666666652,
-      "pivotY": 286.9623931623932
+      "pivotY": 286.96239316239314
     },
     {
       "file": "parts/sleeve_left.png",
@@ -83,7 +94,7 @@
       "flipX": false,
       "zIndex": 5,
       "pivotX": 244.77777777777808,
-      "pivotY": 319.2855191256831
+      "pivotY": 319.28551912568315
     },
     {
       "file": "parts/wing_left.png",
@@ -149,7 +160,7 @@
       "flipX": false,
       "zIndex": 12,
       "pivotX": 172.11111111111106,
-      "pivotY": 163.00150150150156
+      "pivotY": 163.00150150150154
     },
     {
       "file": "parts/eye_open_right.png",
@@ -160,7 +171,7 @@
       "flipX": false,
       "zIndex": 13,
       "pivotX": 264.55555555555554,
-      "pivotY": 162.28767123287736
+      "pivotY": 162.28767123287733
     },
     {
       "file": "parts/brow_left.png",
@@ -192,19 +203,8 @@
       "clockwiseDegrees": 0,
       "flipX": false,
       "zIndex": 16,
-      "pivotX": 220.5555555555559,
-      "pivotY": 252.5230829420966
-    },
-    {
-      "file": "parts/hat.png",
-      "label": "כובע מלח",
-      "centerX": 255.88888888888889,
-      "centerY": 37.66666666666667,
-      "clockwiseDegrees": 4,
-      "flipX": false,
-      "zIndex": 19,
-      "pivotX": 254.77777777777763,
-      "pivotY": 51.18647602025618
+      "pivotX": 220.55555555555594,
+      "pivotY": 252.52308294209664
     }
   ],
   "sprites": [
@@ -348,7 +348,7 @@
       ],
       "displaySize": [
         38,
-        48.78376666666667
+        48.7838
       ]
     },
     {
@@ -359,7 +359,7 @@
       ],
       "displaySize": [
         38,
-        49.452038888888886
+        49.452
       ]
     },
     {
@@ -380,7 +380,7 @@
         36
       ],
       "displaySize": [
-        43.49997583334676,
+        43.5,
         18
       ]
     },
@@ -403,7 +403,7 @@
       ],
       "displaySize": [
         222,
-        126.17732673267325
+        126.177
       ]
     }
   ]
