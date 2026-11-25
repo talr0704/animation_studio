@@ -2,7 +2,7 @@ import {mountLayoutEditor} from '../cat-layout-editor.js?v=momo1';
 const character=document.querySelector('.cat-character'),frame=document.querySelector('.cat-frame'),status=document.getElementById('character-status');
 const groups=new Map(),images=new Map();
 try{
- const response=await fetch('../assets/characters/momo/assembly.json',{cache:'no-cache'});if(!response.ok)throw Error('קובץ ההרכבה לא נטען');const layout=await response.json();
+ const response=await fetch(new URL('../assets/characters/momo/assembly.json',import.meta.url),{cache:'no-cache'});if(!response.ok)throw Error('קובץ ההרכבה לא נטען');const layout=await response.json();
  const loads=[];
  for(const [index,layer]of layout.layersBackToFront.entries()){
   const name=layer.file.split('/').at(-1).replace('.png',''),sprite=layout.sprites.find(s=>s.file===layer.file),[width,height]=sprite.displaySize;
