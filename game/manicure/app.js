@@ -1,7 +1,7 @@
 import {loadAssets,url,COLORS} from './assets.js';
 import {NailSurface,W,H,canvas,pointerCoords} from './surface.js';
 import {BottleRack,mountSoap,effect,dryAnimation} from './animations.js';
-import {readSession,writeSession,rewardOnce} from './storage.js';
+import {readSession,writeSession,rewardOnce} from './storage.js?v=progress2';
 const $=id=>document.getElementById(id),work=$('work'),ctx=work.getContext('2d');
 const LABELS={remove:'הסרת הלק הישן',clean:'ניקוי עדין',file:'תיקון ושיוף הקצה',paint:'צובעים איך שרוצים',decorate:'מדבקות וגימור'};
 const HINTS={remove:'קחי צמר גפן ועברי בעדינות על שאריות הלק.',clean:'סבון ומברשת קטנה — מנקים רק במקום שבו משפשפים.',file:'העבירי את הפצירה מצד לצד בקצה העליון של הציפורן.',paint:'בחרי בקבוק וציירי קווים, נקודות או כמה צבעים יחד.',decorate:'יבש ומבריק! בחרי מדבקה והניחי אותה על הציפורן.'};

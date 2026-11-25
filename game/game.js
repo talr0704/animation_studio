@@ -1,3 +1,4 @@
+import {progressStore, readProfile, actionId} from './progress/store.js';
 import {roomBaseScale} from './room-scale.js';
 import {loadPropAppearance} from '../shared/prop-appearance.js?v=2';
 import { startFurnitureSession } from './furniture-session.js?v=2';
@@ -10,14 +11,9 @@ import { createPopa } from '../popa-browser.js';
 import { POPA_CLIPS } from '../popa-clips.js';
 import { GardenRound } from './garden-round.js';
 const $ = id => document.getElementById(id);
-const STORAGE = 'popaWorldV1';
-let profile = { coins: 0, best: 0, rounds: 0, rug: false, outfit: 'default' };
-try {
-  const saved = JSON.parse(localStorage.getItem(STORAGE) || '{}');
-  for (const key of ['coins','best','rounds']) if (Number.isSafeInteger(saved[key]) && saved[key] >= 0 && saved[key] < 10000000) profile[key] = saved[key];
-  profile.rug = saved.rug === true;
-  profile.outfit = typeof saved.outfit==='string'&&/^[a-z][a-z-]{0,50}$/.test(saved.outfit) ? saved.outfit : 'default';
-} catch { /* Play remains available without browser storage. */ }
+const initialProgress=progressStore.initialize();if(!initialProgress.persisted)$('save-status').textContent='שמירה אינה זמינה — ההתקדמות בביקור הזה זמנית';
+let profile = readProfile();
+let roundProgressId;
 let pendingItem=null,interactionTimer=null,activeItem=null;
 const fruitImages = new Map();
 let roomFurniture, roomEditor, wardrobe;
@@ -37,7 +33,10 @@ async function approachItem(item,element){
 }
 function arrive(){const item=pendingItem;if(!item)return;pendingItem=null;activeItem=item.id;$('player').dataset.interaction=item.id;
  if(item.id==='sofa'&&sofaAction){sitOnSofa();return;}
- if(item.id==='rug'&&!profile.rug){if(profile.coins<12){toast('השטיח החדש עולה 12 מטבעות');cancelInteraction();cue('idle');return;}profile.coins-=12;profile.rug=true;save();refreshProfile();}
+ if(item.id==='rug'){
+  profile=readProfile();if(!profile.rug){if(profile.coins<12){toast('השטיח החדש עולה 12 מטבעות');cancelInteraction();cue('idle');return;}
+   acceptProgress(progressStore.updateProfile('purchase:rug',state=>{if(state.rug)return;if(state.coins<12)throw Error('Not enough coins');state.coins-=12;state.rug=true;}));refreshProfile();}
+ }
 
  cue(item.action);toast(item.message);const element=document.querySelector(`[data-furniture="${item.id}"]`);if(element)element.animate([{transform:'translateY(0)'},{transform:'translateY(-3px)'},{transform:'translateY(0)'}],{duration:400});
  interactionTimer=setTimeout(()=>{if(activeItem!==item.id)return;cancelInteraction();if(item.page){location.href=item.page;return;}cue('idle');if(item.id==='wardrobe')openWardrobe();},POPA_CLIPS[item.action].duration);
@@ -48,7 +47,8 @@ let roomDepth=0,targetDepth=0,roomFacing=1;
 let width = 1, height = 1, last = performance.now(), particles = [], toastTimer, audio, sound = false;
 const keys = new Set();
 const canvas = $('canvas'), ctx = canvas.getContext('2d');
-const save = () => { try { let previous={};try{previous=JSON.parse(localStorage.getItem(STORAGE)||'{}');}catch{}localStorage.setItem(STORAGE, JSON.stringify({...previous,...profile})); } catch { $('save-status').textContent = 'שמירה אינה זמינה בדפדפן הזה'; } };
+function acceptProgress(result){profile=readProfile();if(!result.persisted)$('save-status').textContent='שמירה אינה זמינה בדפדפן הזה';}
+
 function refreshProfile() {
   $('coins').textContent = profile.coins;
   $('rug').classList.toggle('upgraded', profile.rug);
@@ -148,7 +148,7 @@ function garden() {if(furnitureSession){leaveFurniture().then(garden);return;}cl
   dialog({title:'מה נופל מהעצים?',text:'הזיזי את פופה ותפסי פירות בסל.\nכוכב זהב = בונוס. טיפות כחולות = לא לסל!\nבמחשב: עכבר או חצים. בנייד: גרירה על הגינה.',main:'בואי נשחק!',action:start});
 }
 function start() {
-  round=new GardenRound();phase='playing';target=.5;particles=[];keys.clear();last=performance.now();
+  round=new GardenRound();roundProgressId=actionId('garden');phase='playing';target=.5;particles=[];keys.clear();last=performance.now();
   closeDialog();$('basket').hidden=false;$('orchard').classList.add('playing');positionPlayer(.5);cue('hold');hud();
 }
 function pause() {
@@ -159,7 +159,7 @@ function pause() {
 function finish() {
   if(phase!=='playing')return;
   phase='results';keys.clear();$('orchard').classList.remove('playing');$('basket').hidden=true;
-  profile.coins+=round.reward;profile.best=Math.max(profile.best,round.score);profile.rounds++;save();refreshProfile();cue('happy');
+  acceptProgress(progressStore.updateProfile(roundProgressId,state=>{state.coins+=round.reward;state.best=Math.max(state.best,round.score);state.rounds++;}));refreshProfile();cue('happy');
   dialog({label:round.lives>0?'איזו הרפתקה!':'הגשם הפתיע אותנו',title:round.score>0?'הסל מלא בהפתעות':'עוד סיבוב קטן?',text:round.bestCombo>=5?'איזה רצף! קיבלת גם בונוס של 3 מטבעות.':'אפשר תמיד לנסות שוב. רצף של 5 תפיסות פותח מכפיל ניקוד.',main:'עוד סיבוב',action:start,results:[[round.score,'נקודות'],[`+${round.reward}`,'מטבעות'],[round.bestCombo,'ברצף']]});
 }
 function hud() {
@@ -271,7 +271,7 @@ $('wardrobe-panel').addEventListener('keydown',event=>{if(event.key!=='Tab')retu
 document.querySelector('.wardrobe-choices').addEventListener('click',async event=>{
   const button=event.target.closest('[data-wear]');if(!button||button.disabled)return;
   const choices=[...document.querySelectorAll('[data-wear]')];choices.forEach(b=>b.disabled=true);$('wardrobe-status').textContent='פופה מתלבשת…';
-  try{await wardrobe.wear(button.dataset.wear);profile.outfit=button.dataset.wear;save();closeWardrobe();cue('happy');toast(profile.outfit==='default'?'פופה חזרה לבגד הרגיל':'פופה לבשה '+wardrobe.entries.find(entry=>entry.id===profile.outfit).label);}
+  try{await wardrobe.wear(button.dataset.wear);acceptProgress(progressStore.updateProfile(actionId('outfit'),state=>{state.outfit=button.dataset.wear;}));closeWardrobe();cue('happy');toast(profile.outfit==='default'?'פופה חזרה לבגד הרגיל':'פופה לבשה '+wardrobe.entries.find(entry=>entry.id===profile.outfit).label);}
   catch(error){$('wardrobe-status').textContent='לא הצלחנו לטעון את הבגד. נסי שוב.';console.error(error);}
   finally{choices.forEach(b=>b.disabled=false);}
 });

@@ -1,3 +1,6 @@
+import {progressStore, readProfile, actionId} from './progress/store.js';
+progressStore.initialize();
+let salonRewardId=actionId('salon');
 import {loadPropAppearance} from '../shared/prop-appearance.js?v=2';
 import {mountProp,validateProp,validateClip,partFrames} from '../shared/prop-rig.js';
 import { SalonRound,HAIR_PARTS,LENGTHS,CARE_CELLS } from './salon-round.js';
@@ -18,7 +21,7 @@ function play(target,frames,options){
  const animation=target.animate(frames,{...options,duration:reduce?0:options.duration});animations.add(animation);
  animation.finished.catch(()=>{}).finally(()=>animations.delete(animation));return animation;
 }
-function wallet(){try{const saved=JSON.parse(localStorage.getItem('popaWorldV1')||'{}');return Number.isSafeInteger(saved?.coins)&&saved.coins>=0?saved.coins:0;}catch{return 0;}}
+function wallet(){return readProfile().coins;}
 function message(text){$('feedback').textContent=text;}
 function portrait(container,lengths,accessory){
  container.replaceChildren();const art=document.createElement('div');art.className='portrait-art';
@@ -194,7 +197,7 @@ $('finish-cut').onclick=()=>{if(round.finishCut()){refresh();message('העיצו
 $('finish').onclick=async()=>{
  const reward=round.claim();if(!reward)return;
  let stored=true;
- try{let state;try{state=JSON.parse(localStorage.getItem('popaWorldV1')||'{}');}catch{state={};}if(!state||typeof state!=='object'||Array.isArray(state))state={};state.coins=wallet()+reward;localStorage.setItem('popaWorldV1',JSON.stringify(state));}catch{stored=false;}
+ try{stored=progressStore.commit(salonRewardId,{coins:reward}).persisted;}catch{stored=false;}
  const visit=recordVisit(album,round,reward);album=visit.album;stored&&=visit.saved;
  refresh();renderAlbum();$('tool').hidden=true;
  message(stored?'המראה נוסף לאלבום והמטבעות לארנק.':'השמירה אינה זמינה כרגע. אפשר לראות את התוצאה בביקור הזה.');
@@ -233,7 +236,7 @@ function mountOutfit(layout){
   if(layer.clipPath)image.style.clipPath=layer.clipPath;
  }
 }
-function setupRequest(){
+function setupRequest(){salonRewardId=actionId('salon');
  const target=Object.fromEntries(HAIR_PARTS.map((name,i)=>[name,round.order.lengths[i]]));
  requestPortraitUpdate=portrait($('request-preview'),target,round.order.accessory);
 }
