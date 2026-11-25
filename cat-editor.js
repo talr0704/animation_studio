@@ -1,5 +1,5 @@
 // Existing timeline editor, adapted to the assembled cat's part groups.
-export function mountCatEditor({ character: robot, groups, stop: pauseAnimations, headFollowers = [] }) {
+export function mountCatEditor({ character: robot, groups, stop: pauseAnimations, headFollowers = [], storageKey = 'popaAnimationEditorDataV2', defaultAnimations = null, editorMount = document.body, editorTitle = 'Animation Editor', downloadFilename = 'robot-animation-data.json', partLabels = {}, panelWidthKey = 'robotAnimationEditorWidth', validateAnimationData = null, isActive = () => true, cyclePartsOnTab = true, recordByDefault = false, initialTrackFilter = 'all', valueBounds = null, rescaleDuration = false }) {
 const ANIMATION_EDITOR_ENABLED = true;
 const gsap = window.gsap;
 const partElements = Object.fromEntries(groups);
@@ -13,7 +13,7 @@ const ROBOT_CONFIG = Object.fromEntries(PART_NAMES.map(name => {
 }));
 function splitTransformOrigin(value) { const [x,y] = value.split(' ').map(parseFloat); return {x,y}; }
 function joinTransformOrigin(x,y) { return `${x}% ${y}%`; }
-const ANIMATION_STORAGE_KEY = 'popaAnimationEditorDataV2';
+const ANIMATION_STORAGE_KEY = storageKey;
 const EDITOR_FIELDS = ['x', 'y', 'rotate', 'scale', 'scaleX', 'scaleY', 'opacity', 'transformOriginX', 'transformOriginY'];
 const EASE_OPTIONS = [
   'none',
@@ -30,7 +30,7 @@ const EASE_OPTIONS = [
   'back.out',
   'elastic.out',
 ];
-const DEFAULT_ANIMATION_DATA = { idle: { name: 'Popa', duration: 2, loop: true, keyframes: [] } };
+const DEFAULT_ANIMATION_DATA = defaultAnimations ?? { idle: { name: 'Popa', duration: 2, loop: true, keyframes: [] } };
 const ANIMATION_DATA = loadAnimationData();
 
 let animationEditor;
@@ -42,7 +42,7 @@ let copiedKeyframe = null;
 let editorCurrentTime = 0;
 let editorZoom = 1;
 let editorIsPlaying = false;
-let editorRecordMode = false;
+let editorRecordMode = recordByDefault;
 let editorOnionSkin = false;
 let editorRafId = null;
 let editorPlayStart = 0;
@@ -91,6 +91,7 @@ function getPartValues(partName) {
 }
 
 function setPartValues(partName, values) {
+  if(valueBounds){values={...values};for(const [field,bounds]of Object.entries(valueBounds))if(values[field]!==undefined)values[field]=Number.isFinite(values[field])?Math.min(bounds[1],Math.max(bounds[0],values[field])):getPartValues(partName)[field];}
   currentEditorValues[partName] = { ...getPartValues(partName), ...values };
   applyEditorValues(partName, currentEditorValues[partName]);
 }
@@ -122,7 +123,7 @@ function syncEditorValuesFromBase() {
 function loadAnimationData() {
   try {
     const saved = localStorage.getItem(ANIMATION_STORAGE_KEY);
-    if (saved) return JSON.parse(saved);
+    if (saved) { const data=JSON.parse(saved); if(validateAnimationData)validateAnimationData(data); return data; }
   } catch (error) {
     console.warn('Could not load animation data from localStorage.', error);
   }
@@ -154,12 +155,12 @@ function createAnimationEditor() {
   animationEditor.className = 'animation-editor';
   animationEditor.innerHTML = `
     <div class="animation-editor__header">
-      <h2>Animation Editor</h2>
+      <h2>${editorTitle}</h2>
       <button type="button" data-editor-action="togglePanel">Hide</button>
     </div>
     <div class="animation-editor__body"></div>
   `;
-  document.body.appendChild(animationEditor);
+  editorMount.appendChild(animationEditor);
   animationPanelBody = animationEditor.querySelector('.animation-editor__body');
   animationEditor.addEventListener('click', handleAnimationEditorClick);
   animationEditor.addEventListener('input', handleAnimationEditorInput);
@@ -211,7 +212,7 @@ function renderAnimationEditor() {
       <h3>Part</h3>
       <label>Selected part
         <select data-editor="partSelect">
-          ${PART_NAMES.map((partName) => `<option value="${partName}" ${partName === editorSelectedPart ? 'selected' : ''}>${partName}</option>`).join('')}
+          ${PART_NAMES.map((partName) => `<option value="${partName}" ${partName === editorSelectedPart ? 'selected' : ''}>${partLabels[partName] ?? partName}</option>`).join('')}
         </select>
       </label>
     </section>
@@ -600,7 +601,7 @@ function downloadAnimationJson() {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement('a');
   anchor.href = url;
-  anchor.download = 'robot-animation-data.json';
+  anchor.download = downloadFilename;
   anchor.click();
   URL.revokeObjectURL(url);
 }
@@ -609,7 +610,7 @@ function importAnimationJson() {
   const text = animationPanelBody.querySelector('[data-editor="importText"]').value.trim();
   if (!text) return;
   const cleaned = text.replace(/^const\s+ANIMATION_DATA\s*=\s*/, '').replace(/;$/, '');
-  const parsed = JSON.parse(cleaned);
+  let parsed;try{parsed=JSON.parse(cleaned);if(validateAnimationData)validateAnimationData(parsed);}catch(error){alert('Import failed: '+error.message);return;}
   Object.keys(ANIMATION_DATA).forEach((key) => delete ANIMATION_DATA[key]);
   Object.assign(ANIMATION_DATA, parsed);
   selectedAnimationKey = Object.keys(ANIMATION_DATA)[0];
@@ -687,7 +688,8 @@ function handleAnimationEditorClick(event) {
       const name = prompt('Animation name?', 'New Animation');
       if (!name) return;
       const key = makeAnimationKey(name);
-      ANIMATION_DATA[key] = { name, duration: 2, loop: false, keyframes: [] };
+      const nextAnimation={name,duration:2,loop:false,keyframes:[]};if(validateAnimationData){try{validateAnimationData({...ANIMATION_DATA,[key]:nextAnimation});}catch(error){alert(error.message);return;}}
+      ANIMATION_DATA[key] = nextAnimation;
       selectedAnimationKey = key;
       saveAnimationData();
       renderAnimationEditor();
@@ -695,6 +697,7 @@ function handleAnimationEditorClick(event) {
     renameAnimation: () => {
       const name = prompt('New animation name?', getCurrentAnimation().name);
       if (!name) return;
+      if(validateAnimationData){try{validateAnimationData({...ANIMATION_DATA,[selectedAnimationKey]:{...getCurrentAnimation(),name}});}catch(error){alert(error.message);return;}}
       getCurrentAnimation().name = name;
       saveAnimationData();
       renderAnimationEditor();
@@ -763,7 +766,9 @@ function handleAnimationEditorChange(event) {
     renderOnionSkin();
   }
   if (target.matches('[data-editor="duration"]')) {
-    getCurrentAnimation().duration = Math.max(0.1, Number(target.value));
+    const animation=getCurrentAnimation(),oldDuration=animation.duration;
+    animation.duration=rescaleDuration?Math.min(30,Math.max(.1,Number(target.value)||oldDuration)):Math.max(.1,Number(target.value));
+    if(rescaleDuration){const ratio=animation.duration/oldDuration;for(const key of animation.keyframes)key.time*=ratio;editorCurrentTime*=ratio;target.value=animation.duration;}
     saveAnimationData();
     renderTimelineRuler();
     renderTimelineMarkers();
@@ -788,7 +793,8 @@ function handleAnimationEditorChange(event) {
 }
 
 function handleAnimationEditorKeyboard(event) {
-  if (!ANIMATION_EDITOR_ENABLED) return;
+  if (!ANIMATION_EDITOR_ENABLED || !isActive() || (event.key === 'Tab' && !cyclePartsOnTab)) return;
+  if(!cyclePartsOnTab && document.activeElement?.tagName==='BUTTON' && [' ','Enter'].includes(event.key))return;
   const isTyping = ['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement?.tagName);
   if (isTyping) return;
   const moveAmount = event.shiftKey ? 10 : 1;
@@ -827,7 +833,7 @@ function handleAnimationEditorKeyboard(event) {
   action();
   refreshEditorTransformInputs();
   renderOnionSkin();
-  if (editorRecordMode && ['ArrowUp', 'ArrowDown', 'a', 'd', '[', ']'].includes(event.key.toLowerCase?.() || event.key)) upsertKeyframe();
+  if (editorRecordMode && ['arrowup', 'arrowdown', 'a', 'd', '[', ']'].includes(event.key.toLowerCase())) upsertKeyframe();
 }
 
 function bindTimelinePointer() {
@@ -851,10 +857,10 @@ function bindTimelinePointer() {
 // ==================================================
 // UX upgrade: scroll-safe editor, resizable panel, track timeline
 // ==================================================
-const ANIMATION_EDITOR_WIDTH_KEY = 'robotAnimationEditorWidth';
+const ANIMATION_EDITOR_WIDTH_KEY = panelWidthKey;
 const MIN_EDITOR_WIDTH = 420;
 const MAX_EDITOR_WIDTH = 720;
-let editorTrackFilter = 'all';
+let editorTrackFilter = initialTrackFilter;
 let editorSnap = 0;
 let lastEditorScrollState = null;
 let cachedTimelineDrag = null;
@@ -938,12 +944,12 @@ function createAnimationEditor() {
   animationEditor.innerHTML = `
     <div class="animation-editor__resize" data-editor-resize aria-hidden="true"></div>
     <div class="animation-editor__header">
-      <h2>Animation Editor</h2>
+      <h2>${editorTitle}</h2>
       <button type="button" data-editor-action="togglePanel" aria-label="Hide or show animation editor body">Hide</button>
     </div>
     <div class="animation-editor__body"></div>
   `;
-  document.body.appendChild(animationEditor);
+  editorMount.appendChild(animationEditor);
   animationPanelBody = animationEditor.querySelector('.animation-editor__body');
   animationEditor.addEventListener('click', handleAnimationEditorClick);
   animationEditor.addEventListener('input', handleAnimationEditorInput);
@@ -1026,7 +1032,7 @@ function renderAnimationEditor() {
     ${sectionMarkup('Part', 'part', `
       <label>Selected part
         <select data-editor="partSelect">
-          ${PART_NAMES.map((partName) => `<option value="${partName}" ${partName === editorSelectedPart ? 'selected' : ''}>${partName}</option>`).join('')}
+          ${PART_NAMES.map((partName) => `<option value="${partName}" ${partName === editorSelectedPart ? 'selected' : ''}>${partLabels[partName] ?? partName}</option>`).join('')}
         </select>
       </label>
     `, false)}
@@ -1103,7 +1109,7 @@ function renderTimelineRuler() {
   const { animation, timelineWidth, pixelsPerSecond } = getTimelineMetrics();
   const visibleParts = getVisibleParts();
   canvas.style.width = `${timelineWidth}px`;
-  labels.innerHTML = `<div class="timeline-label-spacer">Part</div>${visibleParts.map((partName) => `<div class="timeline-label-row">${partName}</div>`).join('')}`;
+  labels.innerHTML = `<div class="timeline-label-spacer">Part</div>${visibleParts.map((partName) => `<div class="timeline-label-row">${partLabels[partName] ?? partName}</div>`).join('')}`;
   const majorStep = 0.5;
   const minorStep = 0.1;
   const fragment = document.createDocumentFragment();
@@ -1188,7 +1194,7 @@ function renderKeyframeList() {
     if (!keyframes.length) return;
     const group = document.createElement('div');
     group.className = 'keyframe-group';
-    group.innerHTML = `<div class="keyframe-group-header">${partName}</div>`;
+    group.innerHTML = `<div class="keyframe-group-header">${partLabels[partName] ?? partName}</div>`;
     keyframes.forEach((keyframe) => {
       const row = document.createElement('div');
       row.className = `keyframe-row ${keyframe.id === selectedKeyframeId ? 'is-selected' : ''}`;
@@ -1321,7 +1327,8 @@ function handleAnimationEditorClick(event) {
       const name = prompt('Animation name?', 'New Animation');
       if (!name) return;
       const key = makeAnimationKey(name);
-      ANIMATION_DATA[key] = { name, duration: 2, loop: false, keyframes: [] };
+      const nextAnimation={name,duration:2,loop:false,keyframes:[]};if(validateAnimationData){try{validateAnimationData({...ANIMATION_DATA,[key]:nextAnimation});}catch(error){alert(error.message);return;}}
+      ANIMATION_DATA[key] = nextAnimation;
       selectedAnimationKey = key;
       saveAnimationData();
       renderAnimationEditor();
@@ -1329,6 +1336,7 @@ function handleAnimationEditorClick(event) {
     renameAnimation: () => {
       const name = prompt('New animation name?', getCurrentAnimation().name);
       if (!name) return;
+      if(validateAnimationData){try{validateAnimationData({...ANIMATION_DATA,[selectedAnimationKey]:{...getCurrentAnimation(),name}});}catch(error){alert(error.message);return;}}
       getCurrentAnimation().name = name;
       saveAnimationData();
       renderAnimationEditor();
@@ -1394,7 +1402,9 @@ function handleAnimationEditorChange(event) {
   }
   if (target.matches('[data-editor="duration"]')) {
     const state = saveEditorScrollState();
-    getCurrentAnimation().duration = Math.max(0.1, Number(target.value));
+    const animation=getCurrentAnimation(),oldDuration=animation.duration;
+    animation.duration=rescaleDuration?Math.min(30,Math.max(.1,Number(target.value)||oldDuration)):Math.max(.1,Number(target.value));
+    if(rescaleDuration){const ratio=animation.duration/oldDuration;for(const key of animation.keyframes)key.time*=ratio;editorCurrentTime*=ratio;target.value=animation.duration;}
     editorCurrentTime = clamp(editorCurrentTime, 0, getCurrentAnimation().duration);
     saveAnimationData();
     renderTimelineRuler();
@@ -1472,6 +1482,14 @@ return {
     renderAnimationEditor();previewAtTime(editorCurrentTime);
   },
   baseValues: name=>({...getBaseTransform(name)}),
+  get selectedPart(){return editorSelectedPart;},
+  get currentTime(){return editorCurrentTime;},
+  get duration(){return getCurrentAnimation().duration;},
+  getPose: name=>({...getPartValues(name)}),
+  selectPart(name){if(!partElements[name])return;pauseEditorAnimation();editorSelectedPart=name;renderAnimationEditor();refreshEditorTransformInputs();updateSelectedHighlightForEditor();},
+  setPose(name,values,{record=false}={}){if(!partElements[name])return;pauseEditorAnimation();editorSelectedPart=name;setPartValues(name,{...getPartValues(name),...values});if(record)upsertKeyframe();refreshEditorTransformInputs();updateSelectedHighlightForEditor();},
+  recordPose(name){if(!partElements[name])return;editorSelectedPart=name;upsertKeyframe();},
+  seek(time){pauseEditorAnimation();previewAtTime(time);},
   play: playEditorAnimation,
   pause: pauseEditorAnimation,
   reset: resetEntireFrameToBase,

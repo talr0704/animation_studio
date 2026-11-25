@@ -121,3 +121,11 @@ Use `index.html?edit=1` for Popa's existing animation editor. The optional **×¨×
 Use `studio.html?category=furniture` for independent layered furniture motion: cabinet doors, lamp shade, curtains and sofa cushions. Each furniture folder keeps its own `assembly.json` and `animations/` files; the artwork remains in `images/`. These motions do not contain Popa or her body poses. The original salon props editor remains available at `studio.html`.
 
 A new authored sitting study is available at `index.html?edit=1&reference=sofa&motion=sit-demo`. Its native character clips are stored in `assets/characters/popa/animations/sitting-demo.json`: sitting down, a relaxed seated loop, and standing up. They add new animation IDs and preserve existing edited clips. The relaxed loop starts playing automatically unless reduced motion is requested. This is a studio study; it does not replace the published game interaction.
+
+## Momo animation review
+
+Open `character-studio.html?character=momo&mode=animation` to review seven draft
+motions on the existing character timeline. Momo has separate animation and
+placement storage. Dragging a part at a chosen time records a keyframe; export
+`momo-animation-drafts.json` for review. These drafts are **not loaded by the game**.
+See `assets/characters/momo/animations/README.md` for the approval workflow.

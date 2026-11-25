@@ -17,7 +17,11 @@
       "assembly": "assets/characters/momo/assembly.json",
       "studio": "character-studio.html?character=momo",
       "status": "active",
-      "expressions": "assets/characters/momo/expressions.json"
+      "expressions": "assets/characters/momo/expressions.json",
+      "studioAnimations": [
+        "assets/characters/momo/animations/studio-drafts.json"
+      ],
+      "animationStatus": "draft"
     }
   ],
   "scenes": [

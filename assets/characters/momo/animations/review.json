@@ -1,0 +1,15 @@
+{
+  "status": "draft",
+  "gameEnabled": false,
+  "clips": "studio-drafts.json",
+  "headFollowers": [
+    "hat",
+    "tie",
+    "eye_open_left",
+    "eye_open_right",
+    "brow_left",
+    "brow_right",
+    "beak_closed"
+  ],
+  "approvedClips": []
+}

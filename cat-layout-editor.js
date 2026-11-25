@@ -232,4 +232,5 @@ export function mountLayoutEditor({ layout, character, pause, setPivot, storageK
   originals.forEach((_, name) => apply(name));
   refresh();
   if (startEnabled) find('toggle').click();
+  return {setEnabled(value){if(enabled!==value)find('toggle').click();},get enabled(){return enabled;}};
 }
