@@ -16,7 +16,7 @@
       "label": "מומו",
       "assembly": "assets/characters/momo/assembly.json",
       "studio": "character-studio.html?character=momo",
-      "status": "calibration",
+      "status": "active",
       "expressions": "assets/characters/momo/expressions.json"
     }
   ],

@@ -1,5 +1,5 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
-const moduleFrom=path=>import('data:text/javascript;base64,'+Buffer.from(fs.readFileSync(path,'utf8').replace(/^import[^\n]+\n/,'')).toString('base64'));
+const moduleFrom=path=>import('data:text/javascript;base64,'+Buffer.from(fs.readFileSync(path,'utf8').replace(/^(?:import[^\n]+\n)+/,'')).toString('base64'));
 const stateRuntime=moduleFrom('game/progress/state.js'),storyRuntime=moduleFrom('game/story/first-meeting.js');
 function storage(){const data=new Map();return {getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v)};}
 test('accepting the invitation atomically remembers the meeting and begins growing, without free items or coins',async()=>{

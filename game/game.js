@@ -1,4 +1,4 @@
-import {mountFirstMeeting} from './story/first-meeting.js?v=momo2';
+import {mountFirstMeeting} from './story/first-meeting.js?v=momo-assembled3';
 import {progressStore, readProfile, actionId} from './progress/store.js?v=2';
 import {roomBaseScale} from './room-scale.js';
 import {loadPropAppearance} from '../shared/prop-appearance.js?v=2';
@@ -27,13 +27,14 @@ async function approachItem(item,element){
  const geometry=roomGeometry(),box=roomBox(element);
  const footprint=geometry.obstacles.find(r=>r.id===item.id);
  let destination={x:box.left+box.width/2,y:footprint?footprint.bottom+9:Math.max(geometry.bounds.top,box.bottom+12)};
+ if(item.npc==='milli'&&element.classList.contains('story-npc-assembled'))destination.x=box.left-Math.min(110,box.width*.55);
  if(item.id==='sofa'&&sofaAction){const rig=element.querySelector('.item-rig'),r=rig.getBoundingClientRect(),world=document.querySelector('.world').getBoundingClientRect();destination={x:r.left-world.left+sofaAction.approach[0]*r.width/420,y:r.top-world.top+sofaAction.approach[1]*r.height/320};}
  pendingItem=item;element.setAttribute('aria-pressed','true');
  if(!queueRoomPath(destination,geometry)){cancelInteraction();toast('הדרך לפריט חסומה. אפשר לפנות מקום בסידור החדר.');return;}
  toast(`פופה בדרך אל ${item.label}`);
 }
 function arrive(){const item=pendingItem;if(!item)return;pendingItem=null;activeItem=item.id;$('player').dataset.interaction=item.id;
- if(item.npc==='milli'){cancelInteraction();cue('wave');story.beginConversation();return;}
+ if(item.npc==='milli'){cancelInteraction();faceRoom(1);cue('wave');story.beginConversation();return;}
  if(item.id==='sofa'&&sofaAction){sitOnSofa();return;}
  if(item.id==='rug'){
   profile=readProfile();if(!profile.rug){if(profile.coins<12){toast('השטיח החדש עולה 12 מטבעות');cancelInteraction();cue('idle');return;}

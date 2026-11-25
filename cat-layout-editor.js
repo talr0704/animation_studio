@@ -1,7 +1,7 @@
 const STORAGE_KEY = 'popaAssemblyPositionsV5';
 const labels = { shirt: 'חולצה', tail: 'זנב', pinafore: 'סרפן', torso: 'גוף', left_arm: 'יד בצד שמאל', right_arm: 'יד בצד ימין', head: 'ראש', ear_left: 'אוזן שמאל', ear_right: 'אוזן ימין', foot_left: 'כף רגל שמאל', foot_right: 'כף רגל ימין', flower: 'פרח', eye_happy_left: 'עין שמאל', eye_happy_right: 'עין ימין', mouth_happy: 'פה', nose: 'אף', whiskers_left: 'שפם שמאל', whiskers_right: 'שפם ימין' };
 
-export function mountLayoutEditor({ layout, character, pause, setPivot, storageKey = STORAGE_KEY, partLabels = labels, initialPart = 'shirt', exportPath = 'assets/characters/popa/assembly.json', mountBefore = document.querySelector('.controls'), startEnabled = false, selectOnClick = false, allowImport = false }) {
+export function mountLayoutEditor({ layout, character, pause, setPivot, storageKey = STORAGE_KEY, partLabels = labels, initialPart = 'shirt', exportPath = 'assets/characters/popa/assembly.json', mountBefore = document.querySelector('.controls'), startEnabled = false, selectOnClick = false, allowImport = false, draftRevision = null }) {
   const frame = character.closest('.cat-frame');
   const images = new Map([...character.querySelectorAll('.cat-part')].map(image => [image.dataset.sprite, image]));
   const originals = new Map(layout.layersBackToFront.map(layer => [layer.file.split('/').pop().replace('.png', ''), layer]));
@@ -9,7 +9,8 @@ export function mountLayoutEditor({ layout, character, pause, setPivot, storageK
   const order = new Map([...originals.keys()].map((name, index) => [name, originals.get(name).zIndex ?? index]));
   let positions = {};
   try {
-    const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    const matchingRevision = draftRevision === null || localStorage.getItem(storageKey + ':source') === draftRevision;
+    const saved = JSON.parse(matchingRevision ? localStorage.getItem(storageKey) || '{}' : '{}');
     for (const [name, value] of Object.entries(saved)) {
       if (originals.has(name) && ['x', 'y', 'rotate'].every(key => Number.isFinite(value[key]))) positions[name] = { x: value.x, y: value.y, rotate: value.rotate, ...(Number.isFinite(value.width) && value.width > 0 ? { width: value.width } : {}), ...(Number.isFinite(value.height) && value.height > 0 ? { height: value.height } : {}), ...(Number.isFinite(value.pivotX) ? { pivotX: value.pivotX } : {}), ...(Number.isFinite(value.pivotY) ? { pivotY: value.pivotY } : {}), ...(Number.isInteger(value.zIndex) ? { zIndex: value.zIndex } : {}) };
     }
@@ -149,6 +150,7 @@ export function mountLayoutEditor({ layout, character, pause, setPivot, storageK
   find('save').addEventListener('click', () => {
     try {
       localStorage.setItem(storageKey, JSON.stringify(positions));
+      if(draftRevision !== null)localStorage.setItem(storageKey + ':source', draftRevision);
       find('status').textContent = 'המיקומים נשמרו בדפדפן הזה';
     } catch { find('status').textContent = 'השמירה בדפדפן לא זמינה. אפשר להוריד קובץ הרכבה.'; }
   });

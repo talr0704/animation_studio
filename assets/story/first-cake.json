@@ -5,7 +5,9 @@
   "npc": {
     "id": "milli",
     "name": "מומו",
-    "portrait": null
+    "portrait": null,
+    "assembly": "assets/characters/momo/assembly.json",
+    "character": "momo"
   },
   "steps": {
     "meet-milli": "להכיר את מומו",

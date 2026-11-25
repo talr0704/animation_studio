@@ -1,3 +1,4 @@
+import {mountLayeredCharacter} from '../../shared/layered-character.js';
 import {progressStore} from '../progress/store.js?v=2';
 
 export function conversationEntry(state) {
@@ -21,8 +22,13 @@ export async function mountFirstMeeting({world, onApproach, onStart, onClose, on
  if (!response.ok) throw Error('לא ניתן לטעון את השיחה עם מומו');
  const data = await response.json();
  const npc = document.createElement('button'); npc.type = 'button'; npc.id = 'milli-npc'; npc.className = 'story-npc'; npc.setAttribute('aria-pressed', 'false');
- const title = document.createElement('span'); title.textContent = 'לדבר עם מומו';
- if (data.npc.portrait) { const image = new Image(); image.src = new URL('../../' + data.npc.portrait, import.meta.url).href; image.alt = ''; npc.append(image); }
+ const title = document.createElement('span'); title.className='story-npc-label'; title.textContent = 'לדבר עם מומו';
+ let characterView;
+ if(data.npc.assembly){
+  const avatar=document.createElement('span');avatar.className='story-npc-avatar';
+  characterView=await mountLayeredCharacter(avatar,{assemblyUrl:new URL('../../'+data.npc.assembly,import.meta.url),expectedId:data.npc.character});
+  npc.classList.add('story-npc-assembled');npc.append(avatar);
+ } else if (data.npc.portrait) { const image = new Image(); image.src = new URL('../../' + data.npc.portrait, import.meta.url).href; image.alt = ''; npc.append(image); }
  npc.append(title); world.append(npc);
  const questButton = document.createElement('button'); questButton.type = 'button'; questButton.id = 'first-quest'; questButton.className = 'first-quest'; world.append(questButton);
  const panel = document.createElement('div'); panel.id = 'story-dialog'; panel.className = 'overlay story-overlay'; panel.hidden = true;
@@ -89,6 +95,6 @@ export async function mountFirstMeeting({world, onApproach, onStart, onClose, on
  return {
   beginConversation, get isOpen() { return !panel.hidden; },
   setVisible(visible) { if (!visible) close(); npc.hidden = questButton.hidden = !visible; },
-  destroy() { close(); unsubscribe(); npc.remove(); questButton.remove(); panel.remove(); },
+  destroy() { close(); unsubscribe(); characterView?.destroy(); npc.remove(); questButton.remove(); panel.remove(); },
  };
 }

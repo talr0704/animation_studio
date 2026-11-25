@@ -1,4 +1,4 @@
-import {mountLayoutEditor} from '../cat-layout-editor.js?v=momo1';
+import {mountLayoutEditor} from '../cat-layout-editor.js?v=momo2';
 const character=document.querySelector('.cat-character'),frame=document.querySelector('.cat-frame'),status=document.getElementById('character-status');
 const groups=new Map(),images=new Map();
 try{
@@ -12,7 +12,7 @@ try{
   image.src=new URL('../assets/characters/momo/'+layer.file,import.meta.url).href;loads.push(image.decode());group.append(image);character.append(group);groups.set(name,group);images.set(name,image);
  }
  await Promise.all(loads);
- mountLayoutEditor({layout,character,storageKey:'momoAssemblyPositionsV1',initialPart:'head',exportPath:'momo-assembly.json',partLabels:{},mountBefore:document.getElementById('layout-mount'),startEnabled:true,selectOnClick:true,allowImport:true,
+ mountLayoutEditor({layout,character,storageKey:'momoAssemblyPositionsV1',draftRevision:JSON.stringify(layout),initialPart:'head',exportPath:'momo-assembly.json',partLabels:{},mountBefore:document.getElementById('layout-mount'),startEnabled:true,selectOnClick:true,allowImport:true,
   pause(){for(const animation of character.getAnimations({subtree:true}))animation.cancel();},
   setPivot(name,x,y){const image=images.get(name);groups.get(name).style.transformOrigin=`${x}px ${y}px`;image.style.transformOrigin=`${x-parseFloat(image.style.left)}px ${y-parseFloat(image.style.top)}px`;},
  });
