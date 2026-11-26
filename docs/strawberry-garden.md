@@ -13,7 +13,7 @@
 - `game/farming/strawberries.js`: כללי השתילה, ההשקיה, הגדילה והקטיף.
 - `game/farming/garden.js`: מסך הערוגות, מלאי, הודעות ומעבר למסכים הקיימים.
 - `game/farming/garden.css`: פריסה רספונסיבית וכפתורים.
-- `assets/scenes/garden/farming/images/`: איורי SVG נפרדים לכל מצב ערוגה.
+- `assets/scenes/garden/props/10-strawberry-garden/images/`: חלקי האיור המקוריים של הערוגה, השתילים והתותים.
 - `game/game.js`: חיבור לאחר השיחה עם מומו. לפני קבלת המשימה הגינה
   ממשיכה לפתוח את משחק הפירות הקיים; לאחר מכן הוא זמין בכפתור נפרד בגינה.
 

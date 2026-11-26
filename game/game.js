@@ -1,4 +1,4 @@
-import {mountStrawberryGarden} from './farming/garden.js?v=1';
+import {mountStrawberryGarden} from './farming/garden.js?v=user-art2';
 import {mountFirstMeeting} from './story/first-meeting.js?v=strawberries3';
 import {progressStore, readProfile, actionId} from './progress/store.js?v=2';
 import {roomBaseScale} from './room-scale.js';
@@ -6,7 +6,7 @@ import {loadPropAppearance} from '../shared/prop-appearance.js?v=2';
 import { startFurnitureSession } from './furniture-session.js?v=2';
 import { validateFurnitureInteraction } from '../shared/furniture-interaction.js?v=2';
 import { FLOOR_START, FLOOR_ITEMS, floorBounds, nearestFree, walkable, roomPath, slideStep, constrainFloorFurniture } from './room-navigation.js';
-import { createWardrobe } from './wardrobe.js?v=rounded-arms6';
+import { createWardrobe } from './wardrobe.js?v=uploaded-world7';
 import { mountRoomEditor } from './room-editor.js?v=published-room2';
 import {mountProp} from '../shared/prop-rig.js?v=closed-fit5';
 import { createPopa } from '../popa-browser.js';

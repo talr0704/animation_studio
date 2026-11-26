@@ -1,7 +1,7 @@
 import { setOutfitBody } from '../shared/outfit-body.js?v=rounded-arms';
 // Fitted clothes use the same design canvas, artwork offsets and attachment transforms as the studio.
 export async function createWardrobe(popa) {
-  const response=await fetch(new URL('../assets/characters/popa/outfits/catalog.json?v=published-fits-9',import.meta.url));
+  const response=await fetch(new URL('../assets/characters/popa/outfits/catalog.json?v=uploaded-sheets-10',import.meta.url));
   if(!response.ok)throw Error('Cannot load wardrobe catalogue');
   const catalog=await response.json(),looks=new Map();
   let localDrafts=[];

@@ -1,5 +1,5 @@
 import {createStrawberryGarden,REQUIRED_STRAWBERRIES,GROWTH_MS} from './strawberries.js';
-const imageUrl=stage=>new URL(`../../assets/scenes/garden/farming/images/${stage}.svg`,import.meta.url).href;
+const imageUrl=id=>new URL(`../../assets/scenes/garden/props/10-strawberry-garden/images/${id}.png`,import.meta.url).href;
 const labels={empty:'שתילה',planted:'השקיה',growing:'גדל',ready:'קטיף',harvested:'נקטף'};
 export function mountStrawberryGarden({container,store,onAction,onHome,onFruitGame}) {
  const garden=createStrawberryGarden({store});
@@ -9,8 +9,11 @@ export function mountStrawberryGarden({container,store,onAction,onHome,onFruitGa
  const $=id=>scene.querySelector('#farm-'+id),buttons=new Map();let visible=false,timer;
  for(const [index,plot]of garden.snapshot().plots.entries()){
   const button=document.createElement('button');button.type='button';button.className='farm-plot';button.dataset.plot=plot.id;
-  const image=new Image();image.alt='';image.draggable=false;
-  const label=document.createElement('span');button.append(image,label);
+  const artwork=document.createElement('span');artwork.className='farm-art';
+  const image=new Image(),plant=new Image(),fruit=new Image();
+  for(const img of [image,plant,fruit]){img.alt='';img.draggable=false;artwork.append(img);}
+  image.src=imageUrl('bed-frame');image.className='farm-bed';plant.className='farm-plant';fruit.className='farm-fruit';fruit.src=imageUrl('strawberry');
+  const label=document.createElement('span');button.append(artwork,label);
   button.onclick=()=>{
    try{
     const before=garden.snapshot().plots.find(p=>p.id===plot.id).stage,result=garden.act(plot.id);
@@ -19,20 +22,22 @@ export function mountStrawberryGarden({container,store,onAction,onHome,onFruitGa
     render();onAction({index,stage:before,complete:garden.snapshot().complete});
    }catch(error){$('message').textContent=error.message;render();}
   };
-  buttons.set(plot.id,{button,image,label,index});scene.querySelector('.farm-plots').append(button);
+  buttons.set(plot.id,{button,image,plant,fruit,label,index});scene.querySelector('.farm-plots').append(button);
  }
  function render(){
   const state=garden.snapshot();scene.dataset.complete=String(state.complete);
   $('instruction').textContent=state.complete?'אספנו את התותים! הצעד הבא: לאפות עם בוני.':state.enabled?'מומו הכין שלושה שתילים. שתלי, השקי וקטפי תות מכל ערוגה.':'קודם נפגוש את מומו בבית ונצטרף להכנת העוגה.';
   $('inventory').textContent=`בסל שלך: ${state.strawberries} תותים · נקטפו ${state.harvested} מתוך ${REQUIRED_STRAWBERRIES}`;
   for(const plot of state.plots){
-   const {button,image,label,index}=buttons.get(plot.id),src=imageUrl(plot.stage);
-   if(image.src!==src)image.src=src;
+   const {button,plant,fruit,label,index}=buttons.get(plot.id);
+   const src=imageUrl(plot.stage==='planted'?'sprout':plot.stage==='growing'?'plant-flowering':'plant-grown');
+   if(plant.src!==src)plant.src=src;plant.hidden=plot.stage==='empty';fruit.hidden=plot.stage!=='ready';
    button.dataset.stage=plot.stage;label.textContent=plot.stage==='growing'?`מוכן בעוד ${plot.seconds} שניות`:labels[plot.stage];
    button.disabled=!state.enabled||['growing','harvested'].includes(plot.stage);
    button.setAttribute('aria-label',`ערוגה ${index+1} · ${label.textContent}`);
   }
  }
+ const basket=new Image();basket.src=imageUrl('basket');basket.alt='';basket.className='farm-basket-icon';$('inventory').before(basket);
  $('home').onclick=onHome;$('fruit-game').onclick=onFruitGame;
  const unsubscribe=store.subscribe(()=>{if(visible)render();});
  const refresh=()=>{if(visible)render();};window.addEventListener('storage',refresh);document.addEventListener('visibilitychange',refresh);

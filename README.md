@@ -133,3 +133,7 @@ The approved snapshot in `assets/characters/momo/animations/approved.json` now d
 ## First story crop
 
 After accepting Momo’s invitation, the garden opens three strawberry plots. Plant, water, wait 20 seconds, then harvest each plot once. Crop timestamps survive reloads. The third harvest saves the strawberries and advances the story to baking with Bonnie in one transaction. The fruit-catching game remains available separately; Bonnie and baking are the next implementation step. See `docs/strawberry-garden.md`.
+
+## Uploaded world artwork
+
+Open `world.html` from the street/shops button in the home screen. All 20 uploaded world sheets are registered as 431 padded PNG parts across nine illustrated scene categories. Parts can be placed and arranged with local persistence. Nine initial outfit fits are available in the shared wardrobe and existing fitting studio. Farming uses the uploaded strawberry illustrations. These scene tools do not implement shop economics, baking quests or career rewards. See `docs/uploaded-world-art.md`.

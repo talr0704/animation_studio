@@ -2351,6 +2351,783 @@
         }
       ],
       "placements": "assets/characters/popa/outfits/pixel-play/placements.json"
+    },
+    {
+      "id": "uploaded-chef",
+      "label": "שפית תות",
+      "fittingStatus": "initial",
+      "parts": [
+        {
+          "id": "hat",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-hat.png",
+          "naturalSize": [
+            216,
+            139
+          ],
+          "x": 220,
+          "y": 43,
+          "width": 225,
+          "height": 144.792,
+          "rotation": 0,
+          "layer": 20,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "shirt_body",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-shirt.png",
+          "naturalSize": [
+            284,
+            223
+          ],
+          "x": 220,
+          "y": 350,
+          "width": 185,
+          "height": 145.264,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-sleeve-left.png",
+          "naturalSize": [
+            118,
+            126
+          ],
+          "x": 143,
+          "y": 343,
+          "width": 65,
+          "height": 69.407,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-sleeve-right.png",
+          "naturalSize": [
+            118,
+            125
+          ],
+          "x": 297,
+          "y": 343,
+          "width": 65,
+          "height": 68.856,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "pants_left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-pants-left.png",
+          "naturalSize": [
+            144,
+            120
+          ],
+          "x": 191,
+          "y": 419,
+          "width": 58,
+          "height": 48.333,
+          "rotation": 0,
+          "layer": 6,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "pants_right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-pants-right.png",
+          "naturalSize": [
+            143,
+            119
+          ],
+          "x": 249,
+          "y": 419,
+          "width": 58,
+          "height": 48.266,
+          "rotation": 0,
+          "layer": 6,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        }
+      ]
+    },
+    {
+      "id": "uploaded-salon",
+      "label": "מעצבת שיער",
+      "fittingStatus": "initial",
+      "parts": [
+        {
+          "id": "hat",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/salon-bow.png",
+          "naturalSize": [
+            193,
+            118
+          ],
+          "x": 220,
+          "y": 43,
+          "width": 225,
+          "height": 137.565,
+          "rotation": 0,
+          "layer": 20,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "dress_body",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/salon-dress.png",
+          "naturalSize": [
+            296,
+            318
+          ],
+          "x": 220,
+          "y": 371,
+          "width": 185,
+          "height": 198.75,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/salon-sleeve-left.png",
+          "naturalSize": [
+            117,
+            121
+          ],
+          "x": 143,
+          "y": 343,
+          "width": 65,
+          "height": 67.222,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/salon-sleeve-right.png",
+          "naturalSize": [
+            118,
+            121
+          ],
+          "x": 297,
+          "y": 343,
+          "width": 65,
+          "height": 66.653,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ]
+    },
+    {
+      "id": "uploaded-tailor",
+      "label": "תופרת",
+      "fittingStatus": "initial",
+      "parts": [
+        {
+          "id": "shirt_body",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-jacket.png",
+          "naturalSize": [
+            288,
+            219
+          ],
+          "x": 220,
+          "y": 350,
+          "width": 185,
+          "height": 140.677,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-sleeve-left.png",
+          "naturalSize": [
+            123,
+            136
+          ],
+          "x": 143,
+          "y": 343,
+          "width": 65,
+          "height": 71.87,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-sleeve-right.png",
+          "naturalSize": [
+            126,
+            136
+          ],
+          "x": 297,
+          "y": 343,
+          "width": 65,
+          "height": 70.159,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "pants_left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-pants-left.png",
+          "naturalSize": [
+            141,
+            120
+          ],
+          "x": 191,
+          "y": 419,
+          "width": 58,
+          "height": 49.362,
+          "rotation": 0,
+          "layer": 6,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "pants_right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-pants-right.png",
+          "naturalSize": [
+            140,
+            119
+          ],
+          "x": 249,
+          "y": 419,
+          "width": 58,
+          "height": 49.3,
+          "rotation": 0,
+          "layer": 6,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        }
+      ]
+    },
+    {
+      "id": "uploaded-gardener",
+      "label": "גננית",
+      "fittingStatus": "initial",
+      "parts": [
+        {
+          "id": "hat",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/garden-hat.png",
+          "naturalSize": [
+            275,
+            142
+          ],
+          "x": 220,
+          "y": 43,
+          "width": 225,
+          "height": 116.182,
+          "rotation": 0,
+          "layer": 20,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "dress_body",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/garden-dress.png",
+          "naturalSize": [
+            301,
+            276
+          ],
+          "x": 220,
+          "y": 371,
+          "width": 185,
+          "height": 169.635,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/garden-sleeve-left.png",
+          "naturalSize": [
+            124,
+            132
+          ],
+          "x": 143,
+          "y": 343,
+          "width": 65,
+          "height": 69.194,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/garden-sleeve-right.png",
+          "naturalSize": [
+            126,
+            131
+          ],
+          "x": 297,
+          "y": 343,
+          "width": 65,
+          "height": 67.579,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ]
+    },
+    {
+      "id": "uploaded-post",
+      "label": "שליחת דואר",
+      "fittingStatus": "initial",
+      "parts": [
+        {
+          "id": "hat",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-hat.png",
+          "naturalSize": [
+            174,
+            119
+          ],
+          "x": 220,
+          "y": 43,
+          "width": 225,
+          "height": 153.879,
+          "rotation": 0,
+          "layer": 20,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "shirt_body",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-jacket.png",
+          "naturalSize": [
+            275,
+            212
+          ],
+          "x": 220,
+          "y": 350,
+          "width": 185,
+          "height": 142.618,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-skirt.png",
+          "naturalSize": [
+            307,
+            165
+          ],
+          "x": 220,
+          "y": 410,
+          "width": 185,
+          "height": 99.43,
+          "rotation": 0,
+          "layer": 8.1,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-sleeve-left.png",
+          "naturalSize": [
+            117,
+            120
+          ],
+          "x": 143,
+          "y": 343,
+          "width": 65,
+          "height": 66.667,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-sleeve-right.png",
+          "naturalSize": [
+            117,
+            120
+          ],
+          "x": 297,
+          "y": 343,
+          "width": 65,
+          "height": 66.667,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ]
+    },
+    {
+      "id": "uploaded-singer",
+      "label": "זמרת",
+      "fittingStatus": "initial",
+      "parts": [
+        {
+          "id": "hat",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/singer-bow.png",
+          "naturalSize": [
+            172,
+            122
+          ],
+          "x": 220,
+          "y": 43,
+          "width": 225,
+          "height": 159.593,
+          "rotation": 0,
+          "layer": 20,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "shirt_body",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/singer-jacket.png",
+          "naturalSize": [
+            293,
+            217
+          ],
+          "x": 220,
+          "y": 350,
+          "width": 185,
+          "height": 137.014,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/singer-skirt.png",
+          "naturalSize": [
+            336,
+            170
+          ],
+          "x": 220,
+          "y": 410,
+          "width": 185,
+          "height": 93.601,
+          "rotation": 0,
+          "layer": 8.1,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/singer-sleeve-left.png",
+          "naturalSize": [
+            124,
+            133
+          ],
+          "x": 143,
+          "y": 343,
+          "width": 65,
+          "height": 69.718,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/singer-sleeve-right.png",
+          "naturalSize": [
+            126,
+            133
+          ],
+          "x": 297,
+          "y": 343,
+          "width": 65,
+          "height": 68.611,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ]
+    },
+    {
+      "id": "uploaded-starter-lilac",
+      "label": "לילך ומנטה",
+      "fittingStatus": "initial",
+      "parts": [
+        {
+          "id": "shirt_body",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/shirt-lilac.png",
+          "naturalSize": [
+            318,
+            221
+          ],
+          "x": 220,
+          "y": 350,
+          "width": 185,
+          "height": 128.569,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-lilac-left.png",
+          "naturalSize": [
+            117,
+            155
+          ],
+          "x": 143,
+          "y": 343,
+          "width": 65,
+          "height": 86.111,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-lilac-right.png",
+          "naturalSize": [
+            117,
+            155
+          ],
+          "x": 297,
+          "y": 343,
+          "width": 65,
+          "height": 86.111,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "pants_left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/shorts-left.png",
+          "naturalSize": [
+            164,
+            171
+          ],
+          "x": 191,
+          "y": 419,
+          "width": 58,
+          "height": 60.476,
+          "rotation": 0,
+          "layer": 6,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "pants_right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/shorts-right.png",
+          "naturalSize": [
+            162,
+            171
+          ],
+          "x": 249,
+          "y": 419,
+          "width": 58,
+          "height": 61.222,
+          "rotation": 0,
+          "layer": 6,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        }
+      ]
+    },
+    {
+      "id": "uploaded-starter-cream",
+      "label": "שמלת קרם",
+      "fittingStatus": "initial",
+      "parts": [
+        {
+          "id": "dress_body",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/dress-cream.png",
+          "naturalSize": [
+            315,
+            218
+          ],
+          "x": 220,
+          "y": 371,
+          "width": 185,
+          "height": 128.032,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-cream-left.png",
+          "naturalSize": [
+            122,
+            159
+          ],
+          "x": 143,
+          "y": 343,
+          "width": 65,
+          "height": 84.713,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-cream-right.png",
+          "naturalSize": [
+            123,
+            159
+          ],
+          "x": 297,
+          "y": 343,
+          "width": 65,
+          "height": 84.024,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        }
+      ]
+    },
+    {
+      "id": "uploaded-starter-chef",
+      "label": "שפית קלאסית",
+      "fittingStatus": "initial",
+      "parts": [
+        {
+          "id": "hat",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/chef-hat.png",
+          "naturalSize": [
+            274,
+            235
+          ],
+          "x": 220,
+          "y": 43,
+          "width": 225,
+          "height": 192.974,
+          "rotation": 0,
+          "layer": 20,
+          "attachment": "head",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "shirt_body",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/shirt-yellow.png",
+          "naturalSize": [
+            321,
+            230
+          ],
+          "x": 220,
+          "y": 350,
+          "width": 185,
+          "height": 132.555,
+          "rotation": 0,
+          "layer": 8,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-yellow-left.png",
+          "naturalSize": [
+            116,
+            155
+          ],
+          "x": 143,
+          "y": 343,
+          "width": 65,
+          "height": 86.853,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "left_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "sleeve_right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-yellow-right.png",
+          "naturalSize": [
+            117,
+            155
+          ],
+          "x": 297,
+          "y": 343,
+          "width": 65,
+          "height": 86.111,
+          "rotation": 0,
+          "layer": 9,
+          "attachment": "right_arm",
+          "visible": true,
+          "locked": false
+        },
+        {
+          "id": "skirt_body",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/pinafore-front.png",
+          "naturalSize": [
+            329,
+            208
+          ],
+          "x": 220,
+          "y": 410,
+          "width": 185,
+          "height": 116.96,
+          "rotation": 0,
+          "layer": 8.1,
+          "attachment": "body",
+          "visible": true,
+          "locked": false
+        }
+      ]
     }
   ],
   "artworkRevision": 7

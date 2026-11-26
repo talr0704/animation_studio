@@ -1,0 +1,6199 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "10-strawberry-garden",
+      "scene": "garden",
+      "title": "גידול תותים",
+      "source": "source-art/world/sheets/10_strawberry_garden.png",
+      "parts": [
+        {
+          "id": "bed-frame",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/bed-frame.png",
+          "size": [
+            579,
+            203
+          ],
+          "sourceRect": [
+            32,
+            37,
+            595,
+            224
+          ]
+        },
+        {
+          "id": "bed-front",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/bed-front.png",
+          "size": [
+            435,
+            128
+          ],
+          "sourceRect": [
+            623,
+            108,
+            1042,
+            220
+          ]
+        },
+        {
+          "id": "soil-dry",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/soil-dry.png",
+          "size": [
+            340,
+            125
+          ],
+          "sourceRect": [
+            1071,
+            107,
+            1395,
+            216
+          ]
+        },
+        {
+          "id": "soil-wet",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/soil-wet.png",
+          "size": [
+            337,
+            126
+          ],
+          "sourceRect": [
+            1422,
+            106,
+            1743,
+            216
+          ]
+        },
+        {
+          "id": "plant-flowering",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/plant-flowering.png",
+          "size": [
+            308,
+            242
+          ],
+          "sourceRect": [
+            805,
+            232,
+            1097,
+            458
+          ]
+        },
+        {
+          "id": "plant-grown",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/plant-grown.png",
+          "size": [
+            362,
+            238
+          ],
+          "sourceRect": [
+            1211,
+            234,
+            1557,
+            456
+          ]
+        },
+        {
+          "id": "soil-mound",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/soil-mound.png",
+          "size": [
+            214,
+            91
+          ],
+          "sourceRect": [
+            139,
+            384,
+            337,
+            459
+          ]
+        },
+        {
+          "id": "sprout",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/sprout.png",
+          "size": [
+            210,
+            139
+          ],
+          "sourceRect": [
+            477,
+            332,
+            671,
+            455
+          ]
+        },
+        {
+          "id": "strawberry",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/strawberry.png",
+          "size": [
+            144,
+            195
+          ],
+          "sourceRect": [
+            73,
+            486,
+            201,
+            665
+          ]
+        },
+        {
+          "id": "green-strawberry",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/green-strawberry.png",
+          "size": [
+            119,
+            179
+          ],
+          "sourceRect": [
+            271,
+            496,
+            374,
+            659
+          ]
+        },
+        {
+          "id": "flower",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/flower.png",
+          "size": [
+            153,
+            142
+          ],
+          "sourceRect": [
+            430,
+            523,
+            567,
+            649
+          ]
+        },
+        {
+          "id": "leaf",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/leaf.png",
+          "size": [
+            254,
+            201
+          ],
+          "sourceRect": [
+            619,
+            485,
+            857,
+            670
+          ]
+        },
+        {
+          "id": "watering-can",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/watering-can.png",
+          "size": [
+            249,
+            204
+          ],
+          "sourceRect": [
+            902,
+            482,
+            1135,
+            670
+          ]
+        },
+        {
+          "id": "can-handle",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/can-handle.png",
+          "size": [
+            243,
+            167
+          ],
+          "sourceRect": [
+            1196,
+            484,
+            1423,
+            635
+          ]
+        },
+        {
+          "id": "can-spout",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/can-spout.png",
+          "size": [
+            220,
+            180
+          ],
+          "sourceRect": [
+            1491,
+            488,
+            1695,
+            652
+          ]
+        },
+        {
+          "id": "spray-a",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/spray-a.png",
+          "size": [
+            95,
+            63
+          ],
+          "sourceRect": [
+            376,
+            713,
+            455,
+            760
+          ]
+        },
+        {
+          "id": "spray-b",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/spray-b.png",
+          "size": [
+            58,
+            48
+          ],
+          "sourceRect": [
+            424,
+            724,
+            466,
+            756
+          ]
+        },
+        {
+          "id": "drop-large",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/drop-large.png",
+          "size": [
+            97,
+            134
+          ],
+          "sourceRect": [
+            32,
+            724,
+            113,
+            842
+          ]
+        },
+        {
+          "id": "drop-medium",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/drop-medium.png",
+          "size": [
+            74,
+            96
+          ],
+          "sourceRect": [
+            141,
+            756,
+            199,
+            836
+          ]
+        },
+        {
+          "id": "drop-small",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/drop-small.png",
+          "size": [
+            53,
+            65
+          ],
+          "sourceRect": [
+            224,
+            785,
+            261,
+            834
+          ]
+        },
+        {
+          "id": "spray-c",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/spray-c.png",
+          "size": [
+            46,
+            57
+          ],
+          "sourceRect": [
+            303,
+            807,
+            333,
+            848
+          ]
+        },
+        {
+          "id": "spray-d",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/spray-d.png",
+          "size": [
+            68,
+            69
+          ],
+          "sourceRect": [
+            326,
+            744,
+            378,
+            797
+          ]
+        },
+        {
+          "id": "spray-e",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/spray-e.png",
+          "size": [
+            59,
+            78
+          ],
+          "sourceRect": [
+            348,
+            766,
+            391,
+            828
+          ]
+        },
+        {
+          "id": "spray-f",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/spray-f.png",
+          "size": [
+            39,
+            54
+          ],
+          "sourceRect": [
+            381,
+            812,
+            404,
+            850
+          ]
+        },
+        {
+          "id": "spray-g",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/spray-g.png",
+          "size": [
+            49,
+            62
+          ],
+          "sourceRect": [
+            395,
+            760,
+            428,
+            806
+          ]
+        },
+        {
+          "id": "seed-bag",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/seed-bag.png",
+          "size": [
+            197,
+            195
+          ],
+          "sourceRect": [
+            513,
+            689,
+            694,
+            868
+          ]
+        },
+        {
+          "id": "basket",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/basket.png",
+          "size": [
+            323,
+            184
+          ],
+          "sourceRect": [
+            747,
+            702,
+            1054,
+            870
+          ]
+        },
+        {
+          "id": "basket-front",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/basket-front.png",
+          "size": [
+            330,
+            125
+          ],
+          "sourceRect": [
+            1093,
+            761,
+            1407,
+            870
+          ]
+        },
+        {
+          "id": "basket-handle",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/basket-handle.png",
+          "size": [
+            323,
+            183
+          ],
+          "sourceRect": [
+            1437,
+            680,
+            1744,
+            847
+          ]
+        },
+        {
+          "id": "spray-h",
+          "asset": "assets/scenes/garden/props/10-strawberry-garden/images/spray-h.png",
+          "size": [
+            39,
+            54
+          ],
+          "sourceRect": [
+            333,
+            834,
+            356,
+            872
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11-lemons-and-flowers",
+      "scene": "garden",
+      "title": "לימונים ופרחים",
+      "source": "source-art/world/sheets/11_lemons_and_flowers.png",
+      "parts": [
+        {
+          "id": "part-01",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-01.png",
+          "size": [
+            406,
+            268
+          ],
+          "sourceRect": [
+            1007,
+            11,
+            1397,
+            263
+          ]
+        },
+        {
+          "id": "part-02",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-02.png",
+          "size": [
+            221,
+            98
+          ],
+          "sourceRect": [
+            100,
+            180,
+            305,
+            262
+          ]
+        },
+        {
+          "id": "part-03",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-03.png",
+          "size": [
+            192,
+            152
+          ],
+          "sourceRect": [
+            433,
+            126,
+            609,
+            262
+          ]
+        },
+        {
+          "id": "part-04",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-04.png",
+          "size": [
+            237,
+            234
+          ],
+          "sourceRect": [
+            705,
+            45,
+            926,
+            263
+          ]
+        },
+        {
+          "id": "part-05",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-05.png",
+          "size": [
+            267,
+            192
+          ],
+          "sourceRect": [
+            23,
+            323,
+            274,
+            499
+          ]
+        },
+        {
+          "id": "part-06",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-06.png",
+          "size": [
+            304,
+            202
+          ],
+          "sourceRect": [
+            306,
+            316,
+            594,
+            502
+          ]
+        },
+        {
+          "id": "part-07",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-07.png",
+          "size": [
+            314,
+            211
+          ],
+          "sourceRect": [
+            619,
+            318,
+            917,
+            513
+          ]
+        },
+        {
+          "id": "part-08",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-08.png",
+          "size": [
+            159,
+            149
+          ],
+          "sourceRect": [
+            944,
+            347,
+            1087,
+            480
+          ]
+        },
+        {
+          "id": "part-09",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-09.png",
+          "size": [
+            91,
+            150
+          ],
+          "sourceRect": [
+            1113,
+            352,
+            1188,
+            486
+          ]
+        },
+        {
+          "id": "part-10",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-10.png",
+          "size": [
+            117,
+            168
+          ],
+          "sourceRect": [
+            1235,
+            350,
+            1336,
+            502
+          ]
+        },
+        {
+          "id": "part-11",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-11.png",
+          "size": [
+            139,
+            146
+          ],
+          "sourceRect": [
+            1381,
+            355,
+            1504,
+            485
+          ]
+        },
+        {
+          "id": "part-12",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-12.png",
+          "size": [
+            242,
+            217
+          ],
+          "sourceRect": [
+            662,
+            542,
+            888,
+            743
+          ]
+        },
+        {
+          "id": "part-13",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-13.png",
+          "size": [
+            273,
+            200
+          ],
+          "sourceRect": [
+            1004,
+            557,
+            1261,
+            741
+          ]
+        },
+        {
+          "id": "part-14",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-14.png",
+          "size": [
+            224,
+            101
+          ],
+          "sourceRect": [
+            75,
+            659,
+            283,
+            744
+          ]
+        },
+        {
+          "id": "part-15",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-15.png",
+          "size": [
+            183,
+            155
+          ],
+          "sourceRect": [
+            388,
+            603,
+            555,
+            742
+          ]
+        },
+        {
+          "id": "part-16",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-16.png",
+          "size": [
+            178,
+            164
+          ],
+          "sourceRect": [
+            8,
+            825,
+            170,
+            973
+          ]
+        },
+        {
+          "id": "part-17",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-17.png",
+          "size": [
+            175,
+            160
+          ],
+          "sourceRect": [
+            179,
+            827,
+            338,
+            971
+          ]
+        },
+        {
+          "id": "part-18",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-18.png",
+          "size": [
+            174,
+            159
+          ],
+          "sourceRect": [
+            348,
+            826,
+            506,
+            969
+          ]
+        },
+        {
+          "id": "part-19",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-19.png",
+          "size": [
+            147,
+            213
+          ],
+          "sourceRect": [
+            524,
+            800,
+            655,
+            997
+          ]
+        },
+        {
+          "id": "part-20",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-20.png",
+          "size": [
+            235,
+            229
+          ],
+          "sourceRect": [
+            657,
+            792,
+            876,
+            1005
+          ]
+        },
+        {
+          "id": "part-21",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-21.png",
+          "size": [
+            160,
+            128
+          ],
+          "sourceRect": [
+            871,
+            866,
+            1015,
+            978
+          ]
+        },
+        {
+          "id": "part-22",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-22.png",
+          "size": [
+            274,
+            175
+          ],
+          "sourceRect": [
+            1039,
+            825,
+            1297,
+            984
+          ]
+        },
+        {
+          "id": "part-23",
+          "asset": "assets/scenes/garden/props/11-lemons-and-flowers/images/part-23.png",
+          "size": [
+            237,
+            95
+          ],
+          "sourceRect": [
+            1315,
+            866,
+            1536,
+            945
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07-baking-ingredients",
+      "scene": "bakery",
+      "title": "מרכיבי אפייה",
+      "source": "source-art/world/sheets/07_baking_ingredients.png",
+      "parts": [
+        {
+          "id": "bowl",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/bowl.png",
+          "size": [
+            365,
+            267
+          ],
+          "sourceRect": [
+            55,
+            41,
+            404,
+            292
+          ]
+        },
+        {
+          "id": "bowl-front",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/bowl-front.png",
+          "size": [
+            370,
+            185
+          ],
+          "sourceRect": [
+            446,
+            120,
+            800,
+            289
+          ]
+        },
+        {
+          "id": "batter",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/batter.png",
+          "size": [
+            309,
+            156
+          ],
+          "sourceRect": [
+            841,
+            138,
+            1134,
+            278
+          ]
+        },
+        {
+          "id": "whisk",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/whisk.png",
+          "size": [
+            281,
+            283
+          ],
+          "sourceRect": [
+            1195,
+            33,
+            1460,
+            300
+          ]
+        },
+        {
+          "id": "flour-bag",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/flour-bag.png",
+          "size": [
+            222,
+            207
+          ],
+          "sourceRect": [
+            53,
+            335,
+            259,
+            526
+          ]
+        },
+        {
+          "id": "egg",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/egg.png",
+          "size": [
+            136,
+            161
+          ],
+          "sourceRect": [
+            556,
+            369,
+            676,
+            514
+          ]
+        },
+        {
+          "id": "shell-left",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/shell-left.png",
+          "size": [
+            135,
+            135
+          ],
+          "sourceRect": [
+            717,
+            386,
+            836,
+            505
+          ]
+        },
+        {
+          "id": "shell-right",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/shell-right.png",
+          "size": [
+            135,
+            133
+          ],
+          "sourceRect": [
+            848,
+            391,
+            967,
+            508
+          ]
+        },
+        {
+          "id": "milk-jug",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/milk-jug.png",
+          "size": [
+            224,
+            199
+          ],
+          "sourceRect": [
+            1291,
+            340,
+            1499,
+            523
+          ]
+        },
+        {
+          "id": "flour-speck",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/flour-speck.png",
+          "size": [
+            39,
+            33
+          ],
+          "sourceRect": [
+            298,
+            473,
+            321,
+            490
+          ]
+        },
+        {
+          "id": "flour-pile",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/flour-pile.png",
+          "size": [
+            217,
+            123
+          ],
+          "sourceRect": [
+            318,
+            397,
+            519,
+            504
+          ]
+        },
+        {
+          "id": "yolk",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/yolk.png",
+          "size": [
+            244,
+            127
+          ],
+          "sourceRect": [
+            1007,
+            400,
+            1235,
+            511
+          ]
+        },
+        {
+          "id": "piping-bag",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/piping-bag.png",
+          "size": [
+            238,
+            238
+          ],
+          "sourceRect": [
+            1279,
+            539,
+            1501,
+            761
+          ]
+        },
+        {
+          "id": "cake-tin",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/cake-tin.png",
+          "size": [
+            302,
+            214
+          ],
+          "sourceRect": [
+            37,
+            565,
+            323,
+            763
+          ]
+        },
+        {
+          "id": "sponge-small",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/sponge-small.png",
+          "size": [
+            272,
+            171
+          ],
+          "sourceRect": [
+            354,
+            593,
+            610,
+            748
+          ]
+        },
+        {
+          "id": "sponge",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/sponge.png",
+          "size": [
+            285,
+            192
+          ],
+          "sourceRect": [
+            646,
+            579,
+            915,
+            755
+          ]
+        },
+        {
+          "id": "icing",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/icing.png",
+          "size": [
+            304,
+            177
+          ],
+          "sourceRect": [
+            952,
+            582,
+            1240,
+            743
+          ]
+        },
+        {
+          "id": "strawberry",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/strawberry.png",
+          "size": [
+            158,
+            189
+          ],
+          "sourceRect": [
+            58,
+            816,
+            200,
+            989
+          ]
+        },
+        {
+          "id": "strawberry-half",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/strawberry-half.png",
+          "size": [
+            158,
+            180
+          ],
+          "sourceRect": [
+            248,
+            825,
+            390,
+            989
+          ]
+        },
+        {
+          "id": "flower",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/flower.png",
+          "size": [
+            131,
+            122
+          ],
+          "sourceRect": [
+            445,
+            859,
+            560,
+            965
+          ]
+        },
+        {
+          "id": "cream",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/cream.png",
+          "size": [
+            176,
+            172
+          ],
+          "sourceRect": [
+            610,
+            824,
+            770,
+            980
+          ]
+        },
+        {
+          "id": "plate",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/plate.png",
+          "size": [
+            368,
+            204
+          ],
+          "sourceRect": [
+            815,
+            807,
+            1167,
+            995
+          ]
+        },
+        {
+          "id": "spatula",
+          "asset": "assets/scenes/bakery/props/07-baking-ingredients/images/spatula.png",
+          "size": [
+            300,
+            219
+          ],
+          "sourceRect": [
+            1211,
+            791,
+            1495,
+            994
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baking",
+      "scene": "bakery",
+      "title": "כלי אפייה",
+      "source": "source-art/world/sheets/Baking_Sheet.png",
+      "parts": [
+        {
+          "id": "bowl",
+          "asset": "assets/scenes/bakery/props/baking/images/bowl.png",
+          "size": [
+            311,
+            243
+          ],
+          "sourceRect": [
+            61,
+            107,
+            356,
+            334
+          ]
+        },
+        {
+          "id": "whisk",
+          "asset": "assets/scenes/bakery/props/baking/images/whisk.png",
+          "size": [
+            269,
+            283
+          ],
+          "sourceRect": [
+            470,
+            72,
+            723,
+            339
+          ]
+        },
+        {
+          "id": "flour-bag",
+          "asset": "assets/scenes/bakery/props/baking/images/flour-bag.png",
+          "size": [
+            278,
+            260
+          ],
+          "sourceRect": [
+            833,
+            90,
+            1095,
+            334
+          ]
+        },
+        {
+          "id": "egg",
+          "asset": "assets/scenes/bakery/props/baking/images/egg.png",
+          "size": [
+            191,
+            228
+          ],
+          "sourceRect": [
+            1254,
+            116,
+            1429,
+            328
+          ]
+        },
+        {
+          "id": "milk",
+          "asset": "assets/scenes/bakery/props/baking/images/milk.png",
+          "size": [
+            214,
+            261
+          ],
+          "sourceRect": [
+            109,
+            407,
+            307,
+            652
+          ]
+        },
+        {
+          "id": "spatula",
+          "asset": "assets/scenes/bakery/props/baking/images/spatula.png",
+          "size": [
+            244,
+            266
+          ],
+          "sourceRect": [
+            473,
+            400,
+            701,
+            650
+          ]
+        },
+        {
+          "id": "cake-tin",
+          "asset": "assets/scenes/bakery/props/baking/images/cake-tin.png",
+          "size": [
+            309,
+            233
+          ],
+          "sourceRect": [
+            812,
+            430,
+            1105,
+            647
+          ]
+        },
+        {
+          "id": "sponge",
+          "asset": "assets/scenes/bakery/props/baking/images/sponge.png",
+          "size": [
+            301,
+            231
+          ],
+          "sourceRect": [
+            1201,
+            431,
+            1486,
+            646
+          ]
+        },
+        {
+          "id": "piping-bag",
+          "asset": "assets/scenes/bakery/props/baking/images/piping-bag.png",
+          "size": [
+            231,
+            280
+          ],
+          "sourceRect": [
+            480,
+            717,
+            695,
+            981
+          ]
+        },
+        {
+          "id": "sprinkle-a",
+          "asset": "assets/scenes/bakery/props/baking/images/sprinkle-a.png",
+          "size": [
+            72,
+            60
+          ],
+          "sourceRect": [
+            1241,
+            827,
+            1297,
+            871
+          ]
+        },
+        {
+          "id": "sprinkle-b",
+          "asset": "assets/scenes/bakery/props/baking/images/sprinkle-b.png",
+          "size": [
+            72,
+            54
+          ],
+          "sourceRect": [
+            1295,
+            782,
+            1351,
+            820
+          ]
+        },
+        {
+          "id": "sprinkle-c",
+          "asset": "assets/scenes/bakery/props/baking/images/sprinkle-c.png",
+          "size": [
+            66,
+            62
+          ],
+          "sourceRect": [
+            1378,
+            808,
+            1428,
+            854
+          ]
+        },
+        {
+          "id": "icing",
+          "asset": "assets/scenes/bakery/props/baking/images/icing.png",
+          "size": [
+            316,
+            203
+          ],
+          "sourceRect": [
+            53,
+            767,
+            353,
+            954
+          ]
+        },
+        {
+          "id": "strawberry",
+          "asset": "assets/scenes/bakery/props/baking/images/strawberry.png",
+          "size": [
+            203,
+            231
+          ],
+          "sourceRect": [
+            862,
+            753,
+            1049,
+            968
+          ]
+        },
+        {
+          "id": "sprinkle-d",
+          "asset": "assets/scenes/bakery/props/baking/images/sprinkle-d.png",
+          "size": [
+            70,
+            57
+          ],
+          "sourceRect": [
+            1266,
+            883,
+            1320,
+            924
+          ]
+        },
+        {
+          "id": "sprinkle-e",
+          "asset": "assets/scenes/bakery/props/baking/images/sprinkle-e.png",
+          "size": [
+            64,
+            63
+          ],
+          "sourceRect": [
+            1317,
+            832,
+            1365,
+            879
+          ]
+        },
+        {
+          "id": "sprinkle-f",
+          "asset": "assets/scenes/bakery/props/baking/images/sprinkle-f.png",
+          "size": [
+            77,
+            63
+          ],
+          "sourceRect": [
+            1352,
+            872,
+            1413,
+            919
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08-oven-and-counter",
+      "scene": "bakery",
+      "title": "תנור ומשטח עבודה",
+      "source": "source-art/world/sheets/08_oven_and_counter.png",
+      "parts": [
+        {
+          "id": "oven",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/oven.png",
+          "size": [
+            489,
+            512
+          ],
+          "sourceRect": [
+            37,
+            17,
+            510,
+            513
+          ]
+        },
+        {
+          "id": "door",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/door.png",
+          "size": [
+            434,
+            315
+          ],
+          "sourceRect": [
+            562,
+            181,
+            980,
+            480
+          ]
+        },
+        {
+          "id": "tray",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/tray.png",
+          "size": [
+            493,
+            201
+          ],
+          "sourceRect": [
+            1015,
+            332,
+            1492,
+            517
+          ]
+        },
+        {
+          "id": "tray-speck",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/tray-speck.png",
+          "size": [
+            72,
+            17
+          ],
+          "sourceRect": [
+            1237,
+            483,
+            1293,
+            484
+          ]
+        },
+        {
+          "id": "rack",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/rack.png",
+          "size": [
+            378,
+            142
+          ],
+          "sourceRect": [
+            27,
+            568,
+            389,
+            694
+          ]
+        },
+        {
+          "id": "baking-tray",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/baking-tray.png",
+          "size": [
+            395,
+            158
+          ],
+          "sourceRect": [
+            402,
+            560,
+            781,
+            702
+          ]
+        },
+        {
+          "id": "cake-tin",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/cake-tin.png",
+          "size": [
+            238,
+            172
+          ],
+          "sourceRect": [
+            804,
+            554,
+            1026,
+            710
+          ]
+        },
+        {
+          "id": "knob-left",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/knob-left.png",
+          "size": [
+            130,
+            126
+          ],
+          "sourceRect": [
+            1059,
+            578,
+            1173,
+            688
+          ]
+        },
+        {
+          "id": "knob-right",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/knob-right.png",
+          "size": [
+            129,
+            129
+          ],
+          "sourceRect": [
+            1200,
+            575,
+            1313,
+            688
+          ]
+        },
+        {
+          "id": "button-left",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/button-left.png",
+          "size": [
+            81,
+            80
+          ],
+          "sourceRect": [
+            1345,
+            607,
+            1410,
+            671
+          ]
+        },
+        {
+          "id": "button-right",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/button-right.png",
+          "size": [
+            82,
+            81
+          ],
+          "sourceRect": [
+            1438,
+            607,
+            1504,
+            672
+          ]
+        },
+        {
+          "id": "counter-top",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/counter-top.png",
+          "size": [
+            497,
+            97
+          ],
+          "sourceRect": [
+            480,
+            736,
+            961,
+            817
+          ]
+        },
+        {
+          "id": "counter-frame",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/counter-frame.png",
+          "size": [
+            453,
+            293
+          ],
+          "sourceRect": [
+            18,
+            735,
+            455,
+            1012
+          ]
+        },
+        {
+          "id": "cupboard-left",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/cupboard-left.png",
+          "size": [
+            228,
+            174
+          ],
+          "sourceRect": [
+            506,
+            840,
+            718,
+            998
+          ]
+        },
+        {
+          "id": "cupboard-right",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/cupboard-right.png",
+          "size": [
+            227,
+            174
+          ],
+          "sourceRect": [
+            729,
+            840,
+            940,
+            998
+          ]
+        },
+        {
+          "id": "steam-a",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/steam-a.png",
+          "size": [
+            62,
+            117
+          ],
+          "sourceRect": [
+            1004,
+            843,
+            1050,
+            944
+          ]
+        },
+        {
+          "id": "steam-b",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/steam-b.png",
+          "size": [
+            78,
+            190
+          ],
+          "sourceRect": [
+            1058,
+            785,
+            1120,
+            959
+          ]
+        },
+        {
+          "id": "steam-c",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/steam-c.png",
+          "size": [
+            66,
+            126
+          ],
+          "sourceRect": [
+            1123,
+            836,
+            1173,
+            946
+          ]
+        },
+        {
+          "id": "glow",
+          "asset": "assets/scenes/bakery/props/08-oven-and-counter/images/glow.png",
+          "size": [
+            350,
+            225
+          ],
+          "sourceRect": [
+            1198,
+            783,
+            1532,
+            992
+          ]
+        }
+      ]
+    },
+    {
+      "id": "09-cakes-and-packaging",
+      "scene": "bakery",
+      "title": "עוגות ואריזות",
+      "source": "source-art/world/sheets/09_cakes_and_packaging.png",
+      "parts": [
+        {
+          "id": "part-01",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-01.png",
+          "size": [
+            351,
+            244
+          ],
+          "sourceRect": [
+            39,
+            28,
+            374,
+            256
+          ]
+        },
+        {
+          "id": "part-02",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-02.png",
+          "size": [
+            363,
+            210
+          ],
+          "sourceRect": [
+            406,
+            38,
+            753,
+            232
+          ]
+        },
+        {
+          "id": "part-03",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-03.png",
+          "size": [
+            363,
+            211
+          ],
+          "sourceRect": [
+            783,
+            38,
+            1130,
+            233
+          ]
+        },
+        {
+          "id": "part-04",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-04.png",
+          "size": [
+            366,
+            211
+          ],
+          "sourceRect": [
+            1155,
+            39,
+            1505,
+            234
+          ]
+        },
+        {
+          "id": "part-05",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-05.png",
+          "size": [
+            241,
+            176
+          ],
+          "sourceRect": [
+            62,
+            307,
+            287,
+            467
+          ]
+        },
+        {
+          "id": "part-06",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-06.png",
+          "size": [
+            264,
+            163
+          ],
+          "sourceRect": [
+            337,
+            308,
+            585,
+            455
+          ]
+        },
+        {
+          "id": "part-07",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-07.png",
+          "size": [
+            169,
+            200
+          ],
+          "sourceRect": [
+            635,
+            287,
+            788,
+            471
+          ]
+        },
+        {
+          "id": "part-08",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-08.png",
+          "size": [
+            183,
+            146
+          ],
+          "sourceRect": [
+            808,
+            321,
+            975,
+            451
+          ]
+        },
+        {
+          "id": "part-09",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-09.png",
+          "size": [
+            158,
+            146
+          ],
+          "sourceRect": [
+            1000,
+            318,
+            1142,
+            448
+          ]
+        },
+        {
+          "id": "part-10",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-10.png",
+          "size": [
+            139,
+            144
+          ],
+          "sourceRect": [
+            1170,
+            322,
+            1293,
+            450
+          ]
+        },
+        {
+          "id": "part-11",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-11.png",
+          "size": [
+            193,
+            186
+          ],
+          "sourceRect": [
+            1316,
+            298,
+            1493,
+            468
+          ]
+        },
+        {
+          "id": "part-12",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-12.png",
+          "size": [
+            364,
+            246
+          ],
+          "sourceRect": [
+            39,
+            499,
+            387,
+            729
+          ]
+        },
+        {
+          "id": "part-13",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-13.png",
+          "size": [
+            228,
+            227
+          ],
+          "sourceRect": [
+            448,
+            514,
+            660,
+            725
+          ]
+        },
+        {
+          "id": "part-14",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-14.png",
+          "size": [
+            374,
+            209
+          ],
+          "sourceRect": [
+            708,
+            530,
+            1066,
+            723
+          ]
+        },
+        {
+          "id": "part-15",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-15.png",
+          "size": [
+            366,
+            133
+          ],
+          "sourceRect": [
+            1124,
+            561,
+            1474,
+            678
+          ]
+        },
+        {
+          "id": "part-16",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-16.png",
+          "size": [
+            389,
+            245
+          ],
+          "sourceRect": [
+            31,
+            767,
+            404,
+            996
+          ]
+        },
+        {
+          "id": "part-17",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-17.png",
+          "size": [
+            372,
+            219
+          ],
+          "sourceRect": [
+            440,
+            772,
+            796,
+            975
+          ]
+        },
+        {
+          "id": "part-18",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-18.png",
+          "size": [
+            309,
+            219
+          ],
+          "sourceRect": [
+            849,
+            786,
+            1142,
+            989
+          ]
+        },
+        {
+          "id": "part-19",
+          "asset": "assets/scenes/bakery/props/09-cakes-and-packaging/images/part-19.png",
+          "size": [
+            309,
+            166
+          ],
+          "sourceRect": [
+            1193,
+            799,
+            1486,
+            949
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fridge",
+      "scene": "bakery",
+      "title": "מקרר",
+      "source": "source-art/world/sheets/Fridge_Sheet.png",
+      "parts": [
+        {
+          "id": "fridge",
+          "asset": "assets/scenes/bakery/props/fridge/images/fridge.png",
+          "size": [
+            442,
+            557
+          ],
+          "sourceRect": [
+            69,
+            88,
+            495,
+            629
+          ]
+        },
+        {
+          "id": "door",
+          "asset": "assets/scenes/bakery/props/fridge/images/door.png",
+          "size": [
+            420,
+            503
+          ],
+          "sourceRect": [
+            563,
+            118,
+            967,
+            605
+          ]
+        },
+        {
+          "id": "shelves",
+          "asset": "assets/scenes/bakery/props/fridge/images/shelves.png",
+          "size": [
+            428,
+            503
+          ],
+          "sourceRect": [
+            1034,
+            118,
+            1446,
+            605
+          ]
+        },
+        {
+          "id": "handle",
+          "asset": "assets/scenes/bakery/props/fridge/images/handle.png",
+          "size": [
+            126,
+            250
+          ],
+          "sourceRect": [
+            222,
+            721,
+            332,
+            955
+          ]
+        },
+        {
+          "id": "shelf-top",
+          "asset": "assets/scenes/bakery/props/fridge/images/shelf-top.png",
+          "size": [
+            439,
+            76
+          ],
+          "sourceRect": [
+            545,
+            741,
+            968,
+            801
+          ]
+        },
+        {
+          "id": "shelf-bottom",
+          "asset": "assets/scenes/bakery/props/fridge/images/shelf-bottom.png",
+          "size": [
+            247,
+            145
+          ],
+          "sourceRect": [
+            1122,
+            760,
+            1353,
+            889
+          ]
+        },
+        {
+          "id": "drawer",
+          "asset": "assets/scenes/bakery/props/fridge/images/drawer.png",
+          "size": [
+            439,
+            78
+          ],
+          "sourceRect": [
+            545,
+            871,
+            968,
+            933
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apple",
+      "scene": "bakery",
+      "title": "תפוח",
+      "source": "source-art/world/sheets/Apple_Sheet.png",
+      "parts": [
+        {
+          "id": "apple",
+          "asset": "assets/scenes/bakery/props/apple/images/apple.png",
+          "size": [
+            471,
+            406
+          ],
+          "sourceRect": [
+            58,
+            68,
+            513,
+            458
+          ]
+        },
+        {
+          "id": "stem",
+          "asset": "assets/scenes/bakery/props/apple/images/stem.png",
+          "size": [
+            167,
+            231
+          ],
+          "sourceRect": [
+            753,
+            143,
+            904,
+            358
+          ]
+        },
+        {
+          "id": "leaf",
+          "asset": "assets/scenes/bakery/props/apple/images/leaf.png",
+          "size": [
+            310,
+            262
+          ],
+          "sourceRect": [
+            1170,
+            138,
+            1464,
+            384
+          ]
+        },
+        {
+          "id": "apple-one-bite",
+          "asset": "assets/scenes/bakery/props/apple/images/apple-one-bite.png",
+          "size": [
+            468,
+            405
+          ],
+          "sourceRect": [
+            59,
+            561,
+            511,
+            950
+          ]
+        },
+        {
+          "id": "apple-two-bites",
+          "asset": "assets/scenes/bakery/props/apple/images/apple-two-bites.png",
+          "size": [
+            446,
+            406
+          ],
+          "sourceRect": [
+            600,
+            561,
+            1030,
+            951
+          ]
+        },
+        {
+          "id": "core",
+          "asset": "assets/scenes/bakery/props/apple/images/core.png",
+          "size": [
+            298,
+            370
+          ],
+          "sourceRect": [
+            1181,
+            585,
+            1463,
+            939
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17-storefronts",
+      "scene": "shops",
+      "title": "חנויות הרחוב",
+      "source": "source-art/world/sheets/17_storefronts.png",
+      "parts": [
+        {
+          "id": "bakery-front",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/bakery-front.png",
+          "size": [
+            714,
+            467
+          ],
+          "sourceRect": [
+            30,
+            0,
+            728,
+            451
+          ]
+        },
+        {
+          "id": "tailor-front",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/tailor-front.png",
+          "size": [
+            723,
+            467
+          ],
+          "sourceRect": [
+            804,
+            1,
+            1511,
+            452
+          ]
+        },
+        {
+          "id": "door-coral-left",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/door-coral-left.png",
+          "size": [
+            214,
+            304
+          ],
+          "sourceRect": [
+            60,
+            474,
+            258,
+            762
+          ]
+        },
+        {
+          "id": "door-coral-right",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/door-coral-right.png",
+          "size": [
+            213,
+            304
+          ],
+          "sourceRect": [
+            292,
+            473,
+            489,
+            761
+          ]
+        },
+        {
+          "id": "door-lilac-left",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/door-lilac-left.png",
+          "size": [
+            214,
+            303
+          ],
+          "sourceRect": [
+            531,
+            474,
+            729,
+            761
+          ]
+        },
+        {
+          "id": "door-lilac-right",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/door-lilac-right.png",
+          "size": [
+            215,
+            307
+          ],
+          "sourceRect": [
+            761,
+            471,
+            960,
+            762
+          ]
+        },
+        {
+          "id": "bracket",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/bracket.png",
+          "size": [
+            244,
+            161
+          ],
+          "sourceRect": [
+            996,
+            500,
+            1224,
+            645
+          ]
+        },
+        {
+          "id": "sign",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/sign.png",
+          "size": [
+            284,
+            217
+          ],
+          "sourceRect": [
+            1239,
+            521,
+            1507,
+            722
+          ]
+        },
+        {
+          "id": "chalkboard",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/chalkboard.png",
+          "size": [
+            255,
+            234
+          ],
+          "sourceRect": [
+            11,
+            787,
+            250,
+            1005
+          ]
+        },
+        {
+          "id": "table",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/table.png",
+          "size": [
+            175,
+            154
+          ],
+          "sourceRect": [
+            273,
+            793,
+            432,
+            931
+          ]
+        },
+        {
+          "id": "dress-form",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/dress-form.png",
+          "size": [
+            130,
+            224
+          ],
+          "sourceRect": [
+            454,
+            794,
+            568,
+            1002
+          ]
+        },
+        {
+          "id": "tripod",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/tripod.png",
+          "size": [
+            125,
+            178
+          ],
+          "sourceRect": [
+            571,
+            841,
+            680,
+            1003
+          ]
+        },
+        {
+          "id": "plant",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/plant.png",
+          "size": [
+            164,
+            221
+          ],
+          "sourceRect": [
+            679,
+            802,
+            827,
+            1007
+          ]
+        },
+        {
+          "id": "bench",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/bench.png",
+          "size": [
+            294,
+            203
+          ],
+          "sourceRect": [
+            838,
+            815,
+            1116,
+            1002
+          ]
+        },
+        {
+          "id": "bricks",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/bricks.png",
+          "size": [
+            223,
+            171
+          ],
+          "sourceRect": [
+            1123,
+            841,
+            1330,
+            996
+          ]
+        },
+        {
+          "id": "grass",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/grass.png",
+          "size": [
+            194,
+            160
+          ],
+          "sourceRect": [
+            1345,
+            828,
+            1523,
+            972
+          ]
+        },
+        {
+          "id": "table-base",
+          "asset": "assets/scenes/shops/props/17-storefronts/images/table-base.png",
+          "size": [
+            164,
+            92
+          ],
+          "sourceRect": [
+            280,
+            939,
+            428,
+            1015
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12-tailor-studio",
+      "scene": "tailor",
+      "title": "סטודיו תפירה",
+      "source": "source-art/world/sheets/12_tailor_studio.png",
+      "parts": [
+        {
+          "id": "part-01",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-01.png",
+          "size": [
+            534,
+            335
+          ],
+          "sourceRect": [
+            71,
+            13,
+            589,
+            332
+          ]
+        },
+        {
+          "id": "part-02",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-02.png",
+          "size": [
+            259,
+            264
+          ],
+          "sourceRect": [
+            638,
+            56,
+            881,
+            304
+          ]
+        },
+        {
+          "id": "part-03",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-03.png",
+          "size": [
+            110,
+            319
+          ],
+          "sourceRect": [
+            970,
+            22,
+            1064,
+            325
+          ]
+        },
+        {
+          "id": "part-04",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-04.png",
+          "size": [
+            174,
+            226
+          ],
+          "sourceRect": [
+            1125,
+            87,
+            1283,
+            297
+          ]
+        },
+        {
+          "id": "part-05",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-05.png",
+          "size": [
+            224,
+            94
+          ],
+          "sourceRect": [
+            1312,
+            152,
+            1520,
+            230
+          ]
+        },
+        {
+          "id": "part-06",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-06.png",
+          "size": [
+            510,
+            235
+          ],
+          "sourceRect": [
+            14,
+            351,
+            508,
+            570
+          ]
+        },
+        {
+          "id": "part-07",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-07.png",
+          "size": [
+            280,
+            143
+          ],
+          "sourceRect": [
+            519,
+            413,
+            783,
+            540
+          ]
+        },
+        {
+          "id": "part-08",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-08.png",
+          "size": [
+            407,
+            141
+          ],
+          "sourceRect": [
+            800,
+            400,
+            1191,
+            525
+          ]
+        },
+        {
+          "id": "part-09",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-09.png",
+          "size": [
+            321,
+            163
+          ],
+          "sourceRect": [
+            1218,
+            407,
+            1523,
+            554
+          ]
+        },
+        {
+          "id": "part-10",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-10.png",
+          "size": [
+            414,
+            123
+          ],
+          "sourceRect": [
+            60,
+            584,
+            458,
+            691
+          ]
+        },
+        {
+          "id": "part-11",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-11.png",
+          "size": [
+            70,
+            85
+          ],
+          "sourceRect": [
+            513,
+            666,
+            567,
+            735
+          ]
+        },
+        {
+          "id": "part-12",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-12.png",
+          "size": [
+            224,
+            230
+          ],
+          "sourceRect": [
+            608,
+            583,
+            816,
+            797
+          ]
+        },
+        {
+          "id": "part-13",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-13.png",
+          "size": [
+            314,
+            173
+          ],
+          "sourceRect": [
+            911,
+            620,
+            1209,
+            777
+          ]
+        },
+        {
+          "id": "part-14",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-14.png",
+          "size": [
+            235,
+            87
+          ],
+          "sourceRect": [
+            1268,
+            652,
+            1487,
+            723
+          ]
+        },
+        {
+          "id": "part-15",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-15.png",
+          "size": [
+            426,
+            123
+          ],
+          "sourceRect": [
+            60,
+            700,
+            470,
+            807
+          ]
+        },
+        {
+          "id": "part-16",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-16.png",
+          "size": [
+            201,
+            186
+          ],
+          "sourceRect": [
+            16,
+            833,
+            201,
+            1003
+          ]
+        },
+        {
+          "id": "part-17",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-17.png",
+          "size": [
+            195,
+            183
+          ],
+          "sourceRect": [
+            219,
+            834,
+            398,
+            1001
+          ]
+        },
+        {
+          "id": "part-18",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-18.png",
+          "size": [
+            205,
+            184
+          ],
+          "sourceRect": [
+            415,
+            834,
+            604,
+            1002
+          ]
+        },
+        {
+          "id": "part-19",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-19.png",
+          "size": [
+            321,
+            126
+          ],
+          "sourceRect": [
+            625,
+            864,
+            930,
+            974
+          ]
+        },
+        {
+          "id": "part-20",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-20.png",
+          "size": [
+            146,
+            146
+          ],
+          "sourceRect": [
+            950,
+            858,
+            1080,
+            988
+          ]
+        },
+        {
+          "id": "part-21",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-21.png",
+          "size": [
+            218,
+            175
+          ],
+          "sourceRect": [
+            1107,
+            844,
+            1309,
+            1003
+          ]
+        },
+        {
+          "id": "part-22",
+          "asset": "assets/scenes/tailor/props/12-tailor-studio/images/part-22.png",
+          "size": [
+            191,
+            178
+          ],
+          "sourceRect": [
+            1340,
+            842,
+            1515,
+            1004
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18-starter-wardrobe",
+      "scene": "wardrobe",
+      "title": "בגדי התחלה",
+      "source": "source-art/world/sheets/18_starter_wardrobe.png",
+      "parts": [
+        {
+          "id": "shirt-yellow",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/shirt-yellow.png",
+          "size": [
+            321,
+            230
+          ],
+          "sourceRect": [
+            44,
+            58,
+            349,
+            272
+          ]
+        },
+        {
+          "id": "sleeve-yellow-left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-yellow-left.png",
+          "size": [
+            116,
+            155
+          ],
+          "sourceRect": [
+            357,
+            99,
+            457,
+            238
+          ]
+        },
+        {
+          "id": "sleeve-yellow-right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-yellow-right.png",
+          "size": [
+            117,
+            155
+          ],
+          "sourceRect": [
+            474,
+            99,
+            575,
+            238
+          ]
+        },
+        {
+          "id": "pinafore-pink",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/pinafore-pink.png",
+          "size": [
+            330,
+            219
+          ],
+          "sourceRect": [
+            587,
+            71,
+            901,
+            274
+          ]
+        },
+        {
+          "id": "strap-left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/strap-left.png",
+          "size": [
+            79,
+            158
+          ],
+          "sourceRect": [
+            915,
+            92,
+            978,
+            234
+          ]
+        },
+        {
+          "id": "strap-right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/strap-right.png",
+          "size": [
+            79,
+            158
+          ],
+          "sourceRect": [
+            1008,
+            92,
+            1071,
+            234
+          ]
+        },
+        {
+          "id": "pocket",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/pocket.png",
+          "size": [
+            151,
+            111
+          ],
+          "sourceRect": [
+            1094,
+            143,
+            1229,
+            238
+          ]
+        },
+        {
+          "id": "chef-hat",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/chef-hat.png",
+          "size": [
+            274,
+            235
+          ],
+          "sourceRect": [
+            1241,
+            42,
+            1499,
+            261
+          ]
+        },
+        {
+          "id": "shirt-lilac",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/shirt-lilac.png",
+          "size": [
+            318,
+            221
+          ],
+          "sourceRect": [
+            52,
+            316,
+            354,
+            521
+          ]
+        },
+        {
+          "id": "sleeve-lilac-left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-lilac-left.png",
+          "size": [
+            117,
+            155
+          ],
+          "sourceRect": [
+            366,
+            353,
+            467,
+            492
+          ]
+        },
+        {
+          "id": "sleeve-lilac-right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-lilac-right.png",
+          "size": [
+            117,
+            155
+          ],
+          "sourceRect": [
+            484,
+            353,
+            585,
+            492
+          ]
+        },
+        {
+          "id": "shorts-left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/shorts-left.png",
+          "size": [
+            164,
+            171
+          ],
+          "sourceRect": [
+            611,
+            351,
+            759,
+            506
+          ]
+        },
+        {
+          "id": "shorts-right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/shorts-right.png",
+          "size": [
+            162,
+            171
+          ],
+          "sourceRect": [
+            791,
+            351,
+            937,
+            506
+          ]
+        },
+        {
+          "id": "scarf",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/scarf.png",
+          "size": [
+            247,
+            206
+          ],
+          "sourceRect": [
+            978,
+            321,
+            1209,
+            511
+          ]
+        },
+        {
+          "id": "bow",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/bow.png",
+          "size": [
+            249,
+            142
+          ],
+          "sourceRect": [
+            1256,
+            358,
+            1489,
+            484
+          ]
+        },
+        {
+          "id": "pinafore-front",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/pinafore-front.png",
+          "size": [
+            329,
+            208
+          ],
+          "sourceRect": [
+            41,
+            567,
+            354,
+            759
+          ]
+        },
+        {
+          "id": "button-strap-left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/button-strap-left.png",
+          "size": [
+            78,
+            155
+          ],
+          "sourceRect": [
+            363,
+            582,
+            425,
+            721
+          ]
+        },
+        {
+          "id": "button-strap-right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/button-strap-right.png",
+          "size": [
+            78,
+            156
+          ],
+          "sourceRect": [
+            451,
+            582,
+            513,
+            722
+          ]
+        },
+        {
+          "id": "dress-cream",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/dress-cream.png",
+          "size": [
+            315,
+            218
+          ],
+          "sourceRect": [
+            534,
+            554,
+            833,
+            756
+          ]
+        },
+        {
+          "id": "sleeve-cream-left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-cream-left.png",
+          "size": [
+            122,
+            159
+          ],
+          "sourceRect": [
+            854,
+            588,
+            960,
+            731
+          ]
+        },
+        {
+          "id": "sleeve-cream-right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-cream-right.png",
+          "size": [
+            123,
+            159
+          ],
+          "sourceRect": [
+            976,
+            588,
+            1083,
+            731
+          ]
+        },
+        {
+          "id": "strawberry-pin",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/strawberry-pin.png",
+          "size": [
+            150,
+            177
+          ],
+          "sourceRect": [
+            1121,
+            575,
+            1255,
+            736
+          ]
+        },
+        {
+          "id": "strawberry-clip",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/strawberry-clip.png",
+          "size": [
+            201,
+            145
+          ],
+          "sourceRect": [
+            1303,
+            588,
+            1488,
+            717
+          ]
+        },
+        {
+          "id": "skirt-cream",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/skirt-cream.png",
+          "size": [
+            308,
+            215
+          ],
+          "sourceRect": [
+            45,
+            795,
+            337,
+            994
+          ]
+        },
+        {
+          "id": "sleeve-neutral-left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-neutral-left.png",
+          "size": [
+            118,
+            153
+          ],
+          "sourceRect": [
+            347,
+            831,
+            449,
+            968
+          ]
+        },
+        {
+          "id": "sleeve-neutral-right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/sleeve-neutral-right.png",
+          "size": [
+            119,
+            154
+          ],
+          "sourceRect": [
+            463,
+            831,
+            566,
+            969
+          ]
+        },
+        {
+          "id": "skirt-base",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/skirt-base.png",
+          "size": [
+            304,
+            199
+          ],
+          "sourceRect": [
+            575,
+            812,
+            863,
+            995
+          ]
+        },
+        {
+          "id": "cuff-left",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/cuff-left.png",
+          "size": [
+            155,
+            169
+          ],
+          "sourceRect": [
+            877,
+            827,
+            1016,
+            980
+          ]
+        },
+        {
+          "id": "cuff-right",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/cuff-right.png",
+          "size": [
+            154,
+            168
+          ],
+          "sourceRect": [
+            1039,
+            827,
+            1177,
+            979
+          ]
+        },
+        {
+          "id": "pinafore-cream",
+          "asset": "assets/scenes/wardrobe/props/18-starter-wardrobe/images/pinafore-cream.png",
+          "size": [
+            297,
+            248
+          ],
+          "sourceRect": [
+            1189,
+            767,
+            1470,
+            999
+          ]
+        }
+      ]
+    },
+    {
+      "id": "23-profession-uniforms",
+      "scene": "wardrobe",
+      "title": "מדי מקצוע",
+      "source": "source-art/world/sheets/23_profession_uniforms.png",
+      "parts": [
+        {
+          "id": "part-01",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-01.png",
+          "size": [
+            126,
+            115
+          ],
+          "sourceRect": [
+            298,
+            63,
+            408,
+            162
+          ]
+        },
+        {
+          "id": "part-02",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-02.png",
+          "size": [
+            148,
+            207
+          ],
+          "sourceRect": [
+            1361,
+            44,
+            1493,
+            235
+          ]
+        },
+        {
+          "id": "part-03",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-03.png",
+          "size": [
+            120,
+            142
+          ],
+          "sourceRect": [
+            23,
+            165,
+            127,
+            291
+          ]
+        },
+        {
+          "id": "part-04",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-04.png",
+          "size": [
+            257,
+            373
+          ],
+          "sourceRect": [
+            94,
+            5,
+            335,
+            362
+          ]
+        },
+        {
+          "id": "part-05",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-05.png",
+          "size": [
+            118,
+            141
+          ],
+          "sourceRect": [
+            306,
+            165,
+            408,
+            290
+          ]
+        },
+        {
+          "id": "part-06",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-06.png",
+          "size": [
+            111,
+            129
+          ],
+          "sourceRect": [
+            458,
+            157,
+            553,
+            270
+          ]
+        },
+        {
+          "id": "part-07",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-07.png",
+          "size": [
+            247,
+            247
+          ],
+          "sourceRect": [
+            528,
+            126,
+            759,
+            357
+          ]
+        },
+        {
+          "id": "part-08",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-08.png",
+          "size": [
+            107,
+            126
+          ],
+          "sourceRect": [
+            733,
+            156,
+            824,
+            266
+          ]
+        },
+        {
+          "id": "part-09",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-09.png",
+          "size": [
+            206,
+            331
+          ],
+          "sourceRect": [
+            801,
+            46,
+            991,
+            361
+          ]
+        },
+        {
+          "id": "part-10",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-10.png",
+          "size": [
+            113,
+            140
+          ],
+          "sourceRect": [
+            1008,
+            158,
+            1105,
+            282
+          ]
+        },
+        {
+          "id": "part-11",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-11.png",
+          "size": [
+            274,
+            262
+          ],
+          "sourceRect": [
+            1064,
+            124,
+            1322,
+            370
+          ]
+        },
+        {
+          "id": "part-12",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-12.png",
+          "size": [
+            114,
+            138
+          ],
+          "sourceRect": [
+            1284,
+            158,
+            1382,
+            280
+          ]
+        },
+        {
+          "id": "part-13",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-13.png",
+          "size": [
+            115,
+            128
+          ],
+          "sourceRect": [
+            1379,
+            246,
+            1478,
+            358
+          ]
+        },
+        {
+          "id": "part-14",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-14.png",
+          "size": [
+            129,
+            153
+          ],
+          "sourceRect": [
+            82,
+            368,
+            195,
+            505
+          ]
+        },
+        {
+          "id": "part-15",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-15.png",
+          "size": [
+            126,
+            153
+          ],
+          "sourceRect": [
+            205,
+            367,
+            315,
+            504
+          ]
+        },
+        {
+          "id": "part-16",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-16.png",
+          "size": [
+            96,
+            182
+          ],
+          "sourceRect": [
+            326,
+            334,
+            406,
+            500
+          ]
+        },
+        {
+          "id": "part-17",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-17.png",
+          "size": [
+            123,
+            154
+          ],
+          "sourceRect": [
+            498,
+            366,
+            605,
+            504
+          ]
+        },
+        {
+          "id": "part-18",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-18.png",
+          "size": [
+            123,
+            154
+          ],
+          "sourceRect": [
+            614,
+            366,
+            721,
+            504
+          ]
+        },
+        {
+          "id": "part-19",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-19.png",
+          "size": [
+            131,
+            177
+          ],
+          "sourceRect": [
+            726,
+            350,
+            841,
+            511
+          ]
+        },
+        {
+          "id": "part-20",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-20.png",
+          "size": [
+            159,
+            173
+          ],
+          "sourceRect": [
+            859,
+            365,
+            1002,
+            522
+          ]
+        },
+        {
+          "id": "part-21",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-21.png",
+          "size": [
+            126,
+            147
+          ],
+          "sourceRect": [
+            1073,
+            377,
+            1183,
+            508
+          ]
+        },
+        {
+          "id": "part-22",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-22.png",
+          "size": [
+            127,
+            148
+          ],
+          "sourceRect": [
+            1194,
+            377,
+            1305,
+            509
+          ]
+        },
+        {
+          "id": "part-23",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-23.png",
+          "size": [
+            210,
+            122
+          ],
+          "sourceRect": [
+            1319,
+            362,
+            1513,
+            468
+          ]
+        },
+        {
+          "id": "part-24",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-24.png",
+          "size": [
+            56,
+            131
+          ],
+          "sourceRect": [
+            301,
+            560,
+            341,
+            675
+          ]
+        },
+        {
+          "id": "part-25",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-25.png",
+          "size": [
+            58,
+            131
+          ],
+          "sourceRect": [
+            359,
+            561,
+            401,
+            676
+          ]
+        },
+        {
+          "id": "part-26",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-26.png",
+          "size": [
+            220,
+            85
+          ],
+          "sourceRect": [
+            593,
+            550,
+            797,
+            619
+          ]
+        },
+        {
+          "id": "part-27",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-27.png",
+          "size": [
+            127,
+            71
+          ],
+          "sourceRect": [
+            1194,
+            552,
+            1305,
+            607
+          ]
+        },
+        {
+          "id": "part-28",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-28.png",
+          "size": [
+            110,
+            132
+          ],
+          "sourceRect": [
+            11,
+            672,
+            105,
+            788
+          ]
+        },
+        {
+          "id": "part-29",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-29.png",
+          "size": [
+            269,
+            330
+          ],
+          "sourceRect": [
+            51,
+            531,
+            304,
+            845
+          ]
+        },
+        {
+          "id": "part-30",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-30.png",
+          "size": [
+            110,
+            126
+          ],
+          "sourceRect": [
+            295,
+            679,
+            389,
+            789
+          ]
+        },
+        {
+          "id": "part-31",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-31.png",
+          "size": [
+            115,
+            154
+          ],
+          "sourceRect": [
+            482,
+            653,
+            581,
+            791
+          ]
+        },
+        {
+          "id": "part-32",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-32.png",
+          "size": [
+            248,
+            241
+          ],
+          "sourceRect": [
+            564,
+            623,
+            796,
+            848
+          ]
+        },
+        {
+          "id": "part-33",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-33.png",
+          "size": [
+            112,
+            152
+          ],
+          "sourceRect": [
+            782,
+            653,
+            878,
+            789
+          ]
+        },
+        {
+          "id": "part-34",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-34.png",
+          "size": [
+            109,
+            249
+          ],
+          "sourceRect": [
+            872,
+            592,
+            965,
+            825
+          ]
+        },
+        {
+          "id": "part-35",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-35.png",
+          "size": [
+            127,
+            163
+          ],
+          "sourceRect": [
+            1020,
+            645,
+            1131,
+            792
+          ]
+        },
+        {
+          "id": "part-36",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-36.png",
+          "size": [
+            283,
+            249
+          ],
+          "sourceRect": [
+            1102,
+            611,
+            1369,
+            844
+          ]
+        },
+        {
+          "id": "part-37",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-37.png",
+          "size": [
+            127,
+            160
+          ],
+          "sourceRect": [
+            1342,
+            646,
+            1453,
+            790
+          ]
+        },
+        {
+          "id": "part-38",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-38.png",
+          "size": [
+            137,
+            174
+          ],
+          "sourceRect": [
+            53,
+            850,
+            174,
+            1008
+          ]
+        },
+        {
+          "id": "part-39",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-39.png",
+          "size": [
+            128,
+            174
+          ],
+          "sourceRect": [
+            185,
+            850,
+            297,
+            1008
+          ]
+        },
+        {
+          "id": "part-40",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-40.png",
+          "size": [
+            94,
+            114
+          ],
+          "sourceRect": [
+            287,
+            841,
+            365,
+            939
+          ]
+        },
+        {
+          "id": "part-41",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-41.png",
+          "size": [
+            88,
+            112
+          ],
+          "sourceRect": [
+            362,
+            809,
+            434,
+            905
+          ]
+        },
+        {
+          "id": "part-42",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-42.png",
+          "size": [
+            252,
+            174
+          ],
+          "sourceRect": [
+            534,
+            853,
+            770,
+            1011
+          ]
+        },
+        {
+          "id": "part-43",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-43.png",
+          "size": [
+            154,
+            159
+          ],
+          "sourceRect": [
+            777,
+            853,
+            915,
+            996
+          ]
+        },
+        {
+          "id": "part-44",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-44.png",
+          "size": [
+            58,
+            139
+          ],
+          "sourceRect": [
+            919,
+            859,
+            961,
+            982
+          ]
+        },
+        {
+          "id": "part-45",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-45.png",
+          "size": [
+            146,
+            177
+          ],
+          "sourceRect": [
+            1081,
+            850,
+            1211,
+            1011
+          ]
+        },
+        {
+          "id": "part-46",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-46.png",
+          "size": [
+            142,
+            177
+          ],
+          "sourceRect": [
+            1225,
+            850,
+            1351,
+            1011
+          ]
+        },
+        {
+          "id": "part-47",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-47.png",
+          "size": [
+            99,
+            188
+          ],
+          "sourceRect": [
+            1369,
+            823,
+            1452,
+            995
+          ]
+        },
+        {
+          "id": "part-48",
+          "asset": "assets/scenes/wardrobe/props/23-profession-uniforms/images/part-48.png",
+          "size": [
+            132,
+            122
+          ],
+          "sourceRect": [
+            330,
+            906,
+            446,
+            1012
+          ]
+        }
+      ]
+    },
+    {
+      "id": "21-profession-outfits-decorative",
+      "scene": "wardrobe",
+      "title": "בגדי מקצוע מעוטרים",
+      "source": "source-art/world/sheets/21_profession_outfits_decorative.png",
+      "parts": [
+        {
+          "id": "chef-hat",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-hat.png",
+          "size": [
+            216,
+            139
+          ],
+          "sourceRect": [
+            123,
+            20,
+            323,
+            143
+          ]
+        },
+        {
+          "id": "salon-bow",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/salon-bow.png",
+          "size": [
+            193,
+            118
+          ],
+          "sourceRect": [
+            641,
+            30,
+            818,
+            132
+          ]
+        },
+        {
+          "id": "tailor-necklace",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-necklace.png",
+          "size": [
+            175,
+            125
+          ],
+          "sourceRect": [
+            1163,
+            30,
+            1322,
+            139
+          ]
+        },
+        {
+          "id": "chef-sleeve-left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-sleeve-left.png",
+          "size": [
+            118,
+            126
+          ],
+          "sourceRect": [
+            26,
+            177,
+            128,
+            287
+          ]
+        },
+        {
+          "id": "chef-sleeve-right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-sleeve-right.png",
+          "size": [
+            118,
+            125
+          ],
+          "sourceRect": [
+            324,
+            177,
+            426,
+            286
+          ]
+        },
+        {
+          "id": "salon-sleeve-left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/salon-sleeve-left.png",
+          "size": [
+            117,
+            121
+          ],
+          "sourceRect": [
+            529,
+            177,
+            630,
+            282
+          ]
+        },
+        {
+          "id": "salon-sleeve-right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/salon-sleeve-right.png",
+          "size": [
+            118,
+            121
+          ],
+          "sourceRect": [
+            821,
+            176,
+            923,
+            281
+          ]
+        },
+        {
+          "id": "tailor-sleeve-left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-sleeve-left.png",
+          "size": [
+            123,
+            136
+          ],
+          "sourceRect": [
+            1024,
+            178,
+            1131,
+            298
+          ]
+        },
+        {
+          "id": "tailor-sleeve-right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-sleeve-right.png",
+          "size": [
+            126,
+            136
+          ],
+          "sourceRect": [
+            1340,
+            176,
+            1450,
+            296
+          ]
+        },
+        {
+          "id": "chef-shirt",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-shirt.png",
+          "size": [
+            284,
+            223
+          ],
+          "sourceRect": [
+            92,
+            150,
+            360,
+            357
+          ]
+        },
+        {
+          "id": "salon-dress",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/salon-dress.png",
+          "size": [
+            296,
+            318
+          ],
+          "sourceRect": [
+            578,
+            150,
+            858,
+            452
+          ]
+        },
+        {
+          "id": "tailor-jacket",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-jacket.png",
+          "size": [
+            288,
+            219
+          ],
+          "sourceRect": [
+            1098,
+            150,
+            1370,
+            353
+          ]
+        },
+        {
+          "id": "chef-pants-left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-pants-left.png",
+          "size": [
+            144,
+            120
+          ],
+          "sourceRect": [
+            92,
+            371,
+            220,
+            475
+          ]
+        },
+        {
+          "id": "chef-pants-right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-pants-right.png",
+          "size": [
+            143,
+            119
+          ],
+          "sourceRect": [
+            233,
+            371,
+            360,
+            474
+          ]
+        },
+        {
+          "id": "chef-whisk",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/chef-whisk.png",
+          "size": [
+            108,
+            194
+          ],
+          "sourceRect": [
+            380,
+            306,
+            472,
+            484
+          ]
+        },
+        {
+          "id": "salon-dryer",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/salon-dryer.png",
+          "size": [
+            142,
+            173
+          ],
+          "sourceRect": [
+            862,
+            325,
+            988,
+            482
+          ]
+        },
+        {
+          "id": "tailor-pants-left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-pants-left.png",
+          "size": [
+            141,
+            120
+          ],
+          "sourceRect": [
+            1095,
+            370,
+            1220,
+            474
+          ]
+        },
+        {
+          "id": "tailor-pants-right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-pants-right.png",
+          "size": [
+            140,
+            119
+          ],
+          "sourceRect": [
+            1233,
+            370,
+            1357,
+            473
+          ]
+        },
+        {
+          "id": "tailor-cushion",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/tailor-cushion.png",
+          "size": [
+            139,
+            162
+          ],
+          "sourceRect": [
+            1381,
+            334,
+            1504,
+            480
+          ]
+        },
+        {
+          "id": "garden-hat",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/garden-hat.png",
+          "size": [
+            275,
+            142
+          ],
+          "sourceRect": [
+            106,
+            520,
+            365,
+            646
+          ]
+        },
+        {
+          "id": "post-hat",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-hat.png",
+          "size": [
+            174,
+            119
+          ],
+          "sourceRect": [
+            652,
+            518,
+            810,
+            621
+          ]
+        },
+        {
+          "id": "singer-bow",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/singer-bow.png",
+          "size": [
+            172,
+            122
+          ],
+          "sourceRect": [
+            1157,
+            520,
+            1313,
+            626
+          ]
+        },
+        {
+          "id": "garden-sleeve-left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/garden-sleeve-left.png",
+          "size": [
+            124,
+            132
+          ],
+          "sourceRect": [
+            24,
+            664,
+            132,
+            780
+          ]
+        },
+        {
+          "id": "garden-sleeve-right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/garden-sleeve-right.png",
+          "size": [
+            126,
+            131
+          ],
+          "sourceRect": [
+            324,
+            665,
+            434,
+            780
+          ]
+        },
+        {
+          "id": "post-sleeve-left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-sleeve-left.png",
+          "size": [
+            117,
+            120
+          ],
+          "sourceRect": [
+            520,
+            666,
+            621,
+            770
+          ]
+        },
+        {
+          "id": "post-jacket",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-jacket.png",
+          "size": [
+            275,
+            212
+          ],
+          "sourceRect": [
+            591,
+            636,
+            850,
+            832
+          ]
+        },
+        {
+          "id": "post-sleeve-right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-sleeve-right.png",
+          "size": [
+            117,
+            120
+          ],
+          "sourceRect": [
+            824,
+            667,
+            925,
+            771
+          ]
+        },
+        {
+          "id": "singer-sleeve-left",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/singer-sleeve-left.png",
+          "size": [
+            124,
+            133
+          ],
+          "sourceRect": [
+            1022,
+            667,
+            1130,
+            784
+          ]
+        },
+        {
+          "id": "singer-jacket",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/singer-jacket.png",
+          "size": [
+            293,
+            217
+          ],
+          "sourceRect": [
+            1097,
+            637,
+            1374,
+            838
+          ]
+        },
+        {
+          "id": "singer-sleeve-right",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/singer-sleeve-right.png",
+          "size": [
+            126,
+            133
+          ],
+          "sourceRect": [
+            1342,
+            667,
+            1452,
+            784
+          ]
+        },
+        {
+          "id": "garden-dress",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/garden-dress.png",
+          "size": [
+            301,
+            276
+          ],
+          "sourceRect": [
+            87,
+            645,
+            372,
+            905
+          ]
+        },
+        {
+          "id": "watering-can",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/watering-can.png",
+          "size": [
+            212,
+            171
+          ],
+          "sourceRect": [
+            307,
+            849,
+            503,
+            1004
+          ]
+        },
+        {
+          "id": "post-skirt",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-skirt.png",
+          "size": [
+            307,
+            165
+          ],
+          "sourceRect": [
+            554,
+            847,
+            845,
+            996
+          ]
+        },
+        {
+          "id": "post-book",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/post-book.png",
+          "size": [
+            159,
+            167
+          ],
+          "sourceRect": [
+            848,
+            832,
+            991,
+            983
+          ]
+        },
+        {
+          "id": "singer-skirt",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/singer-skirt.png",
+          "size": [
+            336,
+            170
+          ],
+          "sourceRect": [
+            1054,
+            849,
+            1374,
+            1003
+          ]
+        },
+        {
+          "id": "microphone",
+          "asset": "assets/scenes/wardrobe/props/21-profession-outfits-decorative/images/microphone.png",
+          "size": [
+            120,
+            194
+          ],
+          "sourceRect": [
+            1385,
+            809,
+            1489,
+            987
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13-mail-delivery",
+      "scene": "post",
+      "title": "משלוחים ודואר",
+      "source": "source-art/world/sheets/13_mail_delivery.png",
+      "parts": [
+        {
+          "id": "part-01",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-01.png",
+          "size": [
+            391,
+            349
+          ],
+          "sourceRect": [
+            91,
+            15,
+            466,
+            348
+          ]
+        },
+        {
+          "id": "part-02",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-02.png",
+          "size": [
+            292,
+            279
+          ],
+          "sourceRect": [
+            564,
+            25,
+            840,
+            288
+          ]
+        },
+        {
+          "id": "part-03",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-03.png",
+          "size": [
+            315,
+            188
+          ],
+          "sourceRect": [
+            940,
+            113,
+            1239,
+            285
+          ]
+        },
+        {
+          "id": "part-04",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-04.png",
+          "size": [
+            333,
+            141
+          ],
+          "sourceRect": [
+            1338,
+            200,
+            1655,
+            325
+          ]
+        },
+        {
+          "id": "part-05",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-05.png",
+          "size": [
+            176,
+            201
+          ],
+          "sourceRect": [
+            171,
+            364,
+            331,
+            549
+          ]
+        },
+        {
+          "id": "part-06",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-06.png",
+          "size": [
+            80,
+            75
+          ],
+          "sourceRect": [
+            402,
+            444,
+            466,
+            503
+          ]
+        },
+        {
+          "id": "part-07",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-07.png",
+          "size": [
+            299,
+            185
+          ],
+          "sourceRect": [
+            563,
+            378,
+            846,
+            547
+          ]
+        },
+        {
+          "id": "part-08",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-08.png",
+          "size": [
+            303,
+            129
+          ],
+          "sourceRect": [
+            947,
+            404,
+            1234,
+            517
+          ]
+        },
+        {
+          "id": "part-09",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-09.png",
+          "size": [
+            310,
+            167
+          ],
+          "sourceRect": [
+            1316,
+            387,
+            1610,
+            538
+          ]
+        },
+        {
+          "id": "part-10",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-10.png",
+          "size": [
+            353,
+            165
+          ],
+          "sourceRect": [
+            63,
+            565,
+            400,
+            714
+          ]
+        },
+        {
+          "id": "part-11",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-11.png",
+          "size": [
+            354,
+            136
+          ],
+          "sourceRect": [
+            434,
+            579,
+            772,
+            699
+          ]
+        },
+        {
+          "id": "part-12",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-12.png",
+          "size": [
+            310,
+            146
+          ],
+          "sourceRect": [
+            814,
+            575,
+            1108,
+            705
+          ]
+        },
+        {
+          "id": "part-13",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-13.png",
+          "size": [
+            256,
+            175
+          ],
+          "sourceRect": [
+            1152,
+            558,
+            1392,
+            717
+          ]
+        },
+        {
+          "id": "part-14",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-14.png",
+          "size": [
+            305,
+            63
+          ],
+          "sourceRect": [
+            1428,
+            619,
+            1717,
+            666
+          ]
+        },
+        {
+          "id": "part-15",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-15.png",
+          "size": [
+            369,
+            171
+          ],
+          "sourceRect": [
+            76,
+            728,
+            429,
+            883
+          ]
+        },
+        {
+          "id": "part-16",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-16.png",
+          "size": [
+            347,
+            128
+          ],
+          "sourceRect": [
+            510,
+            763,
+            841,
+            875
+          ]
+        },
+        {
+          "id": "part-17",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-17.png",
+          "size": [
+            382,
+            120
+          ],
+          "sourceRect": [
+            917,
+            768,
+            1283,
+            872
+          ]
+        },
+        {
+          "id": "part-18",
+          "asset": "assets/scenes/post/props/13-mail-delivery/images/part-18.png",
+          "size": [
+            314,
+            138
+          ],
+          "sourceRect": [
+            1361,
+            754,
+            1659,
+            876
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14-orders-and-thanks",
+      "scene": "post",
+      "title": "הזמנות ותודות",
+      "source": "source-art/world/sheets/14_orders_and_thanks.png",
+      "parts": [
+        {
+          "id": "part-01",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-01.png",
+          "size": [
+            622,
+            370
+          ],
+          "sourceRect": [
+            18,
+            7,
+            624,
+            361
+          ]
+        },
+        {
+          "id": "part-02",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-02.png",
+          "size": [
+            299,
+            291
+          ],
+          "sourceRect": [
+            638,
+            45,
+            921,
+            320
+          ]
+        },
+        {
+          "id": "part-03",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-03.png",
+          "size": [
+            300,
+            290
+          ],
+          "sourceRect": [
+            934,
+            46,
+            1218,
+            320
+          ]
+        },
+        {
+          "id": "part-04",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-04.png",
+          "size": [
+            303,
+            290
+          ],
+          "sourceRect": [
+            1232,
+            46,
+            1519,
+            320
+          ]
+        },
+        {
+          "id": "part-05",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-05.png",
+          "size": [
+            136,
+            183
+          ],
+          "sourceRect": [
+            88,
+            399,
+            208,
+            566
+          ]
+        },
+        {
+          "id": "part-06",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-06.png",
+          "size": [
+            133,
+            175
+          ],
+          "sourceRect": [
+            250,
+            399,
+            367,
+            558
+          ]
+        },
+        {
+          "id": "part-07",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-07.png",
+          "size": [
+            165,
+            187
+          ],
+          "sourceRect": [
+            408,
+            399,
+            557,
+            570
+          ]
+        },
+        {
+          "id": "part-08",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-08.png",
+          "size": [
+            269,
+            244
+          ],
+          "sourceRect": [
+            605,
+            352,
+            858,
+            580
+          ]
+        },
+        {
+          "id": "part-09",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-09.png",
+          "size": [
+            295,
+            211
+          ],
+          "sourceRect": [
+            894,
+            379,
+            1173,
+            574
+          ]
+        },
+        {
+          "id": "part-10",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-10.png",
+          "size": [
+            292,
+            229
+          ],
+          "sourceRect": [
+            1201,
+            364,
+            1477,
+            577
+          ]
+        },
+        {
+          "id": "part-11",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-11.png",
+          "size": [
+            251,
+            245
+          ],
+          "sourceRect": [
+            28,
+            591,
+            263,
+            820
+          ]
+        },
+        {
+          "id": "part-12",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-12.png",
+          "size": [
+            255,
+            245
+          ],
+          "sourceRect": [
+            276,
+            591,
+            515,
+            820
+          ]
+        },
+        {
+          "id": "part-13",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-13.png",
+          "size": [
+            252,
+            245
+          ],
+          "sourceRect": [
+            527,
+            591,
+            763,
+            820
+          ]
+        },
+        {
+          "id": "part-14",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-14.png",
+          "size": [
+            253,
+            245
+          ],
+          "sourceRect": [
+            771,
+            591,
+            1008,
+            820
+          ]
+        },
+        {
+          "id": "part-15",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-15.png",
+          "size": [
+            252,
+            245
+          ],
+          "sourceRect": [
+            1019,
+            591,
+            1255,
+            820
+          ]
+        },
+        {
+          "id": "part-16",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-16.png",
+          "size": [
+            257,
+            246
+          ],
+          "sourceRect": [
+            1262,
+            590,
+            1503,
+            820
+          ]
+        },
+        {
+          "id": "part-17",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-17.png",
+          "size": [
+            191,
+            160
+          ],
+          "sourceRect": [
+            39,
+            860,
+            214,
+            1004
+          ]
+        },
+        {
+          "id": "part-18",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-18.png",
+          "size": [
+            194,
+            181
+          ],
+          "sourceRect": [
+            234,
+            842,
+            412,
+            1007
+          ]
+        },
+        {
+          "id": "part-19",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-19.png",
+          "size": [
+            230,
+            177
+          ],
+          "sourceRect": [
+            433,
+            847,
+            647,
+            1008
+          ]
+        },
+        {
+          "id": "part-20",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-20.png",
+          "size": [
+            344,
+            202
+          ],
+          "sourceRect": [
+            671,
+            831,
+            999,
+            1017
+          ]
+        },
+        {
+          "id": "part-21",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-21.png",
+          "size": [
+            166,
+            183
+          ],
+          "sourceRect": [
+            1023,
+            837,
+            1173,
+            1004
+          ]
+        },
+        {
+          "id": "part-22",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-22.png",
+          "size": [
+            98,
+            100
+          ],
+          "sourceRect": [
+            1192,
+            877,
+            1274,
+            961
+          ]
+        },
+        {
+          "id": "part-23",
+          "asset": "assets/scenes/post/props/14-orders-and-thanks/images/part-23.png",
+          "size": [
+            171,
+            201
+          ],
+          "sourceRect": [
+            1310,
+            833,
+            1465,
+            1018
+          ]
+        }
+      ]
+    },
+    {
+      "id": "19-home-care",
+      "scene": "home-care",
+      "title": "טיפול בבית",
+      "source": "source-art/world/sheets/19_home_care.png",
+      "parts": [
+        {
+          "id": "part-01",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-01.png",
+          "size": [
+            419,
+            263
+          ],
+          "sourceRect": [
+            78,
+            12,
+            481,
+            259
+          ]
+        },
+        {
+          "id": "part-02",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-02.png",
+          "size": [
+            414,
+            165
+          ],
+          "sourceRect": [
+            532,
+            99,
+            930,
+            248
+          ]
+        },
+        {
+          "id": "part-03",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-03.png",
+          "size": [
+            447,
+            188
+          ],
+          "sourceRect": [
+            972,
+            87,
+            1403,
+            259
+          ]
+        },
+        {
+          "id": "part-04",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-04.png",
+          "size": [
+            255,
+            159
+          ],
+          "sourceRect": [
+            1457,
+            98,
+            1696,
+            241
+          ]
+        },
+        {
+          "id": "part-05",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-05.png",
+          "size": [
+            274,
+            157
+          ],
+          "sourceRect": [
+            84,
+            286,
+            342,
+            427
+          ]
+        },
+        {
+          "id": "part-06",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-06.png",
+          "size": [
+            217,
+            95
+          ],
+          "sourceRect": [
+            453,
+            319,
+            654,
+            398
+          ]
+        },
+        {
+          "id": "part-07",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-07.png",
+          "size": [
+            279,
+            157
+          ],
+          "sourceRect": [
+            768,
+            287,
+            1031,
+            428
+          ]
+        },
+        {
+          "id": "part-08",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-08.png",
+          "size": [
+            231,
+            88
+          ],
+          "sourceRect": [
+            1124,
+            324,
+            1339,
+            396
+          ]
+        },
+        {
+          "id": "part-09",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-09.png",
+          "size": [
+            238,
+            104
+          ],
+          "sourceRect": [
+            1444,
+            311,
+            1666,
+            399
+          ]
+        },
+        {
+          "id": "part-10",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-10.png",
+          "size": [
+            199,
+            183
+          ],
+          "sourceRect": [
+            719,
+            459,
+            902,
+            626
+          ]
+        },
+        {
+          "id": "part-11",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-11.png",
+          "size": [
+            103,
+            100
+          ],
+          "sourceRect": [
+            1595,
+            476,
+            1682,
+            560
+          ]
+        },
+        {
+          "id": "part-12",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-12.png",
+          "size": [
+            385,
+            218
+          ],
+          "sourceRect": [
+            17,
+            451,
+            386,
+            653
+          ]
+        },
+        {
+          "id": "part-13",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-13.png",
+          "size": [
+            314,
+            147
+          ],
+          "sourceRect": [
+            402,
+            502,
+            700,
+            633
+          ]
+        },
+        {
+          "id": "part-14",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-14.png",
+          "size": [
+            289,
+            101
+          ],
+          "sourceRect": [
+            914,
+            517,
+            1187,
+            602
+          ]
+        },
+        {
+          "id": "part-15",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-15.png",
+          "size": [
+            184,
+            134
+          ],
+          "sourceRect": [
+            1202,
+            504,
+            1370,
+            622
+          ]
+        },
+        {
+          "id": "part-16",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-16.png",
+          "size": [
+            165,
+            109
+          ],
+          "sourceRect": [
+            1392,
+            523,
+            1541,
+            616
+          ]
+        },
+        {
+          "id": "part-17",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-17.png",
+          "size": [
+            74,
+            72
+          ],
+          "sourceRect": [
+            1570,
+            564,
+            1628,
+            620
+          ]
+        },
+        {
+          "id": "part-18",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-18.png",
+          "size": [
+            83,
+            81
+          ],
+          "sourceRect": [
+            1688,
+            536,
+            1755,
+            601
+          ]
+        },
+        {
+          "id": "part-19",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-19.png",
+          "size": [
+            79,
+            83
+          ],
+          "sourceRect": [
+            1651,
+            706,
+            1714,
+            773
+          ]
+        },
+        {
+          "id": "part-20",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-20.png",
+          "size": [
+            255,
+            174
+          ],
+          "sourceRect": [
+            19,
+            699,
+            258,
+            857
+          ]
+        },
+        {
+          "id": "part-21",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-21.png",
+          "size": [
+            363,
+            198
+          ],
+          "sourceRect": [
+            279,
+            683,
+            626,
+            865
+          ]
+        },
+        {
+          "id": "part-22",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-22.png",
+          "size": [
+            185,
+            196
+          ],
+          "sourceRect": [
+            661,
+            680,
+            830,
+            860
+          ]
+        },
+        {
+          "id": "part-23",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-23.png",
+          "size": [
+            168,
+            221
+          ],
+          "sourceRect": [
+            881,
+            666,
+            1033,
+            871
+          ]
+        },
+        {
+          "id": "part-24",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-24.png",
+          "size": [
+            151,
+            178
+          ],
+          "sourceRect": [
+            1088,
+            687,
+            1223,
+            849
+          ]
+        },
+        {
+          "id": "part-25",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-25.png",
+          "size": [
+            255,
+            112
+          ],
+          "sourceRect": [
+            1254,
+            747,
+            1493,
+            843
+          ]
+        },
+        {
+          "id": "part-26",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-26.png",
+          "size": [
+            67,
+            42
+          ],
+          "sourceRect": [
+            1437,
+            819,
+            1488,
+            845
+          ]
+        },
+        {
+          "id": "part-27",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-27.png",
+          "size": [
+            76,
+            88
+          ],
+          "sourceRect": [
+            1573,
+            724,
+            1633,
+            796
+          ]
+        },
+        {
+          "id": "part-28",
+          "asset": "assets/scenes/home-care/props/19-home-care/images/part-28.png",
+          "size": [
+            75,
+            51
+          ],
+          "sourceRect": [
+            1662,
+            774,
+            1721,
+            809
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sofa",
+      "scene": "home-care",
+      "title": "ספה ורודה",
+      "source": "source-art/world/sheets/Sofa_Sheet.png",
+      "parts": [
+        {
+          "id": "back",
+          "asset": "assets/scenes/home-care/props/sofa/images/back.png",
+          "size": [
+            486,
+            326
+          ],
+          "sourceRect": [
+            30,
+            127,
+            500,
+            437
+          ]
+        },
+        {
+          "id": "cushion",
+          "asset": "assets/scenes/home-care/props/sofa/images/cushion.png",
+          "size": [
+            436,
+            168
+          ],
+          "sourceRect": [
+            549,
+            273,
+            969,
+            425
+          ]
+        },
+        {
+          "id": "front",
+          "asset": "assets/scenes/home-care/props/sofa/images/front.png",
+          "size": [
+            490,
+            161
+          ],
+          "sourceRect": [
+            1029,
+            280,
+            1503,
+            425
+          ]
+        },
+        {
+          "id": "arm-left",
+          "asset": "assets/scenes/home-care/props/sofa/images/arm-left.png",
+          "size": [
+            250,
+            340
+          ],
+          "sourceRect": [
+            125,
+            585,
+            359,
+            909
+          ]
+        },
+        {
+          "id": "arm-right",
+          "asset": "assets/scenes/home-care/props/sofa/images/arm-right.png",
+          "size": [
+            251,
+            340
+          ],
+          "sourceRect": [
+            644,
+            585,
+            879,
+            909
+          ]
+        },
+        {
+          "id": "pillow",
+          "asset": "assets/scenes/home-care/props/sofa/images/pillow.png",
+          "size": [
+            278,
+            248
+          ],
+          "sourceRect": [
+            1119,
+            646,
+            1381,
+            878
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16-strawberry-party",
+      "scene": "party",
+      "title": "מסיבת תותים",
+      "source": "source-art/world/sheets/16_strawberry_party.png",
+      "parts": [
+        {
+          "id": "part-01",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-01.png",
+          "size": [
+            587,
+            215
+          ],
+          "sourceRect": [
+            602,
+            44,
+            1173,
+            243
+          ]
+        },
+        {
+          "id": "part-02",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-02.png",
+          "size": [
+            226,
+            279
+          ],
+          "sourceRect": [
+            1225,
+            6,
+            1435,
+            269
+          ]
+        },
+        {
+          "id": "part-03",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-03.png",
+          "size": [
+            561,
+            235
+          ],
+          "sourceRect": [
+            34,
+            41,
+            579,
+            260
+          ]
+        },
+        {
+          "id": "part-04",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-04.png",
+          "size": [
+            245,
+            123
+          ],
+          "sourceRect": [
+            1503,
+            117,
+            1732,
+            224
+          ]
+        },
+        {
+          "id": "part-05",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-05.png",
+          "size": [
+            522,
+            117
+          ],
+          "sourceRect": [
+            45,
+            315,
+            551,
+            416
+          ]
+        },
+        {
+          "id": "part-06",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-06.png",
+          "size": [
+            143,
+            140
+          ],
+          "sourceRect": [
+            615,
+            320,
+            742,
+            444
+          ]
+        },
+        {
+          "id": "part-07",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-07.png",
+          "size": [
+            143,
+            140
+          ],
+          "sourceRect": [
+            802,
+            320,
+            929,
+            444
+          ]
+        },
+        {
+          "id": "part-08",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-08.png",
+          "size": [
+            143,
+            140
+          ],
+          "sourceRect": [
+            981,
+            320,
+            1108,
+            444
+          ]
+        },
+        {
+          "id": "part-09",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-09.png",
+          "size": [
+            187,
+            195
+          ],
+          "sourceRect": [
+            1151,
+            289,
+            1322,
+            468
+          ]
+        },
+        {
+          "id": "part-10",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-10.png",
+          "size": [
+            165,
+            223
+          ],
+          "sourceRect": [
+            1398,
+            275,
+            1547,
+            482
+          ]
+        },
+        {
+          "id": "part-11",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-11.png",
+          "size": [
+            74,
+            202
+          ],
+          "sourceRect": [
+            1632,
+            277,
+            1690,
+            463
+          ]
+        },
+        {
+          "id": "part-12",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-12.png",
+          "size": [
+            277,
+            121
+          ],
+          "sourceRect": [
+            304,
+            489,
+            565,
+            594
+          ]
+        },
+        {
+          "id": "part-13",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-13.png",
+          "size": [
+            214,
+            177
+          ],
+          "sourceRect": [
+            50,
+            476,
+            248,
+            637
+          ]
+        },
+        {
+          "id": "part-14",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-14.png",
+          "size": [
+            201,
+            155
+          ],
+          "sourceRect": [
+            611,
+            487,
+            796,
+            626
+          ]
+        },
+        {
+          "id": "part-15",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-15.png",
+          "size": [
+            230,
+            168
+          ],
+          "sourceRect": [
+            819,
+            486,
+            1033,
+            638
+          ]
+        },
+        {
+          "id": "part-16",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-16.png",
+          "size": [
+            82,
+            180
+          ],
+          "sourceRect": [
+            1075,
+            476,
+            1141,
+            640
+          ]
+        },
+        {
+          "id": "part-17",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-17.png",
+          "size": [
+            232,
+            155
+          ],
+          "sourceRect": [
+            1205,
+            496,
+            1421,
+            635
+          ]
+        },
+        {
+          "id": "part-18",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-18.png",
+          "size": [
+            282,
+            190
+          ],
+          "sourceRect": [
+            1470,
+            476,
+            1736,
+            650
+          ]
+        },
+        {
+          "id": "part-19",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-19.png",
+          "size": [
+            267,
+            244
+          ],
+          "sourceRect": [
+            21,
+            654,
+            272,
+            882
+          ]
+        },
+        {
+          "id": "part-20",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-20.png",
+          "size": [
+            328,
+            256
+          ],
+          "sourceRect": [
+            312,
+            642,
+            624,
+            882
+          ]
+        },
+        {
+          "id": "part-21",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-21.png",
+          "size": [
+            133,
+            154
+          ],
+          "sourceRect": [
+            645,
+            732,
+            762,
+            870
+          ]
+        },
+        {
+          "id": "part-22",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-22.png",
+          "size": [
+            217,
+            242
+          ],
+          "sourceRect": [
+            819,
+            655,
+            1020,
+            881
+          ]
+        },
+        {
+          "id": "part-23",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-23.png",
+          "size": [
+            148,
+            168
+          ],
+          "sourceRect": [
+            1074,
+            682,
+            1206,
+            834
+          ]
+        },
+        {
+          "id": "part-24",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-24.png",
+          "size": [
+            84,
+            102
+          ],
+          "sourceRect": [
+            1224,
+            745,
+            1292,
+            831
+          ]
+        },
+        {
+          "id": "part-25",
+          "asset": "assets/scenes/party/props/16-strawberry-party/images/part-25.png",
+          "size": [
+            423,
+            217
+          ],
+          "sourceRect": [
+            1345,
+            680,
+            1752,
+            881
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15-careers-and-ui",
+      "scene": "achievements",
+      "title": "תגים וממשק",
+      "source": "source-art/world/sheets/15_careers_and_ui.png",
+      "parts": [
+        {
+          "id": "part-01",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-01.png",
+          "size": [
+            271,
+            245
+          ],
+          "sourceRect": [
+            476,
+            5,
+            731,
+            234
+          ]
+        },
+        {
+          "id": "part-02",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-02.png",
+          "size": [
+            267,
+            242
+          ],
+          "sourceRect": [
+            753,
+            6,
+            1004,
+            232
+          ]
+        },
+        {
+          "id": "part-03",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-03.png",
+          "size": [
+            284,
+            251
+          ],
+          "sourceRect": [
+            1023,
+            1,
+            1291,
+            236
+          ]
+        },
+        {
+          "id": "part-04",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-04.png",
+          "size": [
+            272,
+            232
+          ],
+          "sourceRect": [
+            474,
+            254,
+            730,
+            470
+          ]
+        },
+        {
+          "id": "part-05",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-05.png",
+          "size": [
+            339,
+            397
+          ],
+          "sourceRect": [
+            682,
+            251,
+            1005,
+            632
+          ]
+        },
+        {
+          "id": "part-06",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-06.png",
+          "size": [
+            294,
+            251
+          ],
+          "sourceRect": [
+            1020,
+            240,
+            1298,
+            475
+          ]
+        },
+        {
+          "id": "part-07",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-07.png",
+          "size": [
+            211,
+            175
+          ],
+          "sourceRect": [
+            208,
+            473,
+            403,
+            632
+          ]
+        },
+        {
+          "id": "part-08",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-08.png",
+          "size": [
+            212,
+            174
+          ],
+          "sourceRect": [
+            446,
+            473,
+            642,
+            631
+          ]
+        },
+        {
+          "id": "part-09",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-09.png",
+          "size": [
+            104,
+            97
+          ],
+          "sourceRect": [
+            929,
+            519,
+            1017,
+            600
+          ]
+        },
+        {
+          "id": "part-10",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-10.png",
+          "size": [
+            120,
+            132
+          ],
+          "sourceRect": [
+            1090,
+            501,
+            1194,
+            617
+          ]
+        },
+        {
+          "id": "part-11",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-11.png",
+          "size": [
+            135,
+            140
+          ],
+          "sourceRect": [
+            1254,
+            493,
+            1373,
+            617
+          ]
+        },
+        {
+          "id": "part-12",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-12.png",
+          "size": [
+            130,
+            126
+          ],
+          "sourceRect": [
+            1429,
+            500,
+            1543,
+            610
+          ]
+        },
+        {
+          "id": "part-13",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-13.png",
+          "size": [
+            202,
+            157
+          ],
+          "sourceRect": [
+            71,
+            635,
+            257,
+            776
+          ]
+        },
+        {
+          "id": "part-14",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-14.png",
+          "size": [
+            184,
+            143
+          ],
+          "sourceRect": [
+            292,
+            648,
+            460,
+            775
+          ]
+        },
+        {
+          "id": "part-15",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-15.png",
+          "size": [
+            203,
+            144
+          ],
+          "sourceRect": [
+            513,
+            652,
+            700,
+            780
+          ]
+        },
+        {
+          "id": "part-16",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-16.png",
+          "size": [
+            181,
+            153
+          ],
+          "sourceRect": [
+            750,
+            650,
+            915,
+            787
+          ]
+        },
+        {
+          "id": "part-17",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-17.png",
+          "size": [
+            184,
+            152
+          ],
+          "sourceRect": [
+            962,
+            648,
+            1130,
+            784
+          ]
+        },
+        {
+          "id": "part-18",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-18.png",
+          "size": [
+            142,
+            137
+          ],
+          "sourceRect": [
+            1181,
+            653,
+            1307,
+            774
+          ]
+        },
+        {
+          "id": "part-19",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-19.png",
+          "size": [
+            147,
+            142
+          ],
+          "sourceRect": [
+            1358,
+            649,
+            1489,
+            775
+          ]
+        },
+        {
+          "id": "part-20",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-20.png",
+          "size": [
+            175,
+            152
+          ],
+          "sourceRect": [
+            1546,
+            642,
+            1705,
+            778
+          ]
+        },
+        {
+          "id": "part-21",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-21.png",
+          "size": [
+            258,
+            95
+          ],
+          "sourceRect": [
+            17,
+            802,
+            259,
+            881
+          ]
+        },
+        {
+          "id": "part-22",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-22.png",
+          "size": [
+            260,
+            94
+          ],
+          "sourceRect": [
+            276,
+            804,
+            520,
+            882
+          ]
+        },
+        {
+          "id": "part-23",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-23.png",
+          "size": [
+            327,
+            78
+          ],
+          "sourceRect": [
+            535,
+            813,
+            846,
+            875
+          ]
+        },
+        {
+          "id": "part-24",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-24.png",
+          "size": [
+            262,
+            63
+          ],
+          "sourceRect": [
+            860,
+            824,
+            1106,
+            871
+          ]
+        },
+        {
+          "id": "part-25",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-25.png",
+          "size": [
+            67,
+            64
+          ],
+          "sourceRect": [
+            1128,
+            820,
+            1179,
+            868
+          ]
+        },
+        {
+          "id": "part-26",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-26.png",
+          "size": [
+            105,
+            86
+          ],
+          "sourceRect": [
+            1208,
+            807,
+            1297,
+            877
+          ]
+        },
+        {
+          "id": "part-27",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-27.png",
+          "size": [
+            134,
+            93
+          ],
+          "sourceRect": [
+            1313,
+            806,
+            1431,
+            883
+          ]
+        },
+        {
+          "id": "part-28",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-28.png",
+          "size": [
+            77,
+            92
+          ],
+          "sourceRect": [
+            1454,
+            801,
+            1515,
+            877
+          ]
+        },
+        {
+          "id": "part-29",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-29.png",
+          "size": [
+            103,
+            97
+          ],
+          "sourceRect": [
+            1541,
+            801,
+            1628,
+            882
+          ]
+        },
+        {
+          "id": "part-30",
+          "asset": "assets/scenes/achievements/props/15-careers-and-ui/images/part-30.png",
+          "size": [
+            105,
+            98
+          ],
+          "sourceRect": [
+            1660,
+            796,
+            1749,
+            878
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coin",
+      "scene": "achievements",
+      "title": "מטבעות",
+      "source": "source-art/world/sheets/Coin_Sheet.png",
+      "parts": [
+        {
+          "id": "coin-front",
+          "asset": "assets/scenes/achievements/props/coin/images/coin-front.png",
+          "size": [
+            264,
+            281
+          ],
+          "sourceRect": [
+            1792,
+            217,
+            2040,
+            482
+          ]
+        },
+        {
+          "id": "coin-side",
+          "asset": "assets/scenes/achievements/props/coin/images/coin-side.png",
+          "size": [
+            477,
+            488
+          ],
+          "sourceRect": [
+            87,
+            119,
+            548,
+            591
+          ]
+        },
+        {
+          "id": "coin-edge",
+          "asset": "assets/scenes/achievements/props/coin/images/coin-edge.png",
+          "size": [
+            412,
+            490
+          ],
+          "sourceRect": [
+            737,
+            118,
+            1133,
+            592
+          ]
+        },
+        {
+          "id": "sparkle",
+          "asset": "assets/scenes/achievements/props/coin/images/sparkle.png",
+          "size": [
+            153,
+            489
+          ],
+          "sourceRect": [
+            1373,
+            119,
+            1510,
+            592
+          ]
+        }
+      ]
+    }
+  ]
+}

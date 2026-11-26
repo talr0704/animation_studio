@@ -69,3 +69,5 @@ footer a,footer button{font-size:13px;min-height:40px}.world-paths button{min-he
 }
 
 .wardrobe-frame{transform:rotate(var(--base-angle,0deg))}
+
+.world-paths{max-width:98%;overflow-x:auto}.world[data-view=garden] .world-link{display:none}
