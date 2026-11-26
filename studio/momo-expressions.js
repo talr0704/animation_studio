@@ -1,3 +1,4 @@
+export const BEAK_SCALES={closed:1,smile:1.08,open:1.08};
 export const DEFAULT_EXPRESSION={eyes:'open',beak:'closed'};
 export function expressionAt(clip,time){
  let pose={...DEFAULT_EXPRESSION};
@@ -15,24 +16,30 @@ export function validateExpressions(clip){
 }
 export async function mountMomoExpressions({images,groups}){
  const root=new URL('../assets/characters/momo/parts/',import.meta.url);
- const files=['eye_open_left','eye_open_right','eye_happy_left','eye_happy_right','eye_closed_left','eye_closed_right','beak_closed','beak_smile','beak_open'];
+ const files=['eye_open_left','eye_open_right','eye_happy_left','eye_happy_right','brow_left','brow_right','beak_closed','beak_smile','beak_open'];
  await Promise.all(files.map(async name=>{const image=new Image();image.src=new URL(name+'.png',root).href;await image.decode();}));
  const tracked=new Map(['eye_open_left','eye_open_right','beak_closed'].map(name=>{
-  const image=images.get(name);let counter=null;
-  if(name.startsWith('eye_')){counter=document.createElement('span');counter.className='cat-group momo-eye-counter';image.parentElement.append(counter);counter.append(image);}
+  const image=images.get(name),counter=document.createElement('span');
+  counter.className='cat-group '+(name.startsWith('eye_')?'momo-eye-counter':'momo-beak-size');image.parentElement.append(counter);counter.append(image);
   return [name,{image,counter}];
  }));
  const browVisibility=new Map(['brow_left','brow_right'].map(name=>[name,images.get(name).style.visibility]));
  function render(pose){
   for(const [name,visibility]of browVisibility)images.get(name).style.visibility=pose.eyes==='open'?visibility:'hidden';
   for(const [name,{image,counter}]of tracked){
-   const eye=name.startsWith('eye_'),file=eye?`eye_${pose.eyes}_${name.endsWith('left')?'left':'right'}`:`beak_${pose.beak}`;
-   if(counter){
+   const eye=name.startsWith('eye_'),side=name.endsWith('left')?'left':'right',file=eye?(pose.eyes==='closed'?`brow_${side}`:`eye_${pose.eyes}_${side}`):`beak_${pose.beak}`;
+   if(eye){
     const scaleY=Number(window.gsap.getProperty(groups.get(name),'scaleY'));
     // Counter only the old blinking squash, around the animated pivot; preserve every authored key.
     counter.style.transformOrigin=groups.get(name).style.transformOrigin;
     counter.style.transform=pose.eyes!=='open'&&Math.abs(scaleY)>.00001?`scaleY(${1/scaleY})`:'none';
    }
+   else{
+    const scale=BEAK_SCALES[pose.beak];
+    counter.style.transformOrigin=scale===1?groups.get(name).style.transformOrigin:`${parseFloat(image.style.left)+parseFloat(image.style.width)/2}px ${parseFloat(image.style.top)+parseFloat(image.style.height)/2}px`;
+    counter.style.transform=scale===1?'none':`scale(${scale})`;
+   }
+   image.style.scale=eye&&pose.eyes==='closed'?'1 -1':'none';
    image.style.objectFit=file===name?'fill':'contain';image.style.objectPosition='center';
    const url=new URL(file+'.png',root).href;if(image.src!==url)image.src=url;
    image.dataset.expression=eye?pose.eyes:pose.beak;

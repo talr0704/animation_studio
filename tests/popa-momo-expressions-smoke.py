@@ -18,8 +18,8 @@ with sync_playwright() as p:
  def seek(clip,t):
   page.select_option('[data-editor="animationSelect"]',clip);page.locator('#momo-time').fill(str(t));page.locator('#momo-time').press('Tab')
  seek('happy',.6);assert page.locator('[data-sprite="eye_open_left"]').get_attribute('src').endswith('eye_happy_left.png');assert page.locator('[data-sprite="beak_closed"]').get_attribute('src').endswith('beak_smile.png');assert page.locator('[data-sprite="brow_left"]').evaluate('(e)=>e.style.visibility')=='hidden'
- seek('rest',1.5);assert page.locator('[data-sprite="eye_open_left"]').get_attribute('src').endswith('eye_closed_left.png');assert page.locator('[data-sprite="eye_open_left"]').bounding_box()['height']>20
- seek('idle',1.16);assert page.locator('[data-sprite="eye_open_left"]').get_attribute('src').endswith('eye_closed_left.png')
+ seek('rest',1.5);assert page.locator('[data-sprite="eye_open_left"]').get_attribute('src').endswith('brow_left.png');assert page.locator('[data-sprite="eye_open_left"]').bounding_box()['height']>20
+ seek('idle',1.16);assert page.locator('[data-sprite="eye_open_left"]').get_attribute('src').endswith('brow_left.png')
  seek('happy',.6);page.select_option('#momo-eyes','closed');page.select_option('#momo-beak','closed');page.locator('#momo-face-save').click()
  saved=page.evaluate('JSON.parse(localStorage.getItem("momoAnimationEditorDataV1"))');assert any(k['time']==.6 and k['eyes']=='closed' for k in saved['happy']['expressions'])
  for id,clip in corrected.items():assert saved[id]['keyframes']==clip['keyframes']
