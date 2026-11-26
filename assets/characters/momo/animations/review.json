@@ -11,5 +11,7 @@
     "brow_right",
     "beak_closed"
   ],
-  "approvedClips": []
+  "approvedClips": [],
+  "source": "source-art/characters/momo/animations/user-corrected.json",
+  "expressionTracks": true
 }

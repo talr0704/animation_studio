@@ -1,4 +1,4 @@
-import {mountMomoAnimation} from './momo-animation.js?v=1';
+import {mountMomoAnimation} from './momo-animation.js?v=expressions2';
 import {mountLayoutEditor} from '../cat-layout-editor.js?v=momo-animation3';
 const character=document.querySelector('.cat-character'),frame=document.querySelector('.cat-frame'),status=document.getElementById('character-status');
 const groups=new Map(),images=new Map(),headFollowers=[];let editor,mode='layout';const headParts=new Set(['hat','tie','eye_open_left','eye_open_right','brow_left','brow_right','beak_closed']);
@@ -15,10 +15,10 @@ try{
  await Promise.all(loads);
  const placementEditor=mountLayoutEditor({layout,character,storageKey:'momoAssemblyPositionsV1',draftRevision:JSON.stringify(layout),initialPart:'head',exportPath:'momo-assembly.json',partLabels:{},mountBefore:document.getElementById('layout-mount'),startEnabled:true,selectOnClick:true,allowImport:true,
   pause(){editor?.pause();editor?.reset();for(const animation of character.getAnimations({subtree:true}))animation.cancel();},
-  setPivot(name,x,y){const image=images.get(name);groups.get(name).style.transformOrigin=`${x}px ${y}px`;image.style.transformOrigin=`${x-parseFloat(image.style.left)}px ${y-parseFloat(image.style.top)}px`;if(name==='head')for(const follower of headFollowers)follower.style.transformOrigin=`${x}px ${y}px`;editor?.setPivot(name,x,y);},
+  setPivot(name,x,y){const image=images.get(name);groups.get(name).style.transformOrigin=`${x}px ${y}px`;image.style.transformOrigin=`${x-parseFloat(image.style.left)}px ${y-parseFloat(image.style.top)}px`;if(image.parentElement.classList.contains('momo-eye-counter'))image.parentElement.style.transformOrigin=`${x}px ${y}px`;if(name==='head')for(const follower of headFollowers)follower.style.transformOrigin=`${x}px ${y}px`;editor?.setPivot(name,x,y);},
  });
- editor=await mountMomoAnimation({character,groups,headFollowers,frame,isActive:()=>mode==='animation'});
- function setMode(value){editor.pause();editor.reset();mode=value;placementEditor.setEnabled(value==='layout');document.getElementById('momo-layout-panel').hidden=value!=='layout';document.getElementById('momo-animation-panel').hidden=value!=='animation';for(const button of document.querySelectorAll('[data-momo-mode]'))button.setAttribute('aria-pressed',String(button.dataset.momoMode===value));if(value==='animation')editor.seek(0);}
+ editor=await mountMomoAnimation({character,groups,headFollowers,frame,images,isActive:()=>mode==='animation'});
+ function setMode(value){editor.pause();editor.reset();mode=value;placementEditor.setEnabled(value==='layout');document.getElementById('momo-layout-panel').hidden=value!=='layout';document.getElementById('momo-animation-panel').hidden=value!=='animation';for(const button of document.querySelectorAll('[data-momo-mode]'))button.setAttribute('aria-pressed',String(button.dataset.momoMode===value));if(value==='animation')editor.seek(0);else editor.resetFace();}
  for(const button of document.querySelectorAll('[data-momo-mode]'))button.onclick=()=>setMode(button.dataset.momoMode);
  setMode(new URLSearchParams(location.search).get('mode')==='animation'?'animation':'layout');
  const zoom=document.getElementById('character-zoom'),preview=document.querySelector('.character-preview');

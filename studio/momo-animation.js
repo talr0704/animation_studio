@@ -1,9 +1,11 @@
-import {mountCatEditor} from '../cat-editor.js?v=momo-animation1';
+import {expressionAt,validateExpressions,mountMomoExpressions,DEFAULT_EXPRESSION} from './momo-expressions.js?v=1';
+import {mountCatEditor} from '../cat-editor.js?v=momo-expressions2';
 const poseFields=['x','y','rotate','scale','scaleX','scaleY','opacity','transformOriginX','transformOriginY'];
 export function validateMomoAnimations(clips,parts){
  if(!clips||typeof clips!=='object'||Array.isArray(clips)||!Object.keys(clips).length||Object.keys(clips).length>50)throw Error('קובץ האנימציות אינו תקין');
  for(const [id,clip]of Object.entries(clips)){
   if(!/^[a-z][a-z0-9-]{0,70}$/.test(id)||typeof clip.name!=='string'||clip.name.length>100||/[<>&]/.test(clip.name)||!Number.isFinite(clip.duration)||clip.duration<.1||clip.duration>30||typeof clip.loop!=='boolean'||!Array.isArray(clip.keyframes)||clip.keyframes.length>5000)throw Error('נתוני תנועה אינם תקינים');
+  validateExpressions(clip);
   const ids=new Set();
   for(const k of clip.keyframes){
    if(typeof k.id!=='string'||ids.has(k.id)||!parts.includes(k.part)||!Number.isFinite(k.time)||k.time<0||k.time>clip.duration||typeof k.ease!=='string'||!/^[a-zA-Z0-9.]+$/.test(k.ease)||!k.values||poseFields.some(key=>!Number.isFinite(k.values[key])))throw Error('פריים לא תקין');
@@ -14,12 +16,26 @@ export function validateMomoAnimations(clips,parts){
  return clips;
 }
 const translations={x:'מיקום X',y:'מיקום Y',rotate:'סיבוב',scale:'גודל',scaleX:'רוחב',scaleY:'גובה',opacity:'שקיפות',transformOriginX:'ציר X (%)',transformOriginY:'ציר Y (%)','Animation':'אנימציה','Timeline':'ציר זמן','Part':'חלק','Selected part':'החלק הנבחר','Transform':'מיקום ותנועה','Keyframes':'פריימים','Preview':'תצוגה','Import / Export':'שמירה וייצוא','New Animation':'תנועה חדשה','Rename Animation':'שינוי שם','Delete Animation':'מחיקת תנועה','Duplicate Animation':'שכפול תנועה','Duration':'משך בשניות','Zoom':'קירוב','Tracks':'מסלולים','Show all tracks':'כל החלקים','Show selected part only':'רק החלק הנבחר','Hide empty tracks':'הסתרת מסלולים ריקים','Snap':'הצמדה לזמן','Off':'ללא','Loop':'לולאה','Play':'ניגון','Pause':'השהיה','Stop':'עצירה','Fit animation':'התאמת ציר הזמן','Zoom in':'קירוב','Zoom out':'הרחקה','Ease':'אופי המעבר','Add Keyframe':'הוספת פריים','Update Keyframe':'עדכון הפריים','Delete Keyframe':'מחיקת הפריים','Copy Keyframe':'העתקת פריים','Paste Keyframe':'הדבקת פריים','Record Mode':'שמירת פריימים אוטומטית','Onion Skin':'הצגת פריים קודם','Reset Current Part to Base Pose':'איפוס החלק','Reset Entire Frame to Base Pose':'איפוס התנוחה','Clear Current Animation':'מחיקת פריימי התנועה','Copy Animation JSON':'העתקת קובץ האנימציות','Copy GSAP Code':'העתקת קוד','Download Animation JSON':'הורדת טיוטת האנימציות','Import Animation JSON':'טעינת אנימציות מהטקסט','Clear Saved Animation Data':'איפוס הטיוטה השמורה','Hide':'הצגה / הסתרה','RECORDING':'שמירה אוטומטית'};
-export async function mountMomoAnimation({character,groups,headFollowers,frame,isActive}){
+export async function mountMomoAnimation({character,groups,headFollowers,frame,images,isActive}){
  const response=await fetch(new URL('../assets/characters/momo/animations/studio-drafts.json',import.meta.url),{cache:'no-cache'});if(!response.ok)throw Error('לא ניתן לטעון את תנועות מומו');
  const clips=await response.json(),parts=[...groups.keys(),'robot'];validateMomoAnimations(clips,parts);
+ const face=await mountMomoExpressions({images,groups});
+ const eyeInput=document.getElementById('momo-eyes'),beakInput=document.getElementById('momo-beak'),markers=document.getElementById('momo-face-keys');
+ function updateExpressionPreview({animation,time}){
+  const pose=isActive()?expressionAt(animation,time):DEFAULT_EXPRESSION;face.render(pose);eyeInput.value=pose.eyes;beakInput.value=pose.beak;
+  document.getElementById('momo-face-delete').disabled=!(animation.expressions??[]).some(k=>Math.abs(k.time-time)<.001);
+  const signature=JSON.stringify(animation.expressions??[]);if(markers.dataset.signature!==signature){markers.dataset.signature=signature;markers.replaceChildren();for(const key of animation.expressions??[]){const button=document.createElement('button');button.type='button';button.textContent=key.time.toFixed(2)+' · '+({open:'פתוחות',happy:'שמחות',closed:'עצומות'})[key.eyes];button.onclick=()=>editor.seek(key.time);markers.append(button);}}
+ }
  const labels={robot:'מומו כולו'};for(const [name,group]of groups)labels[name]=group.querySelector('img').alt;
  character.style.transformOrigin='220px 420px';
- const editor=mountCatEditor({character,groups,headFollowers,stop(){},storageKey:'momoAnimationEditorDataV1',defaultAnimations:clips,editorMount:document.getElementById('momo-animation-panel'),editorTitle:'אנימציות מומו — טיוטות',downloadFilename:'momo-animation-drafts.json',panelWidthKey:'momoAnimationEditorWidth',partLabels:labels,validateAnimationData:data=>validateMomoAnimations(data,parts),isActive,cyclePartsOnTab:false,recordByDefault:true,initialTrackFilter:'selected',rescaleDuration:true,valueBounds:{x:[-2000,2000],y:[-2000,2000],rotate:[-720,720],scale:[0,3],scaleX:[0,3],scaleY:[0,3],opacity:[0,1],transformOriginX:[-300,300],transformOriginY:[-300,300]}});
+ const editor=mountCatEditor({character,groups,headFollowers,stop(){},storageKey:'momoAnimationEditorDataV1',draftRevision:JSON.stringify(clips),onPreview:updateExpressionPreview,defaultAnimations:clips,editorMount:document.getElementById('momo-animation-panel'),editorTitle:'אנימציות מומו — טיוטות',downloadFilename:'momo-animation-drafts.json',panelWidthKey:'momoAnimationEditorWidth',partLabels:labels,validateAnimationData:data=>validateMomoAnimations(data,parts),isActive,cyclePartsOnTab:false,recordByDefault:true,initialTrackFilter:'selected',rescaleDuration:true,valueBounds:{x:[-2000,2000],y:[-2000,2000],rotate:[-720,720],scale:[0,3],scaleX:[0,3],scaleY:[0,3],opacity:[0,1],transformOriginX:[-300,300],transformOriginY:[-300,300]}});
+ editor.resetFace=()=>face.reset();
+ eyeInput.onchange=beakInput.onchange=()=>{editor.pause();face.render({eyes:eyeInput.value,beak:beakInput.value});};
+ document.getElementById('momo-face-save').onclick=()=>{
+  const time=Number(editor.currentTime.toFixed(3)),pose={time,eyes:eyeInput.value,beak:beakInput.value};
+  editor.updateCurrentAnimation(clip=>{clip.expressions=(clip.expressions??[]).filter(k=>Math.abs(k.time-time)>=.001);clip.expressions.push(pose);clip.expressions.sort((a,b)=>a.time-b.time);});
+ };
+ document.getElementById('momo-face-delete').onclick=()=>editor.updateCurrentAnimation(clip=>{clip.expressions=(clip.expressions??[]).filter(k=>Math.abs(k.time-editor.currentTime)>=.001);});
  const panel=document.querySelector('#momo-animation-panel .animation-editor'),dictionary={...translations,...labels};
  function translate(){
   const walker=document.createTreeWalker(panel,NodeFilter.SHOW_TEXT);let node;

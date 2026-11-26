@@ -1,5 +1,5 @@
 // Existing timeline editor, adapted to the assembled cat's part groups.
-export function mountCatEditor({ character: robot, groups, stop: pauseAnimations, headFollowers = [], storageKey = 'popaAnimationEditorDataV2', defaultAnimations = null, editorMount = document.body, editorTitle = 'Animation Editor', downloadFilename = 'robot-animation-data.json', partLabels = {}, panelWidthKey = 'robotAnimationEditorWidth', validateAnimationData = null, isActive = () => true, cyclePartsOnTab = true, recordByDefault = false, initialTrackFilter = 'all', valueBounds = null, rescaleDuration = false }) {
+export function mountCatEditor({ character: robot, groups, stop: pauseAnimations, headFollowers = [], storageKey = 'popaAnimationEditorDataV2', defaultAnimations = null, editorMount = document.body, editorTitle = 'Animation Editor', downloadFilename = 'robot-animation-data.json', partLabels = {}, panelWidthKey = 'robotAnimationEditorWidth', validateAnimationData = null, isActive = () => true, cyclePartsOnTab = true, recordByDefault = false, initialTrackFilter = 'all', valueBounds = null, rescaleDuration = false, draftRevision = null, onPreview = () => {} }) {
 const ANIMATION_EDITOR_ENABLED = true;
 const gsap = window.gsap;
 const partElements = Object.fromEntries(groups);
@@ -94,6 +94,7 @@ function setPartValues(partName, values) {
   if(valueBounds){values={...values};for(const [field,bounds]of Object.entries(valueBounds))if(values[field]!==undefined)values[field]=Number.isFinite(values[field])?Math.min(bounds[1],Math.max(bounds[0],values[field])):getPartValues(partName)[field];}
   currentEditorValues[partName] = { ...getPartValues(partName), ...values };
   applyEditorValues(partName, currentEditorValues[partName]);
+  onPreview({animationId:selectedAnimationKey,animation:getCurrentAnimation(),time:editorCurrentTime});
 }
 
 function applyEditorValues(partName, values) {
@@ -122,7 +123,8 @@ function syncEditorValuesFromBase() {
 // ==================================================
 function loadAnimationData() {
   try {
-    const saved = localStorage.getItem(ANIMATION_STORAGE_KEY);
+    const matchingRevision=draftRevision===null||localStorage.getItem(ANIMATION_STORAGE_KEY+':source')===draftRevision;
+    const saved = matchingRevision?localStorage.getItem(ANIMATION_STORAGE_KEY):null;
     if (saved) { const data=JSON.parse(saved); if(validateAnimationData)validateAnimationData(data); return data; }
   } catch (error) {
     console.warn('Could not load animation data from localStorage.', error);
@@ -132,6 +134,7 @@ function loadAnimationData() {
 
 function saveAnimationData() {
   localStorage.setItem(ANIMATION_STORAGE_KEY, JSON.stringify(ANIMATION_DATA));
+  if(draftRevision!==null)localStorage.setItem(ANIMATION_STORAGE_KEY+':source',draftRevision);
 }
 
 function clearSavedAnimationData() {
@@ -483,6 +486,7 @@ function previewAtTime(time) {
     currentEditorValues[partName] = { ...values };
     applyEditorValues(partName, values);
   });
+  onPreview({animationId:selectedAnimationKey,animation:getCurrentAnimation(),time:editorCurrentTime});
   refreshEditorTransformInputs();
   updatePlayhead();
   renderOnionSkin();
@@ -768,7 +772,7 @@ function handleAnimationEditorChange(event) {
   if (target.matches('[data-editor="duration"]')) {
     const animation=getCurrentAnimation(),oldDuration=animation.duration;
     animation.duration=rescaleDuration?Math.min(30,Math.max(.1,Number(target.value)||oldDuration)):Math.max(.1,Number(target.value));
-    if(rescaleDuration){const ratio=animation.duration/oldDuration;for(const key of animation.keyframes)key.time*=ratio;editorCurrentTime*=ratio;target.value=animation.duration;}
+    if(rescaleDuration){const ratio=animation.duration/oldDuration;for(const key of animation.keyframes)key.time*=ratio;if(Array.isArray(animation.expressions))for(const key of animation.expressions)key.time*=ratio;editorCurrentTime*=ratio;target.value=animation.duration;}
     saveAnimationData();
     renderTimelineRuler();
     renderTimelineMarkers();
@@ -1404,12 +1408,13 @@ function handleAnimationEditorChange(event) {
     const state = saveEditorScrollState();
     const animation=getCurrentAnimation(),oldDuration=animation.duration;
     animation.duration=rescaleDuration?Math.min(30,Math.max(.1,Number(target.value)||oldDuration)):Math.max(.1,Number(target.value));
-    if(rescaleDuration){const ratio=animation.duration/oldDuration;for(const key of animation.keyframes)key.time*=ratio;editorCurrentTime*=ratio;target.value=animation.duration;}
+    if(rescaleDuration){const ratio=animation.duration/oldDuration;for(const key of animation.keyframes)key.time*=ratio;if(Array.isArray(animation.expressions))for(const key of animation.expressions)key.time*=ratio;editorCurrentTime*=ratio;target.value=animation.duration;}
     editorCurrentTime = clamp(editorCurrentTime, 0, getCurrentAnimation().duration);
     saveAnimationData();
     renderTimelineRuler();
     renderTimelineMarkers();
     updatePlayhead();
+    if(rescaleDuration)previewAtTime(editorCurrentTime);
     restoreEditorScrollState(state);
   }
   if (target.matches('[data-editor="zoom"]')) {
@@ -1485,6 +1490,8 @@ return {
   get selectedPart(){return editorSelectedPart;},
   get currentTime(){return editorCurrentTime;},
   get duration(){return getCurrentAnimation().duration;},
+  get currentAnimation(){return structuredClone(getCurrentAnimation());},
+  updateCurrentAnimation(update){const next=structuredClone(getCurrentAnimation());update(next);if(validateAnimationData)validateAnimationData({...ANIMATION_DATA,[selectedAnimationKey]:next});ANIMATION_DATA[selectedAnimationKey]=next;saveAnimationData();renderAnimationEditor();previewAtTime(editorCurrentTime);},
   getPose: name=>({...getPartValues(name)}),
   selectPart(name){if(!partElements[name])return;pauseEditorAnimation();editorSelectedPart=name;renderAnimationEditor();refreshEditorTransformInputs();updateSelectedHighlightForEditor();},
   setPose(name,values,{record=false}={}){if(!partElements[name])return;pauseEditorAnimation();editorSelectedPart=name;setPartValues(name,{...getPartValues(name),...values});if(record)upsertKeyframe();refreshEditorTransformInputs();updateSelectedHighlightForEditor();},
