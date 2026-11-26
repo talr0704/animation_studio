@@ -182,7 +182,8 @@
       "flipX": false,
       "zIndex": 14,
       "pivotX": 165.99999999999966,
-      "pivotY": 178.9305555555562
+      "pivotY": 178.9305555555562,
+      "visible": false
     },
     {
       "file": "parts/brow_right.png",
@@ -193,7 +194,8 @@
       "flipX": false,
       "zIndex": 15,
       "pivotX": 268.44444444444485,
-      "pivotY": 178.90038314176397
+      "pivotY": 178.90038314176397,
+      "visible": false
     },
     {
       "file": "parts/beak_closed.png",

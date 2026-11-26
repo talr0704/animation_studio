@@ -8,7 +8,7 @@ try{
  for(const [index,layer]of layout.layersBackToFront.entries()){
   const name=layer.file.split('/').at(-1).replace('.png',''),sprite=layout.sprites.find(s=>s.file===layer.file),[width,height]=sprite.displaySize;
   const outer=document.createElement('div');outer.className='cat-group cat-layer';outer.style.zIndex=layer.zIndex??index;const follower=document.createElement('div');follower.className='cat-group';const group=document.createElement('div');group.className='cat-group';if(headParts.has(name))headFollowers.push(follower);group.style.transformOrigin=`${layer.pivotX}px ${layer.pivotY}px`;
-  const image=new Image();image.className='cat-part';image.dataset.sprite=name;image.alt=layer.label??name;image.draggable=false;
+  const image=new Image();image.className='cat-part';image.dataset.sprite=name;image.alt=layer.label??name;image.draggable=false;image.style.visibility=layer.visible===false?'hidden':'';
   Object.assign(image.style,{width:width+'px',height:height+'px',left:layer.centerX-width/2+'px',top:layer.centerY-height/2+'px'});
   image.src=new URL('../assets/characters/momo/'+layer.file,import.meta.url).href;loads.push(image.decode());group.append(image);follower.append(group);outer.append(follower);character.append(outer);groups.set(name,group);images.set(name,image);
  }

@@ -14,6 +14,7 @@ export async function mountLayeredCharacter(container,{assemblyUrl,expectedId}) 
   const [width,height]=size,left=layer.centerX-width/2,top=layer.centerY-height/2;
   const image=new Image();image.alt='';image.draggable=false;image.dataset.characterPart=layer.file.split('/').at(-1).replace('.png','');
   Object.assign(image.style,{position:'absolute',maxWidth:'none',objectFit:'fill',left:left+'px',top:top+'px',width:width+'px',height:height+'px',zIndex:String(layer.zIndex),transformOrigin:`${layer.pivotX-left}px ${layer.pivotY-top}px`,transform:`rotate(${layer.clockwiseDegrees}deg) scaleX(${layer.flipX?-1:1})`,pointerEvents:'none'});
+  image.style.visibility=layer.visible===false?'hidden':'';
   if(layer.clipPath)image.style.clipPath=layer.clipPath;
   image.src=new URL(layer.file,assemblyUrl).href;loads.push(image.decode());root.append(image);
  }

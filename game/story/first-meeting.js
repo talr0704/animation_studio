@@ -1,4 +1,4 @@
-import {mountLayeredCharacter} from '../../shared/layered-character.js';
+import {mountLayeredCharacter} from '../../shared/layered-character.js?v=visibility2';
 import {progressStore} from '../progress/store.js?v=2';
 
 export function conversationEntry(state) {
