@@ -1,4 +1,4 @@
-import {expressionAt,validateExpressions,mountMomoExpressions,DEFAULT_EXPRESSION} from './momo-expressions.js?v=calm-arc2';
+import {expressionAt,validateExpressions,mountMomoExpressions,DEFAULT_EXPRESSION} from './momo-expressions.js?v=larger-eyes3';
 import {mountCatEditor} from '../cat-editor.js?v=momo-expressions2';
 const poseFields=['x','y','rotate','scale','scaleX','scaleY','opacity','transformOriginX','transformOriginY'];
 export function validateMomoAnimations(clips,parts){

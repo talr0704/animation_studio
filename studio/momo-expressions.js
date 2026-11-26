@@ -1,4 +1,5 @@
-export const BEAK_SCALES={closed:1,smile:1.08,open:1.08};
+export const BEAK_SCALES={closed:1,smile:1.08,open:1.16};
+export const EYE_SCALES={open:1,happy:1.16,closed:1.16};
 export const DEFAULT_EXPRESSION={eyes:'open',beak:'closed'};
 export function expressionAt(clip,time){
  let pose={...DEFAULT_EXPRESSION};
@@ -39,7 +40,7 @@ export async function mountMomoExpressions({images,groups}){
     counter.style.transformOrigin=scale===1?groups.get(name).style.transformOrigin:`${parseFloat(image.style.left)+parseFloat(image.style.width)/2}px ${parseFloat(image.style.top)+parseFloat(image.style.height)/2}px`;
     counter.style.transform=scale===1?'none':`scale(${scale})`;
    }
-   image.style.scale=eye&&pose.eyes==='closed'?'1 -1':'none';
+   image.style.scale=eye&&pose.eyes==='closed'?`${EYE_SCALES.closed} ${-EYE_SCALES.closed}`:eye&&pose.eyes==='happy'?String(EYE_SCALES.happy):'none';
    image.style.objectFit=file===name?'fill':'contain';image.style.objectPosition='center';
    const url=new URL(file+'.png',root).href;if(image.src!==url)image.src=url;
    image.dataset.expression=eye?pose.eyes:pose.beak;

@@ -1,4 +1,4 @@
-import {mountMomoAnimation} from './momo-animation.js?v=expressions3';
+import {mountMomoAnimation} from './momo-animation.js?v=larger-expressions4';
 import {mountLayoutEditor} from '../cat-layout-editor.js?v=momo-animation3';
 const character=document.querySelector('.cat-character'),frame=document.querySelector('.cat-frame'),status=document.getElementById('character-status');
 const groups=new Map(),images=new Map(),headFollowers=[];let editor,mode='layout';const headParts=new Set(['hat','tie','eye_open_left','eye_open_right','brow_left','brow_right','beak_closed']);
