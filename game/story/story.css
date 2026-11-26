@@ -26,3 +26,6 @@
 .story-live-avatar[hidden]{display:none}
 .story-conversation #story-choices{clear:both}
 @media(max-width:700px),(max-height:520px){.story-live-avatar{width:92px;margin:10px 12px 8px 0}}
+/* Keep the live conversation above arrival toasts and the footer controls. */
+.story-overlay{z-index:3200}
+.world:has(>.story-overlay:not([hidden])){z-index:10}
