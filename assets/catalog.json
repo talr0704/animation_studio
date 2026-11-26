@@ -43,7 +43,12 @@
         "assets/scenes/garden/garden.svg",
         "assets/scenes/garden/gold.svg",
         "assets/scenes/garden/orange.svg",
-        "assets/scenes/garden/rain.svg"
+        "assets/scenes/garden/rain.svg",
+        "assets/scenes/garden/farming/images/empty.svg",
+        "assets/scenes/garden/farming/images/planted.svg",
+        "assets/scenes/garden/farming/images/growing.svg",
+        "assets/scenes/garden/farming/images/ready.svg",
+        "assets/scenes/garden/farming/images/harvested.svg"
       ]
     },
     {

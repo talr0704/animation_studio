@@ -89,3 +89,7 @@ python3 -m http.server 4205
 python3 tests/popa-progress-smoke.py
 python3 tests/popa-manicure-smoke.py http://localhost:4205/
 ```
+
+## גידול תותי ההיכרות
+
+כללי הגידול הראשונים נמצאים כעת ב־`game/farming/strawberries.js`: שלוש ערוגות סיפור, השקיה אחת ו־20 שניות גדילה. הקטיף האחרון מעביר לשלב האפייה באותה כתיבה עם הוספת התות למלאי. מבנה השמירה וגרסתו נשארו ללא שינוי. פרטים ב־`docs/strawberry-garden.md`.

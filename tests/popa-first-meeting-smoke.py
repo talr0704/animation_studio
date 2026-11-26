@@ -21,7 +21,7 @@ with sync_playwright() as p:
  talk('#first-quest');assert page.locator('#story-dialog').get_attribute('data-node')=='growing';assert state()['receipts']==receipts
  page.locator('#story-close').focus();page.keyboard.press('Shift+Tab');assert page.locator('#story-choices button').last.evaluate('(e)=>e===document.activeElement')
  page.keyboard.press('Escape');assert page.locator('#story-dialog').is_hidden();assert not page.locator('.world-paths').evaluate('(e)=>e.inert')
- page.locator('#garden-tab').click();assert page.locator('#milli-npc').is_hidden();assert page.locator('#first-quest').is_hidden();page.locator('#dialog-secondary').click();assert page.locator('#milli-npc').is_visible()
+ page.locator('#garden-tab').click();assert page.locator('#milli-npc').is_hidden();assert page.locator('#first-quest').is_hidden();page.locator('#farm-fruit-game').click();page.locator('#dialog-secondary').click();assert page.locator('#milli-npc').is_visible()
  page.locator('#edit-room').click();assert page.locator('#milli-npc').is_hidden();page.locator('#room-edit-done').click();assert page.locator('#milli-npc').is_visible()
  for width,height in [(390,844),(844,390)]:
   page.set_viewport_size({'width':width,'height':height});page.clock.run_for(100);talk()

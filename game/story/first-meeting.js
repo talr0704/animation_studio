@@ -20,7 +20,7 @@ export function acceptInvitation(store = progressStore) {
 }
 
 export async function mountFirstMeeting({world, onApproach, onStart, onClose, onProgress}) {
- const response = await fetch(new URL('../../assets/story/first-cake.json', import.meta.url), {cache: 'no-cache'});
+ const response = await fetch(new URL('../../assets/story/first-cake.json?v=strawberries1', import.meta.url), {cache: 'no-cache'});
  if (!response.ok) throw Error('לא ניתן לטעון את השיחה עם מומו');
  const data = await response.json();
  const npc = document.createElement('button'); npc.type = 'button'; npc.id = 'milli-npc'; npc.className = 'story-npc'; npc.setAttribute('aria-pressed', 'false');

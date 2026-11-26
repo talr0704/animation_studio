@@ -129,3 +129,7 @@ motions on the existing character timeline. Momo has separate animation and
 placement storage. Dragging a part at a chosen time records a keyframe; export
 `momo-animation-drafts.json` for review. These drafts are **not loaded by the game**.
 The approved snapshot in `assets/characters/momo/animations/approved.json` now drives idle, greeting, dialogue, curiosity, happiness and rest in the game. Future studio edits stay separate. See `assets/characters/momo/animations/README.md` for the approval workflow.
+
+## First story crop
+
+After accepting Momo’s invitation, the garden opens three strawberry plots. Plant, water, wait 20 seconds, then harvest each plot once. Crop timestamps survive reloads. The third harvest saves the strawberries and advances the story to baking with Bonnie in one transaction. The fruit-catching game remains available separately; Bonnie and baking are the next implementation step. See `docs/strawberry-garden.md`.

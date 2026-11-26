@@ -45,7 +45,7 @@ with sync_playwright() as p:
   page.locator('#garden-tab').click()
   time=actor.get_attribute('data-motion-time');page.clock.run_for(1500)
   assert actor.get_attribute('data-motion-time')==time
-  page.locator('#dialog-secondary').click()
+  page.locator('#farm-fruit-game').click();page.locator('#dialog-secondary').click()
   assert actor.get_attribute('data-action')=='idle'
   page.locator('#edit-room').click();time=actor.get_attribute('data-motion-time');page.clock.run_for(1500)
   assert actor.get_attribute('data-motion-time')==time
