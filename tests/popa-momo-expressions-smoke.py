@@ -26,7 +26,7 @@ with sync_playwright() as p:
  page.reload(wait_until='networkidle');page.wait_for_selector('[data-ready="true"]');seek('happy',.6);assert page.input_value('#momo-eyes')=='closed'
  page.locator('[data-editor="duration"]').fill('.9');page.locator('[data-editor="duration"]').press('Tab');saved=page.evaluate('JSON.parse(localStorage.getItem("momoAnimationEditorDataV1"))');assert max(k['time'] for k in saved['happy']['expressions'])==.9
  page.locator('[data-momo-mode="layout"]').click();assert page.locator('[data-sprite="eye_open_left"]').get_attribute('src').endswith('eye_open_left.png');assert page.locator('[data-sprite="brow_left"]').evaluate('(e)=>e.style.visibility')=='hidden'
- page.goto(base+'game.html',wait_until='networkidle');page.wait_for_selector('#loading',state='hidden');assert page.locator('[data-character-part="eye_open_left"]').get_attribute('src').endswith('eye_open_left.png');assert page.locator('[data-character="momo"]').evaluate('(e)=>e.getAnimations({subtree:true}).length')==0
+ page.goto(base+'game.html',wait_until='networkidle');page.wait_for_selector('#loading',state='hidden');assert page.locator('[data-character-part="eye_open_left"]').get_attribute('src').endswith('eye_open_left.png');assert page.locator('[data-character="momo"]').get_attribute('data-action')=='idle'
  for side in ['left','right']:assert not page.locator('[data-character-part="brow_'+side+'"]').is_visible()
  assert not errors,errors;b.close()
-print('PASS exact corrected body keys, stale draft isolation, painted happy/sleep/blink eyes, editable facial keys, duration scaling, reload, layout restore and static game')
+print('PASS exact corrected body keys, stale draft isolation, painted happy/sleep/blink eyes, editable facial keys, duration scaling, reload, layout restore and approved game motion')

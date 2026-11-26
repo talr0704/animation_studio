@@ -4,7 +4,7 @@ with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox']);page=b.new_page(viewport={'width':1440,'height':1000});page.clock.install();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto('http://localhost:4205/game.html',wait_until='networkidle');page.wait_for_selector('#loading',state='hidden')
  def talk(button='#milli-npc'):
-  page.locator(button).click();assert page.locator('#story-dialog').is_hidden()
+  page.locator(button).click()
   for _ in range(100):
    page.clock.run_for(100)
    if page.locator('#story-dialog').is_visible():return

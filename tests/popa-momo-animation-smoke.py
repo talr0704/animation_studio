@@ -30,6 +30,6 @@ with sync_playwright() as p:
  page.goto(URL+'game.html',wait_until='networkidle');page.wait_for_selector('#loading',state='hidden');assert not any('studio-drafts.json' in url for url in requests)
  head=next(l for l in json.loads(Path('assets/characters/momo/assembly.json').read_text())['layersBackToFront'] if l['file']=='parts/head.png');size=next(s['displaySize'] for s in json.loads(Path('assets/characters/momo/assembly.json').read_text())['sprites'] if s['file']=='parts/head.png')
  assert abs(page.locator('[data-character-part="head"]').evaluate('(e)=>parseFloat(e.style.left)')-(head['centerX']-size[0]/2))<.001
- assert page.locator('[data-character="momo"]').evaluate('(e)=>e.getAnimations({subtree:true}).length')==0
+ assert page.locator('[data-character="momo"]').get_attribute('data-action')=='idle'
  assert not errors,errors;b.close()
-print('PASS seven editable drafts, playback, automatic keys, head-following, JSON export, persistence, mobile and unchanged static game')
+print('PASS seven editable drafts, playback, automatic keys, head-following, JSON export, persistence, mobile and approved runtime isolated from studio edits')

@@ -1,20 +1,7 @@
-import {expressionAt,validateExpressions,mountMomoExpressions,DEFAULT_EXPRESSION} from './momo-expressions.js?v=larger-eyes3';
+import {expressionAt,validateExpressions,mountMomoExpressions,DEFAULT_EXPRESSION} from '../shared/momo-expressions.js?v=game1';
 import {mountCatEditor} from '../cat-editor.js?v=momo-expressions2';
-const poseFields=['x','y','rotate','scale','scaleX','scaleY','opacity','transformOriginX','transformOriginY'];
-export function validateMomoAnimations(clips,parts){
- if(!clips||typeof clips!=='object'||Array.isArray(clips)||!Object.keys(clips).length||Object.keys(clips).length>50)throw Error('קובץ האנימציות אינו תקין');
- for(const [id,clip]of Object.entries(clips)){
-  if(!/^[a-z][a-z0-9-]{0,70}$/.test(id)||typeof clip.name!=='string'||clip.name.length>100||/[<>&]/.test(clip.name)||!Number.isFinite(clip.duration)||clip.duration<.1||clip.duration>30||typeof clip.loop!=='boolean'||!Array.isArray(clip.keyframes)||clip.keyframes.length>5000)throw Error('נתוני תנועה אינם תקינים');
-  validateExpressions(clip);
-  const ids=new Set();
-  for(const k of clip.keyframes){
-   if(typeof k.id!=='string'||ids.has(k.id)||!parts.includes(k.part)||!Number.isFinite(k.time)||k.time<0||k.time>clip.duration||typeof k.ease!=='string'||!/^[a-zA-Z0-9.]+$/.test(k.ease)||!k.values||poseFields.some(key=>!Number.isFinite(k.values[key])))throw Error('פריים לא תקין');
-   ids.add(k.id);const v=k.values;
-   if(Math.abs(v.x)>2000||Math.abs(v.y)>2000||Math.abs(v.rotate)>720||v.opacity<0||v.opacity>1||['scale','scaleX','scaleY'].some(key=>v[key]<0||v[key]>3)||Math.abs(v.transformOriginX)>300||Math.abs(v.transformOriginY)>300)throw Error('ערכי פריים מחוץ לטווח');
-  }
- }
- return clips;
-}
+export {validateMomoAnimations} from '../shared/momo-motion.js';
+import {validateMomoAnimations} from '../shared/momo-motion.js';
 const translations={x:'מיקום X',y:'מיקום Y',rotate:'סיבוב',scale:'גודל',scaleX:'רוחב',scaleY:'גובה',opacity:'שקיפות',transformOriginX:'ציר X (%)',transformOriginY:'ציר Y (%)','Animation':'אנימציה','Timeline':'ציר זמן','Part':'חלק','Selected part':'החלק הנבחר','Transform':'מיקום ותנועה','Keyframes':'פריימים','Preview':'תצוגה','Import / Export':'שמירה וייצוא','New Animation':'תנועה חדשה','Rename Animation':'שינוי שם','Delete Animation':'מחיקת תנועה','Duplicate Animation':'שכפול תנועה','Duration':'משך בשניות','Zoom':'קירוב','Tracks':'מסלולים','Show all tracks':'כל החלקים','Show selected part only':'רק החלק הנבחר','Hide empty tracks':'הסתרת מסלולים ריקים','Snap':'הצמדה לזמן','Off':'ללא','Loop':'לולאה','Play':'ניגון','Pause':'השהיה','Stop':'עצירה','Fit animation':'התאמת ציר הזמן','Zoom in':'קירוב','Zoom out':'הרחקה','Ease':'אופי המעבר','Add Keyframe':'הוספת פריים','Update Keyframe':'עדכון הפריים','Delete Keyframe':'מחיקת הפריים','Copy Keyframe':'העתקת פריים','Paste Keyframe':'הדבקת פריים','Record Mode':'שמירת פריימים אוטומטית','Onion Skin':'הצגת פריים קודם','Reset Current Part to Base Pose':'איפוס החלק','Reset Entire Frame to Base Pose':'איפוס התנוחה','Clear Current Animation':'מחיקת פריימי התנועה','Copy Animation JSON':'העתקת קובץ האנימציות','Copy GSAP Code':'העתקת קוד','Download Animation JSON':'הורדת טיוטת האנימציות','Import Animation JSON':'טעינת אנימציות מהטקסט','Clear Saved Animation Data':'איפוס הטיוטה השמורה','Hide':'הצגה / הסתרה','RECORDING':'שמירה אוטומטית'};
 export async function mountMomoAnimation({character,groups,headFollowers,frame,images,isActive}){
  const response=await fetch(new URL('../assets/characters/momo/animations/studio-drafts.json',import.meta.url),{cache:'no-cache'});if(!response.ok)throw Error('לא ניתן לטעון את תנועות מומו');

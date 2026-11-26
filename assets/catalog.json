@@ -21,7 +21,8 @@
       "studioAnimations": [
         "assets/characters/momo/animations/studio-drafts.json"
       ],
-      "animationStatus": "draft"
+      "animationStatus": "approved",
+      "animations": "assets/characters/momo/animations/approved.json"
     }
   ],
   "scenes": [

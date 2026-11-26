@@ -122,10 +122,10 @@ Use `studio.html?category=furniture` for independent layered furniture motion: c
 
 A new authored sitting study is available at `index.html?edit=1&reference=sofa&motion=sit-demo`. Its native character clips are stored in `assets/characters/popa/animations/sitting-demo.json`: sitting down, a relaxed seated loop, and standing up. They add new animation IDs and preserve existing edited clips. The relaxed loop starts playing automatically unless reduced motion is requested. This is a studio study; it does not replace the published game interaction.
 
-## Momo animation review
+## Momo animations
 
 Open `character-studio.html?character=momo&mode=animation` to review seven draft
 motions on the existing character timeline. Momo has separate animation and
 placement storage. Dragging a part at a chosen time records a keyframe; export
 `momo-animation-drafts.json` for review. These drafts are **not loaded by the game**.
-See `assets/characters/momo/animations/README.md` for the approval workflow.
+The approved snapshot in `assets/characters/momo/animations/approved.json` now drives idle, greeting, dialogue, curiosity, happiness and rest in the game. Future studio edits stay separate. See `assets/characters/momo/animations/README.md` for the approval workflow.

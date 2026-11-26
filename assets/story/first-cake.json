@@ -7,7 +7,9 @@
     "name": "מומו",
     "portrait": null,
     "assembly": "assets/characters/momo/assembly.json",
-    "character": "momo"
+    "character": "momo",
+    "animations": "assets/characters/momo/animations/approved.json",
+    "animationReview": "assets/characters/momo/animations/review.json"
   },
   "steps": {
     "meet-milli": "להכיר את מומו",

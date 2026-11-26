@@ -1,6 +1,6 @@
 {
-  "status": "draft",
-  "gameEnabled": false,
+  "status": "approved",
+  "gameEnabled": true,
   "clips": "studio-drafts.json",
   "headFollowers": [
     "hat",
@@ -11,7 +11,16 @@
     "brow_right",
     "beak_closed"
   ],
-  "approvedClips": [],
+  "approvedClips": [
+    "idle",
+    "wave",
+    "happy",
+    "curious",
+    "walk",
+    "talk",
+    "rest"
+  ],
   "source": "source-art/characters/momo/animations/user-corrected.json",
-  "expressionTracks": true
+  "expressionTracks": true,
+  "gameClips": "approved.json"
 }

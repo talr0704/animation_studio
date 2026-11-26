@@ -38,3 +38,7 @@ node --test tests/popa-first-meeting.test.js tests/popa-progress.test.js
 python3 -m http.server 4205
 python3 tests/popa-first-meeting-smoke.py
 ```
+
+## אנימציות מאושרות
+
+המשחק טוען את `assets/characters/momo/animations/approved.json`, בכפוף לאישור ב־`review.json`. הנגן `shared/momo-motion.js` משתמש באותם פריימים, צירים והבעות כמו הסטודיו. `shared/momo-expressions.js` משותף לשני המסכים. נפנוף בכניסה לשיחה, דיבור, סקרנות ושמחה מופעלים מהשיחה; מנוחה מתחילה אחרי המתנה. הדמות מועברת לחלונית השיחה וחוזרת לחדר בסגירה. השמירה והמשימה נשארו באותו פורמט.

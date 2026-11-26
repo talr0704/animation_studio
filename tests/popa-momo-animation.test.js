@@ -1,13 +1,13 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
 const root='assets/characters/momo/',rig=JSON.parse(fs.readFileSync(root+'assembly.json','utf8')),clips=JSON.parse(fs.readFileSync(root+'animations/studio-drafts.json','utf8')),parts=rig.layersBackToFront.map(p=>p.file.split('/').at(-1).replace('.png','')).concat('robot');
 const runtime=import('../studio/momo-animation.js');
-test('all seven corrected Momo motions are valid drafts and preserve user motion keys',async()=>{
+test('all seven approved Momo motions are valid and preserve user motion keys',async()=>{
  const {validateMomoAnimations}=await runtime;validateMomoAnimations(clips,parts);assert.equal(Object.keys(clips).length,7);
  for(const clip of Object.values(clips)){
   assert.ok(clip.keyframes.some(k=>k.time>0&&k.time<clip.duration&&(k.values.rotate!==0||k.values.y!==0||k.values.scaleY!==1)));
  }
  const corrected=JSON.parse(fs.readFileSync('source-art/characters/momo/animations/user-corrected.json','utf8'));for(const [id,clip]of Object.entries(clips)){assert.deepEqual(clip.keyframes,corrected[id].keyframes);assert.equal(clip.duration,corrected[id].duration);assert.equal(clip.loop,corrected[id].loop);}
- const review=JSON.parse(fs.readFileSync(root+'animations/review.json','utf8'));assert.equal(review.status,'draft');assert.equal(review.gameEnabled,false);assert.deepEqual(review.approvedClips,[]);
+ const review=JSON.parse(fs.readFileSync(root+'animations/review.json','utf8'));assert.deepEqual(JSON.parse(fs.readFileSync(root+'animations/approved.json','utf8')),clips);assert.equal(review.status,'approved');assert.equal(review.gameEnabled,true);assert.deepEqual(review.approvedClips,Object.keys(clips));
 });
 test('animation import rejects foreign parts, invalid scales and invalid time ranges',async()=>{
  const {validateMomoAnimations}=await runtime;

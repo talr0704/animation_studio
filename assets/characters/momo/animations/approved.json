@@ -1,0 +1,6087 @@
+{
+  "idle": {
+    "name": "עמידה רגועה",
+    "duration": 3,
+    "loop": true,
+    "keyframes": [
+      {
+        "id": "idle-beak_closed-0",
+        "time": 0,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "idle-brow_left-0",
+        "time": 0,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "idle-brow_right-0",
+        "time": 0,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "idle-button-0",
+        "time": 0,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "idle-collar-0",
+        "time": 0,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "idle-eye_open_left-0",
+        "time": 0,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "idle-eye_open_right-0",
+        "time": 0,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "idle-foot_left-0",
+        "time": 0,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "idle-foot_right-0",
+        "time": 0,
+        "part": "foot_right",
+        "ease": "none",
+        "values": {
+          "x": -4.93449724867225,
+          "y": 0.6168121560840305,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "idle-hat-0",
+        "time": 0,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "idle-head-0",
+        "time": 0,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "idle-robot-0",
+        "time": 0,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "idle-sleeve_left-0",
+        "time": 0,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "idle-sleeve_right-0",
+        "time": 0,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "idle-tail-0",
+        "time": 0,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "idle-tie-0",
+        "time": 0,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "idle-torso-0",
+        "time": 0,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "idle-wing_left-0",
+        "time": 0,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "idle-wing_right-0",
+        "time": 0,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "idle-head-0-75",
+        "time": 0.75,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -1,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "idle-robot-0-75",
+        "time": 0.75,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -2,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "idle-eye_open_left-1-05",
+        "time": 1.05,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "idle-eye_open_right-1-05",
+        "time": 1.05,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "idle-eye_open_left-1-15",
+        "time": 1.15,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.06,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "idle-eye_open_right-1-15",
+        "time": 1.15,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.06,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "idle-eye_open_left-1-25",
+        "time": 1.25,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "idle-eye_open_right-1-25",
+        "time": 1.25,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "idle-head-1-5",
+        "time": 1.5,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 1,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "idle-robot-1-5",
+        "time": 1.5,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "idle-wing_left-1-5",
+        "time": 1.5,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 2,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "idle-wing_right-1-5",
+        "time": 1.5,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -2,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "idle-head-2-25",
+        "time": 2.25,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "idle-robot-2-25",
+        "time": 2.25,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -2,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "idle-beak_closed-3",
+        "time": 3,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "idle-brow_left-3",
+        "time": 3,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "idle-brow_right-3",
+        "time": 3,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "idle-button-3",
+        "time": 3,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "idle-collar-3",
+        "time": 3,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "idle-eye_open_left-3",
+        "time": 3,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "idle-eye_open_right-3",
+        "time": 3,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "idle-foot_left-3",
+        "time": 3,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "idle-foot_right-3",
+        "time": 3,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "idle-hat-3",
+        "time": 3,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "idle-head-3",
+        "time": 3,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "idle-robot-3",
+        "time": 3,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "idle-sleeve_left-3",
+        "time": 3,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "idle-sleeve_right-3",
+        "time": 3,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "idle-tail-3",
+        "time": 3,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "idle-tie-3",
+        "time": 3,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "idle-torso-3",
+        "time": 3,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "idle-wing_left-3",
+        "time": 3,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "idle-wing_right-3",
+        "time": 3,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      }
+    ],
+    "expressions": [
+      {
+        "time": 0,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 1.15,
+        "eyes": "closed",
+        "beak": "closed"
+      },
+      {
+        "time": 1.25,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 3,
+        "eyes": "open",
+        "beak": "closed"
+      }
+    ]
+  },
+  "wave": {
+    "name": "נפנוף לשלום",
+    "duration": 2.4,
+    "loop": false,
+    "keyframes": [
+      {
+        "id": "wave-beak_closed-0",
+        "time": 0,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "wave-brow_left-0",
+        "time": 0,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "wave-brow_right-0",
+        "time": 0,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "wave-button-0",
+        "time": 0,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "wave-collar-0",
+        "time": 0,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "wave-eye_open_left-0",
+        "time": 0,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "wave-eye_open_right-0",
+        "time": 0,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "wave-foot_left-0",
+        "time": 0,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "wave-foot_right-0",
+        "time": 0,
+        "part": "foot_right",
+        "ease": "none",
+        "values": {
+          "x": -1.8504364682520942,
+          "y": -0.6168121560840314,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "wave-hat-0",
+        "time": 0,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "wave-head-0",
+        "time": 0,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "wave-robot-0",
+        "time": 0,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "wave-sleeve_left-0",
+        "time": 0,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "wave-sleeve_right-0",
+        "time": 0,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "wave-tail-0",
+        "time": 0,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "wave-tie-0",
+        "time": 0,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "wave-torso-0",
+        "time": 0,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "wave-wing_right-0",
+        "time": 0,
+        "part": "wing_right",
+        "ease": "none",
+        "values": {
+          "x": 1.2336243121680628,
+          "y": 0,
+          "rotate": -10,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "wave-head-0-4",
+        "time": 0.4,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -3,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "kf-1795703260111-03c8e56c6aed",
+        "time": 0.494,
+        "part": "wing_right",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -26,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        },
+        "ease": "sine.inOut"
+      },
+      {
+        "id": "kf-1795703391877-66a4da9225119",
+        "time": 0.744,
+        "part": "wing_right",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -10,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        },
+        "ease": "sine.inOut"
+      },
+      {
+        "id": "kf-1795703416323-21125a6d2fe9d",
+        "time": 1,
+        "part": "wing_right",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -23,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        },
+        "ease": "sine.inOut"
+      },
+      {
+        "id": "wave-head-1-35",
+        "time": 1.35,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 2,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "kf-1795703430574-b35dbf42cf0a58",
+        "time": 1.994,
+        "part": "wing_right",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 15,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        },
+        "ease": "sine.inOut"
+      },
+      {
+        "id": "wave-head-2",
+        "time": 2,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "wave-beak_closed-2-4",
+        "time": 2.4,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "wave-brow_left-2-4",
+        "time": 2.4,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "wave-brow_right-2-4",
+        "time": 2.4,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "wave-button-2-4",
+        "time": 2.4,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "wave-collar-2-4",
+        "time": 2.4,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "wave-eye_open_left-2-4",
+        "time": 2.4,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "wave-eye_open_right-2-4",
+        "time": 2.4,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "wave-foot_left-2-4",
+        "time": 2.4,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "wave-hat-2-4",
+        "time": 2.4,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "wave-head-2-4",
+        "time": 2.4,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "wave-robot-2-4",
+        "time": 2.4,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "wave-sleeve_left-2-4",
+        "time": 2.4,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "wave-sleeve_right-2-4",
+        "time": 2.4,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "wave-tail-2-4",
+        "time": 2.4,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "wave-tie-2-4",
+        "time": 2.4,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "wave-torso-2-4",
+        "time": 2.4,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      }
+    ],
+    "expressions": [
+      {
+        "time": 0,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 0.25,
+        "eyes": "happy",
+        "beak": "smile"
+      },
+      {
+        "time": 2.15,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 2.4,
+        "eyes": "open",
+        "beak": "closed"
+      }
+    ]
+  },
+  "happy": {
+    "name": "שמחה וקפיצות",
+    "duration": 1.8,
+    "loop": false,
+    "keyframes": [
+      {
+        "id": "happy-tail-0",
+        "time": 0,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "happy-tie-0",
+        "time": 0,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "happy-foot_left-0",
+        "time": 0,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "happy-foot_right-0",
+        "time": 0,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "happy-torso-0",
+        "time": 0,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "happy-sleeve_left-0",
+        "time": 0,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "happy-sleeve_right-0",
+        "time": 0,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "happy-wing_left-0",
+        "time": 0,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "happy-wing_right-0",
+        "time": 0,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "happy-collar-0",
+        "time": 0,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "happy-button-0",
+        "time": 0,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "happy-head-0",
+        "time": 0,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "happy-eye_open_left-0",
+        "time": 0,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "happy-eye_open_right-0",
+        "time": 0,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "happy-brow_left-0",
+        "time": 0,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "happy-brow_right-0",
+        "time": 0,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "happy-beak_closed-0",
+        "time": 0,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "happy-hat-0",
+        "time": 0,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "happy-robot-0",
+        "time": 0,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "happy-robot-0-25",
+        "time": 0.25,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -12,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "happy-wing_left-0-25",
+        "time": 0.25,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 18,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "happy-wing_right-0-25",
+        "time": 0.25,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -18,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "happy-foot_left-0-25",
+        "time": 0.25,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -8,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "happy-foot_right-0-25",
+        "time": 0.25,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 8,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "happy-robot-0-5",
+        "time": 0.5,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "happy-robot-0-8",
+        "time": 0.8,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -9,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "happy-head-0-8",
+        "time": 0.8,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 3,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "happy-robot-1-05",
+        "time": 1.05,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "happy-head-1-05",
+        "time": 1.05,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -3,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "happy-robot-1-3",
+        "time": 1.3,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -6,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "happy-wing_left-1-3",
+        "time": 1.3,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 10,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "happy-wing_right-1-3",
+        "time": 1.3,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -10,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "happy-tail-1-8",
+        "time": 1.8,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "happy-tie-1-8",
+        "time": 1.8,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "happy-foot_left-1-8",
+        "time": 1.8,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "happy-foot_right-1-8",
+        "time": 1.8,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "happy-torso-1-8",
+        "time": 1.8,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "happy-sleeve_left-1-8",
+        "time": 1.8,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "happy-sleeve_right-1-8",
+        "time": 1.8,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "happy-wing_left-1-8",
+        "time": 1.8,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "happy-wing_right-1-8",
+        "time": 1.8,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "happy-collar-1-8",
+        "time": 1.8,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "happy-button-1-8",
+        "time": 1.8,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "happy-head-1-8",
+        "time": 1.8,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "happy-eye_open_left-1-8",
+        "time": 1.8,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "happy-eye_open_right-1-8",
+        "time": 1.8,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "happy-brow_left-1-8",
+        "time": 1.8,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "happy-brow_right-1-8",
+        "time": 1.8,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "happy-beak_closed-1-8",
+        "time": 1.8,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "happy-hat-1-8",
+        "time": 1.8,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "happy-robot-1-8",
+        "time": 1.8,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      }
+    ],
+    "expressions": [
+      {
+        "time": 0,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 0.12,
+        "eyes": "happy",
+        "beak": "smile"
+      },
+      {
+        "time": 1.65,
+        "eyes": "happy",
+        "beak": "smile"
+      },
+      {
+        "time": 1.8,
+        "eyes": "open",
+        "beak": "closed"
+      }
+    ]
+  },
+  "curious": {
+    "name": "סקרנות והטיית ראש",
+    "duration": 2.4,
+    "loop": false,
+    "keyframes": [
+      {
+        "id": "curious-tail-0",
+        "time": 0,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "curious-tie-0",
+        "time": 0,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "curious-foot_left-0",
+        "time": 0,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "curious-foot_right-0",
+        "time": 0,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "curious-torso-0",
+        "time": 0,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "curious-sleeve_left-0",
+        "time": 0,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "curious-sleeve_right-0",
+        "time": 0,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "curious-wing_left-0",
+        "time": 0,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "curious-wing_right-0",
+        "time": 0,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "curious-collar-0",
+        "time": 0,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "curious-button-0",
+        "time": 0,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "curious-head-0",
+        "time": 0,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "curious-eye_open_left-0",
+        "time": 0,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "curious-eye_open_right-0",
+        "time": 0,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "curious-brow_left-0",
+        "time": 0,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "curious-brow_right-0",
+        "time": 0,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "curious-beak_closed-0",
+        "time": 0,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "curious-hat-0",
+        "time": 0,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "curious-robot-0",
+        "time": 0,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "curious-head-0-55",
+        "time": 0.55,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -2,
+          "rotate": -10,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "curious-wing_right-0-55",
+        "time": 0.55,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -20,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "curious-beak_closed-0-55",
+        "time": 0.55,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1.05,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "curious-head-1-3",
+        "time": 1.3,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -2,
+          "rotate": -10,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "curious-eye_open_left-1-3",
+        "time": 1.3,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1.08,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "curious-eye_open_right-1-3",
+        "time": 1.3,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1.08,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "curious-head-1-9",
+        "time": 1.9,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 4,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "curious-tail-2-4",
+        "time": 2.4,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "curious-tie-2-4",
+        "time": 2.4,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "curious-foot_left-2-4",
+        "time": 2.4,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "curious-foot_right-2-4",
+        "time": 2.4,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "curious-torso-2-4",
+        "time": 2.4,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "curious-sleeve_left-2-4",
+        "time": 2.4,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "curious-sleeve_right-2-4",
+        "time": 2.4,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "curious-wing_left-2-4",
+        "time": 2.4,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "curious-wing_right-2-4",
+        "time": 2.4,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "curious-collar-2-4",
+        "time": 2.4,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "curious-button-2-4",
+        "time": 2.4,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "curious-head-2-4",
+        "time": 2.4,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "curious-eye_open_left-2-4",
+        "time": 2.4,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "curious-eye_open_right-2-4",
+        "time": 2.4,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "curious-brow_left-2-4",
+        "time": 2.4,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "curious-brow_right-2-4",
+        "time": 2.4,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "curious-beak_closed-2-4",
+        "time": 2.4,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "curious-hat-2-4",
+        "time": 2.4,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "curious-robot-2-4",
+        "time": 2.4,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      }
+    ],
+    "expressions": [
+      {
+        "time": 0,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 2.4,
+        "eyes": "open",
+        "beak": "closed"
+      }
+    ]
+  },
+  "walk": {
+    "name": "הליכה במקום",
+    "duration": 1,
+    "loop": true,
+    "keyframes": [
+      {
+        "id": "walk-beak_closed-0",
+        "time": 0,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "walk-brow_left-0",
+        "time": 0,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "walk-brow_right-0",
+        "time": 0,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "walk-button-0",
+        "time": 0,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "walk-collar-0",
+        "time": 0,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "walk-eye_open_left-0",
+        "time": 0,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "walk-eye_open_right-0",
+        "time": 0,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "walk-foot_left-0",
+        "time": 0,
+        "part": "foot_left",
+        "ease": "none",
+        "values": {
+          "x": 0.6168121560840314,
+          "y": 1.8504364682520942,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "walk-foot_right-0",
+        "time": 0,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 2.4672486243361256,
+          "y": -9,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "walk-hat-0",
+        "time": 0,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "walk-head-0",
+        "time": 0,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "walk-robot-0",
+        "time": 0,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "walk-sleeve_left-0",
+        "time": 0,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "walk-sleeve_right-0",
+        "time": 0,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "walk-tail-0",
+        "time": 0,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "walk-tie-0",
+        "time": 0,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": -10,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "walk-torso-0",
+        "time": 0,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "walk-wing_left-0",
+        "time": 0,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "walk-wing_right-0",
+        "time": 0,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "walk-head-0-25",
+        "time": 0.25,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -1,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "walk-robot-0-25",
+        "time": 0.25,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -3,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "walk-wing_left-0-25",
+        "time": 0.25,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -9,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "walk-wing_right-0-25",
+        "time": 0.25,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 9,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "kf-1795704814651-3ae01eff1b769",
+        "time": 0.3,
+        "part": "foot_left",
+        "values": {
+          "x": 0.6168121560840314,
+          "y": -5,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        },
+        "ease": "sine.inOut"
+      },
+      {
+        "id": "kf-1795705191662-139570bb6b9ec",
+        "time": 0.3,
+        "part": "foot_right",
+        "values": {
+          "x": 2.4672486243361256,
+          "y": -1.8504364682520942,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        },
+        "ease": "sine.inOut"
+      },
+      {
+        "id": "kf-1795705385579-343da04800349",
+        "time": 0.35,
+        "part": "tie",
+        "values": {
+          "x": -10,
+          "y": 0,
+          "rotate": -26,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        },
+        "ease": "sine.inOut"
+      },
+      {
+        "id": "walk-head-0-5",
+        "time": 0.5,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "walk-robot-0-5",
+        "time": 0.5,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "walk-wing_left-0-5",
+        "time": 0.5,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "walk-wing_right-0-5",
+        "time": 0.5,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "kf-1795704838934-592e2ae60084e",
+        "time": 0.6,
+        "part": "foot_left",
+        "values": {
+          "x": 0.6168121560840314,
+          "y": 1.8504364682520942,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        },
+        "ease": "sine.inOut"
+      },
+      {
+        "id": "kf-1795705212689-1a70eb112face8",
+        "time": 0.6,
+        "part": "foot_right",
+        "values": {
+          "x": 2.4672486243361256,
+          "y": -9,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        },
+        "ease": "sine.inOut"
+      },
+      {
+        "id": "walk-head-0-75",
+        "time": 0.75,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 1,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "walk-robot-0-75",
+        "time": 0.75,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -3,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "walk-wing_left-0-75",
+        "time": 0.75,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 9,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "walk-wing_right-0-75",
+        "time": 0.75,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -9,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "kf-1795705249002-e64627b65ca818",
+        "time": 0.9,
+        "part": "foot_right",
+        "values": {
+          "x": 2.4672486243361256,
+          "y": -1.8504364682520942,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        },
+        "ease": "sine.inOut"
+      },
+      {
+        "id": "walk-beak_closed-1",
+        "time": 1,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "walk-brow_left-1",
+        "time": 1,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "walk-brow_right-1",
+        "time": 1,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "walk-button-1",
+        "time": 1,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "walk-collar-1",
+        "time": 1,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "walk-eye_open_left-1",
+        "time": 1,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "walk-eye_open_right-1",
+        "time": 1,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "walk-hat-1",
+        "time": 1,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "walk-head-1",
+        "time": 1,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "walk-robot-1",
+        "time": 1,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "walk-sleeve_left-1",
+        "time": 1,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "walk-sleeve_right-1",
+        "time": 1,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "walk-tail-1",
+        "time": 1,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "walk-torso-1",
+        "time": 1,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "walk-wing_left-1",
+        "time": 1,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "walk-wing_right-1",
+        "time": 1,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      }
+    ],
+    "expressions": [
+      {
+        "time": 0,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 1,
+        "eyes": "open",
+        "beak": "closed"
+      }
+    ]
+  },
+  "talk": {
+    "name": "שיחה ותנועת מקור",
+    "duration": 2,
+    "loop": true,
+    "keyframes": [
+      {
+        "id": "talk-beak_closed-0",
+        "time": 0,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "talk-brow_left-0",
+        "time": 0,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "talk-brow_right-0",
+        "time": 0,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "talk-button-0",
+        "time": 0,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "talk-collar-0",
+        "time": 0,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "talk-eye_open_left-0",
+        "time": 0,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "talk-eye_open_right-0",
+        "time": 0,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "talk-foot_left-0",
+        "time": 0,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "talk-foot_right-0",
+        "time": 0,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "talk-hat-0",
+        "time": 0,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "talk-head-0",
+        "time": 0,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "talk-robot-0",
+        "time": 0,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "talk-sleeve_left-0",
+        "time": 0,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "talk-sleeve_right-0",
+        "time": 0,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "talk-tail-0",
+        "time": 0,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "talk-tie-0",
+        "time": 0,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "talk-torso-0",
+        "time": 0,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "talk-wing_left-0",
+        "time": 0,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "talk-wing_right-0",
+        "time": 0,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "talk-beak_closed-0-3",
+        "time": 0.3,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -3,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "talk-head-0-3",
+        "time": 0.3,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -2,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "talk-wing_left-0-3",
+        "time": 0.3,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 7,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "talk-head-0-6",
+        "time": 0.6,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "talk-beak_closed-0-6",
+        "time": 0.613,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.95,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "talk-beak_closed-0-9",
+        "time": 0.9,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -4,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1.12,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "talk-wing_right-0-9",
+        "time": 0.9,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": -9,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "talk-beak_closed-1-2",
+        "time": 1.2,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -3,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "talk-head-1-2",
+        "time": 1.2,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 2,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "talk-beak_closed-1-5",
+        "time": 1.5,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": -1,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1.1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "talk-head-1-5",
+        "time": 1.5,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "talk-wing_right-1-5",
+        "time": 1.5,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "talk-beak_closed-2",
+        "time": 2,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "talk-brow_left-2",
+        "time": 2,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "talk-brow_right-2",
+        "time": 2,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "talk-button-2",
+        "time": 2,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "talk-collar-2",
+        "time": 2,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "talk-eye_open_left-2",
+        "time": 2,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "talk-eye_open_right-2",
+        "time": 2,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "talk-foot_left-2",
+        "time": 2,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "talk-foot_right-2",
+        "time": 2,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "talk-hat-2",
+        "time": 2,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "talk-head-2",
+        "time": 2,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "talk-robot-2",
+        "time": 2,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "talk-sleeve_left-2",
+        "time": 2,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "talk-sleeve_right-2",
+        "time": 2,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "talk-tail-2",
+        "time": 2,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "talk-tie-2",
+        "time": 2,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "talk-torso-2",
+        "time": 2,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "talk-wing_left-2",
+        "time": 2,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "talk-wing_right-2",
+        "time": 2,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      }
+    ],
+    "expressions": [
+      {
+        "time": 0,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 0.2,
+        "eyes": "open",
+        "beak": "open"
+      },
+      {
+        "time": 0.55,
+        "eyes": "happy",
+        "beak": "smile"
+      },
+      {
+        "time": 0.8,
+        "eyes": "open",
+        "beak": "open"
+      },
+      {
+        "time": 1.15,
+        "eyes": "happy",
+        "beak": "smile"
+      },
+      {
+        "time": 1.4,
+        "eyes": "open",
+        "beak": "open"
+      },
+      {
+        "time": 1.75,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 2,
+        "eyes": "open",
+        "beak": "closed"
+      }
+    ]
+  },
+  "rest": {
+    "name": "מנוחה ונמנום",
+    "duration": 4,
+    "loop": true,
+    "keyframes": [
+      {
+        "id": "rest-tail-0",
+        "time": 0,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "rest-tie-0",
+        "time": 0,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "rest-foot_left-0",
+        "time": 0,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "rest-foot_right-0",
+        "time": 0,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "rest-torso-0",
+        "time": 0,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "rest-sleeve_left-0",
+        "time": 0,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "rest-sleeve_right-0",
+        "time": 0,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "rest-wing_left-0",
+        "time": 0,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "rest-wing_right-0",
+        "time": 0,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "rest-collar-0",
+        "time": 0,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "rest-button-0",
+        "time": 0,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "rest-head-0",
+        "time": 0,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "rest-eye_open_left-0",
+        "time": 0,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "rest-eye_open_right-0",
+        "time": 0,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "rest-brow_left-0",
+        "time": 0,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "rest-brow_right-0",
+        "time": 0,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "rest-beak_closed-0",
+        "time": 0,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "rest-hat-0",
+        "time": 0,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "rest-robot-0",
+        "time": 0,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "rest-head-0-7",
+        "time": 0.7,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 3,
+          "rotate": 7,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "rest-robot-0-7",
+        "time": 0.7,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 3,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "rest-eye_open_left-0-7",
+        "time": 0.7,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.05,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "rest-eye_open_right-0-7",
+        "time": 0.7,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.05,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "rest-head-1-5",
+        "time": 1.5,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 4,
+          "rotate": 8,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "rest-robot-1-5",
+        "time": 1.5,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 4,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "rest-eye_open_left-1-5",
+        "time": 1.5,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.05,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "rest-eye_open_right-1-5",
+        "time": 1.5,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.05,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "rest-head-2-5",
+        "time": 2.5,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 3,
+          "rotate": 7,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "rest-robot-2-5",
+        "time": 2.5,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 3,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "rest-eye_open_left-2-5",
+        "time": 2.5,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.05,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "rest-eye_open_right-2-5",
+        "time": 2.5,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.05,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "rest-head-3-3",
+        "time": 3.3,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 3,
+          "rotate": 7,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "rest-robot-3-3",
+        "time": 3.3,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 3,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      },
+      {
+        "id": "rest-eye_open_left-3-3",
+        "time": 3.3,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.05,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "rest-eye_open_right-3-3",
+        "time": 3.3,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 0.05,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "rest-tail-4",
+        "time": 4,
+        "part": "tail",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 67.55050505050491,
+          "transformOriginY": 72.18701754385974
+        }
+      },
+      {
+        "id": "rest-tie-4",
+        "time": 4,
+        "part": "tie",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 77.22222222222223,
+          "transformOriginY": 15.063404124345958
+        }
+      },
+      {
+        "id": "rest-foot_left-4",
+        "time": 4,
+        "part": "foot_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 42.07070707070712,
+          "transformOriginY": 82.3934502923979
+        }
+      },
+      {
+        "id": "rest-foot_right-4",
+        "time": 4,
+        "part": "foot_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 59.09090909090905,
+          "transformOriginY": 82.28142770719907
+        }
+      },
+      {
+        "id": "rest-torso-4",
+        "time": 4,
+        "part": "torso",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.37878787878785,
+          "transformOriginY": 60.4131354026091
+        }
+      },
+      {
+        "id": "rest-sleeve_left-4",
+        "time": 4,
+        "part": "sleeve_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 43.98989898989896,
+          "transformOriginY": 66.3137926116104
+        }
+      },
+      {
+        "id": "rest-sleeve_right-4",
+        "time": 4,
+        "part": "sleeve_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 55.6313131313132,
+          "transformOriginY": 67.2180040264596
+        }
+      },
+      {
+        "id": "rest-wing_left-4",
+        "time": 4,
+        "part": "wing_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 34.54545454545475,
+          "transformOriginY": 58.76385254111338
+        }
+      },
+      {
+        "id": "rest-wing_right-4",
+        "time": 4,
+        "part": "wing_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 64.94949494949526,
+          "transformOriginY": 57.79234919711838
+        }
+      },
+      {
+        "id": "rest-collar-4",
+        "time": 4,
+        "part": "collar",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 49.747474747474676,
+          "transformOriginY": 55.56346841947635
+        }
+      },
+      {
+        "id": "rest-button-4",
+        "time": 4,
+        "part": "button",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.989898989898954,
+          "transformOriginY": 62.95015827029328
+        }
+      },
+      {
+        "id": "rest-head-4",
+        "time": 4,
+        "part": "head",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 48.73737373737376,
+          "transformOriginY": 58.77272127687667
+        }
+      },
+      {
+        "id": "rest-eye_open_left-4",
+        "time": 4,
+        "part": "eye_open_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 39.116161616161605,
+          "transformOriginY": 34.31610557926349
+        }
+      },
+      {
+        "id": "rest-eye_open_right-4",
+        "time": 4,
+        "part": "eye_open_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 60.12626262626263,
+          "transformOriginY": 34.165825522711025
+        }
+      },
+      {
+        "id": "rest-brow_left-4",
+        "time": 4,
+        "part": "brow_left",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 37.72727272727265,
+          "transformOriginY": 37.66959064327499
+        }
+      },
+      {
+        "id": "rest-brow_right-4",
+        "time": 4,
+        "part": "brow_right",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 61.0101010101011,
+          "transformOriginY": 37.663238556160834
+        }
+      },
+      {
+        "id": "rest-beak_closed-4",
+        "time": 4,
+        "part": "beak_closed",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50.12626262626271,
+          "transformOriginY": 53.16275430359929
+        }
+      },
+      {
+        "id": "rest-hat-4",
+        "time": 4,
+        "part": "hat",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 57.904040404040366,
+          "transformOriginY": 10.776100214790775
+        }
+      },
+      {
+        "id": "rest-robot-4",
+        "time": 4,
+        "part": "robot",
+        "ease": "sine.inOut",
+        "values": {
+          "x": 0,
+          "y": 0,
+          "rotate": 0,
+          "scale": 1,
+          "scaleX": 1,
+          "scaleY": 1,
+          "opacity": 1,
+          "transformOriginX": 50,
+          "transformOriginY": 88.42105263157895
+        }
+      }
+    ],
+    "expressions": [
+      {
+        "time": 0,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 0.55,
+        "eyes": "closed",
+        "beak": "closed"
+      },
+      {
+        "time": 3.6,
+        "eyes": "open",
+        "beak": "closed"
+      },
+      {
+        "time": 4,
+        "eyes": "open",
+        "beak": "closed"
+      }
+    ]
+  }
+}
