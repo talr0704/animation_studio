@@ -16,11 +16,11 @@
 @media(max-width:700px){.first-quest{left:8px;top:105px;width:185px;padding:9px 12px}.first-quest,.first-quest span{font-size:12px}.story-npc{right:12px;bottom:110px;padding:10px 12px;font-size:14px}.story-npc img{width:100px;height:140px}.story-conversation{padding:18px}.story-conversation p{font-size:17px}.story-conversation h2{font-size:23px}}
 @media(max-height:520px){.first-quest{top:70px;width:180px;font-size:12px;padding:8px}.first-quest span{font-size:12px}.story-npc{bottom:110px}.story-conversation{padding:12px}.story-conversation p{font-size:15px;line-height:1.5;margin:12px 0}.story-conversation button{font-size:14px;min-height:40px;padding:7px 12px}.story-conversation #story-choices{gap:8px}}
 
-.story-npc.story-npc-assembled{width:clamp(120px,15vw,210px);aspect-ratio:440/475;min-height:0;height:auto;bottom:165px;padding:0;border:0;background:transparent;box-shadow:none;display:block;overflow:visible}
+.story-npc.story-npc-assembled{width:clamp(144px,18vw,252px);aspect-ratio:440/475;min-height:0;height:auto;bottom:165px;padding:0;border:0;background:transparent;box-shadow:none;display:block;overflow:visible}
 .story-npc-avatar{display:block;position:absolute;inset:0;pointer-events:none;overflow:visible}
 .story-npc-assembled .story-npc-label{position:absolute;top:calc(100% + 4px);left:50%;transform:translateX(-50%);white-space:nowrap;padding:8px 12px;min-height:40px;border:2px solid #a87855;border-radius:12px;background:#fff8e9;color:#493326;font-size:14px}
 .story-npc-assembled:hover .layered-character{filter:drop-shadow(0 0 4px #fff1ad)}
-@media(max-height:520px){.story-npc.story-npc-assembled{width:100px;right:145px;bottom:80px}.story-npc-assembled .story-npc-label{font-size:12px;padding:6px 9px}}
+@media(max-height:520px){.story-npc.story-npc-assembled{width:120px;right:145px;bottom:80px}.story-npc-assembled .story-npc-label{font-size:12px;padding:6px 9px}}
 
 .story-live-avatar{position:relative;float:left;width:120px;aspect-ratio:440/475;margin:12px 20px 14px 0;pointer-events:none}
 .story-live-avatar[hidden]{display:none}

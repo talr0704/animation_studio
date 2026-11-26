@@ -1,4 +1,4 @@
-import {expressionAt,validateExpressions,mountMomoExpressions,DEFAULT_EXPRESSION} from '../shared/momo-expressions.js?v=game1';
+import {expressionAt,validateExpressions,mountMomoExpressions,DEFAULT_EXPRESSION} from '../shared/momo-expressions.js?v=larger-eyes2';
 import {mountCatEditor} from '../cat-editor.js?v=momo-expressions2';
 export {validateMomoAnimations} from '../shared/momo-motion.js';
 import {validateMomoAnimations} from '../shared/momo-motion.js';

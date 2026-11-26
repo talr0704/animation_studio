@@ -1,4 +1,4 @@
-import {validateExpressions,expressionAt} from './momo-expressions.js?v=game1';
+import {validateExpressions,expressionAt} from './momo-expressions.js?v=larger-eyes2';
 const poseFields=['x','y','rotate','scale','scaleX','scaleY','opacity','transformOriginX','transformOriginY'];
 export function validateMomoAnimations(clips,parts){
  if(!clips||typeof clips!=='object'||Array.isArray(clips)||!Object.keys(clips).length||Object.keys(clips).length>50)throw Error('קובץ האנימציות אינו תקין');

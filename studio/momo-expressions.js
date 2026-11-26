@@ -1,2 +1,2 @@
 // Compatibility export for existing studio imports.
-export * from '../shared/momo-expressions.js?v=game1';
+export * from '../shared/momo-expressions.js?v=larger-eyes2';

@@ -1,6 +1,6 @@
 import {mountLayeredCharacter} from '../../shared/layered-character.js?v=momo-motion1';
 import {createMomoPlayer} from '../../shared/momo-motion.js?v=game1';
-import {mountMomoExpressions} from '../../shared/momo-expressions.js?v=game1';
+import {mountMomoExpressions} from '../../shared/momo-expressions.js?v=larger-eyes2';
 import {progressStore} from '../progress/store.js?v=2';
 
 export function conversationEntry(state) {
