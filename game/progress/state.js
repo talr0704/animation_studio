@@ -50,6 +50,18 @@ export function validateState(state) {
   for (const key of ['wateredAt', 'readyAt', 'harvestedAt']) if (plot[key] !== null) require(plot.plantedAt !== null && plot[key] >= plot.plantedAt, 'Crop dates are out of order');
   if (plot.stage === 'harvested') require(timestamp(plot.harvestedAt), 'Harvest timestamp missing');
  }
+ if(state.baking!==undefined){
+  const b=state.baking;
+  require(record(b)&&['prep','mixed','baking','baked','decorated','packed'].includes(b.stage),'Invalid baking stage');
+  require(Number.isInteger(b.strawberries)&&b.strawberries>=0&&b.strawberries<=3&&Number.isInteger(b.mixes)&&b.mixes>=0&&b.mixes<=3,'Invalid baking ingredients');
+  require(b.readyAt===null||timestamp(b.readyAt),'Invalid baking timer');
+  require(b.decoration===null||b.decoration==='strawberry','Invalid cake decoration');
+  require(record(b.ingredients)&&['flour','egg','milk'].every(key=>typeof b.ingredients[key]==='boolean'),'Invalid pantry ingredients');
+  require((b.mixes===0||b.strawberries===3&&Object.values(b.ingredients).every(Boolean))&&(b.stage!=='prep'||b.mixes<3),'Invalid mixing state');
+  require(b.stage==='prep'||b.strawberries===3&&b.mixes===3&&Object.values(b.ingredients).every(Boolean),'Incomplete cake ingredients');
+  require(!['baking','baked','decorated','packed'].includes(b.stage)||timestamp(b.readyAt),'Missing oven timer');
+  require(!['decorated','packed'].includes(b.stage)||b.decoration==='strawberry','Missing cake decoration');
+ }
  quantities(state.recipes?.completed);
  require(record(state.receipts) && Object.entries(state.receipts).every(([id, date]) => identifier(id) && timestamp(date)), 'Invalid reward receipts');
  return state;
@@ -81,7 +93,7 @@ function exchange(state, consume = {}, grant = {}) {
 }
 export function applyCommand(state, command) {
  require(record(command), 'Invalid progress command');
- const keys = ['consume', 'grant', 'coins', 'npc', 'plot', 'quest', 'recipe', 'manicureReward'];
+ const keys = ['baking', 'consume', 'grant', 'coins', 'npc', 'plot', 'quest', 'recipe', 'manicureReward'];
  require(Object.keys(command).every(key => keys.includes(key)), 'Unknown progress command');
  exchange(state, command.consume, command.grant);
  if (command.coins !== undefined) { require(Number.isSafeInteger(command.coins), 'Invalid coin change'); state.wallet.coins += command.coins; }
@@ -98,6 +110,7 @@ export function applyCommand(state, command) {
   const {id, ...plot} = command.plot; require(identifier(id), 'Invalid plot ID');
   state.farming.plots[id] = clone(plot);
  }
+ if (command.baking !== undefined) state.baking=clone(command.baking);
  if (command.recipe !== undefined) {
   require(identifier(command.recipe), 'Invalid recipe');
   state.recipes.completed[command.recipe] = (state.recipes.completed[command.recipe] ?? 0) + 1;

@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox']);page=b.new_page(viewport={'width':1440,'height':1000});errors=[];failed=[];page.on('pageerror',lambda e:errors.append(str(e)));page.on('response',lambda r:failed.append(r.url) if r.status>=400 else None)
  page.goto('http://localhost:4205/world.html',wait_until='networkidle');page.wait_for_selector('#locations button');assert page.locator('#popa .cat-part').first.is_visible();assert page.locator('#locations button').count()==9
- page.locator('#objects button[aria-label="מאפייה"]').click();assert 'bakery' in page.url
+ page.locator('#objects button[aria-label="מאפייה"]').click();assert 'bakery' in page.url;page.goto('http://localhost:4205/world.html?scene=bakery',wait_until='networkidle');page.wait_for_selector('#locations button')
  for scene in ['shops','bakery','tailor','wardrobe','post','home-care','party','achievements','garden']:
   page.locator(f'[data-scene="{scene}"]').click();assert page.locator('#objects button').count()>0
   options=page.locator('#groups option').evaluate_all('(els)=>els.map(e=>e.value)')

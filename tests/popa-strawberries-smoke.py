@@ -23,7 +23,7 @@ with sync_playwright() as p:
  for i in range(3):page.locator('.farm-plot').nth(i).click()
  assert saved()['inventory']=={'strawberry':3};assert saved()['story']['firstCake']['step']=='bake-with-bonnie';assert saved()['wallet']['coins']==0
  assert page.locator('.farm-plot:disabled').count()==3
- page.locator('#farm-home').click();assert 'לאפות עם בוני' in page.locator('#first-quest').text_content()
+ page.locator('#farm-home').click();assert 'לאפות עם מומו' in page.locator('#first-quest').text_content()
  page.reload(wait_until='networkidle');page.wait_for_selector('#loading',state='hidden');assert saved()['inventory']=={'strawberry':3}
  page.locator('#garden-tab').click();page.locator('#farm-fruit-game').click();assert page.locator('#overlay').is_visible();page.locator('#dialog-main').click();page.clock.run_for(200);assert page.locator('#basket').is_visible();page.locator('#pause').click();page.locator('#dialog-secondary').click()
  for width,height in [(390,844),(844,390)]:

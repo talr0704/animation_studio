@@ -137,3 +137,7 @@ After accepting Momo’s invitation, the garden opens three strawberry plots. Pl
 ## Uploaded world artwork
 
 Open `world.html` from the street/shops button in the home screen. All 20 uploaded world sheets are registered as 431 padded PNG parts across nine illustrated scene categories. Parts can be placed and arranged with local persistence. Nine initial outfit fits are available in the shared wardrobe and existing fitting studio. Farming uses the uploaded strawberry illustrations. These scene tools do not implement shop economics, baking quests or career rewards. See `docs/uploaded-world-art.md`.
+
+## Baking with Momo
+
+The first recipe is now playable at `bakery.html`: carry harvested strawberries into the bowl, add pantry ingredients, mix, bake, decorate and package. Ingredients and oven timing survive reloads. Packaging grants one cake and advances to delivery; the delivery reward UI is the next step. Momo replaces Bonnie in the game text and workshop while legacy quest IDs remain compatible. See `docs/baking-with-momo.md`.

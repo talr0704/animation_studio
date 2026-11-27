@@ -1,11 +1,12 @@
 import {mountLayeredCharacter} from '../../shared/layered-character.js?v=momo-motion1';
 import {createMomoPlayer} from '../../shared/momo-motion.js?v=game1';
 import {mountMomoExpressions} from '../../shared/momo-expressions.js?v=larger-eyes2';
-import {progressStore} from '../progress/store.js?v=2';
+import {progressStore} from '../progress/store.js?v=3';
 
 export function conversationEntry(state) {
  const quest = state.story.firstCake;
  if (quest.status === 'completed') return 'completed';
+ if (quest.status === 'active' && quest.step === 'bake-with-bonnie') return 'baking';
  if (quest.status === 'active' && quest.step !== 'meet-milli') return quest.step === 'grow-strawberries' ? 'growing' : 'later';
  return state.story.npcs.milli.met ? 'returning' : 'greeting';
 }
@@ -20,7 +21,7 @@ export function acceptInvitation(store = progressStore) {
 }
 
 export async function mountFirstMeeting({world, onApproach, onStart, onClose, onProgress}) {
- const response = await fetch(new URL('../../assets/story/first-cake.json?v=strawberries1', import.meta.url), {cache: 'no-cache'});
+ const response = await fetch(new URL('../../assets/story/first-cake.json?v=bake-momo2', import.meta.url), {cache: 'no-cache'});
  if (!response.ok) throw Error('לא ניתן לטעון את השיחה עם מומו');
  const data = await response.json();
  const npc = document.createElement('button'); npc.type = 'button'; npc.id = 'milli-npc'; npc.className = 'story-npc'; npc.setAttribute('aria-pressed', 'false');
@@ -74,6 +75,7 @@ export async function mountFirstMeeting({world, onApproach, onStart, onClose, on
    const button = document.createElement('button'); button.type = 'button'; button.textContent = choice.label;
    button.onclick = () => {
     if (choice.close) { close(); return; }
+    if (choice.action === 'bakery') { close();location.assign('bakery.html');return; }
     if (choice.action === 'accept') {
      try { const result = acceptInvitation(); refresh(); onProgress(); $('save').textContent = result.applied === false ? 'המשימה כבר התחילה' : result.persisted === false ? 'המשימה התחילה, אך השמירה אינה זמינה. ההתקדמות כרגע זמנית.' : 'המשימה נשמרה'; render('accepted'); }
      catch { $('save').textContent = 'לא הצלחנו להתחיל את המשימה. אפשר לנסות שוב.'; }

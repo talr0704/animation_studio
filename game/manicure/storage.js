@@ -1,4 +1,4 @@
-import {progressStore} from '../progress/store.js?v=2';
+import {progressStore} from '../progress/store.js?v=3';
 progressStore.initialize();
 const DB='popaManicureV1';
 async function database(){return new Promise((resolve,reject)=>{const request=indexedDB.open(DB,1);request.onupgradeneeded=()=>request.result.createObjectStore('sessions');request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});}

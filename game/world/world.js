@@ -1,4 +1,4 @@
-import {progressStore,readProfile,actionId} from '../progress/store.js?v=2';
+import {progressStore,readProfile,actionId} from '../progress/store.js?v=3';
 import {createPopa} from '../../popa-browser.js';
 import {createWardrobe} from '../wardrobe.js?v=world-art10';
 const $=id=>document.getElementById(id),root=new URL('../../',import.meta.url);
@@ -25,7 +25,7 @@ function render(){
  const button=document.createElement('button');button.type='button';button.dataset.object=item.id;button.setAttribute('aria-label',names[part.id]??'פריט מאויר');button.setAttribute('aria-pressed',String(editing&&selected===item.id));
  Object.assign(button.style,{left:(left+item.x/100*1400*scale)+'px',top:(top+item.y/100*750*scale)+'px',width:item.width*scale+'px',height:item.width*scale*part.size[1]/part.size[0]+'px',zIndex:item.layer,transform:`translate(-50%,-50%) rotate(${item.rotation}deg)`});
  const img=new Image();img.src=new URL(item.asset,root);img.alt='';button.append(img);
- button.onclick=()=>{selected=item.id;if(editing){inspect();for(const b of $('objects').children)b.setAttribute('aria-pressed',String(b===button));}else if(scene==='shops'&&['bakery-front','tailor-front'].includes(part.id))navigate(part.id==='bakery-front'?'bakery':'tailor');else{popa.play('curious');button.animate([{filter:'brightness(1)'},{filter:'brightness(1.12)'},{filter:'brightness(1)'}],{duration:350});message(names[part.id]??'בחרת פריט מהאיורים שהעלית. אפשר לסדר אותו במצב סידור הפריטים.');}};
+ button.onclick=()=>{selected=item.id;if(editing){inspect();for(const b of $('objects').children)b.setAttribute('aria-pressed',String(b===button));}else if(scene==='shops'&&['bakery-front','tailor-front'].includes(part.id))part.id==='bakery-front'?location.assign('bakery.html'):navigate('tailor');else{popa.play('curious');button.animate([{filter:'brightness(1)'},{filter:'brightness(1.12)'},{filter:'brightness(1)'}],{duration:350});message(names[part.id]??'בחרת פריט מהאיורים שהעלית. אפשר לסדר אותו במצב סידור הפריטים.');}};
  button.onpointerdown=e=>{if(!editing)return;selected=item.id;inspect();const start={x:e.clientX,y:e.clientY,ix:item.x,iy:item.y};button.setPointerCapture(e.pointerId);button.onpointermove=e=>{item.x=Math.max(2,Math.min(98,start.ix+(e.clientX-start.x)/(1400*scale)*100));item.y=Math.max(3,Math.min(95,start.iy+(e.clientY-start.y)/(750*scale)*100));button.style.left=(left+item.x/100*1400*scale)+'px';button.style.top=(top+item.y/100*750*scale)+'px';};button.onpointerup=()=>{button.onpointermove=null;save();};};
  $('objects').append(button);
  }

@@ -5,7 +5,7 @@ const labels={empty:'שתילה',planted:'השקיה',growing:'גדל',ready:'ק
 export function mountStrawberryGarden({container,store,onAction,onHome,onFruitGame,onFocus}) {
  const garden=createStrawberryGarden({store});
  const scene=document.createElement('section');scene.className='strawberry-garden';scene.hidden=true;scene.setAttribute('aria-label','ערוגות התותים של פופה');
- scene.innerHTML='<header class="farm-heading"><h1>התותים לעוגה הראשונה</h1><p id="farm-instruction"></p><p id="farm-inventory"></p><div id="farm-camera" aria-label="מעבר בין הערוגות"></div></header><div class="farm-plots" aria-label="שלוש ערוגות תותים"></div><div class="farm-controls"><button type="button" id="farm-home">חזרה הביתה</button><button type="button" id="farm-fruit-game">משחק תפיסת פירות</button></div><p id="farm-message" role="status" aria-live="polite"></p>';
+ scene.innerHTML='<header class="farm-heading"><h1>התותים לעוגה הראשונה</h1><p id="farm-instruction"></p><p id="farm-inventory"></p><div id="farm-camera" aria-label="מעבר בין הערוגות"></div></header><div class="farm-plots" aria-label="שלוש ערוגות תותים"></div><div class="farm-controls"><a id="farm-kitchen" href="bakery.html" hidden>למטבח האפייה עם מומו</a><button type="button" id="farm-home">חזרה הביתה</button><button type="button" id="farm-fruit-game">משחק תפיסת פירות</button></div><p id="farm-message" role="status" aria-live="polite"></p>';
  container.append(scene);
  const $=id=>scene.querySelector('#farm-'+id),buttons=new Map();let visible=false,timer,focus=0;
  function setFocus(index){focus=index;container.closest('.world').dataset.farmPlot=String(index);for(const b of $('camera').children)b.setAttribute('aria-pressed',String(Number(b.dataset.index)===index));layout();onFocus?.(index);}
@@ -38,8 +38,8 @@ export function mountStrawberryGarden({container,store,onAction,onHome,onFruitGa
  }
 
  function render(){
-  const state=garden.snapshot();scene.dataset.complete=String(state.complete);
-  $('instruction').textContent=state.complete?'אספנו את התותים! הצעד הבא: לאפות עם בוני.':state.enabled?'מומו הכין שלושה שתילים. שתלי, השקי וקטפי תות מכל ערוגה.':'קודם נפגוש את מומו בבית ונצטרף להכנת העוגה.';
+  const state=garden.snapshot();scene.dataset.complete=String(state.complete);$('kitchen').hidden=!state.complete;
+  $('instruction').textContent=state.complete?'אספנו את התותים! הצעד הבא: לאפות עם מומו.':state.enabled?'מומו הכין שלושה שתילים. שתלי, השקי וקטפי תות מכל ערוגה.':'קודם נפגוש את מומו בבית ונצטרף להכנת העוגה.';
   $('inventory').textContent=`בסל שלך: ${state.strawberries} תותים · נקטפו ${state.harvested} מתוך ${REQUIRED_STRAWBERRIES}`;
   for(const plot of state.plots){
    const {button,plant,fruit,label,index}=buttons.get(plot.id);
