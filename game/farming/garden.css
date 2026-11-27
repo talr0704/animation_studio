@@ -14,3 +14,12 @@
 .farm-art{position:relative;display:block;width:100%;aspect-ratio:320/260;border:0!important;background:none!important;box-shadow:none!important;padding:0!important;min-height:0!important;min-width:0!important}
 .farm-art img{position:absolute;object-fit:contain;pointer-events:none}.farm-art .farm-bed{width:100%;height:48%;left:0;bottom:6%}.farm-art .farm-plant{width:52%;height:72%;left:24%;bottom:21%}.farm-art .farm-fruit{width:16%;height:26%;left:48%;bottom:28%}.farm-basket-icon{width:42px;height:30px;object-fit:contain;float:right;margin-left:8px}
 @media(max-height:520px){.farm-art{max-height:150px;aspect-ratio:320/260}.farm-art img{max-height:none!important}}
+
+/* Keep the three interactive plants on the plots in the uploaded background. */
+.world[data-farming=true] #orchard{background:#b8d56d}.world[data-farming=true] #orchard>.scene-backdrop{object-fit:cover}
+.farm-plots{inset:0;display:block}.farm-plot{gap:0}.farm-plot .farm-art{aspect-ratio:auto;max-height:none}.farm-art .farm-bed{display:none}.farm-art .farm-plant{width:65%;height:100%;left:17.5%;bottom:0}.farm-art .farm-fruit{width:20%;height:36%;left:47%;bottom:1%}
+@media(max-width:700px){.farm-plot span:not(.farm-art){font-size:12px;min-height:44px}.farm-plot .farm-art{padding:0!important}}
+
+#farm-camera{display:none;justify-content:center;gap:6px;margin-top:8px}#farm-camera button{min-height:44px;padding:6px 10px;border:2px solid #a5825e;border-radius:10px;background:#fff8eb;color:#513a2d;font-size:13px}#farm-camera button[aria-pressed=true]{background:#d9eac8;border-color:#678350}
+@media(max-width:700px) and (orientation:portrait){#farm-camera{display:flex}.farm-heading{max-width:96%;width:94%}.farm-plot span:not(.farm-art){width:auto;min-width:100px}}
+.farm-plots{pointer-events:none}.farm-plot{pointer-events:auto}

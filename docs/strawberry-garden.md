@@ -27,3 +27,7 @@
 node --test tests/popa-strawberries.test.js tests/popa-progress.test.js
 python3 tests/popa-strawberries-smoke.py
 ```
+
+## רקע הגינה
+
+הרקע שהועלה `Cozy Sunny Garden with Empty Plots.png` נמצא ב־`assets/scenes/garden/background/sunny-garden.png`, ללא שינוי בפיקסלים. השתילים ממוקמים על שלוש הערוגות שבאיור. `game/farming/layout.js` שומר על יחס הממדים; בנייד לאורך המצלמה עוברת בין הערוגות בכפתורים, ובמסך רחב שלושתן מוצגות יחד. הגינה אינה מוסיפה את מסגרות העץ מעל הערוגות שברקע.

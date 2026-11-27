@@ -28,7 +28,7 @@ with sync_playwright() as p:
  page.locator('#garden-tab').click();page.locator('#farm-fruit-game').click();assert page.locator('#overlay').is_visible();page.locator('#dialog-main').click();page.clock.run_for(200);assert page.locator('#basket').is_visible();page.locator('#pause').click();page.locator('#dialog-secondary').click()
  for width,height in [(390,844),(844,390)]:
   page.set_viewport_size({'width':width,'height':height});page.locator('#garden-tab').click()
-  for button in page.locator('.farm-plot').all():
+  for button in page.locator('.farm-plot:visible').all():
    r=button.bounding_box();assert r['x']>=0 and r['x']+r['width']<=width+1 and r['height']>=44
   page.screenshot(path=f'/tmp/popa-farm-{width}.png');page.locator('#farm-home').click()
  assert not errors,errors;b.close()

@@ -1,0 +1,24 @@
+{
+  "originalName": "Cozy Sunny Garden with Empty Plots.png",
+  "image": "sunny-garden.png",
+  "canvas": [
+    1672,
+    941
+  ],
+  "plotCenters": [
+    [
+      310,
+      575
+    ],
+    [
+      832,
+      575
+    ],
+    [
+      1350,
+      575
+    ]
+  ],
+  "fit": "cover",
+  "portraitCamera": "plot-centered"
+}
