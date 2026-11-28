@@ -3,14 +3,14 @@ import {gardenGeometry} from './layout.js';
 import {createStrawberryGarden,REQUIRED_STRAWBERRIES,GROWTH_MS} from './strawberries.js';
 const imageUrl=id=>new URL(`../../assets/scenes/garden/props/10-strawberry-garden/images/${id}.png`,import.meta.url).href;
 const labels={empty:'שתילה',planted:'השקיה',growing:'גדל',ready:'קטיף',harvested:'נקטף'};
-export function mountStrawberryGarden({container,store,onAction,onHome,onFruitGame,onFocus,onToolState}) {
+export function mountStrawberryGarden({container,store,onAction,onHome,onFruitGame}) {
  const garden=createStrawberryGarden({store});
  const scene=document.createElement('section');scene.className='strawberry-garden';scene.hidden=true;scene.setAttribute('aria-label','ערוגות התותים של פופה');
  scene.innerHTML='<header class="farm-heading"><h1>התותים לעוגה הראשונה</h1><p id="farm-instruction"></p><p id="farm-inventory"></p><button type="button" id="farm-practice">לנסות השקיה עם המשפך</button><div id="farm-camera" aria-label="מעבר בין הערוגות"></div></header><div class="farm-plots" aria-label="שלוש ערוגות תותים"></div><div class="farm-controls"><a id="farm-kitchen" href="bakery.html" hidden>למטבח האפייה עם מומו</a><button type="button" id="farm-home">חזרה הביתה</button><button type="button" id="farm-fruit-game">משחק תפיסת פירות</button></div><p id="farm-message" role="status" aria-live="polite"></p>';
  container.append(scene);
  const $=id=>scene.querySelector('#farm-'+id),buttons=new Map();let visible=false,timer,focus=0,watering,practice=false,practiceWatered=false;
  const wateringGarden={snapshot(){const state=garden.snapshot();if(practice){state.enabled=!practiceWatered;state.plots[0]={...state.plots[0],stage:practiceWatered?'growing':'planted',seconds:0};}return state;},act(id){if(!practice)return garden.act(id);practiceWatered=true;return {practice:true,persisted:true};}};
- function setFocus(index,immediate=false){focus=index;container.closest('.world').dataset.farmPlot=String(index);for(const b of $('camera').children)b.setAttribute('aria-pressed',String(Number(b.dataset.index)===index));layout();watering?.refresh();onFocus?.(index,immediate);}
+ function setFocus(index){focus=index;container.closest('.world').dataset.farmPlot=String(index);for(const b of $('camera').children)b.setAttribute('aria-pressed',String(Number(b.dataset.index)===index));layout();watering?.refresh();}
  for(let i=0;i<3;i++){const b=document.createElement('button');b.type='button';b.dataset.index=i;b.textContent='ערוגה '+(i+1);b.onclick=()=>setFocus(i);$('camera').append(b);}
  for(const [index,plot]of garden.snapshot().plots.entries()){
   const button=document.createElement('button');button.type='button';button.className='farm-plot';button.dataset.plot=plot.id;
@@ -56,11 +56,11 @@ export function mountStrawberryGarden({container,store,onAction,onHome,onFruitGa
   }
   watering?.refresh();
  }
- watering=mountWatering({scene,garden:wateringGarden,plot:buttons.values().next().value,onPick(){setFocus(0);onToolState?.(true);$('message').textContent='נחזיק את המשפך מעל האדמה ונעבור גם לצדדים.';},onRelease(){onToolState?.(false);},onMessage(text){$('message').textContent=text;},onWatered(result){render();$('message').textContent=result.practice?'יפה! השקית את כל האדמה סביב השתיל.':result.persisted===false?'השקינו! השמירה אינה זמינה וההתקדמות כרגע זמנית.':`השקינו! התות יבשיל בעוד ${GROWTH_MS/1000} שניות.`;onAction({index:0,stage:'planted',complete:!practice&&garden.snapshot().complete});}});
+ watering=mountWatering({scene,garden:wateringGarden,plot:buttons.values().next().value,onPick(){setFocus(0);$('message').textContent='נחזיק את המשפך מעל האדמה ונעבור גם לצדדים.';},onMessage(text){$('message').textContent=text;},onWatered(result){render();$('message').textContent=result.practice?'יפה! השקית את כל האדמה סביב השתיל.':result.persisted===false?'השקינו! השמירה אינה זמינה וההתקדמות כרגע זמנית.':`השקינו! התות יבשיל בעוד ${GROWTH_MS/1000} שניות.`;onAction({index:0,stage:'planted',complete:!practice&&garden.snapshot().complete});}});
  $('practice').onclick=()=>{watering.setVisible(false);practice=!practice;practiceWatered=false;render();setFocus(0);watering.setVisible(visible);};
  const basket=new Image();basket.src=imageUrl('basket');basket.alt='';basket.className='farm-basket-icon';$('inventory').before(basket);
  $('home').onclick=onHome;$('fruit-game').onclick=onFruitGame;
  const unsubscribe=store.subscribe(()=>{if(visible)render();});
  const refresh=()=>{if(visible)render();};const resize=()=>{if(visible)layout();};window.addEventListener('resize',resize);window.addEventListener('storage',refresh);document.addEventListener('visibilitychange',refresh);
- return {setVisible(value){visible=value;if(!value){practice=false;practiceWatered=false;}scene.hidden=!value;watering.setVisible(value);clearInterval(timer);if(value){render();setFocus(focus,true);timer=setInterval(render,500);}},destroy(){watering.destroy();window.removeEventListener('resize',resize);clearInterval(timer);unsubscribe();window.removeEventListener('storage',refresh);document.removeEventListener('visibilitychange',refresh);scene.remove();}};
+ return {setVisible(value){visible=value;if(!value){practice=false;practiceWatered=false;}scene.hidden=!value;watering.setVisible(value);clearInterval(timer);if(value){render();setFocus(focus);timer=setInterval(render,500);}},destroy(){watering.destroy();window.removeEventListener('resize',resize);clearInterval(timer);unsubscribe();window.removeEventListener('storage',refresh);document.removeEventListener('visibilitychange',refresh);scene.remove();}};
 }

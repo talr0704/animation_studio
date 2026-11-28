@@ -38,3 +38,5 @@
 @media(prefers-reduced-motion:reduce){.watering-can,.wet-soil,.water-pips img{transition:none}}
 
 .watering-target{z-index:3}.water-pips{top:-25px}
+
+.world[data-farming=true] #player{display:none}
