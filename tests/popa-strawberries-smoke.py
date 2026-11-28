@@ -1,4 +1,4 @@
-from farm_pointer import water_first_plot
+from farm_pointer import water_first_plot,focus_plot,leave_garden
 """First meeting -> real planting/watering/timed harvest -> saved next quest step."""
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
@@ -20,20 +20,20 @@ with sync_playwright() as p:
   else:plot.click()
   assert plot.is_disabled()
  assert not saved()['inventory'];page.clock.run_for(8000);dates=saved()['farming']['plots'];page.screenshot(path='/tmp/popa-farm-growing.png')
- page.locator('#home-tab').click();page.locator('#garden-tab').click();assert saved()['farming']['plots']==dates
+ leave_garden(page);page.locator('#garden-tab').click();assert saved()['farming']['plots']==dates
  page.reload(wait_until='networkidle');page.wait_for_selector('#loading',state='hidden');page.locator('#garden-tab').click();assert saved()['farming']['plots']==dates
  page.clock.run_for(21000);assert page.locator('.farm-plot[data-stage=ready]').count()==3
  page.screenshot(path='/tmp/popa-farm-ready.png')
  for i in range(3):page.locator('.farm-plot').nth(i).click()
  assert saved()['inventory']=={'strawberry':3};assert saved()['story']['firstCake']['step']=='bake-with-bonnie';assert saved()['wallet']['coins']==0
  assert page.locator('.farm-plot:disabled').count()==3
- page.locator('#farm-home').click();assert 'לאפות עם מומו' in page.locator('#first-quest').text_content()
+ leave_garden(page);assert 'לאפות עם מומו' in page.locator('#first-quest').text_content()
  page.reload(wait_until='networkidle');page.wait_for_selector('#loading',state='hidden');assert saved()['inventory']=={'strawberry':3}
  page.locator('#garden-tab').click();page.locator('#farm-fruit-game').click();assert page.locator('#overlay').is_visible();page.locator('#dialog-main').click();page.clock.run_for(200);assert page.locator('#basket').is_visible();page.locator('#pause').click();page.locator('#dialog-secondary').click()
  for width,height in [(390,844),(844,390)]:
   page.set_viewport_size({'width':width,'height':height});page.locator('#garden-tab').click()
   for button in page.locator('.farm-plot:visible').all():
    r=button.bounding_box();assert r['x']>=0 and r['x']+r['width']<=width+1 and r['height']>=44
-  page.screenshot(path=f'/tmp/popa-farm-{width}.png');page.locator('#farm-home').click()
+  page.screenshot(path=f'/tmp/popa-farm-{width}.png');leave_garden(page)
  assert not errors,errors;b.close()
 print('PASS meeting -> planting/watering -> real timer/reload -> three harvests -> atomic inventory and next quest; legacy fruit game and mobile')

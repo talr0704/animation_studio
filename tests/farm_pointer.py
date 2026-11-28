@@ -16,7 +16,6 @@ def water_first_plot_keyboard(page):
    steps=round((goal-current)/14)
    for _ in range(abs(steps)):page.keyboard.press(positive if steps>0 else negative)
   page.keyboard.down('Space');page.clock.run_for(1100);page.keyboard.up('Space')
- page.keyboard.press('Escape')
 
 def water_first_plot_touch(page):
  tool=page.locator('#farm-watering-can').bounding_box();target=page.locator('#farm-water-target').bounding_box();session=page.context.new_cdp_session(page)
@@ -25,3 +24,12 @@ def water_first_plot_touch(page):
   session.send('Input.dispatchTouchEvent',{'type':'touchMove','touchPoints':[{'x':target['x']+target['width']*(zone+.5)/3-81,'y':target['y']-112,'id':1}]})
   page.clock.run_for(1100)
  session.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]});session.detach()
+
+def focus_plot(page,index):
+ current=int(page.locator('.world').get_attribute('data-farm-plot') or 0)
+ if page.locator('#farm-pan-next').is_visible() or page.locator('#farm-pan-previous').is_visible():
+  while current!=index:
+   page.locator('#farm-pan-next' if current<index else '#farm-pan-previous').click();current=int(page.locator('.world').get_attribute('data-farm-plot'))
+
+def leave_garden(page):
+ focus_plot(page,0);page.locator('#farm-home').click()

@@ -1,6 +1,6 @@
 import {createWateringProgress} from './watering-progress.js';
 const art=id=>new URL(`../../assets/scenes/garden/props/10-strawberry-garden/images/${id}.png`,import.meta.url).href;
-export function mountWatering({scene,garden,plot,onPick,onRelease,onWatered,onMessage}){
+export function mountWatering({scene,garden,plot,onPick,onRelease,onWatered,onMessage,onRequestPractice}){
  const progress=createWateringProgress(),tool=document.createElement('button'),target=document.createElement('div'),effects=document.createElement('div');
  tool.type='button';tool.id='farm-watering-can';tool.className='watering-can';tool.setAttribute('aria-label','משפך: גררי מעל השתיל והשקי את שלושת אזורי האדמה. במקלדת חצים להזזה ורווח להשקיה');
  tool.innerHTML='<img class="can-handle" alt=""><img class="can-spout" alt=""><img class="can-body" alt=""><span class="can-caption">גררי מעל השתיל</span>';
@@ -13,7 +13,7 @@ export function mountWatering({scene,garden,plot,onPick,onRelease,onWatered,onMe
  function place(){tool.style.left=x+'px';tool.style.top=y+'px';}
  function snapshot(){return progress.snapshot();}
  function refresh(){
-  const state=garden.snapshot(),stage=state.plots[0].stage,planted=state.enabled&&stage==='planted';available=active&&planted&&!completed&&!plot.button.hidden;tool.hidden=!available;target.hidden=!active||plot.button.hidden||!['planted','growing'].includes(stage);target.lastElementChild.hidden=!available;target.style.setProperty('--wet',stage==='growing'?1:snapshot().value);tool.disabled=!available;
+  const state=garden.snapshot(),stage=state.plots[0].stage,planted=state.enabled&&stage==='planted';available=active&&planted&&!completed&&!plot.button.hidden&&zoneRect?.left>=0&&zoneRect.left+zoneRect.width<=scene.clientWidth;tool.hidden=!active||plot.button.hidden||!zoneRect||zoneRect.left<0||zoneRect.left+zoneRect.width>scene.clientWidth;tool.title=available?'גררי להשקיה':'קחי את המשפך לתרגול';target.hidden=!active||plot.button.hidden||!['planted','growing'].includes(stage);target.lastElementChild.hidden=!available;target.style.setProperty('--wet',stage==='growing'?1:snapshot().value);tool.disabled=!active;
   if(!available&&held)release();
  }
  function layout(){
@@ -55,10 +55,13 @@ export function mountWatering({scene,garden,plot,onPick,onRelease,onWatered,onMe
   }else {sway?.cancel();sway=null;}
   raf=requestAnimationFrame(tick);
  }
- tool.onpointerdown=e=>{if(!available||e.button!==0||e.isPrimary===false)return;e.preventDefault();if(held)release();pointer=e.pointerId;tool.setPointerCapture(e.pointerId);begin();const rect=scene.getBoundingClientRect();x=Math.max(-30,Math.min(scene.clientWidth-100,e.clientX-rect.left-65));y=Math.max(0,Math.min(scene.clientHeight-130,e.clientY-rect.top-45));place();};
+ tool.onpointerdown=e=>{if(!active||e.button!==0||e.isPrimary===false)return;if(!available){onRequestPractice?.();refresh();}if(!available)return;e.preventDefault();if(held)release();pointer=e.pointerId;tool.setPointerCapture(e.pointerId);begin();const rect=scene.getBoundingClientRect();x=Math.max(-30,Math.min(scene.clientWidth-100,e.clientX-rect.left-65));y=Math.max(0,Math.min(scene.clientHeight-130,e.clientY-rect.top-45));place();};
  tool.onpointermove=e=>{if(e.pointerId!==pointer||!held)return;const rect=scene.getBoundingClientRect();x=Math.max(-30,Math.min(scene.clientWidth-100,e.clientX-rect.left-65));y=Math.max(0,Math.min(scene.clientHeight-130,e.clientY-rect.top-45));place();};
  tool.onpointerup=tool.onpointercancel=()=>release();tool.onlostpointercapture=()=>{if(held&&pointer!==null)release();};
  tool.onkeydown=e=>{
+  if(e.repeat&&!available){e.preventDefault();return;}
+  if(e.key==='Escape'){if(held){e.preventDefault();release();}return;}
+  if(!available&&active&&[' ','Enter'].includes(e.key)){e.preventDefault();onRequestPractice?.();refresh();}
   if(!available)return;
   if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' ','Enter','Escape'].includes(e.key))e.preventDefault();
   if(e.key==='Escape'){release();return;}
