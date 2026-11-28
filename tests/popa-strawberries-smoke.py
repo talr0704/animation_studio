@@ -1,3 +1,4 @@
+from farm_pointer import water_first_plot
 """First meeting -> real planting/watering/timed harvest -> saved next quest step."""
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
@@ -14,7 +15,10 @@ with sync_playwright() as p:
  page.locator('#garden-tab').click();assert page.locator('.strawberry-garden').is_visible();assert page.locator('#overlay').is_hidden()
  assert page.locator('#milli-npc').is_hidden();assert page.locator('.farm-plot[data-stage=empty]').count()==3
  for i in range(3):
-  plot=page.locator('.farm-plot').nth(i);plot.click();assert plot.get_attribute('data-stage')=='planted';plot.click();assert plot.is_disabled()
+  plot=page.locator('.farm-plot').nth(i);plot.click();assert plot.get_attribute('data-stage')=='planted'
+  if i==0:water_first_plot(page)
+  else:plot.click()
+  assert plot.is_disabled()
  assert not saved()['inventory'];page.clock.run_for(8000);dates=saved()['farming']['plots'];page.screenshot(path='/tmp/popa-farm-growing.png')
  page.locator('#home-tab').click();page.locator('#garden-tab').click();assert saved()['farming']['plots']==dates
  page.reload(wait_until='networkidle');page.wait_for_selector('#loading',state='hidden');page.locator('#garden-tab').click();assert saved()['farming']['plots']==dates

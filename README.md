@@ -141,3 +141,7 @@ Open `world.html` from the street/shops button in the home screen. All 20 upload
 ## Baking with Momo
 
 The first recipe is now playable at `bakery.html`: carry harvested strawberries into the bowl, add pantry ingredients, mix, bake, decorate and package. Ingredients and oven timing survive reloads. Packaging grants one cake and advances to delivery; the delivery reward UI is the next step. Momo replaces Bonnie in the game text and workshop while legacy quest IDs remain compatible. See `docs/baking-with-momo.md`.
+
+## Interactive watering study
+
+The first strawberry plot now uses a draggable illustrated watering can. Pour over three soil zones to water the plant; click count does not advance watering. Local droplets, wet soil and anchored leaf motion provide feedback. A practice corner works even after the story crop was harvested without modifying progress. Mouse, touch and keyboard are supported. See `docs/watering-interaction.md`.

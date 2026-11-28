@@ -28,3 +28,13 @@
 
 .strawberry-garden[data-complete=true] #farm-message{display:none}
 @media(max-width:700px){.strawberry-garden[data-complete=true] .farm-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:94%;margin:auto}.strawberry-garden[data-complete=true] #farm-kitchen{grid-column:1/-1}}
+#farm-practice{min-height:40px;padding:5px 12px;border:1px solid #a5825e;border-radius:10px;background:#fff8eb;color:#513a2d;font-size:13px;margin-top:6px}
+.watering-can{position:absolute;width:165px;height:125px;padding:0;border:0;background:none;z-index:35;touch-action:none;cursor:grab;transform-origin:65px 60px;transition:transform .12s ease;user-select:none}
+.watering-can[data-held=true]{cursor:grabbing}.watering-can[data-pouring=true]{transform:rotate(32deg)}
+.watering-can img{position:absolute;object-fit:contain;pointer-events:none;max-width:none}.can-body{width:112px;height:94px;left:3px;top:30px}.can-handle{width:87px;height:56px;left:16px;top:0}.can-spout{width:85px;height:75px;left:80px;top:26px}
+.can-caption{position:absolute;top:100%;left:0;right:0;font-size:12px;white-space:nowrap;background:#fff7e9e8;padding:4px 8px;border-radius:9px;pointer-events:none}.watering-can[data-held=true] .can-caption{display:none}
+.watering-target{position:absolute;pointer-events:none;z-index:1}.wet-soil{position:absolute;left:0;top:-18px;width:100%;height:70px;object-fit:fill;opacity:var(--wet,0);transition:opacity .12s}.water-pips{position:absolute;left:0;right:0;top:38px;display:flex;justify-content:space-around}.water-pips img{width:16px;height:24px;object-fit:contain;opacity:.2;transition:opacity .1s;filter:drop-shadow(0 1px 1px #fff)}
+.watering-effects{position:absolute;inset:0;pointer-events:none;z-index:40;overflow:hidden}.watering-effects img{position:absolute;width:12px;height:18px;object-fit:contain;pointer-events:none}.farm-plots{z-index:2}.farm-heading,.farm-controls,#farm-message{z-index:10}.farm-art .farm-plant{object-position:center bottom;transform-origin:50% 95%}
+@media(prefers-reduced-motion:reduce){.watering-can,.wet-soil,.water-pips img{transition:none}}
+
+.watering-target{z-index:3}.water-pips{top:-25px}

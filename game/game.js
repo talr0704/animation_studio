@@ -1,5 +1,5 @@
 import {gardenGeometry} from './farming/layout.js';
-import {mountStrawberryGarden} from './farming/garden.js?v=bake-momo4';
+import {mountStrawberryGarden} from './farming/garden.js?v=watering5';
 import {mountFirstMeeting} from './story/first-meeting.js?v=bake-momo4';
 import {progressStore, readProfile, actionId} from './progress/store.js?v=3';
 import {roomBaseScale} from './room-scale.js';
@@ -144,13 +144,24 @@ function positionFarmer(x=null){
  $('player').style.bottom=(height-feet)+'px';
 }
 
+let farmerMove=null,farmerHolding=false;
+function moveFarmer(x,endAction=null){
+ const element=$('player'),from={left:getComputedStyle(element).left,bottom:getComputedStyle(element).bottom};
+ farmerMove?.cancel();positionFarmer(x);
+ const to={left:getComputedStyle(element).left,bottom:getComputedStyle(element).bottom};
+ const distance=Math.abs(parseFloat(to.left)-parseFloat(from.left));
+ if(distance<6||matchMedia('(prefers-reduced-motion:reduce)').matches){cue(endAction??(farmerHolding?'hold':'idle'));return;}
+ faceRoom(parseFloat(to.left)>=parseFloat(from.left)?1:-1);cue('walk');
+ const animation=element.animate([from,to],{duration:Math.min(650,Math.max(260,distance*2)),easing:'ease-out'});farmerMove=animation;
+ animation.finished.then(()=>{if(farmerMove===animation){farmerMove=null;if(view==='garden')cue(endAction??(farmerHolding?'hold':'idle'));}}).catch(()=>{});
+}
 function placeMomo(){
  if(!roomFurniture)return;const world=document.querySelector('.world');
  world.style.setProperty('--momo-width',Math.max(76,440*roomBase()*.90)+'px');
  world.style.setProperty('--momo-bottom',Math.max(80,height*.18)+'px');
 }
 function home() {
-  placeMomo();
+  farmerMove?.cancel();farmerMove=null;farmerHolding=false;placeMomo();
   story?.setVisible(true);
   if (view==='garden' && phase==='playing') { pause(); return; }
   farm?.setVisible(false);document.querySelector('.world').dataset.farming='false';
@@ -161,7 +172,7 @@ function home() {
   $('activity-title').textContent='מה צומח בגינה?';$('activity-text').textContent='45 שניות של פירות, כוכבי זהב ורצפים. כמה תוכלי לתפוס?';$('activity-button').textContent='לגינה ←';
   popa.setScale(roomScale());repairRoomPosition();cue('idle');positionPlayer(roomX);
 }
-function garden(fruitGame=false) {story?.setVisible(false);if(furnitureSession){leaveFurniture().then(()=>garden(fruitGame));return;}closeWardrobe();roomEditor?.close();
+function garden(fruitGame=false) {farmerMove?.cancel();farmerMove=null;farmerHolding=false;story?.setVisible(false);if(furnitureSession){leaveFurniture().then(()=>garden(fruitGame));return;}closeWardrobe();roomEditor?.close();
   if(view==='garden'&&phase==='playing')return;
   document.querySelector('.world').dataset.view='garden';view='garden';cancelInteraction();phase='intro';round=undefined;keys.clear();particles=[];
   $('player').style.zIndex='4';$('room').hidden=true;$('orchard').hidden=false;$('basket').hidden=true;$('orchard').classList.remove('playing');
@@ -196,7 +207,7 @@ function hud() {
   const lives=round?.lives??3;$('lives').textContent='♥ '.repeat(lives)+'♡ '.repeat(3-lives);$('lives').setAttribute('aria-label',`${lives} לבבות`);
   const combo=round?.combo??0;$('combo').textContent=combo>=5?`${combo} ברצף! ×${Math.min(3,1+Math.floor(combo/5))} נקודות`:'תופסים פירות. בונים רצפים.';
 }
-function resize(){placeRoomFurniture();const world=document.querySelector('.world');width=world.clientWidth;height=world.clientHeight;placeMomo();const ratio=Math.min(devicePixelRatio||1,2);canvas.width=width*ratio;canvas.height=height*ratio;ctx.setTransform(ratio,0,0,ratio,0,0);if(popa&&!furnitureSession){if(view==='room'){popa.setScale(roomScale());roomRoute=[];repairRoomPosition();}if(document.querySelector('.world').dataset.farming==='true')positionFarmer();else positionPlayer(view==='room'?roomX:round?.player??.5);}}
+function resize(){placeRoomFurniture();const world=document.querySelector('.world');width=world.clientWidth;height=world.clientHeight;placeMomo();const ratio=Math.min(devicePixelRatio||1,2);canvas.width=width*ratio;canvas.height=height*ratio;ctx.setTransform(ratio,0,0,ratio,0,0);if(popa&&!furnitureSession){if(view==='room'){popa.setScale(roomScale());roomRoute=[];repairRoomPosition();}if(document.querySelector('.world').dataset.farming==='true'){farmerMove?.cancel();farmerMove=null;positionFarmer();}else positionPlayer(view==='room'?roomX:round?.player??.5);}}
 function fruit(object){
   const image=fruitImages.get(object.type);if(!image)return;
   ctx.save();ctx.translate(object.x*width,object.y*height);
@@ -315,5 +326,5 @@ try{
   await Promise.all(roomFurniture.items.map(async item=>{if(!POPA_CLIPS[item.action])throw Error('Unknown room action');const button=document.createElement('button');button.type='button';button.dataset.furniture=item.id;button.className='room-item';button.style.zIndex=item.layer??1;button.setAttribute('aria-label',item.label);button.setAttribute('aria-pressed','false');if(item.id==='reading-books')button.id='reading-books';if(item.assembly){const response=await fetch(new URL('../'+item.assembly,import.meta.url),{cache:'no-cache'});if(!response.ok)throw Error('Cannot load room prop');const data=loadPropAppearance(await response.json()),rig=document.createElement('div');rig.className='item-rig';rig.dataset.canvas=JSON.stringify(data.canvas);button.append(rig);const mounted=mountProp(rig,data,{assetUrl:path=>new URL('../'+path+'?v=room-art2',import.meta.url).href});await mounted.ready;if(item.id==='wardrobe')await applyWardrobeAppearance(data,mounted);}else{const image=new Image();image.src=new URL('../'+item.image,import.meta.url).href;image.alt='';button.append(image);await image.decode();}button.onclick=()=>approachItem(item,button);$('home-furniture').append(button);}));placeRoomFurniture();
   roomEditor=mountRoomEditor({room:$('room'),layout:roomFurniture,place:placeRoomFurniture,setEditing(value){roomEditing=value;story?.setVisible(!value&&view==='room');if(value){$('player').style.zIndex='4';roomEditor?.applyLayers();}else repairRoomPosition();keys.clear();cancelInteraction();target=roomX;targetDepth=roomDepth;popa?.stop({immediate:true});$('room-hint').textContent=value?'בחרי חפץ וגררי אותו למקום הרצוי':'בחרי פריט ופופה תיגש אליו · אפשר גם לטייל עם החיצים';}});
   await Promise.all(['apple','orange','berries','gold','rain'].map(async name=>{const image=new Image();image.src=new URL(`../assets/scenes/garden/${name}.svg`,import.meta.url).href;await image.decode();fruitImages.set(name,image);}));
-  popa=await createPopa($('player'),{scale:.46,autoplay:'idle'});wardrobe=await createWardrobe(popa);renderWardrobe();if(profile.outfit!=='default'&&!wardrobe.looks.includes(profile.outfit))profile.outfit='default';await wardrobe.wear(profile.outfit);story=await mountFirstMeeting({world:document.querySelector('.world'),onApproach:approachItem,onStart(){keys.clear();cancelInteraction();cue('wave');},onClose(){keys.clear();cue('idle');},onProgress(){profile=readProfile();refreshProfile();}});farm=mountStrawberryGarden({container:$('orchard'),store:progressStore,onHome:home,onFocus(index){positionFarmer([.15,.48,.78][index]);},onFruitGame:()=>garden(true),onAction({index,stage,complete}){positionFarmer(.2+index*.3);cue(stage==='empty'?'curious':stage==='planted'?'hold':'happy');if(complete)toast('התותים מוכנים! הצעד הבא: לאפות עם מומו.');}});$('loading').hidden=true;home();requestAnimationFrame(tick);if(new URLSearchParams(location.search).get('interactionPreview')==='sofa')approachItem(roomFurniture.items.find(i=>i.id==='sofa'),document.querySelector('[data-furniture="sofa"]'));}catch(error){$('loading').textContent='לא הצלחנו לטעון את פופה. נסי לרענן את העמוד.';console.error(error);}
+  popa=await createPopa($('player'),{scale:.46,autoplay:'idle'});wardrobe=await createWardrobe(popa);renderWardrobe();if(profile.outfit!=='default'&&!wardrobe.looks.includes(profile.outfit))profile.outfit='default';await wardrobe.wear(profile.outfit);story=await mountFirstMeeting({world:document.querySelector('.world'),onApproach:approachItem,onStart(){keys.clear();cancelInteraction();cue('wave');},onClose(){keys.clear();cue('idle');},onProgress(){profile=readProfile();refreshProfile();}});farm=mountStrawberryGarden({container:$('orchard'),store:progressStore,onHome:home,onFocus(index,immediate){if(immediate)positionFarmer([.15,.48,.78][index]);else moveFarmer([.15,.48,.78][index]);},onToolState(held){farmerHolding=held;if(!farmerMove||farmerMove.playState!=='running')cue(held?'hold':'idle');},onFruitGame:()=>garden(true),onAction({index,stage,complete}){moveFarmer(.2+index*.3,stage==='empty'?'interact':'happy');if(complete)toast('התותים מוכנים! הצעד הבא: לאפות עם מומו.');}});$('loading').hidden=true;home();requestAnimationFrame(tick);if(new URLSearchParams(location.search).get('interactionPreview')==='sofa')approachItem(roomFurniture.items.find(i=>i.id==='sofa'),document.querySelector('[data-furniture="sofa"]'));}catch(error){$('loading').textContent='לא הצלחנו לטעון את פופה. נסי לרענן את העמוד.';console.error(error);}
 window.addEventListener('pagehide',event=>{if(event.persisted){pause();return;}cancelInteraction();story?.destroy();farm?.destroy();wardrobe?.destroy();popa?.destroy();});

@@ -1,3 +1,4 @@
+from farm_pointer import water_first_plot
 """The uploaded garden fills the portrait viewport and all three plots remain playable."""
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
@@ -8,7 +9,10 @@ with sync_playwright() as p:
  assert image.evaluate('(e)=>getComputedStyle(e).objectFit')=='cover'
  for i in range(3):
   page.locator('#farm-camera button').nth(i).click();plot=page.locator('.farm-plot').nth(i);assert plot.is_visible();r=plot.bounding_box();assert r['x']>=-1 and r['x']+r['width']<=391
-  plot.click();plot.click();assert plot.is_disabled()
+  plot.click()
+  if i==0:water_first_plot(page)
+  else:plot.click()
+  assert plot.is_disabled()
  page.clock.run_for(21000)
  for i in range(3):page.locator('#farm-camera button').nth(i).click();page.locator('.farm-plot').nth(i).click()
  assert page.evaluate('JSON.parse(localStorage.getItem("popaProgressV1")).inventory.strawberry')==3
